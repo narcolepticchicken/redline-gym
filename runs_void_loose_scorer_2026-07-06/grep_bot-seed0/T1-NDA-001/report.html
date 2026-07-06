@@ -1,0 +1,303 @@
+<!doctype html>
+<html><head><meta charset='utf-8'>
+<title>T1-NDA-001 Redline Gym Report</title>
+<style>
+body{font-family:Arial,sans-serif;margin:28px;line-height:1.4;color:#202124;background:#fff}
+h1,h2,h3{margin:18px 0 8px}
+table{border-collapse:collapse;width:100%;margin-top:12px}
+th,td{border:1px solid #c9ced6;padding:6px 8px;text-align:left}
+th{background:#eef2f7}
+.contract,.json{white-space:pre-wrap;border:1px solid #c9ced6;padding:12px;background:#fafafa;overflow:auto}
+.hl{padding:1px 2px;border-radius:2px}
+.caught{background:#b7f0c2}
+.missed{background:#ffb6b6}
+.falseflag{background:#fff08a}
+.canary{background:#111;color:#fff}
+.gamed{background:#111;color:#fff;padding:12px;font-weight:bold;margin:12px 0}
+.bars{max-width:760px}
+.bar-row{display:grid;grid-template-columns:120px 1fr 64px;gap:8px;align-items:center;margin:6px 0}
+.bar{height:16px;border:1px solid #9aa0a6;background:#f1f3f4}
+.bar div{height:100%;background:#3b7ddd}
+</style>
+</head><body>
+<h1>T1-NDA-001</h1>
+<p><strong>Status:</strong> OK <strong>Composite:</strong> 0.831818</p>
+<div class='bars'>
+<div class='bar-row'><span>abstention</span><div class='bar'><div style='width:0.0%'></div></div><b>0.000</b></div>
+<div class='bar-row'><span>conformance</span><div class='bar'><div style='width:100.0%'></div></div><b>1.000</b></div>
+<div class='bar-row'><span>fallback</span><div class='bar'><div style='width:100.0%'></div></div><b>1.000</b></div>
+<div class='bar-row'><span>grounding</span><div class='bar'><div style='width:100.0%'></div></div><b>1.000</b></div>
+<div class='bar-row'><span>precision</span><div class='bar'><div style='width:54.5%'></div></div><b>0.545</b></div>
+<div class='bar-row'><span>recall</span><div class='bar'><div style='width:100.0%'></div></div><b>1.000</b></div>
+</div>
+<h2>Contract</h2>
+<h3>Mutual Confidentiality Agreement</h3>
+<pre class='contract'># Mutual Confidentiality Agreement
+
+This Mutual Confidentiality Agreement is entered into as of July 6, 2026, by and between Northstar Analytics, Inc. and Meridian Systems LLC. Each party may be a &quot;Discloser&quot; when it discloses information and a &quot;Recipient&quot; when it receives information.
+
+## 1. Confidential Information
+
+<span class='hl caught' title='D-001'>&quot;Confidential Information&quot; means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure.</span> &quot;Purpose&quot; means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. <span class='hl caught' title='D-002'>&quot;Required Care&quot; means the care Recipient uses for its own similar information, but in no event less than slight care.</span> Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
+
+## 2. Purpose and Use
+
+<span class='hl caught' title='D-003'>Recipient may use Confidential Information for the Purpose or for any internal business purpose related to Recipient&#x27;s product planning.</span>
+
+## 3. Representatives
+
+<span class='hl caught' title='D-004'>Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, &quot;Representatives&quot;) who have a need to know the information for the Purpose.</span>
+
+<span class='hl falseflag' title='false flag R-002'>Each party&#x27;s controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates&#x27; compliance with this Agreement.</span>
+
+## 4. Protection Standard
+
+Recipient will protect Confidential Information using the Required Care and will not intentionally disclose it except as permitted by this Agreement.
+
+## 5. Compelled Disclosure
+
+<span class='hl caught' title='D-006'>If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient may disclose it without prior notice to Discloser and without cooperation in seeking confidential or protective treatment.</span>
+
+## 6. Exclusions
+
+<span class='hl falseflag' title='false flag R-003'>Confidential Information does not include information that Recipient can document was known to Recipient without restriction before disclosure, becomes public through no breach of this Agreement, is independently developed without use of Confidential Information, or is received from a third party without breach of a duty to Discloser.</span>
+
+## 7. No Obligation to Proceed
+
+Neither party is obligated to enter into any further agreement, purchase or sell any product or service, or proceed with any transaction unless a separate written agreement is signed by both parties.
+
+## 8. Return or Destruction
+
+<span class='hl caught' title='D-005'>Upon Discloser&#x27;s written request, Recipient will return or destroy Confidential Information within ninety days, except one archival copy may be retained by legal counsel for recordkeeping and legal-hold purposes, subject to this Agreement.</span>
+
+## 9. Term and Survival
+
+<span class='hl falseflag' title='false flag R-009'>This Agreement begins on the effective date and continues for two years. Recipient&#x27;s confidentiality obligations continue for three years after each disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.</span>
+
+## 10. No License; Ownership
+
+<span class='hl falseflag' title='false flag R-010'>All Confidential Information remains the property of Discloser. No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.</span>
+
+## 11. Equitable Relief
+
+<span class='hl falseflag' title='false flag R-011'>Recipient acknowledges that unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages may be inadequate, and Discloser may seek equitable relief without limiting any other available remedy.</span>
+
+## 12. No Warranty
+
+All Confidential Information is provided &quot;as is.&quot; Discloser makes no representation or warranty as to accuracy or completeness, and Recipient remains responsible for its own evaluation of the information.
+
+## 13. Governing Law; Miscellaneous
+
+This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules. Amendments must be in writing and signed by both parties. A waiver is effective only if written and signed by the waiving party. This Agreement may be signed in counterparts and by electronic signature.
+</pre>
+<h2>Submitted Card</h2>
+<pre class='json'>{
+  &quot;escalations&quot;: [],
+  &quot;issues&quot;: [
+    {
+      &quot;clause_ref&quot;: &quot;1. Confidential Information&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;\&quot;Confidential Information\&quot; means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. \&quot;Purpose\&quot; means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. \&quot;Required Care\&quot; means the care Recipient uses for its own similar information, but in no event less than slight care. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.&quot;,
+      &quot;proposed_redline&quot;: &quot;Confidential Information means all non-public information disclosed by or on behalf of a party, whether before or after the effective date, in any form or medium and whether or not marked confidential.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-001&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;3. Representatives&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;Each party&#x27;s controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates&#x27; compliance with this Agreement.&quot;,
+      &quot;proposed_redline&quot;: &quot;Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its affiliates&#x27; compliance.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-002&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;6. Exclusions&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;Confidential Information does not include information that Recipient can document was known to Recipient without restriction before disclosure, becomes public through no breach of this Agreement, is independently developed without use of Confidential Information, or is received from a third party without breach of a duty to Discloser.&quot;,
+      &quot;proposed_redline&quot;: &quot;The exclusions apply only to information the recipient can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-003&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;2. Purpose and Use&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;Recipient may use Confidential Information for the Purpose or for any internal business purpose related to Recipient&#x27;s product planning.&quot;,
+      &quot;proposed_redline&quot;: &quot;The recipient may use Confidential Information solely to evaluate, negotiate, and, if agreed, perform the contemplated transaction between the parties.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-004&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;1. Confidential Information&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;\&quot;Confidential Information\&quot; means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. \&quot;Purpose\&quot; means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. \&quot;Required Care\&quot; means the care Recipient uses for its own similar information, but in no event less than slight care. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.&quot;,
+      &quot;proposed_redline&quot;: &quot;Recipient will protect Confidential Information using at least reasonable care and no less than the care it uses to protect its own similar confidential information.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-005&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;3. Representatives&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, \&quot;Representatives\&quot;) who have a need to know the information for the Purpose.&quot;,
+      &quot;proposed_redline&quot;: &quot;Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-006&quot;,
+      &quot;severity&quot;: &quot;high&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;5. Compelled Disclosure&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient may disclose it without prior notice to Discloser and without cooperation in seeking confidential or protective treatment.&quot;,
+      &quot;proposed_redline&quot;: &quot;Before any compelled disclosure, Recipient will, to the extent legally permitted, provide prompt notice and reasonable cooperation so Discloser may seek protective treatment.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-007&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;8. Return or Destruction&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;Upon Discloser&#x27;s written request, Recipient will return or destroy Confidential Information within ninety days, except one archival copy may be retained by legal counsel for recordkeeping and legal-hold purposes, subject to this Agreement.&quot;,
+      &quot;proposed_redline&quot;: &quot;Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-008&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;9. Term and Survival&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;This Agreement begins on the effective date and continues for two years. Recipient&#x27;s confidentiality obligations continue for three years after each disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.&quot;,
+      &quot;proposed_redline&quot;: &quot;Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-009&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;10. No License; Ownership&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;All Confidential Information remains the property of Discloser. No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.&quot;,
+      &quot;proposed_redline&quot;: &quot;No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-010&quot;,
+      &quot;severity&quot;: &quot;medium&quot;
+    },
+    {
+      &quot;clause_ref&quot;: &quot;11. Equitable Relief&quot;,
+      &quot;doc_id&quot;: &quot;DOC-01&quot;,
+      &quot;exact_quote&quot;: &quot;Recipient acknowledges that unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages may be inadequate, and Discloser may seek equitable relief without limiting any other available remedy.&quot;,
+      &quot;proposed_redline&quot;: &quot;Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies.&quot;,
+      &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+      &quot;rule_id&quot;: &quot;R-011&quot;,
+      &quot;severity&quot;: &quot;low&quot;
+    }
+  ],
+  &quot;summary&quot;: &quot;Lexical playbook scan completed.&quot;
+}</pre>
+<h2>Flags</h2>
+<pre class='json'>[
+  {
+    &quot;clause_ref&quot;: &quot;1. Confidential Information&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;\&quot;Confidential Information\&quot; means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. \&quot;Purpose\&quot; means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. \&quot;Required Care\&quot; means the care Recipient uses for its own similar information, but in no event less than slight care. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.&quot;,
+    &quot;proposed_redline&quot;: &quot;Confidential Information means all non-public information disclosed by or on behalf of a party, whether before or after the effective date, in any form or medium and whether or not marked confidential.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-001&quot;,
+    &quot;severity&quot;: &quot;high&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;3. Representatives&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;Each party&#x27;s controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates&#x27; compliance with this Agreement.&quot;,
+    &quot;proposed_redline&quot;: &quot;Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its affiliates&#x27; compliance.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-002&quot;,
+    &quot;severity&quot;: &quot;medium&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;6. Exclusions&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;Confidential Information does not include information that Recipient can document was known to Recipient without restriction before disclosure, becomes public through no breach of this Agreement, is independently developed without use of Confidential Information, or is received from a third party without breach of a duty to Discloser.&quot;,
+    &quot;proposed_redline&quot;: &quot;The exclusions apply only to information the recipient can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-003&quot;,
+    &quot;severity&quot;: &quot;medium&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;2. Purpose and Use&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;Recipient may use Confidential Information for the Purpose or for any internal business purpose related to Recipient&#x27;s product planning.&quot;,
+    &quot;proposed_redline&quot;: &quot;The recipient may use Confidential Information solely to evaluate, negotiate, and, if agreed, perform the contemplated transaction between the parties.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-004&quot;,
+    &quot;severity&quot;: &quot;high&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;1. Confidential Information&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;\&quot;Confidential Information\&quot; means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. \&quot;Purpose\&quot; means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. \&quot;Required Care\&quot; means the care Recipient uses for its own similar information, but in no event less than slight care. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.&quot;,
+    &quot;proposed_redline&quot;: &quot;Recipient will protect Confidential Information using at least reasonable care and no less than the care it uses to protect its own similar confidential information.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-005&quot;,
+    &quot;severity&quot;: &quot;high&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;3. Representatives&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, \&quot;Representatives\&quot;) who have a need to know the information for the Purpose.&quot;,
+    &quot;proposed_redline&quot;: &quot;Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-006&quot;,
+    &quot;severity&quot;: &quot;high&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;5. Compelled Disclosure&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient may disclose it without prior notice to Discloser and without cooperation in seeking confidential or protective treatment.&quot;,
+    &quot;proposed_redline&quot;: &quot;Before any compelled disclosure, Recipient will, to the extent legally permitted, provide prompt notice and reasonable cooperation so Discloser may seek protective treatment.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-007&quot;,
+    &quot;severity&quot;: &quot;medium&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;8. Return or Destruction&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;Upon Discloser&#x27;s written request, Recipient will return or destroy Confidential Information within ninety days, except one archival copy may be retained by legal counsel for recordkeeping and legal-hold purposes, subject to this Agreement.&quot;,
+    &quot;proposed_redline&quot;: &quot;Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-008&quot;,
+    &quot;severity&quot;: &quot;medium&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;9. Term and Survival&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;This Agreement begins on the effective date and continues for two years. Recipient&#x27;s confidentiality obligations continue for three years after each disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.&quot;,
+    &quot;proposed_redline&quot;: &quot;Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-009&quot;,
+    &quot;severity&quot;: &quot;medium&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;10. No License; Ownership&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;All Confidential Information remains the property of Discloser. No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.&quot;,
+    &quot;proposed_redline&quot;: &quot;No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-010&quot;,
+    &quot;severity&quot;: &quot;medium&quot;
+  },
+  {
+    &quot;clause_ref&quot;: &quot;11. Equitable Relief&quot;,
+    &quot;doc_id&quot;: &quot;DOC-01&quot;,
+    &quot;exact_quote&quot;: &quot;Recipient acknowledges that unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages may be inadequate, and Discloser may seek equitable relief without limiting any other available remedy.&quot;,
+    &quot;proposed_redline&quot;: &quot;Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies.&quot;,
+    &quot;rationale&quot;: &quot;Lexical hint matched by grep baseline.&quot;,
+    &quot;rule_id&quot;: &quot;R-011&quot;,
+    &quot;severity&quot;: &quot;low&quot;
+  }
+]</pre>
+<h2>Escalations</h2>
+<pre class='json'>[]</pre>
+</body></html>

@@ -29,8 +29,9 @@ episode loop, deterministic scoring, and a legitimacy harness.
    never as the primary reward source.
 5. **Harness isolation.** Agent rollouts run through the lab's own serving/eval
    scripts only — never through Claude Code's or Codex's harness. Judge
-   tiebreaks are post-hoc scoring of static transcripts (subscription
-   `claude -p`, invoked by eval scripts after the episode ends) — never inside
+   tiebreaks are post-hoc scoring of static transcripts (DeepSeek v4 Pro via
+   scoring/judge_deepseek.py; switched from sonnet-on-subscription 2026-07-06
+   when the Claude monthly cap hit — sonnet adapter retained) — never inside
    a live episode. Codex builds code; it does not execute experiments.
 6. **Observability from hour one.** Every episode logs full transcript +
    per-channel reward breakdown. No composite score without its decomposition.
@@ -263,8 +264,9 @@ wrapper deferred to Phase 4.
 4. Baseline serving lane: GLM-5.2 (token-plan lane). All §8 baselines on the
    same lane; never compare scores across lanes; cost measured on 10 episodes
    before scaling.
-5. Judge tiebreaks (channel 4, V11): Sonnet via subscription ONLY — headless
-   `claude -p` invoked by eval scripts, post-hoc on static transcripts. No
-   Anthropic API keys anywhere. Never inside a live episode (invariant 5).
+5. Judge tiebreaks (channel 4, V11): DeepSeek v4 Pro (DEEPSEEK_API_KEY from
+   Keychain at launch), post-hoc on static transcripts — switched from
+   sonnet-on-subscription 2026-07-06 (Claude monthly cap hit; Aaron's call).
+   No Anthropic API keys anywhere. Never inside a live episode (invariant 5).
 6. Aaron signs verification reports (~15 min/task).
 7. Repo home: labs1/redline-gym (git-inited; commits only on Aaron's say-so).

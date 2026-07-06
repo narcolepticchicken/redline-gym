@@ -1,0 +1,29 @@
+{
+  "channels": {
+    "abstention": 0.0,
+    "conformance": 1.0,
+    "fallback": 0.2,
+    "grounding": 1.0,
+    "precision": 0.33333333333333337,
+    "recall": 0.16666666666666666
+  },
+  "composite": 0.388333,
+  "ended_by": "finalize",
+  "false_flags": 2,
+  "matched_deviation_ids": [
+    "D-001"
+  ],
+  "num_turns": 4,
+  "run_id": "random_flagger-seed2",
+  "seed": 2,
+  "status": "OK",
+  "task_id": "T1-NDA-001",
+  "weights": {
+    "abstention": 0.1,
+    "conformance": 0.1,
+    "fallback": 0.15,
+    "grounding": 0.15,
+    "precision": 0.15,
+    "recall": 0.35
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "channels": {
+    "abstention": 1.0,
+    "conformance": 1.0,
+    "fallback": 0.0,
+    "grounding": 0.0,
+    "precision": 0.0,
+    "recall": 0.0
+  },
+  "composite": 0.2,
+  "ended_by": "finalize",
+  "false_flags": 6,
+  "matched_deviation_ids": [],
+  "num_turns": 11,
+  "run_id": "honest_llm-seed0",
+  "seed": 0,
+  "status": "OK",
+  "task_id": "T1-NDA-001",
+  "weights": {
+    "abstention": 0.1,
+    "conformance": 0.1,
+    "fallback": 0.15,
+    "grounding": 0.15,
+    "precision": 0.15,
+    "recall": 0.35
+  }
+}
