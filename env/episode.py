@@ -76,6 +76,26 @@ class Episode:
         kind = action.get("action")
         self.num_turns += 1
         observation: dict[str, Any]
+        try:
+            observation = self._dispatch(kind, action)
+        except (ValueError, TypeError, KeyError) as exc:
+            # An invalid action must never kill the episode: report it as an
+            # error observation, charge the turn, and let the agent recover.
+            observation = self._base_observation(event="error", error=str(exc))
+
+        if not self.done and self.num_turns >= self.turn_cap:
+            self.done = True
+            self.ended_by = "timeout"
+            observation = self._base_observation(event="timeout", done=True, message="turn cap reached")
+
+        self.last_observation = observation
+        if self.done:
+            self._write_score()
+            observation["score_path"] = str(self.score_path)
+        self._append_transcript(action, observation)
+        return observation
+
+    def _dispatch(self, kind: Any, action: dict[str, Any]) -> dict[str, Any]:
         if kind == "list_docs":
             observation = self._base_observation(event="list_docs")
         elif kind == "read_doc":
@@ -101,17 +121,6 @@ class Episode:
             observation = self._base_observation(event="finalize", done=True, message="episode finalized")
         else:
             observation = self._base_observation(event="error", error=f"unknown action: {kind!r}")
-
-        if not self.done and self.num_turns >= self.turn_cap:
-            self.done = True
-            self.ended_by = "timeout"
-            observation = self._base_observation(event="timeout", done=True, message="turn cap reached")
-
-        self.last_observation = observation
-        if self.done:
-            self._write_score()
-            observation["score_path"] = str(self.score_path)
-        self._append_transcript(action, observation)
         return observation
 
     def _base_observation(
