@@ -19,11 +19,11 @@
       "rule_id": "R-005",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "1",
-        "span": "\"Required Care\" means the care Recipient uses for its own similar information, but in no event less than slight care."
+        "section": "4",
+        "span": "Recipient will protect Confidential Information using the same degree of care that it uses to protect its own confidential information of similar importance."
       },
-      "original_text": "\"Required Care\" means at least reasonable care and no less than the care Recipient uses for its own similar confidential information.",
-      "mutated_text": "\"Required Care\" means the care Recipient uses for its own similar information, but in no event less than slight care.",
+      "original_text": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "mutated_text": "Recipient will protect Confidential Information using the same degree of care that it uses to protect its own confidential information of similar importance.",
       "mechanism": "direct_term_swap",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -34,10 +34,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "2",
-        "span": "Recipient may use Confidential Information for the Purpose or for any internal business purpose related to Recipient's product planning."
+        "span": "Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions."
       },
       "original_text": "Recipient may use Confidential Information solely for the Purpose.",
-      "mutated_text": "Recipient may use Confidential Information for the Purpose or for any internal business purpose related to Recipient's product planning.",
+      "mutated_text": "Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions.",
       "mechanism": "direct_term_swap",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -76,10 +76,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "5",
-        "span": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient may disclose it without prior notice to Discloser and without cooperation in seeking confidential or protective treatment."
+        "span": "If Recipient is required by law, regulation, or legal process to disclose Confidential Information, Recipient may make such disclosure and will, where legally permitted, endeavor to notify Discloser of the disclosure thereafter."
       },
       "original_text": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
-      "mutated_text": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient may disclose it without prior notice to Discloser and without cooperation in seeking confidential or protective treatment.",
+      "mutated_text": "If Recipient is required by law, regulation, or legal process to disclose Confidential Information, Recipient may make such disclosure and will, where legally permitted, endeavor to notify Discloser of the disclosure thereafter.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -103,7 +103,11 @@
     {
       "missing_info_id": "M-001",
       "topic": "Personal data handling instructions",
-      "absent_terms": ["personal data", "privacy law", "data protection"],
+      "absent_terms": [
+        "personal data",
+        "privacy law",
+        "data protection"
+      ],
       "expected_action": "escalate"
     }
   ],

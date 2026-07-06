@@ -1,0 +1,13 @@
+**Score: 9/10 — PASS** (gate ≥8)
+
+The agreement reads as a coherent, professionally drafted mutual NDA. Defined terms ("Discloser," "Recipient," "Confidential Information," "Purpose," "Representatives") are introduced once and used consistently thereafter; clause wording is idiomatic and none of the sections sound mechanically inserted or lexically out of register with the rest of the document.
+
+**Three weakest passages:**
+
+1. **§1 (Confidential Information)** — "Purpose" is defined mid-paragraph inside the Confidential Information clause rather than getting its own clause (or being defined in §2, where it's actually used substantively). Functional, but a more polished draft would separate the definitions.
+
+2. **§5 (Compelled Disclosure)** — "will, where legally permitted, endeavor to notify Discloser of the disclosure thereafter." Using "thereafter" for a notice obligation is internally odd — notice given after the disclosure has already occurred defeats the usual purpose of a compelled-disclosure notice clause (to let the discloser seek protective treatment beforehand). Reads as slightly unnatural/contradictory phrasing rather than a deliberate drafting choice.
+
+3. **§13 (Governing Law; Miscellaneous)** — four distinct boilerplate topics (governing law, amendment, waiver, counterparts/e-signature) are compressed into one unlabeled paragraph, in contrast to the rest of the document's one-topic-per-clause structure. Common in shorter NDAs, but a minor stylistic inconsistency next to the more expansive treatment given to other sections.
+
+None of these rise to the level of "artificial" or broken drafting — they're minor organizational/style quirks, consistent with a real, professionally competent (if not perfectly polished) mutual NDA.

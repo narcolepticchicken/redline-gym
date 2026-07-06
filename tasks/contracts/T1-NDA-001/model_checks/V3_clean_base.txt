@@ -1,0 +1,20 @@
+**PASS: no violations found.**
+
+Checked against all 14 playbook rules:
+
+- **R-001** (CI definition) — §1 covers all non-public info, oral/visual/written/electronic, marked or not. ✅
+- **R-002** (mutual affiliates) — §3: "Each party's controlled affiliates may disclose or receive... each party is responsible for its controlled affiliates' compliance." ✅
+- **R-003** (exclusions) — §6 lists exactly the four standard exclusions (known without restriction, public through no breach, independently developed, third-party without breach). ✅
+- **R-004** (use restriction) — §2 + §1's "Purpose" definition limits use to evaluate/negotiate/perform the contemplated integration. ✅
+- **R-005** (care standard) — §4: reasonable care, no less than own similar info. ✅
+- **R-006** (representatives) — §3: need-to-know only, bound by duties at least as protective. ✅
+- **R-007** (compelled disclosure) — §5: prompt notice + reasonable cooperation, to the extent legally permitted. ✅
+- **R-008** (return/destroy) — §8: promptly upon request, with archival/legal-hold carve-out. ✅
+- **R-009** (survival) — §9: 3-year confidentiality survival, trade secrets protected as long as they qualify. ✅
+- **R-010** (no license) — §10: no license/assignment/ownership granted beyond permitted use. ✅
+- **R-011** (equitable relief) — §11 present; phrased from Discloser/Recipient roles, but since those roles are mutual/reciprocal by definition (§ intro: "Each party may be a 'Discloser'... or 'Recipient'"), this operates mutually in effect. No violation.
+- **R-012** (residual knowledge) — No residual knowledge / retained-memory clause anywhere in the document. Correctly absent. ✅
+- **R-013** (non-solicit) — No non-solicit clause present; per rule, absence is acceptable. ✅
+- **R-014** (governing law) — §13: New York, acceptable per rule. ✅
+
+No deviations from any fallback position detected; contract matches the clean-base expectation.

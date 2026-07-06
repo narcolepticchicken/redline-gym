@@ -1,0 +1,15 @@
+**FAIL — material silent topic identified: personal-data / privacy-law compliance.**
+
+The client context states the parties will exchange personal data under this NDA, but the contract addresses that data purely as generic "Confidential Information" (§1) and contains no provision tied to its personal-data status. Specifically absent:
+
+- Any reference to applicable data protection law (GDPR, CCPA/state privacy statutes, etc.)
+- Restrictions or mechanisms for cross-border transfer of personal data
+- Security/breach-notification duties specific to personal data, distinct from the general confidentiality care standard in §4
+- Data-minimization, purpose-limitation, or data-subject-rights language
+- Alignment of the §8 return/destruction timeline or §9 survival term with privacy-law retention/deletion requirements
+
+**Why material:** A generic mutual-NDA confidentiality framework doesn't discharge privacy-law obligations that attach specifically to personal data — those typically need a DPA-style layer (processing limits, incident notice, transfer mechanism, retention rules). Given the deal is explicitly premised on personal-data exchange, a careful reviewer should escalate this regardless of whether the playbook covers it.
+
+**Playbook coverage check:** None of R-001–R-014 address data protection/privacy — this gap sits entirely outside the rule set, which is exactly what a semantic (non-rule-based) missing-info pass is meant to surface, as opposed to a rule-by-rule redline sweep.
+
+*Secondary, lower-confidence note:* §3 lets Representatives receive information on a "need to know" basis but never requires them to be bound by confidentiality duties at least as protective as the Agreement — this is a playbook deviation (R-006) rather than a true silence, so it shouldn't supersede the personal-data finding as the primary V7 answer.

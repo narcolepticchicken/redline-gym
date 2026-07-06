@@ -4,11 +4,11 @@ This Mutual Confidentiality Agreement is entered into as of July 6, 2026, by and
 
 ## 1. Confidential Information
 
-"Confidential Information" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. "Required Care" means the care Recipient uses for its own similar information, but in no event less than slight care. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
+"Confidential Information" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated data integration between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
 
 ## 2. Purpose and Use
 
-Recipient may use Confidential Information for the Purpose or for any internal business purpose related to Recipient's product planning.
+Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions.
 
 ## 3. Representatives
 
@@ -18,11 +18,11 @@ Each party's controlled affiliates may disclose or receive Confidential Informat
 
 ## 4. Protection Standard
 
-Recipient will protect Confidential Information using the Required Care and will not intentionally disclose it except as permitted by this Agreement.
+Recipient will protect Confidential Information using the same degree of care that it uses to protect its own confidential information of similar importance. Recipient will not intentionally disclose it except as permitted by this Agreement.
 
 ## 5. Compelled Disclosure
 
-If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient may disclose it without prior notice to Discloser and without cooperation in seeking confidential or protective treatment.
+If Recipient is required by law, regulation, or legal process to disclose Confidential Information, Recipient may make such disclosure and will, where legally permitted, endeavor to notify Discloser of the disclosure thereafter.
 
 ## 6. Exclusions
 

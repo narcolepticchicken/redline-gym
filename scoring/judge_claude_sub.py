@@ -9,6 +9,8 @@ from validators.model_checks import ModelCheck
 
 
 ENABLE_ENV = "REDLINE_JUDGE_ENABLED"
+# Judge model is pinned to sonnet (subscription lane) per SPEC §11 decision 5.
+JUDGE_MODEL = os.getenv("REDLINE_JUDGE_MODEL", "sonnet")
 
 
 class ClaudeSubscriptionJudge(ModelCheck):
@@ -40,7 +42,7 @@ class ClaudeSubscriptionJudge(ModelCheck):
         if os.getenv(ENABLE_ENV) != "1":
             raise RuntimeError(f"{ENABLE_ENV}=1 is required before executing claude -p")
         completed = subprocess.run(
-            ["claude", "-p", prompt],
+            ["claude", "-p", "--model", JUDGE_MODEL, prompt],
             check=True,
             text=True,
             capture_output=True,
