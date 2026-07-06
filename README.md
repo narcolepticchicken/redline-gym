@@ -1,0 +1,114 @@
+# Redline Gym
+
+Phase 1 + Phase 2 implementation for the playbook-driven contract review environment
+specified in `SPEC.md`.
+
+## Layout
+
+- `schema/`: JSON Schemas for `task.json`, `documents_manifest.json`,
+  `playbook`, `planted_deviations.json`, `issue_matrix.json`, and `rubric.json`.
+- `validators/`: V1-V11 validator CLI. Programmatic checks run locally;
+  model-backed checks are marked stubbed and raise behind `ModelCheck`.
+- `scoring/`: Seven-channel scoring core with default weights and mandatory
+  channel decomposition.
+- `tasks/contracts/T1-NDA-001/`: Hand-assembled smoke-test NDA instance.
+- `playbooks/contracts/PB-NDA-001.json`: Draft human-review playbook with
+  exactly two canary rules and zero planted deviations for those canaries.
+- `scripts/derive.py`: One-way derivation for `issue_matrix.json` and
+  `rubric.json` from planted deviations plus playbook.
+- `env/`: Gym-like episode loop with manifest-gated document actions.
+- `baselines/`: Null, random, grep, honest GLM, and cheater GLM runners.
+- `report/`: Static offline HTML renderer for episode and run summaries.
+
+## Commands
+
+```bash
+python3 scripts/derive.py tasks/contracts/T1-NDA-001
+python3 -m validators tasks/contracts/T1-NDA-001
+python3 -m pytest -q
+python3 -m validators.model_checks v11-realism
+```
+
+The `validators.model_checks` command reads `REDLINE_GYM_MODEL_PROVIDER`,
+`REDLINE_GYM_MODEL`, and `REDLINE_GYM_MODEL_ENDPOINT` from the environment but
+always raises `NotImplementedError` in Phase 1.
+
+## Phase 2 Commands
+
+Run a baseline episode:
+
+```bash
+python3 -m baselines.null_agent --task tasks/contracts/T1-NDA-001 --seed 0
+python3 -m baselines.random_flagger --task tasks/contracts/T1-NDA-001 --seed 0
+python3 -m baselines.grep_bot --task tasks/contracts/T1-NDA-001 --seed 0
+```
+
+Run a custom scripted episode from Python:
+
+```python
+from env import Episode
+
+episode = Episode("tasks/contracts/T1-NDA-001", seed=0, run_dir="runs/manual-smoke")
+observation = episode.reset()
+observation = episode.step({"action": "list_docs"})
+observation = episode.step({"action": "finalize", "card": {"summary": "Done.", "issues": [], "escalations": []}})
+```
+
+Render reports:
+
+```bash
+python3 -m report --run runs/null_agent-seed0
+python3 -m report --run runs/null_agent-seed0/T1-NDA-001
+```
+
+GLM-backed baselines are gated. They exit before any network call unless
+`GLM_API_KEY` is set:
+
+```bash
+python3 -m baselines.honest_llm --task tasks/contracts/T1-NDA-001 --seed 0
+python3 -m baselines.cheater_llm --task tasks/contracts/T1-NDA-001 --seed 0
+```
+
+The Claude subscription judge adapter is post-hoc only. Dry-run prints prompts;
+real `claude -p` execution requires `REDLINE_JUDGE_ENABLED=1`:
+
+```bash
+python3 -m scoring.judge_claude_sub fallback --proposed "..." --expected "..." --dry-run
+```
+
+## Phase 1 Status
+
+| Area | Status |
+|---|---|
+| Schemas | Implemented |
+| Derived `issue_matrix.json` | Implemented via `scripts/derive.py` |
+| Derived `rubric.json` | Implemented via `scripts/derive.py` |
+| V1 rubric citations | Implemented |
+| V2 mutation anti-drift | Implemented |
+| V3 clean-base judge pass | Stubbed behind `ModelCheck` |
+| V4 round-trip extractor | Stubbed behind `ModelCheck` |
+| V5 issue/deviation mapping | Implemented |
+| V6 distractor rule scan | Implemented |
+| V7 string-search absence check | Implemented |
+| V7 semantic absence check | Stubbed behind `ModelCheck` |
+| V8 schemas, instruction length, hashes | Implemented |
+| V9 canary emptiness | Implemented |
+| V10 tranche leakage stats | Implemented |
+| V11 realism judge | Stubbed behind `ModelCheck` |
+| Scoring channels 1-7 | Implemented; channel 4 judge tiebreak stubbed |
+| Env wrapper | Phase 2 implemented |
+| Baselines | Phase 2 implemented |
+| Report renderer | Phase 2 implemented |
+
+## Phase 2 Status
+
+| Deliverable | Status | Notes |
+|---|---|---|
+| `env/` episode loop | Implemented | `reset()`/`step()` actions, JSONL transcript, manifest-only doc access, timeout scoring |
+| Playbook redaction | Implemented | Agent observations expose only `rule_id`, `position`, `fallback`, `severity` |
+| Local baselines | Implemented | `null_agent`, `random_flagger`, and `grep_bot` write runs and print score summaries |
+| GLM baselines | Implemented and gated | `honest_llm` and `cheater_llm` require `GLM_API_KEY`; no import-time network calls |
+| Static reports | Implemented | Per-episode `report.html` and run-level `index.html`, inline CSS only |
+| Claude judge adapter | Implemented and gated | Dry-run prompt tests; real subprocess requires `REDLINE_JUDGE_ENABLED=1` |
+| Validator sign-off preservation | Implemented | Signed status line and `Human sign-off:` block survive regeneration |
+| Phase 2 tests | Implemented | Episode, timeout, redaction, deterministic baseline, report smoke, sign-off, judge dry-run |

@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/playbook.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["header", "playbook_id", "practice_area", "title", "rules"],
+  "properties": {
+    "header": {
+      "const": "DRAFT-FOR-HUMAN-REVIEW"
+    },
+    "playbook_id": {
+      "type": "string",
+      "pattern": "^PB-[A-Z]+-[0-9]{3}$"
+    },
+    "practice_area": {
+      "type": "string",
+      "minLength": 1
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "rule_id",
+          "position",
+          "fallback",
+          "severity",
+          "escalation_trigger",
+          "is_canary"
+        ],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "pattern": "^R-[0-9]{3}$"
+          },
+          "position": {
+            "type": "string",
+            "minLength": 1
+          },
+          "fallback": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "critical"]
+          },
+          "escalation_trigger": {
+            "type": "string",
+            "minLength": 1
+          },
+          "is_canary": {
+            "type": "boolean"
+          },
+          "deterministic_checks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "must_not_contain": {
+                "type": "array",
+                "items": {"type": "string"}
+              },
+              "missing_info_terms": {
+                "type": "array",
+                "items": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

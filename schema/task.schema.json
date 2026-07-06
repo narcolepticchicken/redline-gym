@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/task.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "task_id",
+    "practice_area",
+    "client_context",
+    "instruction",
+    "deliverable",
+    "turn_cap",
+    "difficulty_tier",
+    "playbook_ref"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^T[1-3]-[A-Z]+-[0-9]{3}$"
+    },
+    "practice_area": {
+      "type": "string",
+      "minLength": 1
+    },
+    "client_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "instruction": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "deliverable": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["card_schema_id"],
+      "properties": {
+        "card_schema_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "turn_cap": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "difficulty_tier": {
+      "type": "string",
+      "enum": ["T1", "T2", "T3"]
+    },
+    "playbook_ref": {
+      "type": "string",
+      "pattern": "^playbooks/[a-z_]+/PB-[A-Z]+-[0-9]{3}\\.json$"
+    }
+  }
+}

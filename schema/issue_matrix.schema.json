@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/issue_matrix.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["issues", "missing_info", "distractors"],
+  "properties": {
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["issue_id", "deviation_ids", "rule_id", "doc_ids", "severity", "expected_action"],
+        "properties": {
+          "issue_id": {"type": "string", "pattern": "^I-[0-9]{3}$"},
+          "deviation_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^D-[0-9]{3}$"}
+          },
+          "rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"},
+          "doc_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^DOC-[0-9]{2}$"}
+          },
+          "severity": {"type": "string", "enum": ["low", "medium", "high", "critical"]},
+          "expected_action": {
+            "type": "string",
+            "enum": ["redline_with_fallback", "flag_only", "escalate"]
+          }
+        }
+      }
+    },
+    "missing_info": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["missing_info_id", "topic", "absent_terms", "expected_action"],
+        "properties": {
+          "missing_info_id": {"type": "string", "pattern": "^M-[0-9]{3}$"},
+          "topic": {"type": "string", "minLength": 1},
+          "absent_terms": {
+            "type": "array",
+            "items": {"type": "string", "minLength": 1}
+          },
+          "expected_action": {"const": "escalate"}
+        }
+      }
+    },
+    "distractors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["distractor_id", "doc_id", "span", "why_benign"],
+        "properties": {
+          "distractor_id": {"type": "string", "pattern": "^X-[0-9]{3}$"},
+          "doc_id": {"type": "string", "pattern": "^DOC-[0-9]{2}$"},
+          "span": {"type": "string", "minLength": 1},
+          "why_benign": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

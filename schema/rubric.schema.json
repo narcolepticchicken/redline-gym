@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/rubric.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["card_schema_id", "weights", "criteria"],
+  "properties": {
+    "card_schema_id": {"type": "string", "minLength": 1},
+    "weights": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["recall", "precision", "grounding", "fallback", "conformance", "abstention"],
+      "properties": {
+        "recall": {"const": 0.35},
+        "precision": {"const": 0.15},
+        "grounding": {"const": 0.15},
+        "fallback": {"const": 0.15},
+        "conformance": {"const": 0.1},
+        "abstention": {"const": 0.1}
+      }
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["criterion_id", "issue_id", "deviation_ids", "doc_ids", "rule_id", "points"],
+        "properties": {
+          "criterion_id": {"type": "string", "pattern": "^C-[0-9]{3}$"},
+          "issue_id": {"type": "string", "pattern": "^I-[0-9]{3}$"},
+          "deviation_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^D-[0-9]{3}$"}
+          },
+          "doc_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "pattern": "^DOC-[0-9]{2}$"}
+          },
+          "rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"},
+          "points": {"type": "number", "exclusiveMinimum": 0}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "task_id": "T1-NDA-001",
+  "practice_area": "contracts",
+  "client_context": "Client is evaluating a strategic data integration with a potential vendor. The parties will exchange personal data under this NDA, and the client wants a balanced mutual NDA reviewed against the NDA playbook.",
+  "instruction": "Review the mutual NDA against the playbook. Flag deviations, quote the clause, propose fallback text when required, and escalate missing information.",
+  "deliverable": {
+    "card_schema_id": "redline-gym.issue-card.v1"
+  },
+  "turn_cap": 25,
+  "difficulty_tier": "T1",
+  "playbook_ref": "playbooks/contracts/PB-NDA-001.json"
+}
