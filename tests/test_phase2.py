@@ -71,6 +71,12 @@ def test_playbook_and_tool_observations_redact_answer_keys(tmp_path: Path) -> No
         episode.step({"action": "list_docs"}),
         episode.step({"action": "read_doc", "doc_id": "DOC-01", "start": 1, "end": 8}),
     ]
+    action_spec = observations[0]["action_spec"]
+    assert action_spec["flag_issue"]["required"] == ["rule_id", "doc_id", "clause_ref", "exact_quote"]
+    assert action_spec["flag_issue"]["optional"] == ["severity", "proposed_redline", "rationale"]
+    assert action_spec["read_doc"] == {"required": ["doc_id"], "optional": ["start", "end"]}
+    assert action_spec["escalate"] == {"required": ["topic", "reason"], "optional": []}
+    assert action_spec["finalize"] == {"required": ["card"], "optional": []}
     payload = json.dumps(observations, sort_keys=True)
     banned = [
         "is_canary",

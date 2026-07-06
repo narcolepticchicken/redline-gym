@@ -28,6 +28,25 @@ def test_malformed_params_return_error_observation(tmp_path):
     assert obs["done"] is False
 
 
+def test_flag_issue_missing_exact_quote_returns_error_observation(tmp_path):
+    ep = _episode(tmp_path)
+    obs = ep.step(
+        {
+            "action": "flag_issue",
+            "rule_id": "R-001",
+            "doc_id": "DOC-01",
+            "clause_ref": "Section 1",
+        }
+    )
+    assert obs["event"] == "error"
+    assert obs["error"] == "flag_issue missing required fields: exact_quote"
+    assert obs["done"] is False
+
+    obs = ep.step({"action": "list_docs"})
+    assert obs["event"] == "list_docs"
+    assert obs["turn"] == 2
+
+
 def test_episode_recovers_after_error(tmp_path):
     ep = _episode(tmp_path)
     ep.step({"action": "read_doc", "doc_id": "nope"})

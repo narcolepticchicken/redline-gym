@@ -16,6 +16,7 @@ DEFAULT_WEIGHTS = {
     "conformance": 0.10,
     "abstention": 0.10,
 }
+MIN_QUOTE_OVERLAP = 20
 
 
 def score_episode(
@@ -94,11 +95,21 @@ def _match_flag(flag: dict[str, Any], deviations: list[dict[str, Any]]) -> dict[
     for dev in deviations:
         if flag.get("rule_id") != dev["rule_id"] or flag.get("doc_id") != dev["doc_id"]:
             continue
-        clause_ref = str(flag.get("clause_ref", ""))
-        quote = flag.get("exact_quote", "")
-        if dev["clause_anchor"]["section"] in clause_ref or quote in dev["clause_anchor"]["span"]:
+        if _has_quote_overlap(str(flag.get("exact_quote", "")), str(dev.get("mutated_text", ""))):
             return dev
     return None
+
+
+def _has_quote_overlap(quote: str, mutated_text: str) -> bool:
+    normalized_quote = _normalize_for_overlap(quote)
+    normalized_mutated = _normalize_for_overlap(mutated_text)
+    if len(normalized_quote) < MIN_QUOTE_OVERLAP or len(normalized_mutated) < MIN_QUOTE_OVERLAP:
+        return False
+    return normalized_quote in normalized_mutated or normalized_mutated in normalized_quote
+
+
+def _normalize_for_overlap(text: str) -> str:
+    return re.sub(r"\s+", " ", text.casefold()).strip()
 
 
 def _quote_grounded(flag: dict[str, Any], docs: dict[str, str]) -> bool:

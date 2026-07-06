@@ -56,9 +56,33 @@ def test_single_correct_flag_gets_precision_grounding_and_fallback_credit() -> N
     )
 
     assert result["false_flags"] == 0
+    assert result["matched_deviation_ids"] == ["D-001"]
     assert result["channels"]["precision"] > 0.0
     assert result["channels"]["grounding"] > 0.0
     assert result["channels"]["fallback"] > 0.0
+
+
+def test_correct_ids_with_unrelated_grounded_quote_is_false_flag() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[
+            {
+                "rule_id": "R-001",
+                "doc_id": "DOC-01",
+                "clause_ref": "Section 13",
+                "exact_quote": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules.",
+                "severity": "high",
+                "proposed_redline": "Confidential Information means all non-public information disclosed by or on behalf of a party, whether before or after the effective date, in any form or medium and whether or not marked confidential.",
+            }
+        ],
+        card={"summary": "Wrong quote", "issues": [], "escalations": []},
+    )
+
+    assert result["matched_deviation_ids"] == []
+    assert result["false_flags"] == 1
+    assert result["channels"]["recall"] == 0.0
+    assert result["channels"]["precision"] == 0.0
+    assert result["channels"]["grounding"] > 0.0
 
 
 def test_governing_law_span_with_non_canary_rule_is_false_flag_not_gamed() -> None:
@@ -105,7 +129,8 @@ def test_grounding_exact_quote_mismatch_scores_zero_grounding() -> None:
         card={"summary": "One issue", "issues": [], "escalations": []},
     )
     assert result["channels"]["grounding"] == 0.0
-    assert result["channels"]["recall"] > 0.0
+    assert result["channels"]["recall"] == 0.0
+    assert result["false_flags"] == 1
 
 
 def test_precision_false_flag_math() -> None:

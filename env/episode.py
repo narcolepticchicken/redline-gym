@@ -156,6 +156,17 @@ class Episode:
                 }
                 for rule in self.playbook["rules"]
             ],
+            "action_spec": {
+                "list_docs": {"required": [], "optional": []},
+                "read_doc": {"required": ["doc_id"], "optional": ["start", "end"]},
+                "search": {"required": ["query"], "optional": []},
+                "flag_issue": {
+                    "required": ["rule_id", "doc_id", "clause_ref", "exact_quote"],
+                    "optional": ["severity", "proposed_redline", "rationale"],
+                },
+                "escalate": {"required": ["topic", "reason"], "optional": []},
+                "finalize": {"required": ["card"], "optional": []},
+            },
         }
         if message:
             observation["message"] = message
@@ -208,6 +219,10 @@ class Episode:
         return observation
 
     def _flag_from_action(self, action: dict[str, Any]) -> dict[str, Any]:
+        required = ["rule_id", "doc_id", "clause_ref", "exact_quote"]
+        missing = [field for field in required if not str(action.get(field, "")).strip()]
+        if missing:
+            raise ValueError(f"flag_issue missing required fields: {', '.join(missing)}")
         return {
             "rule_id": str(action.get("rule_id", "")),
             "doc_id": str(action.get("doc_id", "")),

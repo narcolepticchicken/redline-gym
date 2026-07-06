@@ -37,7 +37,10 @@ def run_llm_baseline(name: str, system_prompt: str, argv: list[str] | None = Non
                 "role": "user",
                 "content": (
                     "Return exactly one JSON action object for this Redline Gym observation. "
-                    "Allowed actions: list_docs, read_doc, search, flag_issue, escalate, finalize.\n\n"
+                    "Allowed actions: list_docs, read_doc, search, flag_issue, escalate, finalize. "
+                    "flag_issue requires rule_id, doc_id, clause_ref, and exact_quote "
+                    "(verbatim text copied from the document); include proposed_redline "
+                    "when the playbook prescribes an edit.\n\n"
                     + json.dumps(observation, sort_keys=True)
                 ),
             }
