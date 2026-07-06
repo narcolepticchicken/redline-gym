@@ -5,6 +5,8 @@ from pathlib import Path
 import re
 from typing import Any
 
+from jsonschema import Draft202012Validator
+
 from validators.model_checks import ModelCheck
 
 
@@ -17,6 +19,9 @@ DEFAULT_WEIGHTS = {
     "abstention": 0.10,
 }
 MIN_QUOTE_OVERLAP = 20
+ROOT = Path(__file__).resolve().parents[1]
+CARD_SCHEMA = json.loads((ROOT / "schema/card.schema.json").read_text())
+CARD_VALIDATOR = Draft202012Validator(CARD_SCHEMA)
 
 
 def score_episode(
@@ -77,11 +82,10 @@ def score_episode(
 
 def _artifacts(task_dir: Path) -> dict[str, Any]:
     task = json.loads((task_dir / "task.json").read_text())
-    root = Path(__file__).resolve().parents[1]
     return {
         "task": task,
         "manifest": json.loads((task_dir / "documents_manifest.json").read_text()),
-        "playbook": json.loads((root / task["playbook_ref"]).read_text()),
+        "playbook": json.loads((ROOT / task["playbook_ref"]).read_text()),
         "planted": json.loads((task_dir / "planted_deviations.json").read_text()),
         "issue_matrix": json.loads((task_dir / "issue_matrix.json").read_text()),
     }
@@ -157,12 +161,7 @@ def _fallback_score(
 def _card_conformance(card: dict[str, Any] | None) -> float:
     if not isinstance(card, dict):
         return 0.0
-    checks = [
-        isinstance(card.get("issues"), list),
-        isinstance(card.get("escalations"), list),
-        isinstance(card.get("summary"), str) and bool(card.get("summary", "").strip()),
-    ]
-    return 1.0 if all(checks) else 0.0
+    return 0.0 if list(CARD_VALIDATOR.iter_errors(card)) else 1.0
 
 
 def _abstention_score(missing_info: list[dict[str, Any]], escalations: list[dict[str, Any]]) -> float:

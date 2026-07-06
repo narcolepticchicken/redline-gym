@@ -165,7 +165,15 @@ class Episode:
                     "optional": ["severity", "proposed_redline", "rationale"],
                 },
                 "escalate": {"required": ["topic", "reason"], "optional": []},
-                "finalize": {"required": ["card"], "optional": []},
+                "finalize": {
+                    "required": ["card"],
+                    "optional": [],
+                    "card_shape": {
+                        "issues": "[{rule_id, doc_id, clause_ref, exact_quote, proposed_redline?}]",
+                        "escalations": "[{topic, reason}]",
+                        "summary": "string",
+                    },
+                },
             },
         }
         if message:

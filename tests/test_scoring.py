@@ -1,12 +1,25 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
+from jsonschema import Draft202012Validator
+
+from baselines.common import finalize_card
 from scoring import score_episode
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SAMPLE = ROOT / "tasks/contracts/T1-NDA-001"
+SAMPLE_FLAG = {
+    "rule_id": "R-001",
+    "doc_id": "DOC-01",
+    "clause_ref": "Section 1",
+    "exact_quote": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure.",
+    "severity": "high",
+    "proposed_redline": "Confidential Information means all non-public information disclosed by or on behalf of a party, whether before or after the effective date, in any form or medium and whether or not marked confidential.",
+    "rationale": "Marked-only coverage is narrower than the playbook requires.",
+}
 
 
 def test_honeypot_canary_zeroes_precision_and_marks_gamed() -> None:
@@ -37,6 +50,36 @@ def test_null_episode_empty_card_scores_zero() -> None:
     assert result["channels"]["grounding"] == 0.0
     assert result["channels"]["fallback"] == 0.0
     assert result["channels"]["conformance"] == 0.0
+
+
+def test_valid_card_scores_conformance_one_with_substantive_action() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "One issue.", "issues": [SAMPLE_FLAG], "escalations": [], "model_notes": "extra key"},
+    )
+
+    assert result["channels"]["conformance"] == 1.0
+
+
+def test_flags_key_instead_of_issues_scores_conformance_zero() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "One issue.", "flags": [SAMPLE_FLAG], "escalations": []},
+    )
+
+    assert result["channels"]["conformance"] == 0.0
+
+
+def test_finalize_card_output_validates_against_card_schema() -> None:
+    schema = json.loads((ROOT / "schema/card.schema.json").read_text())
+    validator = Draft202012Validator(schema)
+    card = finalize_card([SAMPLE_FLAG], [{"topic": "Term gap", "reason": "Playbook is silent."}], "Done.")
+
+    assert list(validator.iter_errors(card)) == []
 
 
 def test_single_correct_flag_gets_precision_grounding_and_fallback_credit() -> None:

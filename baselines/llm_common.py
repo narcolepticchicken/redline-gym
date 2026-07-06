@@ -40,7 +40,9 @@ def run_llm_baseline(name: str, system_prompt: str, argv: list[str] | None = Non
                     "Allowed actions: list_docs, read_doc, search, flag_issue, escalate, finalize. "
                     "flag_issue requires rule_id, doc_id, clause_ref, and exact_quote "
                     "(verbatim text copied from the document); include proposed_redline "
-                    "when the playbook prescribes an edit.\n\n"
+                    "when the playbook prescribes an edit. finalize requires card shaped as "
+                    "{issues: [{rule_id, doc_id, clause_ref, exact_quote, proposed_redline?}], "
+                    "escalations: [{topic, reason}], summary: string}.\n\n"
                     + json.dumps(observation, sort_keys=True)
                 ),
             }

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/card.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["issues", "escalations", "summary"],
+  "properties": {
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["rule_id", "doc_id", "clause_ref", "exact_quote"],
+        "properties": {
+          "rule_id": {"type": "string"},
+          "doc_id": {"type": "string"},
+          "clause_ref": {"type": "string"},
+          "exact_quote": {"type": "string"},
+          "severity": {"type": "string"},
+          "proposed_redline": {"type": "string"},
+          "rationale": {"type": "string"}
+        }
+      }
+    },
+    "escalations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "reason"],
+        "properties": {
+          "topic": {"type": "string"},
+          "reason": {"type": "string"}
+        }
+      }
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  }
+}

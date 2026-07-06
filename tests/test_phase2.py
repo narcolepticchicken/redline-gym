@@ -76,7 +76,13 @@ def test_playbook_and_tool_observations_redact_answer_keys(tmp_path: Path) -> No
     assert action_spec["flag_issue"]["optional"] == ["severity", "proposed_redline", "rationale"]
     assert action_spec["read_doc"] == {"required": ["doc_id"], "optional": ["start", "end"]}
     assert action_spec["escalate"] == {"required": ["topic", "reason"], "optional": []}
-    assert action_spec["finalize"] == {"required": ["card"], "optional": []}
+    assert action_spec["finalize"]["required"] == ["card"]
+    assert action_spec["finalize"]["optional"] == []
+    assert action_spec["finalize"]["card_shape"] == {
+        "issues": "[{rule_id, doc_id, clause_ref, exact_quote, proposed_redline?}]",
+        "escalations": "[{topic, reason}]",
+        "summary": "string",
+    }
     payload = json.dumps(observations, sort_keys=True)
     banned = [
         "is_canary",
