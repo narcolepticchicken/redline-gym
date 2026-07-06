@@ -14,6 +14,27 @@ episode loop, deterministic scoring, and a legitimacy harness.
 
 ---
 
+## 0. The anchor — definition of done (set 2026-07-06)
+
+**Goal: an environment whose scores a skeptical lawyer can verify without
+trusting us.** Work that doesn't advance one of these five conditions is drift:
+
+1. **A stranger can run it** — clone, one command, same published gate table.
+2. **A distribution, not a demo** — ≥35 generated instances across 7 practice
+   areas, untouched held-out split, full validator stack + sampled human
+   sign-off on every instance.
+3. **It measures reading, not grepping** — on held-out instances: null ≈ 0,
+   grep-bot ≤ 60% of honest, cheater < honest, stronger model outranks weaker.
+4. **Every point is auditable** — composite → channels → specific document
+   spans a lawyer can confirm by eye in the graded-redline report.
+5. **Assurance is evidence** — per release: gate table, ≥2 independent
+   attorneys' agreement rate on a sample, known limits stated plainly.
+
+Anti-goals: demo impressiveness, hub applause, instance count, training lift,
+speed. A number either passed the gates or it is void — nothing "preliminary".
+
+---
+
 ## 1. Design invariants (non-negotiable)
 
 1. **Ground truth is a byproduct of generation, never a post-hoc annotation.**
