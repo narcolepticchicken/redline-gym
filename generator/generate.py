@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import random
+import re
 import shutil
 import subprocess
 import sys
@@ -61,7 +62,7 @@ def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) 
     for attempt_index in range(attempts):
         attempt_seed = seed + attempt_index * GREP_GATE_SEED_STEP
         try:
-            deviations, grep_result = _generate_candidate(
+            deviations, grep_result, coherence_detail = _generate_candidate(
                 playbook_path=playbook_path,
                 playbook=playbook,
                 base=base,
@@ -84,6 +85,7 @@ def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) 
         return [
             f"Generated {task_id} at {out_dir.relative_to(ROOT)}",
             *grep_logs,
+            f"Coherence: {coherence_detail}",
             f"Deviations: {', '.join(d['deviation_id'] + ':' + d['rule_id'] + '/' + d['mechanism'] for d in deviations)}",
             f"Validators: PASS with model-backed checks marked STUBBED where applicable",
         ]
@@ -106,12 +108,12 @@ def _generate_candidate(
     seed: int,
     attempt_seed: int,
     out_dir: Path,
-) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+) -> tuple[list[dict[str, Any]], dict[str, Any], str]:
     rng = random.Random(attempt_seed)
     playbook_id = playbook["playbook_id"]
     params = _surface_params(base, rng, seed)
     task_id = _task_id(playbook_id, tier, seed)
-    doc_text = _render_base(base, params, rng)
+    doc_text, section_map = _render_base(base, params, rng)
     selected = _select_recipes(recipe_entries, tier, rng)
 
     if out_dir.exists():
@@ -128,7 +130,7 @@ def _generate_candidate(
             f"task_id={task_id}",
         ]
         for index, recipe in enumerate(selected, start=1):
-            rendered = _render_recipe(recipe, params, rng)
+            rendered = _render_recipe(recipe, params, rng, section_map)
             original = rendered["original_text"]
             mutated = rendered["mutated_text"]
             if original not in doc_text:
@@ -139,7 +141,7 @@ def _generate_candidate(
                 "rule_id": recipe["rule_id"],
                 "doc_id": "DOC-01",
                 "clause_anchor": {
-                    "section": str(recipe["section"]),
+                    "section": section_map[str(recipe["section"])],
                     "span": mutated,
                 },
                 "original_text": original,
@@ -152,6 +154,9 @@ def _generate_candidate(
             generation_log.append(
                 f"{deviation['deviation_id']} {recipe['recipe_id']} {recipe['mechanism']} applied to {recipe['rule_id']}"
             )
+
+        coherence_detail = _validate_document_coherence(doc_text, deviations)
+        generation_log.append(f"coherence_check {coherence_detail}")
 
         doc_path = out_dir / "docs" / base["filename"]
         doc_path.write_text(doc_text)
@@ -205,7 +210,7 @@ def _generate_candidate(
             raise GenerationError(f"validator failure: {detail}")
 
         grep_result = measure_grep_bot_recall(out_dir)
-        _append_grep_report(out_dir, tier, grep_result)
+        _append_grep_report(out_dir, tier, grep_result, coherence_detail)
         if tier == "T2" and grep_result["recall"] > T2_GREP_RECALL_MAX:
             raise GrepGateError(grep_result["recall"], grep_result["matched_rule_ids"])
     except Exception:
@@ -213,7 +218,7 @@ def _generate_candidate(
             shutil.rmtree(out_dir)
         raise
 
-    return deviations, grep_result
+    return deviations, grep_result, coherence_detail
 
 
 def measure_grep_bot_recall(task_dir: Path) -> dict[str, Any]:
@@ -234,7 +239,12 @@ def measure_grep_bot_recall(task_dir: Path) -> dict[str, Any]:
     }
 
 
-def _append_grep_report(task_dir: Path, tier: str, grep_result: dict[str, Any]) -> None:
+def _append_grep_report(
+    task_dir: Path,
+    tier: str,
+    grep_result: dict[str, Any],
+    coherence_detail: str,
+) -> None:
     path = task_dir / "verification_report.md"
     text = path.read_text()
     gate = "unconstrained" if tier == "T1" else f"<= {T2_GREP_RECALL_MAX:.1f}"
@@ -245,6 +255,7 @@ def _append_grep_report(task_dir: Path, tier: str, grep_result: dict[str, Any]) 
         f"- tier threshold: {gate}",
         f"- matched deviation ids: {', '.join(grep_result['matched_deviation_ids']) or 'none'}",
         f"- matched rule ids: {', '.join(grep_result['matched_rule_ids']) or 'none'}",
+        f"- coherence check: {coherence_detail}",
         "",
     ]
     marker = "Human sign-off:"
@@ -279,17 +290,18 @@ def _surface_params(base: dict[str, Any], rng: random.Random, seed: int) -> dict
     return params
 
 
-def _render_base(base: dict[str, Any], params: dict[str, str], rng: random.Random) -> str:
+def _render_base(base: dict[str, Any], params: dict[str, str], rng: random.Random) -> tuple[str, dict[str, str]]:
     sections = {section["id"]: section for section in base["sections"]}
     order = rng.choice(base["section_order_variants"])
+    section_map = {section_id: str(index) for index, section_id in enumerate(order, start=1)}
     lines = [_render(base["heading_template"], params), "", _render(base["preamble_template"], params), ""]
     for section_id in order:
         section = sections[section_id]
-        lines.append(f"## {section['id']}. {_render(section['heading'], params)}")
+        lines.append(f"## {section_map[section_id]}. {_render(section['heading'], params)}")
         lines.append("")
-        lines.extend(_render(paragraph, params) for paragraph in section["paragraphs"])
+        lines.extend(_rewrite_section_refs(_render(paragraph, params), section_map) for paragraph in section["paragraphs"])
         lines.append("")
-    return "\n".join(lines).rstrip() + "\n"
+    return "\n".join(lines).rstrip() + "\n", section_map
 
 
 def _select_recipes(entries: list[dict[str, Any]], tier: str, rng: random.Random) -> list[dict[str, Any]]:
@@ -312,14 +324,19 @@ def _select_recipes(entries: list[dict[str, Any]], tier: str, rng: random.Random
     return selected
 
 
-def _render_recipe(recipe: dict[str, Any], params: dict[str, str], rng: random.Random) -> dict[str, str]:
+def _render_recipe(
+    recipe: dict[str, Any],
+    params: dict[str, str],
+    rng: random.Random,
+    section_map: dict[str, str],
+) -> dict[str, str]:
     scoped = dict(params)
     for key, values in recipe.get("slots", {}).items():
         scoped[key] = str(rng.choice(values))
     templates = recipe["templates"]
     return {
-        "original_text": _render(templates["original_text"], scoped),
-        "mutated_text": _render(templates["mutated_text"], scoped),
+        "original_text": _rewrite_section_refs(_render(templates["original_text"], scoped), section_map),
+        "mutated_text": _rewrite_section_refs(_render(templates["mutated_text"], scoped), section_map),
     }
 
 
@@ -346,6 +363,44 @@ def _render(template: str, params: dict[str, str]) -> str:
     if missing:
         raise GenerationError(f"missing template params: {', '.join(missing)}")
     return template.format(**params)
+
+
+def _rewrite_section_refs(text: str, section_map: dict[str, str]) -> str:
+    def replace(match: re.Match[str]) -> str:
+        source_section = match.group(1)
+        if source_section not in section_map:
+            raise GenerationError(f"cross-reference points to missing source section {source_section}")
+        return f"Section {section_map[source_section]}"
+
+    return re.sub(r"\bSection\s+([0-9]+)\b", replace, text)
+
+
+def _validate_document_coherence(doc_text: str, deviations: list[dict[str, Any]]) -> str:
+    section_numbers = [int(match.group(1)) for match in re.finditer(r"^##\s+([0-9]+)\.", doc_text, re.MULTILINE)]
+    expected = list(range(1, len(section_numbers) + 1))
+    if section_numbers != expected:
+        raise GenerationError(f"section numbering not sequential: found {section_numbers}, expected {expected}")
+
+    section_ids = {str(number) for number in section_numbers}
+    unresolved = sorted(
+        {
+            match.group(1)
+            for match in re.finditer(r"\bSection\s+([0-9]+)\b", doc_text)
+            if match.group(1) not in section_ids
+        },
+        key=int,
+    )
+    if unresolved:
+        raise GenerationError(f"unresolved section cross-references: {', '.join(unresolved)}")
+
+    missing_anchors = [
+        f"{dev['deviation_id']}->{dev['clause_anchor']['section']}"
+        for dev in deviations
+        if dev["clause_anchor"]["section"] not in section_ids
+    ]
+    if missing_anchors:
+        raise GenerationError(f"deviation anchors point to missing sections: {', '.join(missing_anchors)}")
+    return f"PASS sections={len(section_numbers)} cross_refs_resolved=yes anchors_resolved=yes"
 
 
 def _task_id(playbook_id: str, tier: str, seed: int) -> str:

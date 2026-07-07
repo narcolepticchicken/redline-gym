@@ -20,10 +20,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "5",
-        "span": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may comply before contacting Discloser and has no duty to contest the demand or narrow the production."
+        "span": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary."
       },
       "original_text": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
-      "mutated_text": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may comply before contacting Discloser and has no duty to contest the demand or narrow the production.",
+      "mutated_text": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary.",
       "mechanism": "omission",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -34,10 +34,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "8",
-        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within the next quarter, except retained copies may be kept for ordinary business recordkeeping."
+        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping."
       },
       "original_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within the next quarter, except retained copies may be kept for ordinary business recordkeeping.",
+      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "escalate"
@@ -47,7 +47,7 @@
       "rule_id": "R-002",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "3",
+        "section": "2",
         "span": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides."
       },
       "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.",
@@ -107,6 +107,7 @@
     "D-002 NDA-R007-OMISSION-COMPELLED omission applied to R-007",
     "D-003 NDA-R008-DIRECT-RETURN direct_term_swap applied to R-008",
     "D-004 NDA-R002-DEFINED-AFFILIATE defined_term_shift applied to R-002",
-    "D-005 NDA-R001-DIRECT-MARKING direct_term_swap applied to R-001"
+    "D-005 NDA-R001-DIRECT-MARKING direct_term_swap applied to R-001",
+    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

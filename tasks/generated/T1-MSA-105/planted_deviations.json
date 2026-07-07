@@ -6,10 +6,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "10",
-        "span": "Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 180 days before the current period ends."
+        "span": "Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 60 days before the current period ends."
       },
       "original_text": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
-      "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 180 days before the current period ends.",
+      "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 60 days before the current period ends.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -101,12 +101,14 @@
   ],
   "generation_log": [
     "seed=105",
+    "attempt_seed=105",
     "playbook=PB-MSA-001",
     "tier=T1",
     "task_id=T1-MSA-105",
     "D-001 MSA-R007-DIRECT-RENEWAL direct_term_swap applied to R-007",
     "D-002 MSA-R010-DIRECT-ASSIGNMENT direct_term_swap applied to R-010",
     "D-003 MSA-R011-DIRECT-INSURANCE direct_term_swap applied to R-011",
-    "D-004 MSA-R005-DIRECT-DATA direct_term_swap applied to R-005"
+    "D-004 MSA-R005-DIRECT-DATA direct_term_swap applied to R-005",
+    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

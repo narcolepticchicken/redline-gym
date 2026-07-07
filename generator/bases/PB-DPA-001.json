@@ -8,8 +8,8 @@
     "customer_name": ["Northstar Analytics, Inc.", "Cedarline Robotics, Inc.", "BrightRiver Health, Inc."],
     "vendor_name": ["LatticeBridge Systems, LLC", "HarborCloud Labs LLC", "Stonepath Data LLC"],
     "service_name": ["data-ingestion platform", "workflow automation service", "records normalization service"],
-    "breach_hours": ["24", "36", "48"],
-    "deletion_days": ["30", "45"],
+    "breach_hours": ["24", "48", "72"],
+    "deletion_days": ["15", "30"],
     "transition_days": ["30"],
     "audit_days": ["30"],
     "law_state": ["Delaware"]

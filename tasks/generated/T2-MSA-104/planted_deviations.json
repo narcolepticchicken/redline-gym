@@ -115,6 +115,7 @@
   ],
   "generation_log": [
     "seed=104",
+    "attempt_seed=104",
     "playbook=PB-MSA-001",
     "tier=T2",
     "task_id=T2-MSA-104",
@@ -122,6 +123,7 @@
     "D-002 MSA-R011-DIRECT-INSURANCE direct_term_swap applied to R-011",
     "D-003 MSA-R002-OMISSION-INDEMNITY omission applied to R-002",
     "D-004 MSA-R006-CROSS-EXIT-FEE cross_ref_override applied to R-006",
-    "D-005 MSA-R003-DEFINED-DELIVERABLES defined_term_shift applied to R-003"
+    "D-005 MSA-R003-DEFINED-DELIVERABLES defined_term_shift applied to R-003",
+    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

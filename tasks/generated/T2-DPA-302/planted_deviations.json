@@ -34,10 +34,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "8",
-        "span": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review."
+        "span": "Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review."
       },
-      "original_text": "Vendor will notify Customer without undue delay and in any event within 36 hours after discovering a Personal Data Breach.",
-      "mutated_text": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review.",
+      "original_text": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach.",
+      "mutated_text": "Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
       "expected_action": "redline_with_fallback"
@@ -47,7 +47,7 @@
       "rule_id": "R-008",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "11",
+        "section": "10",
         "span": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing."
       },
       "original_text": "On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause.",
@@ -113,6 +113,7 @@
     "D-002 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
     "D-003 DPA-R005-DIRECT-BREACH-HOURS direct_term_swap applied to R-005",
     "D-004 DPA-R008-CROSS-AUDIT-LIMIT cross_ref_override applied to R-008",
-    "D-005 DPA-R003-OMISSION-FLOWDOWN omission applied to R-003"
+    "D-005 DPA-R003-OMISSION-FLOWDOWN omission applied to R-003",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

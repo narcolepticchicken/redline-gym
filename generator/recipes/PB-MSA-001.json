@@ -59,7 +59,7 @@
         "mutated_text": "{vendor_role} will give written alert within {notice_period} after its incident lead confirms a Security Incident."
       },
       "slots": {
-        "notice_period": ["ten business days", "thirty business days", "forty-five days"]
+        "notice_period": ["72 hours", "5 business days", "10 business days"]
       },
       "expected_action": "redline_with_fallback",
       "severity": "critical"
@@ -98,8 +98,8 @@
         "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of {renewal_years} years each unless either party sends non-continuation notice at least {notice_days} days before the current period ends."
       },
       "slots": {
-        "renewal_years": ["two", "three", "five"],
-        "notice_days": ["120", "180", "210"]
+        "renewal_years": ["two", "three"],
+        "notice_days": ["30", "60", "90"]
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"
@@ -181,4 +181,3 @@
     }
   ]
 }
-

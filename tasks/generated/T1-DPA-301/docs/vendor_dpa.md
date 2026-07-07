@@ -32,7 +32,7 @@ Vendor may use subprocessors only with Customer's prior written approval or thro
 
 ## 8. Breach Notice
 
-Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
+Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
 
 ## 9. Data Subject Requests
 

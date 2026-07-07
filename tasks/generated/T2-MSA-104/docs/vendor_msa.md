@@ -22,11 +22,11 @@ Vendor will perform the services in a professional and workmanlike manner using 
 
 Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form. Vendor will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. Vendor will comply with laws applicable to Vendor's provision of the services.
 
-## 7. Service Partners
+## 6. Service Partners
 
 Vendor may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work and binds each service partner to written obligations at least as protective as Vendor's obligations for Customer Data, confidentiality, security, and service performance.
 
-## 6. Notice Regarding Protected Records
+## 7. Notice Regarding Protected Records
 
 Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Security Incident. The alert will summarize known facts, affected systems, remedial steps taken or planned, and a contact for follow-up. Vendor will reasonably cooperate with Customer's investigation and customer communications.
 

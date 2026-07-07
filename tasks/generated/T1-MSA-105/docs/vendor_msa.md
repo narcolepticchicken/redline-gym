@@ -40,7 +40,7 @@ Vendor will invoice Customer as stated in the applicable Order Form. Unless an O
 
 ## 10. Term and Extension
 
-This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 180 days before the current period ends.
+This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 60 days before the current period ends.
 
 ## 11. Customer Exit Right
 

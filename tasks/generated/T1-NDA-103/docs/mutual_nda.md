@@ -4,14 +4,14 @@ This Mutual Confidentiality Agreement is entered into as of September 3, 2026, b
 
 ## 1. Confidential Information
 
-"Confidential Information" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated analytics modernization between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
+"Confidential Information" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within ten days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated analytics modernization between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
 
-## 3. Affiliates and Representatives
+## 2. Affiliates and Representatives
 
 "Affiliate" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.
 Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.
 
-## 2. Purpose and Use
+## 3. Purpose and Use
 
 Recipient may use Confidential Information solely for the Purpose.
 
@@ -25,7 +25,7 @@ If Recipient is required by law, regulation, subpoena, court order, or governmen
 
 ## 6. Exclusions
 
-Confidential Information does not include information that Recipient believes from general recollection was previously known, becomes available through any source, or is independently useful to Recipient's business.
+Confidential Information does not include information that Recipient reasonably understands was already known, becomes available from any source, or can be used in Recipient's ordinary business without reference to the disclosed materials.
 
 ## 7. No Obligation to Proceed
 
@@ -33,11 +33,11 @@ Neither party is obligated to enter into any further agreement, purchase or sell
 
 ## 8. Return or Destruction
 
-Upon Discloser's written request, Recipient will return or destroy Confidential Information within one hundred twenty days, except retained copies may be kept for ordinary business recordkeeping.
+Upon Discloser's written request, Recipient will return or destroy Confidential Information within 30 days, except retained copies may be kept for ordinary business recordkeeping.
 
 ## 9. Term and Survival
 
-This Agreement begins on the effective date and continues for two years. Confidentiality obligations continue for eighteen months after disclosure, including for trade secrets.
+This Agreement begins on the effective date and continues for two years. Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law.
 
 ## 10. No License; Ownership
 

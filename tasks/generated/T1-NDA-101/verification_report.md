@@ -19,4 +19,12 @@ Status: AWAITING HUMAN SIGN-OFF
 
 Model-stubbed validators: V3, V4, V7-semantic, V11.
 
+## Emit-Time Baseline Gate
+
+- grep_bot recall: 0.250000
+- tier threshold: unconstrained
+- matched deviation ids: D-003
+- matched rule ids: R-003
+- coherence check: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+
 Human sign-off: name ____________________ date __________

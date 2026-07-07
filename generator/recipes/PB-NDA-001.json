@@ -35,7 +35,7 @@
       "section": "6",
       "templates": {
         "original_text": "Confidential Information does not include information that {recipient_role} can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty.",
-        "mutated_text": "Confidential Information does not include information that {recipient_role} believes from general recollection was previously known, becomes available through any source, or is independently useful to {recipient_role}'s business."
+        "mutated_text": "Confidential Information does not include information that {recipient_role} reasonably understands was already known, becomes available from any source, or can be used in {recipient_role}'s ordinary business without reference to the disclosed materials."
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"
@@ -83,7 +83,7 @@
       "section": "5",
       "templates": {
         "original_text": "If {recipient_role} is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, {recipient_role} will, to the extent legally permitted, provide prompt notice to {discloser_role} and reasonably cooperate with {discloser_role} in seeking confidential or protective treatment.",
-        "mutated_text": "If {recipient_role} receives a legally binding demand to produce Confidential Information, {recipient_role} may comply before contacting {discloser_role} and has no duty to contest the demand or narrow the production."
+        "mutated_text": "If {recipient_role} receives a legally binding demand to produce Confidential Information, {recipient_role} may make the required disclosure without advance notice to {discloser_role} and without seeking confidential treatment unless counsel determines those steps are necessary."
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"
@@ -95,10 +95,10 @@
       "section": "8",
       "templates": {
         "original_text": "Upon request, {recipient_role} will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will return or destroy Confidential Information within {return_period}, except retained copies may be kept for ordinary business recordkeeping."
+        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will return or destroy Confidential Information {return_period}, except retained copies may be kept for ordinary business recordkeeping."
       },
       "slots": {
-        "return_period": ["two calendar months", "the next quarter", "a commercially convenient period"]
+        "return_period": ["promptly", "within 15 days", "within 30 days"]
       },
       "expected_action": "escalate",
       "severity": "medium"
@@ -110,10 +110,10 @@
       "section": "9",
       "templates": {
         "original_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
-        "mutated_text": "The recipient's restrictions expire {survival_period} after each exchange, including for technical material otherwise protected by law."
+        "mutated_text": "Confidentiality obligations expire {survival_period} after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law."
       },
       "slots": {
-        "survival_period": ["one year", "eighteen months", "two years"]
+        "survival_period": ["two years"]
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"

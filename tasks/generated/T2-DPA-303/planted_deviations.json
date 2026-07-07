@@ -33,7 +33,7 @@
       "rule_id": "R-004",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "5",
+        "section": "4",
         "span": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
       },
       "original_text": "Vendor will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
@@ -113,6 +113,7 @@
     "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
     "D-003 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
     "D-004 DPA-R012-DIRECT-LIABILITY direct_term_swap applied to R-012",
-    "D-005 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007"
+    "D-005 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

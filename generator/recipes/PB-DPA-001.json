@@ -59,7 +59,7 @@
         "mutated_text": "{vendor_role} will send an initial written alert within {late_notice} after its internal response team completes confirmation and executive review."
       },
       "slots": {
-        "late_notice": ["five business days", "ten business days", "the next monthly service review"]
+        "late_notice": ["72 hours", "5 business days", "10 business days"]
       },
       "expected_action": "redline_with_fallback",
       "severity": "critical"

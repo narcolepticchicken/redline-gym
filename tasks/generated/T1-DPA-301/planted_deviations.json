@@ -34,10 +34,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "8",
-        "span": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review."
+        "span": "Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review."
       },
-      "original_text": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach.",
-      "mutated_text": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review.",
+      "original_text": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Personal Data Breach.",
+      "mutated_text": "Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
       "expected_action": "redline_with_fallback"
@@ -50,7 +50,7 @@
         "section": "10",
         "span": "After the relationship ends, Vendor will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence."
       },
-      "original_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 45 days and certify completion in writing.",
+      "original_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 30 days and certify completion in writing.",
       "mutated_text": "After the relationship ends, Vendor will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence.",
       "mechanism": "direct_term_swap",
       "severity": "high",
@@ -98,6 +98,7 @@
     "D-001 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
     "D-002 DPA-R001-DIRECT-INSTRUCTIONS direct_term_swap applied to R-001",
     "D-003 DPA-R005-DIRECT-BREACH-HOURS direct_term_swap applied to R-005",
-    "D-004 DPA-R007-DIRECT-DELETION-CERT direct_term_swap applied to R-007"
+    "D-004 DPA-R007-DIRECT-DELETION-CERT direct_term_swap applied to R-007",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

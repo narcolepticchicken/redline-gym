@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import random
 import shutil
 
 import generator.generate as generate_module
@@ -43,6 +44,24 @@ def test_t2_generation_reseeds_when_grep_recall_exceeds_threshold(monkeypatch) -
         assert (out_dir / "task.json").exists()
     finally:
         shutil.rmtree(out_dir.parent, ignore_errors=True)
+
+
+def test_render_base_renumbers_sections_and_cross_refs() -> None:
+    base = {
+        "heading_template": "# Test",
+        "preamble_template": "Preamble.",
+        "section_order_variants": [["2", "1"]],
+        "sections": [
+            {"id": "1", "heading": "One", "paragraphs": ["See Section 2."]},
+            {"id": "2", "heading": "Two", "paragraphs": ["Controls."]},
+        ],
+    }
+    text, section_map = generate_module._render_base(base, {}, random.Random(0))
+
+    assert "## 1. Two" in text
+    assert "## 2. One" in text
+    assert "See Section 1." in text
+    assert section_map == {"2": "1", "1": "2"}
 
 
 def test_generated_t2_tranche_is_grep_resistant() -> None:

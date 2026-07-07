@@ -1,0 +1,113 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-010",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work."
+      },
+      "original_text": "No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement. If any sentence conflicts with Section 10, Section 10 controls.",
+      "mutated_text": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
+      "mechanism": "cross_ref_override",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides."
+      },
+      "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.",
+      "mutated_text": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides.",
+      "mechanism": "defined_term_shift",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information promptly, except retained copies may be kept for ordinary business recordkeeping."
+      },
+      "original_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
+      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information promptly, except retained copies may be kept for ordinary business recordkeeping.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "escalate"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-006",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose."
+      },
+      "original_text": "Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.",
+      "mutated_text": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-009",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "9",
+        "span": "Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law."
+      },
+      "original_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
+      "mutated_text": "Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Neither party is obligated to enter into any further agreement, purchase or sell any product or service, or proceed with any transaction unless a separate written agreement is signed by both parties.",
+      "why_benign": "A no-obligation-to-proceed clause is customary and does not conflict with the NDA playbook."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules.",
+      "why_benign": "The playbook canary says New York governing law is acceptable."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Personal data handling instructions",
+      "absent_terms": [
+        "personal data",
+        "privacy law",
+        "data protection"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=501",
+    "attempt_seed=501",
+    "playbook=PB-NDA-001",
+    "tier=T2",
+    "task_id=T2-NDA-501",
+    "D-001 NDA-R010-CROSS-NO-LICENSE cross_ref_override applied to R-010",
+    "D-002 NDA-R002-DEFINED-AFFILIATE defined_term_shift applied to R-002",
+    "D-003 NDA-R008-DIRECT-RETURN direct_term_swap applied to R-008",
+    "D-004 NDA-R006-OMISSION-REP-DUTIES omission applied to R-006",
+    "D-005 NDA-R009-DIRECT-SURVIVAL direct_term_swap applied to R-009",
+    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

@@ -25,7 +25,7 @@ If Recipient is required by law, regulation, subpoena, court order, or governmen
 
 ## 6. Exclusions
 
-Confidential Information does not include information that Recipient believes from general recollection was previously known, becomes available through any source, or is independently useful to Recipient's business.
+Confidential Information does not include information that Recipient reasonably understands was already known, becomes available from any source, or can be used in Recipient's ordinary business without reference to the disclosed materials.
 
 ## 7. No Obligation to Proceed
 
@@ -33,7 +33,7 @@ Neither party is obligated to enter into any further agreement, purchase or sell
 
 ## 8. Return or Destruction
 
-Upon Discloser's written request, Recipient will return or destroy Confidential Information within ninety days, except retained copies may be kept for ordinary business recordkeeping.
+Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping.
 
 ## 9. Term and Survival
 
