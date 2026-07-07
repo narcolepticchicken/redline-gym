@@ -2,48 +2,6 @@
   "deviations": [
     {
       "deviation_id": "D-001",
-      "rule_id": "R-007",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "9",
-        "span": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective."
-      },
-      "original_text": "These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.",
-      "mutated_text": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
-      "mechanism": "omission",
-      "severity": "medium",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-002",
-      "rule_id": "R-006",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "8",
-        "span": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right."
-      },
-      "original_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.",
-      "mutated_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.",
-      "mechanism": "direct_term_swap",
-      "severity": "high",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-003",
-      "rule_id": "R-013",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "2",
-        "span": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock."
-      },
-      "original_text": "\"Major Investor\" means a holder of at least 1,000,000 shares of Series A Preferred Stock. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class.",
-      "mutated_text": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
-      "mechanism": "defined_term_shift",
-      "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-004",
       "rule_id": "R-009",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -57,6 +15,48 @@
       "expected_action": "redline_with_fallback"
     },
     {
+      "deviation_id": "D-002",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "13",
+        "span": "Any side-letter MFN right automatically imports any more favorable economic, information, governance, veto, board, transfer, operational consent, or other investor right granted to any other investor after the date of this Agreement."
+      },
+      "original_text": "Any side-letter MFN right applies only to the economic fee terms and information delivery dates expressly listed in the applicable side letter. No MFN imports governance, veto, board, transfer, operational consent, or other investor rights unless the Company expressly agrees in a signed amendment.",
+      "mutated_text": "Any side-letter MFN right automatically imports any more favorable economic, information, governance, veto, board, transfer, operational consent, or other investor right granted to any other investor after the date of this Agreement.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-006",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right."
+      },
+      "original_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.",
+      "mutated_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-013",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock."
+      },
+      "original_text": "\"Major Investor\" means a holder of at least 1,000,000 shares of Series A Preferred Stock. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class.",
+      "mutated_text": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
       "deviation_id": "D-005",
       "rule_id": "R-002",
       "doc_id": "DOC-01",
@@ -66,7 +66,7 @@
       },
       "original_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.",
       "mutated_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration. Notwithstanding Section 4, the Company will obtain Requisite Holder approval for any other matter that an investor reasonably identifies as material to its investment.",
-      "mechanism": "cross_ref_override",
+      "mechanism": "off_playbook_addition",
       "severity": "critical",
       "expected_action": "redline_with_fallback"
     }
@@ -117,11 +117,11 @@
     "playbook=PB-GOV-001",
     "tier=T2",
     "task_id=T2-GOV-903",
-    "D-001 GOV-R007-OMISSION-PERMITTED-TRANSFEREE omission applied to R-007",
-    "D-002 GOV-R006-DIRECT-INVESTOR-ROFR-FIRST direct_term_swap applied to R-006",
-    "D-003 GOV-R013-DEFINED-REQUISITE-HOLDERS-LOWERED defined_term_shift applied to R-013",
-    "D-004 GOV-R009-DIRECT-PREEMPTIVE-NO-EXCLUSIONS direct_term_swap applied to R-009",
-    "D-005 GOV-R002-CROSS-INVESTOR-RELATIONS-CONSENT cross_ref_override applied to R-002",
+    "D-001 GOV-R009-DIRECT-PREEMPTIVE-NO-EXCLUSIONS direct_term_swap applied to R-009",
+    "D-002 GOV-R011-DIRECT-MFN-OPEN-ENDED direct_term_swap applied to R-011",
+    "D-003 GOV-R006-DIRECT-INVESTOR-ROFR-FIRST direct_term_swap applied to R-006",
+    "D-004 GOV-R013-DEFINED-REQUISITE-HOLDERS-LOWERED defined_term_shift applied to R-013",
+    "D-005 GOV-R002-CROSS-INVESTOR-RELATIONS-CONSENT off_playbook_addition applied to R-002",
     "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

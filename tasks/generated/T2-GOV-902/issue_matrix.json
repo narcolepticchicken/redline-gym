@@ -5,11 +5,11 @@
       "deviation_ids": [
         "D-001"
       ],
-      "rule_id": "R-002",
+      "rule_id": "R-007",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "critical",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -29,11 +29,11 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-007",
+      "rule_id": "R-006",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -41,11 +41,11 @@
       "deviation_ids": [
         "D-004"
       ],
-      "rule_id": "R-011",
+      "rule_id": "R-002",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {

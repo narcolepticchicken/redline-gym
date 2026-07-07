@@ -36,7 +36,7 @@ Before any holder transfers shares other than to a Permitted Transferee, the hol
 
 ## 9. Transfer Restrictions
 
-No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.
+No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.
 
 ## 10. Information Rights
 
@@ -52,7 +52,7 @@ Each holder receiving Company information will keep that information confidentia
 
 ## 13. Side Letters and MFN
 
-Any side-letter MFN right applies only to the economic fee terms and information delivery dates expressly listed in the applicable side letter. No MFN imports governance, veto, board, transfer, operational consent, or other investor rights unless the Company expressly agrees in a signed amendment.
+Any side-letter MFN right automatically imports any more favorable economic, information, governance, veto, board, transfer, operational consent, or other investor right granted to any other investor after the date of this Agreement.
 
 ## 14. Termination of Rights
 

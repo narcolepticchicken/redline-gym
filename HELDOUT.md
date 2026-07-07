@@ -10,6 +10,10 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: GOV recipe mechanism labels were revised after QA tiebreak
+  (`R-002` to `off_playbook_addition`, `R-007` to `direct_term_swap`).
+  Replaced stale `tasks/heldout/T2-GOV-1001` with fresh seed
+  `tasks/heldout/T2-GOV-1002`.
 - 2026-07-07: Added corporate governance stockholders' agreement held-out seed
   `tasks/heldout/T2-GOV-1001` for `PB-GOV-001` while adding the fifth practice
   area.

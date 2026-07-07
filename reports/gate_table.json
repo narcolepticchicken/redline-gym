@@ -248,8 +248,8 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
-        "composite": 0.25,
-        "recall": 0.0,
+        "composite": 0.391667,
+        "recall": 0.25,
         "status": "OK"
       },
       "grep_gate": "UNMEASURED",
@@ -572,8 +572,8 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
-        "composite": 0.366667,
-        "recall": 0.2,
+        "composite": 0.25,
+        "recall": 0.0,
         "status": "OK"
       },
       "grep_gate": "UNMEASURED",
@@ -599,8 +599,8 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
-        "composite": 0.25,
-        "recall": 0.0,
+        "composite": 0.366667,
+        "recall": 0.2,
         "status": "OK"
       },
       "grep_gate": "UNMEASURED",

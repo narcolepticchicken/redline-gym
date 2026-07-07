@@ -16,7 +16,7 @@
     {
       "recipe_id": "GOV-R002-CROSS-INVESTOR-RELATIONS-CONSENT",
       "rule_id": "R-002",
-      "mechanism": "cross_ref_override",
+      "mechanism": "off_playbook_addition",
       "section": "5",
       "templates": {
         "original_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.",
@@ -76,7 +76,7 @@
     {
       "recipe_id": "GOV-R007-OMISSION-PERMITTED-TRANSFEREE",
       "rule_id": "R-007",
-      "mechanism": "omission",
+      "mechanism": "direct_term_swap",
       "section": "9",
       "templates": {
         "original_text": "These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.",

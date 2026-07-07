@@ -21,10 +21,10 @@ Model-stubbed validators: V3, V4, V7-semantic, V11.
 
 ## Emit-Time Baseline Gate
 
-- grep_bot recall: 0.000000
+- grep_bot recall: 0.250000
 - tier threshold: unconstrained
-- matched deviation ids: none
-- matched rule ids: none
+- matched deviation ids: D-002
+- matched rule ids: R-008
 - coherence check: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
 
 Human sign-off: name ____________________ date __________

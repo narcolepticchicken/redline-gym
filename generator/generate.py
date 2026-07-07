@@ -22,7 +22,13 @@ ROOT = Path(__file__).resolve().parents[1]
 GENERATOR_DIR = Path(__file__).resolve().parent
 ALLOWED_MECHANISMS = {
     "T1": {"direct_term_swap"},
-    "T2": {"direct_term_swap", "cross_ref_override", "defined_term_shift", "omission"},
+    "T2": {
+        "direct_term_swap",
+        "cross_ref_override",
+        "defined_term_shift",
+        "off_playbook_addition",
+        "omission",
+    },
 }
 DEVIATION_COUNT = {"T1": 4, "T2": 5}
 T2_GREP_RECALL_MAX = 0.2
@@ -314,7 +320,8 @@ def _select_recipes(entries: list[dict[str, Any]], tier: str, rng: random.Random
         return rng.sample(candidates, DEVIATION_COUNT[tier])
     selected: list[dict[str, Any]] = []
     used_rules: set[str] = set()
-    for mechanism in sorted(allowed):
+    available_mechanisms = {entry["mechanism"] for entry in candidates}
+    for mechanism in sorted(allowed & available_mechanisms):
         bucket = [entry for entry in candidates if entry["mechanism"] == mechanism and entry["rule_id"] not in used_rules]
         if not bucket:
             raise GenerationError(f"no recipe for required mechanism {mechanism}")

@@ -32,7 +32,7 @@ If a Founder Holder or Major Investor proposes to transfer more than 10% of the 
 
 ## 8. Right of First Refusal
 
-Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.
+Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.
 
 ## 9. Transfer Restrictions
 
@@ -52,7 +52,7 @@ Each holder receiving Company information will keep that information confidentia
 
 ## 13. Side Letters and MFN
 
-Any side-letter MFN right automatically imports any more favorable economic, information, governance, veto, board, transfer, operational consent, or other investor right granted to any other investor after the date of this Agreement.
+Any side-letter MFN right applies only to the economic fee terms and information delivery dates expressly listed in the applicable side letter. No MFN imports governance, veto, board, transfer, operational consent, or other investor rights unless the Company expressly agrees in a signed amendment.
 
 ## 14. Termination of Rights
 

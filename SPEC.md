@@ -158,8 +158,8 @@ point; no downstream artifact is ever edited by hand.
 6. **Human spot-check** — Aaron signs the report (~15 min/task).
 
 Difficulty tiers: T1 = single doc, direct swaps only. T2 = single doc,
-cross_ref_override + defined_term_shift + omission in play. T3 = multi-doc
-(MSA + SOW + addendum), cross_doc_override in play.
+cross_ref_override + defined_term_shift + omission + off_playbook_addition in
+play. T3 = multi-doc (MSA + SOW + addendum), cross_doc_override in play.
 
 Generator rules (tiebreak-settled 2026-07-06): cross_ref_override sections get
 innocuous headings — never "override"-style tells. Playbook escalation_triggers

@@ -2,6 +2,34 @@
   "deviations": [
     {
       "deviation_id": "D-001",
+      "rule_id": "R-012",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "14",
+        "span": "Investor rights under this Agreement continue after a qualified IPO, sale of the Company, or reduction in the holder's ownership unless each affected Major Investor signs a written release."
+      },
+      "original_text": "Investor rights under this Agreement terminate upon the earliest of a qualified IPO with gross proceeds of at least $50,000,000, a sale of the Company, or the time the holder no longer holds the minimum share ownership required for the applicable right.",
+      "mutated_text": "Investor rights under this Agreement continue after a qualified IPO, sale of the Company, or reduction in the holder's ownership unless each affected Major Investor signs a written release.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation."
+      },
+      "original_text": "Each Major Investor may receive quarterly unaudited financial statements within 45 days after quarter-end and annual audited financial statements within 120 days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits.",
+      "mutated_text": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
       "rule_id": "R-009",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -15,21 +43,7 @@
       "expected_action": "redline_with_fallback"
     },
     {
-      "deviation_id": "D-002",
-      "rule_id": "R-010",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "12",
-        "span": "Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations."
-      },
-      "original_text": "Each holder receiving Company information will keep that information confidential, use it only to monitor its investment, and disclose it only to representatives bound by comparable confidentiality obligations.",
-      "mutated_text": "Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations.",
-      "mechanism": "direct_term_swap",
-      "severity": "high",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-003",
+      "deviation_id": "D-004",
       "rule_id": "R-003",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -38,20 +52,6 @@
       },
       "original_text": "No investor approval is required for matters not listed in this Section 4.",
       "mutated_text": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
-      "mechanism": "direct_term_swap",
-      "severity": "high",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-004",
-      "rule_id": "R-006",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "8",
-        "span": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right."
-      },
-      "original_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.",
-      "mutated_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.",
       "mechanism": "direct_term_swap",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -103,10 +103,10 @@
     "playbook=PB-GOV-001",
     "tier=T1",
     "task_id=T1-GOV-901",
-    "D-001 GOV-R009-DIRECT-PREEMPTIVE-NO-EXCLUSIONS direct_term_swap applied to R-009",
-    "D-002 GOV-R010-DIRECT-CONFIDENTIALITY-DISCLOSURE direct_term_swap applied to R-010",
-    "D-003 GOV-R003-DIRECT-ORDINARY-COURSE-CONSENT direct_term_swap applied to R-003",
-    "D-004 GOV-R006-DIRECT-INVESTOR-ROFR-FIRST direct_term_swap applied to R-006",
+    "D-001 GOV-R012-DIRECT-TERMINATION-SURVIVES-IPO direct_term_swap applied to R-012",
+    "D-002 GOV-R008-DIRECT-INFORMATION-MONTHLY-INSPECTION direct_term_swap applied to R-008",
+    "D-003 GOV-R009-DIRECT-PREEMPTIVE-NO-EXCLUSIONS direct_term_swap applied to R-009",
+    "D-004 GOV-R003-DIRECT-ORDINARY-COURSE-CONSENT direct_term_swap applied to R-003",
     "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

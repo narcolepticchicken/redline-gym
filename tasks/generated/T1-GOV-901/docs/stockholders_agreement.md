@@ -32,7 +32,7 @@ If a Founder Holder or Major Investor proposes to transfer more than 10% of the 
 
 ## 8. Right of First Refusal
 
-Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.
+Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.
 
 ## 9. Transfer Restrictions
 
@@ -40,7 +40,7 @@ No holder may transfer shares except in compliance with securities laws, this Ag
 
 ## 10. Information Rights
 
-Each Major Investor may receive quarterly unaudited financial statements within 45 days after quarter-end and annual audited financial statements within 120 days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits.
+Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.
 
 ## 11. Preemptive Rights
 
@@ -48,7 +48,7 @@ Each Major Investor has a pro rata right to purchase its share of every security
 
 ## 12. Confidentiality
 
-Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations. The Company may withhold information if disclosure could harm attorney-client privilege, trade secrets, legal compliance, or competitive sensitivity.
+Each holder receiving Company information will keep that information confidential, use it only to monitor its investment, and disclose it only to representatives bound by comparable confidentiality obligations. The Company may withhold information if disclosure could harm attorney-client privilege, trade secrets, legal compliance, or competitive sensitivity.
 
 ## 13. Side Letters and MFN
 
@@ -56,7 +56,7 @@ Any side-letter MFN right applies only to the economic fee terms and information
 
 ## 14. Termination of Rights
 
-Investor rights under this Agreement terminate upon the earliest of a qualified IPO with gross proceeds of at least $50,000,000, a sale of the Company, or the time the holder no longer holds the minimum share ownership required for the applicable right.
+Investor rights under this Agreement continue after a qualified IPO, sale of the Company, or reduction in the holder's ownership unless each affected Major Investor signs a written release.
 
 ## 15. Governing Law and Dispute Resolution
 

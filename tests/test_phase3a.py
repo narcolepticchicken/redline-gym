@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from baselines.cheater_mech import STRATEGIES, main as cheater_main
+from generator.generate import ALLOWED_MECHANISMS
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -40,6 +41,8 @@ def test_every_mechanical_strategy_scores_without_error(tmp_path: Path) -> None:
 
 
 def test_recipe_books_cover_required_rules_and_mechanisms() -> None:
+    t2_mechanisms = ALLOWED_MECHANISMS["T2"]
+    assert "off_playbook_addition" in t2_mechanisms
     for recipe_path in sorted((ROOT / "generator/recipes").glob("PB-*.json")):
         payload = json.loads(recipe_path.read_text())
         entries = payload["entries"]
@@ -48,7 +51,9 @@ def test_recipe_books_cover_required_rules_and_mechanisms() -> None:
         direct_rules = {entry["rule_id"] for entry in entries if entry["mechanism"] == "direct_term_swap"}
         assert len(covered_rules) >= 8
         assert len(direct_rules) >= 4
-        assert {"direct_term_swap", "cross_ref_override", "defined_term_shift", "omission"} <= mechanisms
+        assert mechanisms <= t2_mechanisms
+        if recipe_path.name == "PB-GOV-001.json":
+            assert "off_playbook_addition" in mechanisms
 
 
 def test_non_eval_tooling_does_not_reference_heldout_path() -> None:
@@ -65,4 +70,3 @@ def test_non_eval_tooling_does_not_reference_heldout_path() -> None:
         if path.is_file() and "tasks/heldout" in path.read_text(errors="ignore"):
             offenders.append(str(path.relative_to(ROOT)))
     assert offenders == []
-

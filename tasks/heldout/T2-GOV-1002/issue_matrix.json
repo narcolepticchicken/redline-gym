@@ -5,11 +5,11 @@
       "deviation_ids": [
         "D-001"
       ],
-      "rule_id": "R-002",
+      "rule_id": "R-010",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "critical",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -17,7 +17,7 @@
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-013",
+      "rule_id": "R-002",
       "doc_ids": [
         "DOC-01"
       ],
@@ -29,11 +29,11 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-003",
+      "rule_id": "R-012",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -53,11 +53,11 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-007",
+      "rule_id": "R-013",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -91,7 +91,7 @@
     {
       "distractor_id": "X-002",
       "doc_id": "DOC-01",
-      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before AAA, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
+      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before JAMS, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
       "why_benign": "The dispute-resolution canary says confidential arbitration is acceptable for this engagement."
     },
     {
