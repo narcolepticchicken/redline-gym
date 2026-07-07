@@ -1,0 +1,7 @@
+{
+  "gaps": [
+    "Registration rights",
+    "Amendment procedure",
+    "Investor conflict and overlap disclosure"
+  ]
+}

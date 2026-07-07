@@ -1,0 +1,34 @@
+{
+  "found": [
+    {
+      "quote": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 12 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
+      "rule_id": "R-001",
+      "section": "8"
+    },
+    {
+      "quote": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
+      "rule_id": "R-002",
+      "section": "2"
+    },
+    {
+      "quote": "Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.",
+      "rule_id": "R-003",
+      "section": "9"
+    },
+    {
+      "quote": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Upon request or separation, Executive will return Company property and records.",
+      "rule_id": "R-004",
+      "section": "11"
+    },
+    {
+      "quote": "During employment and for six months after separation, Executive will not provide substantially similar executive services to a business unit that directly competes with a Company product or service for which Executive had material responsibility, but only to the extent enforceable under applicable law.",
+      "rule_id": "R-008",
+      "section": "12"
+    },
+    {
+      "quote": "Any material reduction in title, reporting line, responsibilities, authority, or budget will be treated as an involuntary termination without Cause.",
+      "rule_id": "R-009",
+      "section": "3"
+    }
+  ]
+}

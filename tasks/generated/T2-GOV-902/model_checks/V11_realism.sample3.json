@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 15 sequentially. Cross-reference 'Notwithstanding Section 4' in Section 6 resolves to the protective provisions in Section 4.",
+    "q2": "Defined terms 'Major Investor', 'Requisite Holders', and 'Permitted Transferee' defined once in Section 2 and used consistently (e.g., 'Major Investor' in Sections 7, 10, 11; 'Requisite Holders' in Sections 3, 4, 5, 6, 9; 'Permitted Transferee' in Sections 7, 8).",
+    "q3": "No vague time/quantity phrasing found. Section 10 specifies '45 days after quarter-end' and '120 days after fiscal year-end', avoiding ambiguous phrases like 'the next quarter' or 'a reasonable while'.",
+    "q4": "No archaic legal diction (e.g., 'witnesseth', 'heretofore'). Language is modern throughout, as in 'entered into by and among' (introductory paragraph).",
+    "q5": "No sentence reads as internally contradictory or grammatically broken; e.g., 'The Board will consist of five directors: three Founder Designees...' is grammatically correct and coherent.",
+    "q6": "Prose register is consistent. The straightforward style of Section 1 ('The parties intend this Agreement to govern...') matches later sections, such as Section 15 ('This Agreement is governed by the laws of the State of Delaware...'), with no authorial shift."
+  }
+}

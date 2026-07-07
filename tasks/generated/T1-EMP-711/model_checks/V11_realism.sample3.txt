@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "subject to Section 9",
+    "q2": "\"Good Reason\" means a material reduction in base salary or required relocation by more than 50 miles, in each case only if Company fails to cure after written notice from Executive.",
+    "q3": "",
+    "q4": "",
+    "q5": "No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation. All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements.",
+    "q6": ""
+  }
+}

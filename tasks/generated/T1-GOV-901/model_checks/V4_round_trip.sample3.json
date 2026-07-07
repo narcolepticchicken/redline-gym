@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "quote": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
+      "rule_id": "R-002",
+      "section": "4"
+    },
+    {
+      "quote": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
+      "rule_id": "R-003",
+      "section": "4"
+    },
+    {
+      "quote": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.",
+      "rule_id": "R-008",
+      "section": "10"
+    },
+    {
+      "quote": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+      "rule_id": "R-009",
+      "section": "11"
+    },
+    {
+      "quote": "Investor rights under this Agreement continue after a qualified IPO, sale of the Company, or reduction in the holder's ownership unless each affected Major Investor signs a written release.",
+      "rule_id": "R-012",
+      "section": "14"
+    }
+  ]
+}

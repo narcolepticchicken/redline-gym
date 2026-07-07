@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1-15 sequentially; cross-reference in Section 6 'Notwithstanding Section 4' resolves.",
+    "q2": "'Major Investor', 'Requisite Holders', 'Permitted Transferee' defined in Section 2 and used consistently thereafter.",
+    "q3": "No vague time/quantity phrasing; deadlines specified as '45 days', '120 days'.",
+    "q4": "No archaic diction such as 'whereas', 'heretofore', etc.",
+    "q5": "No contradictory or broken sentence; e.g., 'The Board will consist of five directors...' is grammatical.",
+    "q6": "Register consistent: all sections use modern, direct prose without authorial shifts."
+  }
+}

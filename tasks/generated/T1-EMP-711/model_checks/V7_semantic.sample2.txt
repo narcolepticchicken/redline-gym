@@ -1,0 +1,5 @@
+{
+  "gaps": [
+    "Change-in-control severance and Section 280G golden-parachute/excess tax mitigation provisions"
+  ]
+}

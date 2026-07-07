@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1–15 sequentially; cross-reference 'Notwithstanding Section 4' in Section 6 resolves.",
+    "q2": "'Major Investor', 'Requisite Holders', 'Permitted Transferee' defined once in §2 and used consistently.",
+    "q3": "Time/quantity phrases use precise figures: '45 days', '120 days', '$1,000,000'; no 'reasonable while'.",
+    "q4": "No archaic diction (e.g., no 'heretofore', 'witnesseth'); register modern throughout.",
+    "q5": "All sentences grammatically complete; no internal contradictions within sentence structure.",
+    "q6": "Tone and phrasing uniform across sections; no section reads as different author."
+  }
+}

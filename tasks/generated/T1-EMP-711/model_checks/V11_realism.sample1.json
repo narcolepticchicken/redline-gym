@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "subject to Section 9",
+    "q2": "\"Cause\" means Executive's material failure to perform assigned duties...",
+    "q3": "within 45 days after separation",
+    "q4": "This Executive Employment Agreement (the \"Agreement\") is entered into by and between...",
+    "q5": "Company will employ Executive as Vice President of Engineering beginning on September 8, 2026.",
+    "q6": "Company will employ... (Section 1) / Company will provide severance... (Section 8)"
+  }
+}

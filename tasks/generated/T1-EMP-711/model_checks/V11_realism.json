@@ -1,0 +1,49 @@
+{
+  "failing_evidence": {
+    "q5": [
+      "All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements.",
+      "No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation. All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 1,
+      "passed": true,
+      "yes_votes": 2
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 2,
+      "passed": false,
+      "yes_votes": 1
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

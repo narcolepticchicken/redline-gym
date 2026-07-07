@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1-15; cross-references (Section 4 in Section 6, Permitted Transferee) resolve.",
+    "q2": "Section 7 uses \"Founder Holder\" but the defined term is \"Founder Stockholders\"; \"Founder Holder\" is undefined and used inconsistently.",
+    "q3": "",
+    "q4": "",
+    "q5": "Section 6 says \"Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.\" This includes items that Section 4 explicitly requires Requisite Holder approval for, creating an internal contradiction.",
+    "q6": ""
+  }
+}
