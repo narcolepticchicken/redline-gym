@@ -29,6 +29,11 @@ def run_baseline(name: str, argv: list[str] | None, driver: Callable[[Episode], 
     episode = Episode(args.task, seed=args.seed, run_dir=run_dir)
     episode.reset()
     driver(episode)
+    if not episode.done and episode.last_observation is not None \
+            and episode.last_observation.get("event") == "confirm_finalize":
+        # Scripted baselines are deliberate submitters: confirm the empty
+        # finalize the env bounced back (the bounce targets LLM agents).
+        episode.step({"action": "finalize", "card": finalize_card([], [], f"{name} completed.")})
     score = json.loads(episode.score_path.read_text())
     print(json.dumps(_stdout_score(score, episode.score_path), indent=2, sort_keys=True))
     return 0

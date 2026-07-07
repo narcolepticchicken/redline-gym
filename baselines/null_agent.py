@@ -9,16 +9,15 @@ NAME = "null_agent"
 
 
 def drive(episode: Episode) -> None:
-    episode.step(
-        {
-            "action": "finalize",
-            "card": {
-                "summary": "No issues identified.",
-                "issues": [],
-                "escalations": [],
-            },
-        }
-    )
+    card = {
+        "summary": "No issues identified.",
+        "issues": [],
+        "escalations": [],
+    }
+    obs = episode.step({"action": "finalize", "card": card})
+    if obs.get("event") == "confirm_finalize":
+        # The null agent is a deliberate empty submitter: confirm the bounce.
+        episode.step({"action": "finalize", "card": card})
 
 
 def main(argv: list[str] | None = None) -> int:

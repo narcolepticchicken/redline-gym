@@ -69,12 +69,20 @@ def drive(episode: Episode) -> None:
             flags.append({k: v for k, v in action.items() if k != "action"})
             episode.step(action)
             break
-    episode.step(
+    obs = episode.step(
         {
             "action": "finalize",
             "card": finalize_card(flags, [], "Lexical playbook scan completed."),
         }
     )
+    if obs.get("event") == "confirm_finalize":
+        # Deliberate submitter: confirm the empty-card bounce.
+        episode.step(
+            {
+                "action": "finalize",
+                "card": finalize_card(flags, [], "Lexical playbook scan completed."),
+            }
+        )
 
 
 def _rule_hints(rule: dict[str, Any]) -> list[str]:
