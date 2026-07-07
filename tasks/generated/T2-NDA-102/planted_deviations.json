@@ -6,10 +6,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "10",
-        "span": "Despite Section 10, each party may retain and reuse generalized ideas, techniques, and learnings derived from the other party's Confidential Information."
+        "span": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work."
       },
-      "original_text": "If any sentence conflicts with Section 10, Section 10 controls.",
-      "mutated_text": "Despite Section 10, each party may retain and reuse generalized ideas, techniques, and learnings derived from the other party's Confidential Information.",
+      "original_text": "No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement. If any sentence conflicts with Section 10, Section 10 controls.",
+      "mutated_text": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
       "mechanism": "cross_ref_override",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -20,10 +20,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "5",
-        "span": "If Recipient is required by law, regulation, or legal process to disclose Confidential Information, Recipient may make such disclosure without prior notice and without obligation to challenge or limit the disclosure."
+        "span": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may comply before contacting Discloser and has no duty to contest the demand or narrow the production."
       },
       "original_text": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
-      "mutated_text": "If Recipient is required by law, regulation, or legal process to disclose Confidential Information, Recipient may make such disclosure without prior notice and without obligation to challenge or limit the disclosure.",
+      "mutated_text": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may comply before contacting Discloser and has no duty to contest the demand or narrow the production.",
       "mechanism": "omission",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -34,10 +34,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "8",
-        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within ninety days, except retained copies may be kept for ordinary business recordkeeping."
+        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within the next quarter, except retained copies may be kept for ordinary business recordkeeping."
       },
       "original_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within ninety days, except retained copies may be kept for ordinary business recordkeeping.",
+      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within the next quarter, except retained copies may be kept for ordinary business recordkeeping.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "escalate"
@@ -48,10 +48,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "3",
-        "span": "\"Affiliate\" means only an entity wholly owned by a party and specifically listed in a schedule signed by both parties."
+        "span": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides."
       },
-      "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party.",
-      "mutated_text": "\"Affiliate\" means only an entity wholly owned by a party and specifically listed in a schedule signed by both parties.",
+      "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.",
+      "mutated_text": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides.",
       "mechanism": "defined_term_shift",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -62,10 +62,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "1",
-        "span": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within five days after disclosure."
+        "span": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within five days after disclosure."
       },
       "original_text": "\"Confidential Information\" means all non-public information disclosed by or on behalf of a Discloser, whether before or after the effective date, in any form or medium and whether or not marked confidential.",
-      "mutated_text": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within five days after disclosure.",
+      "mutated_text": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within five days after disclosure.",
       "mechanism": "direct_term_swap",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -99,6 +99,7 @@
   ],
   "generation_log": [
     "seed=102",
+    "attempt_seed=102",
     "playbook=PB-NDA-001",
     "tier=T2",
     "task_id=T2-NDA-102",

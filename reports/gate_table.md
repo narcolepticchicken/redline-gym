@@ -11,7 +11,7 @@ Composite / recall are reported for deterministic baselines. Honest and model-ch
 | tasks/generated/T1-NDA-103 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.567857 / 0.500000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-MSA-104 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-MSA-106 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.366667 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
-| tasks/generated/T2-NDA-102 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.825000 / 1.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
+| tasks/generated/T2-NDA-102 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 
 ## Gate Notes
 

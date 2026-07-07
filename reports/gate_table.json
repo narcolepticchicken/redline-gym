@@ -275,8 +275,8 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
-        "composite": 0.825,
-        "recall": 1.0,
+        "composite": 0.25,
+        "recall": 0.0,
         "status": "OK"
       },
       "grep_gate": "UNMEASURED",

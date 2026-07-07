@@ -1,19 +1,19 @@
 # Mutual Confidentiality Agreement
 
-This Mutual Confidentiality Agreement is entered into as of September 3, 2026, by and between Northstar Analytics, Inc. and Stonepath Data LLC. Each party may be a "Discloser" when it discloses information and a "Recipient" when it receives information.
+This Mutual Confidentiality Agreement is entered into as of August 14, 2026, by and between Northstar Analytics, Inc. and Meridian Systems LLC. Each party may be a "Discloser" when it discloses information and a "Recipient" when it receives information.
 
 ## 1. Confidential Information
 
-"Confidential Information" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within five days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
-
-## 3. Affiliates and Representatives
-
-The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides.
-Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.
+"Confidential Information" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within thirty days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated analytics modernization between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
 
 ## 2. Purpose and Use
 
 Recipient may use Confidential Information solely for the Purpose.
+
+## 3. Affiliates and Representatives
+
+The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides.
+Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose.
 
 ## 4. Protection Standard
 
@@ -21,7 +21,7 @@ Recipient will protect Confidential Information using at least reasonable care, 
 
 ## 5. Compelled Disclosure
 
-If Recipient receives a legally binding demand to produce Confidential Information, Recipient may comply before contacting Discloser and has no duty to contest the demand or narrow the production.
+If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.
 
 ## 6. Exclusions
 
@@ -33,11 +33,11 @@ Neither party is obligated to enter into any further agreement, purchase or sell
 
 ## 8. Return or Destruction
 
-Upon Discloser's written request, Recipient will return or destroy Confidential Information within the next quarter, except retained copies may be kept for ordinary business recordkeeping.
+Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.
 
 ## 9. Term and Survival
 
-This Agreement begins on the effective date and continues for two years. Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.
+This Agreement begins on the effective date and continues for two years. The recipient's restrictions expire two years after each exchange, including for technical material otherwise protected by law.
 
 ## 10. No License; Ownership
 

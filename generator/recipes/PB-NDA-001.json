@@ -8,7 +8,7 @@
       "section": "1",
       "templates": {
         "original_text": "\"Confidential Information\" means all non-public information disclosed by or on behalf of a {discloser_role}, whether before or after the effective date, in any form or medium and whether or not marked confidential.",
-        "mutated_text": "\"Confidential Information\" means information disclosed by or on behalf of a {discloser_role} that is marked confidential at the time of disclosure or confirmed as confidential in writing within {mark_window_days} days after disclosure."
+        "mutated_text": "\"Confidential Information\" means information disclosed by or on behalf of a {discloser_role} that bears a restricted legend when provided or is later identified in a written follow-up delivered within {mark_window_days} days after disclosure."
       },
       "slots": {
         "mark_window_days": ["five", "ten", "thirty"]
@@ -22,8 +22,8 @@
       "mechanism": "defined_term_shift",
       "section": "3",
       "templates": {
-        "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party.",
-        "mutated_text": "\"Affiliate\" means only an entity wholly owned by a party and specifically listed in a schedule signed by both parties."
+        "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.",
+        "mutated_text": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides."
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"
@@ -83,7 +83,7 @@
       "section": "5",
       "templates": {
         "original_text": "If {recipient_role} is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, {recipient_role} will, to the extent legally permitted, provide prompt notice to {discloser_role} and reasonably cooperate with {discloser_role} in seeking confidential or protective treatment.",
-        "mutated_text": "If {recipient_role} is required by law, regulation, or legal process to disclose Confidential Information, {recipient_role} may make such disclosure without prior notice and without obligation to challenge or limit the disclosure."
+        "mutated_text": "If {recipient_role} receives a legally binding demand to produce Confidential Information, {recipient_role} may comply before contacting {discloser_role} and has no duty to contest the demand or narrow the production."
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"
@@ -95,10 +95,10 @@
       "section": "8",
       "templates": {
         "original_text": "Upon request, {recipient_role} will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will return or destroy Confidential Information within {return_days} days, except retained copies may be kept for ordinary business recordkeeping."
+        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will return or destroy Confidential Information within {return_period}, except retained copies may be kept for ordinary business recordkeeping."
       },
       "slots": {
-        "return_days": ["sixty", "ninety", "one hundred twenty"]
+        "return_period": ["two calendar months", "the next quarter", "a commercially convenient period"]
       },
       "expected_action": "escalate",
       "severity": "medium"
@@ -110,7 +110,7 @@
       "section": "9",
       "templates": {
         "original_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
-        "mutated_text": "Confidentiality obligations continue for {survival_period} after disclosure, including for trade secrets."
+        "mutated_text": "The recipient's restrictions expire {survival_period} after each exchange, including for technical material otherwise protected by law."
       },
       "slots": {
         "survival_period": ["one year", "eighteen months", "two years"]
@@ -124,8 +124,8 @@
       "mechanism": "cross_ref_override",
       "section": "10",
       "templates": {
-        "original_text": "If any sentence conflicts with Section 10, Section 10 controls.",
-        "mutated_text": "Despite Section 10, each party may retain and reuse generalized ideas, techniques, and learnings derived from the other party's Confidential Information."
+        "original_text": "No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement. If any sentence conflicts with Section 10, Section 10 controls.",
+        "mutated_text": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work."
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"
@@ -137,7 +137,7 @@
       "section": "11",
       "templates": {
         "original_text": "Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies.",
-        "mutated_text": "Each party agrees that monetary damages are an adequate remedy for unauthorized use or disclosure and waives any right to seek equitable relief under this Agreement."
+        "mutated_text": "For any breach involving protected materials, each side agrees that money damages are sufficient and that court-ordered non-monetary remedies are unavailable under this Agreement."
       },
       "expected_action": "redline_with_fallback",
       "severity": "low"
@@ -149,11 +149,10 @@
       "section": "12",
       "templates": {
         "original_text": "No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.",
-        "mutated_text": "{recipient_role} may use residual knowledge retained in unaided memory after access to Confidential Information, provided {recipient_role} does not intentionally memorize source materials."
+        "mutated_text": "After access to Confidential Information, {recipient_role} may later rely on ideas it remembers without notes, provided {recipient_role} does not intentionally study source materials for that purpose."
       },
       "expected_action": "escalate",
       "severity": "high"
     }
   ]
 }
-

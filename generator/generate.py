@@ -8,9 +8,12 @@ import random
 import shutil
 import subprocess
 import sys
+import tempfile
 from string import Formatter
 from typing import Any
 
+from baselines import grep_bot
+from env import Episode
 from validators.checks import run_all, write_report
 
 
@@ -21,6 +24,9 @@ ALLOWED_MECHANISMS = {
     "T2": {"direct_term_swap", "cross_ref_override", "defined_term_shift", "omission"},
 }
 DEVIATION_COUNT = {"T1": 4, "T2": 5}
+T2_GREP_RECALL_MAX = 0.2
+GREP_GATE_SEED_STEP = 1000
+GREP_GATE_MAX_ATTEMPTS = 5
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -42,17 +48,71 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) -> list[str]:
-    rng = random.Random(seed)
     playbook_path = _repo_path(playbook_path)
     out_dir = _repo_path(out_dir)
     playbook = _load_json(playbook_path)
     playbook_id = playbook["playbook_id"]
     base = _load_json(GENERATOR_DIR / "bases" / f"{playbook_id}.json")
     recipe_book = _load_json(GENERATOR_DIR / "recipes" / f"{playbook_id}.json")
+    attempts = GREP_GATE_MAX_ATTEMPTS if tier == "T2" else 1
+    grep_logs: list[str] = []
+    last_leaking_rules: list[str] = []
+
+    for attempt_index in range(attempts):
+        attempt_seed = seed + attempt_index * GREP_GATE_SEED_STEP
+        try:
+            deviations, grep_result = _generate_candidate(
+                playbook_path=playbook_path,
+                playbook=playbook,
+                base=base,
+                recipe_entries=recipe_book["entries"],
+                tier=tier,
+                seed=seed,
+                attempt_seed=attempt_seed,
+                out_dir=out_dir,
+            )
+        except GrepGateError as exc:
+            grep_logs.append(
+                f"grep_bot attempt_seed={attempt_seed} recall={exc.recall:.6f} matched_rule_ids={','.join(exc.rule_ids) or 'none'}"
+            )
+            last_leaking_rules = exc.rule_ids
+            continue
+        grep_logs.append(
+            f"grep_bot attempt_seed={attempt_seed} recall={grep_result['recall']:.6f} matched_rule_ids={','.join(grep_result['matched_rule_ids']) or 'none'}"
+        )
+        task_id = _task_id(playbook_id, tier, seed)
+        return [
+            f"Generated {task_id} at {out_dir.relative_to(ROOT)}",
+            *grep_logs,
+            f"Deviations: {', '.join(d['deviation_id'] + ':' + d['rule_id'] + '/' + d['mechanism'] for d in deviations)}",
+            f"Validators: PASS with model-backed checks marked STUBBED where applicable",
+        ]
+
+    detail = "; ".join(grep_logs)
+    leaking = ", ".join(last_leaking_rules) if last_leaking_rules else "none"
+    raise GenerationError(
+        f"T2 grep_bot recall exceeded {T2_GREP_RECALL_MAX:.1f} after {attempts} attempts; "
+        f"leaking rule_ids: {leaking}; attempts: {detail}"
+    )
+
+
+def _generate_candidate(
+    *,
+    playbook_path: Path,
+    playbook: dict[str, Any],
+    base: dict[str, Any],
+    recipe_entries: list[dict[str, Any]],
+    tier: str,
+    seed: int,
+    attempt_seed: int,
+    out_dir: Path,
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    rng = random.Random(attempt_seed)
+    playbook_id = playbook["playbook_id"]
     params = _surface_params(base, rng, seed)
     task_id = _task_id(playbook_id, tier, seed)
     doc_text = _render_base(base, params, rng)
-    selected = _select_recipes(recipe_book["entries"], tier, rng)
+    selected = _select_recipes(recipe_entries, tier, rng)
 
     if out_dir.exists():
         shutil.rmtree(out_dir)
@@ -62,6 +122,7 @@ def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) 
         deviations: list[dict[str, Any]] = []
         generation_log = [
             f"seed={seed}",
+            f"attempt_seed={attempt_seed}",
             f"playbook={playbook_id}",
             f"tier={tier}",
             f"task_id={task_id}",
@@ -142,16 +203,56 @@ def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) 
         if failures:
             detail = "; ".join(f"{r.code}: {r.detail}" for r in failures)
             raise GenerationError(f"validator failure: {detail}")
+
+        grep_result = measure_grep_bot_recall(out_dir)
+        _append_grep_report(out_dir, tier, grep_result)
+        if tier == "T2" and grep_result["recall"] > T2_GREP_RECALL_MAX:
+            raise GrepGateError(grep_result["recall"], grep_result["matched_rule_ids"])
     except Exception:
         if out_dir.exists():
             shutil.rmtree(out_dir)
         raise
 
-    return [
-        f"Generated {task_id} at {out_dir.relative_to(ROOT)}",
-        f"Deviations: {', '.join(d['deviation_id'] + ':' + d['rule_id'] + '/' + d['mechanism'] for d in deviations)}",
-        f"Validators: PASS with model-backed checks marked STUBBED where applicable",
+    return deviations, grep_result
+
+
+def measure_grep_bot_recall(task_dir: Path) -> dict[str, Any]:
+    task_dir = _repo_path(task_dir)
+    with tempfile.TemporaryDirectory(prefix="redline-grep-bot-") as tmp:
+        episode = Episode(task_dir, seed=0, run_dir=Path(tmp) / "grep_bot")
+        episode.reset()
+        grep_bot.drive(episode)
+        score = json.loads(episode.score_path.read_text())
+    planted = _load_json(task_dir / "planted_deviations.json")
+    rule_by_deviation = {dev["deviation_id"]: dev["rule_id"] for dev in planted["deviations"]}
+    matched_ids = score.get("matched_deviation_ids", [])
+    matched_rule_ids = sorted({rule_by_deviation[dev_id] for dev_id in matched_ids if dev_id in rule_by_deviation})
+    return {
+        "recall": float(score["channels"]["recall"]),
+        "matched_deviation_ids": sorted(matched_ids),
+        "matched_rule_ids": matched_rule_ids,
+    }
+
+
+def _append_grep_report(task_dir: Path, tier: str, grep_result: dict[str, Any]) -> None:
+    path = task_dir / "verification_report.md"
+    text = path.read_text()
+    gate = "unconstrained" if tier == "T1" else f"<= {T2_GREP_RECALL_MAX:.1f}"
+    lines = [
+        "## Emit-Time Baseline Gate",
+        "",
+        f"- grep_bot recall: {grep_result['recall']:.6f}",
+        f"- tier threshold: {gate}",
+        f"- matched deviation ids: {', '.join(grep_result['matched_deviation_ids']) or 'none'}",
+        f"- matched rule ids: {', '.join(grep_result['matched_rule_ids']) or 'none'}",
+        "",
     ]
+    marker = "Human sign-off:"
+    index = text.find(marker)
+    if index == -1:
+        path.write_text(text.rstrip() + "\n\n" + "\n".join(lines))
+        return
+    path.write_text(text[:index] + "\n".join(lines) + text[index:])
 
 
 def _repo_path(path: Path) -> Path:
@@ -263,3 +364,9 @@ def _dump_json(path: Path, payload: dict[str, Any]) -> None:
 class GenerationError(RuntimeError):
     pass
 
+
+class GrepGateError(GenerationError):
+    def __init__(self, recall: float, rule_ids: list[str]) -> None:
+        super().__init__(f"grep_bot recall {recall:.6f} matched rule_ids {', '.join(rule_ids) or 'none'}")
+        self.recall = recall
+        self.rule_ids = rule_ids

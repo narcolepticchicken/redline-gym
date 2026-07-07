@@ -5,23 +5,23 @@
       "deviation_ids": [
         "D-001"
       ],
-      "rule_id": "R-008",
+      "rule_id": "R-006",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
-      "expected_action": "escalate"
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
     },
     {
       "issue_id": "I-002",
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-002",
+      "rule_id": "R-001",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -29,7 +29,7 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-010",
+      "rule_id": "R-009",
       "doc_ids": [
         "DOC-01"
       ],
@@ -41,7 +41,7 @@
       "deviation_ids": [
         "D-004"
       ],
-      "rule_id": "R-007",
+      "rule_id": "R-002",
       "doc_ids": [
         "DOC-01"
       ],
@@ -53,12 +53,12 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-012",
+      "rule_id": "R-010",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
-      "expected_action": "escalate"
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
     }
   ],
   "missing_info": [

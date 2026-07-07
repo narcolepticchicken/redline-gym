@@ -229,7 +229,7 @@ def run_all(task_dir: Path) -> list[ValidationResult]:
 
 def write_report(task_dir: Path, results: list[ValidationResult]) -> Path:
     path = task_dir / "verification_report.md"
-    preserved = _preserved_signoff(path)
+    preserved = _preserved_report_sections(path)
     lines = [
         "# Verification Report",
         "",
@@ -247,6 +247,9 @@ def write_report(task_dir: Path, results: list[ValidationResult]) -> Path:
             "",
         ]
     )
+    if preserved["emit_gate"]:
+        lines.append(preserved["emit_gate"].rstrip("\n"))
+        lines.append("")
     if preserved["signoff"]:
         lines.append(preserved["signoff"].rstrip("\n"))
     else:
@@ -256,21 +259,29 @@ def write_report(task_dir: Path, results: list[ValidationResult]) -> Path:
     return path
 
 
-def _preserved_signoff(path: Path) -> dict[str, str]:
+def _preserved_report_sections(path: Path) -> dict[str, str]:
     if not path.exists():
-        return {"status": "", "signoff": ""}
+        return {"status": "", "emit_gate": "", "signoff": ""}
     text = path.read_text()
     status = ""
     for line in text.splitlines():
         if line.startswith("Status:") and "HUMAN SIGNED-OFF" in line:
             status = line
             break
-    marker = "Human sign-off:"
+    signoff_marker = "Human sign-off:"
     signoff = ""
-    start = text.find(marker)
-    if start != -1:
-        signoff = text[start:]
-    return {"status": status, "signoff": signoff}
+    signoff_start = text.find(signoff_marker)
+    if signoff_start != -1:
+        signoff = text[signoff_start:]
+
+    emit_gate = ""
+    gate_marker = "## Emit-Time Baseline Gate"
+    gate_start = text.find(gate_marker)
+    if gate_start != -1:
+        gate_end = signoff_start if signoff_start != -1 else len(text)
+        emit_gate = text[gate_start:gate_end].strip()
+
+    return {"status": status, "emit_gate": emit_gate, "signoff": signoff}
 
 
 def _result(code: str, name: str, errors: list[str]) -> ValidationResult:
