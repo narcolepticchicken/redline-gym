@@ -20,10 +20,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "9",
-        "span": "Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law."
+        "span": "Confidentiality obligations continue for three years after disclosure, except trade secrets are protected only if identified as trade secrets in a signed notice delivered before disclosure."
       },
       "original_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
-      "mutated_text": "Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
+      "mutated_text": "Confidentiality obligations continue for three years after disclosure, except trade secrets are protected only if identified as trade secrets in a signed notice delivered before disclosure.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -100,6 +100,7 @@
     "D-002 NDA-R009-DIRECT-SURVIVAL direct_term_swap applied to R-009",
     "D-003 NDA-R003-DIRECT-EXCLUSIONS direct_term_swap applied to R-003",
     "D-004 NDA-R005-DIRECT-CARE direct_term_swap applied to R-005",
-    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=2 dropped_absent=none"
   ]
 }

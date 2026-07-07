@@ -1,7 +1,0 @@
-{
-  "gaps": [
-    "Stockholder voting covenant to elect specified board designees",
-    "Registration rights (demand, piggyback, S-3, etc.)",
-    "Investor conflict-of-interest and overlapping investment disclosure obligations"
-  ]
-}

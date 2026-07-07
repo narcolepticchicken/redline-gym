@@ -170,7 +170,7 @@
       "section": "15",
       "templates": {
         "original_text": "For up to {transition_days} days after termination, {vendor_role} will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
-        "mutated_text": "For up to {transition_days} days after termination, {vendor_role} will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
+        "mutated_text": "For up to {transition_days} days after termination, {vendor_role} will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"

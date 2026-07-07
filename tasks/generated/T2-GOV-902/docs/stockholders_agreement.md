@@ -44,7 +44,7 @@ Each Major Investor may receive quarterly unaudited financial statements within 
 
 ## 11. Preemptive Rights
 
-Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.
+Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, debt with equity features, or in a public offering.
 
 ## 12. Confidentiality
 

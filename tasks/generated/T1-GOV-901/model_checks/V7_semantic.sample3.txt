@@ -1,9 +1,0 @@
-{
-  "gaps": [
-    "Amendment procedure",
-    "Entire agreement (integration/merger) clause",
-    "Severability clause",
-    "Notices provision",
-    "Definition of 'qualified IPO'"
-  ]
-}

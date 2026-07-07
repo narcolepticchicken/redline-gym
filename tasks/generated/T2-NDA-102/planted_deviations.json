@@ -34,10 +34,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "8",
-        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping."
+        "span": "Upon Discloser's written request, Recipient will promptly return or destroy Confidential Information, except retained copies may be kept for ordinary business recordkeeping without continuing confidentiality obligations."
       },
       "original_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping.",
+      "mutated_text": "Upon Discloser's written request, Recipient will promptly return or destroy Confidential Information, except retained copies may be kept for ordinary business recordkeeping without continuing confidentiality obligations.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "escalate"
@@ -115,6 +115,7 @@
     "D-003 NDA-R008-DIRECT-RETURN direct_term_swap applied to R-008",
     "D-004 NDA-R002-DEFINED-AFFILIATE defined_term_shift applied to R-002",
     "D-005 NDA-R001-DIRECT-MARKING direct_term_swap applied to R-001",
-    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=2 dropped_absent=none"
   ]
 }

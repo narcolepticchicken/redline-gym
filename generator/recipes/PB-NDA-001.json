@@ -95,10 +95,10 @@
       "section": "8",
       "templates": {
         "original_text": "Upon request, {recipient_role} will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will return or destroy Confidential Information {return_period}, except retained copies may be kept for ordinary business recordkeeping."
+        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will promptly return or destroy Confidential Information, except retained copies may be kept for ordinary business recordkeeping without continuing confidentiality obligations."
       },
       "slots": {
-        "return_period": ["promptly", "within 15 days", "within 30 days"]
+        "return_period": ["promptly"]
       },
       "expected_action": "escalate",
       "severity": "medium"
@@ -110,10 +110,10 @@
       "section": "9",
       "templates": {
         "original_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
-        "mutated_text": "Confidentiality obligations expire {survival_period} after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law."
+        "mutated_text": "Confidentiality obligations continue for {survival_period} after disclosure, except trade secrets are protected only if identified as trade secrets in a signed notice delivered before disclosure."
       },
       "slots": {
-        "survival_period": ["two years"]
+        "survival_period": ["three years"]
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"

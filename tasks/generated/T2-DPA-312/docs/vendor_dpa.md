@@ -60,4 +60,4 @@ Claims arising from Vendor's breach of this DPA are subject to the liability cap
 
 ## 15. Term and Transition Assistance
 
-This addendum begins on signature and expires automatically one year later unless the parties sign a renewal. For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.
+This addendum begins on signature and expires automatically one year later unless the parties sign a renewal. For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.

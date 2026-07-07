@@ -1,1 +1,0 @@
-{"gaps":["Notification of government or law enforcement access requests","Subprocessor data deletion obligations","Requirement to delete personal data no longer necessary for processing"]}

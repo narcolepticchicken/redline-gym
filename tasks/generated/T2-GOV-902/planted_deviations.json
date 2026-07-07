@@ -122,6 +122,7 @@
     "D-003 GOV-R006-DIRECT-INVESTOR-ROFR-FIRST direct_term_swap applied to R-006",
     "D-004 GOV-R002-CROSS-INVESTOR-RELATIONS-CONSENT off_playbook_addition applied to R-002",
     "D-005 GOV-R004-DIRECT-DRAG-UNCAPPED-INDEMNITY direct_term_swap applied to R-004",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

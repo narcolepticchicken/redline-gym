@@ -1,6 +1,0 @@
-{
-  "gaps": [
-    "Change of control severance protections (e.g., double-trigger vesting acceleration or enhanced severance upon qualifying termination following a change of control)",
-    "Section 280G golden parachute mitigation (e.g., a best-after-cutback provision, cap on parachute payments, or a gross-up election to address excise tax exposure)"
-  ]
-}

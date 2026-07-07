@@ -33,11 +33,11 @@ Neither party is obligated to enter into any further agreement, purchase or sell
 
 ## 8. Return or Destruction
 
-Upon Discloser's written request, Recipient will return or destroy Confidential Information within 30 days, except retained copies may be kept for ordinary business recordkeeping.
+Upon Discloser's written request, Recipient will promptly return or destroy Confidential Information, except retained copies may be kept for ordinary business recordkeeping without continuing confidentiality obligations.
 
 ## 9. Term and Survival
 
-This Agreement begins on the effective date and continues for two years. Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law.
+This Agreement begins on the effective date and continues for two years. Confidentiality obligations continue for three years after disclosure, except trade secrets are protected only if identified as trade secrets in a signed notice delivered before disclosure.
 
 ## 10. No License; Ownership
 

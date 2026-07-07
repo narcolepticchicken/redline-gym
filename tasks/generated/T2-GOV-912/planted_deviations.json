@@ -122,6 +122,7 @@
     "D-003 GOV-R003-DIRECT-ORDINARY-COURSE-CONSENT direct_term_swap applied to R-003",
     "D-004 GOV-R010-DIRECT-CONFIDENTIALITY-DISCLOSURE direct_term_swap applied to R-010",
     "D-005 GOV-R013-DEFINED-REQUISITE-HOLDERS-LOWERED defined_term_shift applied to R-013",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

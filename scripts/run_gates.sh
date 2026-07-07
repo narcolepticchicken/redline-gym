@@ -23,6 +23,11 @@ from validators.checks import run_all, write_report
 ROOT = Path.cwd()
 REPORTS = ROOT / "reports"
 RUNS = ROOT / "runs" / "gates"
+PROTECTED_NO_WRITE_TASKS = {
+    "tasks/contracts/T2-MSA-001",
+    "tasks/generated/T2-DPA-302",
+    "tasks/generated/T2-EMP-702",
+}
 REPORTS.mkdir(exist_ok=True)
 RUNS.mkdir(parents=True, exist_ok=True)
 
@@ -87,7 +92,8 @@ deterministic_failures = []
 for task_dir in task_dirs():
     rel = str(task_dir.relative_to(ROOT))
     validation = run_all(task_dir)
-    write_report(task_dir, validation)
+    if rel not in PROTECTED_NO_WRITE_TASKS:
+        write_report(task_dir, validation)
     validation_status = validator_gate(validation)
     if validation_status == "FAIL":
         deterministic_failures.append(f"{rel}: validators")
@@ -188,4 +194,3 @@ if deterministic_failures:
     print("\n".join(deterministic_failures), file=sys.stderr)
     sys.exit(1)
 PY
-

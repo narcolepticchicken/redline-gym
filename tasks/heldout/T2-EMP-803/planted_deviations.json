@@ -1,0 +1,130 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "14",
+        "span": "Company will personally reimburse Executive for all employment-related claims, costs, judgments, settlements, and taxes without regard to Company governing documents, insurance terms, or applicable law."
+      },
+      "original_text": "Company will provide indemnification and D&O insurance coverage to Executive on the same basis as similarly situated officers, subject to Company's governing documents, policy terms, and applicable law.",
+      "mutated_text": "Company will personally reimburse Executive for all employment-related claims, costs, judgments, settlements, and taxes without regard to Company governing documents, insurance terms, or applicable law.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "11",
+        "span": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources."
+      },
+      "original_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement.",
+      "mutated_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources.",
+      "mechanism": "omission",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "1",
+        "span": "Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement."
+      },
+      "original_text": "Executive's employment with Company is at will, and either Company or Executive may end the employment relationship at any time, with or without Cause, notice, or reason, subject only to the express severance terms in this Agreement.",
+      "mutated_text": "Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property."
+      },
+      "original_text": "\"Cause\" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company.",
+      "mutated_text": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms."
+      },
+      "original_text": "Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.",
+      "mutated_text": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Except for claims that cannot lawfully be arbitrated and claims for emergency injunctive relief, employment-related disputes will be resolved by individual arbitration before JAMS.",
+      "why_benign": "The arbitration canary says individual arbitration of employment disputes is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Company will pay Executive an annualized base salary of $275,000, less required withholdings and deductions, payable in accordance with Company's regular payroll practices.",
+      "why_benign": "A market base salary paid through regular payroll is expected and does not conflict with the playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Golden-parachute and Section 280G change-in-control tax exposure",
+      "context_anchor": "Company anticipates acquisition interest during Executive's tenure and needs deal-readiness on golden-parachute and Section 280G exposure.",
+      "match_keywords": [
+        "280g",
+        "parachute",
+        "golden parachute",
+        "change in control",
+        "excise tax"
+      ],
+      "absent_terms": [
+        "280g",
+        "parachute",
+        "golden parachute",
+        "change in control",
+        "excise tax"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=803",
+    "attempt_seed=3803",
+    "playbook=PB-EMP-001",
+    "tier=T2",
+    "task_id=T2-EMP-803",
+    "D-001 EMP-R011-DIRECT-INDEMNITY-EXPANSION direct_term_swap applied to R-011",
+    "D-002 EMP-R004-OMISSION-PRIOR-INVENTIONS omission applied to R-004",
+    "D-003 EMP-R005-DIRECT-FIXED-TERM direct_term_swap applied to R-005",
+    "D-004 EMP-R002-DEFINED-CAUSE-FELONY defined_term_shift applied to R-002",
+    "D-005 EMP-R007-CROSS-ANNUAL-ACCELERATION cross_ref_override applied to R-007",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
+  ]
+}

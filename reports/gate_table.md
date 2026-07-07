@@ -25,11 +25,11 @@ Composite / recall are reported for deterministic baselines. Honest and model-ch
 | tasks/generated/T2-CRYPTO-1502 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.363636 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-CRYPTO-1503 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.362500 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-DPA-302 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
-| tasks/generated/T2-DPA-303 | FAIL | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
-| tasks/generated/T2-DPA-312 | FAIL | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
+| tasks/generated/T2-DPA-303 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
+| tasks/generated/T2-DPA-312 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-EMP-702 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.365000 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-EMP-703 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.363636 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
-| tasks/generated/T2-EMP-712 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.365000 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
+| tasks/generated/T2-EMP-712 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-GOV-902 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-GOV-903 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.366667 / 0.200000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
 | tasks/generated/T2-GOV-912 | PASS | 0.000000 / 0.000000 | PASS | 0.250000 / 0.000000 | UNMEASURED | 0.250000 / 0.000000 | UNMEASURED | UNMEASURED | honest SKIPPED (no key); cheater SKIPPED (no key); judge SKIPPED (no key) |
@@ -45,4 +45,4 @@ Composite / recall are reported for deterministic baselines. Honest and model-ch
 
 - Computable deterministic gates: validators must not FAIL; null composite must be <= 0.05.
 - Random precision noise floor, grep <= 60% of honest, honest saturation band, and model cheater < honest are UNMEASURED without honest/model-cheater lab-lane runs.
-- Deterministic failures: tasks/generated/T2-DPA-303: validators, tasks/generated/T2-DPA-312: validators.
+- Deterministic failures: none.

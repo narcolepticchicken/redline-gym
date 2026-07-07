@@ -37,7 +37,7 @@ If Company terminates Executive's employment without Cause and not because of de
 
 ## 9. Release and Payment Timing
 
-No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation. All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements.
+No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation. All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements.
 
 ## 10. Confidentiality
 

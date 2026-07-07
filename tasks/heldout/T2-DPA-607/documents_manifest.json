@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Vendor Data Processing Addendum",
+      "type": "addendum",
+      "path": "docs/vendor_dpa.md",
+      "sha256": "a584b17c8fadade8259212c251737177d09f961a20782cec6c78e96e1daf1975",
+      "is_distractor": false
+    }
+  ]
+}

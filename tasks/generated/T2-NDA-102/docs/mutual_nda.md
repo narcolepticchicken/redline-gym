@@ -33,7 +33,7 @@ Neither party is obligated to enter into any further agreement, purchase or sell
 
 ## 8. Return or Destruction
 
-Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping.
+Upon Discloser's written request, Recipient will promptly return or destroy Confidential Information, except retained copies may be kept for ordinary business recordkeeping without continuing confidentiality obligations.
 
 ## 9. Term and Survival
 

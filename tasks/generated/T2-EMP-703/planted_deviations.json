@@ -48,10 +48,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "9",
-        "span": "All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements."
+        "span": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements."
       },
       "original_text": "Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.",
-      "mutated_text": "All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements.",
+      "mutated_text": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -124,6 +124,7 @@
     "D-003 EMP-R007-CROSS-ANNUAL-ACCELERATION cross_ref_override applied to R-007",
     "D-004 EMP-R013-DIRECT-409A-TIMING direct_term_swap applied to R-013",
     "D-005 EMP-R005-DIRECT-FIXED-TERM direct_term_swap applied to R-005",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

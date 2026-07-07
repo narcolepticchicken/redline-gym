@@ -1,0 +1,12 @@
+{
+  "task_id": "T2-GOV-1003",
+  "practice_area": "corporate_governance",
+  "client_context": "Client is a founder-led Delaware startup after its Series A financing. Review the stockholders' agreement from the Company and founder side as company counsel. Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+  "instruction": "Review the stockholders' agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "deliverable": {
+    "card_schema_id": "redline-gym.issue-card.v1"
+  },
+  "turn_cap": 25,
+  "difficulty_tier": "T2",
+  "playbook_ref": "playbooks/governance/PB-GOV-001.json"
+}

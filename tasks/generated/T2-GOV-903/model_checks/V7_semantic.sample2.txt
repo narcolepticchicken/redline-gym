@@ -1,9 +1,0 @@
-{
-  "gaps": [
-    "Voting agreement to enforce board composition",
-    "Amendment and waiver mechanism",
-    "Entire agreement / integration clause",
-    "Investor conflict or overlap disclosure obligations",
-    "Market stand-off / lock-up commitment for IPOs"
-  ]
-}

@@ -107,6 +107,7 @@
     "D-002 GOV-R005-DIRECT-TAG-FOUNDER-EXCLUSION direct_term_swap applied to R-005",
     "D-003 GOV-R004-DIRECT-DRAG-UNCAPPED-INDEMNITY direct_term_swap applied to R-004",
     "D-004 GOV-R001-DIRECT-BOARD-INVESTOR-MAJORITY direct_term_swap applied to R-001",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

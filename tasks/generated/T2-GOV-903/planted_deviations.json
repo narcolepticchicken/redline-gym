@@ -6,10 +6,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "11",
-        "span": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering."
+        "span": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, debt with equity features, or in a public offering."
       },
-      "original_text": "Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
-      "mutated_text": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+      "original_text": "Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, debt with equity features, or in a public offering.",
+      "mutated_text": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, debt with equity features, or in a public offering.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
@@ -122,6 +122,7 @@
     "D-003 GOV-R006-DIRECT-INVESTOR-ROFR-FIRST direct_term_swap applied to R-006",
     "D-004 GOV-R013-DEFINED-REQUISITE-HOLDERS-LOWERED defined_term_shift applied to R-013",
     "D-005 GOV-R002-CROSS-INVESTOR-RELATIONS-CONSENT off_playbook_addition applied to R-002",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

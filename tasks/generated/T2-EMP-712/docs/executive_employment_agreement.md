@@ -1,10 +1,10 @@
 # Executive Employment Agreement
 
-This Executive Employment Agreement (the "Agreement") is entered into by and between Cedarline Robotics, Inc. ("Company") and Alex Rivera ("Executive") as of August 17, 2026.
+This Executive Employment Agreement (the "Agreement") is entered into by and between Cedarline Robotics, Inc. ("Company") and Morgan Patel ("Executive") as of August 17, 2026.
 
 ## 1. Position and At-Will Employment
 
-Company will employ Executive as Vice President of Engineering beginning on August 17, 2026. Executive will report to Company's Chief Operating Officer. Executive's employment with Company is at will, and either Company or Executive may end the employment relationship at any time, with or without Cause, notice, or reason, subject only to the express severance terms in this Agreement.
+Company will employ Executive as Vice President of Engineering beginning on August 17, 2026. Executive will report to Company's Chief Executive Officer. Executive's employment with Company is at will, and either Company or Executive may end the employment relationship at any time, with or without Cause, notice, or reason, subject only to the express severance terms in this Agreement.
 
 ## 2. Definitions
 
@@ -12,32 +12,32 @@ Company will employ Executive as Vice President of Engineering beginning on Augu
 
 ## 3. Duties and Business Time
 
-Executive will devote full business time, attention, and best efforts to Company and will comply with Company policies. Executive will not engage in outside employment, consulting, board service, or business activity that conflicts with Company's business or Executive's duties unless Company gives prior written approval.
-Company may update objectives from time to time. Any material reduction in title, reporting line, responsibilities, authority, or budget will be treated as an involuntary termination without Cause.
+Executive will devote full business time, attention, and best efforts to Company and will comply with Company policies. Executive may engage in outside employment, consulting, board service, or business activity if Executive determines it can be managed alongside Company responsibilities.
+Company may change Executive's title, duties, reporting line, responsibilities, authority, office location, and business objectives from time to time based on business needs, without creating severance rights unless this Agreement expressly provides otherwise.
 
 ## 4. Base Salary
 
-Company will pay Executive an annualized base salary of $300,000, less required withholdings and deductions, payable in accordance with Company's regular payroll practices. Company may review and adjust base salary prospectively in its discretion.
+Company will pay Executive an annualized base salary of $275,000, less required withholdings and deductions, payable in accordance with Company's regular payroll practices. Company may review and adjust base salary prospectively in its discretion.
 
-## 5. Bonus Opportunity
+## 5. Equity Awards
 
-Executive is eligible for a target annual bonus equal to 40% of base salary. Any bonus is discretionary unless a written bonus plan approved by Company states objective metrics, approval requirements, and payment timing, and Executive must remain employed through the payment date unless the written plan states otherwise.
+Subject to separate approval and the terms of Company's equity plan, Executive may receive an option or restricted stock unit award covering 100,000 shares. Equity awards are governed solely by the applicable equity plan and award agreements, and this Agreement does not create additional grants, vesting rights, or acceleration.
 
-## 6. Equity Awards
+## 6. Bonus Opportunity
 
-Subject to separate approval and the terms of Company's equity plan, Executive may receive an option or restricted stock unit award covering 60,000 shares. Equity awards are governed solely by the applicable equity plan and award agreements, and this Agreement does not create additional grants, vesting rights, or acceleration.
+Executive will receive an annual bonus equal to 50% of base salary for each calendar year in which Executive remains employed for at least one day.
 
 ## 7. Reviews and Administration
 
-Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.
+Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.
 
 ## 8. Termination and Severance
 
-If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 12 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9. If Company terminates Executive for Cause, or Executive resigns for any reason, Executive will receive only earned but unpaid base salary and vested benefits required by law or plan terms.
+If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to six months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9. If Company terminates Executive for Cause, or Executive resigns for any reason, Executive will receive only earned but unpaid base salary and vested benefits required by law or plan terms.
 
 ## 9. Release and Payment Timing
 
-Separation payments will begin on the first regular payroll date after employment ends and will continue according to Company's payroll schedule. Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.
+No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation. Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.
 
 ## 10. Confidentiality
 
@@ -45,11 +45,11 @@ Executive will protect Company's non-public business, technical, financial, prod
 
 ## 11. Inventions and Company Property
 
-Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Upon request or separation, Executive will return Company property and records.
+Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement. Upon request or separation, Executive will return Company property and records.
 
 ## 12. Restrictive Covenants
 
-During employment and for six months after separation, Executive will not provide substantially similar executive services to a business unit that directly competes with a Company product or service for which Executive had material responsibility, but only to the extent enforceable under applicable law. For 12 months after separation, Executive will not solicit Company employees or customers with whom Executive had material business contact for a competing purpose.
+During employment and for 36 months after separation, Executive will not provide services to any business that competes with Company anywhere in North America. For 12 months after separation, Executive will not solicit Company employees or customers with whom Executive had material business contact for a competing purpose.
 
 ## 13. Dispute Resolution
 

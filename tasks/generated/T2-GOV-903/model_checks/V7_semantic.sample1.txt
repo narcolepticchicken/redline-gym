@@ -1,7 +1,0 @@
-{
-  "gaps": [
-    "Voting covenant to implement board composition: no clause requiring stockholders to vote their shares to elect the designated Founder, Series A, and independent directors as described",
-    "Registration rights: no clause providing demand, piggyback, or S-3 registration rights for investors seeking public resale of their shares",
-    "Investor competitive overlap disclosure: no clause requiring investors, particularly a strategic partner, to disclose holdings in companies that overlap with the Company’s business"
-  ]
-}

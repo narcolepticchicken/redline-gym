@@ -2,44 +2,44 @@
   "deviations": [
     {
       "deviation_id": "D-001",
-      "rule_id": "R-009",
+      "rule_id": "R-006",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "3",
-        "span": "Company may update objectives from time to time. Any material reduction in title, reporting line, responsibilities, authority, or budget will be treated as an involuntary termination without Cause."
+        "section": "6",
+        "span": "Executive will receive an annual bonus equal to 50% of base salary for each calendar year in which Executive remains employed for at least one day."
       },
-      "original_text": "Company may change Executive's title, duties, reporting line, responsibilities, authority, office location, and business objectives from time to time based on business needs, without creating severance rights unless this Agreement expressly provides otherwise.",
-      "mutated_text": "Company may update objectives from time to time. Any material reduction in title, reporting line, responsibilities, authority, or budget will be treated as an involuntary termination without Cause.",
-      "mechanism": "cross_ref_override",
+      "original_text": "Executive is eligible for a target annual bonus equal to 40% of base salary. Any bonus is discretionary unless a written bonus plan approved by Company states objective metrics, approval requirements, and payment timing, and Executive must remain employed through the payment date unless the written plan states otherwise.",
+      "mutated_text": "Executive will receive an annual bonus equal to 50% of base salary for each calendar year in which Executive remains employed for at least one day.",
+      "mechanism": "direct_term_swap",
       "severity": "medium",
       "expected_action": "redline_with_fallback"
     },
     {
       "deviation_id": "D-002",
-      "rule_id": "R-003",
+      "rule_id": "R-008",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "9",
-        "span": "Separation payments will begin on the first regular payroll date after employment ends and will continue according to Company's payroll schedule."
+        "section": "12",
+        "span": "During employment and for 36 months after separation, Executive will not provide services to any business that competes with Company anywhere in North America."
       },
-      "original_text": "No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation.",
-      "mutated_text": "Separation payments will begin on the first regular payroll date after employment ends and will continue according to Company's payroll schedule.",
-      "mechanism": "omission",
+      "original_text": "During employment and for six months after separation, Executive will not provide substantially similar executive services to a business unit that directly competes with a Company product or service for which Executive had material responsibility, but only to the extent enforceable under applicable law.",
+      "mutated_text": "During employment and for 36 months after separation, Executive will not provide services to any business that competes with Company anywhere in North America.",
+      "mechanism": "direct_term_swap",
       "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
       "deviation_id": "D-003",
-      "rule_id": "R-004",
+      "rule_id": "R-007",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "11",
-        "span": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources."
+        "section": "7",
+        "span": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms."
       },
-      "original_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement.",
-      "mutated_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources.",
-      "mechanism": "omission",
-      "severity": "critical",
+      "original_text": "Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.",
+      "mutated_text": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -58,16 +58,16 @@
     },
     {
       "deviation_id": "D-005",
-      "rule_id": "R-001",
+      "rule_id": "R-012",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "8",
-        "span": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 12 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9."
+        "section": "3",
+        "span": "Executive may engage in outside employment, consulting, board service, or business activity if Executive determines it can be managed alongside Company responsibilities."
       },
-      "original_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to six months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
-      "mutated_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 12 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
-      "mechanism": "direct_term_swap",
-      "severity": "high",
+      "original_text": "Executive will not engage in outside employment, consulting, board service, or business activity that conflicts with Company's business or Executive's duties unless Company gives prior written approval.",
+      "mutated_text": "Executive may engage in outside employment, consulting, board service, or business activity if Executive determines it can be managed alongside Company responsibilities.",
+      "mechanism": "omission",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -87,7 +87,7 @@
     {
       "distractor_id": "X-003",
       "doc_id": "DOC-01",
-      "span": "Company will pay Executive an annualized base salary of $300,000, less required withholdings and deductions, payable in accordance with Company's regular payroll practices.",
+      "span": "Company will pay Executive an annualized base salary of $275,000, less required withholdings and deductions, payable in accordance with Company's regular payroll practices.",
       "why_benign": "A market base salary paid through regular payroll is expected and does not conflict with the playbook."
     }
   ],
@@ -115,15 +115,16 @@
   ],
   "generation_log": [
     "seed=712",
-    "attempt_seed=712",
+    "attempt_seed=2712",
     "playbook=PB-EMP-001",
     "tier=T2",
     "task_id=T2-EMP-712",
-    "D-001 EMP-R009-CROSS-DUTY-GUARANTEE cross_ref_override applied to R-009",
-    "D-002 EMP-R003-OMISSION-RELEASE-CONDITION omission applied to R-003",
-    "D-003 EMP-R004-OMISSION-PRIOR-INVENTIONS omission applied to R-004",
+    "D-001 EMP-R006-DIRECT-GUARANTEED-BONUS direct_term_swap applied to R-006",
+    "D-002 EMP-R008-DIRECT-NONCOMPETE-DURATION direct_term_swap applied to R-008",
+    "D-003 EMP-R007-CROSS-ANNUAL-ACCELERATION cross_ref_override applied to R-007",
     "D-004 EMP-R002-DEFINED-CAUSE-FELONY defined_term_shift applied to R-002",
-    "D-005 EMP-R001-DIRECT-SEVERANCE-MULTIPLE direct_term_swap applied to R-001",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "D-005 EMP-R012-OMISSION-OUTSIDE-CONFLICTS omission applied to R-012",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

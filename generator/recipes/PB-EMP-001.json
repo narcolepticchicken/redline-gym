@@ -35,7 +35,7 @@
       "section": "9",
       "templates": {
         "original_text": "No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within {release_days} days after separation.",
-        "mutated_text": "Separation payments will begin on the first regular payroll date after employment ends and will continue according to Company's payroll schedule."
+        "mutated_text": "Separation payments are not conditioned on a release of claims and will continue according to Company's payroll schedule."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"
@@ -164,7 +164,7 @@
       "section": "9",
       "templates": {
         "original_text": "Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.",
-        "mutated_text": "All separation amounts will be paid in a lump sum within five business days after employment ends regardless of documentation timing or deferred-compensation requirements."
+        "mutated_text": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements."
       },
       "expected_action": "redline_with_fallback",
       "severity": "medium"

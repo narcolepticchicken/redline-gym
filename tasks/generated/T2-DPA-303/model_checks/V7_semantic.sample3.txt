@@ -1,6 +1,0 @@
-{
-  "gaps": [
-    "Records of processing activities",
-    "Law enforcement disclosure request notification"
-  ]
-}

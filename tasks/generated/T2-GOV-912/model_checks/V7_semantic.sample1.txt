@@ -1,7 +1,0 @@
-{
-  "gaps": [
-    "Voting agreement to elect designated directors",
-    "Registration rights",
-    "Investor overlap disclosure obligations"
-  ]
-}

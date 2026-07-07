@@ -10,6 +10,13 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: DPA transition distractor registration and NDA/EMP/GOV
+  fallback-floor parameter fixes changed those generator families. Replaced
+  stale held-out seeds `tasks/heldout/T2-DPA-606`,
+  `tasks/heldout/T2-NDA-602`, `tasks/heldout/T2-EMP-802`, and
+  `tasks/heldout/T2-GOV-1002` with fresh incremented seeds
+  `tasks/heldout/T2-DPA-607`, `tasks/heldout/T2-NDA-603`,
+  `tasks/heldout/T2-EMP-803`, and `tasks/heldout/T2-GOV-1003`.
 - 2026-07-07: Crypto recipe QA removed the debatable Digital Assets
   entitlement deviation and retargeted the third distractor to an exact emitted
   span. Replaced stale crypto held-out seed
