@@ -4,7 +4,13 @@ import json
 from pathlib import Path
 
 from scripts.grade_model_checks import grade_task, update_summary
-from scripts.run_model_checks import aggregate_v4_samples, aggregate_v7_samples, aggregate_v11_samples, parse_json_response
+from scripts.run_model_checks import (
+    aggregate_v4_samples,
+    aggregate_v7_samples,
+    aggregate_v11_samples,
+    parse_json_response,
+    write_aggregate_from_samples,
+)
 
 
 def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
@@ -120,6 +126,30 @@ def test_v4_union_and_stable_aggregation() -> None:
     assert [(item["rule_id"], item["section"]) for item in aggregate["found_stable"]] == [("R-001", "2")]
 
 
+def test_run_model_checks_writes_v4_aggregate_from_partial_samples(tmp_path: Path) -> None:
+    aggregate = write_aggregate_from_samples(
+        "V4_round_trip",
+        [{"found": [{"rule_id": "R-001", "section": "2", "quote": "first"}]}],
+        tmp_path,
+        "",
+    )
+
+    assert aggregate == {
+        "found_union": [{"rule_id": "R-001", "section": "2", "quote": "first"}],
+        "found_stable": [],
+    }
+    assert json.loads((tmp_path / "V4_round_trip.json").read_text()) == aggregate
+    assert not (tmp_path / "V4_round_trip.error").exists()
+
+
+def test_run_model_checks_writes_check_error_when_all_samples_fail(tmp_path: Path) -> None:
+    aggregate = write_aggregate_from_samples("V4_round_trip", [], tmp_path, "")
+
+    assert aggregate is None
+    assert not (tmp_path / "V4_round_trip.json").exists()
+    assert "all samples failed" in (tmp_path / "V4_round_trip.error").read_text()
+
+
 def test_v7_union_aggregation_deduplicates_gaps() -> None:
     aggregate = aggregate_v7_samples(
         [
@@ -174,6 +204,46 @@ def test_v7_grade_matches_keywords_against_any_union_gap(tmp_path: Path) -> None
 
     assert row["v7"] == "PASS"
     assert row["v7_uncovered"] == []
+
+
+def test_grade_model_checks_marks_missing_v4_aggregate_ungraded(tmp_path: Path) -> None:
+    task_dir = tmp_path / "T2-DPA-994"
+    checks = task_dir / "model_checks"
+    checks.mkdir(parents=True)
+    _dump(task_dir / "task.json", {"difficulty_tier": "T2"})
+    _dump(
+        task_dir / "planted_deviations.json",
+        {
+            "deviations": [
+                {
+                    "rule_id": "R-001",
+                    "clause_anchor": {"section": "2"},
+                    "mutated_text": "Vendor may decide processing purposes.",
+                }
+            ],
+            "missing_info": [],
+        },
+    )
+    _dump(checks / "V3_clean_base.json", {"verdict": "PASS", "violations": []})
+    _dump(checks / "V7_semantic.json", {"gaps": []})
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ]
+        ),
+    )
+
+    row = grade_task(task_dir)
+    summary = tmp_path / "summary.md"
+    update_summary(row, summary)
+
+    assert row["v4_gate"] == "UNGRADED"
+    assert row["v4_recall"] is None
+    assert f"| {row['task']} | PASS | UNGRADED | UNGRADED | 0 | PASS | V11 reg 6/6 failing none |" in summary.read_text()
 
 
 def test_v11_majority_vote_aggregates_and_propagates_failing_evidence() -> None:

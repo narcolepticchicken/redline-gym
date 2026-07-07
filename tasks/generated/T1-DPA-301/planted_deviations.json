@@ -80,19 +80,19 @@
   "missing_info": [
     {
       "missing_info_id": "M-002",
-      "topic": "Current subprocessor list location",
-      "context_anchor": "The vendor will use subprocessors to process customer personal data for the production service.",
+      "topic": "Vendor obligation to maintain records of processing activities",
+      "context_anchor": "Customer must demonstrate processor accountability to its own regulators and relies on Vendor to maintain records of processing activities for the services.",
       "match_keywords": [
-        "subprocessor",
-        "subprocessors",
-        "portal",
-        "list",
-        "schedule"
+        "records of processing",
+        "processing records",
+        "record-keeping",
+        "processing activities"
       ],
       "absent_terms": [
-        "subprocessor portal",
-        "subprocessor schedule url",
-        "current subprocessors list"
+        "records of processing",
+        "processing records",
+        "record-keeping",
+        "processing activities"
       ],
       "expected_action": "escalate"
     }

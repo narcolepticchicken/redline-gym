@@ -10,6 +10,11 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: DPA missing-info M-002 was retargeted from an existing
+  subprocessor-detail clause to the absent obligation for Vendor to maintain
+  records of processing activities. Removed the stale DPA held-out seed
+  `tasks/heldout/T2-DPA-604` and replaced it with fresh seed
+  `tasks/heldout/T2-DPA-605`.
 - 2026-07-07: DPA base and recipe templates were revised for the R2 register
   gate: defined terms now remain used after mutations, and vague time/quantity
   phrasing was replaced with bounded values. Replaced stale

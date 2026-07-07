@@ -16,20 +16,48 @@
     },
     {
       "deviation_id": "D-002",
-      "rule_id": "R-011",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "After the relationship ends, Vendor will remove hosted account content within 180 days and will not be required to provide written completion evidence."
+      },
+      "original_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing.",
+      "mutated_text": "After the relationship ends, Vendor will remove hosted account content within 180 days and will not be required to provide written completion evidence.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-001",
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "2",
-        "span": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
+        "span": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
       },
-      "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
-      "mutated_text": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
+      "original_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+      "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
-      "deviation_id": "D-003",
+      "deviation_id": "D-004",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability."
+      },
+      "original_text": "Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.",
+      "mutated_text": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
       "rule_id": "R-010",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -38,34 +66,6 @@
       },
       "original_text": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year.",
       "mutated_text": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
-      "mechanism": "omission",
-      "severity": "high",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-004",
-      "rule_id": "R-002",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "3",
-        "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
-      },
-      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
-      "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
-      "mechanism": "direct_term_swap",
-      "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-005",
-      "rule_id": "R-006",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "9",
-        "span": "Vendor will refer individual inquiries to Customer within 5 business days when it can identify the account associated with the request."
-      },
-      "original_text": "Vendor will provide request intake details, account identifiers, data exports, correction logs, deletion status, portability files, opt-out status, and objection records within 10 business days after Customer's written request.",
-      "mutated_text": "Vendor will refer individual inquiries to Customer within 5 business days when it can identify the account associated with the request.",
       "mechanism": "omission",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -112,16 +112,16 @@
     }
   ],
   "generation_log": [
-    "seed=302",
-    "attempt_seed=302",
+    "seed=605",
+    "attempt_seed=605",
     "playbook=PB-DPA-001",
     "tier=T2",
-    "task_id=T2-DPA-302",
+    "task_id=T2-DPA-605",
     "D-001 DPA-R008-CROSS-AUDIT-LIMIT cross_ref_override applied to R-008",
-    "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
-    "D-003 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
-    "D-004 DPA-R002-DIRECT-PURPOSE direct_term_swap applied to R-002",
-    "D-005 DPA-R006-OMISSION-RIGHTS-HELP omission applied to R-006",
+    "D-002 DPA-R007-DIRECT-DELETION-CERT direct_term_swap applied to R-007",
+    "D-003 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-001",
+    "D-004 DPA-R003-OMISSION-FLOWDOWN omission applied to R-003",
+    "D-005 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
     "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

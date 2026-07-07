@@ -52,7 +52,7 @@ Vendor will not transfer Personal Data to another country unless a lawful transf
 
 ## 13. Regulatory Cooperation
 
-Within 10 business days after Customer's written request, Vendor will provide data-flow summaries, processing records, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services.
+Within 10 business days after Customer's written request, Vendor will provide data-flow summaries, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services.
 
 ## 14. Term and Transition Assistance
 

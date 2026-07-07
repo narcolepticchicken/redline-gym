@@ -153,16 +153,12 @@ def main(argv: list[str] | None = None) -> int:
             final_texts.append(final_text)
 
         if sample_count > 1:
-            if len(samples) != sample_count:
-                print(f"=== {name} ===\nERROR: only {len(samples)}/{sample_count} valid samples; aggregate not written\n")
+            aggregate = write_aggregate_from_samples(name, samples, out_dir, shipped)
+            if aggregate is None:
+                print(f"=== {name} ===\nERROR: 0/{sample_count} valid samples; aggregate not written\n")
                 continue
-            if name == "V4_round_trip":
-                aggregate = aggregate_v4_samples(samples)
-            elif name == "V7_semantic":
-                aggregate = aggregate_v7_samples(samples)
-            else:
-                aggregate = aggregate_v11_samples(samples, mechanical_q1=_mechanical_v11_q1(shipped))
-            (out_dir / f"{name}.json").write_text(json.dumps(aggregate, indent=2, sort_keys=True) + "\n")
+            if len(samples) != sample_count:
+                print(f"=== {name} ===\nWARNING: only {len(samples)}/{sample_count} valid samples; aggregate written\n")
             print(f"=== {name} ===\n{json.dumps(aggregate, indent=2, sort_keys=True)[:1200]}\n")
         elif samples:
             print(f"=== {name} ===\n{final_texts[0].strip()[:1200]}\n")
@@ -270,6 +266,27 @@ def aggregate_v4_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
     found_union = [first_by_key[key] for key in first_by_key]
     found_stable = [first_by_key[key] for key in first_by_key if sample_presence[key] >= 2]
     return {"found_union": found_union, "found_stable": found_stable}
+
+
+def write_aggregate_from_samples(
+    name: str,
+    samples: list[dict[str, Any]],
+    out_dir: pathlib.Path,
+    shipped: str,
+) -> dict[str, Any] | None:
+    if not samples:
+        (out_dir / f"{name}.error").write_text("all samples failed to parse; aggregate not written\n")
+        return None
+    if name == "V4_round_trip":
+        aggregate = aggregate_v4_samples(samples)
+    elif name == "V7_semantic":
+        aggregate = aggregate_v7_samples(samples)
+    elif name == "V11_realism":
+        aggregate = aggregate_v11_samples(samples, mechanical_q1=_mechanical_v11_q1(shipped))
+    else:
+        raise ValueError(f"unsupported aggregate check: {name}")
+    (out_dir / f"{name}.json").write_text(json.dumps(aggregate, indent=2, sort_keys=True) + "\n")
+    return aggregate
 
 
 def aggregate_v7_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:

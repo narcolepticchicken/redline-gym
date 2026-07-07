@@ -118,7 +118,7 @@
       "id": "13",
       "heading": "Regulatory Cooperation",
       "paragraphs": [
-        "Within {regulatory_assist_days} business days after {customer_role}'s written request, {vendor_role} will provide data-flow summaries, processing records, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services."
+        "Within {regulatory_assist_days} business days after {customer_role}'s written request, {vendor_role} will provide data-flow summaries, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services."
       ]
     },
     {
@@ -159,10 +159,10 @@
   "missing_info": [
     {
       "missing_info_id": "M-002",
-      "topic": "Current subprocessor list location",
-      "context_anchor": "The vendor will use subprocessors to process customer personal data for the production service.",
-      "match_keywords": ["subprocessor", "subprocessors", "portal", "list", "schedule"],
-      "absent_terms": ["subprocessor portal", "subprocessor schedule url", "current subprocessors list"],
+      "topic": "Vendor obligation to maintain records of processing activities",
+      "context_anchor": "Customer must demonstrate processor accountability to its own regulators and relies on Vendor to maintain records of processing activities for the services.",
+      "match_keywords": ["records of processing", "processing records", "record-keeping", "processing activities"],
+      "absent_terms": ["records of processing", "processing records", "record-keeping", "processing activities"],
       "expected_action": "escalate"
     }
   ]

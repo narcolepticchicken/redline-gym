@@ -4,12 +4,12 @@
 |---|---|---:|---|---:|---|---|
 | tasks/contracts/T1-NDA-001 | PASS | 6/6 | PASS | 0 | PASS | V11 reg 6/6 failing none |
 | tasks/contracts/T2-MSA-001 | FAIL | 4/7 | FAIL | 1 | PASS | V11 reg 6/6 failing none |
-| tasks/generated/T1-DPA-301 | FAIL | 4/4 | PASS | 0 | PASS | V11 reg 4/6 failing q2,q3 |
+| tasks/generated/T1-DPA-301 | FAIL | 4/4 | PASS | 1 | FAIL | V11 reg 6/6 failing none |
 | tasks/generated/T1-MSA-105 | FAIL | 4/4 | PASS | 4 | PASS | V11 reg 6/6 failing none |
 | tasks/generated/T1-NDA-101 | FAIL | 4/4 | PASS | 1 | PASS | V11 reg 5/6 failing q2 |
 | tasks/generated/T1-NDA-103 | PASS | 4/4 | PASS | 2 | PASS | V11 reg 5/6 failing q2 |
 | tasks/generated/T2-DPA-302 | FAIL | 5/5 | PASS | 1 | PASS | V11 reg 5/6 failing q3 |
-| tasks/generated/T2-DPA-303 | PASS | 4/5 | PASS | 0 | FAIL | V11 reg 6/6 failing none |
+| tasks/generated/T2-DPA-303 | FAIL | 4/5 | PASS | 0 | FAIL | V11 reg 6/6 failing none |
 | tasks/generated/T2-MSA-104 | FAIL | 3/5 | PASS | 2 | PASS | V11 reg 6/6 failing none |
 | tasks/generated/T2-MSA-106 | FAIL | 4/5 | PASS | 1 | PASS | V11 reg 6/6 failing none |
 | tasks/generated/T2-NDA-102 | PASS | 5/5 | PASS | 1 | PASS | V11 reg 5/6 failing q2 |

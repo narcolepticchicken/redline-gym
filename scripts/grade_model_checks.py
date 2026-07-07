@@ -31,30 +31,35 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
     planted = _load_json(task_dir / "planted_deviations.json")
     task = _load_json(task_dir / "task.json")
 
-    v3 = _load_json(checks / "V3_clean_base.json")
-    v4 = _load_json(checks / "V4_round_trip.json")
-    v7 = _load_json(checks / "V7_semantic.json")
-    v11 = _load_json(checks / "V11_realism.json")
+    v3 = _load_json_optional(checks / "V3_clean_base.json")
+    v4 = _load_json_optional(checks / "V4_round_trip.json")
+    v7 = _load_json_optional(checks / "V7_semantic.json")
+    v11 = _load_json_optional(checks / "V11_realism.json")
 
     planted_deviations = planted.get("deviations", [])
-    found_union = v4.get("found_union", v4.get("found", []))
-    found_stable = v4.get("found_stable", v4.get("found", []))
+    v4_graded = v4 is not None
+    found_union = v4.get("found_union", v4.get("found", [])) if v4_graded else []
+    found_stable = v4.get("found_stable", v4.get("found", [])) if v4_graded else []
     matched_indexes = _matched_planted_indexes(found_union, planted_deviations)
-    recall = len(matched_indexes) / len(planted_deviations) if planted_deviations else 1.0
+    if v4_graded:
+        recall = len(matched_indexes) / len(planted_deviations) if planted_deviations else 1.0
+    else:
+        recall = None
     extra_count = sum(1 for item in found_stable if not _matches_any_planted(item, planted_deviations))
 
-    gaps = [str(gap) for gap in v7.get("gaps_union", v7.get("gaps", []))]
+    gaps = [str(gap) for gap in v7.get("gaps_union", v7.get("gaps", []))] if v7 is not None else []
     uncovered_topics = []
-    for item in planted.get("missing_info", []):
-        keywords = [str(keyword).lower() for keyword in item.get("match_keywords", [])]
-        if not keywords:
-            keywords = [str(item.get("topic", "")).lower()]
-        if not any(any(keyword in gap.lower() for keyword in keywords) for gap in gaps):
-            uncovered_topics.append(item.get("topic", ""))
+    if v7 is not None:
+        for item in planted.get("missing_info", []):
+            keywords = [str(keyword).lower() for keyword in item.get("match_keywords", [])]
+            if not keywords:
+                keywords = [str(item.get("topic", "")).lower()]
+            if not any(any(keyword in gap.lower() for keyword in keywords) for gap in gaps):
+                uncovered_topics.append(item.get("topic", ""))
 
-    passed, total, failing_questions = _v11_result(v11)
-    v4_gate = _v4_gate(task.get("difficulty_tier", ""), recall)
-    v11_status = _v11_status(passed)
+    passed, total, failing_questions = _v11_result(v11) if v11 is not None else (0, V11_TOTAL, [])
+    v4_gate = _v4_gate(task.get("difficulty_tier", ""), recall) if recall is not None else "UNGRADED"
+    v11_status = _v11_status(passed) if v11 is not None else "UNGRADED"
     try:
         rel_task = str(task_dir.relative_to(ROOT))
     except ValueError:
@@ -62,13 +67,14 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
 
     return {
         "task": rel_task,
-        "v3": "PASS" if not v3.get("violations", []) else "FAIL",
+        "v3": "PASS" if v3 is not None and not v3.get("violations", []) else ("FAIL" if v3 is not None else "UNGRADED"),
         "v4_recall": recall,
         "v4_matched": len(matched_indexes),
         "v4_total": len(planted_deviations),
         "v4_extra": extra_count,
         "v4_gate": v4_gate,
-        "v7": "PASS" if not uncovered_topics else "FAIL",
+        "v4_graded": v4_graded,
+        "v7": "PASS" if v7 is not None and not uncovered_topics else ("FAIL" if v7 is not None else "UNGRADED"),
         "v7_uncovered": uncovered_topics,
         "v11": v11_status,
         "v11_passed": passed,
@@ -104,8 +110,15 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
         cells = [cell.strip() for cell in line.strip("|").split("|")]
         if len(cells) not in {6, 7}:
             continue
-        recall_parts = cells[2].split("/")
-        matched, total = int(recall_parts[0]), int(recall_parts[1])
+        if cells[2] == "UNGRADED":
+            matched, total = 0, 0
+            v4_recall = None
+            v4_graded = False
+        else:
+            recall_parts = cells[2].split("/")
+            matched, total = int(recall_parts[0]), int(recall_parts[1])
+            v4_recall = matched / total if total else 1.0
+            v4_graded = True
         if len(cells) == 7:
             v4_gate = cells[3]
             v4_extra = int(cells[4])
@@ -120,11 +133,12 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
         rows[cells[0]] = {
             "task": cells[0],
             "v3": cells[1],
-            "v4_recall": matched / total if total else 1.0,
+            "v4_recall": v4_recall,
             "v4_matched": matched,
             "v4_total": total,
             "v4_extra": v4_extra,
             "v4_gate": v4_gate,
+            "v4_graded": v4_graded,
             "v7": v7,
             "v7_uncovered": [],
             **v11_fields,
@@ -135,7 +149,7 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
 def _format_row(row: dict[str, Any]) -> str:
     return (
         f"{row['task']}: V3={row['v3']} "
-        f"V4={row['v4_matched']}/{row['v4_total']} gate={row['v4_gate']} extra={row['v4_extra']} "
+        f"V4={_format_v4_recall_cell(row)} gate={row['v4_gate']} extra={row['v4_extra']} "
         f"V7={row['v7']} V11={row['v11']} reg={row.get('v11_passed', 0)}/{row.get('v11_total', V11_TOTAL)} "
         f"failing={','.join(row.get('v11_failing_questions', [])) or 'none'}"
     )
@@ -143,9 +157,15 @@ def _format_row(row: dict[str, Any]) -> str:
 
 def _format_markdown_row(row: dict[str, Any]) -> str:
     return (
-        f"| {row['task']} | {row['v3']} | {row['v4_matched']}/{row['v4_total']} | "
+        f"| {row['task']} | {row['v3']} | {_format_v4_recall_cell(row)} | "
         f"{row['v4_gate']} | {row['v4_extra']} | {row['v7']} | {_format_v11_cell(row)} |"
     )
+
+
+def _format_v4_recall_cell(row: dict[str, Any]) -> str:
+    if row.get("v4_graded") is False or row.get("v4_recall") is None:
+        return "UNGRADED"
+    return f"{row['v4_matched']}/{row['v4_total']}"
 
 
 def _v4_gate(tier: str, recall: float) -> str:
@@ -246,6 +266,8 @@ def _v11_status(passed: Any) -> str:
 
 
 def _format_v11_cell(row: dict[str, Any]) -> str:
+    if row.get("v11") == "UNGRADED":
+        return "UNGRADED"
     if "v11_legacy_cell" in row:
         return f"legacy {row['v11_legacy_cell']}"
     passed = int(row.get("v11_passed", 0))
@@ -297,6 +319,13 @@ def _norm_chars(value: Any) -> str:
 
 def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text())
+
+
+def _load_json_optional(path: Path) -> dict[str, Any] | None:
+    try:
+        return _load_json(path)
+    except FileNotFoundError:
+        return None
 
 
 if __name__ == "__main__":
