@@ -1,5 +1,8 @@
 {
-  "deterministic_failures": [],
+  "deterministic_failures": [
+    "tasks/generated/T2-DPA-303: validators",
+    "tasks/generated/T2-DPA-312: validators"
+  ],
   "model_backed_steps": {
     "cheater_llm": "SKIPPED (no key)",
     "deepseek_judge": "SKIPPED (no key)",
@@ -167,7 +170,7 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
-        "composite": 0.39,
+        "composite": 0.388636,
         "recall": 0.25,
         "status": "OK"
       },
@@ -674,7 +677,7 @@
       "random_gate": "UNMEASURED",
       "task": "tasks/generated/T2-DPA-303",
       "task_id": "T2-DPA-303",
-      "validators": "PASS"
+      "validators": "FAIL"
     },
     {
       "cheater_llm": "SKIPPED (no key)",
@@ -701,7 +704,7 @@
       "random_gate": "UNMEASURED",
       "task": "tasks/generated/T2-DPA-312",
       "task_id": "T2-DPA-312",
-      "validators": "PASS"
+      "validators": "FAIL"
     },
     {
       "cheater_llm": "SKIPPED (no key)",

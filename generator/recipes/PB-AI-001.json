@@ -122,13 +122,13 @@
       "severity": "critical"
     },
     {
-      "recipe_id": "AI-R012-OMISSION-FINE-TUNE-EXPORT",
+      "recipe_id": "AI-R012-OMISSION-EXIT-EXPORT-RIGHTS",
       "rule_id": "R-012",
       "mechanism": "omission",
       "section": "15",
       "templates": {
         "original_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to {transition_days} days of reasonable transition assistance and, within {export_days} days after request, export Customer Data, prompts, outputs, embeddings, Customer Fine-Tune Artifacts, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
-        "mutated_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to {transition_days} days of reasonable transition assistance and, within {export_days} days after request, export Customer Data, prompts, outputs, embeddings, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."
+        "mutated_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"

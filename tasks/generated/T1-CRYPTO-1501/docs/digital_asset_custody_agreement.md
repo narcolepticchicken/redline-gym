@@ -46,19 +46,19 @@ Custodian will maintain commercially reasonable crime and technology coverage, w
 
 ## 11. Subcustodians
 
-Custodian may use subcustodians only with Customer's prior notice or approval. Custodian will bind each subcustodian to written obligations at least as protective as this Agreement for Customer Assets and remains responsible for each subcustodian's acts and omissions.
+Custodian may route holdings through affiliates, liquidity venues, and third-party vault providers selected by Custodian, and those providers are responsible only under their own service terms.
 
 ## 12. Compliance Holds
 
-Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services. Custodian may delay, reject, hold, or suspend any balance, transfer, address, account, or portal function whenever Custodian determines the action is operationally prudent, and notice is discretionary.
+Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services. Custodian may freeze, reject, or suspend Customer Assets only when required by law, sanctions, regulator or court order, or a documented security basis, and will give prompt notice to Customer where legally permitted.
 
 ## 13. Liability
 
-Except for the carve-outs in this Section 13, each party's aggregate liability under this Agreement will not exceed the value of Customer Assets under custody at the time of the event giving rise to the claim. The cap does not limit Custodian's responsibility up to the value of affected Customer Assets for theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer caused by Custodian, its personnel, or its subcustodians.
+Except for the carve-outs in this Section 13, each party's aggregate liability under this Agreement will not exceed the value of Customer Assets under custody at the time of the event giving rise to the claim. All claims against Custodian, including losses from compromise, internal misconduct, operational error, transfer failures, or missing balances, are limited to fees paid during the three months before the event.
 
 ## 14. Term and Exit
 
-Either party may terminate this Agreement on 10 days' written notice. After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening.
+Either party may terminate this Agreement on 10 days' written notice. Upon termination or Customer's written request, Custodian will transfer Customer Assets in kind to Customer or Customer's designated wallet or custodian within 5 business days, subject only to applicable law, a network outage, or a documented security hold notified to Customer.
 
 ## 15. Governing Law and General Terms
 

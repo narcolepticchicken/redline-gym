@@ -10,6 +10,15 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: Crypto recipe QA removed the debatable Digital Assets
+  entitlement deviation and retargeted the third distractor to an exact emitted
+  span. Replaced stale crypto held-out seed
+  `tasks/heldout/T2-CRYPTO-1601` with fresh seed
+  `tasks/heldout/T2-CRYPTO-1602`.
+- 2026-07-07: AI recipe QA removed the artificial
+  `AI-R012-OMISSION-FINE-TUNE-EXPORT` deviation and added exact-once
+  distractor span validation. Replaced stale AI held-out seed
+  `tasks/heldout/T2-AI-1401` with fresh seed `tasks/heldout/T2-AI-1402`.
 - 2026-07-07: Added customer-side digital-asset custody agreement held-out seed
   `tasks/heldout/T2-CRYPTO-1601` for `PB-CRYPTO-001` while adding the crypto
   law practice area.

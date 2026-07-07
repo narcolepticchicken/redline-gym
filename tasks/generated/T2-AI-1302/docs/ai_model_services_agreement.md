@@ -61,4 +61,4 @@ Vendor will reasonably cooperate with Customer's regulatory-change requests rela
 
 ## 15. Term, Termination, Transition, and Governing Law
 
-Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to 60 days of reasonable transition assistance and, within 15 days after request, export Customer Data, prompts, outputs, embeddings, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.
+Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.

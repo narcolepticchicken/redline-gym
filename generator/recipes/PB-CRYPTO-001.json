@@ -98,13 +98,13 @@
       "severity": "high"
     },
     {
-      "recipe_id": "CRYPTO-R008-DEFINED-DIGITAL-ASSETS",
-      "rule_id": "R-008",
-      "mechanism": "defined_term_shift",
-      "section": "2",
+      "recipe_id": "CRYPTO-R005-DIRECT-INSURANCE-SUBLIMIT",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "9",
       "templates": {
-        "original_text": "\"Digital Assets\" means cryptographic tokens, stablecoins, protocol units, forks, airdrops, staking rewards, and other network distributions supported for custody under this Agreement.",
-        "mutated_text": "\"Digital Assets\" means base-layer tokens and stablecoins listed in the custody portal, excluding chain-split property, promotional allocations, validator proceeds, and other network-originated items."
+        "original_text": "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of ${insurance_limit} or the value of Customer Assets under custody.",
+        "mutated_text": "Custodian will maintain crime and cyber insurance for custody operations, but any recovery for Customer Assets is subject to a $5,000,000 per-event sublimit and the deductible, exclusion, and allocation terms approved by Custodian's insurer."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"

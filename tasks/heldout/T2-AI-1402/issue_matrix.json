@@ -17,7 +17,7 @@
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-007",
+      "rule_id": "R-012",
       "doc_ids": [
         "DOC-01"
       ],
@@ -29,11 +29,11 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-012",
+      "rule_id": "R-009",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -53,11 +53,11 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-009",
+      "rule_id": "R-007",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -93,12 +93,6 @@
       "doc_id": "DOC-01",
       "span": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests.",
       "why_benign": "The uptime canary says a 99.9% uptime SLA with credits is acceptable for this engagement."
-    },
-    {
-      "distractor_id": "X-003",
-      "doc_id": "DOC-01",
-      "span": "Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
-      "why_benign": "The model-change rule allows emergency security fixes with prompt notice."
     }
   ]
 }

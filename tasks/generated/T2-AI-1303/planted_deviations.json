@@ -6,10 +6,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "15",
-        "span": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to 60 days of reasonable transition assistance and, within 15 days after request, export Customer Data, prompts, outputs, embeddings, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."
+        "span": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."
       },
       "original_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to 60 days of reasonable transition assistance and, within 15 days after request, export Customer Data, prompts, outputs, embeddings, Customer Fine-Tune Artifacts, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
-      "mutated_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to 60 days of reasonable transition assistance and, within 15 days after request, export Customer Data, prompts, outputs, embeddings, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "mutated_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
       "mechanism": "omission",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -117,11 +117,12 @@
     "playbook=PB-AI-001",
     "tier=T2",
     "task_id=T2-AI-1303",
-    "D-001 AI-R012-OMISSION-FINE-TUNE-EXPORT omission applied to R-012",
+    "D-001 AI-R012-OMISSION-EXIT-EXPORT-RIGHTS omission applied to R-012",
     "D-002 AI-R001-DEFINED-CUSTOMER-DATA-NARROWED defined_term_shift applied to R-002",
     "D-003 AI-R009-OFF-PLAYBOOK-UNBOUNDED-SAFETY-UPDATES off_playbook_addition applied to R-009",
     "D-004 AI-R001-CROSS-SERVICE-IMPROVEMENT-DATA cross_ref_override applied to R-001",
     "D-005 AI-R008-DIRECT-LOG-RETENTION-EXTENDED direct_term_swap applied to R-008",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

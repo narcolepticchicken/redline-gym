@@ -26,4 +26,5 @@ Model-stubbed validators: V3, V4, V7-semantic, V11.
 - matched deviation ids: D-002
 - matched rule ids: R-008
 - coherence check: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+
 Human sign-off: name ____________________ date __________

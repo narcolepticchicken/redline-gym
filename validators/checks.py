@@ -121,12 +121,19 @@ def v5_issue_deviation_mapping(task_dir: Path) -> ValidationResult:
 
 def v6_distractor_integrity_scan(task_dir: Path) -> ValidationResult:
     a = _task_artifacts(task_dir)
+    docs = _docs_by_id(task_dir, a["manifest"])
     banned: list[tuple[str, str]] = []
     for rule in a["playbook"]["rules"]:
         for phrase in rule.get("deterministic_checks", {}).get("must_not_contain", []):
             banned.append((rule["rule_id"], phrase.lower()))
     errors = []
     for distractor in a["issue_matrix"]["distractors"]:
+        doc_text = docs.get(distractor["doc_id"], "")
+        span_count = doc_text.count(distractor["span"])
+        if span_count != 1:
+            errors.append(
+                f"{distractor['distractor_id']} span appears {span_count} times in {distractor['doc_id']}"
+            )
         span_lower = distractor["span"].lower()
         for rule_id, phrase in banned:
             if phrase and phrase in span_lower:

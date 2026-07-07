@@ -1,0 +1,122 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Notwithstanding Section 5, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services."
+      },
+      "original_text": "Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Vendor may prepare aggregate operational reports about uptime, support tickets, and capacity planning, provided those reports do not include Customer Data.",
+      "mutated_text": "Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Notwithstanding Section 5, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services.",
+      "mechanism": "cross_ref_override",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-012",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "15",
+        "span": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."
+      },
+      "original_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to 60 days of reasonable transition assistance and, within 15 days after request, export Customer Data, prompts, outputs, embeddings, Customer Fine-Tune Artifacts, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "mutated_text": "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-009",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Customer will not use the Services for unlawful conduct, security abuse, credential harvesting, malicious code generation, or other harmful activity identified in Vendor's published acceptable-use and safety policies as of the effective date. Vendor may update any use, content, safety, moderation, customer-eligibility, or product-operation policy at any time, and each update is binding immediately upon posting whether or not required by law or security need. Nothing in this Section 7 prevents Customer from benchmarking, evaluating, or comparing Vendor's models or services for legitimate business purposes."
+      },
+      "original_text": "Customer will not use the Services for unlawful conduct, security abuse, credential harvesting, malicious code generation, or other harmful activity identified in Vendor's published acceptable-use and safety policies as of the effective date. Later changes apply only if required by law or objectively necessary for service security or safety and Vendor gives reasonable notice. Nothing in this Section 7 prevents Customer from benchmarking, evaluating, or comparing Vendor's models or services for legitimate business purposes.",
+      "mutated_text": "Customer will not use the Services for unlawful conduct, security abuse, credential harvesting, malicious code generation, or other harmful activity identified in Vendor's published acceptable-use and safety policies as of the effective date. Vendor may update any use, content, safety, moderation, customer-eligibility, or product-operation policy at any time, and each update is binding immediately upon posting whether or not required by law or security need. Nothing in this Section 7 prevents Customer from benchmarking, evaluating, or comparing Vendor's models or services for legitimate business purposes.",
+      "mechanism": "off_playbook_addition",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Customer Data\" means only source files uploaded by Customer and expressly labeled as customer data, and excludes prompts, prompt templates, instructions, outputs, telemetry, embeddings, fine-tuning files, evaluation sets, and materials generated by or derived from use of the Services. \"Customer Fine-Tune Artifacts\" means only configuration files and evaluation summaries created specifically for Customer, excluding fine-tuned weights, adapters, embeddings, and platform-level deliverables. \"Approved Regions\" means United States and European Union."
+      },
+      "original_text": "\"Customer Data\" means all data, prompts, prompt templates, instructions, outputs, telemetry, embeddings, fine-tuning files, evaluation sets, and other materials submitted to, generated for, or derived from Customer's use of the Services. \"Customer Fine-Tune Artifacts\" means the fine-tuned weights, adapters, embeddings, configuration files, evaluation outputs, and related deliverables created specifically for Customer under this Agreement. \"Approved Regions\" means United States and European Union.",
+      "mutated_text": "\"Customer Data\" means only source files uploaded by Customer and expressly labeled as customer data, and excludes prompts, prompt templates, instructions, outputs, telemetry, embeddings, fine-tuning files, evaluation sets, and materials generated by or derived from use of the Services. \"Customer Fine-Tune Artifacts\" means only configuration files and evaluation summaries created specifically for Customer, excluding fine-tuned weights, adapters, embeddings, and platform-level deliverables. \"Approved Regions\" means United States and European Union.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "9",
+        "span": "Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Vendor may make urgent or operational model changes without prior notice whenever it determines notice is impractical."
+      },
+      "original_text": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
+      "mutated_text": "Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Vendor may make urgent or operational model changes without prior notice whenever it determines notice is impractical.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests.",
+      "why_benign": "The uptime canary says a 99.9% uptime SLA with credits is acceptable for this engagement."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Age-gating obligations for child-directed product integration",
+      "context_anchor": "Customer will integrate the API into a child-directed education product and needs age-gating obligations reviewed.",
+      "match_keywords": [
+        "child-directed",
+        "age-gating",
+        "education product",
+        "minor users"
+      ],
+      "absent_terms": [
+        "child-directed",
+        "age-gating",
+        "education product",
+        "minor users"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=1402",
+    "attempt_seed=1402",
+    "playbook=PB-AI-001",
+    "tier=T2",
+    "task_id=T2-AI-1402",
+    "D-001 AI-R001-CROSS-SERVICE-IMPROVEMENT-DATA cross_ref_override applied to R-001",
+    "D-002 AI-R012-OMISSION-EXIT-EXPORT-RIGHTS omission applied to R-012",
+    "D-003 AI-R009-OFF-PLAYBOOK-UNBOUNDED-SAFETY-UPDATES off_playbook_addition applied to R-009",
+    "D-004 AI-R001-DEFINED-CUSTOMER-DATA-NARROWED defined_term_shift applied to R-002",
+    "D-005 AI-R007-DIRECT-MODEL-NOTICE-FIVE-DAYS direct_term_swap applied to R-007",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=2 dropped_absent=X-003"
+  ]
+}

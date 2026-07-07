@@ -2,16 +2,16 @@
   "deviations": [
     {
       "deviation_id": "D-001",
-      "rule_id": "R-011",
+      "rule_id": "R-010",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "14",
-        "span": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening."
+        "section": "13",
+        "span": "All claims against Custodian, including losses from compromise, internal misconduct, operational error, transfer failures, or missing balances, are limited to fees paid during the three months before the event."
       },
-      "original_text": "Upon termination or Customer's written request, Custodian will transfer Customer Assets in kind to Customer or Customer's designated wallet or custodian within 5 business days, subject only to applicable law, a network outage, or a documented security hold notified to Customer.",
-      "mutated_text": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening.",
+      "original_text": "The cap does not limit Custodian's responsibility up to the value of affected Customer Assets for theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer caused by Custodian, its personnel, or its subcustodians.",
+      "mutated_text": "All claims against Custodian, including losses from compromise, internal misconduct, operational error, transfer failures, or missing balances, are limited to fees paid during the three months before the event.",
       "mechanism": "direct_term_swap",
-      "severity": "high",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -44,14 +44,14 @@
     },
     {
       "deviation_id": "D-004",
-      "rule_id": "R-013",
+      "rule_id": "R-012",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "12",
-        "span": "Custodian may delay, reject, hold, or suspend any balance, transfer, address, account, or portal function whenever Custodian determines the action is operationally prudent, and notice is discretionary."
+        "section": "11",
+        "span": "Custodian may route holdings through affiliates, liquidity venues, and third-party vault providers selected by Custodian, and those providers are responsible only under their own service terms."
       },
-      "original_text": "Custodian may freeze, reject, or suspend Customer Assets only when required by law, sanctions, regulator or court order, or a documented security basis, and will give prompt notice to Customer where legally permitted.",
-      "mutated_text": "Custodian may delay, reject, hold, or suspend any balance, transfer, address, account, or portal function whenever Custodian determines the action is operationally prudent, and notice is discretionary.",
+      "original_text": "Custodian may use subcustodians only with Customer's prior notice or approval. Custodian will bind each subcustodian to written obligations at least as protective as this Agreement for Customer Assets and remains responsible for each subcustodian's acts and omissions.",
+      "mutated_text": "Custodian may route holdings through affiliates, liquidity venues, and third-party vault providers selected by Custodian, and those providers are responsible only under their own service terms.",
       "mechanism": "direct_term_swap",
       "severity": "high",
       "expected_action": "redline_with_fallback"
@@ -73,8 +73,8 @@
     {
       "distractor_id": "X-003",
       "doc_id": "DOC-01",
-      "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
-      "why_benign": "Administrative liquidity records are permitted because they do not authorize use of the customer's assets."
+      "span": "Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services.",
+      "why_benign": "Reasonable customer cooperation for AML, sanctions, tax, and KYC support is commercially expected and does not expand Custodian's freeze rights."
     }
   ],
   "missing_info": [
@@ -101,10 +101,11 @@
     "playbook=PB-CRYPTO-001",
     "tier=T1",
     "task_id=T1-CRYPTO-1501",
-    "D-001 CRYPTO-R011-DIRECT-EXIT-CASH direct_term_swap applied to R-011",
+    "D-001 CRYPTO-R010-DIRECT-LIABILITY-CAP direct_term_swap applied to R-010",
     "D-002 CRYPTO-R005-DIRECT-INSURANCE direct_term_swap applied to R-005",
     "D-003 CRYPTO-R007-DIRECT-WITHDRAWAL-SLA direct_term_swap applied to R-007",
-    "D-004 CRYPTO-R013-DIRECT-FREEZE direct_term_swap applied to R-013",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "D-004 CRYPTO-R012-DIRECT-SUBCUSTODIAN direct_term_swap applied to R-012",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

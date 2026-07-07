@@ -95,8 +95,8 @@
     {
       "distractor_id": "X-003",
       "doc_id": "DOC-01",
-      "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
-      "why_benign": "Administrative liquidity records are permitted because they do not authorize use of the customer's assets."
+      "span": "Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services.",
+      "why_benign": "Reasonable customer cooperation for AML, sanctions, tax, and KYC support is commercially expected and does not expand Custodian's freeze rights."
     }
   ]
 }

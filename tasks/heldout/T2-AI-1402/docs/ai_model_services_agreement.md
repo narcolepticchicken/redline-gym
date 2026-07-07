@@ -1,6 +1,6 @@
 # AI Model Services Agreement
 
-This AI Model Services Agreement (the "Agreement") is entered into by and between Brightline Marketplaces, Inc. ("Customer") and Helix Model Services, Inc. ("Vendor") for hosted model API access, fine-tuning services, and related support.
+This AI Model Services Agreement (the "Agreement") is entered into by and between Brightline Marketplaces, Inc. ("Customer") and Summit LLM Cloud, Inc. ("Vendor") for hosted model API access, fine-tuning services, and related support.
 
 ## 1. Services and Use Case
 
@@ -14,13 +14,13 @@ Vendor will provide Customer with hosted model API access, fine-tuning services,
 
 Vendor will issue API credentials to Customer and will maintain commercially reasonable safeguards for authentication, rate limits, monitoring, and incident response. Customer may use the Services for development, testing, benchmarking, evaluation, deployment, and operation of Customer's products, subject to the bounded use restrictions in Section 7.
 
-## 4. Training and Service Improvement
-
-Vendor will not use Customer Data to train, tune, retrain, evaluate, benchmark, or improve any model, service, or dataset except with Customer's prior written opt-in approval. Without that opt-in, Vendor may use only aggregated operational metrics that do not include Customer Data to operate, secure, and support the Services for Customer.
-
-## 5. Customer Ownership of Inputs and Outputs
+## 4. Customer Ownership of Inputs and Outputs
 
 As between the parties, Customer owns all Customer Data and all outputs generated for Customer through the Services. Vendor assigns to Customer any rights Vendor may have in those outputs, subject to third-party rights and applicable law. Vendor receives only the limited rights needed to provide, secure, support, and troubleshoot the Services for Customer.
+
+## 5. Training and Service Improvement
+
+Vendor will not use Customer Data to train, tune, retrain, evaluate, benchmark, or improve any model, service, or dataset except with Customer's prior written opt-in approval. Without that opt-in, Vendor may use only aggregated operational metrics that do not include Customer Data to operate, secure, and support the Services for Customer.
 
 ## 6. Fine-Tuning Deliverables
 
@@ -34,14 +34,14 @@ Customer will not use the Services for unlawful conduct, security abuse, credent
 
 Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests. If monthly uptime falls below 99.9%, Customer will receive a service credit equal to 10% of the affected monthly fees. Repeated service-level failures trigger executive escalation and a remediation plan.
 
-## 9. Data Residency, Retention, and Logs
-
-Vendor will process and store Customer Data only in the Approved Regions. Vendor will retain prompts, outputs, telemetry, embeddings, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing.
-Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Notwithstanding Section 4, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services.
-
-## 10. Model Lifecycle Management
+## 9. Model Lifecycle Management
 
 Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Vendor may make urgent or operational model changes without prior notice whenever it determines notice is impractical.
+
+## 10. Data Residency, Retention, and Logs
+
+Vendor will process and store Customer Data only in the Approved Regions. Vendor will retain prompts, outputs, telemetry, embeddings, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing.
+Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Notwithstanding Section 5, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services.
 
 ## 11. Security, Audit, and Subprocessors
 
@@ -61,4 +61,4 @@ Vendor will reasonably cooperate with Customer's regulatory-change requests rela
 
 ## 15. Term, Termination, Transition, and Governing Law
 
-Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to 60 days of reasonable transition assistance and, within 15 days after request, export Customer Data, prompts, outputs, embeddings, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.
+Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.

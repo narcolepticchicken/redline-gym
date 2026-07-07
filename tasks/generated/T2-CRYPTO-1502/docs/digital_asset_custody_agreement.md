@@ -8,7 +8,7 @@ Customer appoints Custodian to safeguard Customer Assets for treasury purposes. 
 
 ## 2. Definitions
 
-"Digital Assets" means base-layer tokens and stablecoins listed in the custody portal, excluding chain-split property, promotional allocations, validator proceeds, and other network-originated items. "Customer Assets" means all Digital Assets, private-key control rights, proceeds, forks, airdrops, staking rewards, and network distributions credited to or held for Customer. "Authorized Instruction" means a transfer, custody, staking, account, or reporting direction submitted by an authorized Customer user through approved procedures.
+"Digital Assets" means cryptographic tokens, stablecoins, protocol units, forks, airdrops, staking rewards, and other network distributions supported for custody under this Agreement. "Customer Assets" means supported units recorded to Customer's primary custody account, excluding chain-split property, promotional distributions, validator proceeds, and other network-originated items unless Custodian separately credits them. "Authorized Instruction" means a transfer, custody, staking, account, or reporting direction submitted by an authorized Customer user through approved procedures.
 
 ## 3. Ownership and No Use
 

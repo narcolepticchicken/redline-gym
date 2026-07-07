@@ -2,6 +2,48 @@
   "deviations": [
     {
       "deviation_id": "D-001",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding."
+      },
+      "original_text": "Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
+      "mutated_text": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Customer Assets\" means supported units recorded to Customer's primary custody account, excluding chain-split property, promotional distributions, validator proceeds, and other network-originated items unless Custodian separately credits them."
+      },
+      "original_text": "\"Customer Assets\" means all Digital Assets, private-key control rights, proceeds, forks, airdrops, staking rewards, and network distributions credited to or held for Customer.",
+      "mutated_text": "\"Customer Assets\" means supported units recorded to Customer's primary custody account, excluding chain-split property, promotional distributions, validator proceeds, and other network-originated items unless Custodian separately credits them.",
+      "mechanism": "defined_term_shift",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 5, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending."
+      },
+      "original_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
+      "mutated_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 5, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
+      "mechanism": "cross_ref_override",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
       "rule_id": "R-006",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -15,59 +57,17 @@
       "expected_action": "redline_with_fallback"
     },
     {
-      "deviation_id": "D-002",
+      "deviation_id": "D-005",
       "rule_id": "R-003",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "5",
+        "section": "4",
         "span": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal."
       },
       "original_text": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law. Custodian will maintain records sufficient to identify Customer Assets as held for Customer.",
       "mutated_text": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
       "mechanism": "omission",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-003",
-      "rule_id": "R-007",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "8",
-        "span": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding."
-      },
-      "original_text": "Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
-      "mutated_text": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding.",
-      "mechanism": "direct_term_swap",
-      "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-004",
-      "rule_id": "R-002",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "8",
-        "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending."
-      },
-      "original_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
-      "mutated_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
-      "mechanism": "cross_ref_override",
-      "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-005",
-      "rule_id": "R-008",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "2",
-        "span": "\"Digital Assets\" means base-layer tokens and stablecoins listed in the custody portal, excluding chain-split property, promotional allocations, validator proceeds, and other network-originated items."
-      },
-      "original_text": "\"Digital Assets\" means cryptographic tokens, stablecoins, protocol units, forks, airdrops, staking rewards, and other network distributions supported for custody under this Agreement.",
-      "mutated_text": "\"Digital Assets\" means base-layer tokens and stablecoins listed in the custody portal, excluding chain-split property, promotional allocations, validator proceeds, and other network-originated items.",
-      "mechanism": "defined_term_shift",
-      "severity": "high",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -87,8 +87,8 @@
     {
       "distractor_id": "X-003",
       "doc_id": "DOC-01",
-      "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
-      "why_benign": "Administrative liquidity records are permitted because they do not authorize use of the customer's assets."
+      "span": "Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services.",
+      "why_benign": "Reasonable customer cooperation for AML, sanctions, tax, and KYC support is commercially expected and does not expand Custodian's freeze rights."
     }
   ],
   "missing_info": [
@@ -111,15 +111,16 @@
   ],
   "generation_log": [
     "seed=1503",
-    "attempt_seed=1503",
+    "attempt_seed=2503",
     "playbook=PB-CRYPTO-001",
     "tier=T2",
     "task_id=T2-CRYPTO-1503",
-    "D-001 CRYPTO-R006-OFF-PORTAL-ASSURANCE off_playbook_addition applied to R-006",
-    "D-002 CRYPTO-R003-OMISSION-ESTATE omission applied to R-003",
-    "D-003 CRYPTO-R007-DIRECT-WITHDRAWAL-SLA direct_term_swap applied to R-007",
-    "D-004 CRYPTO-R002-CROSS-IDLE-BALANCES cross_ref_override applied to R-002",
-    "D-005 CRYPTO-R008-DEFINED-DIGITAL-ASSETS defined_term_shift applied to R-008",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "D-001 CRYPTO-R007-DIRECT-WITHDRAWAL-SLA direct_term_swap applied to R-007",
+    "D-002 CRYPTO-R008-DEFINED-CUSTOMER-ASSETS defined_term_shift applied to R-008",
+    "D-003 CRYPTO-R002-CROSS-IDLE-BALANCES cross_ref_override applied to R-002",
+    "D-004 CRYPTO-R006-OFF-PORTAL-ASSURANCE off_playbook_addition applied to R-006",
+    "D-005 CRYPTO-R003-OMISSION-ESTATE omission applied to R-003",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

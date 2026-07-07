@@ -102,6 +102,21 @@ def test_missing_info_gap_guard_refuses_rule_covered_topic() -> None:
         generate_module._validate_missing_info_gap_integrity(missing_info, doc_text, playbook)
 
 
+def test_registered_distractor_guard_refuses_phantom_span() -> None:
+    doc_text = "# Agreement\n\nThis clause is present once.\n"
+    distractors = [
+        {
+            "distractor_id": "X-999",
+            "doc_id": "DOC-01",
+            "span": "This clause is absent.",
+            "why_benign": "Fixture benign text.",
+        }
+    ]
+
+    with pytest.raises(GenerationError, match="X-999 distractor span appears 0 times"):
+        generate_module._validate_registered_distractors(doc_text, distractors)
+
+
 def test_generated_t2_tranche_is_grep_resistant() -> None:
     task_dirs = sorted((ROOT / "tasks/generated").glob("T2-*"))
     assert task_dirs

@@ -1,5 +1,5 @@
 {
-  "task_id": "T2-CRYPTO-1601",
+  "task_id": "T2-CRYPTO-1602",
   "practice_area": "crypto",
   "client_context": "Client is a fintech company placing treasury digital assets with a qualified custodian. Review the custody agreement from the customer side for ownership, control, transfer, security, and exit risks. Customer also needs an internal policy describing wallet whitelisting approval before funds move.",
   "instruction": "Review the digital-asset custody agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",

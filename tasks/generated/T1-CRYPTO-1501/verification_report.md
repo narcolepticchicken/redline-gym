@@ -23,7 +23,8 @@ Model-stubbed validators: V3, V4, V7-semantic, V11.
 
 - grep_bot recall: 0.250000
 - tier threshold: unconstrained
-- matched deviation ids: D-004
-- matched rule ids: R-013
+- matched deviation ids: D-001
+- matched rule ids: R-010
 - coherence check: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+
 Human sign-off: name ____________________ date __________

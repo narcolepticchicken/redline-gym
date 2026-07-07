@@ -74,6 +74,15 @@ def test_v6_catches_distractor_rule_violation(tmp_path: Path) -> None:
     assert_fails(v6_distractor_integrity_scan(task_dir))
 
 
+def test_v6_catches_phantom_distractor_span(tmp_path: Path) -> None:
+    task_dir = copy_sample(tmp_path)
+    matrix_path = task_dir / "issue_matrix.json"
+    matrix = load(matrix_path)
+    matrix["distractors"][0]["span"] = "This distractor is not in the document."
+    dump(matrix_path, matrix)
+    assert_fails(v6_distractor_integrity_scan(task_dir))
+
+
 def test_v7_catches_missing_info_term_present(tmp_path: Path) -> None:
     task_dir = copy_sample(tmp_path)
     doc_path = task_dir / "docs/mutual_nda.md"

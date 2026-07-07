@@ -181,9 +181,11 @@ def _generate_candidate(
         missing_info, context_anchors = _render_missing_info(base["missing_info"], params)
         _validate_missing_info_gap_integrity(missing_info, doc_text, playbook)
         client_context = _append_context_anchors(_render(base["client_context_template"], params), context_anchors)
+        distractors, distractor_detail = _registered_distractors(base["distractors"], params, doc_text)
+        generation_log.append(f"distractor_check {distractor_detail}")
         planted = {
             "deviations": deviations,
-            "distractors": _render_entries(base["distractors"], params),
+            "distractors": distractors,
             "missing_info": missing_info,
             "generation_log": generation_log,
         }
@@ -355,6 +357,39 @@ def _render_entries(entries: list[dict[str, Any]], params: dict[str, str]) -> li
     for entry in entries:
         rendered.append(_render_value(entry, params))
     return rendered
+
+
+def _registered_distractors(
+    entries: list[dict[str, Any]],
+    params: dict[str, str],
+    doc_text: str,
+) -> tuple[list[dict[str, Any]], str]:
+    rendered = _render_entries(entries, params)
+    registered: list[dict[str, Any]] = []
+    dropped: list[str] = []
+    for distractor in rendered:
+        span = distractor["span"]
+        count = doc_text.count(span)
+        if count == 0:
+            dropped.append(distractor["distractor_id"])
+            continue
+        if count != 1:
+            raise GenerationError(
+                f"{distractor['distractor_id']} distractor span appears {count} times in emitted document"
+            )
+        registered.append(distractor)
+    _validate_registered_distractors(doc_text, registered)
+    dropped_detail = ",".join(dropped) if dropped else "none"
+    return registered, f"PASS registered={len(registered)} dropped_absent={dropped_detail}"
+
+
+def _validate_registered_distractors(doc_text: str, distractors: list[dict[str, Any]]) -> None:
+    for distractor in distractors:
+        count = doc_text.count(distractor["span"])
+        if count != 1:
+            raise GenerationError(
+                f"{distractor['distractor_id']} distractor span appears {count} times in emitted document"
+            )
 
 
 def _render_missing_info(entries: list[dict[str, Any]], params: dict[str, str]) -> tuple[list[dict[str, Any]], list[str]]:

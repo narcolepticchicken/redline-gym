@@ -2,44 +2,44 @@
   "deviations": [
     {
       "deviation_id": "D-001",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Custodian will maintain crime and cyber insurance for custody operations, but any recovery for Customer Assets is subject to a $5,000,000 per-event sublimit and the deductible, exclusion, and allocation terms approved by Custodian's insurer."
+      },
+      "original_text": "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of $75,000,000 or the value of Customer Assets under custody.",
+      "mutated_text": "Custodian will maintain crime and cyber insurance for custody operations, but any recovery for Customer Assets is subject to a $5,000,000 per-event sublimit and the deductible, exclusion, and allocation terms approved by Custodian's insurer.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
       "rule_id": "R-002",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "8",
-        "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending."
+        "section": "7",
+        "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 5, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending."
       },
       "original_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
-      "mutated_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
+      "mutated_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 5, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
       "mechanism": "cross_ref_override",
       "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
-      "deviation_id": "D-002",
+      "deviation_id": "D-003",
       "rule_id": "R-003",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "5",
+        "section": "4",
         "span": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal."
       },
       "original_text": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law. Custodian will maintain records sufficient to identify Customer Assets as held for Customer.",
       "mutated_text": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
       "mechanism": "omission",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-003",
-      "rule_id": "R-011",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "14",
-        "span": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening."
-      },
-      "original_text": "Upon termination or Customer's written request, Custodian will transfer Customer Assets in kind to Customer or Customer's designated wallet or custodian within 5 business days, subject only to applicable law, a network outage, or a documented security hold notified to Customer.",
-      "mutated_text": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening.",
-      "mechanism": "direct_term_swap",
-      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -87,8 +87,8 @@
     {
       "distractor_id": "X-003",
       "doc_id": "DOC-01",
-      "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
-      "why_benign": "Administrative liquidity records are permitted because they do not authorize use of the customer's assets."
+      "span": "Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services.",
+      "why_benign": "Reasonable customer cooperation for AML, sanctions, tax, and KYC support is commercially expected and does not expand Custodian's freeze rights."
     }
   ],
   "missing_info": [
@@ -110,16 +110,17 @@
     }
   ],
   "generation_log": [
-    "seed=1601",
-    "attempt_seed=1601",
+    "seed=1602",
+    "attempt_seed=1602",
     "playbook=PB-CRYPTO-001",
     "tier=T2",
-    "task_id=T2-CRYPTO-1601",
-    "D-001 CRYPTO-R002-CROSS-IDLE-BALANCES cross_ref_override applied to R-002",
-    "D-002 CRYPTO-R003-OMISSION-ESTATE omission applied to R-003",
-    "D-003 CRYPTO-R011-DIRECT-EXIT-CASH direct_term_swap applied to R-011",
+    "task_id=T2-CRYPTO-1602",
+    "D-001 CRYPTO-R005-DIRECT-INSURANCE-SUBLIMIT direct_term_swap applied to R-005",
+    "D-002 CRYPTO-R002-CROSS-IDLE-BALANCES cross_ref_override applied to R-002",
+    "D-003 CRYPTO-R003-OMISSION-ESTATE omission applied to R-003",
     "D-004 CRYPTO-R006-OFF-PORTAL-ASSURANCE off_playbook_addition applied to R-006",
     "D-005 CRYPTO-R008-DEFINED-CUSTOMER-ASSETS defined_term_shift applied to R-008",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

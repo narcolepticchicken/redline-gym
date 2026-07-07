@@ -75,18 +75,6 @@
       "doc_id": "DOC-01",
       "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
       "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
-    },
-    {
-      "distractor_id": "X-002",
-      "doc_id": "DOC-01",
-      "span": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests.",
-      "why_benign": "The uptime canary says a 99.9% uptime SLA with credits is acceptable for this engagement."
-    },
-    {
-      "distractor_id": "X-003",
-      "doc_id": "DOC-01",
-      "span": "Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
-      "why_benign": "The model-change rule allows emergency security fixes with prompt notice."
     }
   ]
 }
