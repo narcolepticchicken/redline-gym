@@ -2,7 +2,7 @@
 
 | Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 median (spread) |
 |---|---|---:|---|---:|---|---|
-| tasks/contracts/T1-NDA-001 | PASS | 6/6 | PASS | 1 | PASS | 10.0 (0) |
+| tasks/contracts/T1-NDA-001 | PASS | 6/6 | PASS | 0 | PASS | 9.0 (0) |
 | tasks/contracts/T2-MSA-001 | FAIL | 3/7 | FAIL | 2 | PASS | 3.0 (0) |
 | tasks/generated/T1-DPA-301 | FAIL | 4/4 | PASS | 1 | PASS | 10.0 (0) |
 | tasks/generated/T1-MSA-105 | FAIL | 4/4 | PASS | 4 | PASS | 6.0 (0) |

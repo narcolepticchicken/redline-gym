@@ -33,6 +33,38 @@ trusting us.** Work that doesn't advance one of these five conditions is drift:
 Anti-goals: demo impressiveness, hub applause, instance count, training lift,
 speed. A number either passed the gates or it is void — nothing "preliminary".
 
+## 0.1 Release goal — v0.1 "verified and published" (set 2026-07-07)
+
+v0.1 ships when ALL of these hold. Owner in brackets; nothing ships on a
+claim — each item names its proof artifact.
+
+R1 [Aaron→me]. Ground-truth rulings locked: Q1 compliance bar, Q2 key-omissions
+    policy, Q3 V4 threshold (reports/OPEN_DESIGN_QUESTIONS.md). Encoded in
+    validators/scorer; affected bases, keys, and instances regenerated under
+    them. Proof: rulings section in SPEC + green re-run of the full stack.
+R2 [me]. Instrument reliability: multi-sample checks with V11 spread ≤ 2 on
+    every dev instance (or instance regenerated); DeepSeek judge usage metered
+    per batch (token counts in the batch log). Proof: model_checks_summary.md
+    with no UNSTABLE rows + metered totals.
+R3 [Aaron+me]. Tranche verified under locked rulings: every dev instance
+    passes programmatic validators + V3/V4/V7/V11 gates; answer_key_defects.md
+    empty or every item fixed at source; Aaron sign-off on both hand-built
+    instances + at least one generated instance per practice area (3 sampled).
+    Proof: signed verification_report.md files.
+R4 [Aaron gates spend; me runs]. Model gates measured on T2 (the
+    discriminating tier), strict scorer + judge tiebreak: null ≈ 0, honest in
+    0.40–0.80, gaming < honest, grep ≤ 60% of honest. Held-out instances
+    scored once, eval-mode, at the end. Proof: gate_table.md with measured
+    token usage; heldout rows marked eval-run.
+R5 [me; Aaron picks name+license]. Published: fresh-clone quickstart proven in
+    a clean temp dir (clone → one command → same gate table); LICENSE;
+    validity_report.md v0.1 stating plainly: 3 practice areas, 16 instances,
+    1 attorney, which gates are measured vs unmeasured; public GitHub repo.
+    Hub/verifiers packaging is v0.2 scope.
+
+Out of v0.1 scope (v1.0): ≥35 instances / 7 areas, ≥2-attorney agreement
+rate, multi-model rankings. Stated as known limits, not hidden.
+
 ---
 
 ## 1. Design invariants (non-negotiable)

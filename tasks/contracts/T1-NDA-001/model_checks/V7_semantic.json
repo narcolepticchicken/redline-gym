@@ -1,8 +1,7 @@
 {
   "gaps": [
-    "Personal data processing obligations (no DPA, purpose limitation, or data protection terms for the personal data to be exchanged)",
-    "Data security requirements for protecting personal data",
-    "Data breach notification procedures",
-    "Obligation for Representatives to be bound by confidentiality duties at least as protective as the agreement"
+    "Data protection and privacy obligations (e.g., compliance with applicable data protection laws, security measures, data subject rights, cross-border restrictions, breach notification)",
+    "Requirement that Representatives be bound by confidentiality duties at least as protective as the NDA",
+    "Prompt pre-disclosure notice and cooperation obligation for compelled disclosures"
   ]
 }
