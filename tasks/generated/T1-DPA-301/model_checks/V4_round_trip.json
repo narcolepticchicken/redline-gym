@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "quote": "Vendor may determine the steps, tools, and handling methods it considers useful for operating the service, unless Customer gives a written objection.",
+      "rule_id": "R-001",
+      "section": "3"
+    },
+    {
+      "quote": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.",
+      "rule_id": "R-004",
+      "section": "5"
+    },
+    {
+      "quote": "Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review.",
+      "rule_id": "R-005",
+      "section": "8"
+    },
+    {
+      "quote": "After the relationship ends, Vendor will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence.",
+      "rule_id": "R-007",
+      "section": "10"
+    },
+    {
+      "quote": "'Personal Data' means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
+      "rule_id": "R-011",
+      "section": "2"
+    }
+  ]
+}

@@ -1,8 +1,1 @@
-Score: 6/10. FAIL.
-
-The contract as a whole uses many standard terms, but three passages are drafted in a way that feels artificial and undermines coherence as a professionally drafted agreement.
-
-Weakest passages:
-1. Section 2 definition of “Security Incident” – requires “confirmed outbound extraction … evidenced by a completed written forensic report approved by Vendor’s incident response lead.” This is an unusually narrow, labored definition that does not reflect normal commercial language and reads as planted to avoid ordinary data-breach notification obligations.
-2. Section 6 notice timeline – ties notification to “thirty business days after its incident lead confirms a Security Incident.” Coupled with the restrictive definition above, this delay is extreme and unnatural; it reads like a deliberate obstacle rather than a functional operational clause.
-3. Section 12 exit charge – states that if Customer terminates an Order Form without Vendor default, “Customer will pay an exit charge equal to the full unpaid balance for that Order Form.” Demanding the entire remaining balance (not merely accrued fees or a reasonable early-termination charge) is a punitive lump-sum penalty drafted in a way that feels like a one-sided trap rather than balanced contract language.
+{"score":3,"weakest":["Section 18 contains a sentence stating all recovery for Section 13 (Confidentiality) and Section 14 (Indemnification) claims is limited to the cap in Section 16, directly contradicting Section 16 which explicitly excludes breaches of confidentiality and indemnification obligations from that cap. This creates a fatal internal inconsistency that undermines the agreement's coherence."]}

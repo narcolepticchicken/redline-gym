@@ -1,0 +1,8 @@
+{
+  "gaps": [
+    "Vendor can unilaterally determine processing steps and methods without customer documented instructions, undermining DPA instruction control.",
+    "Security measures lack specific safeguards (encryption, access controls, logging, vulnerability management, incident response) and vendor may change controls without notice.",
+    "Breach notification timeline is up to 10 business days after internal confirmation and executive review, not within 48 hours of discovery.",
+    "No obligation to return or delete data at customer direction; deletion follows vendor's ordinary schedule; no written deletion certification."
+  ]
+}

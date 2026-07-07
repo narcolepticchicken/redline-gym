@@ -1,0 +1,1 @@
+{"score":6,"weakest":["Section 1 contains a duplicate word: 'normalization, normalization, mapping'","Section 6 title 'Notice Regarding Protected Records' is unrelated to the section's actual content about Security Incident notification","Section 18 uses the unnatural phrase 'Despite any contrary sentence' instead of the standard 'Notwithstanding anything to the contrary'"]}

@@ -1,0 +1,7 @@
+{
+  "gaps": [
+    "Personal Data definition narrowly limited to raw uploaded records while excluding transformed outputs, statistical summaries, service measurements, and derived data, leaving normalization service results unprotected.",
+    "No specified security controls (encryption at rest/transit, access restrictions, logging, vulnerability management, incident response); only vague 'commercially suitable' safeguards mentioned.",
+    "Personnel confidentiality obligations not mandated—only internal onboarding materials referenced, no binding confidentiality duty for staff accessing Personal Data."
+  ]
+}

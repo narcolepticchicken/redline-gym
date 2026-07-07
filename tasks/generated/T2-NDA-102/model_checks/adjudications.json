@@ -1,0 +1,101 @@
+{
+  "items": [
+    {
+      "adjudication": {
+        "genuine": false,
+        "reason": "The section text requires at least reasonable care and no less than the care used for its own confidential information of similar importance, matching the fallback exactly in substance. The additional restriction on intentional disclosure makes it more protective, not less.",
+        "status": "DONE"
+      },
+      "id": "V3_clean_base-001",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-005 position:\nThe care standard must be at least reasonable care and no less than the recipient uses for its own similar confidential information.\n\nFallback:\nRecipient will protect Confidential Information using at least reasonable care and no less than the care it uses to protect its own similar confidential information.\n\nSection text:\n## 4. Protection Standard\n\nRecipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance. Recipient will not intentionally disclose it except as permitted by this Agreement.\n",
+      "quote": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "raw_response": "{\"genuine\": false, \"reason\": \"The section text requires at least reasonable care and no less than the care used for its own confidential information of similar importance, matching the fallback exactly in substance. The additional restriction on intentional disclosure makes it more protective, not less.\"}",
+      "rule_id": "R-005",
+      "section": "4",
+      "section_text": "## 4. Protection Standard\n\nRecipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance. Recipient will not intentionally disclose it except as permitted by this Agreement.",
+      "source": "V3_clean_base",
+      "task": "tasks/generated/T2-NDA-102"
+    },
+    {
+      "adjudication": {
+        "genuine": false,
+        "reason": "The section requires prompt notice and reasonable cooperation to seek protective treatment, matching the rule position. Though it lacks the explicit 'before any compelled disclosure' phrasing of the fallback, the obligation to provide notice upon being required to disclose, combined with the duty to cooperate in seeking protective treatment, functionally ensures prior notice and is equally protective.",
+        "status": "DONE"
+      },
+      "id": "V3_clean_base-002",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-007 position:\nCompelled disclosure should require prompt notice where legally permitted and reasonable cooperation to seek protective treatment.\n\nFallback:\nBefore any compelled disclosure, Recipient will, to the extent legally permitted, provide prompt notice and reasonable cooperation so Discloser may seek protective treatment.\n\nSection text:\n## 5. Compelled Disclosure\n\nIf Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.\n",
+      "quote": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
+      "raw_response": "{\"genuine\": false, \"reason\": \"The section requires prompt notice and reasonable cooperation to seek protective treatment, matching the rule position. Though it lacks the explicit 'before any compelled disclosure' phrasing of the fallback, the obligation to provide notice upon being required to disclose, combined with the duty to cooperate in seeking protective treatment, functionally ensures prior notice and is equally protective.\"}",
+      "rule_id": "R-007",
+      "section": "5",
+      "section_text": "## 5. Compelled Disclosure\n\nIf Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
+      "source": "V3_clean_base",
+      "task": "tasks/generated/T2-NDA-102"
+    },
+    {
+      "adjudication": {
+        "genuine": true,
+        "reason": "The section contains a residual knowledge clause in violation of the rule that such clauses must be absent unless expressly approved by the client. The clause states it is only effective if 'the parties approve that right in a signed writing,' but the clause itself is present without the required client approval. The fallback requires deletion of the clause unless the client expressly approves it in writing.",
+        "status": "DONE"
+      },
+      "id": "V3_clean_base-003",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-012 position:\nResidual knowledge clauses should be absent unless expressly approved by the client.\n\nFallback:\nDelete the residual knowledge clause unless expressly approved by the client in writing.\n\nSection text:\n## 12. Residual Rights\n\nNo right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.\n",
+      "quote": "No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.",
+      "raw_response": "{\"genuine\": true, \"reason\": \"The section contains a residual knowledge clause in violation of the rule that such clauses must be absent unless expressly approved by the client. The clause states it is only effective if 'the parties approve that right in a signed writing,' but the clause itself is present without the required client approval. The fallback requires deletion of the clause unless the client expressly approves it in writing.\"}",
+      "rule_id": "R-012",
+      "section": "12",
+      "section_text": "## 12. Residual Rights\n\nNo right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.",
+      "source": "V3_clean_base",
+      "task": "tasks/generated/T2-NDA-102"
+    },
+    {
+      "adjudication": {
+        "genuine": false,
+        "reason": "The section defines 'Purpose' identically to the fallback language, which includes performing the transaction, and is therefore compliant with the rule.",
+        "status": "DONE"
+      },
+      "id": "V4_round_trip_extra-001",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-004 position:\nUse should be limited to evaluating and negotiating the contemplated transaction.\n\nFallback:\nThe recipient may use Confidential Information solely to evaluate, negotiate, and, if agreed, perform the contemplated transaction between the parties.\n\nSection text:\n## 1. Confidential Information\n\n\"Confidential Information\" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within five days after disclosure. \"Purpose\" means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.\n",
+      "quote": "\"Purpose\" means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties.",
+      "raw_response": "{\"genuine\": false, \"reason\": \"The section defines 'Purpose' identically to the fallback language, which includes performing the transaction, and is therefore compliant with the rule.\"}",
+      "rule_id": "R-004",
+      "section": "1",
+      "section_text": "## 1. Confidential Information\n\n\"Confidential Information\" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within five days after disclosure. \"Purpose\" means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.",
+      "source": "V4_round_trip_extra",
+      "task": "tasks/generated/T2-NDA-102"
+    },
+    {
+      "adjudication": {
+        "genuine": false,
+        "reason": "The section text matches the fallback and rule, requiring at least reasonable care and no less than the care used for its own similar confidential information. No violation.",
+        "status": "DONE"
+      },
+      "id": "V4_round_trip_extra-002",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-005 position:\nThe care standard must be at least reasonable care and no less than the recipient uses for its own similar confidential information.\n\nFallback:\nRecipient will protect Confidential Information using at least reasonable care and no less than the care it uses to protect its own similar confidential information.\n\nSection text:\n## 4. Protection Standard\n\nRecipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance. Recipient will not intentionally disclose it except as permitted by this Agreement.\n",
+      "quote": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "raw_response": "{\"genuine\": false, \"reason\": \"The section text matches the fallback and rule, requiring at least reasonable care and no less than the care used for its own similar confidential information. No violation.\"}",
+      "rule_id": "R-005",
+      "section": "4",
+      "section_text": "## 4. Protection Standard\n\nRecipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance. Recipient will not intentionally disclose it except as permitted by this Agreement.",
+      "source": "V4_round_trip_extra",
+      "task": "tasks/generated/T2-NDA-102"
+    },
+    {
+      "adjudication": {
+        "genuine": true,
+        "reason": "The section contains a residual knowledge clause allowing the receiving side to keep and apply generalized ideas, techniques, and know-how, which violates the rule requiring such clauses to be absent unless expressly approved by the client in writing.",
+        "status": "DONE"
+      },
+      "id": "V4_round_trip_extra-003",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-012 position:\nResidual knowledge clauses should be absent unless expressly approved by the client.\n\nFallback:\nDelete the residual knowledge clause unless expressly approved by the client in writing.\n\nSection text:\n## 10. No License; Ownership\n\nDisclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.\n",
+      "quote": "The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
+      "raw_response": "{\"genuine\": true, \"reason\": \"The section contains a residual knowledge clause allowing the receiving side to keep and apply generalized ideas, techniques, and know-how, which violates the rule requiring such clauses to be absent unless expressly approved by the client in writing.\"}",
+      "rule_id": "R-012",
+      "section": "10",
+      "section_text": "## 10. No License; Ownership\n\nDisclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
+      "source": "V4_round_trip_extra",
+      "task": "tasks/generated/T2-NDA-102"
+    }
+  ],
+  "task": "tasks/generated/T2-NDA-102"
+}

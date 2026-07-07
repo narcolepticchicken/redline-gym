@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "adjudication": {
+        "genuine": false,
+        "reason": "The section text matches the fallback and explicitly states that no license, assignment, or ownership interest is granted except a limited right to use, which is compliant with the rule against granting licenses or ownership rights in Confidential Information.",
+        "status": "DONE"
+      },
+      "id": "V4_round_trip_extra-001",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-010 position:\nThe NDA should not grant licenses or ownership rights in Confidential Information.\n\nFallback:\nNo license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement.\n\nSection text:\n## 10. No License; Ownership\n\nAll Confidential Information remains the property of Discloser. No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.\n",
+      "quote": "No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.",
+      "raw_response": "{\"genuine\": false, \"reason\": \"The section text matches the fallback and explicitly states that no license, assignment, or ownership interest is granted except a limited right to use, which is compliant with the rule against granting licenses or ownership rights in Confidential Information.\"}",
+      "rule_id": "R-010",
+      "section": "10",
+      "section_text": "## 10. No License; Ownership\n\nAll Confidential Information remains the property of Discloser. No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.",
+      "source": "V4_round_trip_extra",
+      "task": "tasks/contracts/T1-NDA-001"
+    }
+  ],
+  "task": "tasks/contracts/T1-NDA-001"
+}

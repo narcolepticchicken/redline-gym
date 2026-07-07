@@ -1,8 +1,8 @@
 {
   "gaps": [
-    "Automatic protection for all non-public information regardless of marking or confirmation",
-    "Reasonable care minimum standard for safeguarding Confidential Information",
-    "Obligation to bind Representatives to confidentiality duties at least as protective as the NDA",
-    "Prompt notice prior to compelled disclosure and cooperation to seek protective treatment"
+    "Personal data processing obligations (no DPA, purpose limitation, or data protection terms for the personal data to be exchanged)",
+    "Data security requirements for protecting personal data",
+    "Data breach notification procedures",
+    "Obligation for Representatives to be bound by confidentiality duties at least as protective as the agreement"
   ]
 }

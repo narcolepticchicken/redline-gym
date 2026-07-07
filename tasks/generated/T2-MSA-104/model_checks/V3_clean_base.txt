@@ -1,0 +1,1 @@
+{"verdict":"FAIL","violations":[{"rule_id":"R-007","section":"10","quote":"Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."}]}

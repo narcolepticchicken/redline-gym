@@ -1,7 +1,1 @@
-FAIL  
-The contract does not address either of the two topics the procurement team specifically requires: (1) hosting location and the basis for cross-border transfers, and (2) certified deletion of Customer Data at exit.  
-
-- **Hosting location / cross-border transfer basis**: Nowhere does the agreement identify where Customer Data will be stored, processed, or transferred across borders (e.g., specific countries, regions, or use of adequacy decisions, standard contractual clauses, etc.). Section 8 (Service Partners) allows Vendor to use affiliates, hosting providers, and contractors globally without any geographic or transfer-safeguard constraints. This omission directly conflicts with the client’s stated need for visibility into data location and lawful transfer mechanisms for personal data.  
-- **Certified deletion at exit**: The MSA contains no obligation for Vendor to delete Customer Data upon termination/expiration, nor any requirement to provide a certified record of deletion. Sections 11 (Customer Exit Right) and 12 (Transition Assistance) cover convenience termination and transition help but are silent on data destruction. The absence of a deletion-plus-certification clause means the client cannot demonstrate that personal data has been permanently removed at the end of the engagement, which the procurement brief explicitly mandates.  
-
-Because the agreement is silent on these two material points, a careful reviewer must escalate both gaps.
+{"gaps":["Hosting location and cross-border transfer basis","Certified deletion evidence at exit"]}

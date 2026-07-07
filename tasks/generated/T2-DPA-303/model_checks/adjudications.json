@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "adjudication": {
+        "genuine": true,
+        "reason": "The section permits processing to 'improve the services' without requiring documented instructions, which is less restrictive than the fallback's requirement to process only on documented instructions.",
+        "status": "DONE"
+      },
+      "id": "V4_round_trip_extra-001",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-001 position:\nThe DPA's covered-activity perimeter and vendor authority should keep personal-data work under the customer's documented instructions and the agreed services.\n\nFallback:\nVendor will process personal data only on Customer's documented instructions and only as necessary to provide the services or comply with applicable law.\n\nSection text:\n## 5. Purpose Limitation\n\nVendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.\n",
+      "quote": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer",
+      "raw_response": "{\"genuine\": true, \"reason\": \"The section permits processing to 'improve the services' without requiring documented instructions, which is less restrictive than the fallback's requirement to process only on documented instructions.\"}",
+      "rule_id": "R-001",
+      "section": "5",
+      "section_text": "## 5. Purpose Limitation\n\nVendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+      "source": "V4_round_trip_extra",
+      "task": "tasks/generated/T2-DPA-303"
+    },
+    {
+      "adjudication": {
+        "genuine": true,
+        "reason": "The section allows retention for 'archival controls' in addition to legally required copies, exceeding the fallback's exception and failing to fully restore customer control.",
+        "status": "DONE"
+      },
+      "id": "V4_round_trip_extra-002",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-007 position:\nExit handling should restore customer control at service end through return or disposal and written completion evidence.\n\nFallback:\nAt termination or expiration, Vendor will return or delete personal data at Customer's direction and certify completion, except for legally required retained copies that remain protected by this DPA.\n\nSection text:\n## 11. Return and Deletion\n\nUpon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing. Retained copies required by law or archival controls remain subject to this DPA until deleted.\n",
+      "quote": "Retained copies required by law or archival controls remain subject to this DPA until deleted.",
+      "raw_response": "{\"genuine\": true, \"reason\": \"The section allows retention for 'archival controls' in addition to legally required copies, exceeding the fallback's exception and failing to fully restore customer control.\"}",
+      "rule_id": "R-007",
+      "section": "11",
+      "section_text": "## 11. Return and Deletion\n\nUpon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing. Retained copies required by law or archival controls remain subject to this DPA until deleted.",
+      "source": "V4_round_trip_extra",
+      "task": "tasks/generated/T2-DPA-303"
+    }
+  ],
+  "task": "tasks/generated/T2-DPA-303"
+}

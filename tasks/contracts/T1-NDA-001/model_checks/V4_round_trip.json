@@ -1,14 +1,9 @@
 {
   "found": [
     {
-      "quote": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure.",
+      "quote": "'Confidential Information' means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure.",
       "rule_id": "R-001",
       "section": "1"
-    },
-    {
-      "quote": "was known to Recipient without restriction before disclosure",
-      "rule_id": "R-003",
-      "section": "6"
     },
     {
       "quote": "Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions.",
@@ -21,12 +16,12 @@
       "section": "4"
     },
     {
-      "quote": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, \"Representatives\") who have a need to know the information for the Purpose.",
+      "quote": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, 'Representatives') who have a need to know the information for the Purpose.",
       "rule_id": "R-006",
       "section": "3"
     },
     {
-      "quote": "Recipient may make such disclosure and will, where legally permitted, endeavor to notify Discloser of the disclosure thereafter.",
+      "quote": "If Recipient is required by law, regulation, or legal process to disclose Confidential Information, Recipient may make such disclosure and will, where legally permitted, endeavor to notify Discloser of the disclosure thereafter.",
       "rule_id": "R-007",
       "section": "5"
     },
@@ -36,9 +31,9 @@
       "section": "8"
     },
     {
-      "quote": "Recipient acknowledges that unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages may be inadequate, and Discloser may seek equitable relief without limiting any other available remedy.",
-      "rule_id": "R-011",
-      "section": "11"
+      "quote": "No license, assignment, or ownership interest is granted by disclosure except the limited right to use Confidential Information as expressly permitted by this Agreement.",
+      "rule_id": "R-010",
+      "section": "10"
     }
   ]
 }

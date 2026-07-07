@@ -1,0 +1,1 @@
+{"score":9,"weakest":["Compelled disclosure clause (Section 5) uses a conditional permissive structure (\"may make the required disclosure without advance notice... and without seeking confidential treatment unless counsel determines those steps are necessary\") that creates a minor awkwardness in reading flow, though the meaning remains decipherable."]}

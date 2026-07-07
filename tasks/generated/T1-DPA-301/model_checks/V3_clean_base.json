@@ -1,0 +1,10 @@
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "quote": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Personal Data Breach.",
+      "rule_id": "R-005",
+      "section": "8. Breach Notice"
+    }
+  ]
+}
