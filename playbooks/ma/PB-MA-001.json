@@ -1,0 +1,167 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-MA-001",
+  "practice_area": "ma",
+  "title": "Buyer-Side Asset Purchase Agreement Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "Buyer should assume only a closed, enumerated list of liabilities and should not accept a catch-all assumption of seller obligations.",
+      "fallback": "Buyer assumes only the liabilities expressly listed in Section 4, and all other liabilities of Seller are excluded unless Buyer expressly agrees in a signed amendment.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the assumed-liability language captures unspecified, ordinary-course, or catch-all seller liabilities.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed assumption marker"]
+      }
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Excluded liabilities should expressly include pre-closing taxes, employee claims, and undisclosed obligations.",
+      "fallback": "Excluded Liabilities include all pre-closing taxes, all employment, wage, benefit, discrimination, termination, and similar employee claims, and all obligations not disclosed in this Agreement or specifically assumed by Buyer.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if pre-closing taxes, employee claims, or undisclosed obligations are not clearly excluded.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed exclusion marker"]
+      }
+    },
+    {
+      "rule_id": "R-003",
+      "position": "General representations and warranties should survive for at least 18 months, with fundamental representations surviving longer.",
+      "fallback": "General representations and warranties survive for 18 months after closing, and fundamental representations survive for six years or the longest period permitted by law.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if general survival is shorter than 18 months or fundamental representations do not survive materially longer.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed survival marker"]
+      }
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Seller indemnification should include a cap of at least 15 percent of the purchase price and a deductible basket that does not tip from the first dollar.",
+      "fallback": "Seller's indemnification cap is 15% of the Purchase Price, subject to a true deductible basket that applies only to losses above the deductible amount and does not recover from the first dollar.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the cap is below 15% of purchase price or the basket structure is first-dollar/tipping.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed cap marker"]
+      }
+    },
+    {
+      "rule_id": "R-005",
+      "position": "Escrow or holdback protection should be at least 10 percent of the purchase price and remain in place for at least 12 months.",
+      "fallback": "At closing, 10% of the Purchase Price will be deposited in escrow and held for at least 12 months to secure Seller indemnification obligations.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if escrow/holdback protection is below 10% or releases before 12 months.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed escrow marker"]
+      }
+    },
+    {
+      "rule_id": "R-006",
+      "position": "A no-reliance disclaimer must not eliminate, waive, or limit fraud claims.",
+      "fallback": "Nothing in the no-reliance clause limits any claim based on Fraud, intentional misrepresentation, or willful misconduct.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if no-reliance language can be read to waive or limit fraud-based claims.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed reliance marker"]
+      }
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Assignment of material contracts should require required counterparty consents as a closing condition.",
+      "fallback": "Receipt of all required consents to assign Material Contracts is a condition to Buyer's obligation to close, except for specific consents Buyer waives in writing.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if material contracts transfer without required consents or if consents are not a buyer closing condition.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed consent marker"]
+      }
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Employee matters should bound any buyer offer obligations and should not admit successor liability.",
+      "fallback": "Buyer may decide which employees receive offers, any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Buyer must hire all employees, match all terms, or admit successor liability.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed workforce marker"]
+      }
+    },
+    {
+      "rule_id": "R-009",
+      "position": "Non-compete covenants from seller principals should be reasonable in duration, geography, and restricted business scope.",
+      "fallback": "Seller principals may not compete with the acquired product line for 24 months in the territories where Seller conducted that business during the 12 months before closing, subject to applicable law.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if the non-compete is missing for key principals or is drafted so broadly that enforceability is likely impaired.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed covenant marker"]
+      }
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Purchase-price adjustment mechanics should include a post-closing statement, buyer review period, seller objection process, and neutral accountant resolution.",
+      "fallback": "The purchase-price adjustment will include a post-closing statement, a 30-day review period, a written objection process, good-faith negotiation, and final resolution by an independent accountant.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if the adjustment lacks objection mechanics or a neutral resolution process.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed adjustment marker"]
+      }
+    },
+    {
+      "rule_id": "R-011",
+      "position": "Buyer's closing conditions should include the absence of a material adverse effect before closing.",
+      "fallback": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Buyer must close despite a material adverse effect.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed condition marker"]
+      }
+    },
+    {
+      "rule_id": "R-012",
+      "position": "Disclosure schedules should qualify only those representations and warranties that specifically reference the applicable schedule.",
+      "fallback": "A disclosure schedule qualifies only the specific representation or warranty that expressly references that schedule by number, and no schedule qualifies all representations generally.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if schedules are deemed to qualify all representations or otherwise override the specific-reference rule.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed schedule marker"]
+      }
+    },
+    {
+      "rule_id": "R-013",
+      "position": "Purchased technology assets should include source code, object code, documentation, product data, domain names, repositories, and assignable IP rights used in the business.",
+      "fallback": "Purchased Assets include all source code, object code, documentation, product data, domain names, code repositories, and assignable intellectual property rights used in or necessary for the acquired business.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if core technology assets needed to operate the acquired product are omitted.",
+      "is_canary": false,
+      "deterministic_checks": {
+        "must_not_contain": ["unreviewed asset marker"]
+      }
+    },
+    {
+      "rule_id": "R-014",
+      "position": "Delaware governing law is acceptable for this engagement and should not be flagged by itself.",
+      "fallback": "No change; Delaware governing law is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses Delaware law.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "A simultaneous sign-and-close structure is acceptable for this deal size and should not be flagged by itself.",
+      "fallback": "No change; simultaneous signing and closing is acceptable for this deal size.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because signing and closing occur on the same date.",
+      "is_canary": true
+    }
+  ]
+}

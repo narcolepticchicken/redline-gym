@@ -1,0 +1,175 @@
+{
+  "playbook_id": "PB-MA-001",
+  "doc_type": "asset_purchase_agreement",
+  "filename": "asset_purchase_agreement.md",
+  "heading_template": "# Asset Purchase Agreement",
+  "title_template": "Asset Purchase Agreement",
+  "surface_slots": {
+    "buyer_name": ["Redline Cloud Systems, Inc.", "Northstar Platform Labs, Inc.", "Harborline Software, Inc."],
+    "seller_name": ["VectorForge Analytics, LLC", "SignalPeak AI, LLC", "BuildLoop Systems, LLC"],
+    "product_name": ["AtlasOps", "SignalDesk", "ForgePath"],
+    "purchase_price": ["$24,000,000", "$31,500,000", "$42,000,000"],
+    "escrow_percent": ["10%", "12%", "15%"],
+    "escrow_months": ["12", "15", "18"],
+    "survival_months": ["18", "21", "24"],
+    "fundamental_years": ["six", "seven"],
+    "cap_percent": ["15%", "18%", "20%"],
+    "basket_amount": ["$150,000", "$200,000", "$250,000"],
+    "working_capital_target": ["$1,200,000", "$1,500,000", "$1,850,000"],
+    "review_days": ["30", "35", "45"],
+    "noncompete_months": ["24"],
+    "lookback_months": ["12"]
+  },
+  "client_context_template": "Client is a mid-size technology company acquiring a smaller competitor's assets. Review the asset purchase agreement from the Buyer side as Buyer's counsel. Buyer also needs earnout scenario revenue diligence reviewed.",
+  "instruction_template": "Review the asset purchase agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "preamble_template": "This Asset Purchase Agreement is entered into by and between {buyer_name} (\"Buyer\") and {seller_name} (\"Seller\") for Buyer's acquisition of assets used in Seller's {product_name} business.",
+  "section_order_variants": [
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"],
+    ["1", "2", "3", "5", "4", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"],
+    ["1", "2", "4", "3", "5", "6", "8", "7", "9", "10", "11", "12", "14", "13", "15", "16"]
+  ],
+  "sections": [
+    {
+      "id": "1",
+      "heading": "Definitions and Transaction Structure",
+      "paragraphs": [
+        "\"Assumed Liabilities\" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 4. \"Excluded Liabilities\" has the meaning stated in Section 5. Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition."
+      ]
+    },
+    {
+      "id": "2",
+      "heading": "Purchased Assets",
+      "paragraphs": [
+        "At closing, Seller will sell to Buyer all assets used in or necessary for the {product_name} business, including source code, object code, documentation, product data, domain names, code repositories, assignable intellectual property rights, customer records, assigned contracts, equipment, and goodwill."
+      ]
+    },
+    {
+      "id": "3",
+      "heading": "Excluded Assets",
+      "paragraphs": [
+        "Seller retains cash, tax refunds for periods ending before closing, corporate minute books, insurance policies, privileged communications unrelated to the Purchased Assets, and assets expressly listed as excluded on Schedule 3."
+      ]
+    },
+    {
+      "id": "4",
+      "heading": "Assumed Liabilities",
+      "paragraphs": [
+        "Buyer assumes only the Assumed Liabilities and no other debts, duties, claims, obligations, or liabilities of Seller. The assumed items are limited to customer support obligations arising after closing under assigned customer contracts, post-closing service credits issued by Buyer, and ordinary vendor obligations first arising after closing under assigned contracts."
+      ]
+    },
+    {
+      "id": "5",
+      "heading": "Excluded Liabilities",
+      "paragraphs": [
+        "Seller retains all Excluded Liabilities, including all pre-closing taxes, employment, wage, benefit, discrimination, termination, and similar employee claims, liabilities related to excluded assets, litigation, borrowed money, transaction expenses, and obligations not disclosed in this Agreement or specifically assumed by Buyer."
+      ]
+    },
+    {
+      "id": "6",
+      "heading": "Purchase Price and Escrow",
+      "paragraphs": [
+        "The purchase price is {purchase_price}. At closing, Buyer will deposit {escrow_percent} of the purchase price with the escrow agent, and the escrow will remain available for Seller indemnification obligations for {escrow_months} months after closing."
+      ]
+    },
+    {
+      "id": "7",
+      "heading": "Purchase Price Adjustment",
+      "paragraphs": [
+        "Within 60 days after closing, Buyer will deliver a closing statement showing final working capital against a target of {working_capital_target}. Seller has {review_days} days to review the statement, deliver a written objection notice, and meet with Buyer in good faith. Unresolved disputed items will be submitted to an independent accountant for final resolution."
+      ]
+    },
+    {
+      "id": "8",
+      "heading": "Representations and Warranties",
+      "paragraphs": [
+        "Seller represents that it owns the Purchased Assets free of liens except as stated on Schedule 8(a), has authority to enter into this Agreement, has paid taxes due for pre-closing periods except as stated on Schedule 8(b), and has no undisclosed litigation except as stated on Schedule 8(c). Each representation is qualified only by the specific schedule expressly referenced in that representation."
+      ]
+    },
+    {
+      "id": "9",
+      "heading": "Survival and Indemnification",
+      "paragraphs": [
+        "General representations and warranties survive for {survival_months} months after closing, and fundamental representations survive for {fundamental_years} years or the longest period permitted by law. Seller will indemnify Buyer for breaches, Excluded Liabilities, and fraud. Seller's indemnification cap is {cap_percent} of the purchase price, subject to a true deductible basket of {basket_amount} that applies only to losses above the deductible amount and does not recover from the first dollar."
+      ]
+    },
+    {
+      "id": "10",
+      "heading": "Independent Investigation and Fraud Preservation",
+      "paragraphs": [
+        "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement, but nothing in this Section 10 limits any claim based on Fraud, intentional misrepresentation, or willful misconduct."
+      ]
+    },
+    {
+      "id": "11",
+      "heading": "Material Contracts and Consents",
+      "paragraphs": [
+        "The contracts listed on Schedule 11 are Material Contracts. Receipt of all required counterparty consents to assign the Material Contracts is a condition to Buyer's obligation to close, except for specific consents Buyer waives in writing."
+      ]
+    },
+    {
+      "id": "12",
+      "heading": "Employee Matters",
+      "paragraphs": [
+        "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations."
+      ]
+    },
+    {
+      "id": "13",
+      "heading": "Restrictive Covenants",
+      "paragraphs": [
+        "For {noncompete_months} months after closing, Seller principals will not compete with the acquired {product_name} product line in territories where Seller conducted that business during the {lookback_months} months before closing, subject to applicable law."
+      ]
+    },
+    {
+      "id": "14",
+      "heading": "Closing Conditions",
+      "paragraphs": [
+        "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing."
+      ]
+    },
+    {
+      "id": "15",
+      "heading": "Disclosure Schedule Administration",
+      "paragraphs": [
+        "A disclosure schedule qualifies only the specific representation or warranty that expressly references that schedule by number. No disclosure schedule qualifies any other representation or warranty unless that representation or warranty specifically references the schedule item."
+      ]
+    },
+    {
+      "id": "16",
+      "heading": "Governing Law and Closing Logistics",
+      "paragraphs": [
+        "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules. The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction."
+      ]
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction.",
+      "why_benign": "The sign-and-close canary says simultaneous signing and closing is acceptable for this deal size."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.",
+      "why_benign": "The transaction-structure statement supports buyer-side asset-purchase treatment and does not violate the playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Earnout scenario revenue diligence",
+      "context_anchor": "Buyer also needs earnout scenario revenue diligence reviewed.",
+      "match_keywords": ["earnout scenario", "revenue diligence", "deferred revenue review"],
+      "absent_terms": ["earnout scenario", "revenue diligence", "deferred revenue review"],
+      "expected_action": "escalate"
+    }
+  ]
+}

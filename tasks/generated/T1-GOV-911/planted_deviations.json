@@ -1,0 +1,112 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation."
+      },
+      "original_text": "Each Major Investor may receive quarterly unaudited financial statements within 45 days after quarter-end and annual audited financial statements within 120 days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits.",
+      "mutated_text": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "6",
+        "span": "If a Major Investor proposes to transfer more than 10% of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms, but transfers by Founder Holders are excluded from tag-along rights."
+      },
+      "original_text": "If a Founder Holder or Major Investor proposes to transfer more than 10% of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms.",
+      "mutated_text": "If a Major Investor proposes to transfer more than 10% of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms, but transfers by Founder Holders are excluded from tag-along rights.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along."
+      },
+      "original_text": "No stockholder will be required to provide uncapped indemnity, non-pro rata liability, or a non-compete covenant as a condition to the drag-along.",
+      "mutated_text": "Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "3",
+        "span": "The Board will consist of five directors: two Founder Designees selected by the Founder Holders, two Series A Designees selected by the Requisite Holders, and one independent director selected solely by the Series A Designees."
+      },
+      "original_text": "The Board will consist of five directors: three Founder Designees selected by the Founder Holders, one Series A Designee selected by the Requisite Holders, and one independent director approved by the Founder Designees and the Requisite Holders.",
+      "mutated_text": "The Board will consist of five directors: two Founder Designees selected by the Founder Holders, two Series A Designees selected by the Requisite Holders, and one independent director selected solely by the Series A Designees.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before JAMS, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
+      "why_benign": "The dispute-resolution canary says confidential arbitration is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "The Company has issued Common Stock and Series A Preferred Stock, and each holder agrees to exercise rights under this Agreement in good faith.",
+      "why_benign": "Describing the capital structure and good-faith exercise of rights does not conflict with the company-side playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Investor overlap disclosure for a potential strategic partner",
+      "context_anchor": "Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+      "match_keywords": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "absent_terms": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=911",
+    "attempt_seed=911",
+    "playbook=PB-GOV-001",
+    "tier=T1",
+    "task_id=T1-GOV-911",
+    "D-001 GOV-R008-DIRECT-INFORMATION-MONTHLY-INSPECTION direct_term_swap applied to R-008",
+    "D-002 GOV-R005-DIRECT-TAG-FOUNDER-EXCLUSION direct_term_swap applied to R-005",
+    "D-003 GOV-R004-DIRECT-DRAG-UNCAPPED-INDEMNITY direct_term_swap applied to R-004",
+    "D-004 GOV-R001-DIRECT-BOARD-INVESTOR-MAJORITY direct_term_swap applied to R-001",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

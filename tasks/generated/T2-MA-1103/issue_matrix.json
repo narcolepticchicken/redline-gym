@@ -1,0 +1,102 @@
+{
+  "issues": [
+    {
+      "issue_id": "I-001",
+      "deviation_ids": [
+        "D-001"
+      ],
+      "rule_id": "R-001",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-002",
+      "deviation_ids": [
+        "D-002"
+      ],
+      "rule_id": "R-012",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-003",
+      "deviation_ids": [
+        "D-003"
+      ],
+      "rule_id": "R-011",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
+      ],
+      "rule_id": "R-006",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-005",
+      "deviation_ids": [
+        "D-005"
+      ],
+      "rule_id": "R-008",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Earnout scenario revenue diligence",
+      "context_anchor": "Buyer also needs earnout scenario revenue diligence reviewed.",
+      "match_keywords": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "absent_terms": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction.",
+      "why_benign": "The sign-and-close canary says simultaneous signing and closing is acceptable for this deal size."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.",
+      "why_benign": "The transaction-structure statement supports buyer-side asset-purchase treatment and does not violate the playbook."
+    }
+  ]
+}

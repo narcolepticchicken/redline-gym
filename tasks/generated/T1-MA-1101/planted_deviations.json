@@ -1,0 +1,110 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "9",
+        "span": "General representations and warranties survive for 12 months after closing, and fundamental representations expire at the same time."
+      },
+      "original_text": "General representations and warranties survive for 18 months after closing, and fundamental representations survive for six years or the longest period permitted by law.",
+      "mutated_text": "General representations and warranties survive for 12 months after closing, and fundamental representations expire at the same time.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-010",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Buyer's closing statement will be final and binding when delivered, with no separate objection, negotiation, or accountant review process."
+      },
+      "original_text": "Seller has 35 days to review the statement, deliver a written objection notice, and meet with Buyer in good faith. Unresolved disputed items will be submitted to an independent accountant for final resolution.",
+      "mutated_text": "Buyer's closing statement will be final and binding when delivered, with no separate objection, negotiation, or accountant review process.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "14",
+        "span": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases."
+      },
+      "original_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.",
+      "mutated_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "11",
+        "span": "Seller will use commercially reasonable efforts after closing to request counterparty consents for Material Contracts, but receipt of those consents is not a condition to Buyer's obligation to close."
+      },
+      "original_text": "Receipt of all required counterparty consents to assign the Material Contracts is a condition to Buyer's obligation to close, except for specific consents Buyer waives in writing.",
+      "mutated_text": "Seller will use commercially reasonable efforts after closing to request counterparty consents for Material Contracts, but receipt of those consents is not a condition to Buyer's obligation to close.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction.",
+      "why_benign": "The sign-and-close canary says simultaneous signing and closing is acceptable for this deal size."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.",
+      "why_benign": "The transaction-structure statement supports buyer-side asset-purchase treatment and does not violate the playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Earnout scenario revenue diligence",
+      "context_anchor": "Buyer also needs earnout scenario revenue diligence reviewed.",
+      "match_keywords": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "absent_terms": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=1101",
+    "attempt_seed=1101",
+    "playbook=PB-MA-001",
+    "tier=T1",
+    "task_id=T1-MA-1101",
+    "D-001 MA-R003-DIRECT-SURVIVAL-TWELVE-MONTHS direct_term_swap applied to R-003",
+    "D-002 MA-R010-DIRECT-ADJUSTMENT-NO-OBJECTION direct_term_swap applied to R-010",
+    "D-003 MA-R011-DIRECT-NO-MAE-CONDITION-DROPPED direct_term_swap applied to R-011",
+    "D-004 MA-R007-DIRECT-MATERIAL-CONTRACT-CONSENTS-NOT-CONDITION direct_term_swap applied to R-007",
+    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "1",
+        "span": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 5, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing."
+      },
+      "original_text": "\"Assumed Liabilities\" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 5.",
+      "mutated_text": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 5, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-012",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "15",
+        "span": "A disclosure schedule qualifies the specific representation or warranty that expressly references that schedule by number. For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule."
+      },
+      "original_text": "A disclosure schedule qualifies only the specific representation or warranty that expressly references that schedule by number. No disclosure schedule qualifies any other representation or warranty unless that representation or warranty specifically references the schedule item.",
+      "mutated_text": "A disclosure schedule qualifies the specific representation or warranty that expressly references that schedule by number. For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "9",
+        "span": "Seller's indemnification cap is 8% of the purchase price, subject to a tipping basket of $150,000 that, once exceeded, permits recovery from the first dollar."
+      },
+      "original_text": "Seller's indemnification cap is 15% of the purchase price, subject to a true deductible basket of $150,000 that applies only to losses above the deductible amount and does not recover from the first dollar.",
+      "mutated_text": "Seller's indemnification cap is 8% of the purchase price, subject to a tipping basket of $150,000 that, once exceeded, permits recovery from the first dollar.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-006",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement."
+      },
+      "original_text": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement, but nothing in this Section 10 limits any claim based on Fraud, intentional misrepresentation, or willful misconduct.",
+      "mutated_text": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement.",
+      "mechanism": "omission",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "12",
+        "span": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations. For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing."
+      },
+      "original_text": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations.",
+      "mutated_text": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations. For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.",
+      "mechanism": "off_playbook_addition",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction.",
+      "why_benign": "The sign-and-close canary says simultaneous signing and closing is acceptable for this deal size."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.",
+      "why_benign": "The transaction-structure statement supports buyer-side asset-purchase treatment and does not violate the playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Earnout scenario revenue diligence",
+      "context_anchor": "Buyer also needs earnout scenario revenue diligence reviewed.",
+      "match_keywords": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "absent_terms": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=1201",
+    "attempt_seed=1201",
+    "playbook=PB-MA-001",
+    "tier=T2",
+    "task_id=T2-MA-1201",
+    "D-001 MA-R001-DEFINED-ASSUMED-LIABILITIES-ORDINARY-COURSE defined_term_shift applied to R-001",
+    "D-002 MA-R012-CROSS-SCHEDULES-QUALIFY-ALL-REPS cross_ref_override applied to R-012",
+    "D-003 MA-R004-DIRECT-INDEMNITY-CAP-LOW-TIPPING-BASKET direct_term_swap applied to R-004",
+    "D-004 MA-R006-OMISSION-NO-RELIANCE-FRAUD-CARVEOUT omission applied to R-006",
+    "D-005 MA-R008-OFFPLAYBOOK-EMPLOYEE-SUCCESSOR-ADMISSION off_playbook_addition applied to R-008",
+    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "playbook_id": "PB-MA-001",
+  "entries": [
+    {
+      "recipe_id": "MA-R001-DEFINED-ASSUMED-LIABILITIES-ORDINARY-COURSE",
+      "rule_id": "R-001",
+      "mechanism": "defined_term_shift",
+      "section": "1",
+      "templates": {
+        "original_text": "\"Assumed Liabilities\" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 4.",
+        "mutated_text": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MA-R002-DIRECT-EXCLUDED-LIABILITIES-CARVEOUTS-DROPPED",
+      "rule_id": "R-002",
+      "mechanism": "direct_term_swap",
+      "section": "5",
+      "templates": {
+        "original_text": "Seller retains all Excluded Liabilities, including all pre-closing taxes, employment, wage, benefit, discrimination, termination, and similar employee claims, liabilities related to excluded assets, litigation, borrowed money, transaction expenses, and obligations not disclosed in this Agreement or specifically assumed by Buyer.",
+        "mutated_text": "Seller retains all Excluded Liabilities, including liabilities related to excluded assets, litigation, borrowed money, and transaction expenses, except for operating matters that relate to employees, tax periods, or commitments transferred with the Purchased Assets."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MA-R003-DIRECT-SURVIVAL-TWELVE-MONTHS",
+      "rule_id": "R-003",
+      "mechanism": "direct_term_swap",
+      "section": "9",
+      "templates": {
+        "original_text": "General representations and warranties survive for {survival_months} months after closing, and fundamental representations survive for {fundamental_years} years or the longest period permitted by law.",
+        "mutated_text": "General representations and warranties survive for 12 months after closing, and fundamental representations expire at the same time."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MA-R004-DIRECT-INDEMNITY-CAP-LOW-TIPPING-BASKET",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "9",
+      "templates": {
+        "original_text": "Seller's indemnification cap is {cap_percent} of the purchase price, subject to a true deductible basket of {basket_amount} that applies only to losses above the deductible amount and does not recover from the first dollar.",
+        "mutated_text": "Seller's indemnification cap is 8% of the purchase price, subject to a tipping basket of {basket_amount} that, once exceeded, permits recovery from the first dollar."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MA-R005-DIRECT-ESCROW-LOW-SHORT",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "6",
+      "templates": {
+        "original_text": "At closing, Buyer will deposit {escrow_percent} of the purchase price with the escrow agent, and the escrow will remain available for Seller indemnification obligations for {escrow_months} months after closing.",
+        "mutated_text": "At closing, Buyer will deposit 5% of the purchase price with the escrow agent, and the escrow will remain available for Seller indemnification obligations for six months after closing."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MA-R006-OMISSION-NO-RELIANCE-FRAUD-CARVEOUT",
+      "rule_id": "R-006",
+      "mechanism": "omission",
+      "section": "10",
+      "templates": {
+        "original_text": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement, but nothing in this Section 10 limits any claim based on Fraud, intentional misrepresentation, or willful misconduct.",
+        "mutated_text": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MA-R007-DIRECT-MATERIAL-CONTRACT-CONSENTS-NOT-CONDITION",
+      "rule_id": "R-007",
+      "mechanism": "direct_term_swap",
+      "section": "11",
+      "templates": {
+        "original_text": "Receipt of all required counterparty consents to assign the Material Contracts is a condition to Buyer's obligation to close, except for specific consents Buyer waives in writing.",
+        "mutated_text": "Seller will use commercially reasonable efforts after closing to request counterparty consents for Material Contracts, but receipt of those consents is not a condition to Buyer's obligation to close."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MA-R008-OFFPLAYBOOK-EMPLOYEE-SUCCESSOR-ADMISSION",
+      "rule_id": "R-008",
+      "mechanism": "off_playbook_addition",
+      "section": "12",
+      "templates": {
+        "original_text": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations.",
+        "mutated_text": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations. For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MA-R009-DIRECT-NONCOMPETE-OVERBROAD",
+      "rule_id": "R-009",
+      "mechanism": "direct_term_swap",
+      "section": "13",
+      "templates": {
+        "original_text": "For {noncompete_months} months after closing, Seller principals will not compete with the acquired {product_name} product line in territories where Seller conducted that business during the {lookback_months} months before closing, subject to applicable law.",
+        "mutated_text": "For five years after closing, Seller principals will not own, operate, advise, invest in, or work for any technology business anywhere in the world, whether or not related to the acquired {product_name} product line."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MA-R010-DIRECT-ADJUSTMENT-NO-OBJECTION",
+      "rule_id": "R-010",
+      "mechanism": "direct_term_swap",
+      "section": "7",
+      "templates": {
+        "original_text": "Seller has {review_days} days to review the statement, deliver a written objection notice, and meet with Buyer in good faith. Unresolved disputed items will be submitted to an independent accountant for final resolution.",
+        "mutated_text": "Buyer's closing statement will be final and binding when delivered, with no separate objection, negotiation, or accountant review process."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MA-R011-DIRECT-NO-MAE-CONDITION-DROPPED",
+      "rule_id": "R-011",
+      "mechanism": "direct_term_swap",
+      "section": "14",
+      "templates": {
+        "original_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.",
+        "mutated_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MA-R012-CROSS-SCHEDULES-QUALIFY-ALL-REPS",
+      "rule_id": "R-012",
+      "mechanism": "cross_ref_override",
+      "section": "15",
+      "templates": {
+        "original_text": "A disclosure schedule qualifies only the specific representation or warranty that expressly references that schedule by number. No disclosure schedule qualifies any other representation or warranty unless that representation or warranty specifically references the schedule item.",
+        "mutated_text": "A disclosure schedule qualifies the specific representation or warranty that expressly references that schedule by number. For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MA-R013-DIRECT-TECH-ASSETS-OMITTED",
+      "rule_id": "R-013",
+      "mechanism": "direct_term_swap",
+      "section": "2",
+      "templates": {
+        "original_text": "At closing, Seller will sell to Buyer all assets used in or necessary for the {product_name} business, including source code, object code, documentation, product data, domain names, code repositories, assignable intellectual property rights, customer records, assigned contracts, equipment, and goodwill.",
+        "mutated_text": "At closing, Seller will sell to Buyer customer records, assigned contracts, equipment, and goodwill used in the {product_name} business."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    }
+  ]
+}
