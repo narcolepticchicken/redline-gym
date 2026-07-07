@@ -52,6 +52,7 @@ class Episode:
         self.done = False
         self.ended_by: str | None = None
         self.last_observation: dict[str, Any] | None = None
+        self._empty_finalize_warned = False
 
     def reset(self) -> dict[str, Any]:
         self.flags = []
@@ -60,6 +61,7 @@ class Episode:
         self.num_turns = 0
         self.done = False
         self.ended_by = None
+        self._empty_finalize_warned = False
         self.episode_dir.mkdir(parents=True, exist_ok=True)
         self.transcript_path.write_text("")
         self.last_observation = self._base_observation(event="reset")
@@ -115,10 +117,25 @@ class Episode:
             observation = self._base_observation(event="escalate", message="escalation recorded")
         elif kind == "finalize":
             card = action.get("card")
-            self.card = card if isinstance(card, dict) else {}
-            self.done = True
-            self.ended_by = "finalize"
-            observation = self._base_observation(event="finalize", done=True, message="episode finalized")
+            empty_work = not self.flags and not self.escalations
+            if empty_work and not self._empty_finalize_warned:
+                # One confirmation bounce on an empty submission (a real
+                # product would do the same). A repeated finalize proceeds.
+                self._empty_finalize_warned = True
+                observation = self._base_observation(
+                    event="confirm_finalize",
+                    message=(
+                        "Your review recorded no flags and no escalations — the card "
+                        "will score zero on all finding channels. Resend finalize to "
+                        "confirm, or continue reviewing (read_doc / search / flag_issue "
+                        "/ escalate)."
+                    ),
+                )
+            else:
+                self.card = card if isinstance(card, dict) else {}
+                self.done = True
+                self.ended_by = "finalize"
+                observation = self._base_observation(event="finalize", done=True, message="episode finalized")
         else:
             observation = self._base_observation(event="error", error=f"unknown action: {kind!r}")
         return observation
