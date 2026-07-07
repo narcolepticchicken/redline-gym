@@ -92,13 +92,30 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["missing_info_id", "topic", "absent_terms", "expected_action"],
+        "required": [
+          "missing_info_id",
+          "topic",
+          "context_anchor",
+          "match_keywords",
+          "absent_terms",
+          "expected_action"
+        ],
         "properties": {
           "missing_info_id": {
             "type": "string",
             "pattern": "^M-[0-9]{3}$"
           },
           "topic": {"type": "string", "minLength": 1},
+          "context_anchor": {"type": "string", "minLength": 1},
+          "match_keywords": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^[^A-Z]*$"
+            }
+          },
           "absent_terms": {
             "type": "array",
             "minItems": 1,

@@ -10,6 +10,11 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: Missing-info anchoring changed all three base/recipe families by
+  requiring `context_anchor` and `match_keywords`, and appending each anchor to
+  `client_context`. Deleted the prior held-out instances and reseeded the split
+  with fresh T2 instances: `tasks/heldout/T2-NDA-601`,
+  `tasks/heldout/T2-MSA-602`, and `tasks/heldout/T2-DPA-603`.
 - 2026-07-07: Generator coherence, parameter sanity, and drafting-register
   fixes changed all three playbook recipe/base families. Deleted the prior
   held-out instances and reseeded the split with fresh T2 instances:

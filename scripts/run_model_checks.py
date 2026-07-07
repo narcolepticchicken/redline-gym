@@ -74,7 +74,10 @@ def main(argv: list[str] | None = None) -> int:
     prompts = {
         "V3_clean_base": (
             "This is the CLEAN BASE contract. Check it against the playbook. "
-            "It should contain ZERO playbook violations. List any violation you find with section + quote.\n\n"
+            "Use each rule's fallback text as the compliance reference. Text that matches or is more "
+            "protective than the fallback is COMPLIANT and must not be listed; list a violation only "
+            "where the text clearly contradicts the rule position. It should contain ZERO playbook "
+            "violations. List any violation you find with section + quote.\n\n"
             + clean
         ),
         "V4_round_trip": (
@@ -104,17 +107,49 @@ def main(argv: list[str] | None = None) -> int:
     for name, call in calls.items():
         prompt = _with_schema(prompts[name], SCHEMA_INSTRUCTIONS[name])
         raw_text = call(prompt, pb_text)
-        (out_dir / f"{name}.txt").write_text(raw_text)
-        parsed = parse_json_response(raw_text)
-        _validate_shape(name, parsed)
+        parsed, final_text = _parse_validate_or_reprompt(name, raw_text, prompt, pb_text, call, out_dir)
+        if parsed is None:
+            print(f"=== {name} ===\nERROR: invalid JSON after corrective retry; see {out_dir / f'{name}.error'}\n")
+            continue
         (out_dir / f"{name}.json").write_text(json.dumps(parsed, indent=2, sort_keys=True) + "\n")
-        print(f"=== {name} ===\n{raw_text.strip()[:1200]}\n")
+        print(f"=== {name} ===\n{final_text.strip()[:1200]}\n")
     print("written to", out_dir)
     return 0
 
 
 def _with_schema(prompt: str, schema_instruction: str) -> str:
     return f"{prompt}\n\n{schema_instruction}\nDo not include markdown, commentary, or text outside the JSON object."
+
+
+def _parse_validate_or_reprompt(
+    name: str,
+    raw_text: str,
+    prompt: str,
+    playbook_text: str,
+    call: Any,
+    out_dir: pathlib.Path,
+) -> tuple[dict[str, Any] | None, str]:
+    try:
+        parsed = parse_json_response(raw_text)
+        _validate_shape(name, parsed)
+        (out_dir / f"{name}.txt").write_text(raw_text)
+        return parsed, raw_text
+    except (json.JSONDecodeError, ValueError) as first_exc:
+        corrective_prompt = (
+            f"{prompt}\n\nPrevious invalid output:\n{raw_text}\n\n"
+            "That was not valid JSON matching the schema; return ONLY the JSON object."
+        )
+        retry_text = call(corrective_prompt, playbook_text)
+        (out_dir / f"{name}.txt").write_text(retry_text)
+        try:
+            parsed = parse_json_response(retry_text)
+            _validate_shape(name, parsed)
+            return parsed, retry_text
+        except (json.JSONDecodeError, ValueError) as second_exc:
+            (out_dir / f"{name}.error").write_text(
+                f"initial_error: {first_exc}\nretry_error: {second_exc}\n"
+            )
+            return None, retry_text
 
 
 def parse_json_response(text: str) -> dict[str, Any]:

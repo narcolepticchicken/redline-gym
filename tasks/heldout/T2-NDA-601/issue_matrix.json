@@ -29,12 +29,12 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-008",
+      "rule_id": "R-001",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
-      "expected_action": "escalate"
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
     },
     {
       "issue_id": "I-004",
@@ -53,18 +53,25 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-009",
+      "rule_id": "R-012",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "severity": "high",
+      "expected_action": "escalate"
     }
   ],
   "missing_info": [
     {
       "missing_info_id": "M-001",
       "topic": "Personal data handling instructions",
+      "context_anchor": "Personal data of end users will be exchanged and processed under this agreement.",
+      "match_keywords": [
+        "personal data",
+        "privacy",
+        "data protection",
+        "end users"
+      ],
       "absent_terms": [
         "personal data",
         "privacy law",

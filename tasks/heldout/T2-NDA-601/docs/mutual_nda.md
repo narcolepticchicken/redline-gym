@@ -1,19 +1,19 @@
 # Mutual Confidentiality Agreement
 
-This Mutual Confidentiality Agreement is entered into as of September 3, 2026, by and between BrightRiver Health, Inc. and HarborCloud Labs LLC. Each party may be a "Discloser" when it discloses information and a "Recipient" when it receives information.
+This Mutual Confidentiality Agreement is entered into as of September 3, 2026, by and between Northstar Analytics, Inc. and Stonepath Data LLC. Each party may be a "Discloser" when it discloses information and a "Recipient" when it receives information.
 
 ## 1. Confidential Information
 
-"Confidential Information" means all non-public information disclosed by or on behalf of a Discloser, whether before or after the effective date, in any form or medium and whether or not marked confidential. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
+"Confidential Information" means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within thirty days after disclosure. "Purpose" means evaluating, negotiating, and, if agreed, performing the contemplated analytics modernization between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.
 
-## 2. Affiliates and Representatives
+## 2. Purpose and Use
+
+Recipient may use Confidential Information solely for the Purpose.
+
+## 3. Affiliates and Representatives
 
 The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides.
 Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose.
-
-## 3. Purpose and Use
-
-Recipient may use Confidential Information solely for the Purpose.
 
 ## 4. Protection Standard
 
@@ -33,11 +33,11 @@ Neither party is obligated to enter into any further agreement, purchase or sell
 
 ## 8. Return or Destruction
 
-Upon Discloser's written request, Recipient will return or destroy Confidential Information promptly, except retained copies may be kept for ordinary business recordkeeping.
+Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.
 
 ## 9. Term and Survival
 
-This Agreement begins on the effective date and continues for two years. Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law.
+This Agreement begins on the effective date and continues for two years. Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.
 
 ## 10. No License; Ownership
 
@@ -49,7 +49,7 @@ Each party acknowledges that unauthorized use or disclosure may cause irreparabl
 
 ## 12. Residual Rights
 
-No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.
+After access to Confidential Information, Recipient may later rely on ideas it remembers without notes, provided Recipient does not intentionally study source materials for that purpose.
 
 ## 13. Governing Law; Miscellaneous
 

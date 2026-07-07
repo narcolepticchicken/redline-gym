@@ -42,8 +42,8 @@
       "doc_ids": [
         "DOC-01"
       ],
-      "rule_id": "R-008",
-      "points": 2.0
+      "rule_id": "R-001",
+      "points": 3.0
     },
     {
       "criterion_id": "C-004",
@@ -66,8 +66,8 @@
       "doc_ids": [
         "DOC-01"
       ],
-      "rule_id": "R-009",
-      "points": 2.0
+      "rule_id": "R-012",
+      "points": 3.0
     }
   ]
 }

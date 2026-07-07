@@ -1,21 +1,12 @@
-PASS: no violations.
-
-After reviewing the CLEAN BASE contract against each playbook rule (R-001 through R-015), all provisions align with the required positions and fallback language. Specifically:
-
-- R-001 (liability cap): Section 16 carves out confidentiality, data handling, indemnification, IP infringement, fraud, willful misconduct, and gross negligence, and caps liability at 12-month fees.
-- R-002 (mutual defense): Section 14 provides mutual indemnification—Vendor covers third-party IP claims and law violations, Customer covers Customer materials and misuse.
-- R-003 (IP ownership): Section 8 assigns Deliverables to Customer upon payment and grants a perpetual license to embedded Vendor Methods.
-- R-004 (security incident notification): Section 6 requires notice within 72 hours of discovering a Security Incident (defined as suspected/actual unauthorized access, acquisition, use, loss, or disclosure of Customer Data).
-- R-005 (data handling): Section 5 requires processing per documented instructions, administrative/technical/physical safeguards, and compliance with applicable laws (encompassing privacy/security laws).
-- R-006 (termination for convenience): Section 11 allows termination on 30 days’ notice, with payment limited to fees for services performed and approved reimbursable expenses (undisputed amounts governed by Section 9).
-- R-007 (lock-in control): Section 10 prevents automatic extension without Customer’s signed renewal or written approval for a renewal period of one year or less, giving Customer control over commitments.
-- R-008 (warranty disclaimer preservation): Section 15 disclaims implied warranties but explicitly preserves express warranties, confidentiality duties, data handling duties, indemnities, service-level commitments, and remedies.
-- R-009 (amendments): Section 18 requires amendments to be in a writing signed by both parties.
-- R-010 (assignment): Section 18 permits assignment with consent, plus an exception for merger/reorganization/sale of substantially all assets if the assignee assumes obligations.
-- R-011 (insurance): Section 17 mandates $5M tech E&O/cyber and $2M CGL coverage.
-- R-012 (audit rights): Section 17 grants annual audit rights with more frequent audits after a material incident or reasonable cause.
-- R-013 (subcontractors): Section 7 binds service partners to written obligations at least as protective as Vendor’s, and Vendor remains responsible.
-- R-014 (payment terms): Section 9 sets net 45 days after receipt of an undisputed invoice.
-- R-015 (governing law): Section 18 selects Delaware law.
-
-No contractual text contradicts any playbook requirement. The agreement is clean.
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "rule_id": "R-001",
+      "section": "16",
+      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence"
+    },
+    {
+      "rule_id": "R-002",
+      "section": "14",
+      "quote": "Vendor will defend and indemnify Customer against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that Vendor

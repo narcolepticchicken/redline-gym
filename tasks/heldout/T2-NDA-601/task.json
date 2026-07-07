@@ -1,7 +1,7 @@
 {
-  "task_id": "T2-NDA-501",
+  "task_id": "T2-NDA-601",
   "practice_area": "contracts",
-  "client_context": "Client is evaluating a strategic AI workflow pilot with a potential vendor. The parties will exchange sensitive business records under this NDA, and the client wants a balanced mutual NDA reviewed against the NDA playbook.",
+  "client_context": "Client is evaluating a strategic analytics modernization with a potential vendor. The parties will exchange sensitive business records under this NDA, and the client wants a balanced mutual NDA reviewed against the NDA playbook. Personal data of end users will be exchanged and processed under this agreement.",
   "instruction": "Review the mutual NDA against the playbook. Flag deviations, quote the clause, propose fallback text when required, and escalate missing information.",
   "deliverable": {
     "card_schema_id": "redline-gym.issue-card.v1"

@@ -46,18 +46,18 @@ class DeepSeekJudge(ModelCheck):
             "temperature": 0,
             "max_tokens": max_tokens,
         }
-        request = urllib.request.Request(
-            f"{BASE_URL}/chat/completions",
-            data=json.dumps(payload).encode("utf-8"),
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-            },
-            method="POST",
-        )
         last_exc: Exception | None = None
         for _ in range(2):
             try:
+                request = urllib.request.Request(
+                    f"{BASE_URL}/chat/completions",
+                    data=json.dumps(payload).encode("utf-8"),
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    method="POST",
+                )
                 with urllib.request.urlopen(request, timeout=300) as response:
                     data = json.loads(response.read().decode("utf-8"))
                 choice = data["choices"][0]
@@ -69,6 +69,6 @@ class DeepSeekJudge(ModelCheck):
                         return self._chat(prompt, max_tokens=max_tokens * 3)
                     raise RuntimeError("DeepSeek returned empty content at max budget")
                 return content
-            except urllib.error.URLError as exc:
+            except (urllib.error.URLError, OSError) as exc:
                 last_exc = exc
         raise RuntimeError(f"DeepSeek judge request failed: {last_exc}") from last_exc

@@ -5,7 +5,7 @@
       "deviation_ids": [
         "D-001"
       ],
-      "rule_id": "R-009",
+      "rule_id": "R-013",
       "doc_ids": [
         "DOC-01"
       ],
@@ -17,11 +17,11 @@
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-003",
+      "rule_id": "R-004",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -29,11 +29,11 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-001",
+      "rule_id": "R-006",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -41,7 +41,7 @@
       "deviation_ids": [
         "D-004"
       ],
-      "rule_id": "R-008",
+      "rule_id": "R-011",
       "doc_ids": [
         "DOC-01"
       ],
@@ -53,11 +53,11 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-013",
+      "rule_id": "R-008",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -65,6 +65,15 @@
     {
       "missing_info_id": "M-001",
       "topic": "Processing geography and cross-border transfer basis",
+      "context_anchor": "The production service will process customer personal data across hosted systems.",
+      "match_keywords": [
+        "hosting",
+        "region",
+        "data residency",
+        "cross-border",
+        "transfer",
+        "geography"
+      ],
       "absent_terms": [
         "hosting region",
         "data residency",
@@ -75,6 +84,14 @@
     {
       "missing_info_id": "M-002",
       "topic": "Certified deletion evidence at exit",
+      "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
+      "match_keywords": [
+        "deletion",
+        "certificate",
+        "certified",
+        "exit",
+        "destruction"
+      ],
       "absent_terms": [
         "deletion certificate",
         "certificate of deletion",

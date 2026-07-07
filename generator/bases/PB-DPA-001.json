@@ -153,6 +153,8 @@
     {
       "missing_info_id": "M-002",
       "topic": "Current subprocessor list location",
+      "context_anchor": "The vendor will use subprocessors to process customer personal data for the production service.",
+      "match_keywords": ["subprocessor", "subprocessors", "portal", "list", "schedule"],
       "absent_terms": ["subprocessor portal", "subprocessor schedule url", "current subprocessors list"],
       "expected_action": "escalate"
     }

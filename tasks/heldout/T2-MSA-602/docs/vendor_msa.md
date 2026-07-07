@@ -1,14 +1,14 @@
 # Vendor Master Services Agreement
 
-This Master Services Agreement (the "Agreement") is entered into by and between BrightRiver Health, Inc. ("Customer") and HarborCloud Labs LLC ("Vendor") as of the effective date of the first Order Form.
+This Master Services Agreement (the "Agreement") is entered into by and between Cedarline Robotics, Inc. ("Customer") and HarborCloud Labs LLC ("Vendor") as of the effective date of the first Order Form.
 
 ## 1. Services and Ordering
 
-Vendor will provide hosted data-ingestion, normalization, mapping, and workflow services described in one or more signed order forms or statements of work (each, an "Order Form"). Each Order Form is governed by this Agreement. If an Order Form conflicts with this Agreement, the Order Form controls only for that Order Form and only to the extent it expressly identifies the conflicting provision.
+Vendor will provide hosted workflow automation, normalization, mapping, and workflow services described in one or more signed order forms or statements of work (each, an "Order Form"). Each Order Form is governed by this Agreement. If an Order Form conflicts with this Agreement, the Order Form controls only for that Order Form and only to the extent it expressly identifies the conflicting provision.
 
 ## 2. Defined Terms
 
-"Customer Data" means information, files, records, identifiers, and other content submitted to the service by or for Customer or generated from Customer's use of the service. "Deliverables" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement. "Vendor Methods" means Vendor's templates, scripts, accelerators, schemas, libraries, routines, methods, concepts, ideas, skills, and general learning existing before the engagement or developed independently outside the services. "Security Incident" means any suspected or actual unauthorized access to, acquisition of, use of, loss of, or disclosure of Customer Data.
+"Customer Data" means information, files, records, identifiers, and other content submitted to the service by or for Customer or generated from Customer's use of the service. "Deliverables" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, including project-specific tools, frameworks, and know-how developed in the course of performance. "Vendor Methods" means Vendor's templates, scripts, accelerators, schemas, libraries, routines, methods, concepts, ideas, skills, and general learning existing before the engagement or developed independently outside the services. "Security Incident" means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by Vendor's incident response lead.
 
 ## 3. Customer Responsibilities
 
@@ -38,17 +38,17 @@ Upon payment of applicable fees, Vendor assigns to Customer all right, title, an
 
 Vendor will invoice Customer as stated in the applicable Order Form. Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice. Customer may withhold disputed amounts in good faith if it gives Vendor reasonable detail regarding the dispute and pays undisputed amounts when due. Vendor may charge interest on undisputed overdue amounts at one percent per month or the highest rate allowed by law, whichever is lower.
 
-## 10. Customer Exit Right
-
-Customer may terminate any Order Form for convenience on thirty days' written notice. Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date.
-
-## 11. Term and Extension
+## 10. Term and Extension
 
 This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.
 
+## 11. Customer Exit Right
+
+Customer may terminate any Order Form for convenience on thirty days' written notice. Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date.
+
 ## 12. Transition Assistance
 
-Upon expiration or termination, Vendor will provide reasonable transition assistance at its then-current professional services rates for up to thirty days if requested by Customer. If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees and approved reimbursable expenses incurred before the effective date.
+Upon expiration or termination, Vendor will provide reasonable transition assistance at its then-current professional services rates for up to thirty days if requested by Customer. If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form.
 
 ## 13. Confidentiality
 
@@ -68,8 +68,8 @@ Except for breaches of confidentiality, data handling obligations, indemnificati
 
 ## 17. Insurance and Audit
 
-Vendor will maintain commercially reasonable insurance at its own expense, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence. Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause.
+Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $500,000 per occurrence if available on commercially reasonable terms. Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause.
 
 ## 18. General Terms
 
-Neither party may assign this Agreement without the other party's prior written consent, except to an affiliate or successor in connection with a merger, reorganization, or sale of substantially all assets if the assignee assumes the assigning party's obligations. Vendor may modify service terms, acceptable use limits, and other online policies by posting an updated version to its website, effective upon posting. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules. The parties are independent contractors. Notices must be in writing and delivered by courier, certified mail, or email with confirmation of receipt. Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.
+Neither party may assign this Agreement without the other party's prior written consent, except to an affiliate or successor in connection with a merger, reorganization, or sale of substantially all assets if the assignee assumes the assigning party's obligations. No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules. The parties are independent contractors. Notices must be in writing and delivered by courier, certified mail, or email with confirmation of receipt. Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14.

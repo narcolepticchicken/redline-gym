@@ -16,30 +16,30 @@
     },
     {
       "deviation_id": "D-002",
-      "rule_id": "R-011",
+      "rule_id": "R-003",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "2",
-        "span": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
+        "section": "7",
+        "span": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability."
       },
-      "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
-      "mutated_text": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
-      "mechanism": "defined_term_shift",
-      "severity": "critical",
+      "original_text": "Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.",
+      "mutated_text": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "mechanism": "omission",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
       "deviation_id": "D-003",
-      "rule_id": "R-004",
+      "rule_id": "R-008",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "4",
-        "span": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
+        "section": "10",
+        "span": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing."
       },
-      "original_text": "Vendor will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
-      "mutated_text": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.",
-      "mechanism": "direct_term_swap",
-      "severity": "critical",
+      "original_text": "On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause.",
+      "mutated_text": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing.",
+      "mechanism": "cross_ref_override",
+      "severity": "medium",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -58,16 +58,16 @@
     },
     {
       "deviation_id": "D-005",
-      "rule_id": "R-007",
+      "rule_id": "R-001",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "15",
-        "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards."
+        "section": "2",
+        "span": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
       },
-      "original_text": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
-      "mutated_text": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards.",
-      "mechanism": "cross_ref_override",
-      "severity": "high",
+      "original_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+      "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -112,16 +112,16 @@
     }
   ],
   "generation_log": [
-    "seed=303",
-    "attempt_seed=303",
+    "seed=603",
+    "attempt_seed=603",
     "playbook=PB-DPA-001",
     "tier=T2",
-    "task_id=T2-DPA-303",
+    "task_id=T2-DPA-603",
     "D-001 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
-    "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
-    "D-003 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
+    "D-002 DPA-R003-OMISSION-FLOWDOWN omission applied to R-003",
+    "D-003 DPA-R008-CROSS-AUDIT-LIMIT cross_ref_override applied to R-008",
     "D-004 DPA-R012-DIRECT-LIABILITY direct_term_swap applied to R-012",
-    "D-005 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007",
+    "D-005 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-001",
     "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

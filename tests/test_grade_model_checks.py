@@ -12,6 +12,12 @@ def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
     checks = task_dir / "model_checks"
     checks.mkdir(parents=True)
     _dump(
+        task_dir / "task.json",
+        {
+            "difficulty_tier": "T2",
+        },
+    )
+    _dump(
         task_dir / "planted_deviations.json",
         {
             "deviations": [
@@ -19,8 +25,14 @@ def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
                 {"rule_id": "R-002", "clause_anchor": {"section": "5"}},
             ],
             "missing_info": [
-                {"topic": "Personal data handling instructions"},
-                {"topic": "Certified deletion evidence at exit"},
+                {
+                    "topic": "Personal data handling instructions",
+                    "match_keywords": ["personal data", "privacy"],
+                },
+                {
+                    "topic": "Certified deletion evidence at exit",
+                    "match_keywords": ["deletion", "certificate"],
+                },
             ],
         },
     )
@@ -45,6 +57,7 @@ def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
     assert row["v3"] == "PASS"
     assert row["v4_matched"] == 1
     assert row["v4_total"] == 2
+    assert row["v4_gate"] == "FAIL"
     assert row["v4_extra"] == 1
     assert row["v7"] == "PASS"
     assert row["v11"] == "PASS"
@@ -59,6 +72,7 @@ def test_update_summary_replaces_existing_row(tmp_path: Path) -> None:
         "v4_matched": 2,
         "v4_total": 2,
         "v4_extra": 0,
+        "v4_gate": "PASS",
         "v7": "PASS",
         "v7_uncovered": [],
         "v11": "PASS",
@@ -70,7 +84,7 @@ def test_update_summary_replaces_existing_row(tmp_path: Path) -> None:
 
     text = summary.read_text()
     assert text.count("tasks/generated/T1-NDA-101") == 1
-    assert "| tasks/generated/T1-NDA-101 | PASS | 1/2 | 1 | PASS | 8.0 |" in text
+    assert "| tasks/generated/T1-NDA-101 | PASS | 1/2 | PASS | 1 | PASS | 8.0 |" in text
 
 
 def test_parse_json_response_tolerates_fenced_json() -> None:

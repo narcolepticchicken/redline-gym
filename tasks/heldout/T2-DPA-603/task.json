@@ -1,5 +1,5 @@
 {
-  "task_id": "T2-DPA-303",
+  "task_id": "T2-DPA-603",
   "practice_area": "privacy",
   "client_context": "Client is a mid-size tech company whose vendor will process customer personal data through a production records normalization service. Review the DPA from the customer/controller side and escalate practical privacy or security gaps. The vendor will use subprocessors to process customer personal data for the production service.",
   "instruction": "Review the vendor DPA against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",

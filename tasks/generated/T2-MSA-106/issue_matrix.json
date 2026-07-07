@@ -65,6 +65,15 @@
     {
       "missing_info_id": "M-001",
       "topic": "Processing geography and cross-border transfer basis",
+      "context_anchor": "The production service will process customer personal data across hosted systems.",
+      "match_keywords": [
+        "hosting",
+        "region",
+        "data residency",
+        "cross-border",
+        "transfer",
+        "geography"
+      ],
       "absent_terms": [
         "hosting region",
         "data residency",
@@ -75,6 +84,14 @@
     {
       "missing_info_id": "M-002",
       "topic": "Certified deletion evidence at exit",
+      "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
+      "match_keywords": [
+        "deletion",
+        "certificate",
+        "certified",
+        "exit",
+        "destruction"
+      ],
       "absent_terms": [
         "deletion certificate",
         "certificate of deletion",

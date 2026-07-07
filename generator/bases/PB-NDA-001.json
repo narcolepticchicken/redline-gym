@@ -131,9 +131,10 @@
     {
       "missing_info_id": "M-001",
       "topic": "Personal data handling instructions",
+      "context_anchor": "Personal data of end users will be exchanged and processed under this agreement.",
+      "match_keywords": ["personal data", "privacy", "data protection", "end users"],
       "absent_terms": ["personal data", "privacy law", "data protection"],
       "expected_action": "escalate"
     }
   ]
 }
-

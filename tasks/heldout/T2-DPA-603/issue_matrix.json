@@ -17,17 +17,29 @@
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-011",
+      "rule_id": "R-003",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "critical",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
       "issue_id": "I-003",
       "deviation_ids": [
         "D-003"
+      ],
+      "rule_id": "R-008",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
       ],
       "rule_id": "R-012",
       "doc_ids": [
@@ -37,27 +49,15 @@
       "expected_action": "redline_with_fallback"
     },
     {
-      "issue_id": "I-004",
-      "deviation_ids": [
-        "D-004"
-      ],
-      "rule_id": "R-002",
-      "doc_ids": [
-        "DOC-01"
-      ],
-      "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
       "issue_id": "I-005",
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-008",
+      "rule_id": "R-001",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -65,6 +65,14 @@
     {
       "missing_info_id": "M-002",
       "topic": "Current subprocessor list location",
+      "context_anchor": "The vendor will use subprocessors to process customer personal data for the production service.",
+      "match_keywords": [
+        "subprocessor",
+        "subprocessors",
+        "portal",
+        "list",
+        "schedule"
+      ],
       "absent_terms": [
         "subprocessor portal",
         "subprocessor schedule url",

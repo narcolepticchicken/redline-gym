@@ -172,16 +172,18 @@ def _generate_candidate(
                 }
             ]
         }
+        missing_info, context_anchors = _render_missing_info(base["missing_info"], params)
+        client_context = _append_context_anchors(_render(base["client_context_template"], params), context_anchors)
         planted = {
             "deviations": deviations,
             "distractors": _render_entries(base["distractors"], params),
-            "missing_info": _render_entries(base["missing_info"], params),
+            "missing_info": missing_info,
             "generation_log": generation_log,
         }
         task = {
             "task_id": task_id,
             "practice_area": playbook["practice_area"],
-            "client_context": _render(base["client_context_template"], params),
+            "client_context": client_context,
             "instruction": _render(base["instruction_template"], params),
             "deliverable": {"card_schema_id": "redline-gym.issue-card.v1"},
             "turn_cap": 25,
@@ -345,6 +347,33 @@ def _render_entries(entries: list[dict[str, Any]], params: dict[str, str]) -> li
     for entry in entries:
         rendered.append(_render_value(entry, params))
     return rendered
+
+
+def _render_missing_info(entries: list[dict[str, Any]], params: dict[str, str]) -> tuple[list[dict[str, Any]], list[str]]:
+    rendered = _render_entries(entries, params)
+    anchors: list[str] = []
+    for entry in rendered:
+        anchor = str(entry.get("context_anchor", "")).strip()
+        if not anchor:
+            raise GenerationError(f"{entry.get('missing_info_id', '<unknown>')} missing context_anchor")
+        keywords = entry.get("match_keywords")
+        if not isinstance(keywords, list) or not keywords:
+            raise GenerationError(f"{entry.get('missing_info_id', '<unknown>')} missing match_keywords")
+        bad_keywords = [kw for kw in keywords if not isinstance(kw, str) or kw != kw.lower()]
+        if bad_keywords:
+            raise GenerationError(
+                f"{entry.get('missing_info_id', '<unknown>')} match_keywords must be lowercase strings"
+            )
+        anchors.append(anchor)
+    return rendered, anchors
+
+
+def _append_context_anchors(client_context: str, anchors: list[str]) -> str:
+    context = client_context.strip()
+    for anchor in anchors:
+        if anchor not in context:
+            context = f"{context} {anchor}"
+    return context
 
 
 def _render_value(value: Any, params: dict[str, str]) -> Any:
