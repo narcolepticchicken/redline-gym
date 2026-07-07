@@ -1,0 +1,128 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-CRYPTO-001",
+  "practice_area": "crypto",
+  "title": "Customer-Side Digital-Asset Custody Agreement Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "Custodied digital assets should be maintained in segregated wallets or accounts for the customer and not commingled with custodian proprietary assets or other customer pools except through a disclosed omnibus structure with ledger-level segregation.",
+      "fallback": "Custodian will hold Customer Assets in segregated wallets or accounts for Customer and will not commingle Customer Assets with Custodian assets or other customer assets except in a disclosed omnibus wallet with accurate customer-by-customer ledger segregation.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the custody structure does not preserve asset-level or ledger-level customer segregation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Customer should retain beneficial ownership, and the custodian should have no right to lend, pledge, rehypothecate, transfer, or use customer assets for the custodian's own account without customer written consent.",
+      "fallback": "Customer retains all beneficial ownership of Customer Assets, and Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for Custodian's own account without Customer's prior written consent.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the custodian can use, lend, pledge, transfer, or encumber customer assets without written customer consent.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-003",
+      "position": "The agreement should acknowledge that custodied assets are not custodian property and are intended to stay outside the custodian's bankruptcy estate to the fullest extent permitted by law.",
+      "fallback": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if estate-treatment language is missing or suggests customer assets become custodian property.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Key-management controls should include an objective cold-storage floor and multi-party approval for withdrawals or key-signing events.",
+      "fallback": "Custodian will keep at least 95% of Customer Assets in cold storage, except for assets needed for pending withdrawals, and will require multi-party approval for withdrawals and key-signing events.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if cold-storage percentages or withdrawal authorization controls are discretionary or materially below the required floor.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-005",
+      "position": "Insurance should include a stated minimum covering theft, cyber compromise, insider misconduct, and key-loss events affecting custodied assets.",
+      "fallback": "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of $50,000,000 or the value of Customer Assets under custody.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if insurance is unstated, narrow, or materially below the value of custodied assets.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-006",
+      "position": "Assurance reporting should provide recurring SOC or equivalent controls reporting, incident-driven updates, and reasonable follow-up information for the customer's treasury controls.",
+      "fallback": "Custodian will provide annual SOC 2 Type II or equivalent controls reporting, prompt notice of material control failures, and reasonable written follow-up information needed for Customer's treasury, audit, and regulatory controls.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if the customer has no recurring controls evidence or no reasonable path to follow up after material control events.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Withdrawal rights should include a hard outside time limit after an authorized customer request, subject only to law, network outage, or documented security hold.",
+      "fallback": "Custodian will process authorized withdrawal requests within 24 hours and in any event no later than two business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if withdrawals are left to custodian discretion or lack a firm outside deadline.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Forks, airdrops, staking rewards, and similar network distributions should belong to the customer by default unless the customer expressly declines support or the asset is legally unsupported.",
+      "fallback": "Unless Customer expressly declines support or applicable law prohibits support, Customer is entitled to forks, airdrops, staking rewards, and similar network distributions attributable to Customer Assets.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if network distributions are retained by the custodian by default or excluded from customer entitlement without a narrow legal or support basis.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-009",
+      "position": "Staking should be opt-in only, with disclosed validator, lock-up, liquidity, reward, tax, and slashing-risk allocation terms before any assets are staked.",
+      "fallback": "Custodian may stake Customer Assets only after Customer's express opt-in and prior written disclosure of validator, lock-up, liquidity, reward, tax, and slashing-risk allocation terms.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if staking can begin without opt-in consent or without clear slashing-risk allocation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Liability should not be capped below the value of custodied assets for custodian theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer.",
+      "fallback": "The liability cap will not limit Custodian's responsibility up to the value of affected Customer Assets for theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer caused by Custodian or its personnel.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if custodian-fault categories are capped below the value of affected custodied assets.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-011",
+      "position": "Termination should require prompt in-kind transfer of custodied assets to the customer or its designee within a fixed number of days.",
+      "fallback": "Upon termination or Customer's written request, Custodian will transfer Customer Assets in kind to Customer or Customer's designated wallet or custodian within five business days, subject only to applicable law, network outage, or documented security hold.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if exit transfers are cash-only, discretionary, or lack a fixed time bound.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-012",
+      "position": "Subcustodian use should require protective flow-down obligations, customer notice or approval, and custodian responsibility for subcustodian acts and omissions.",
+      "fallback": "Custodian may use subcustodians only with Customer notice or approval, must bind each subcustodian to obligations at least as protective as this Agreement, and remains responsible for subcustodian acts and omissions.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if third-party custody providers can hold customer assets without protective flow-down terms or custodian responsibility.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-013",
+      "position": "AML, sanctions, and KYC cooperation should be bounded so the custodian may freeze or reject activity only with a legal, sanctions, regulator, court-order, or documented security basis and prompt notice where lawful.",
+      "fallback": "Customer will provide reasonable AML, sanctions, and KYC cooperation, but Custodian may freeze, reject, or suspend Customer Assets only when required by law, sanctions, regulator or court order, or a documented security basis, and will give prompt notice where legally permitted.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if the custodian has open-ended freeze authority without legal basis, security basis, or notice.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-014",
+      "position": "New York governing law is acceptable for this custody agreement and should not be flagged by itself.",
+      "fallback": "No change; New York governing law is acceptable for this customer-side custody review.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses New York law.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "Annual SOC 2 Type II reporting may satisfy routine assurance in lieu of an on-site audit if incident and reasonable follow-up rights remain available.",
+      "fallback": "No change; annual SOC 2 Type II reporting is acceptable in lieu of routine on-site audit where incident and reasonable follow-up rights remain available.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because routine assurance is provided through an annual SOC 2 Type II report.",
+      "is_canary": true
+    }
+  ]
+}

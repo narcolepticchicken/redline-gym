@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Digital-Asset Custody Agreement",
+      "type": "msa",
+      "path": "docs/digital_asset_custody_agreement.md",
+      "sha256": "d623ba6f70c65dddc509547c914ebf5ff96caa1deea05eaccd078587856365c0",
+      "is_distractor": false
+    }
+  ]
+}

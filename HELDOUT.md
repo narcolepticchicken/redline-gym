@@ -10,6 +10,9 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: Added customer-side digital-asset custody agreement held-out seed
+  `tasks/heldout/T2-CRYPTO-1601` for `PB-CRYPTO-001` while adding the crypto
+  law practice area.
 - 2026-07-07: Added AI vendor/model services agreement held-out seed
   `tasks/heldout/T2-AI-1401` for `PB-AI-001` while adding the seventh
   practice area.

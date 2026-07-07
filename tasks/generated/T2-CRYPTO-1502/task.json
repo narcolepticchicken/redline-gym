@@ -1,0 +1,12 @@
+{
+  "task_id": "T2-CRYPTO-1502",
+  "practice_area": "crypto",
+  "client_context": "Client is a fintech company placing treasury digital assets with a qualified custodian. Review the custody agreement from the customer side for ownership, control, transfer, security, and exit risks. Customer also needs an internal policy describing wallet whitelisting approval before funds move.",
+  "instruction": "Review the digital-asset custody agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "deliverable": {
+    "card_schema_id": "redline-gym.issue-card.v1"
+  },
+  "turn_cap": 25,
+  "difficulty_tier": "T2",
+  "playbook_ref": "playbooks/crypto/PB-CRYPTO-001.json"
+}

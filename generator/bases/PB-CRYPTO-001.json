@@ -1,0 +1,168 @@
+{
+  "playbook_id": "PB-CRYPTO-001",
+  "doc_type": "msa",
+  "filename": "digital_asset_custody_agreement.md",
+  "heading_template": "# Digital-Asset Custody Agreement",
+  "title_template": "Digital-Asset Custody Agreement",
+  "surface_slots": {
+    "customer_name": ["Northstar Treasury Technologies, Inc.", "Copperline Payments, Inc.", "HarborGrid Finance, Inc."],
+    "custodian_name": ["Keystone Digital Trust Company, LLC", "Atlas Qualified Custody LLC", "Pioneer Block Trust Company, LLC"],
+    "asset_mix": ["bitcoin, ether, and supported stablecoins", "bitcoin, ether, and approved treasury tokens", "supported layer-one assets and dollar-backed stablecoins"],
+    "cold_floor": ["95", "97"],
+    "withdrawal_hours": ["24"],
+    "outside_days": ["2"],
+    "termination_days": ["5"],
+    "insurance_limit": ["50,000,000", "75,000,000"],
+    "notice_days": ["10"],
+    "audit_followup_days": ["10"],
+    "law_state": ["New York"]
+  },
+  "client_context_template": "Client is a fintech company placing treasury digital assets with a qualified custodian. Review the custody agreement from the customer side for ownership, control, transfer, security, and exit risks. Customer also needs an internal policy describing wallet whitelisting approval before funds move.",
+  "instruction_template": "Review the digital-asset custody agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "preamble_template": "This Digital-Asset Custody Agreement (\"Agreement\") is entered into by and between {customer_name} (\"{customer_role}\") and {custodian_name} (\"Custodian\") for custody of {asset_mix}.",
+  "section_order_variants": [
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+    ["1", "2", "3", "5", "4", "6", "7", "8", "10", "9", "11", "12", "13", "14", "15"],
+    ["1", "2", "4", "3", "5", "6", "8", "7", "9", "10", "12", "11", "13", "14", "15"]
+  ],
+  "sections": [
+    {
+      "id": "1",
+      "heading": "Appointment and Scope",
+      "paragraphs": [
+        "{customer_role} appoints Custodian to safeguard Customer Assets for treasury purposes. Custodian will provide custody, transfer processing, account reporting, and related operational support for supported Digital Assets in accordance with this Agreement and {customer_role}'s authorized instructions."
+      ]
+    },
+    {
+      "id": "2",
+      "heading": "Definitions",
+      "paragraphs": [
+        "\"Digital Assets\" means cryptographic tokens, stablecoins, protocol units, forks, airdrops, staking rewards, and other network distributions supported for custody under this Agreement. \"Customer Assets\" means all Digital Assets, private-key control rights, proceeds, forks, airdrops, staking rewards, and network distributions credited to or held for {customer_role}. \"Authorized Instruction\" means a transfer, custody, staking, account, or reporting direction submitted by an authorized {customer_role} user through approved procedures."
+      ]
+    },
+    {
+      "id": "3",
+      "heading": "Segregated Custody",
+      "paragraphs": [
+        "Custodian will hold Customer Assets in wallets or accounts segregated for {customer_role}. Custodian will not commingle Customer Assets with Custodian assets or other customer assets except through a disclosed omnibus wallet structure that maintains accurate customer-by-customer ledger segregation."
+      ]
+    },
+    {
+      "id": "4",
+      "heading": "Ownership and No Use",
+      "paragraphs": [
+        "{customer_role} retains all beneficial ownership of Customer Assets. Custodian will not sell, lend, pledge, rehypothecate, transfer, encumber, invest, stake, or otherwise use Customer Assets for Custodian's own account or for any other customer without {customer_role}'s prior written consent."
+      ]
+    },
+    {
+      "id": "5",
+      "heading": "Estate Treatment",
+      "paragraphs": [
+        "Customer Assets are owned by {customer_role}, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law. Custodian will maintain records sufficient to identify Customer Assets as held for {customer_role}."
+      ]
+    },
+    {
+      "id": "6",
+      "heading": "Wallet Controls and Key Management",
+      "paragraphs": [
+        "Custodian will maintain at least {cold_floor}% of Customer Assets in cold-storage wallets except for assets needed to process pending Authorized Instructions. Withdrawals, address changes, key ceremonies, and signing events require multi-party approval, role separation, hardware-backed key protection, and logged review by authorized Custodian personnel."
+      ]
+    },
+    {
+      "id": "7",
+      "heading": "Transfers and Withdrawals",
+      "paragraphs": [
+        "Custodian will process Authorized Instructions for withdrawals within {withdrawal_hours} hours after receipt and in any event no later than {outside_days} business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to {customer_role}.",
+        "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets."
+      ]
+    },
+    {
+      "id": "8",
+      "heading": "Network Events and Staking",
+      "paragraphs": [
+        "Unless {customer_role} expressly declines support or applicable law prohibits support, {customer_role} is entitled to forks, airdrops, staking rewards, and similar network distributions attributable to Customer Assets.",
+        "Custodian may stake Customer Assets only after {customer_role}'s express opt-in and prior written disclosure of validator identity, lock-up periods, liquidity limits, reward mechanics, tax reporting, fees, and slashing-risk allocation."
+      ]
+    },
+    {
+      "id": "9",
+      "heading": "Insurance",
+      "paragraphs": [
+        "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of ${insurance_limit} or the value of Customer Assets under custody. Custodian will provide certificates or summaries of coverage upon reasonable request."
+      ]
+    },
+    {
+      "id": "10",
+      "heading": "Controls Reporting",
+      "paragraphs": [
+        "Custodian will provide an annual SOC 2 Type II report or equivalent controls report covering custody operations, key management, logical access, change management, incident response, and vendor oversight. Custodian will provide prompt notice of material control failures and reasonable written follow-up information within {audit_followup_days} business days after {customer_role}'s request."
+      ]
+    },
+    {
+      "id": "11",
+      "heading": "Subcustodians",
+      "paragraphs": [
+        "Custodian may use subcustodians only with {customer_role}'s prior notice or approval. Custodian will bind each subcustodian to written obligations at least as protective as this Agreement for Customer Assets and remains responsible for each subcustodian's acts and omissions."
+      ]
+    },
+    {
+      "id": "12",
+      "heading": "Compliance Holds",
+      "paragraphs": [
+        "{customer_role} will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services. Custodian may freeze, reject, or suspend Customer Assets only when required by law, sanctions, regulator or court order, or a documented security basis, and will give prompt notice to {customer_role} where legally permitted."
+      ]
+    },
+    {
+      "id": "13",
+      "heading": "Liability",
+      "paragraphs": [
+        "Except for the carve-outs in this Section 13, each party's aggregate liability under this Agreement will not exceed the value of Customer Assets under custody at the time of the event giving rise to the claim. The cap does not limit Custodian's responsibility up to the value of affected Customer Assets for theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer caused by Custodian, its personnel, or its subcustodians."
+      ]
+    },
+    {
+      "id": "14",
+      "heading": "Term and Exit",
+      "paragraphs": [
+        "Either party may terminate this Agreement on {notice_days} days' written notice. Upon termination or {customer_role}'s written request, Custodian will transfer Customer Assets in kind to {customer_role} or {customer_role}'s designated wallet or custodian within {termination_days} business days, subject only to applicable law, a network outage, or a documented security hold notified to {customer_role}."
+      ]
+    },
+    {
+      "id": "15",
+      "heading": "Governing Law and General Terms",
+      "paragraphs": [
+        "This Agreement is governed by the laws of the State of {law_state}, without regard to conflict-of-laws rules. The parties consent to exclusive jurisdiction in state and federal courts located in New York County, New York.",
+        "Neither party waives any remedy by delaying enforcement, and operational notices may be delivered through the custody portal or by email to the notice contacts designated by the parties."
+      ]
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of {law_state}, without regard to conflict-of-laws rules.",
+      "why_benign": "The governing-law canary says New York law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Custodian will provide an annual SOC 2 Type II report or equivalent controls report covering custody operations, key management, logical access, change management, incident response, and vendor oversight.",
+      "why_benign": "The assurance canary says annual SOC 2 Type II reporting may satisfy routine assurance when follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
+      "why_benign": "Administrative liquidity records are permitted because they do not authorize use of the customer's assets."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Customer wallet-whitelisting approval policy",
+      "context_anchor": "Customer also needs an internal policy describing wallet whitelisting approval before funds move.",
+      "match_keywords": ["wallet whitelisting", "whitelist approval", "approved destination list"],
+      "absent_terms": ["wallet whitelisting", "whitelist approval", "approved destination list"],
+      "expected_action": "escalate"
+    }
+  ]
+}

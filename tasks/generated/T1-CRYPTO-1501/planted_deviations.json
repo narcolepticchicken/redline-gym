@@ -1,0 +1,110 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "14",
+        "span": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening."
+      },
+      "original_text": "Upon termination or Customer's written request, Custodian will transfer Customer Assets in kind to Customer or Customer's designated wallet or custodian within 5 business days, subject only to applicable law, a network outage, or a documented security hold notified to Customer.",
+      "mutated_text": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time."
+      },
+      "original_text": "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of $75,000,000 or the value of Customer Assets under custody.",
+      "mutated_text": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding."
+      },
+      "original_text": "Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
+      "mutated_text": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-013",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "12",
+        "span": "Custodian may delay, reject, hold, or suspend any balance, transfer, address, account, or portal function whenever Custodian determines the action is operationally prudent, and notice is discretionary."
+      },
+      "original_text": "Custodian may freeze, reject, or suspend Customer Assets only when required by law, sanctions, regulator or court order, or a documented security basis, and will give prompt notice to Customer where legally permitted.",
+      "mutated_text": "Custodian may delay, reject, hold, or suspend any balance, transfer, address, account, or portal function whenever Custodian determines the action is operationally prudent, and notice is discretionary.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-laws rules.",
+      "why_benign": "The governing-law canary says New York law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Custodian will provide an annual SOC 2 Type II report or equivalent controls report covering custody operations, key management, logical access, change management, incident response, and vendor oversight.",
+      "why_benign": "The assurance canary says annual SOC 2 Type II reporting may satisfy routine assurance when follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
+      "why_benign": "Administrative liquidity records are permitted because they do not authorize use of the customer's assets."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Customer wallet-whitelisting approval policy",
+      "context_anchor": "Customer also needs an internal policy describing wallet whitelisting approval before funds move.",
+      "match_keywords": [
+        "wallet whitelisting",
+        "whitelist approval",
+        "approved destination list"
+      ],
+      "absent_terms": [
+        "wallet whitelisting",
+        "whitelist approval",
+        "approved destination list"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=1501",
+    "attempt_seed=1501",
+    "playbook=PB-CRYPTO-001",
+    "tier=T1",
+    "task_id=T1-CRYPTO-1501",
+    "D-001 CRYPTO-R011-DIRECT-EXIT-CASH direct_term_swap applied to R-011",
+    "D-002 CRYPTO-R005-DIRECT-INSURANCE direct_term_swap applied to R-005",
+    "D-003 CRYPTO-R007-DIRECT-WITHDRAWAL-SLA direct_term_swap applied to R-007",
+    "D-004 CRYPTO-R013-DIRECT-FREEZE direct_term_swap applied to R-013",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

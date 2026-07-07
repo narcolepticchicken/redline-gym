@@ -1,0 +1,185 @@
+{
+  "playbook_id": "PB-CRYPTO-001",
+  "entries": [
+    {
+      "recipe_id": "CRYPTO-R001-DIRECT-LEDGER-POOL",
+      "rule_id": "R-001",
+      "mechanism": "direct_term_swap",
+      "section": "3",
+      "templates": {
+        "original_text": "Custodian will hold Customer Assets in wallets or accounts segregated for {customer_role}. Custodian will not commingle Customer Assets with Custodian assets or other customer assets except through a disclosed omnibus wallet structure that maintains accurate customer-by-customer ledger segregation.",
+        "mutated_text": "Custodian may maintain client balances in a consolidated operating ledger and may settle internal allocation records after daily treasury close."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R002-CROSS-IDLE-BALANCES",
+      "rule_id": "R-002",
+      "mechanism": "cross_ref_override",
+      "section": "7",
+      "templates": {
+        "original_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
+        "mutated_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 4, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R003-OMISSION-ESTATE",
+      "rule_id": "R-003",
+      "mechanism": "omission",
+      "section": "5",
+      "templates": {
+        "original_text": "Customer Assets are owned by {customer_role}, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law. Custodian will maintain records sufficient to identify Customer Assets as held for {customer_role}.",
+        "mutated_text": "Custodian will maintain account records showing balances credited to {customer_role} and will make those records available through the custody portal."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R004-DIRECT-COLD-FLOOR",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "6",
+      "templates": {
+        "original_text": "Custodian will maintain at least {cold_floor}% of Customer Assets in cold-storage wallets except for assets needed to process pending Authorized Instructions.",
+        "mutated_text": "Custodian will determine wallet allocation based on network conditions, treasury demand, and internal risk scoring, and may keep up to 40% of client balances in connected transaction environments."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R004-DIRECT-APPROVALS",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "6",
+      "templates": {
+        "original_text": "Withdrawals, address changes, key ceremonies, and signing events require multi-party approval, role separation, hardware-backed key protection, and logged review by authorized Custodian personnel.",
+        "mutated_text": "Withdrawals, address changes, key ceremonies, and signing events may be approved by the assigned operations lead using the controls then active in the custody platform."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R005-DIRECT-INSURANCE",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "9",
+      "templates": {
+        "original_text": "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of ${insurance_limit} or the value of Customer Assets under custody.",
+        "mutated_text": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R007-DIRECT-WITHDRAWAL-SLA",
+      "rule_id": "R-007",
+      "mechanism": "direct_term_swap",
+      "section": "7",
+      "templates": {
+        "original_text": "Custodian will process Authorized Instructions for withdrawals within {withdrawal_hours} hours after receipt and in any event no later than {outside_days} business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to {customer_role}.",
+        "mutated_text": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R008-DEFINED-CUSTOMER-ASSETS",
+      "rule_id": "R-008",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Customer Assets\" means all Digital Assets, private-key control rights, proceeds, forks, airdrops, staking rewards, and network distributions credited to or held for {customer_role}.",
+        "mutated_text": "\"Customer Assets\" means supported units recorded to {customer_role}'s primary custody account, excluding chain-split property, promotional distributions, validator proceeds, and other network-originated items unless Custodian separately credits them."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R008-DEFINED-DIGITAL-ASSETS",
+      "rule_id": "R-008",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Digital Assets\" means cryptographic tokens, stablecoins, protocol units, forks, airdrops, staking rewards, and other network distributions supported for custody under this Agreement.",
+        "mutated_text": "\"Digital Assets\" means base-layer tokens and stablecoins listed in the custody portal, excluding chain-split property, promotional allocations, validator proceeds, and other network-originated items."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R009-DIRECT-STAKING-OPT-IN",
+      "rule_id": "R-009",
+      "mechanism": "direct_term_swap",
+      "section": "8",
+      "templates": {
+        "original_text": "Custodian may stake Customer Assets only after {customer_role}'s express opt-in and prior written disclosure of validator identity, lock-up periods, liquidity limits, reward mechanics, tax reporting, fees, and slashing-risk allocation.",
+        "mutated_text": "Custodian may enroll eligible balances in network participation programs after portal notice, and related penalties, downtime, bonding periods, tax outcomes, and liquidity delays will be allocated under the program terms then posted."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R010-DIRECT-LIABILITY-CAP",
+      "rule_id": "R-010",
+      "mechanism": "direct_term_swap",
+      "section": "13",
+      "templates": {
+        "original_text": "The cap does not limit Custodian's responsibility up to the value of affected Customer Assets for theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer caused by Custodian, its personnel, or its subcustodians.",
+        "mutated_text": "All claims against Custodian, including losses from compromise, internal misconduct, operational error, transfer failures, or missing balances, are limited to fees paid during the three months before the event."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "CRYPTO-R011-DIRECT-EXIT-CASH",
+      "rule_id": "R-011",
+      "mechanism": "direct_term_swap",
+      "section": "14",
+      "templates": {
+        "original_text": "Upon termination or {customer_role}'s written request, Custodian will transfer Customer Assets in kind to {customer_role} or {customer_role}'s designated wallet or custodian within {termination_days} business days, subject only to applicable law, a network outage, or a documented security hold notified to {customer_role}.",
+        "mutated_text": "After termination, Custodian may liquidate supported balances and remit net proceeds after completion of account review, treasury reconciliation, and ordinary-course compliance screening."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R012-DIRECT-SUBCUSTODIAN",
+      "rule_id": "R-012",
+      "mechanism": "direct_term_swap",
+      "section": "11",
+      "templates": {
+        "original_text": "Custodian may use subcustodians only with {customer_role}'s prior notice or approval. Custodian will bind each subcustodian to written obligations at least as protective as this Agreement for Customer Assets and remains responsible for each subcustodian's acts and omissions.",
+        "mutated_text": "Custodian may route holdings through affiliates, liquidity venues, and third-party vault providers selected by Custodian, and those providers are responsible only under their own service terms."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R013-DIRECT-FREEZE",
+      "rule_id": "R-013",
+      "mechanism": "direct_term_swap",
+      "section": "12",
+      "templates": {
+        "original_text": "Custodian may freeze, reject, or suspend Customer Assets only when required by law, sanctions, regulator or court order, or a documented security basis, and will give prompt notice to {customer_role} where legally permitted.",
+        "mutated_text": "Custodian may delay, reject, hold, or suspend any balance, transfer, address, account, or portal function whenever Custodian determines the action is operationally prudent, and notice is discretionary."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "CRYPTO-R006-OFF-PORTAL-ASSURANCE",
+      "rule_id": "R-006",
+      "mechanism": "off_playbook_addition",
+      "section": "15",
+      "templates": {
+        "original_text": "Neither party waives any remedy by delaying enforcement, and operational notices may be delivered through the custody portal or by email to the notice contacts designated by the parties.",
+        "mutated_text": "Neither party waives any remedy by delaying enforcement, and operational notices may be delivered through the custody portal or by email to the notice contacts designated by the parties. Custodian's portal status page will be the exclusive source for operational-control information, and Custodian has no duty to provide supplemental evidence after incidents or control changes."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    }
+  ]
+}

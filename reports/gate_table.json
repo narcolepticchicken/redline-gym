@@ -167,6 +167,33 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
+        "composite": 0.39,
+        "recall": 0.25,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-CRYPTO-1501",
+      "task_id": "T1-CRYPTO-1501",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
         "composite": 0.25,
         "recall": 0.0,
         "status": "OK"
@@ -539,6 +566,60 @@
       "random_gate": "UNMEASURED",
       "task": "tasks/generated/T2-AI-1303",
       "task_id": "T2-AI-1303",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.363636,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-CRYPTO-1502",
+      "task_id": "T2-CRYPTO-1502",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.3625,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-CRYPTO-1503",
+      "task_id": "T2-CRYPTO-1503",
       "validators": "PASS"
     },
     {
