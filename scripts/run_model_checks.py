@@ -43,6 +43,14 @@ SCHEMA_INSTRUCTIONS = {
 }
 
 
+def _print_judge_usage() -> None:
+    totals = DeepSeekJudge.usage_totals()
+    print(
+        f"judge usage: {totals['prompt_tokens']} prompt + "
+        f"{totals['completion_tokens']} completion tokens across {totals['calls']} calls"
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     args = argv if argv is not None else sys.argv[1:]
     task_dir = pathlib.Path(args[0] if args else "tasks/contracts/T1-NDA-001")
@@ -275,4 +283,7 @@ def _norm_item(value: Any) -> str:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    finally:
+        _print_judge_usage()

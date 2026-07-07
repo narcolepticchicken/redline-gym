@@ -19,6 +19,14 @@ ROOT = Path(__file__).resolve().parents[1]
 REPORT_PATH = ROOT / "reports" / "answer_key_defects.md"
 
 
+def _print_judge_usage() -> None:
+    totals = DeepSeekJudge.usage_totals()
+    print(
+        f"judge usage: {totals['prompt_tokens']} prompt + "
+        f"{totals['completion_tokens']} completion tokens across {totals['calls']} calls"
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Adjudicate V3/V4 extra reported violations for a task.")
     parser.add_argument("task_dir", type=Path)
@@ -230,4 +238,7 @@ def _load_json(path: Path) -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    finally:
+        _print_judge_usage()

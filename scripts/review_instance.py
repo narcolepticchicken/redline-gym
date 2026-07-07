@@ -12,15 +12,25 @@ import sys
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from scoring.judge_deepseek import DeepSeekJudge  # noqa: E402
 
-task_dir = pathlib.Path(sys.argv[1])
-task = json.loads((task_dir / "task.json").read_text())
-pdv = json.loads((task_dir / "planted_deviations.json").read_text())
-pb_path = pathlib.Path(task["playbook_ref"])
-pb = json.loads(pb_path.read_text() if pb_path.exists()
-                else (task_dir / "../../.." / task["playbook_ref"]).resolve().read_text())
-docs = "\n\n".join(f"--- {p.name} ---\n{p.read_text()}" for p in sorted((task_dir / "docs").glob("*.md")))
 
-prompt = f"""You are the independent second-model reviewer in a tri-model QA pipeline for an
+def _print_judge_usage() -> None:
+    totals = DeepSeekJudge.usage_totals()
+    print(
+        f"judge usage: {totals['prompt_tokens']} prompt + "
+        f"{totals['completion_tokens']} completion tokens across {totals['calls']} calls"
+    )
+
+
+try:
+    task_dir = pathlib.Path(sys.argv[1])
+    task = json.loads((task_dir / "task.json").read_text())
+    pdv = json.loads((task_dir / "planted_deviations.json").read_text())
+    pb_path = pathlib.Path(task["playbook_ref"])
+    pb = json.loads(pb_path.read_text() if pb_path.exists()
+                    else (task_dir / "../../.." / task["playbook_ref"]).resolve().read_text())
+    docs = "\n\n".join(f"--- {p.name} ---\n{p.read_text()}" for p in sorted((task_dir / "docs").glob("*.md")))
+
+    prompt = f"""You are the independent second-model reviewer in a tri-model QA pipeline for an
 RL-environment task instance (drafter: GPT-5.5; you must be adversarial, not polite).
 The instance: a contract with planted playbook deviations; an agent is scored on finding
 them. Ground truth must be unambiguous, machine-scorable, and realistic.
@@ -53,10 +63,12 @@ REVIEW — output these sections in order, be specific, cite sections/quotes:
 (f) OVERALL: FIT FOR HUMAN RED-PEN AS-IS, or NEEDS REVISION FIRST (say exactly what).
 """
 
-judge = DeepSeekJudge()
-review = judge._chat(prompt, max_tokens=5000)
-out = task_dir / "qa"
-out.mkdir(exist_ok=True)
-(out / "review_deepseek.md").write_text(review)
-print(review)
-print(f"\nwritten to {out / 'review_deepseek.md'}")
+    judge = DeepSeekJudge()
+    review = judge._chat(prompt, max_tokens=5000)
+    out = task_dir / "qa"
+    out.mkdir(exist_ok=True)
+    (out / "review_deepseek.md").write_text(review)
+    print(review)
+    print(f"\nwritten to {out / 'review_deepseek.md'}")
+finally:
+    _print_judge_usage()

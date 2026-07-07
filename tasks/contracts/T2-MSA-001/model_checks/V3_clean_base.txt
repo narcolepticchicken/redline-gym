@@ -2,24 +2,9 @@
   "verdict": "FAIL",
   "violations": [
     {
-      "rule_id": "R-005",
-      "section": "5",
-      "quote": "Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form."
-    },
-    {
-      "rule_id": "R-006",
-      "section": "11",
-      "quote": "Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date."
-    },
-    {
       "rule_id": "R-007",
       "section": "10",
       "quote": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."
-    },
-    {
-      "rule_id": "R-012",
-      "section": "17",
-      "quote": "Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause."
     }
   ]
 }

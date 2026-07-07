@@ -19,6 +19,12 @@ GATE_MESSAGE = "DEEPSEEK_API_KEY not set; judge calls are gated on the lab servi
 
 
 class DeepSeekJudge(ModelCheck):
+    _usage: dict[str, int] = {"prompt_tokens": 0, "completion_tokens": 0, "calls": 0}
+
+    @classmethod
+    def usage_totals(cls) -> dict[str, int]:
+        return dict(cls._usage)
+
     def fallback_tiebreak_judge(self, proposed: str, expected: str, *_: Any, **__: Any) -> bool:
         output = self._chat(fallback_tiebreak_prompt(proposed, expected))
         upper = output.upper()
@@ -60,6 +66,7 @@ class DeepSeekJudge(ModelCheck):
                 )
                 with urllib.request.urlopen(request, timeout=300) as response:
                     data = json.loads(response.read().decode("utf-8"))
+                self._record_usage(data.get("usage"), payload["model"])
                 choice = data["choices"][0]
                 content = choice["message"].get("content") or ""
                 if not content and choice.get("finish_reason") == "length":
@@ -72,3 +79,34 @@ class DeepSeekJudge(ModelCheck):
             except (urllib.error.URLError, OSError) as exc:
                 last_exc = exc
         raise RuntimeError(f"DeepSeek judge request failed: {last_exc}") from last_exc
+
+    @classmethod
+    def _record_usage(cls, usage: Any, model: str) -> None:
+        usage = usage if isinstance(usage, dict) else {}
+        prompt_tokens = _int_token_count(usage.get("prompt_tokens"))
+        completion_tokens = _int_token_count(usage.get("completion_tokens"))
+        cls._usage["prompt_tokens"] += prompt_tokens
+        cls._usage["completion_tokens"] += completion_tokens
+        cls._usage["calls"] += 1
+
+        log_path = os.getenv("REDLINE_JUDGE_USAGE_LOG")
+        if not log_path:
+            return
+        parent = os.path.dirname(log_path)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
+        record = {
+            "ts_call": cls._usage["calls"],
+            "model": model,
+            "prompt_tokens": prompt_tokens,
+            "completion_tokens": completion_tokens,
+        }
+        with open(log_path, "a", encoding="utf-8") as handle:
+            handle.write(json.dumps(record) + "\n")
+
+
+def _int_token_count(value: Any) -> int:
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return 0
