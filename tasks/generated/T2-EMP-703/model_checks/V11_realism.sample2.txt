@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1–15 numbered sequentially; cross-reference in §8 to §9 resolves.",
+    "q2": "\"Good Reason\" defined in §2 but never used in the remainder of the agreement.",
+    "q3": "",
+    "q4": "",
+    "q5": "§1: \"Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement.\" Yet §8 contemplates termination without Cause without an express right to do so, creating internal contradiction.",
+    "q6": ""
+  }
+}

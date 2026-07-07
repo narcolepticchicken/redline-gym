@@ -19,7 +19,7 @@ This report is assembled from repository artifacts only. It excludes the held-ou
 | tasks/generated/T2-DPA-302 | privacy | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |
 | tasks/generated/T2-DPA-303 | privacy | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |
 | tasks/generated/T2-DPA-312 | privacy | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |
-| tasks/generated/T2-EMP-702 | employment | T2 | generated | verification_report.md, model_checks, qa | AWAITING HUMAN SIGN-OFF |
+| tasks/generated/T2-EMP-702 | employment | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |
 | tasks/generated/T2-EMP-703 | employment | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |
 | tasks/generated/T2-MSA-104 | contracts | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |
 | tasks/generated/T2-MSA-106 | contracts | T2 | generated | verification_report.md, model_checks | AWAITING HUMAN SIGN-OFF |

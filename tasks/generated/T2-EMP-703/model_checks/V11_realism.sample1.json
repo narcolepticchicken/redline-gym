@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1-15 are sequential; cross-reference 'subject to Section 9' in Section 8 correctly resolves to Section 9.",
+    "q2": "'Cause' and 'Good Reason' are defined once in Section 2; 'Cause' used consistently in Section 8; 'Good Reason' is not later used, so no inconsistent usage.",
+    "q3": "No vague or non-commercial time/quantity phrasing; phrases like 'from time to time' are standard commercial drafting, and no 'reasonable while' or 'next quarter' appears.",
+    "q4": "No archaic legal diction; the agreement uses modern plain English ('will', not 'shall'; no 'herein', 'whereas', 'heretofore', etc.).",
+    "q5": "All sentences are grammatically intact and contain no internal contradictions.",
+    "q6": "Clause phrasing and register are consistent across all sections, with no section reading as if by a different author."
+  }
+}

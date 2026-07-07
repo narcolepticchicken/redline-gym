@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "sections numbered 1 through 15 sequentially; cross-reference 'subject to Section 9' in Section 8 resolves to existing Section 9",
+    "q2": "'Good Reason' is defined in Section 2 but never used elsewhere in the Agreement",
+    "q3": "no vague time/quantity phrasing present; 'from time to time' is standard commercial drafting",
+    "q4": "document uses modern plain-English drafting without archaic legal diction",
+    "q5": "all sentences grammatically sound; no internal contradictions within any single sentence",
+    "q6": "consistent register and phrasing throughout, no authorial shifts"
+  }
+}

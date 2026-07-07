@@ -1,0 +1,1 @@
+{"answers":{"q1":true,"q2":false,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"","q2":"\"Good Reason\" means a material reduction in base salary or required relocation by more than 50 miles, in each case only if Company fails to cure after written notice from Executive. (Defined but never referenced again)","q3":"","q4":"","q5":"","q6":""}}

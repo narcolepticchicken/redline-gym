@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "Section 2 defines \"Good Reason\" but the term is never referenced anywhere else in the agreement.",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}
