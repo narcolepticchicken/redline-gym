@@ -1,0 +1,12 @@
+{
+  "task_id": "T2-AI-1303",
+  "practice_area": "ai_law",
+  "client_context": "Client is a mid-size company procuring a hosted LLM API and fine-tuning services from Vendor for a customer-facing commerce recommendation assistant. Review the agreement from the Customer side. Customer will integrate the API into a child-directed education product and needs age-gating obligations reviewed.",
+  "instruction": "Review the AI model services agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "deliverable": {
+    "card_schema_id": "redline-gym.issue-card.v1"
+  },
+  "turn_cap": 25,
+  "difficulty_tier": "T2",
+  "playbook_ref": "playbooks/ai/PB-AI-001.json"
+}

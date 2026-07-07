@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "AI Model Services Agreement",
+      "type": "msa",
+      "path": "docs/ai_model_services_agreement.md",
+      "sha256": "860d916f3b18c5dbd676b2fa736b3cb1bfa54af9758aa44f53c6ff3e4a5c8803",
+      "is_distractor": false
+    }
+  ]
+}

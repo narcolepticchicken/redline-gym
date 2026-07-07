@@ -1,0 +1,112 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "9",
+        "span": "Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Vendor may make urgent or operational model changes without prior notice whenever it determines notice is impractical."
+      },
+      "original_text": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
+      "mutated_text": "Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Vendor may make urgent or operational model changes without prior notice whenever it determines notice is impractical.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-013",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "13",
+        "span": "Vendor has no obligation to assist with Customer's regulatory-change requests, transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, or other documentation for Customer's AI compliance obligations unless the parties sign a separate paid statement of work."
+      },
+      "original_text": "Vendor will reasonably cooperate with Customer's regulatory-change requests related to AI services. Upon request, Vendor will provide available transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, and other documentation reasonably needed for Customer's AI compliance obligations.",
+      "mutated_text": "Vendor has no obligation to assist with Customer's regulatory-change requests, transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, or other documentation for Customer's AI compliance obligations unless the parties sign a separate paid statement of work.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-006",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Vendor will use commercially reasonable efforts to make the production API available and responsive. Uptime, latency, support targets, service credits, escalation rights, and remediation plans are aspirational and do not create any remedy for Customer."
+      },
+      "original_text": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests. If monthly uptime falls below 99.9%, Customer will receive a service credit equal to 10% of the affected monthly fees. Repeated service-level failures trigger executive escalation and a remediation plan.",
+      "mutated_text": "Vendor will use commercially reasonable efforts to make the production API available and responsive. Uptime, latency, support targets, service credits, escalation rights, and remediation plans are aspirational and do not create any remedy for Customer.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "14",
+        "span": "Each party's aggregate liability is capped at fees paid or payable in the twelve months before the event giving rise to liability. The cap applies to all claims and obligations, including data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, and IP indemnity claims."
+      },
+      "original_text": "Except for the carve-outs in this Section 14, each party's aggregate liability is capped at fees paid or payable in the twelve months before the event giving rise to liability. The cap does not limit Vendor's obligations for data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, or IP indemnity claims.",
+      "mutated_text": "Each party's aggregate liability is capped at fees paid or payable in the twelve months before the event giving rise to liability. The cap applies to all claims and obligations, including data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, and IP indemnity claims.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests.",
+      "why_benign": "The uptime canary says a 99.9% uptime SLA with credits is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
+      "why_benign": "The model-change rule allows emergency security fixes with prompt notice."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Age-gating obligations for child-directed product integration",
+      "context_anchor": "Customer will integrate the API into a child-directed education product and needs age-gating obligations reviewed.",
+      "match_keywords": [
+        "child-directed",
+        "age-gating",
+        "education product",
+        "minor users"
+      ],
+      "absent_terms": [
+        "child-directed",
+        "age-gating",
+        "education product",
+        "minor users"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=1301",
+    "attempt_seed=1301",
+    "playbook=PB-AI-001",
+    "tier=T1",
+    "task_id=T1-AI-1301",
+    "D-001 AI-R007-DIRECT-MODEL-NOTICE-FIVE-DAYS direct_term_swap applied to R-007",
+    "D-002 AI-R013-DIRECT-REGULATORY-COOPERATION-DISCLAIMED direct_term_swap applied to R-013",
+    "D-003 AI-R006-DIRECT-SLA-CREDITS-REMOVED direct_term_swap applied to R-006",
+    "D-004 AI-R011-DIRECT-LIABILITY-CARVEOUTS-CAPPED direct_term_swap applied to R-011",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

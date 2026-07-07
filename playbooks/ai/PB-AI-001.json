@@ -1,0 +1,128 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-AI-001",
+  "practice_area": "ai_law",
+  "title": "Customer-Side AI Vendor and Model Services Agreement Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "Vendor must not train, tune, retrain, or improve models using Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files unless Customer gives express opt-in approval.",
+      "fallback": "Vendor may not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service except with Customer's prior written opt-in approval.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if Vendor can use Customer materials or service activity for model or service improvement without Customer's express opt-in.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Agreement should give the client control over dedicated model customization assets created for its deployment, or at minimum exclusive operational use of them.",
+      "fallback": "Customer owns all fine-tuned weights, adapters, embeddings, prompts, configuration artifacts, and related deliverables created specifically for Customer; if Vendor cannot assign ownership, Customer receives exclusive use and portability rights.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if Vendor can reuse, share, or deny Customer portability for Customer-specific fine-tuned artifacts.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-003",
+      "position": "Customer should own or receive an assignment of all outputs generated for Customer, subject only to third-party rights and applicable law.",
+      "fallback": "As between the parties, Customer owns all outputs generated for Customer and Vendor assigns to Customer any rights Vendor may have in those outputs, subject to third-party rights and applicable law.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Vendor claims ownership of Customer outputs or blocks Customer from using them in its product.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Vendor's IP indemnity should cover third-party claims that model outputs, hosted model services, or fine-tuning deliverables infringe IP rights.",
+      "fallback": "Vendor will defend and indemnify Customer against third-party claims alleging that the hosted model service, model outputs, or fine-tuning deliverables infringe or misappropriate intellectual property rights, excluding Customer-provided materials as the sole cause.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if output infringement claims or fine-tuning deliverables are excluded from Vendor's IP indemnity.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-005",
+      "position": "Usage restrictions should be tied to lawful safety and abuse prevention and must not bar Customer from competitive benchmarking, evaluation, or product comparison.",
+      "fallback": "Usage restrictions apply only to unlawful, harmful, or security-abusive use and do not prohibit Customer from benchmarking, evaluating, or comparing the services and models for legitimate business purposes.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if restrictions prevent competitive benchmarking, independent evaluation, or ordinary product comparison.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-006",
+      "position": "Production reliability commitments need measurable availability, response-time targets, meaningful credits, and escalation for chronic failures.",
+      "fallback": "Vendor will meet the agreed uptime and latency service levels, provide service credits for failures, and offer an escalation plan for repeated or chronic service-level misses.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if there is no meaningful uptime, latency, credit, or chronic-failure remedy.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Vendor should give advance notice before model changes, deprecations, or silent model swaps that could materially affect behavior, safety, latency, or output quality.",
+      "fallback": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, or replacement that could materially affect behavior, safety, latency, or output quality, except for emergency security fixes with prompt notice.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Vendor may silently change models or gives inadequate notice for behavior-affecting changes.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Data residency, prompt retention, output retention, and log retention should be bounded to approved regions and short, stated periods.",
+      "fallback": "Vendor will process and store Customer Data, prompts, outputs, telemetry, embeddings, and logs only in approved regions and retain prompts, outputs, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if retention is open-ended, residency is unrestricted, or prompts and logs can be kept beyond the agreed bound.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-009",
+      "position": "Customer obligations for provider conduct rules should remain bounded to published terms at signing or later changes required by law or objective safety needs, with notice.",
+      "fallback": "Customer will comply with Vendor's published acceptable-use and safety policies as of the effective date and later changes that are required by law or objectively necessary for service security or safety, provided Vendor gives reasonable notice.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if Vendor can unilaterally expand safety or acceptable-use obligations without bounds or notice.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Vendor should provide subprocessor transparency, material subprocessor-change notice, and reasonable audit or compliance reporting.",
+      "fallback": "Vendor will maintain a current subprocessor list, give advance notice of material subprocessor changes, provide annual security and compliance reports, and reasonably support Customer audits tied to regulatory or security obligations.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Customer lacks subprocessor transparency, change notice, or reasonable audit and compliance reporting.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-011",
+      "position": "The liability cap should carve out data breaches, confidentiality breaches, security violations, and Vendor's IP indemnity obligations.",
+      "fallback": "The liability cap does not limit Vendor's obligations for data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, or IP indemnity claims.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if data breach exposure or IP indemnity is capped at ordinary fees without a meaningful carve-out.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-012",
+      "position": "Exit support must cover migration help and portable copies of Customer Data, prompts, outputs, embeddings, and Customer-specific fine-tuned artifacts.",
+      "fallback": "Upon expiration or termination, Vendor will provide reasonable transition assistance and export Customer Data, prompts, outputs, embeddings, and Customer-specific fine-tuned weights, adapters, and configuration artifacts in a usable format.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Customer cannot export fine-tunes, embeddings, or operational data needed to transition away from Vendor.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-013",
+      "position": "Vendor should cooperate with regulatory-change requests, including EU AI Act-style transparency artifacts, model documentation, risk summaries, and technical information reasonably needed by Customer.",
+      "fallback": "Vendor will reasonably cooperate with regulatory-change requests and provide available transparency artifacts, model documentation, risk summaries, technical information, and conformity-support materials needed for Customer's AI compliance obligations.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if Vendor refuses reasonable cooperation for AI regulatory compliance or transparency documentation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-014",
+      "position": "Delaware governing law is acceptable for this customer-side AI services engagement and should not be flagged by itself.",
+      "fallback": "No change; Delaware governing law is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses Delaware law.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "A 99.9% uptime service level with service credits is acceptable for this engagement and should not be flagged by itself.",
+      "fallback": "No change; a 99.9% uptime service level with service credits is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the service level is 99.9% uptime with credits.",
+      "is_canary": true
+    }
+  ]
+}

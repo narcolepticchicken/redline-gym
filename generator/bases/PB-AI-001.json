@@ -1,0 +1,167 @@
+{
+  "playbook_id": "PB-AI-001",
+  "doc_type": "msa",
+  "filename": "ai_model_services_agreement.md",
+  "heading_template": "# AI Model Services Agreement",
+  "title_template": "AI Model Services Agreement",
+  "surface_slots": {
+    "customer_name": ["Northstar Retail Group, Inc.", "Cedar Lane Health, Inc.", "Brightline Marketplaces, Inc."],
+    "vendor_name": ["VectorForge AI, Inc.", "Helix Model Services, Inc.", "Summit LLM Cloud, Inc."],
+    "product_name": ["customer support assistant", "claims intake assistant", "commerce recommendation assistant"],
+    "approved_region": ["United States", "United States and Canada", "United States and European Union"],
+    "latency_ms": ["900", "1000", "1200"],
+    "notice_days": ["60"],
+    "retention_days": ["30"],
+    "credit_percent": ["10"],
+    "audit_days": ["30"],
+    "transition_days": ["60"],
+    "export_days": ["15"],
+    "subprocessor_notice_days": ["30"]
+  },
+  "client_context_template": "Client is a mid-size company procuring a hosted LLM API and fine-tuning services from Vendor for a customer-facing {product_name}. Review the agreement from the Customer side. Customer will integrate the API into a child-directed education product and needs age-gating obligations reviewed.",
+  "instruction_template": "Review the AI model services agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "preamble_template": "This AI Model Services Agreement (the \"Agreement\") is entered into by and between {customer_name} (\"Customer\") and {vendor_name} (\"Vendor\") for hosted model API access, fine-tuning services, and related support.",
+  "section_order_variants": [
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+    ["1", "2", "3", "5", "4", "6", "7", "8", "10", "9", "11", "12", "13", "14", "15"],
+    ["1", "2", "4", "3", "5", "7", "6", "8", "9", "11", "10", "12", "14", "13", "15"]
+  ],
+  "sections": [
+    {
+      "id": "1",
+      "heading": "Services and Use Case",
+      "paragraphs": [
+        "Vendor will provide Customer with hosted model API access, fine-tuning services, embedding support, implementation assistance, and production support for Customer's {product_name}. Customer remains responsible for its application workflow, user-facing product decisions, and compliance choices not expressly assigned to Vendor in this Agreement."
+      ]
+    },
+    {
+      "id": "2",
+      "heading": "Definitions",
+      "paragraphs": [
+        "\"Customer Data\" means all data, prompts, prompt templates, instructions, outputs, telemetry, embeddings, fine-tuning files, evaluation sets, and other materials submitted to, generated for, or derived from Customer's use of the Services. \"Customer Fine-Tune Artifacts\" means the fine-tuned weights, adapters, embeddings, configuration files, evaluation outputs, and related deliverables created specifically for Customer under this Agreement. \"Approved Regions\" means {approved_region}."
+      ]
+    },
+    {
+      "id": "3",
+      "heading": "Access Credentials and API Operations",
+      "paragraphs": [
+        "Vendor will issue API credentials to Customer and will maintain commercially reasonable safeguards for authentication, rate limits, monitoring, and incident response. Customer may use the Services for development, testing, benchmarking, evaluation, deployment, and operation of Customer's products, subject to the bounded use restrictions in Section 7."
+      ]
+    },
+    {
+      "id": "4",
+      "heading": "Customer Ownership of Inputs and Outputs",
+      "paragraphs": [
+        "As between the parties, Customer owns all Customer Data and all outputs generated for Customer through the Services. Vendor assigns to Customer any rights Vendor may have in those outputs, subject to third-party rights and applicable law. Vendor receives only the limited rights needed to provide, secure, support, and troubleshoot the Services for Customer."
+      ]
+    },
+    {
+      "id": "5",
+      "heading": "Training and Service Improvement",
+      "paragraphs": [
+        "Vendor will not use Customer Data to train, tune, retrain, evaluate, benchmark, or improve any model, service, or dataset except with Customer's prior written opt-in approval. Without that opt-in, Vendor may use only aggregated operational metrics that do not include Customer Data to operate, secure, and support the Services for Customer."
+      ]
+    },
+    {
+      "id": "6",
+      "heading": "Fine-Tuning Deliverables",
+      "paragraphs": [
+        "Customer owns all Customer Fine-Tune Artifacts created specifically for Customer. If applicable law or Vendor's platform architecture prevents assignment of any such artifact, Vendor grants Customer exclusive use of that artifact and will not reuse, disclose, or make it available to any other customer. Vendor will maintain portability procedures for Customer Fine-Tune Artifacts."
+      ]
+    },
+    {
+      "id": "7",
+      "heading": "Use Restrictions and Safety Policies",
+      "paragraphs": [
+        "Customer will not use the Services for unlawful conduct, security abuse, credential harvesting, malicious code generation, or other harmful activity identified in Vendor's published acceptable-use and safety policies as of the effective date. Later changes apply only if required by law or objectively necessary for service security or safety and Vendor gives reasonable notice. Nothing in this Section 7 prevents Customer from benchmarking, evaluating, or comparing Vendor's models or services for legitimate business purposes."
+      ]
+    },
+    {
+      "id": "8",
+      "heading": "Service Levels and Support",
+      "paragraphs": [
+        "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below {latency_ms} milliseconds for ordinary text requests. If monthly uptime falls below 99.9%, Customer will receive a service credit equal to {credit_percent}% of the affected monthly fees. Repeated service-level failures trigger executive escalation and a remediation plan."
+      ]
+    },
+    {
+      "id": "9",
+      "heading": "Model Lifecycle Management",
+      "paragraphs": [
+        "Vendor will provide at least {notice_days} days' prior notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact."
+      ]
+    },
+    {
+      "id": "10",
+      "heading": "Data Residency, Retention, and Logs",
+      "paragraphs": [
+        "Vendor will process and store Customer Data only in the Approved Regions. Vendor will retain prompts, outputs, telemetry, embeddings, and logs for no more than {retention_days} days unless Customer requests a shorter or longer period in writing.",
+        "Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Vendor may prepare aggregate operational reports about uptime, support tickets, and capacity planning, provided those reports do not include Customer Data."
+      ]
+    },
+    {
+      "id": "11",
+      "heading": "Security, Audit, and Subprocessors",
+      "paragraphs": [
+        "Vendor will maintain a written security program, annual penetration testing, encryption in transit and at rest, and access controls appropriate for hosted model services. Vendor will maintain a current subprocessor list, give at least {subprocessor_notice_days} days' advance notice of material subprocessor changes, provide annual security and compliance reports, and reasonably support Customer audits tied to regulatory or security obligations on {audit_days} days' notice."
+      ]
+    },
+    {
+      "id": "12",
+      "heading": "Intellectual Property Indemnity",
+      "paragraphs": [
+        "Vendor will defend and indemnify Customer against third-party claims alleging that the hosted model service, model outputs, Customer Fine-Tune Artifacts, or other Vendor-provided deliverables infringe or misappropriate intellectual property rights. Vendor has no indemnity obligation to the extent Customer-provided materials are the sole cause of the claim."
+      ]
+    },
+    {
+      "id": "13",
+      "heading": "Liability Cap and Carve-Outs",
+      "paragraphs": [
+        "Except for the carve-outs in this Section 13, each party's aggregate liability is capped at fees paid or payable in the twelve months before the event giving rise to liability. The cap does not limit Vendor's obligations for data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, or IP indemnity claims."
+      ]
+    },
+    {
+      "id": "14",
+      "heading": "Regulatory Cooperation",
+      "paragraphs": [
+        "Vendor will reasonably cooperate with Customer's regulatory-change requests related to AI services. Upon request, Vendor will provide available transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, and other documentation reasonably needed for Customer's AI compliance obligations."
+      ]
+    },
+    {
+      "id": "15",
+      "heading": "Term, Termination, Transition, and Governing Law",
+      "paragraphs": [
+        "Either party may terminate for uncured material breach after 30 days' written notice. Upon expiration or termination, Vendor will provide up to {transition_days} days of reasonable transition assistance and, within {export_days} days after request, export Customer Data, prompts, outputs, embeddings, Customer Fine-Tune Artifacts, and available configuration records in a usable format. This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."
+      ]
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below {latency_ms} milliseconds for ordinary text requests.",
+      "why_benign": "The uptime canary says a 99.9% uptime SLA with credits is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
+      "why_benign": "The model-change rule allows emergency security fixes with prompt notice."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Age-gating obligations for child-directed product integration",
+      "context_anchor": "Customer will integrate the API into a child-directed education product and needs age-gating obligations reviewed.",
+      "match_keywords": ["child-directed", "age-gating", "education product", "minor users"],
+      "absent_terms": ["child-directed", "age-gating", "education product", "minor users"],
+      "expected_action": "escalate"
+    }
+  ]
+}
