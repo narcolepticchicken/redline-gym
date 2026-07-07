@@ -1,6 +1,6 @@
 # Verification Report
 
-Status: HUMAN SIGNED-OFF (model-stubbed validators V3/V4/V7-semantic/V11 still pending lab-lane run)
+Status: AWAITING HUMAN SIGN-OFF
 
 | Validator | Status | Detail |
 |---|---|---|
@@ -19,9 +19,4 @@ Status: HUMAN SIGNED-OFF (model-stubbed validators V3/V4/V7-semantic/V11 still p
 
 Model-stubbed validators: V3, V4, V7-semantic, V11.
 
-Human sign-off: name Aaron (aaron@litil.ai) date 2026-07-06
-Scope: 18/18 review confirmations via guided red-pen walkthrough (playbook rules,
-6 planted deviations, canaries/distractors/missing-info, full read-through).
-Review pass also produced two fixes before signing: D-005 expected_action
-redline→escalate (tiebreak Ruling 2) and "Canary:" labels stripped from
-agent-visible rule text.
+Human sign-off: name ____________________ date __________

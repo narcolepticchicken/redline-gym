@@ -1,0 +1,139 @@
+{
+  "playbook_id": "PB-NDA-001",
+  "doc_type": "nda",
+  "filename": "mutual_nda.md",
+  "heading_template": "# Mutual Confidentiality Agreement",
+  "title_template": "Mutual Confidentiality Agreement",
+  "surface_slots": {
+    "party_a": ["Northstar Analytics, Inc.", "Cedarline Robotics, Inc.", "BrightRiver Health, Inc."],
+    "party_b": ["Meridian Systems LLC", "HarborCloud Labs LLC", "Stonepath Data LLC"],
+    "effective_date": ["July 6, 2026", "August 14, 2026", "September 3, 2026"],
+    "project": ["data integration", "AI workflow pilot", "analytics modernization"],
+    "state": ["New York"]
+  },
+  "client_context_template": "Client is evaluating a strategic {project} with a potential vendor. The parties will exchange sensitive business records under this NDA, and the client wants a balanced mutual NDA reviewed against the NDA playbook.",
+  "instruction_template": "Review the mutual NDA against the playbook. Flag deviations, quote the clause, propose fallback text when required, and escalate missing information.",
+  "preamble_template": "This Mutual Confidentiality Agreement is entered into as of {effective_date}, by and between {party_a} and {party_b}. Each party may be a \"{discloser_role}\" when it discloses information and a \"{recipient_role}\" when it receives information.",
+  "section_order_variants": [
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"],
+    ["1", "2", "3", "4", "6", "5", "7", "8", "9", "10", "11", "12", "13"],
+    ["1", "3", "2", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13"]
+  ],
+  "sections": [
+    {
+      "id": "1",
+      "heading": "Confidential Information",
+      "paragraphs": [
+        "\"Confidential Information\" means all non-public information disclosed by or on behalf of a {discloser_role}, whether before or after the effective date, in any form or medium and whether or not marked confidential. \"Purpose\" means evaluating, negotiating, and, if agreed, performing the contemplated {project} between the parties. Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information."
+      ]
+    },
+    {
+      "id": "2",
+      "heading": "Purpose and Use",
+      "paragraphs": [
+        "{recipient_role} may use Confidential Information solely for the Purpose."
+      ]
+    },
+    {
+      "id": "3",
+      "heading": "Affiliates and Representatives",
+      "paragraphs": [
+        "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.",
+        "{recipient_role} may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement."
+      ]
+    },
+    {
+      "id": "4",
+      "heading": "Protection Standard",
+      "paragraphs": [
+        "{recipient_role} will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance. {recipient_role} will not intentionally disclose it except as permitted by this Agreement."
+      ]
+    },
+    {
+      "id": "5",
+      "heading": "Compelled Disclosure",
+      "paragraphs": [
+        "If {recipient_role} is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, {recipient_role} will, to the extent legally permitted, provide prompt notice to {discloser_role} and reasonably cooperate with {discloser_role} in seeking confidential or protective treatment."
+      ]
+    },
+    {
+      "id": "6",
+      "heading": "Exclusions",
+      "paragraphs": [
+        "Confidential Information does not include information that {recipient_role} can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty."
+      ]
+    },
+    {
+      "id": "7",
+      "heading": "No Obligation to Proceed",
+      "paragraphs": [
+        "Neither party is obligated to enter into any further agreement, purchase or sell any product or service, or proceed with any transaction unless a separate written agreement is signed by both parties."
+      ]
+    },
+    {
+      "id": "8",
+      "heading": "Return or Destruction",
+      "paragraphs": [
+        "Upon request, {recipient_role} will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations."
+      ]
+    },
+    {
+      "id": "9",
+      "heading": "Term and Survival",
+      "paragraphs": [
+        "This Agreement begins on the effective date and continues for two years. Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law."
+      ]
+    },
+    {
+      "id": "10",
+      "heading": "No License; Ownership",
+      "paragraphs": [
+        "No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement. If any sentence conflicts with Section 10, Section 10 controls."
+      ]
+    },
+    {
+      "id": "11",
+      "heading": "Equitable Relief",
+      "paragraphs": [
+        "Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies."
+      ]
+    },
+    {
+      "id": "12",
+      "heading": "Residual Rights",
+      "paragraphs": [
+        "No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing."
+      ]
+    },
+    {
+      "id": "13",
+      "heading": "Governing Law; Miscellaneous",
+      "paragraphs": [
+        "This Agreement is governed by the laws of the State of {state}, without regard to conflict-of-law rules. Amendments must be in writing and signed by both parties. A waiver is effective only if written and signed by the waiving party. This Agreement may be signed in counterparts and by electronic signature."
+      ]
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Neither party is obligated to enter into any further agreement, purchase or sell any product or service, or proceed with any transaction unless a separate written agreement is signed by both parties.",
+      "why_benign": "A no-obligation-to-proceed clause is customary and does not conflict with the NDA playbook."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of {state}, without regard to conflict-of-law rules.",
+      "why_benign": "The playbook canary says {state} governing law is acceptable."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Personal data handling instructions",
+      "absent_terms": ["personal data", "privacy law", "data protection"],
+      "expected_action": "escalate"
+    }
+  ]
+}
+

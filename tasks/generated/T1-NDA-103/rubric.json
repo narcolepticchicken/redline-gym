@@ -1,0 +1,61 @@
+{
+  "card_schema_id": "redline-gym.issue-card.v1",
+  "weights": {
+    "recall": 0.35,
+    "precision": 0.15,
+    "grounding": 0.15,
+    "fallback": 0.15,
+    "conformance": 0.1,
+    "abstention": 0.1
+  },
+  "criteria": [
+    {
+      "criterion_id": "C-001",
+      "issue_id": "I-001",
+      "deviation_ids": [
+        "D-001"
+      ],
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "rule_id": "R-003",
+      "points": 2.0
+    },
+    {
+      "criterion_id": "C-002",
+      "issue_id": "I-002",
+      "deviation_ids": [
+        "D-002"
+      ],
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "rule_id": "R-008",
+      "points": 2.0
+    },
+    {
+      "criterion_id": "C-003",
+      "issue_id": "I-003",
+      "deviation_ids": [
+        "D-003"
+      ],
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "rule_id": "R-009",
+      "points": 2.0
+    },
+    {
+      "criterion_id": "C-004",
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
+      ],
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "rule_id": "R-001",
+      "points": 3.0
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "issues": [
+    {
+      "issue_id": "I-001",
+      "deviation_ids": [
+        "D-001"
+      ],
+      "rule_id": "R-011",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-002",
+      "deviation_ids": [
+        "D-002"
+      ],
+      "rule_id": "R-004",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-003",
+      "deviation_ids": [
+        "D-003"
+      ],
+      "rule_id": "R-005",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
+      ],
+      "rule_id": "R-001",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-005",
+      "deviation_ids": [
+        "D-005"
+      ],
+      "rule_id": "R-012",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Processing geography and cross-border transfer basis",
+      "absent_terms": [
+        "hosting region",
+        "data residency",
+        "transfer impact assessment"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Certified deletion evidence at exit",
+      "absent_terms": [
+        "deletion certificate",
+        "certificate of deletion",
+        "destruction certificate"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice.",
+      "why_benign": "The payment canary says net-45 terms after receipt of an undisputed invoice are acceptable."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Vendor may charge interest on undisputed overdue amounts at one percent per month or the highest rate allowed by law, whichever is lower.",
+      "why_benign": "A capped late-payment charge on undisputed overdue amounts is outside this playbook."
+    }
+  ]
+}

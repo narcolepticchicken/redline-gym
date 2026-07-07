@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Mutual Confidentiality Agreement",
+      "type": "nda",
+      "path": "docs/mutual_nda.md",
+      "sha256": "68e9a36f8ea7f6f18b8ef56ca875bd2b7cf857d94ebeed08ad8e1a1336b23e45",
+      "is_distractor": false
+    }
+  ]
+}

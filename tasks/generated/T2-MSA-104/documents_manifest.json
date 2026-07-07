@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Vendor Master Services Agreement",
+      "type": "msa",
+      "path": "docs/vendor_msa.md",
+      "sha256": "11fbc75291dd4ed480442b9aba9045bccbd6a558be68492e1b94a77e1257cd4e",
+      "is_distractor": false
+    }
+  ]
+}

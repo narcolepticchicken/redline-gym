@@ -1,0 +1,90 @@
+{
+  "issues": [
+    {
+      "issue_id": "I-001",
+      "deviation_ids": [
+        "D-001"
+      ],
+      "rule_id": "R-010",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-002",
+      "deviation_ids": [
+        "D-002"
+      ],
+      "rule_id": "R-007",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-003",
+      "deviation_ids": [
+        "D-003"
+      ],
+      "rule_id": "R-008",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "escalate"
+    },
+    {
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
+      ],
+      "rule_id": "R-002",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-005",
+      "deviation_ids": [
+        "D-005"
+      ],
+      "rule_id": "R-001",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Personal data handling instructions",
+      "absent_terms": [
+        "personal data",
+        "privacy law",
+        "data protection"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Neither party is obligated to enter into any further agreement, purchase or sell any product or service, or proceed with any transaction unless a separate written agreement is signed by both parties.",
+      "why_benign": "A no-obligation-to-proceed clause is customary and does not conflict with the NDA playbook."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules.",
+      "why_benign": "The playbook canary says New York governing law is acceptable."
+    }
+  ]
+}

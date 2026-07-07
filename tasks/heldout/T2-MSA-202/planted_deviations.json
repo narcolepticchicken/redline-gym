@@ -1,0 +1,127 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "17",
+        "span": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms."
+      },
+      "original_text": "Vendor will maintain commercially reasonable insurance at its own expense, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence.",
+      "mutated_text": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Security Incident\" means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by Vendor's incident response lead."
+      },
+      "original_text": "\"Security Incident\" means any suspected or actual unauthorized access to, acquisition of, use of, loss of, or disclosure of Customer Data.",
+      "mutated_text": "\"Security Incident\" means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by Vendor's incident response lead.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "5",
+        "span": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship."
+      },
+      "original_text": "Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form.",
+      "mutated_text": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "18",
+        "span": "Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16."
+      },
+      "original_text": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+      "mutated_text": "Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-012",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "17",
+        "span": "Vendor will provide its then-current standard security summary upon written request no more than once per year."
+      },
+      "original_text": "Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause.",
+      "mutated_text": "Vendor will provide its then-current standard security summary upon written request no more than once per year.",
+      "mechanism": "omission",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice.",
+      "why_benign": "The payment canary says net-45 terms after receipt of an undisputed invoice are acceptable."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Vendor may charge interest on undisputed overdue amounts at one percent per month or the highest rate allowed by law, whichever is lower.",
+      "why_benign": "A capped late-payment charge on undisputed overdue amounts is outside this playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Processing geography and cross-border transfer basis",
+      "absent_terms": [
+        "hosting region",
+        "data residency",
+        "transfer impact assessment"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Certified deletion evidence at exit",
+      "absent_terms": [
+        "deletion certificate",
+        "certificate of deletion",
+        "destruction certificate"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=202",
+    "playbook=PB-MSA-001",
+    "tier=T2",
+    "task_id=T2-MSA-202",
+    "D-001 MSA-R011-DIRECT-INSURANCE direct_term_swap applied to R-011",
+    "D-002 MSA-R004-DEFINED-INCIDENT defined_term_shift applied to R-004",
+    "D-003 MSA-R005-DIRECT-DATA direct_term_swap applied to R-005",
+    "D-004 MSA-R001-CROSS-LIABILITY cross_ref_override applied to R-001",
+    "D-005 MSA-R012-OMISSION-AUDIT omission applied to R-012"
+  ]
+}

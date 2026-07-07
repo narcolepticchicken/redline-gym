@@ -1,0 +1,159 @@
+{
+  "playbook_id": "PB-NDA-001",
+  "entries": [
+    {
+      "recipe_id": "NDA-R001-DIRECT-MARKING",
+      "rule_id": "R-001",
+      "mechanism": "direct_term_swap",
+      "section": "1",
+      "templates": {
+        "original_text": "\"Confidential Information\" means all non-public information disclosed by or on behalf of a {discloser_role}, whether before or after the effective date, in any form or medium and whether or not marked confidential.",
+        "mutated_text": "\"Confidential Information\" means information disclosed by or on behalf of a {discloser_role} that is marked confidential at the time of disclosure or confirmed as confidential in writing within {mark_window_days} days after disclosure."
+      },
+      "slots": {
+        "mark_window_days": ["five", "ten", "thirty"]
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "NDA-R002-DEFINED-AFFILIATE",
+      "rule_id": "R-002",
+      "mechanism": "defined_term_shift",
+      "section": "3",
+      "templates": {
+        "original_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party.",
+        "mutated_text": "\"Affiliate\" means only an entity wholly owned by a party and specifically listed in a schedule signed by both parties."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "NDA-R003-DIRECT-EXCLUSIONS",
+      "rule_id": "R-003",
+      "mechanism": "direct_term_swap",
+      "section": "6",
+      "templates": {
+        "original_text": "Confidential Information does not include information that {recipient_role} can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty.",
+        "mutated_text": "Confidential Information does not include information that {recipient_role} believes from general recollection was previously known, becomes available through any source, or is independently useful to {recipient_role}'s business."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "NDA-R004-DIRECT-USE",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "2",
+      "templates": {
+        "original_text": "{recipient_role} may use Confidential Information solely for the Purpose.",
+        "mutated_text": "{recipient_role} may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "NDA-R005-DIRECT-CARE",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "4",
+      "templates": {
+        "original_text": "{recipient_role} will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+        "mutated_text": "{recipient_role} will protect Confidential Information using the same degree of care that it uses for its own information and will not be responsible for inadvertent disclosures absent gross negligence."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "NDA-R006-OMISSION-REP-DUTIES",
+      "rule_id": "R-006",
+      "mechanism": "omission",
+      "section": "3",
+      "templates": {
+        "original_text": "{recipient_role} may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.",
+        "mutated_text": "{recipient_role} may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "NDA-R007-OMISSION-COMPELLED",
+      "rule_id": "R-007",
+      "mechanism": "omission",
+      "section": "5",
+      "templates": {
+        "original_text": "If {recipient_role} is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, {recipient_role} will, to the extent legally permitted, provide prompt notice to {discloser_role} and reasonably cooperate with {discloser_role} in seeking confidential or protective treatment.",
+        "mutated_text": "If {recipient_role} is required by law, regulation, or legal process to disclose Confidential Information, {recipient_role} may make such disclosure without prior notice and without obligation to challenge or limit the disclosure."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "NDA-R008-DIRECT-RETURN",
+      "rule_id": "R-008",
+      "mechanism": "direct_term_swap",
+      "section": "8",
+      "templates": {
+        "original_text": "Upon request, {recipient_role} will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
+        "mutated_text": "Upon {discloser_role}'s written request, {recipient_role} will return or destroy Confidential Information within {return_days} days, except retained copies may be kept for ordinary business recordkeeping."
+      },
+      "slots": {
+        "return_days": ["sixty", "ninety", "one hundred twenty"]
+      },
+      "expected_action": "escalate",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "NDA-R009-DIRECT-SURVIVAL",
+      "rule_id": "R-009",
+      "mechanism": "direct_term_swap",
+      "section": "9",
+      "templates": {
+        "original_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
+        "mutated_text": "Confidentiality obligations continue for {survival_period} after disclosure, including for trade secrets."
+      },
+      "slots": {
+        "survival_period": ["one year", "eighteen months", "two years"]
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "NDA-R010-CROSS-NO-LICENSE",
+      "rule_id": "R-010",
+      "mechanism": "cross_ref_override",
+      "section": "10",
+      "templates": {
+        "original_text": "If any sentence conflicts with Section 10, Section 10 controls.",
+        "mutated_text": "Despite Section 10, each party may retain and reuse generalized ideas, techniques, and learnings derived from the other party's Confidential Information."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "NDA-R011-DIRECT-EQUITABLE",
+      "rule_id": "R-011",
+      "mechanism": "direct_term_swap",
+      "section": "11",
+      "templates": {
+        "original_text": "Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies.",
+        "mutated_text": "Each party agrees that monetary damages are an adequate remedy for unauthorized use or disclosure and waives any right to seek equitable relief under this Agreement."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "low"
+    },
+    {
+      "recipe_id": "NDA-R012-DIRECT-RESIDUALS",
+      "rule_id": "R-012",
+      "mechanism": "direct_term_swap",
+      "section": "12",
+      "templates": {
+        "original_text": "No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.",
+        "mutated_text": "{recipient_role} may use residual knowledge retained in unaided memory after access to Confidential Information, provided {recipient_role} does not intentionally memorize source materials."
+      },
+      "expected_action": "escalate",
+      "severity": "high"
+    }
+  ]
+}
+

@@ -137,6 +137,12 @@ GAMED; a flag on the same span citing another/no rule ⇒ ordinary false flag.
 expected_action must be mechanically consistent with the rule's
 escalation_trigger (a term past an escalation threshold ⇒ escalate).
 
+Held-out rule (condition 2): `tasks/heldout/` is never read by development
+tooling, prompts, or humans outside a formal eval run. No dev script, review,
+or red-pen page touches it; gate numbers published for held-out instances come
+only from `run_gates.sh` in eval mode. Violating this voids the split —
+regenerate with fresh seeds if it happens.
+
 ---
 
 ## 5. Instance validators (all must pass; each is a runnable check)

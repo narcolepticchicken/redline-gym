@@ -1,0 +1,96 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "4",
+        "span": "Recipient will protect Confidential Information using the same degree of care that it uses for its own information and will not be responsible for inadvertent disclosures absent gross negligence."
+      },
+      "original_text": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "mutated_text": "Recipient will protect Confidential Information using the same degree of care that it uses for its own information and will not be responsible for inadvertent disclosures absent gross negligence.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within ninety days, except retained copies may be kept for ordinary business recordkeeping."
+      },
+      "original_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
+      "mutated_text": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within ninety days, except retained copies may be kept for ordinary business recordkeeping.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "escalate"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "6",
+        "span": "Confidential Information does not include information that Recipient believes from general recollection was previously known, becomes available through any source, or is independently useful to Recipient's business."
+      },
+      "original_text": "Confidential Information does not include information that Recipient can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty.",
+      "mutated_text": "Confidential Information does not include information that Recipient believes from general recollection was previously known, becomes available through any source, or is independently useful to Recipient's business.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions."
+      },
+      "original_text": "Recipient may use Confidential Information solely for the Purpose.",
+      "mutated_text": "Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Neither party is obligated to enter into any further agreement, purchase or sell any product or service, or proceed with any transaction unless a separate written agreement is signed by both parties.",
+      "why_benign": "A no-obligation-to-proceed clause is customary and does not conflict with the NDA playbook."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules.",
+      "why_benign": "The playbook canary says New York governing law is acceptable."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Personal data handling instructions",
+      "absent_terms": [
+        "personal data",
+        "privacy law",
+        "data protection"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=101",
+    "playbook=PB-NDA-001",
+    "tier=T1",
+    "task_id=T1-NDA-101",
+    "D-001 NDA-R005-DIRECT-CARE direct_term_swap applied to R-005",
+    "D-002 NDA-R008-DIRECT-RETURN direct_term_swap applied to R-008",
+    "D-003 NDA-R003-DIRECT-EXCLUSIONS direct_term_swap applied to R-003",
+    "D-004 NDA-R004-DIRECT-USE direct_term_swap applied to R-004"
+  ]
+}

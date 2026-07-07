@@ -1,0 +1,184 @@
+{
+  "playbook_id": "PB-MSA-001",
+  "entries": [
+    {
+      "recipe_id": "MSA-R001-CROSS-LIABILITY",
+      "rule_id": "R-001",
+      "mechanism": "cross_ref_override",
+      "section": "18",
+      "templates": {
+        "original_text": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+        "mutated_text": "Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MSA-R002-OMISSION-INDEMNITY",
+      "rule_id": "R-002",
+      "mechanism": "omission",
+      "section": "14",
+      "templates": {
+        "original_text": "{vendor_role} will defend and indemnify {customer_role} against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that {vendor_role}'s performance violates applicable law.",
+        "mutated_text": "{vendor_role} will defend {customer_role} against third-party claims only to the extent finally determined by a court to arise from {vendor_role}'s willful misconduct."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MSA-R003-DEFINED-DELIVERABLES",
+      "rule_id": "R-003",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, including project-specific tools, frameworks, and know-how developed in the course of performance.",
+        "mutated_text": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MSA-R004-DEFINED-INCIDENT",
+      "rule_id": "R-004",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Security Incident\" means any suspected or actual unauthorized access to, acquisition of, use of, loss of, or disclosure of Customer Data.",
+        "mutated_text": "\"Security Incident\" means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by {vendor_role}'s incident response lead."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MSA-R004-DIRECT-NOTICE",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "6",
+      "templates": {
+        "original_text": "{vendor_role} will notify {customer_role} without undue delay and in any event within 72 hours after discovering a Security Incident.",
+        "mutated_text": "{vendor_role} will give written alert within {notice_period} after its incident lead confirms a Security Incident."
+      },
+      "slots": {
+        "notice_period": ["ten business days", "thirty business days", "forty-five days"]
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MSA-R005-DIRECT-DATA",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "5",
+      "templates": {
+        "original_text": "{vendor_role} will process Customer Data only to provide and support the services, to comply with {customer_role}'s documented instructions, and as otherwise expressly authorized in an Order Form.",
+        "mutated_text": "{vendor_role} may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "MSA-R006-CROSS-EXIT-FEE",
+      "rule_id": "R-006",
+      "mechanism": "cross_ref_override",
+      "section": "12",
+      "templates": {
+        "original_text": "If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay only accrued, undisputed fees and approved reimbursable expenses incurred before the effective date.",
+        "mutated_text": "If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay an exit charge equal to the full unpaid balance for that Order Form."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MSA-R007-DIRECT-RENEWAL",
+      "rule_id": "R-007",
+      "mechanism": "direct_term_swap",
+      "section": "10",
+      "templates": {
+        "original_text": "Each Order Form has the initial term stated in it and will not automatically extend unless {customer_role} signs a renewal order or gives written approval for a renewal period of one year or less.",
+        "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of {renewal_years} years each unless either party sends non-continuation notice at least {notice_days} days before the current period ends."
+      },
+      "slots": {
+        "renewal_years": ["two", "three", "five"],
+        "notice_days": ["120", "180", "210"]
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MSA-R008-CROSS-DISCLAIMER",
+      "rule_id": "R-008",
+      "mechanism": "cross_ref_override",
+      "section": "15",
+      "templates": {
+        "original_text": "This disclaimer does not limit {vendor_role}'s confidentiality duties, data handling duties, indemnities, service-level commitments, or remedies expressly stated in this Agreement.",
+        "mutated_text": "This disclaimer applies despite any express warranty, service commitment, indemnity, confidentiality obligation, data handling obligation, or remedy stated elsewhere in this Agreement."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MSA-R009-DIRECT-AMENDMENT",
+      "rule_id": "R-009",
+      "mechanism": "direct_term_swap",
+      "section": "18",
+      "templates": {
+        "original_text": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.",
+        "mutated_text": "{vendor_role} may modify service terms, acceptable use limits, and other online policies by posting an updated version to its website, effective upon posting."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "MSA-R010-DIRECT-ASSIGNMENT",
+      "rule_id": "R-010",
+      "mechanism": "direct_term_swap",
+      "section": "18",
+      "templates": {
+        "original_text": "Neither party may assign this Agreement without the other party's prior written consent, except to an affiliate or successor in connection with a merger, reorganization, or sale of substantially all assets if the assignee assumes the assigning party's obligations.",
+        "mutated_text": "{vendor_role} may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without {customer_role}'s consent."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MSA-R011-DIRECT-INSURANCE",
+      "rule_id": "R-011",
+      "mechanism": "direct_term_swap",
+      "section": "17",
+      "templates": {
+        "original_text": "{vendor_role} will maintain commercially reasonable insurance at its own expense, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence.",
+        "mutated_text": "{vendor_role} will maintain insurance it determines is commercially reasonable, including general liability coverage of at least ${gl_limit} per occurrence if available on commercially reasonable terms."
+      },
+      "slots": {
+        "gl_limit": ["250,000", "500,000", "1,000,000"]
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MSA-R012-OMISSION-AUDIT",
+      "rule_id": "R-012",
+      "mechanism": "omission",
+      "section": "17",
+      "templates": {
+        "original_text": "Upon reasonable notice, {customer_role} or its independent auditor may review {vendor_role}'s records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause.",
+        "mutated_text": "{vendor_role} will provide its then-current standard security summary upon written request no more than once per year."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "MSA-R013-OMISSION-SUBCONTRACTORS",
+      "rule_id": "R-013",
+      "mechanism": "omission",
+      "section": "7",
+      "templates": {
+        "original_text": "{vendor_role} may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work and binds each service partner to written obligations at least as protective as {vendor_role}'s obligations for Customer Data, confidentiality, security, and service performance.",
+        "mutated_text": "{vendor_role} may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work as if performed by {vendor_role}."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    }
+  ]
+}
+
