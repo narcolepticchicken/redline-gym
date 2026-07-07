@@ -1,7 +1,18 @@
 {
-  "score": 8,
-  "weakest": [
-    "Section 4: 'may change operational controls without notice if the overall service remains available' uses an awkward conditional structure that reads as ambiguous rather than professionally precise.",
-    "Section 6: 'Vendor will provide internal onboarding materials to personnel assigned to the service' is a vague, non-committal statement under a 'Personnel Confidentiality' heading, lacking a clear obligation (e.g., confidentiality, training) expected in this register."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
 }

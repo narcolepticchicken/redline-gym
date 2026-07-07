@@ -1,1 +1,18 @@
-{"score":9,"weakest":["Compelled disclosure notice phrasing is slightly awkward ('endeavor to notify Discloser of the disclosure thereafter'), but does not break overall coherence."]}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 to 13 sequentially, no internal cross-references to resolve.",
+    "q2": "\"Confidential Information\" means information disclosed... (defined in §1); \"Recipient may use Confidential Information\" (consistent usage in §2).",
+    "q3": "\"within ninety days\" (§8) and \"for two years\" (§9) provide precise time periods.",
+    "q4": "\"Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions.\" (modern register, no archaic diction).",
+    "q5": "\"All Confidential Information remains the property of Discloser.\" (grammatically intact, no contradiction).",
+    "q6": "Consistent register: \"Recipient may use Confidential Information...\" (§2) and \"Recipient will protect Confidential Information using the same degree of care...\" (§4)."
+  }
+}

@@ -1,9 +1,9 @@
 {
   "found": [
     {
-      "quote": "Vendor will process Personal Data only on documented instructions from Customer, including this DPA, the master services agreement, order forms, and written directions from authorized Customer personnel.",
+      "quote": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer",
       "rule_id": "R-001",
-      "section": "3"
+      "section": "5"
     },
     {
       "quote": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.",
@@ -11,17 +11,12 @@
       "section": "4"
     },
     {
-      "quote": "Retained copies required by law or archival controls remain subject to this DPA until deleted.",
-      "rule_id": "R-007",
-      "section": "11"
-    },
-    {
       "quote": "Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service.",
       "rule_id": "R-010",
       "section": "6"
     },
     {
-      "quote": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
+      "quote": "'Personal Data' means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
       "rule_id": "R-011",
       "section": "2"
     },

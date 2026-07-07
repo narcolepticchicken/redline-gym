@@ -1,18 +1,44 @@
 {
-  "median": 8,
-  "scores": [
-    8,
-    8,
-    7
-  ],
-  "spread": 1,
-  "weakest_union": [
-    "Section 1 contains a drafting error: the phrase 'records normalization, normalization' duplicates 'normalization', diminishing professional polish.",
-    "Section 1 contains a repetitive phrase: 'hosted records normalization, normalization, mapping, and workflow services.' The doubled 'normalization' is an obvious typo that disrupts professional register.",
-    "Section 6 is titled 'Notice Regarding Protected Records' but uses the defined term 'Security Incident' in its body without defining 'Protected Records' anywhere in the agreement, creating a minor inconsistency in terminology.",
-    "Section 12 presents an unclear interaction: transition assistance is offered at Vendor's rates, but the next sentence states that if Customer terminates without Vendor default, Customer pays only accrued fees and approved expenses. This could be read as conflicting on whether transition assistance fees apply, reducing structural clarity.",
-    "Section 1 contains a drafting error with repeated \"normalization\" (\"hosted records normalization, normalization, mapping...\") that makes the prose less professional.",
-    "Section 6 heading \"Notice Regarding Protected Records\" uses an undefined term and is inconsistent with the defined term \"Security Incident\" used throughout the section.",
-    "Section 15 refers to \"service-level commitments\" as if they are expressly stated in the Agreement, but no such commitments appear, creating a dangling cross-reference."
-  ]
+  "failing_evidence": {},
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 6,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q3": {
+      "no_votes": 1,
+      "passed": true,
+      "yes_votes": 2
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
 }

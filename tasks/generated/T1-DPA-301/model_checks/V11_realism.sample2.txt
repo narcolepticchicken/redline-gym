@@ -1,1 +1,18 @@
-{"score":9,"weakest":["Definition of 'Personal Data' includes a slightly awkward and circular clause 'to the extent such data relates to a person, household, device, customer account, or customer dataset' that reads as added-on rather than fully integrated."]}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "",
+    "q3": "promptly notify",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

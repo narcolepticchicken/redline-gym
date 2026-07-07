@@ -1,7 +1,18 @@
 {
-  "score": 7,
-  "weakest": [
-    "Section 6 (Personnel Confidentiality) imposes no confidentiality duty and instead contains a non-sequitur about providing internal onboarding materials, creating a structural incoherence with its heading.",
-    "Section 7 (Subprocessors) uses the informal phrase 'courtesy update' which departs from formal contract register and reads as unnatural phrasing."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Roles and Scope ... 2. Definitions ... 15. Term and Transition Assistance",
+    "q2": "Section 1: 'For personal data processed under this DPA, Customer acts as controller or business' Section 2: '\"Personal Data\" means information relating to an identified or identifiable person'",
+    "q3": "promptly inform Customer (Section 3)",
+    "q4": "entered into by and between",
+    "q5": "Vendor will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data",
+    "q6": "Section 1: 'Customer acts as controller or business', Section 15: 'This DPA begins with the first Processing of Personal Data'"
+  }
 }

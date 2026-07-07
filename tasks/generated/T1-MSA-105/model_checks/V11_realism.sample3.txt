@@ -1,1 +1,18 @@
-{"score":7,"weakest":["Section 1 contains a drafting error with repeated \"normalization\" (\"hosted records normalization, normalization, mapping...\") that makes the prose less professional.","Section 6 heading \"Notice Regarding Protected Records\" uses an undefined term and is inconsistent with the defined term \"Security Incident\" used throughout the section.","Section 15 refers to \"service-level commitments\" as if they are expressly stated in the Agreement, but no such commitments appear, creating a dangling cross-reference."]}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+    "q2": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Security Incident.",
+    "q3": "in any event within 72 hours after discovering a Security Incident",
+    "q4": "Vendor will provide hosted records normalization, normalization, mapping, and workflow services",
+    "q5": "Except for express warranties and commitments stated in this Agreement or an Order Form, Vendor disclaims implied warranties, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement.",
+    "q6": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms."
+  }
+}

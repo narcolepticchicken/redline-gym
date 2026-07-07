@@ -1,1 +1,18 @@
-{"score":3,"weakest":["The definition of 'Processing' is narrowly limited to live hosting of raw records, contradicting the broad scope statement in Section 1 and rendering many operative obligations inapplicable to key data-handling activities such as diagnostics or metric creation, creating severe internal incoherence.","Section 6 is titled 'Personnel Confidentiality' but fails to impose any confidentiality obligation on personnel; it only requires access limitation and provision of onboarding materials, resulting in a material misalignment between heading and content.","The use of the informal phrase 'courtesy update' in Section 7 deviates from professional drafting register.","Section 5 contains an internal contradiction: it permits processing to 'improve the services' but simultaneously prohibits use for 'product development', a common form of service improvement, leaving the scope unclear.","The breach notice clause (Section 8) ties the 10-business-day deadline to an undefined internal 'confirmation and executive review' process, making the notice trigger subjective and the timeline effectively open-ended, which undermines coherence."]}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Roles and Scope\n2. Definitions\n3. Documented Instructions\n... 15. Term and Transition Assistance",
+    "q2": "Section 2: “Personal Data” means …, “Processing” means …, “Personal Data Breach” means …; Section 5: “Vendor will process Personal Data only to provide, secure, support, and improve the services…”",
+    "q3": "Section 8: “Vendor will send an initial written alert within 10 business days …”; Section 11: “…vendor will return or delete Personal Data … within 30 days …”; Section 15: “For up to 30 days after termination…”",
+    "q4": "",
+    "q5": "",
+    "q6": "Section 3: “Vendor will process Personal Data only on documented instructions from Customer …”; Section 10: “Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary …”"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "found": [
     {
-      "quote": "information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within ten days after disclosure.",
+      "quote": "Confidential Information means information disclosed by or on behalf of a Discloser that bears a restricted legend when provided or is later identified in a written follow-up delivered within ten days after disclosure.",
       "rule_id": "R-001",
       "section": "1"
     },
@@ -9,6 +9,11 @@
       "quote": "Confidential Information does not include information that Recipient reasonably understands was already known, becomes available from any source, or can be used in Recipient's ordinary business without reference to the disclosed materials.",
       "rule_id": "R-003",
       "section": "6"
+    },
+    {
+      "quote": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "rule_id": "R-005",
+      "section": "4"
     },
     {
       "quote": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
@@ -21,7 +26,7 @@
       "section": "8"
     },
     {
-      "quote": "Confidentiality obligations expire two years after each disclosure, except trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
+      "quote": "Confidentiality obligations expire two years after each disclosure",
       "rule_id": "R-009",
       "section": "9"
     },

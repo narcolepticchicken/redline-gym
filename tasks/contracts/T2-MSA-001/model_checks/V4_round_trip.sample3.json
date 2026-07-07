@@ -1,9 +1,9 @@
 {
   "found": [
     {
-      "quote": "Vendor will defend and indemnify Customer against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that Vendor's performance violates applicable law.",
-      "rule_id": "R-002",
-      "section": "14"
+      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence",
+      "rule_id": "R-001",
+      "section": "16"
     },
     {
       "quote": "Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident.",
@@ -11,14 +11,14 @@
       "section": "6"
     },
     {
-      "quote": "Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form.",
+      "quote": "Vendor will comply with laws applicable to Vendor's provision of the services.",
       "rule_id": "R-005",
       "section": "5"
     },
     {
-      "quote": "Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date.",
+      "quote": "If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form.",
       "rule_id": "R-006",
-      "section": "11"
+      "section": "12"
     },
     {
       "quote": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 180 days before the current period ends.",

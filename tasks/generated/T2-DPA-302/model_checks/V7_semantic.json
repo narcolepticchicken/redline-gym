@@ -1,10 +1,10 @@
 {
   "gaps": [
-    "The definition of 'Processing' excludes diagnostic review, metric creation, cache retention, format conversion, and support troubleshooting, leaving personal data handling in those activities unprotected by the DPA.",
-    "Subprocessor use lacks mandatory prior consent, objection rights, and written obligations that are at least as protective as the DPA.",
-    "Vendor responsibility for subprocessors is limited to 'service availability' and does not extend to data protection breaches or compliance.",
-    "Personnel confidentiality duties are not required; only provision of internal onboarding materials is mentioned.",
-    "Breach notification timeline is not linked to discovery and could be delayed indefinitely due to the requirement for internal confirmation and executive review.",
-    "The DPA provides no customer audit or inspection rights, even for cause; it limits verification to an annual SOC 2 report and questionnaires, with further review blocked unless Vendor agrees."
+    "Processing definition narrowly scoped to raw record hosting, excluding activities like metric creation, cache retention, and support troubleshooting from DPA protections.",
+    "Subprocessor management lacks customer approval or objection rights, mandatory pass-through data protection obligations, and full vendor liability for subprocessor acts.",
+    "Breach notification timeline is not tied to discovery and allows up to 10 business days after internal confirmation, failing the 48-hour standard.",
+    "No audit or inspection right for cause or material incident; annual SOC 2 blocks further control review without vendor consent.",
+    "No requirement that personnel handling personal data are subject to binding confidentiality obligations.",
+    "Personal Data definition does not explicitly exclude irreversibly anonymized data, leaving processing boundaries ambiguous."
   ]
 }

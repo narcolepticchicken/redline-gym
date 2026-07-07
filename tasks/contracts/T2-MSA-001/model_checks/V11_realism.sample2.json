@@ -1,8 +1,18 @@
 {
-  "score": 5,
-  "weakest": [
-    "Section 16 contains a direct internal contradiction: it first excludes confidentiality and indemnification claims from the liability cap, then states that all recovery for Section 13 or Section 14 claims is limited to the cap.",
-    "The definition of 'Security Incident' requires a completed written forensic report approved by Vendor's incident response lead, imposing a condition that renders the notice obligation practically inoperative and disrupts the structural coherence of the breach notification section.",
-    "Section 6 uses 'give written alert' instead of the standard drafting register term 'give written notice,' a minor anomaly."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Cross-reference resolves: 'Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.' (Section 16).",
+    "q2": "Term 'Security Incident' defined in Section 2 and used consistently in Section 6: 'after its incident lead confirms a Security Incident.'",
+    "q3": "No vague time/quantity phrasing; e.g., Section 6 uses precise 'within thirty business days'.",
+    "q4": "No archaic diction; modern phrasing like 'No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.' (Section 18).",
+    "q5": "No internal contradiction or broken grammar; e.g., Section 5: 'Vendor will process Customer Data only to provide and support the services...' is clear and grammatical.",
+    "q6": "Register consistent throughout; e.g., Section 2 and Section 17 both maintain same formal commercial legal style."
+  }
 }

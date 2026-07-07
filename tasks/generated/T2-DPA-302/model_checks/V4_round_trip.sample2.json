@@ -1,6 +1,16 @@
 {
   "found": [
     {
+      "quote": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "rule_id": "R-001",
+      "section": "2"
+    },
+    {
+      "quote": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "rule_id": "R-002",
+      "section": "2"
+    },
+    {
       "quote": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
       "rule_id": "R-003",
       "section": "7"

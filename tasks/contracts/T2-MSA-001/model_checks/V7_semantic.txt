@@ -1,1 +1,1 @@
-{"gaps":["Hosting location and cross-border transfer basis","Data deletion and certified deletion at exit"]}
+{"gaps":["Hosting location and cross-border transfer basis for personal data","Certified deletion evidence at exit"]}

@@ -1,7 +1,18 @@
 {
-  "score": 6,
-  "weakest": [
-    "Clause 10 grants a right to keep and apply generalized ideas, techniques, and know-how, while Clause 12 expressly denies any right to use residual knowledge, unaided memory, or retained impressions unless approved in writing, creating a direct internal contradiction that undermines structural coherence.",
-    "Clause 5 permits disclosure without advance notice or protective steps 'unless counsel determines those steps are necessary,' but fails to state the consequence of that determination (e.g., whether notice or protective measures then become mandatory), introducing drafting ambiguity."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1-13 numbered sequentially; no cross-references that require resolution.",
+    "q2": "Term 'Representatives' is capitalized and used in Section 2 but never defined.",
+    "q3": "No vague time/quantity phrasing; examples: 'within five days', '15 days', 'two years', 'three years'.",
+    "q4": "No archaic or out-of-register legal diction (e.g., no hereby, wherefore, witnesseth).",
+    "q5": "No sentence reads as internally contradictory or grammatically broken.",
+    "q6": "Register is consistent throughout; no section reads like a different author."
+  }
 }

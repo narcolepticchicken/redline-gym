@@ -1,8 +1,1 @@
-{"gaps": [
-  "No authorization for Vendor to process Personal Data to comply with legal obligations absent Customer instructions",
-  "Security measures are vague ('commercially suitable') without required technical safeguards (encryption, access controls, logging, vulnerability management, incident response)",
-  "Vendor may change operational controls without notice, undermining customer oversight",
-  "Personnel access not conditioned on confidentiality obligations; only onboarding materials required",
-  "Personal Data definition excludes derived, pseudonymized, aggregated, telemetry, log, and usage data, creating a de-identification loophole",
-  "Liability cap for data protection breaches limited to 3 months' fees and consequential damages excluded, not aligned with MSA cap"
-]}
+{"gaps":["Lack of coverage for pseudonymized, aggregated, derived, telemetry, and usage data created from customer personal data","Absence of specified technical and organizational security measures (e.g., encryption at rest and in transit, access controls, logging, vulnerability management, incident response)","Missing requirement that personnel accessing personal data be subject to confidentiality obligations"]}

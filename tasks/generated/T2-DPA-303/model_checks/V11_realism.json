@@ -1,16 +1,44 @@
 {
-  "median": 8,
-  "scores": [
-    8,
-    8,
-    8
-  ],
-  "spread": 0,
-  "weakest_union": [
-    "Section 4: 'may change operational controls without notice if the overall service remains available' uses an awkward conditional structure that reads as ambiguous rather than professionally precise.",
-    "Section 6: 'Vendor will provide internal onboarding materials to personnel assigned to the service' is a vague, non-committal statement under a 'Personnel Confidentiality' heading, lacking a clear obligation (e.g., confidentiality, training) expected in this register.",
-    "Section 6 (Personnel Confidentiality) is internally incoherent: it omits any confidentiality obligation, and the sole substantive clause\u2014providing internal onboarding materials\u2014is irrelevant to confidentiality, leaving the section disconnected from its heading.",
-    "Section 6: Heading 'Personnel Confidentiality' promises confidentiality but the body only limits access and mentions onboarding materials, with no confidentiality duties imposed, creating internal incoherence.",
-    "Section 14: The phrase 'consequential loss is unavailable' is an unnatural drafting-register anomaly; typical phrasing would exclude 'consequential damages' or 'consequential losses'."
-  ]
+  "failing_evidence": {},
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 6,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 1,
+      "passed": true,
+      "yes_votes": 2
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
 }

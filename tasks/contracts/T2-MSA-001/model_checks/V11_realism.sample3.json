@@ -1,6 +1,18 @@
 {
-  "score": 7,
-  "weakest": [
-    "Section 18 states that all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16, but Section 16 expressly excludes breaches of confidentiality (Section 13) and indemnification obligations (Section 14) from its liability cap. This direct, irreconcilable internal contradiction undermines structural coherence."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section numbering runs 1\u201318 sequentially; cross-reference 'all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16' resolves correctly.",
+    "q2": "Defined terms 'Customer Data', 'Deliverables', 'Vendor Methods', and 'Security Incident' are defined once in Section 2 and used consistently throughout (e.g., 'Customer Data' in Sections 5, 6, etc.).",
+    "q3": "All time/quantity expressions are specific (e.g., 'thirty days', 'forty-five days', 'three years', '180 days', 'ten percent per month or the highest rate allowed by law') and no vague phrases like 'reasonable while' or 'next quarter' appear.",
+    "q4": "No archaic legal diction (no 'witnesseth', 'hereby', 'whereas', etc.); phrasing like 'in a professional and workmanlike manner' is standard modern commercial register.",
+    "q5": "Every sentence is grammatically well\u2011formed and not internally contradictory; for example, the long liability sentence and the final 'Despite any contrary sentence' sentence are coherent.",
+    "q6": "Register is uniform across all sections; the same clean, modern commercial English is used from Section 1 through Section 18 without a shift in authorial voice."
+  }
 }

@@ -5,6 +5,11 @@
       "quote": "Retained copies required by law or archival controls remain subject to this DPA until deleted.",
       "rule_id": "R-007",
       "section": "11"
+    },
+    {
+      "quote": "including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
+      "rule_id": "R-011",
+      "section": "2"
     }
   ]
 }

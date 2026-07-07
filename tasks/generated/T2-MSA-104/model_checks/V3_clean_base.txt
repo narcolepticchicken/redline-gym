@@ -1,1 +1,25 @@
-{"verdict":"FAIL","violations":[{"rule_id":"R-007","section":"10","quote":"Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."}]}
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "rule_id": "R-001",
+      "section": "16",
+      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability arising out of or relating to this Agreement will not exceed the fees paid or payable under the affected Order Form during the twelve months before the event giving rise to the claim."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "5",
+      "quote": "Vendor will comply with laws applicable to Vendor's provision of the services."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "10",
+      "quote": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."
+    },
+    {
+      "rule_id": "R-008",
+      "section": "15",
+      "quote": "This disclaimer does not limit Vendor's confidentiality duties, data handling duties, indemnities, service-level commitments, or remedies expressly stated in this Agreement."
+    }
+  ]
+}

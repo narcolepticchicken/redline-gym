@@ -1,6 +1,18 @@
 {
-  "score": 6,
-  "weakest": [
-    "Section 10 permits the receiving side to keep and apply generalized ideas and know-how from the disclosed materials, while Section 12 expressly denies the right to use residual knowledge or unaided memory unless approved in writing, creating a direct internal contradiction."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
 }

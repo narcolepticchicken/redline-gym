@@ -1,1 +1,18 @@
-{"score":10,"weakest":[]}
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "\"Personal Data Breach\" means a suspected or actual breach... is defined but never used in any subsequent clause.",
+    "q3": "\"on its ordinary operations schedule\" in Section 10 is a vague time reference.",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

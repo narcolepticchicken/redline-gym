@@ -1,9 +1,14 @@
 {
   "found": [
     {
-      "quote": "\"Confidential Information\" means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure.",
+      "quote": "'Confidential Information' means information disclosed by or on behalf of a Discloser that is marked confidential at the time of disclosure or confirmed as confidential in writing within ten days after disclosure.",
       "rule_id": "R-001",
       "section": "1"
+    },
+    {
+      "quote": "Confidential Information does not include information that Recipient can document was known to Recipient without restriction before disclosure, becomes public through no breach of this Agreement, is independently developed without use of Confidential Information, or is received from a third party without breach of a duty to Discloser.",
+      "rule_id": "R-003",
+      "section": "6"
     },
     {
       "quote": "Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions.",
@@ -16,7 +21,7 @@
       "section": "4"
     },
     {
-      "quote": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, \"Representatives\") who have a need to know the information for the Purpose.",
+      "quote": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers (collectively, 'Representatives') who have a need to know the information for the Purpose.",
       "rule_id": "R-006",
       "section": "3"
     },

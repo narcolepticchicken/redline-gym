@@ -6,11 +6,6 @@
       "section": "4"
     },
     {
-      "quote": "Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards.",
-      "rule_id": "R-007",
-      "section": "15"
-    },
-    {
       "quote": "Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service.",
       "rule_id": "R-010",
       "section": "6"

@@ -1,15 +1,1 @@
-{
-  "verdict": "FAIL",
-  "violations": [
-    {
-      "rule_id": "R-007",
-      "section": "5",
-      "quote": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment."
-    },
-    {
-      "rule_id": "R-012",
-      "section": "12",
-      "quote": "No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing."
-    }
-  ]
-}
+{"verdict":"PASS","violations":[]}

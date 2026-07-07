@@ -19,6 +19,11 @@
       "quote": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping.",
       "rule_id": "R-008",
       "section": "8"
+    },
+    {
+      "quote": "Residual Rights: No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.",
+      "rule_id": "R-012",
+      "section": "12"
     }
   ]
 }

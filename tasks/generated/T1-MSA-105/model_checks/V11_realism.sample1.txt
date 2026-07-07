@@ -1,1 +1,18 @@
-{"score":8,"weakest":["Section 1 contains a drafting error: the phrase 'records normalization, normalization' duplicates 'normalization', diminishing professional polish."]}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+    "q2": "Customer Data means information, files, records, identifiers, and other content submitted to the service by or for Customer or generated from Customer's use of the service.",
+    "q3": "Vendor will notify Customer without undue delay",
+    "q4": "Each party will protect the other party's non-public business, technical, financial, and product information using at least reasonable care",
+    "q5": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.",
+    "q6": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14."
+  }
+}

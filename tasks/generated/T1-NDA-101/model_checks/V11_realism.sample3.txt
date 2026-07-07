@@ -1,1 +1,1 @@
-{"score": 8, "weakest": ["Section 6's exclusion language is unusually vague and not drafted in standard legal prose; 'reasonably understands was already known' and 'becomes available from any source' lack necessary qualifiers, introducing ambiguity and drafting-register inconsistency."]}
+{"answers":{"q1":true,"q2":false,"q3":false,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"","q2":"Recipient may disclose Confidential Information to Representatives only on a need-to-know basis","q3":"provide prompt notice","q4":"","q5":"","q6":""}}

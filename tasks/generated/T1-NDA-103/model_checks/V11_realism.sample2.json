@@ -1,7 +1,18 @@
 {
-  "score": 7,
-  "weakest": [
-    "Section 6 exclusion clause uses inconsistent grammatical structures and a subjective 'reasonably understands' standard, reducing professional register",
-    "Section 10 uses 'sentence' rather than 'provision', a minor drafting anomaly"
-  ]
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "Recipient may disclose Confidential Information to Representatives only on a need-to-know basis,",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
 }

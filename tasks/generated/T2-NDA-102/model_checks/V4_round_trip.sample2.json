@@ -11,6 +11,11 @@
       "section": "2"
     },
     {
+      "quote": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "rule_id": "R-005",
+      "section": "4"
+    },
+    {
       "quote": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary.",
       "rule_id": "R-007",
       "section": "5"
@@ -21,14 +26,14 @@
       "section": "8"
     },
     {
-      "quote": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
+      "quote": "The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
       "rule_id": "R-010",
       "section": "10"
     },
     {
-      "quote": "The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
+      "quote": "No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.",
       "rule_id": "R-012",
-      "section": "10"
+      "section": "12"
     }
   ]
 }

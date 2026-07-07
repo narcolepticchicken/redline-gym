@@ -11,9 +11,14 @@
       "section": "2"
     },
     {
-      "quote": "'Purpose' means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties.",
+      "quote": "Purpose means evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot between the parties.",
       "rule_id": "R-004",
       "section": "1"
+    },
+    {
+      "quote": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "rule_id": "R-005",
+      "section": "4"
     },
     {
       "quote": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary.",
@@ -28,11 +33,6 @@
     {
       "quote": "The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
       "rule_id": "R-010",
-      "section": "10"
-    },
-    {
-      "quote": "The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
-      "rule_id": "R-012",
       "section": "10"
     }
   ]

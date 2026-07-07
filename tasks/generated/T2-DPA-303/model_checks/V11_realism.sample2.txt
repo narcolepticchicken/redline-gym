@@ -1,1 +1,1 @@
-{"score": 8, "weakest": ["Section 6 (Personnel Confidentiality) is internally incoherent: it omits any confidentiality obligation, and the sole substantive clause—providing internal onboarding materials—is irrelevant to confidentiality, leaving the section disconnected from its heading."]}
+{"answers":{"q1":true,"q2":false,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"","q2":"Section 1 uses 'personal data' lowercase while the defined term is 'Personal Data' (capitalized) in Section 2","q3":"","q4":"","q5":"","q6":""}}

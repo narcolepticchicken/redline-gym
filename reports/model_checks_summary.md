@@ -1,15 +1,15 @@
 # Model Checks Summary
 
-| Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 median (spread) |
+| Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 register |
 |---|---|---:|---|---:|---|---|
-| tasks/contracts/T1-NDA-001 | PASS | 6/6 | PASS | 0 | PASS | 9.0 (0) |
-| tasks/contracts/T2-MSA-001 | FAIL | 5/7 | PASS | 2 | PASS | 5.0 (2) |
-| tasks/generated/T1-DPA-301 | FAIL | 4/4 | PASS | 1 | FAIL | 10.0 (1) |
-| tasks/generated/T1-MSA-105 | FAIL | 4/4 | PASS | 2 | PASS | 8.0 (1) |
-| tasks/generated/T1-NDA-101 | FAIL | 4/4 | PASS | 1 | PASS | 7.0 (2) |
-| tasks/generated/T1-NDA-103 | PASS | 4/4 | PASS | 2 | PASS | UNSTABLE 7.0 (5) |
-| tasks/generated/T2-DPA-302 | FAIL | 5/5 | PASS | 1 | PASS | UNSTABLE 4.0 (4) |
-| tasks/generated/T2-DPA-303 | PASS | 5/5 | PASS | 0 | FAIL | 8.0 (0) |
-| tasks/generated/T2-MSA-104 | FAIL | 3/5 | PASS | 2 | PASS | 6.0 (1) |
-| tasks/generated/T2-MSA-106 | FAIL | 4/5 | PASS | 1 | PASS | UNSTABLE 10.0 (3) |
-| tasks/generated/T2-NDA-102 | FAIL | 5/5 | PASS | 1 | PASS | UNSTABLE 6.0 (4) |
+| tasks/contracts/T1-NDA-001 | PASS | 6/6 | PASS | 0 | PASS | V11 reg 6/6 failing none |
+| tasks/contracts/T2-MSA-001 | FAIL | 4/7 | FAIL | 1 | PASS | V11 reg 6/6 failing none |
+| tasks/generated/T1-DPA-301 | FAIL | 4/4 | PASS | 0 | PASS | V11 reg 4/6 failing q2,q3 |
+| tasks/generated/T1-MSA-105 | FAIL | 4/4 | PASS | 4 | PASS | V11 reg 6/6 failing none |
+| tasks/generated/T1-NDA-101 | FAIL | 4/4 | PASS | 1 | PASS | V11 reg 5/6 failing q2 |
+| tasks/generated/T1-NDA-103 | PASS | 4/4 | PASS | 2 | PASS | V11 reg 5/6 failing q2 |
+| tasks/generated/T2-DPA-302 | FAIL | 5/5 | PASS | 1 | PASS | V11 reg 5/6 failing q3 |
+| tasks/generated/T2-DPA-303 | PASS | 4/5 | PASS | 0 | FAIL | V11 reg 6/6 failing none |
+| tasks/generated/T2-MSA-104 | FAIL | 3/5 | PASS | 2 | PASS | V11 reg 6/6 failing none |
+| tasks/generated/T2-MSA-106 | FAIL | 4/5 | PASS | 1 | PASS | V11 reg 6/6 failing none |
+| tasks/generated/T2-NDA-102 | PASS | 5/5 | PASS | 1 | PASS | V11 reg 5/6 failing q2 |

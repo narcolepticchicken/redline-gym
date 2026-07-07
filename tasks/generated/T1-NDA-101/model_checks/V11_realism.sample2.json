@@ -1,8 +1,18 @@
 {
-  "score": 6,
-  "weakest": [
-    "Section 6 Exclusions uses vague, non-standard phrasing ('reasonably understands was already known', 'becomes available from any source', 'can be used in Recipient's ordinary business without reference') that undermines clarity and professional register.",
-    "Section 3 uses the undefined term 'Representatives', creating structural incoherence and ambiguity.",
-    "Section 8 Return or Destruction carves out 'ordinary business recordkeeping' without defining scope or continuing obligations, creating internal tension with the obligation to return or destroy."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
 }

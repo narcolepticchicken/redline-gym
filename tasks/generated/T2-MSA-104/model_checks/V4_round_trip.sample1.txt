@@ -1,14 +1,14 @@
 {
   "found": [
     {
-      "rule_id": "R-001",
-      "section": "16",
-      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability arising out of or relating to this Agreement will not exceed the fees paid or payable under the affected Order Form during the twelve months before the event giving rise to the claim."
-    },
-    {
       "rule_id": "R-002",
       "section": "14",
       "quote": "Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "5",
+      "quote": "Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form."
     },
     {
       "rule_id": "R-006",
@@ -18,7 +18,7 @@
     {
       "rule_id": "R-007",
       "section": "10",
-      "quote": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."
+      "quote": "Each Order Form has the initial term stated in it"
     },
     {
       "rule_id": "R-011",

@@ -1,20 +1,49 @@
 {
-  "median": 4,
-  "scores": [
-    7,
-    3,
-    4
-  ],
-  "spread": 4,
-  "weakest_union": [
-    "Section 6 (Personnel Confidentiality) imposes no confidentiality duty and instead contains a non-sequitur about providing internal onboarding materials, creating a structural incoherence with its heading.",
-    "Section 7 (Subprocessors) uses the informal phrase 'courtesy update' which departs from formal contract register and reads as unnatural phrasing.",
-    "The definition of 'Processing' is narrowly limited to live hosting of raw records, contradicting the broad scope statement in Section 1 and rendering many operative obligations inapplicable to key data-handling activities such as diagnostics or metric creation, creating severe internal incoherence.",
-    "Section 6 is titled 'Personnel Confidentiality' but fails to impose any confidentiality obligation on personnel; it only requires access limitation and provision of onboarding materials, resulting in a material misalignment between heading and content.",
-    "The use of the informal phrase 'courtesy update' in Section 7 deviates from professional drafting register.",
-    "Section 5 contains an internal contradiction: it permits processing to 'improve the services' but simultaneously prohibits use for 'product development', a common form of service improvement, leaving the scope unclear.",
-    "The breach notice clause (Section 8) ties the 10-business-day deadline to an undefined internal 'confirmation and executive review' process, making the notice trigger subjective and the timeline effectively open-ended, which undermines coherence.",
-    "Section 6 (Personnel Confidentiality) does not impose any confidentiality obligation; it merely limits access and states Vendor will provide internal onboarding materials, making it incoherent relative to its title and purpose.",
-    "Section 7 (Subprocessors) uses the informal, non-standard phrase 'courtesy update' and limits Vendor's responsibility to service availability rather than subprocessor compliance, which is a drafting-register anomaly and structural incoherence."
-  ]
+  "failing_evidence": {
+    "q3": [
+      "promptly inform Customer (Section 3)",
+      "Vendor will promptly notify Customer"
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 1,
+      "passed": true,
+      "yes_votes": 2
+    },
+    "q3": {
+      "no_votes": 2,
+      "passed": false,
+      "yes_votes": 1
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
 }

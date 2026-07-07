@@ -1,7 +1,9 @@
 {
   "gaps": [
-    "Data protection and privacy obligations (e.g., compliance with applicable data protection laws, security measures, data subject rights, cross-border restrictions, breach notification)",
-    "Requirement that Representatives be bound by confidentiality duties at least as protective as the NDA",
-    "Prompt pre-disclosure notice and cooperation obligation for compelled disclosures"
+    "No requirement that Representatives be bound by written or professional confidentiality obligations at least as protective as the Agreement",
+    "No minimum reasonable care standard for protecting Confidential Information; only a 'same degree of care as own similar information' obligation",
+    "Exclusions do not expressly require that prior knowledge or third-party receipt be lawful or without restriction",
+    "No obligation on the Recipient to cooperate with Discloser in seeking protective treatment for compelled disclosures; only an endeavor to provide notice thereafter",
+    "No provisions addressing personal data protection, security measures, breach notification, or compliance with applicable privacy laws despite the exchange and processing of end-user personal data"
   ]
 }

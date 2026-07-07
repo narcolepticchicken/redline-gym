@@ -1,1 +1,15 @@
-{"verdict":"FAIL","violations":[{"rule_id":"R-002","section":"14","quote":"Vendor will defend and indemnify Customer against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that Vendor's performance violates applicable law."},{"rule_id":"R-005","section":"5","quote":"Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form."},{"rule_id":"R-007","section":"10","quote":"Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."}]}
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "rule_id": "R-005",
+      "section": "5. Data Handling",
+      "quote": "Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "10. Term and Extension",
+      "quote": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."
+    }
+  ]
+}

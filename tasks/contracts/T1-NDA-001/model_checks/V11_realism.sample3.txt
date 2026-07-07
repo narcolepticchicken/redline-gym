@@ -1,7 +1,1 @@
-{
-  "score": 9,
-  "weakest": [
-    "Definition of 'Purpose' appears in Section 1 (Confidential Information) rather than in Section 2 (Purpose and Use), creating a minor structural inconsistency in defined term placement.",
-    "The phrase 'will not intentionally disclose' in Section 4 is a slight departure from standard non-disclosure language, introducing an unnatural modifier that is rarely seen in professional NDA drafting."
-  ]
-}
+{"answers":{"q1":true,"q2":true,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"Sections numbered 1 through 13 sequentially; no internal cross-references to break","q2":"'Confidential Information' defined once in Section 1 and used consistently","q3":"Specific periods like 'ten days', 'ninety days', 'two years', 'three years' with no vague language","q4":"No archaic terms; uses modern commercial language like 'endeavor' which is acceptable","q5":"All sentences are grammatically complete and non-contradictory","q6":"Uniform plain English register across all sections"}}

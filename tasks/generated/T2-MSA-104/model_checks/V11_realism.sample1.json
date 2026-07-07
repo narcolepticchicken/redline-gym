@@ -1,8 +1,18 @@
 {
-  "score": 6,
-  "weakest": [
-    "Section 1 services description repeats 'normalization' ('hosted records normalization, normalization, mapping'), a clear drafting typo.",
-    "Section 7 heading uses 'Protected Records', an undefined term not present in Section 2 definitions, creating ambiguity.",
-    "Section 18's 'Despite any contrary sentence' clause limits recovery for Section 13 and Section 14 claims to the Section 16 cap, directly contradicting Section 16's explicit exclusion of confidentiality and indemnification obligations from that cap."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "",
+    "q3": "",
+    "q4": "",
+    "q5": "hosted records normalization, normalization, mapping, and workflow services",
+    "q6": ""
+  }
 }

@@ -1,7 +1,18 @@
 {
-  "score": 7,
-  "weakest": [
-    "Section 15's second sentence directly conflicts with the first sentence by purporting to apply the implied warranty disclaimer despite any express warranty, creating an incoherent exception.",
-    "Section 12's exit charge for termination without Vendor default conflicts with Section 11's statement that termination for convenience only requires payment for services performed, rendering the financial obligations ambiguous."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section 18 cross-references \"Section 13\" and \"Section 14,\" both of which exist and contain the referenced subject matter.",
+    "q2": "Defined terms (Customer Data, Deliverables, Vendor Methods, Security Incident) are introduced in Section 2 and used consistently thereafter, e.g., \"Customer Data\" in Sections 3,5,6,7; \"Security Incident\" in Section 6.",
+    "q3": "No vague temporal or quantitative terms are used. Timeframes are specific (72 hours, 30 days, 45 days, one year). \"Reasonable\" is used only to qualify cooperation, access, care, or detail, not time/quantity.",
+    "q4": "The document uses modern commercial prose (e.g., \"will,\" \"must\") and lacks archaic expressions like \"whereas,\" \"heretofore,\" or \"witnesseth.\"",
+    "q5": "No sentence is internally contradictory or grammatically broken. The disclaimer in Section 15 is forceful but coherent, and Section 18's override is logically structured.",
+    "q6": "The register is uniformly modern and contractual throughout, with no section reading as if written by a different author or shifting dramatically in tone or vocabulary."
+  }
 }

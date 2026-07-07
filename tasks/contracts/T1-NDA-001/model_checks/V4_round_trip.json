@@ -66,11 +66,6 @@
       "quote": "Confidential Information does not include information that Recipient can document was known to Recipient without restriction before disclosure, becomes public through no breach of this Agreement, is independently developed without use of Confidential Information, or is received from a third party without breach of a duty to Discloser.",
       "rule_id": "R-003",
       "section": "6"
-    },
-    {
-      "quote": "Recipient acknowledges that unauthorized use or disclosure of Confidential Information may cause irreparable harm for which monetary damages may be inadequate, and Discloser may seek equitable relief without limiting any other available remedy.",
-      "rule_id": "R-011",
-      "section": "11"
     }
   ]
 }

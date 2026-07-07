@@ -1,7 +1,18 @@
 {
-  "score": 6,
-  "weakest": [
-    "Section 1 contains a redundant phrase ('records normalization, normalization, mapping, and workflow services'), indicating a drafting anomaly.",
-    "The final sentence of Section 18 imposes a liability cap on Sections 13 and 14 claims that directly contradicts the express uncapped categories listed in Section 16, creating an irreconcilable internal contradiction and undermining structural coherence."
-  ]
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section numbers are sequential 1-18; cross-reference 'Section 13 or Section 14 claims is limited to the amount stated in Section 16' resolves correctly.",
+    "q2": "All defined terms (Customer Data, Deliverables, Vendor Methods, Security Incident) are defined in Section 2 and used consistently throughout.",
+    "q3": "All time/quantity references are specific (72 hours, 30 days, 45 days, one year, etc.); no vague non-commercial phrasing.",
+    "q4": "No archaic legal diction (no hereby, whereas, herein, etc.); modern contractual prose used consistently.",
+    "q5": "No sentence is internally contradictory or grammatically broken; duplicate word in 'records normalization, normalization' is a typo but does not break grammar.",
+    "q6": "Clause phrasing register is uniform across sections; no section reads as if by a different author."
+  }
 }

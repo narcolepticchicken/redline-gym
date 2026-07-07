@@ -1,1 +1,18 @@
-{"score":10,"weakest":[]}
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 15 sequentially; cross-reference to 'this DPA' in section 11 resolves cleanly.",
+    "q2": "\"Personal Data Breach\" means a suspected or actual breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to Personal Data.",
+    "q3": "Examples include 'within 10 business days' (section 8) – no non-commercial phrasing like 'a reasonable while'.",
+    "q4": "Sentence: 'Vendor may determine the steps, tools, and handling methods it considers useful for operating the service, unless Customer gives a written objection.' No archaic diction.",
+    "q5": "Complex sentence example from section 11: 'Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.' Grammatically intact.",
+    "q6": "Section 4: 'Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer...' and section 6: 'Vendor will limit Personal Data access to personnel who need it to perform the services.' Register consistent."
+  }
+}

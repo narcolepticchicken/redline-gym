@@ -1,15 +1,44 @@
 {
-  "median": 9,
-  "scores": [
-    9,
-    9,
-    9
-  ],
-  "spread": 0,
-  "weakest_union": [
-    "Section 2 broadens the defined Purpose, creating a slight inconsistency with the Purpose definition in Section 1.",
-    "Compelled disclosure notice phrasing is slightly awkward ('endeavor to notify Discloser of the disclosure thereafter'), but does not break overall coherence.",
-    "Definition of 'Purpose' appears in Section 1 (Confidential Information) rather than in Section 2 (Purpose and Use), creating a minor structural inconsistency in defined term placement.",
-    "The phrase 'will not intentionally disclose' in Section 4 is a slight departure from standard non-disclosure language, introducing an unnatural modifier that is rarely seen in professional NDA drafting."
-  ]
+  "failing_evidence": {},
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 6,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
 }
