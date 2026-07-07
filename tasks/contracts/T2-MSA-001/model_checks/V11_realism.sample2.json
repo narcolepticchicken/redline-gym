@@ -8,11 +8,11 @@
     "q6": true
   },
   "evidence": {
-    "q1": "Cross-reference resolves: 'Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.' (Section 16).",
-    "q2": "Term 'Security Incident' defined in Section 2 and used consistently in Section 6: 'after its incident lead confirms a Security Incident.'",
-    "q3": "No vague time/quantity phrasing; e.g., Section 6 uses precise 'within thirty business days'.",
-    "q4": "No archaic diction; modern phrasing like 'No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.' (Section 18).",
-    "q5": "No internal contradiction or broken grammar; e.g., Section 5: 'Vendor will process Customer Data only to provide and support the services...' is clear and grammatical.",
-    "q6": "Register consistent throughout; e.g., Section 2 and Section 17 both maintain same formal commercial legal style."
+    "q1": "Sections numbered 1 through 18 sequentially; cross-reference in Section 16: \"all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16\" resolves correctly.",
+    "q2": "\"Customer Data\", \"Deliverables\", \"Vendor Methods\", \"Security Incident\" defined in Section 2 and used consistently; \"Order Form\" defined in Section 1 and used throughout.",
+    "q3": "\"within thirty days after delivery\" (Section 4), \"forty-five days\" (Section 9), \"three years\" (Section 10), \"180 days\" (Section 10), \"twelve months\" (Section 16); no vague time/quantity phrases.",
+    "q4": "Contract uses modern commercial language (\"will\" for obligations, \"workmanlike manner\"), no archaic terms like \"heretofore\" or \"witnesseth\".",
+    "q5": "Sample sentence: \"If Customer gives written notice within thirty days after delivery, Vendor will correct nonconforming services at no additional charge.\" No internal contradiction or grammar break.",
+    "q6": "Consistent formal register throughout; obligation clauses use \"will\" uniformly, no sudden shift in diction or tone."
   }
 }

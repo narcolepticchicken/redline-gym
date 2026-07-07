@@ -21,7 +21,12 @@
       "section": "11"
     },
     {
-      "quote": "'Major Investor' means a holder of at least 100,000 shares of Series A Preferred Stock. 'Requisite Holders' means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
+      "quote": "Major Investor means a holder of at least 100,000 shares of Series A Preferred Stock.",
+      "rule_id": "R-013",
+      "section": "2"
+    },
+    {
+      "quote": "Requisite Holders means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
       "rule_id": "R-013",
       "section": "2"
     }

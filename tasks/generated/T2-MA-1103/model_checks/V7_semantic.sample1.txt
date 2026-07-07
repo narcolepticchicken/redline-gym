@@ -1,1 +1,10 @@
-{"gaps":["earnout provision","material adverse effect closing condition"]}
+{
+  "gaps": [
+    "Earnout provision",
+    "Material Adverse Effect condition to closing",
+    "Dispute resolution forum/jurisdiction",
+    "Entire agreement clause",
+    "Confidentiality obligations",
+    "Post-closing cooperation/further assurances"
+  ]
+}

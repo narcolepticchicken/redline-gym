@@ -1,11 +1,6 @@
 {
   "found_stable": [
     {
-      "quote": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
-      "rule_id": "R-002",
-      "section": "4"
-    },
-    {
       "quote": "Notwithstanding Section 4, the Company will obtain Requisite Holder approval for any other matter that an investor reasonably identifies as material to its investment.",
       "rule_id": "R-002",
       "section": "5"
@@ -16,7 +11,7 @@
       "section": "4"
     },
     {
-      "quote": "No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
+      "quote": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
       "rule_id": "R-007",
       "section": "9"
     },
@@ -26,7 +21,7 @@
       "section": "11"
     },
     {
-      "quote": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock.",
+      "quote": "\"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
       "rule_id": "R-013",
       "section": "2"
     }
@@ -48,7 +43,7 @@
       "section": "4"
     },
     {
-      "quote": "No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
+      "quote": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
       "rule_id": "R-007",
       "section": "9"
     },
@@ -58,7 +53,7 @@
       "section": "11"
     },
     {
-      "quote": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock.",
+      "quote": "\"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
       "rule_id": "R-013",
       "section": "2"
     }

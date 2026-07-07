@@ -1,0 +1,24 @@
+{
+  "found": [
+    {
+      "quote": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship.",
+      "rule_id": "R-005",
+      "section": "5"
+    },
+    {
+      "quote": "Each Order Form has the initial term stated in it and then continues for additional periods of two years each unless either party sends non-continuation notice at least 60 days before the current period ends.",
+      "rule_id": "R-007",
+      "section": "10"
+    },
+    {
+      "quote": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent.",
+      "rule_id": "R-010",
+      "section": "18"
+    },
+    {
+      "quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms.",
+      "rule_id": "R-011",
+      "section": "17"
+    }
+  ]
+}

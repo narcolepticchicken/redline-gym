@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "## 1. Roles and Scope",
+    "q2": "Vendor will process Personal Data only as necessary to provide the services",
+    "q3": "within 24 hours",
+    "q4": "Vendor will maintain TLS in transit and an annual access review",
+    "q5": "Vendor will limit Personal Data access to personnel who need it to perform the services.",
+    "q6": "Vendor will process Personal Data only as necessary to provide the services ... Vendor will provide export files, transfer coordination, and deletion support"
+  }
+}

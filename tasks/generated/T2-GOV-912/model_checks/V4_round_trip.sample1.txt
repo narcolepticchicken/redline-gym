@@ -18,7 +18,7 @@
     {
       "rule_id": "R-007",
       "section": "9",
-      "quote": "No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective."
+      "quote": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective."
     },
     {
       "rule_id": "R-010",
@@ -28,12 +28,12 @@
     {
       "rule_id": "R-013",
       "section": "2",
-      "quote": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock."
+      "quote": "\"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock."
     },
     {
       "rule_id": "R-013",
       "section": "2",
-      "quote": "\"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock."
+      "quote": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock."
     }
   ]
 }

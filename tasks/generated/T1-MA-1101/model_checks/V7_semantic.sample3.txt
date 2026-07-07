@@ -1,1 +1,1 @@
-{"gaps":["Earnout provisions","Material Adverse Effect closing condition","Entire agreement clause","Purchase price allocation for tax purposes","Dispute resolution forum selection","Severability","Further assurances"]}
+{"gaps":["Earnout provision and related revenue targets/metrics"]}

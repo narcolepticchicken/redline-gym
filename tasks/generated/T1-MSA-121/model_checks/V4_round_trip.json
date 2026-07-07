@@ -1,0 +1,56 @@
+{
+  "found_stable": [
+    {
+      "quote": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship.",
+      "rule_id": "R-005",
+      "section": "5"
+    },
+    {
+      "quote": "Vendor may modify service terms, acceptable use limits, and other online policies by posting an updated version to its website, effective upon posting.",
+      "rule_id": "R-009",
+      "section": "18"
+    },
+    {
+      "quote": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent.",
+      "rule_id": "R-010",
+      "section": "18"
+    },
+    {
+      "quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $500,000 per occurrence if available on commercially reasonable terms.",
+      "rule_id": "R-011",
+      "section": "17"
+    }
+  ],
+  "found_union": [
+    {
+      "quote": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship.",
+      "rule_id": "R-005",
+      "section": "5"
+    },
+    {
+      "quote": "Vendor may modify service terms, acceptable use limits, and other online policies by posting an updated version to its website, effective upon posting.",
+      "rule_id": "R-009",
+      "section": "18"
+    },
+    {
+      "quote": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent.",
+      "rule_id": "R-010",
+      "section": "18"
+    },
+    {
+      "quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $500,000 per occurrence if available on commercially reasonable terms.",
+      "rule_id": "R-011",
+      "section": "17"
+    },
+    {
+      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence",
+      "rule_id": "R-001",
+      "section": "16"
+    },
+    {
+      "quote": "This disclaimer does not limit Vendor's confidentiality duties, data handling duties, indemnities, service-level commitments, or remedies expressly stated in this Agreement.",
+      "rule_id": "R-008",
+      "section": "15"
+    }
+  ]
+}

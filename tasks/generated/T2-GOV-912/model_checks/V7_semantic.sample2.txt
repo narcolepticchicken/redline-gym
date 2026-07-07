@@ -1,1 +1,10 @@
-{"gaps":["Investor conflict-of-interest and overlap disclosure obligations","Stockholder voting covenant to implement board composition","Amendment and waiver provisions","IPO lock-up / market stand-off restrictions"]}
+{
+  "gaps": [
+    "Voting agreement or covenant requiring stockholders to vote shares to elect the designated board members",
+    "Investor conflict-of-interest and overlap disclosure obligations (including disclosure of interests in strategic partners or competitors)",
+    "Amendment and waiver procedures",
+    "Notice provisions",
+    "Entire agreement clause",
+    "Severability clause"
+  ]
+}

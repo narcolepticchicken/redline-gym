@@ -1,0 +1,50 @@
+{
+  "failing_evidence": {
+    "q5": [
+      "Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.",
+      "Section 1 contains a broken/redundant phrase: \"Vendor will provide hosted records normalization, normalization, mapping, and workflow services\u2026\" (repetition of \"normalization\" disrupts sentence coherence).",
+      "Vendor will provide hosted records normalization, normalization, mapping, and workflow services described in one or more signed order forms or statements of work (each, an \"Order Form\")."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 3,
+      "passed": false,
+      "yes_votes": 0
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

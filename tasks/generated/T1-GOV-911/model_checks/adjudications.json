@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "adjudication": {
+        "genuine": true,
+        "reason": "The section excludes securities issued 'with debt financing' broadly, whereas the fallback limits the exclusion to 'debt with equity features'. This broader exclusion is less protective of preemptive rights, constituting a genuine violation.",
+        "status": "DONE"
+      },
+      "id": "V3_clean_base-001",
+      "prompt": "Redline Gym answer-key defect adjudication.\nGiven the rule position, fallback, and the contract section text, decide whether the section contains a GENUINE violation of the rule. Treat text that matches or is more protective than the fallback as compliant. Return STRICT JSON only: {\"genuine\": true|false, \"reason\": \"...\"}.\n\nRule R-009 position:\nPreemptive rights should include standard exclusions for equity plans, acquisition consideration, strategic issuances, equipment or lease financing, and securities issued in a public offering.\n\nFallback:\nPreemptive rights exclude issuances under equity incentive plans, acquisition consideration, strategic transactions, equipment or lease financing, debt with equity features, and public offerings.\n\nSection text:\n## 12. Preemptive Rights\n\nEach Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.\n",
+      "quote": "excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+      "raw_response": "{\"genuine\": true, \"reason\": \"The section excludes securities issued 'with debt financing' broadly, whereas the fallback limits the exclusion to 'debt with equity features'. This broader exclusion is less protective of preemptive rights, constituting a genuine violation.\"}",
+      "rule_id": "R-009",
+      "section": "12",
+      "section_text": "## 12. Preemptive Rights\n\nEach Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+      "source": "V3_clean_base",
+      "task": "tasks/generated/T1-GOV-911"
+    }
+  ],
+  "task": "tasks/generated/T1-GOV-911"
+}

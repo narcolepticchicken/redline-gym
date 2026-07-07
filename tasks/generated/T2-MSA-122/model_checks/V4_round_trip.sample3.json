@@ -1,0 +1,24 @@
+{
+  "found": [
+    {
+      "quote": "\"Security Incident\" means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by Vendor's incident response lead.",
+      "rule_id": "R-004",
+      "section": "2"
+    },
+    {
+      "quote": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 60 days before the current period ends.",
+      "rule_id": "R-007",
+      "section": "10"
+    },
+    {
+      "quote": "This disclaimer applies despite any express warranty, service commitment, indemnity, confidentiality obligation, data handling obligation, or remedy stated elsewhere in this Agreement.",
+      "rule_id": "R-008",
+      "section": "15"
+    },
+    {
+      "quote": "Vendor will provide its then-current standard security summary upon written request no more than once per year.",
+      "rule_id": "R-012",
+      "section": "17"
+    }
+  ]
+}

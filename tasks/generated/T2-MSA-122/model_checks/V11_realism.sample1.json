@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1-18 sequentially; cross-reference in Section 16 to Sections 13 and 14 resolves correctly.",
+    "q2": "Customer Data, Deliverables, Vendor Methods, and Security Incident are defined once in Section 2 and used consistently throughout.",
+    "q3": "All time phrases are commercial and specific, e.g., 'within 72 hours' (Section 6), 'forty-five days' (Section 9), 'thirty days' (Section 11); no 'next quarter' or 'reasonable while'.",
+    "q4": "The text uses modern commercial language throughout, e.g., 'entered into by and between' and 'as of the effective date'; no archaic terms like 'whereas', 'hereinafter', or 'witnesseth'.",
+    "q5": "All sentences are grammatically intact; for instance, 'Vendor will provide hosted records normalization, normalization, mapping, and workflow services...' contains a redundant word but is not grammatically broken or contradictory.",
+    "q6": "Consistent modern register across sections; Section 1's 'Each Order Form is governed by this Agreement' matches the tone of Section 18's 'No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.'"
+  }
+}

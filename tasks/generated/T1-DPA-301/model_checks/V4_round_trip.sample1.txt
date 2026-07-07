@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "3",
+      "quote": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
+    },
+    {
+      "rule_id": "R-002",
+      "section": "3",
+      "quote": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "7",
+      "quote": "Vendor will send an initial written alert about a Personal Data Breach within 10 business days after discovering it only if forensic review confirms outbound extraction."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "10",
+      "quote": "After the relationship ends, Vendor will remove hosted account content within 120 days and will not be required to provide written completion evidence."
+    },
+    {
+      "rule_id": "R-009",
+      "section": "12",
+      "quote": "Vendor may move hosted records among facilities and affiliates in the United States, Canada, Ireland, India, and Singapore without standard contractual clauses or transfer impact documentation."
+    }
+  ]
+}

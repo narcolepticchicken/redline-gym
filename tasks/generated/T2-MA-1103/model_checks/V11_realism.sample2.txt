@@ -1,1 +1,18 @@
-{"answers":{"q1":true,"q2":true,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"“Excluded Liabilities” has the meaning stated in Section 5.","q2":"“Assumed Liabilities” means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.","q3":"Within 60 days after closing, Buyer will deliver a closing statement ... Seller has 35 days to review the statement","q4":"This Asset Purchase Agreement is entered into by and between Northstar Platform Labs, Inc. (“Buyer”) and BuildLoop Systems, LLC (“Seller”)","q5":"The purchase price is $42,000,000.","q6":"This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules."}}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 16 sequentially; cross-reference example: \"Assumed Liabilities\" definition lists \"Section 4\", and Section 4 exists.",
+    "q2": "\"Assumed Liabilities\" is defined once in Section 1 and used consistently in Sections 4 and 9; no conflicting definitions.",
+    "q3": "No vague time/quantity phrasing; terms like \"60 days\", \"35 days\", \"12 months\", and \"24 months\" are precise commercial standards.",
+    "q4": "No archaic legal diction (e.g., no \"heretofore\", \"witnesseth\") — prose is modern and plain English.",
+    "q5": "Contradictory sentences: \"nothing in this Agreement creates an admission of successor liability or assumed employment obligations\" vs. \"Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.\"",
+    "q6": "Register is consistent throughout; all sections use the same plain English style and consistent use of \"will\" (e.g., \"Buyer will deposit\", \"Seller will sell\")."
+  }
+}

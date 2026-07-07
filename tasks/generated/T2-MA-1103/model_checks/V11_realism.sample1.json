@@ -8,11 +8,11 @@
     "q6": true
   },
   "evidence": {
-    "q1": "1. Definitions and Transaction Structure \u2026 16. Governing Law and Closing Logistics; \u2018Assumed Liabilities\u2019 \u2026 expressly listed in Section 4; \u2018Excluded Liabilities\u2019 has the meaning stated in Section 5.",
-    "q2": "\u2018Assumed Liabilities\u2019 means \u2026 Section 4; \u2018Excluded Liabilities\u2019 has the meaning stated in Section 5; Section 4 \u2018Buyer assumes only the Assumed Liabilities\u2019; Section 9 \u2018Seller will indemnify \u2026 Excluded Liabilities\u2019.",
-    "q3": "\u2018Within 60 days after closing\u2019 and \u201835 days to review\u2019 in Section 7 are precise durations.",
-    "q4": "\u2018This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.\u2019 No archaic terms appear.",
-    "q5": "\u2018Seller\u2019s indemnification cap is 15% of the purchase price, subject to a true deductible basket of $150,000 that applies only to losses above the deductible amount and does not recover from the first dollar.\u2019 All sentences are grammatically whole.",
-    "q6": "\u2018At closing, Buyer will deposit 12% of the purchase price with the escrow agent\u2026\u2019 (Section 6) and \u2018Seller retains all Excluded Liabilities, including all pre-closing taxes, employment, wage, benefit, discrimination, termination, and similar employee claims\u2019 (Section 5) share a uniform modern legal register."
+    "q1": "Section numbering is sequential 1\u201316; cross-reference 'Excluded Liabilities has the meaning stated in Section 5' resolves to Section 5; 'receipt of all required counterparty consents to assign the Material Contracts' in Section 11 and schedule references resolve.",
+    "q2": "\"Assumed Liabilities\" defined in Section 1 and used in Section 4; \"Material Contracts\" defined in Section 11 ('The contracts listed on Schedule 11 are Material Contracts') and used consistently; no alternate definitions or inconsistent usage.",
+    "q3": "Time and quantity phrases are all specific, e.g., '12 months after closing', '24 months after closing', 'Within 60 days after closing', '35 days to review'; no vague non\u2011commercial wording like 'a reasonable while' or 'the next quarter'.",
+    "q4": "No archaic or out\u2011of\u2011register legal diction; language is modern commercial English, e.g., 'Buyer may decide which Seller employees receive offers' instead of 'heretofore' or 'witnesseth'.",
+    "q5": "No sentence is internally contradictory or grammatically broken; for example, 'At closing, Seller will sell to Buyer all assets used in or necessary for the SignalDesk business, including source code, object code, documentation, product data, domain names, code repositories, assignable intellectual property rights, customer records, assigned contracts, equipment, and goodwill.' is coherent and grammatical.",
+    "q6": "Clause phrasing register is consistent throughout; Section 2 'At closing, Seller will sell to Buyer all assets used in or necessary for the SignalDesk business\u2026' and Section 16 'The parties will sign and close this Agreement on the same date\u2026' both use plain, business\u2011like prose with no authorial shift."
   }
 }

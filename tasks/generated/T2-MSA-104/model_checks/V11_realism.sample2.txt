@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1–18 are numbered sequentially. Cross-reference example: \"all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16\" (Section 18) resolves to Confidentiality (13), Third-Party Claims (14), and Liability (16).",
+    "q2": "Defined terms in Section 2 (Customer Data, Deliverables, Vendor Methods, Security Incident) are defined once and used consistently. Order Form defined in Section 1 also used consistently.",
+    "q3": "All time and quantity terms are specific, e.g., \"within thirty days\" (Section 4), \"within 72 hours\" (Section 7), \"forty-five days\" (Section 9), \"one year\" (Section 10). No vague phrasing like \"reasonable while\" appears.",
+    "q4": "No archaic legal diction. Examples: \"Vendor will provide hosted records…\" uses modern \"will,\" not \"shall.\" No hereby/herein/whereas.",
+    "q5": "Section 1 contains a broken/redundant phrase: \"Vendor will provide hosted records normalization, normalization, mapping, and workflow services…\" (repetition of \"normalization\" disrupts sentence coherence).",
+    "q6": "Register is uniform across sections. For instance, Section 15 uses same modern, direct tone as Section 5: active voice, \"will\" usage, no stylistic shift."
+  }
+}

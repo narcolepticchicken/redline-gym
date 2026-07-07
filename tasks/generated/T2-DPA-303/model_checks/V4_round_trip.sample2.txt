@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "4",
+      "quote": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
+    },
+    {
+      "rule_id": "R-002",
+      "section": "4",
+      "quote": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "15",
+      "quote": "Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
+    },
+    {
+      "rule_id": "R-010",
+      "section": "6",
+      "quote": "Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service."
+    },
+    {
+      "rule_id": "R-011",
+      "section": "2",
+      "quote": "Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
+    }
+  ]
+}

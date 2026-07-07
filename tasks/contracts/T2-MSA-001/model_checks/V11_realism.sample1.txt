@@ -1,1 +1,18 @@
-{"answers":{"q1":true,"q2":true,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"","q2":"","q3":"","q4":"","q5":"","q6":""}}
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections are numbered 1 through 18 sequentially. Cross-reference in Section 18: 'Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16' resolves to Liability section.",
+    "q2": "'Customer Data' and 'Security Incident' are defined once in Section 2 and used consistently (e.g., 'Security Incident' referenced in Section 6). No undefined or inconsistently used defined terms.",
+    "q3": "Time phrases are specific and commercial: 'within thirty business days' (Section 6), 'forty-five days' (Section 9), 'thirty days' written notice' (Section 11). No vague time/quantity phrasing like 'next quarter' or 'reasonable while'.",
+    "q4": "No archaic legal diction. The contract uses modern register such as 'Vendor will provide', 'will maintain', 'will cooperate', with no 'hereby', 'whereas', 'hereof', etc.",
+    "q5": "Sentences are grammatically sound and non-contradictory. For example, the dense definition 'Security Incident means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by Vendor's incident response lead' is grammatically intact.",
+    "q6": "Register is consistent across all sections; the same plain English style, 'will' future constructions, and defined-term usage appear throughout with no stylistic breaks."
+  }
+}

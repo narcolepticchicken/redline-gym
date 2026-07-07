@@ -1,0 +1,6 @@
+{
+  "gaps": [
+    "Vendor obligation to maintain records of processing activities",
+    "Notification to Customer of government or law enforcement access requests for Personal Data"
+  ]
+}

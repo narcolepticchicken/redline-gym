@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1-15 sequential; \u00a714 cross-reference resolves.",
+    "q2": "Defined terms in \u00a72 used consistently; e.g., 'Processing' in \u00a714.",
+    "q3": "All timeframes are specific numeric; no vague phrasing.",
+    "q4": "'will' consistently used, no archaic terms.",
+    "q5": "All sentences are grammatically sound; e.g., \u00a78 conditional phrasing is not broken.",
+    "q6": "Register consistent across all sections; no author shift."
+  }
+}

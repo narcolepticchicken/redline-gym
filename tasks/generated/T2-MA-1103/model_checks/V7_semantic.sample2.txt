@@ -1,10 +1,10 @@
 {
   "gaps": [
-    "Earnout provision",
+    "Earnout provisions",
     "Material Adverse Effect closing condition",
-    "General dispute resolution clause (governing law stated but no forum selection or arbitration)",
-    "Non-solicitation and non-hire restrictions (employees/customers)",
-    "Transition services and support period",
-    "Purchase price allocation for tax purposes"
+    "Representations concerning financial statements and absence of undisclosed liabilities",
+    "Intellectual property representation regarding non-infringement and validity",
+    "Data privacy and security compliance representations",
+    "Forum selection / jurisdiction for dispute resolution"
   ]
 }

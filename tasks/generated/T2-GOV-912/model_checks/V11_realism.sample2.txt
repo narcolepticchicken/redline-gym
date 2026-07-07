@@ -4,15 +4,15 @@
     "q2": false,
     "q3": true,
     "q4": true,
-    "q5": false,
+    "q5": true,
     "q6": true
   },
   "evidence": {
     "q1": "",
-    "q2": "Section 6 uses \"Founder Holder\" but the agreement defines only \"Founder Stockholders\" and \"Major Investor\"; \"Founder Holder\" is neither a defined term nor a consistent usage with the defined party.",
+    "q2": "Section 2 defines 'Requisite Holders', but Section 4 and 5 use singular 'Requisite Holder approval' not 'Requisite Holders approval'; also 'Founder Holder' in Section 6 is never defined.",
     "q3": "",
     "q4": "",
-    "q5": "Section 5 states: \"Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.\" The closed list in Section 4 already requires Requisite Holder approval for each of those enumerated actions, making the \"including\" clause internally contradictory.",
+    "q5": "",
     "q6": ""
   }
 }

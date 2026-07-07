@@ -1,1 +1,1 @@
-{"gaps":["Investor overlap and conflict disclosure obligation"]}
+{"gaps":["Investor overlap/conflict of interest disclosure"]}

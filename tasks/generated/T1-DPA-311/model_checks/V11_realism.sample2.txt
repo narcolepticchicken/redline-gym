@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered sequentially 1 through 15; no internal cross-references to fail resolution.",
+    "q2": "'Personal Data', 'Processing', and 'Personal Data Breach' defined once in §2 and used consistently throughout.",
+    "q3": "Specific commercial deadlines used, e.g., 'within 24 hours' (§7), 'within 2 business days' (§4).",
+    "q4": "Modern commercial language: 'entered into by and between', 'supplements the parties' master services agreement'.",
+    "q5": "Example: 'Vendor will maintain TLS in transit and an annual access review, and may replace other controls…' – grammatically coherent, no contradiction.",
+    "q6": "Consistent register: §1 'For personal data processed under this DPA…', §15 'If this DPA conflicts with the master services agreement…' – same authorial tone."
+  }
+}

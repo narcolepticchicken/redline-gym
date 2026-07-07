@@ -1,18 +1,1 @@
-{
-  "answers": {
-    "q1": true,
-    "q2": true,
-    "q3": true,
-    "q4": true,
-    "q5": true,
-    "q6": true
-  },
-  "evidence": {
-    "q1": "Sections numbered 1 through 16 sequentially; cross-references resolve (e.g., 'Excluded Liabilities has the meaning stated in Section 5', Section 8 references Schedule 8(a)-(c)).",
-    "q2": "Defined terms: 'Assumed Liabilities' defined in Section 1 and used in Section 4; 'Excluded Liabilities' defined in Section 5 and cross-referenced in Section 1; 'Material Contracts' defined in Section 11; all used consistently.",
-    "q3": "No vague or non-commercial time/quantity phrasing; uses '60 days after closing', '35 days', '12 months', '24 months', etc. No 'reasonable while' or 'next quarter'.",
-    "q4": "No archaic legal diction; modern phrasing throughout, e.g., 'Buyer and Seller intend a purchase of assets and not a merger'.",
-    "q5": "No internally contradictory or grammatically broken sentence; e.g., 'The purchase price is $42,000,000.' (Section 6).",
-    "q6": "Register consistent across sections; formal legal tone from Section 1 ('entered into by and between') through Section 16 ('without regard to conflict-of-law rules')."
-  }
-}
+{"answers":{"q1":true,"q2":true,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"Excluded Liabilities has the meaning stated in Section 5.","q2":"The contracts listed on Schedule 11 are Material Contracts.","q3":"Within 60 days after closing, Buyer will deliver a closing statement","q4":"The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction.","q5":"At closing, Seller will sell to Buyer all assets used in or necessary for the SignalDesk business, including source code, object code, documentation, product data, domain names, code repositories, assignable intellectual property rights, customer records, assigned contracts, equipment, and goodwill.","q6":"This Asset Purchase Agreement is entered into by and between Northstar Platform Labs, Inc. (\"Buyer\") and BuildLoop Systems, LLC (\"Seller\") for Buyer's acquisition of assets used in Seller's SignalDesk business."}}

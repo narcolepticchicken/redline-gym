@@ -1,18 +1,18 @@
 {
   "answers": {
     "q1": true,
-    "q2": true,
+    "q2": false,
     "q3": true,
     "q4": true,
     "q5": true,
     "q6": true
   },
   "evidence": {
-    "q1": "Sections are numbered 1 through 16 sequentially; cross-reference in Section 1: \"'Excluded Liabilities' has the meaning stated in Section 4\" resolves correctly to existing Section 4.",
-    "q2": "'Excluded Liabilities' is defined once in Section 1 (by reference to Section 4), and used consistently thereafter in Sections 4, 5, and 9. All other defined terms are used consistently.",
-    "q3": "No vague time/quantity phrasing; document uses precise commercial terms such as \"60 days after closing\", \"12 months after closing\", \"24 months\", \"$24,000,000\", and \"$1,850,000\".",
-    "q4": "No archaic or out-of-register legal diction; the entire document uses modern commercial English without archaic terms.",
-    "q5": "All sentences are grammatically correct and internally consistent; no sentence reads as contradictory or broken.",
-    "q6": "Clause phrasing register is consistent throughout; all sections match in tone and drafting style, with no divergence suggesting a different author."
+    "q1": "Sections 1\u201316 numbered sequentially; cross-reference from Section 1 to Section 4 resolves correctly.",
+    "q2": "The capitalized term \"Fraud\" appears in Section 10 but is never defined anywhere in the Agreement.",
+    "q3": "All timeframes use precise commercial periods (e.g., \"within 60 days\", \"12 months after closing\") and no vague phrasing.",
+    "q4": "No archaic or out-of-register legal diction detected; entire document uses modern commercial language.",
+    "q5": "All sentences are grammatically sound and internally consistent; no contradictory or broken phrasing found.",
+    "q6": "Prose register is uniform across all sections with no shifts in authorial style."
   }
 }

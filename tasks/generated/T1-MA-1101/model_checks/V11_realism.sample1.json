@@ -8,11 +8,11 @@
     "q6": true
   },
   "evidence": {
-    "q1": "Sections are numbered 1 through 16 sequentially. Cross-reference example: 'Excluded Liabilities has the meaning stated in Section 4.' and Section 4 provides the definition.",
-    "q2": "'Assumed Liabilities' is defined in Section 1 and used consistently (e.g., Section 5). 'Excluded Liabilities' is defined and used throughout.",
-    "q3": "All time/quantity phrasing is specific and commercial: '12 months after closing', '24 months after closing', '$1,850,000', '60 days after closing', '10% of the purchase price'.",
-    "q4": "No archaic or out-of-register legal diction. The agreement uses modern language such as 'This Asset Purchase Agreement is entered into by and between...' and 'Buyer and Seller intend...'.",
-    "q5": "All sentences are grammatically sound and internally consistent. Example: 'The purchase price is $24,000,000. At closing, Buyer will deposit 10% of the purchase price with the escrow agent...'",
-    "q6": "Phrasing register is consistent: plain English, similar cadence across clauses, e.g., Section 2 'At closing, Seller will sell...' and Section 14 'Buyer's obligation to close is conditioned on...'"
+    "q1": "Section numbering 1-16 sequential; cross-references to Section 5 and Section 4 resolve.",
+    "q2": "'Assumed Liabilities' defined in Section 1 and used consistently; 'Excluded Liabilities' defined in Section 1/4 and used consistently.",
+    "q3": "All time periods are specific (60 days, 12 months, 24 months); no vague time/quantity phrasing like 'next quarter' or 'reasonable while'.",
+    "q4": "No archaic legal diction; modern commercial language throughout.",
+    "q5": "All sentences are grammatically correct and contain no internal contradictions.",
+    "q6": "Register and drafting style consistent across all sections; no section reads like a different author."
   }
 }

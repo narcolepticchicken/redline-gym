@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section 16 ... does not apply to claims under Section 13 or Section 14.",
+    "q2": "\"Customer Data\" means ... and used in Section 5: \"Vendor will process Customer Data only under Customer's documented instructions.\"",
+    "q3": "within 72 hours after discovering a Security Incident (Section 6)",
+    "q4": "Vendor will comply with applicable privacy and security laws.",
+    "q5": "Customer will pay fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing and incurred before that date.",
+    "q6": "Section 1: \"Vendor will provide hosted records normalization...\" and Section 18: \"Neither party may assign this Agreement...\""
+  }
+}

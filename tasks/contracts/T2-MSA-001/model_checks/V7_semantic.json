@@ -1,6 +1,11 @@
 {
-  "gaps": [
-    "Hosting location and cross-border transfer basis for personal data",
+  "gaps_union": [
+    "Hosting location",
+    "Cross-border transfer basis",
+    "Certified deletion at exit",
+    "Hosting location and cross-border transfer basis",
+    "Certified data deletion at contract exit",
+    "Hosting location / cross-border transfer basis",
     "Certified deletion evidence at exit"
   ]
 }

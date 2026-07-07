@@ -1,1 +1,6 @@
-{"gaps":["Investor conflict-of-interest and overlap disclosure obligations"]}
+{
+  "gaps": [
+    "Voting agreement clause obligating stockholders to vote for designated board nominees",
+    "Investor conflict-of-interest/overlap disclosure and restrictions on sharing information with competitive portfolio companies"
+  ]
+}

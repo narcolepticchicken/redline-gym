@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+    "q2": "Vendor may process Customer Data to provide and improve the services",
+    "q3": "within 72 hours after discovering a Security Incident",
+    "q4": "Vendor may use affiliates, infrastructure providers, implementation contractors, and other service partners to perform portions of the services",
+    "q5": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Security Incident.",
+    "q6": "Vendor will perform the services in a professional and workmanlike manner using personnel with appropriate skill and experience."
+  }
+}

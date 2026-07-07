@@ -1,1 +1,34 @@
-{"found":[{"rule_id":"R-001","section":"16","quote":"Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence"},{"rule_id":"R-004","section":"6","quote":"Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident."},{"rule_id":"R-005","section":"5","quote":"Vendor will comply with laws applicable to Vendor's provision of the services."},{"rule_id":"R-006","section":"12","quote":"If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form."},{"rule_id":"R-007","section":"10","quote":"Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 180 days before the current period ends."},{"rule_id":"R-013","section":"7","quote":"Vendor may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work as if performed by Vendor."}]}
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "16",
+      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability arising out of or relating to this Agreement will not exceed the fees paid or payable under the affected Order Form during the twelve months before the event giving rise to the claim."
+    },
+    {
+      "rule_id": "R-004",
+      "section": "6",
+      "quote": "Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident."
+    },
+    {
+      "rule_id": "R-006",
+      "section": "12",
+      "quote": "If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "10",
+      "quote": "then continues for additional periods of three years each unless either party sends non-continuation notice at least 180 days before the current period ends."
+    },
+    {
+      "rule_id": "R-008",
+      "section": "15",
+      "quote": "This disclaimer does not limit Vendor's confidentiality duties, data handling duties, indemnities, service-level commitments, or remedies expressly stated in this Agreement."
+    },
+    {
+      "rule_id": "R-013",
+      "section": "7",
+      "quote": "Vendor may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work as if performed by Vendor."
+    }
+  ]
+}

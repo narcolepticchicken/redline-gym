@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+    "q2": "\"Customer Data\" means information, files, records, identifiers, and other content submitted to the service by or for Customer or generated from Customer's use of the service.",
+    "q3": "within 72 hours after discovering a Security Incident",
+    "q4": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Security Incident.",
+    "q5": "hosted records normalization, normalization, mapping, and workflow services",
+    "q6": "Each party will protect the other party's non-public business, technical, financial, and product information using at least reasonable care and will use that information only to perform or receive services under this Agreement."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Roles and Scope … 15. Term and Transition Assistance",
+    "q2": "“Personal Data” means raw individual records … ; Vendor will process Personal Data only on documented instructions",
+    "q3": "within 24 hours after discovering a Personal Data Breach",
+    "q4": "Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data",
+    "q5": "If Vendor believes an instruction violates applicable law, it will inform Customer in writing within 2 business days unless legally prohibited.",
+    "q6": "Vendor will process Personal Data only on documented instructions … (Section 3) and Vendor will return or delete Personal Data at Customer's direction … (Section 10)"
+  }
+}

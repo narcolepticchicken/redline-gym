@@ -78,3 +78,8 @@
   Quote: No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.
 - V4_round_trip_extra R-012 section 10: The section contains a residual knowledge clause allowing the receiving side to keep and apply generalized ideas, techniques, and know-how, which violates the rule requiring such clauses to be absent unless expressly approved by the client in writing.
   Quote: The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.
+
+## tasks/generated/T1-GOV-911
+
+- V3_clean_base R-009 section 12: The section excludes securities issued 'with debt financing' broadly, whereas the fallback limits the exclusion to 'debt with equity features'. This broader exclusion is less protective of preemptive rights, constituting a genuine violation.
+  Quote: excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.

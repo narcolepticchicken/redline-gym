@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "the limitation in Section 16 does not apply to claims under Section 13 or Section 14",
+    "q2": "\"Customer Data\" means information, files, records, identifiers, and other content submitted to the service by or for Customer... Vendor may process Customer Data to provide and improve the services",
+    "q3": "forty-five days after Customer receives the invoice",
+    "q4": "Vendor will provide hosted data-ingestion, normalization, mapping, and workflow services",
+    "q5": "Vendor will correct nonconforming services at no additional charge if Customer gives written notice within thirty days after delivery",
+    "q6": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules"
+  }
+}

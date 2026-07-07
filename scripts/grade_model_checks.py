@@ -51,10 +51,10 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
     uncovered_topics = []
     if v7 is not None:
         for item in planted.get("missing_info", []):
-            keywords = [str(keyword).lower() for keyword in item.get("match_keywords", [])]
+            keywords = [str(keyword) for keyword in item.get("match_keywords", [])]
             if not keywords:
-                keywords = [str(item.get("topic", "")).lower()]
-            if not any(any(keyword in gap.lower() for keyword in keywords) for gap in gaps):
+                keywords = [str(item.get("topic", ""))]
+            if not _v7_keywords_match_gaps(keywords, gaps):
                 uncovered_topics.append(item.get("topic", ""))
 
     passed, total, failing_questions = _v11_result(v11) if v11 is not None else (0, V11_TOTAL, [])
@@ -166,6 +166,17 @@ def _format_v4_recall_cell(row: dict[str, Any]) -> str:
     if row.get("v4_graded") is False or row.get("v4_recall") is None:
         return "UNGRADED"
     return f"{row['v4_matched']}/{row['v4_total']}"
+
+
+def _v7_keywords_match_gaps(keywords: list[str], gaps: list[str]) -> bool:
+    for keyword in keywords:
+        keyword_lower = keyword.lower()
+        if keyword_lower and any(keyword_lower in gap.lower() for gap in gaps):
+            return True
+        for word in re.findall(r"[A-Za-z0-9]+", keyword):
+            if len(word) >= 5 and any(re.search(rf"\b{re.escape(word)}\b", gap, re.IGNORECASE) for gap in gaps):
+                return True
+    return False
 
 
 def _v4_gate(tier: str, recall: float) -> str:

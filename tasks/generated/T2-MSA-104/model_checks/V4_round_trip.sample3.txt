@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "16",
+      "quote": "Except for breaches of confidentiality, data handling obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability arising out of or relating to this Agreement will not exceed the fees paid or payable under the affected Order Form during the twelve months before the event giving rise to the claim."
+    },
+    {
+      "rule_id": "R-002",
+      "section": "14",
+      "quote": "Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct."
+    },
+    {
+      "rule_id": "R-006",
+      "section": "12",
+      "quote": "If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form."
+    },
+    {
+      "rule_id": "R-008",
+      "section": "15",
+      "quote": "This disclaimer does not limit Vendor's confidentiality duties, data handling duties, indemnities, service-level commitments, or remedies expressly stated in this Agreement."
+    },
+    {
+      "rule_id": "R-011",
+      "section": "17",
+      "quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms."
+    }
+  ]
+}

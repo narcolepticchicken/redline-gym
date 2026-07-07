@@ -8,11 +8,11 @@
     "q6": true
   },
   "evidence": {
-    "q1": "Section numbering runs 1\u201318 sequentially; cross-reference 'all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16' resolves correctly.",
-    "q2": "Defined terms 'Customer Data', 'Deliverables', 'Vendor Methods', and 'Security Incident' are defined once in Section 2 and used consistently throughout (e.g., 'Customer Data' in Sections 5, 6, etc.).",
-    "q3": "All time/quantity expressions are specific (e.g., 'thirty days', 'forty-five days', 'three years', '180 days', 'ten percent per month or the highest rate allowed by law') and no vague phrases like 'reasonable while' or 'next quarter' appear.",
-    "q4": "No archaic legal diction (no 'witnesseth', 'hereby', 'whereas', etc.); phrasing like 'in a professional and workmanlike manner' is standard modern commercial register.",
-    "q5": "Every sentence is grammatically well\u2011formed and not internally contradictory; for example, the long liability sentence and the final 'Despite any contrary sentence' sentence are coherent.",
-    "q6": "Register is uniform across all sections; the same clean, modern commercial English is used from Section 1 through Section 18 without a shift in authorial voice."
+    "q1": "Sections numbered 1 through 18 sequentially; cross-reference e.g. \"all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16\" resolves to existing sections.",
+    "q2": "Defined term \"Security Incident\" in Section 2 used consistently: \"Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident\" in Section 6.",
+    "q3": "Specific time periods used throughout, e.g. \"forty-five days after Customer receives the invoice\" (Section 9); no vague phrasing like \"the next quarter\" or \"a reasonable while\".",
+    "q4": "No archaic legal diction; modern language such as \"Notices must be in writing and delivered by courier, certified mail, or email with confirmation of receipt\" (Section 18).",
+    "q5": "No internally contradictory grammatically broken sentence; e.g. \"If an Order Form conflicts with this Agreement, the Order Form controls only for that Order Form and only to the extent it expressly identifies the conflicting provision.\" is grammatical and self-consistent.",
+    "q6": "Consistent register throughout: direct obligations with 'will', modern commercial tone from Section 1 (\"Vendor will provide hosted data-ingestion...\") to Section 18 (\"No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties\")."
   }
 }

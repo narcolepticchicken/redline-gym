@@ -1,20 +1,17 @@
 {
   "gaps_union": [
-    "earnout provision",
-    "material adverse effect closing condition",
-    "General dispute resolution clause (governing law stated but no forum selection or arbitration)",
-    "Non-solicitation and non-hire restrictions (employees/customers)",
-    "Transition services and support period",
-    "Purchase price allocation for tax purposes",
-    "Earnout or contingent consideration mechanism",
-    "Representations regarding financial statements and financial condition",
-    "Intellectual property representations (non-infringement, validity, registration)",
-    "Employee benefits and labor relations representations",
-    "Data privacy and security representations",
-    "Post-closing confidentiality obligations",
+    "Earnout provision",
+    "Material Adverse Effect condition to closing",
+    "Dispute resolution forum/jurisdiction",
     "Entire agreement clause",
-    "Non-solicitation of employees or customers by Seller",
-    "Transition services and cooperation",
-    "Jurisdiction and venue selection clause"
+    "Confidentiality obligations",
+    "Post-closing cooperation/further assurances",
+    "Earnout provisions",
+    "Material Adverse Effect closing condition",
+    "Representations concerning financial statements and absence of undisclosed liabilities",
+    "Intellectual property representation regarding non-infringement and validity",
+    "Data privacy and security compliance representations",
+    "Forum selection / jurisdiction for dispute resolution",
+    "Earnout / contingent consideration mechanics"
   ]
 }

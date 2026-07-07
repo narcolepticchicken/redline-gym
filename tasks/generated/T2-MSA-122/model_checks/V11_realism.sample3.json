@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "",
+    "q3": "",
+    "q4": "",
+    "q5": "Except for express warranties and commitments stated in this Agreement or an Order Form, Vendor disclaims implied warranties... This disclaimer applies despite any express warranty, service commitment, indemnity, confidentiality obligation, data handling obligation, or remedy stated elsewhere in this Agreement.",
+    "q6": ""
+  }
+}

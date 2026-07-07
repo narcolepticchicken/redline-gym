@@ -1,0 +1,6 @@
+{"gaps": [
+  "Vendor obligation to maintain records of processing activities under applicable data protection law",
+  "Detailed description of processing (nature, purpose, types of personal data, categories of data subjects)",
+  "Vendor obligation to comply with applicable data protection laws as a processor",
+  "Procedure for handling law enforcement or third-party requests for personal data (e.g., notification to Customer before disclosure, unless prohibited)"
+]}

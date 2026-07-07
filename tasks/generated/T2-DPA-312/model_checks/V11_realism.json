@@ -1,0 +1,49 @@
+{
+  "failing_evidence": {
+    "q2": [
+      "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting. (Section 2) The capitalized term \"Processing\" is never used later; only the lowercase verb \"process\" appears.",
+      "The defined term 'Personal Data' appears capitalized in Section 2 and later sections, but Section 1 uses uncapitalized 'personal data' (e.g., 'For personal data processed under this DPA' and 'This DPA applies to all personal data submitted to\u2026'), inconsistent with the defined term's usage."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 2,
+      "passed": false,
+      "yes_votes": 1
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

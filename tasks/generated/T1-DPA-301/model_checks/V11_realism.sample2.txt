@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "Section 1 uses lowercase 'personal data' while Section 2 defines 'Personal Data' and subsequent sections use capitalized form, demonstrating inconsistent use of the defined term.",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

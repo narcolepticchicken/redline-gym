@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 15 sequentially.",
+    "q2": "Personal Data, Processing, and Personal Data Breach are defined in Section 2 and used consistently throughout.",
+    "q3": "All time/quantity phrases are specific (e.g., 'within 24 hours', 'within 10 business days', 'once per calendar year').",
+    "q4": "The DPA uses modern commercial language ('will', 'may') and avoids archaic terms.",
+    "q5": "All sentences are internally consistent and grammatically correct; no contradictions.",
+    "q6": "The drafting register is uniform across all sections, with consistent modern phrasing."
+  }
+}

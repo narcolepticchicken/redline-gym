@@ -1,1 +1,24 @@
-{"found":[{"rule_id":"R-001","section":"3","quote":"The Board will consist of five directors: two Founder Designees selected by the Founder Holders, two Series A Designees selected by the Requisite Holders, and one independent director selected solely by the Series A Designees."},{"rule_id":"R-004","section":"7","quote":"Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along."},{"rule_id":"R-005","section":"6","quote":"but transfers by Founder Holders are excluded from tag-along rights."},{"rule_id":"R-008","section":"10","quote":"Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation."}]}
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "3",
+      "quote": "The Board will consist of five directors: two Founder Designees selected by the Founder Holders, two Series A Designees selected by the Requisite Holders, and one independent director selected solely by the Series A Designees."
+    },
+    {
+      "rule_id": "R-004",
+      "section": "7",
+      "quote": "Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "6",
+      "quote": "but transfers by Founder Holders are excluded from tag-along rights."
+    },
+    {
+      "rule_id": "R-008",
+      "section": "10",
+      "quote": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation."
+    }
+  ]
+}

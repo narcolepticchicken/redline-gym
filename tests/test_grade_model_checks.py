@@ -206,6 +206,28 @@ def test_v7_grade_matches_keywords_against_any_union_gap(tmp_path: Path) -> None
     assert row["v7_uncovered"] == []
 
 
+def test_v7_grade_matches_keyword_phrase_case_insensitive(tmp_path: Path) -> None:
+    row = _grade_v7_fixture(
+        tmp_path,
+        ["earnout scenario"],
+        ["The judge identified an EARNOUT SCENARIO diligence gap."],
+    )
+
+    assert row["v7"] == "PASS"
+    assert row["v7_uncovered"] == []
+
+
+def test_v7_grade_matches_keyword_word_case_insensitive(tmp_path: Path) -> None:
+    row = _grade_v7_fixture(
+        tmp_path,
+        ["earnout scenario"],
+        ["Earnout provision"],
+    )
+
+    assert row["v7"] == "PASS"
+    assert row["v7_uncovered"] == []
+
+
 def test_grade_model_checks_marks_missing_v4_aggregate_ungraded(tmp_path: Path) -> None:
     task_dir = tmp_path / "T2-DPA-994"
     checks = task_dir / "model_checks"
@@ -436,6 +458,39 @@ def test_parse_json_response_tolerates_fenced_json() -> None:
 
 def _dump(path: Path, payload: dict) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n")
+
+
+def _grade_v7_fixture(tmp_path: Path, match_keywords: list[str], gaps: list[str]) -> dict:
+    task_dir = tmp_path / "T1-MA-TEST"
+    checks = task_dir / "model_checks"
+    checks.mkdir(parents=True)
+    _dump(task_dir / "task.json", {"difficulty_tier": "T1"})
+    _dump(
+        task_dir / "planted_deviations.json",
+        {
+            "deviations": [],
+            "missing_info": [
+                {
+                    "topic": "Earnout issue",
+                    "match_keywords": match_keywords,
+                }
+            ],
+        },
+    )
+    _dump(checks / "V3_clean_base.json", {"verdict": "PASS", "violations": []})
+    _dump(checks / "V4_round_trip.json", {"found_union": [], "found_stable": []})
+    _dump(checks / "V7_semantic.json", {"gaps_union": gaps})
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ]
+        ),
+    )
+    return grade_task(task_dir)
 
 
 def _v11_sample(answers: dict[str, bool], evidence: dict[str, str] | None = None) -> dict:

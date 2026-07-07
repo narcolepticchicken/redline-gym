@@ -3,7 +3,7 @@
     {
       "rule_id": "R-001",
       "section": "1",
-      "quote": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing."
+      "quote": "all liabilities incurred in the ordinary course of Seller's operation of the business before closing"
     },
     {
       "rule_id": "R-006",
@@ -18,7 +18,7 @@
     {
       "rule_id": "R-010",
       "section": "7",
-      "quote": "Seller has 35 days to review the statement, deliver a written objection notice, and meet with Buyer in good faith."
+      "quote": "Seller has 35 days to review the statement"
     },
     {
       "rule_id": "R-011",

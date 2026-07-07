@@ -1,12 +1,15 @@
 {
   "gaps_union": [
-    "Voting agreement for board composition",
+    "Voting agreement to elect designated directors",
     "Registration rights",
-    "Amendment procedures",
-    "Standard boilerplate provisions (severability, entire agreement, notices, waiver)",
-    "Investor conflict-of-interest and overlap disclosure obligations",
-    "Stockholder voting covenant to implement board composition",
-    "Amendment and waiver provisions",
-    "IPO lock-up / market stand-off restrictions"
+    "Investor overlap disclosure obligations",
+    "Voting agreement or covenant requiring stockholders to vote shares to elect the designated board members",
+    "Investor conflict-of-interest and overlap disclosure obligations (including disclosure of interests in strategic partners or competitors)",
+    "Amendment and waiver procedures",
+    "Notice provisions",
+    "Entire agreement clause",
+    "Severability clause",
+    "Voting agreement clause obligating stockholders to vote for designated board nominees",
+    "Investor conflict-of-interest/overlap disclosure and restrictions on sharing information with competitive portfolio companies"
   ]
 }
