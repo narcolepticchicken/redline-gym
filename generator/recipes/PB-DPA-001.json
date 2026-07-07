@@ -8,7 +8,7 @@
       "section": "3",
       "templates": {
         "original_text": "{vendor_role} will process Personal Data only on documented instructions from {customer_role}, including this DPA, the master services agreement, order forms, and written directions from authorized {customer_role} personnel.",
-        "mutated_text": "{vendor_role} may determine the steps, tools, and handling methods it considers useful for operating the service, unless {customer_role} gives a written objection."
+        "mutated_text": "{vendor_role} may select processing purposes, tooling, and handling methods for service administration unless {customer_role} sends a written objection within 10 business days after notice."
       },
       "expected_action": "redline_with_fallback",
       "severity": "critical"
@@ -43,8 +43,8 @@
       "mechanism": "direct_term_swap",
       "section": "5",
       "templates": {
-        "original_text": "{vendor_role} will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
-        "mutated_text": "{vendor_role} will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
+        "original_text": "{vendor_role} will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+        "mutated_text": "{vendor_role} will maintain TLS in transit and an annual access review, and may replace other controls on 30 days' notice if monthly production uptime remains at 99.5%."
       },
       "expected_action": "redline_with_fallback",
       "severity": "critical"
@@ -55,8 +55,8 @@
       "mechanism": "direct_term_swap",
       "section": "8",
       "templates": {
-        "original_text": "{vendor_role} will notify {customer_role} without undue delay and in any event within {breach_hours} hours after discovering a Personal Data Breach.",
-        "mutated_text": "{vendor_role} will send an initial written alert within {late_notice} after its internal response team completes confirmation and executive review."
+        "original_text": "{vendor_role} will notify {customer_role} within {breach_hours} hours after discovering a Personal Data Breach.",
+        "mutated_text": "{vendor_role} will send an initial written alert about a Personal Data Breach within {late_notice} after discovering it only if forensic review confirms outbound extraction."
       },
       "slots": {
         "late_notice": ["72 hours", "5 business days", "10 business days"]
@@ -70,8 +70,8 @@
       "mechanism": "omission",
       "section": "9",
       "templates": {
-        "original_text": "{vendor_role} will provide reasonable assistance for access, deletion, correction, portability, opt-out, and objection requests using information available to {vendor_role}.",
-        "mutated_text": "{vendor_role} will refer individual inquiries to {customer_role} when it can identify the account associated with the request."
+        "original_text": "{vendor_role} will provide request intake details, account identifiers, data exports, correction logs, deletion status, portability files, opt-out status, and objection records within {dsr_assist_days} business days after {customer_role}'s written request.",
+        "mutated_text": "{vendor_role} will refer individual inquiries to {customer_role} within 5 business days when it can identify the account associated with the request."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"
@@ -83,7 +83,10 @@
       "section": "10",
       "templates": {
         "original_text": "Upon termination or expiration of the services, or earlier upon {customer_role}'s written request, {vendor_role} will return or delete Personal Data at {customer_role}'s direction within {deletion_days} days and certify completion in writing.",
-        "mutated_text": "After the relationship ends, {vendor_role} will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence."
+        "mutated_text": "After the relationship ends, {vendor_role} will remove hosted account content within {slow_deletion_days} days and will not be required to provide written completion evidence."
+      },
+      "slots": {
+        "slow_deletion_days": ["90", "120", "180"]
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"
@@ -94,7 +97,7 @@
       "mechanism": "cross_ref_override",
       "section": "11",
       "templates": {
-        "original_text": "On at least {audit_days} days' notice, {customer_role} or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause.",
+        "original_text": "On at least {audit_days} days' notice, {customer_role} or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause.",
         "mutated_text": "After annual assurance materials are delivered, no further control review is available for the same contract year unless {vendor_role} agrees in writing."
       },
       "expected_action": "redline_with_fallback",
@@ -107,7 +110,7 @@
       "section": "12",
       "templates": {
         "original_text": "{vendor_role} will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required.",
-        "mutated_text": "{vendor_role} may move hosted records among its global facilities and affiliates based on operational needs and regional capacity."
+        "mutated_text": "{vendor_role} may move hosted records among facilities and affiliates in the United States, Canada, Ireland, India, and Singapore without standard contractual clauses or transfer impact documentation."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"
@@ -118,7 +121,7 @@
       "mechanism": "omission",
       "section": "6",
       "templates": {
-        "original_text": "{vendor_role} will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.",
+        "original_text": "{vendor_role} will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year.",
         "mutated_text": "{vendor_role} will provide internal onboarding materials to personnel assigned to the service."
       },
       "expected_action": "redline_with_fallback",
@@ -166,8 +169,8 @@
       "mechanism": "cross_ref_override",
       "section": "15",
       "templates": {
-        "original_text": "For up to {transition_days} days after termination, {vendor_role} will provide reasonable termination assistance to support secure transition, return, or deletion.",
-        "mutated_text": "For up to {transition_days} days after termination, {vendor_role} will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards."
+        "original_text": "For up to {transition_days} days after termination, {vendor_role} will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+        "mutated_text": "For up to {transition_days} days after termination, {vendor_role} will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"

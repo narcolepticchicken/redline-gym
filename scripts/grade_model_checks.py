@@ -43,7 +43,7 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
     recall = len(matched_indexes) / len(planted_deviations) if planted_deviations else 1.0
     extra_count = sum(1 for item in found_stable if not _matches_any_planted(item, planted_deviations))
 
-    gaps = [str(gap) for gap in v7.get("gaps", [])]
+    gaps = [str(gap) for gap in v7.get("gaps_union", v7.get("gaps", []))]
     uncovered_topics = []
     for item in planted.get("missing_info", []):
         keywords = [str(keyword).lower() for keyword in item.get("match_keywords", [])]

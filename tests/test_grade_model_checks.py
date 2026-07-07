@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 from scripts.grade_model_checks import grade_task, update_summary
-from scripts.run_model_checks import aggregate_v4_samples, aggregate_v11_samples, parse_json_response
+from scripts.run_model_checks import aggregate_v4_samples, aggregate_v7_samples, aggregate_v11_samples, parse_json_response
 
 
 def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
@@ -118,6 +118,62 @@ def test_v4_union_and_stable_aggregation() -> None:
         ("R-003", "8"),
     ]
     assert [(item["rule_id"], item["section"]) for item in aggregate["found_stable"]] == [("R-001", "2")]
+
+
+def test_v7_union_aggregation_deduplicates_gaps() -> None:
+    aggregate = aggregate_v7_samples(
+        [
+            {"gaps": ["current subprocessor list location", "security exhibit"]},
+            {"gaps": ["Current Subprocessor List Location", "deletion certificate contact"]},
+            {"gaps": ["  ", "subprocessor portal URL"]},
+        ]
+    )
+
+    assert aggregate == {
+        "gaps_union": [
+            "current subprocessor list location",
+            "security exhibit",
+            "deletion certificate contact",
+            "subprocessor portal URL",
+        ]
+    }
+
+
+def test_v7_grade_matches_keywords_against_any_union_gap(tmp_path: Path) -> None:
+    task_dir = tmp_path / "T2-DPA-995"
+    checks = task_dir / "model_checks"
+    checks.mkdir(parents=True)
+    _dump(task_dir / "task.json", {"difficulty_tier": "T2"})
+    _dump(
+        task_dir / "planted_deviations.json",
+        {
+            "deviations": [],
+            "missing_info": [
+                {
+                    "topic": "Current subprocessor list location",
+                    "match_keywords": ["subprocessor", "portal", "list"],
+                }
+            ],
+        },
+    )
+    _dump(checks / "V3_clean_base.json", {"verdict": "PASS", "violations": []})
+    _dump(checks / "V4_round_trip.json", {"found_union": [], "found_stable": []})
+    _dump(checks / "V7_semantic.json", {"gaps_union": ["security exhibit", "subprocessor portal URL"]})
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ]
+        ),
+    )
+
+    row = grade_task(task_dir)
+
+    assert row["v7"] == "PASS"
+    assert row["v7_uncovered"] == []
 
 
 def test_v11_majority_vote_aggregates_and_propagates_failing_evidence() -> None:

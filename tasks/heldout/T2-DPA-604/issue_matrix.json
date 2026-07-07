@@ -5,7 +5,7 @@
       "deviation_ids": [
         "D-001"
       ],
-      "rule_id": "R-010",
+      "rule_id": "R-007",
       "doc_ids": [
         "DOC-01"
       ],
@@ -17,11 +17,11 @@
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-003",
+      "rule_id": "R-001",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -29,11 +29,11 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-008",
+      "rule_id": "R-011",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -41,7 +41,7 @@
       "deviation_ids": [
         "D-004"
       ],
-      "rule_id": "R-012",
+      "rule_id": "R-006",
       "doc_ids": [
         "DOC-01"
       ],
@@ -53,7 +53,7 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-001",
+      "rule_id": "R-005",
       "doc_ids": [
         "DOC-01"
       ],
@@ -85,13 +85,13 @@
     {
       "distractor_id": "X-001",
       "doc_id": "DOC-01",
-      "span": "Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA.",
       "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
     },
     {
       "distractor_id": "X-002",
       "doc_id": "DOC-01",
-      "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "span": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
       "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
     },
     {

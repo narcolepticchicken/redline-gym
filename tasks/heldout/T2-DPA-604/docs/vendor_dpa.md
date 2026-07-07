@@ -1,10 +1,10 @@
 # Vendor Data Processing Addendum
 
-This Data Processing Addendum ("DPA") is entered into by and between BrightRiver Health, Inc. ("Customer") and Stonepath Data LLC ("Vendor") and supplements the parties' master services agreement for the records normalization service.
+This Data Processing Addendum ("DPA") is entered into by and between Northstar Analytics, Inc. ("Customer") and LatticeBridge Systems, LLC ("Vendor") and supplements the parties' master services agreement for the workflow automation service.
 
 ## 1. Roles and Scope
 
-For personal data processed under this DPA, Customer acts as controller or business and Vendor acts as processor or service provider. This DPA applies to all personal data submitted to, accessed by, or generated through the records normalization service on behalf of Customer.
+For personal data processed under this DPA, Customer acts as controller or business and Vendor acts as processor or service provider. This DPA applies to all personal data submitted to, accessed by, or generated through the workflow automation service on behalf of Customer.
 
 ## 2. Definitions
 
@@ -12,11 +12,11 @@ For personal data processed under this DPA, Customer acts as controller or busin
 
 ## 3. Purpose Limitation
 
-Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.
+Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
 
 ## 4. Documented Instructions
 
-Vendor will process Personal Data only on documented instructions from Customer, including this DPA, the master services agreement, order forms, and written directions from authorized Customer personnel. If Vendor believes an instruction violates applicable law, it will inform Customer in writing within 2 business days unless legally prohibited.
+Vendor may select processing purposes, tooling, and handling methods for service administration unless Customer sends a written objection within 10 business days after notice. If Vendor believes an instruction violates applicable law, it will inform Customer in writing within 2 business days unless legally prohibited.
 
 ## 5. Security Measures
 
@@ -24,11 +24,11 @@ Vendor will maintain administrative, technical, and physical safeguards for host
 
 ## 6. Personnel Confidentiality
 
-Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service.
+Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year.
 
 ## 7. Breach Notice
 
-Vendor will notify Customer within 48 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
+Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
 
 ## 8. Subprocessors
 
@@ -40,11 +40,11 @@ Vendor will notify Customer within 2 business days if it receives a request from
 
 ## 10. Return and Deletion
 
-Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing. Retained copies required by law or archival controls remain subject to this DPA until deleted.
+Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 30 days and certify completion in writing. Retained copies required by law or archival controls remain subject to this DPA until deleted.
 
 ## 11. Audit and Assurance
 
-Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA. After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing.
+Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA. On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause.
 
 ## 12. International Transfers
 
@@ -56,7 +56,7 @@ Within 10 business days after Customer's written request, Vendor will provide da
 
 ## 14. Term and Transition Assistance
 
-This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer. For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.
+This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer. For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.
 
 ## 15. Liability and Order of Precedence
 

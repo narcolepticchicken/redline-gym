@@ -12,19 +12,19 @@ For personal data processed under this DPA, Customer acts as controller or busin
 
 ## 3. Documented Instructions
 
-Vendor may determine the steps, tools, and handling methods it considers useful for operating the service, unless Customer gives a written objection. If Vendor believes an instruction violates applicable law, it will promptly inform Customer unless legally prohibited.
+Vendor will process Personal Data only on documented instructions from Customer, including this DPA, the master services agreement, order forms, and written directions from authorized Customer personnel. If Vendor believes an instruction violates applicable law, it will inform Customer in writing within 2 business days unless legally prohibited.
 
-## 4. Purpose Limitation
+## 4. Security Measures
 
-Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
+Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.
 
-## 5. Security Measures
+## 5. Purpose Limitation
 
-Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.
+Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.
 
 ## 6. Personnel Confidentiality
 
-Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.
+Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year.
 
 ## 7. Subprocessors
 
@@ -32,27 +32,27 @@ Vendor may use subprocessors only with Customer's prior written approval or thro
 
 ## 8. Breach Notice
 
-Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
+Vendor will send an initial written alert about a Personal Data Breach within 10 business days after discovering it only if forensic review confirms outbound extraction. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
 
 ## 9. Data Subject Requests
 
-Vendor will promptly notify Customer if it receives a request from an individual relating to Personal Data and will not respond except on Customer's documented instructions or as required by law. Vendor will provide reasonable assistance for access, deletion, correction, portability, opt-out, and objection requests using information available to Vendor.
+Vendor will notify Customer within 2 business days if it receives a request from an individual relating to Personal Data and will not respond except on Customer's documented instructions or as required by law. Vendor will provide request intake details, account identifiers, data exports, correction logs, deletion status, portability files, opt-out status, and objection records within 10 business days after Customer's written request.
 
-## 10. Return and Deletion
+## 10. Audit and Assurance
 
-After the relationship ends, Vendor will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence. Retained copies required by law or archival controls remain subject to this DPA until deleted.
+Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA. On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause.
 
-## 11. Audit and Assurance
+## 11. Return and Deletion
 
-Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA. On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause.
+After the relationship ends, Vendor will remove hosted account content within 120 days and will not be required to provide written completion evidence. Retained copies required by law or archival controls remain subject to this DPA until deleted.
 
 ## 12. International Transfers
 
-Vendor will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required. Vendor will provide reasonable information and cooperation for transfer assessments relating to the services.
+Vendor may move hosted records among facilities and affiliates in the United States, Canada, Ireland, India, and Singapore without standard contractual clauses or transfer impact documentation. Vendor will provide the transfer mechanism, destination country list, importer role, and transfer assessment inputs within 10 business days after Customer's written request.
 
 ## 13. Regulatory Cooperation
 
-Taking into account the nature of Processing and information available to Vendor, Vendor will reasonably assist Customer with privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services.
+Within 10 business days after Customer's written request, Vendor will provide data-flow summaries, processing records, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services.
 
 ## 14. Liability and Order of Precedence
 
@@ -60,4 +60,4 @@ Claims arising from Vendor's breach of this DPA are subject to the liability cap
 
 ## 15. Term and Transition Assistance
 
-This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer. For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.
+This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer. For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.

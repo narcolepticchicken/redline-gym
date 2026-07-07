@@ -2,16 +2,16 @@
   "deviations": [
     {
       "deviation_id": "D-001",
-      "rule_id": "R-010",
+      "rule_id": "R-001",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "6",
-        "span": "Vendor will provide internal onboarding materials to personnel assigned to the service."
+        "section": "2",
+        "span": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
       },
-      "original_text": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.",
-      "mutated_text": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
-      "mechanism": "omission",
-      "severity": "high",
+      "original_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+      "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -30,44 +30,44 @@
     },
     {
       "deviation_id": "D-003",
-      "rule_id": "R-004",
+      "rule_id": "R-010",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "4",
-        "span": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
+        "section": "6",
+        "span": "Vendor will provide internal onboarding materials to personnel assigned to the service."
       },
-      "original_text": "Vendor will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
-      "mutated_text": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.",
-      "mechanism": "direct_term_swap",
-      "severity": "critical",
+      "original_text": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year.",
+      "mutated_text": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
+      "mechanism": "omission",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
       "deviation_id": "D-004",
-      "rule_id": "R-012",
+      "rule_id": "R-007",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "14",
-        "span": "For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable."
+        "section": "15",
+        "span": "For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
       },
-      "original_text": "Claims arising from Vendor's breach of this DPA are subject to the liability cap and exclusions stated in the master services agreement and are not subject to any lower cap, special exclusion, or separate damages waiver for data protection obligations.",
-      "mutated_text": "For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable.",
-      "mechanism": "direct_term_swap",
+      "original_text": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+      "mutated_text": "For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
+      "mechanism": "cross_ref_override",
       "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
       "deviation_id": "D-005",
-      "rule_id": "R-007",
+      "rule_id": "R-002",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "15",
-        "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards."
+        "section": "4",
+        "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
       },
-      "original_text": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
-      "mutated_text": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards.",
-      "mechanism": "cross_ref_override",
-      "severity": "high",
+      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+      "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -75,13 +75,13 @@
     {
       "distractor_id": "X-001",
       "doc_id": "DOC-01",
-      "span": "Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA.",
       "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
     },
     {
       "distractor_id": "X-002",
       "doc_id": "DOC-01",
-      "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "span": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
       "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
     },
     {
@@ -117,11 +117,11 @@
     "playbook=PB-DPA-001",
     "tier=T2",
     "task_id=T2-DPA-303",
-    "D-001 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
+    "D-001 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-001",
     "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
-    "D-003 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
-    "D-004 DPA-R012-DIRECT-LIABILITY direct_term_swap applied to R-012",
-    "D-005 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007",
+    "D-003 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
+    "D-004 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007",
+    "D-005 DPA-R002-DIRECT-PURPOSE direct_term_swap applied to R-002",
     "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

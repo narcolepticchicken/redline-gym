@@ -1,8 +1,0 @@
-{
-  "gaps": [
-    "No binding processor obligation to process personal data only on Customer's documented instructions; Vendor has default discretion and objection right only",
-    "No specified technical and organizational security measures (e.g., encryption, access controls, logging, vulnerability management, incident response) \u2013 only commercially suitable safeguards at Vendor's discretion",
-    "Breach notification timing not tied to discovery and does not mandate notice without undue delay within 48 hours; notice only within 10 business days after internal confirmation and executive review",
-    "No obligation to return or delete personal data at Customer's direction nor to provide written certification of deletion; only removal on Vendor's ordinary operations schedule"
-  ]
-}

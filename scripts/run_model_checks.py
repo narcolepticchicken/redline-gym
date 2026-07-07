@@ -41,7 +41,9 @@ SCHEMA_INSTRUCTIONS = {
     ),
     "V7_semantic": (
         'Return STRICT JSON only, matching this schema exactly: {"gaps":["topic",...]}. '
-        "Each gap should be a concise material missing-information topic."
+        "Each gap should be a concise material missing-information topic. Report ONLY topics that have "
+        "NO clause at all in the document. If a topic is addressed by an existing clause, even a defective "
+        "or weak clause, it is out of scope for this check; that is a playbook violation, not a gap."
     ),
     "V11_realism": (
         'Return STRICT JSON only, matching this schema exactly: '
@@ -108,7 +110,9 @@ def main(argv: list[str] | None = None) -> int:
         "V7_semantic": (
             f"Client context: {task['client_context']}\n\n"
             "Given this context, name any material topic this contract is SILENT on that a careful reviewer "
-            "should escalate. Cite why.\n\n"
+            "should escalate. Report ONLY topics with NO clause at all in the document. Do not report topics "
+            "covered by an existing clause, even if the clause is defective, weak, too narrow, too slow, or "
+            "customer-unfavorable; those are violations for V4, not missing-information gaps for V7.\n\n"
             + shipped
         ),
         "V11_realism": (
@@ -129,7 +133,7 @@ def main(argv: list[str] | None = None) -> int:
 
     for name, call in calls.items():
         prompt = _with_schema(prompts[name], SCHEMA_INSTRUCTIONS[name])
-        sample_count = 3 if name in {"V4_round_trip", "V11_realism"} else 1
+        sample_count = 3 if name in {"V4_round_trip", "V7_semantic", "V11_realism"} else 1
         samples: list[dict[str, Any]] = []
         final_texts: list[str] = []
         for sample_idx in range(1, sample_count + 1):
@@ -154,6 +158,8 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             if name == "V4_round_trip":
                 aggregate = aggregate_v4_samples(samples)
+            elif name == "V7_semantic":
+                aggregate = aggregate_v7_samples(samples)
             else:
                 aggregate = aggregate_v11_samples(samples, mechanical_q1=_mechanical_v11_q1(shipped))
             (out_dir / f"{name}.json").write_text(json.dumps(aggregate, indent=2, sort_keys=True) + "\n")
@@ -264,6 +270,23 @@ def aggregate_v4_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
     found_union = [first_by_key[key] for key in first_by_key]
     found_stable = [first_by_key[key] for key in first_by_key if sample_presence[key] >= 2]
     return {"found_union": found_union, "found_stable": found_stable}
+
+
+def aggregate_v7_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
+    """Aggregate V7 samples as a normalized union of missing-information gaps."""
+    gaps_union: list[str] = []
+    seen: set[str] = set()
+    for sample in samples:
+        for gap in sample.get("gaps", []):
+            text = str(gap).strip()
+            if not text:
+                continue
+            key = _norm_item(text)
+            if key in seen:
+                continue
+            gaps_union.append(text)
+            seen.add(key)
+    return {"gaps_union": gaps_union}
 
 
 def aggregate_v11_samples(samples: list[dict[str, Any]], mechanical_q1: bool | None = None) -> dict[str, Any]:

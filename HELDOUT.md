@@ -10,6 +10,10 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: DPA base and recipe templates were revised for the R2 register
+  gate: defined terms now remain used after mutations, and vague time/quantity
+  phrasing was replaced with bounded values. Replaced stale
+  `tasks/heldout/T2-DPA-603` with fresh seed `tasks/heldout/T2-DPA-604`.
 - 2026-07-07: Missing-info anchoring changed all three base/recipe families by
   requiring `context_anchor` and `match_keywords`, and appending each anchor to
   `client_context`. Deleted the prior held-out instances and reseeded the split

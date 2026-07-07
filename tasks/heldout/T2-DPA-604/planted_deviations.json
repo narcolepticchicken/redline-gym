@@ -2,20 +2,34 @@
   "deviations": [
     {
       "deviation_id": "D-001",
-      "rule_id": "R-008",
+      "rule_id": "R-007",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "11",
-        "span": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing."
+        "section": "14",
+        "span": "For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
       },
-      "original_text": "On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause.",
-      "mutated_text": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing.",
+      "original_text": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+      "mutated_text": "For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
       "mechanism": "cross_ref_override",
-      "severity": "medium",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
       "deviation_id": "D-002",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "4",
+        "span": "Vendor may select processing purposes, tooling, and handling methods for service administration unless Customer sends a written objection within 10 business days after notice."
+      },
+      "original_text": "Vendor will process Personal Data only on documented instructions from Customer, including this DPA, the master services agreement, order forms, and written directions from authorized Customer personnel.",
+      "mutated_text": "Vendor may select processing purposes, tooling, and handling methods for service administration unless Customer sends a written objection within 10 business days after notice.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
       "rule_id": "R-011",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -29,35 +43,7 @@
       "expected_action": "redline_with_fallback"
     },
     {
-      "deviation_id": "D-003",
-      "rule_id": "R-010",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "6",
-        "span": "Vendor will provide internal onboarding materials to personnel assigned to the service."
-      },
-      "original_text": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year.",
-      "mutated_text": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
-      "mechanism": "omission",
-      "severity": "high",
-      "expected_action": "redline_with_fallback"
-    },
-    {
       "deviation_id": "D-004",
-      "rule_id": "R-002",
-      "doc_id": "DOC-01",
-      "clause_anchor": {
-        "section": "3",
-        "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
-      },
-      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
-      "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
-      "mechanism": "direct_term_swap",
-      "severity": "critical",
-      "expected_action": "redline_with_fallback"
-    },
-    {
-      "deviation_id": "D-005",
       "rule_id": "R-006",
       "doc_id": "DOC-01",
       "clause_anchor": {
@@ -68,6 +54,20 @@
       "mutated_text": "Vendor will refer individual inquiries to Customer within 5 business days when it can identify the account associated with the request.",
       "mechanism": "omission",
       "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction."
+      },
+      "original_text": "Vendor will notify Customer within 48 hours after discovering a Personal Data Breach.",
+      "mutated_text": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -112,16 +112,16 @@
     }
   ],
   "generation_log": [
-    "seed=302",
-    "attempt_seed=302",
+    "seed=604",
+    "attempt_seed=604",
     "playbook=PB-DPA-001",
     "tier=T2",
-    "task_id=T2-DPA-302",
-    "D-001 DPA-R008-CROSS-AUDIT-LIMIT cross_ref_override applied to R-008",
-    "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
-    "D-003 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
-    "D-004 DPA-R002-DIRECT-PURPOSE direct_term_swap applied to R-002",
-    "D-005 DPA-R006-OMISSION-RIGHTS-HELP omission applied to R-006",
+    "task_id=T2-DPA-604",
+    "D-001 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007",
+    "D-002 DPA-R001-DIRECT-INSTRUCTIONS direct_term_swap applied to R-001",
+    "D-003 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
+    "D-004 DPA-R006-OMISSION-RIGHTS-HELP omission applied to R-006",
+    "D-005 DPA-R005-DIRECT-BREACH-HOURS direct_term_swap applied to R-005",
     "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
   ]
 }

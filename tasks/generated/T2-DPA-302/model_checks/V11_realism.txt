@@ -1,7 +1,0 @@
-{
-  "score": 5,
-  "weakest": [
-    "The defined term 'Processing' is narrowly restricted to 'live hosting of raw individual records in the production database', which directly conflicts with the broad usage of 'process' and 'processed' in Sections 1, 5, and elsewhere. This creates a severe internal inconsistency that undermines the entire DPA's scope and obligations.",
-    "Section 6 ('Personnel Confidentiality') completely omits any requirement for personnel to observe confidentiality obligations regarding personal data. The heading promises confidentiality, but the body only limits access and mentions internal onboarding materials, leaving a critical gap and making the section incoherent with its title."
-  ]
-}

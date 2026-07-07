@@ -9,9 +9,16 @@
     "vendor_name": ["LatticeBridge Systems, LLC", "HarborCloud Labs LLC", "Stonepath Data LLC"],
     "service_name": ["data-ingestion platform", "workflow automation service", "records normalization service"],
     "breach_hours": ["24", "48", "72"],
+    "breach_update_hours": ["24"],
     "deletion_days": ["15", "30"],
     "transition_days": ["30"],
     "audit_days": ["30"],
+    "instruction_notice_days": ["2"],
+    "dsr_notice_days": ["2"],
+    "dsr_assist_days": ["10"],
+    "questionnaire_days": ["10"],
+    "transfer_assessment_days": ["10"],
+    "regulatory_assist_days": ["10"],
     "law_state": ["Delaware"]
   },
   "client_context_template": "Client is a mid-size tech company whose vendor will process customer personal data through a production {service_name}. Review the DPA from the customer/controller side and escalate practical privacy or security gaps.",
@@ -41,7 +48,7 @@
       "id": "3",
       "heading": "Documented Instructions",
       "paragraphs": [
-        "{vendor_role} will process Personal Data only on documented instructions from {customer_role}, including this DPA, the master services agreement, order forms, and written directions from authorized {customer_role} personnel. If {vendor_role} believes an instruction violates applicable law, it will promptly inform {customer_role} unless legally prohibited."
+        "{vendor_role} will process Personal Data only on documented instructions from {customer_role}, including this DPA, the master services agreement, order forms, and written directions from authorized {customer_role} personnel. If {vendor_role} believes an instruction violates applicable law, it will inform {customer_role} in writing within {instruction_notice_days} business days unless legally prohibited."
       ]
     },
     {
@@ -55,14 +62,14 @@
       "id": "5",
       "heading": "Security Measures",
       "paragraphs": [
-        "{vendor_role} will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures."
+        "{vendor_role} will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures."
       ]
     },
     {
       "id": "6",
       "heading": "Personnel Confidentiality",
       "paragraphs": [
-        "{vendor_role} will limit Personal Data access to personnel who need it to perform the services. {vendor_role} will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles."
+        "{vendor_role} will limit Personal Data access to personnel who need it to perform the services. {vendor_role} will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year."
       ]
     },
     {
@@ -76,14 +83,14 @@
       "id": "8",
       "heading": "Breach Notice",
       "paragraphs": [
-        "{vendor_role} will notify {customer_role} without undue delay and in any event within {breach_hours} hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and {vendor_role} will provide timely updates as information develops."
+        "{vendor_role} will notify {customer_role} within {breach_hours} hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and {vendor_role} will provide written updates every {breach_update_hours} hours until {customer_role} receives a written closure notice."
       ]
     },
     {
       "id": "9",
       "heading": "Data Subject Requests",
       "paragraphs": [
-        "{vendor_role} will promptly notify {customer_role} if it receives a request from an individual relating to Personal Data and will not respond except on {customer_role}'s documented instructions or as required by law. {vendor_role} will provide reasonable assistance for access, deletion, correction, portability, opt-out, and objection requests using information available to {vendor_role}."
+        "{vendor_role} will notify {customer_role} within {dsr_notice_days} business days if it receives a request from an individual relating to Personal Data and will not respond except on {customer_role}'s documented instructions or as required by law. {vendor_role} will provide request intake details, account identifiers, data exports, correction logs, deletion status, portability files, opt-out status, and objection records within {dsr_assist_days} business days after {customer_role}'s written request."
       ]
     },
     {
@@ -97,21 +104,21 @@
       "id": "11",
       "heading": "Audit and Assurance",
       "paragraphs": [
-        "{vendor_role} will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA. On at least {audit_days} days' notice, {customer_role} or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause."
+        "{vendor_role} will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within {questionnaire_days} business days, and written control mappings needed to demonstrate compliance with this DPA. On at least {audit_days} days' notice, {customer_role} or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause."
       ]
     },
     {
       "id": "12",
       "heading": "International Transfers",
       "paragraphs": [
-        "{vendor_role} will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required. {vendor_role} will provide reasonable information and cooperation for transfer assessments relating to the services."
+        "{vendor_role} will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required. {vendor_role} will provide the transfer mechanism, destination country list, importer role, and transfer assessment inputs within {transfer_assessment_days} business days after {customer_role}'s written request."
       ]
     },
     {
       "id": "13",
       "heading": "Regulatory Cooperation",
       "paragraphs": [
-        "Taking into account the nature of Processing and information available to {vendor_role}, {vendor_role} will reasonably assist {customer_role} with privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services."
+        "Within {regulatory_assist_days} business days after {customer_role}'s written request, {vendor_role} will provide data-flow summaries, processing records, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services."
       ]
     },
     {
@@ -125,7 +132,7 @@
       "id": "15",
       "heading": "Term and Transition Assistance",
       "paragraphs": [
-        "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as {vendor_role} processes or retains Personal Data on behalf of {customer_role}. For up to {transition_days} days after termination, {vendor_role} will provide reasonable termination assistance to support secure transition, return, or deletion."
+        "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as {vendor_role} processes or retains Personal Data on behalf of {customer_role}. For up to {transition_days} days after termination, {vendor_role} will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion."
       ]
     }
   ],
@@ -133,13 +140,13 @@
     {
       "distractor_id": "X-001",
       "doc_id": "DOC-01",
-      "span": "{vendor_role} will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.",
+      "span": "{vendor_role} will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within {questionnaire_days} business days, and written control mappings needed to demonstrate compliance with this DPA.",
       "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
     },
     {
       "distractor_id": "X-002",
       "doc_id": "DOC-01",
-      "span": "For up to {transition_days} days after termination, {vendor_role} will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "span": "For up to {transition_days} days after termination, {vendor_role} will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
       "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
     },
     {
