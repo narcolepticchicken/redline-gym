@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 from typing import Any
 
@@ -34,15 +35,12 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
     v7 = _load_json(checks / "V7_semantic.json")
     v11 = _load_json(checks / "V11_realism.json")
 
-    planted_keys = {
-        (_norm_item(dev["rule_id"]), _norm_item(dev["clause_anchor"]["section"]))
-        for dev in planted["deviations"]
-    }
-    found_items = v4.get("found", [])
-    found_keys = [(_norm_item(item.get("rule_id", "")), _norm_item(item.get("section", ""))) for item in found_items]
-    matched = planted_keys & set(found_keys)
-    recall = len(matched) / len(planted_keys) if planted_keys else 1.0
-    extra_count = sum(1 for key in found_keys if key not in planted_keys)
+    planted_deviations = planted.get("deviations", [])
+    found_union = v4.get("found_union", v4.get("found", []))
+    found_stable = v4.get("found_stable", v4.get("found", []))
+    matched_indexes = _matched_planted_indexes(found_union, planted_deviations)
+    recall = len(matched_indexes) / len(planted_deviations) if planted_deviations else 1.0
+    extra_count = sum(1 for item in found_stable if not _matches_any_planted(item, planted_deviations))
 
     gaps = [str(gap) for gap in v7.get("gaps", [])]
     uncovered_topics = []
@@ -53,8 +51,10 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
         if not any(any(keyword in gap.lower() for keyword in keywords) for gap in gaps):
             uncovered_topics.append(item.get("topic", ""))
 
-    score = v11.get("score")
+    median = v11.get("median", v11.get("score"))
+    spread = v11.get("spread", 0 if isinstance(v11.get("score"), (int, float)) else None)
     v4_gate = _v4_gate(task.get("difficulty_tier", ""), recall)
+    v11_status = _v11_status(median, spread)
     try:
         rel_task = str(task_dir.relative_to(ROOT))
     except ValueError:
@@ -64,14 +64,16 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
         "task": rel_task,
         "v3": "PASS" if not v3.get("violations", []) else "FAIL",
         "v4_recall": recall,
-        "v4_matched": len(matched),
-        "v4_total": len(planted_keys),
+        "v4_matched": len(matched_indexes),
+        "v4_total": len(planted_deviations),
         "v4_extra": extra_count,
         "v4_gate": v4_gate,
         "v7": "PASS" if not uncovered_topics else "FAIL",
         "v7_uncovered": uncovered_topics,
-        "v11": "PASS" if isinstance(score, (int, float)) and score >= 8 else "FAIL",
-        "v11_score": score,
+        "v11": v11_status,
+        "v11_score": median,
+        "v11_median": median,
+        "v11_spread": spread,
     }
 
 
@@ -83,8 +85,8 @@ def update_summary(row: dict[str, Any], summary_path: Path = SUMMARY_PATH) -> No
     lines = [
         "# Model Checks Summary",
         "",
-        "| Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 score |",
-        "|---|---|---:|---|---:|---|---:|",
+        "| Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 median (spread) |",
+        "|---|---|---:|---|---:|---|---|",
     ]
     for task in sorted(rows):
         lines.append(_format_markdown_row(rows[task]))
@@ -113,6 +115,7 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
             v4_extra = int(cells[3])
             v7 = cells[4]
             score_text = cells[5]
+        median, spread, v11_status = _parse_v11_cell(score_text)
         rows[cells[0]] = {
             "task": cells[0],
             "v3": cells[1],
@@ -123,8 +126,10 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
             "v4_gate": v4_gate,
             "v7": v7,
             "v7_uncovered": [],
-            "v11": "PASS" if float(score_text) >= 8 else "FAIL",
-            "v11_score": float(score_text),
+            "v11": v11_status,
+            "v11_score": median,
+            "v11_median": median,
+            "v11_spread": spread,
         }
     return rows
 
@@ -133,14 +138,14 @@ def _format_row(row: dict[str, Any]) -> str:
     return (
         f"{row['task']}: V3={row['v3']} "
         f"V4={row['v4_matched']}/{row['v4_total']} gate={row['v4_gate']} extra={row['v4_extra']} "
-        f"V7={row['v7']} V11={row['v11']} score={row['v11_score']}"
+        f"V7={row['v7']} V11={row['v11']} score={row['v11_score']} spread={row.get('v11_spread', 0)}"
     )
 
 
 def _format_markdown_row(row: dict[str, Any]) -> str:
     return (
         f"| {row['task']} | {row['v3']} | {row['v4_matched']}/{row['v4_total']} | "
-        f"{row['v4_gate']} | {row['v4_extra']} | {row['v7']} | {float(row['v11_score']):.1f} |"
+        f"{row['v4_gate']} | {row['v4_extra']} | {row['v7']} | {_format_v11_cell(row)} |"
     )
 
 
@@ -154,8 +159,103 @@ def _v4_gate(tier: str, recall: float) -> str:
     return "PASS" if recall >= threshold else "FAIL"
 
 
+def _matched_planted_indexes(found_items: list[dict[str, Any]], planted_deviations: list[dict[str, Any]]) -> set[int]:
+    matched: set[int] = set()
+    for item in found_items:
+        for idx, deviation in enumerate(planted_deviations):
+            if _matches_planted(item, deviation):
+                matched.add(idx)
+                break
+    return matched
+
+
+def _matches_any_planted(item: dict[str, Any], planted_deviations: list[dict[str, Any]]) -> bool:
+    return any(_matches_planted(item, deviation) for deviation in planted_deviations)
+
+
+def _matches_planted(item: dict[str, Any], deviation: dict[str, Any]) -> bool:
+    if _norm_item(item.get("rule_id", "")) != _norm_item(deviation.get("rule_id", "")):
+        return False
+    return _section_matches(item.get("section", ""), deviation) or _quote_overlaps_mutated_text(
+        item.get("quote", ""), deviation.get("mutated_text", "")
+    )
+
+
+def _section_matches(found_section: Any, deviation: dict[str, Any]) -> bool:
+    anchor = deviation.get("clause_anchor", {}).get("section", "")
+    return bool(_section_tokens(found_section) & _section_tokens(anchor))
+
+
+def _section_tokens(value: Any) -> set[str]:
+    text = _norm_item(value)
+    tokens = {text} if text else set()
+    tokens.update(token for token in re.split(r"[^a-z0-9]+", text) if token)
+    return tokens
+
+
+def _quote_overlaps_mutated_text(quote: Any, mutated_text: Any, threshold: int = 20) -> bool:
+    quote_text = _norm_chars(quote)
+    mutated = _norm_chars(mutated_text)
+    if not quote_text or not mutated:
+        return False
+    return _longest_common_substring_len(quote_text, mutated) >= threshold
+
+
+def _longest_common_substring_len(left: str, right: str) -> int:
+    if len(left) > len(right):
+        left, right = right, left
+    previous = [0] * (len(left) + 1)
+    best = 0
+    for r_char in right:
+        current = [0]
+        for idx, l_char in enumerate(left, start=1):
+            value = previous[idx - 1] + 1 if l_char == r_char else 0
+            current.append(value)
+            if value > best:
+                best = value
+        previous = current
+    return best
+
+
+def _v11_status(median: Any, spread: Any) -> str:
+    if isinstance(spread, (int, float)) and spread > 2:
+        return "UNSTABLE"
+    if isinstance(median, (int, float)) and median >= 8:
+        return "PASS"
+    return "FAIL"
+
+
+def _format_v11_cell(row: dict[str, Any]) -> str:
+    median = float(row["v11_score"])
+    spread = row.get("v11_spread", 0)
+    spread_text = _format_number(spread)
+    score_text = f"{median:.1f} ({spread_text})"
+    if row.get("v11") == "UNSTABLE":
+        return f"UNSTABLE {score_text}"
+    return score_text
+
+
+def _parse_v11_cell(cell: str) -> tuple[float, float, str]:
+    unstable = "UNSTABLE" in cell.upper()
+    numbers = [float(match) for match in re.findall(r"\d+(?:\.\d+)?", cell)]
+    median = numbers[0] if numbers else 0.0
+    spread = numbers[1] if len(numbers) > 1 else 0.0
+    status = "UNSTABLE" if unstable or spread > 2 else ("PASS" if median >= 8 else "FAIL")
+    return median, spread, status
+
+
+def _format_number(value: Any) -> str:
+    if isinstance(value, (int, float)) and float(value).is_integer():
+        return str(int(value))
+    return f"{float(value):.1f}"
+
+
 def _norm_item(value: Any) -> str:
     return str(value).strip().lower()
+
+
+def _norm_chars(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", "", str(value).lower())
 
 
 def _load_json(path: Path) -> dict[str, Any]:
