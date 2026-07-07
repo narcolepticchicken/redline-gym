@@ -221,6 +221,60 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
+        "composite": 0.527273,
+        "recall": 0.5,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-EMP-711",
+      "task_id": "T1-EMP-711",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-GOV-901",
+      "task_id": "T1-GOV-901",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
         "composite": 0.25,
         "recall": 0.0,
         "status": "OK"
@@ -485,6 +539,87 @@
       "random_gate": "UNMEASURED",
       "task": "tasks/generated/T2-EMP-703",
       "task_id": "T2-EMP-703",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.365,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-EMP-712",
+      "task_id": "T2-EMP-712",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.366667,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-GOV-902",
+      "task_id": "T2-GOV-902",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-GOV-903",
+      "task_id": "T2-GOV-903",
       "validators": "PASS"
     },
     {

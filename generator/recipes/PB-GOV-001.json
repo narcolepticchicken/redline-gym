@@ -1,0 +1,161 @@
+{
+  "playbook_id": "PB-GOV-001",
+  "entries": [
+    {
+      "recipe_id": "GOV-R001-DIRECT-BOARD-INVESTOR-MAJORITY",
+      "rule_id": "R-001",
+      "mechanism": "direct_term_swap",
+      "section": "3",
+      "templates": {
+        "original_text": "The Board will consist of five directors: three Founder Designees selected by the {founder_group}, one Series A Designee selected by the Requisite Holders, and one independent director approved by the Founder Designees and the Requisite Holders.",
+        "mutated_text": "The Board will consist of five directors: two Founder Designees selected by the {founder_group}, two Series A Designees selected by the Requisite Holders, and one independent director selected solely by the Series A Designees."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "GOV-R002-CROSS-INVESTOR-RELATIONS-CONSENT",
+      "rule_id": "R-002",
+      "mechanism": "cross_ref_override",
+      "section": "5",
+      "templates": {
+        "original_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.",
+        "mutated_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration. Notwithstanding Section 4, the Company will obtain Requisite Holder approval for any other matter that an investor reasonably identifies as material to its investment."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "GOV-R003-DIRECT-ORDINARY-COURSE-CONSENT",
+      "rule_id": "R-003",
+      "mechanism": "direct_term_swap",
+      "section": "4",
+      "templates": {
+        "original_text": "No investor approval is required for matters not listed in this Section 4.",
+        "mutated_text": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "GOV-R004-DIRECT-DRAG-UNCAPPED-INDEMNITY",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "6",
+      "templates": {
+        "original_text": "No stockholder will be required to provide uncapped indemnity, non-pro rata liability, or a non-compete covenant as a condition to the drag-along.",
+        "mutated_text": "Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "GOV-R005-DIRECT-TAG-FOUNDER-EXCLUSION",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "7",
+      "templates": {
+        "original_text": "If a Founder Holder or Major Investor proposes to transfer more than {tag_threshold} of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms.",
+        "mutated_text": "If a Major Investor proposes to transfer more than {tag_threshold} of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms, but transfers by Founder Holders are excluded from tag-along rights."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "GOV-R006-DIRECT-INVESTOR-ROFR-FIRST",
+      "rule_id": "R-006",
+      "mechanism": "direct_term_swap",
+      "section": "8",
+      "templates": {
+        "original_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.",
+        "mutated_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "GOV-R007-OMISSION-PERMITTED-TRANSFEREE",
+      "rule_id": "R-007",
+      "mechanism": "omission",
+      "section": "9",
+      "templates": {
+        "original_text": "These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.",
+        "mutated_text": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "GOV-R008-DIRECT-INFORMATION-MONTHLY-INSPECTION",
+      "rule_id": "R-008",
+      "mechanism": "direct_term_swap",
+      "section": "10",
+      "templates": {
+        "original_text": "Each Major Investor may receive quarterly unaudited financial statements within {quarterly_days} days after quarter-end and annual audited financial statements within {annual_days} days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits.",
+        "mutated_text": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "GOV-R009-DIRECT-PREEMPTIVE-NO-EXCLUSIONS",
+      "rule_id": "R-009",
+      "mechanism": "direct_term_swap",
+      "section": "11",
+      "templates": {
+        "original_text": "Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+        "mutated_text": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "GOV-R010-DIRECT-CONFIDENTIALITY-DISCLOSURE",
+      "rule_id": "R-010",
+      "mechanism": "direct_term_swap",
+      "section": "12",
+      "templates": {
+        "original_text": "Each holder receiving Company information will keep that information confidential, use it only to monitor its investment, and disclose it only to representatives bound by comparable confidentiality obligations.",
+        "mutated_text": "Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "GOV-R011-DIRECT-MFN-OPEN-ENDED",
+      "rule_id": "R-011",
+      "mechanism": "direct_term_swap",
+      "section": "13",
+      "templates": {
+        "original_text": "Any side-letter MFN right applies only to the economic fee terms and information delivery dates expressly listed in the applicable side letter. No MFN imports governance, veto, board, transfer, operational consent, or other investor rights unless the Company expressly agrees in a signed amendment.",
+        "mutated_text": "Any side-letter MFN right automatically imports any more favorable economic, information, governance, veto, board, transfer, operational consent, or other investor right granted to any other investor after the date of this Agreement."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "GOV-R012-DIRECT-TERMINATION-SURVIVES-IPO",
+      "rule_id": "R-012",
+      "mechanism": "direct_term_swap",
+      "section": "14",
+      "templates": {
+        "original_text": "Investor rights under this Agreement terminate upon the earliest of a qualified IPO with gross proceeds of at least {ipo_threshold}, a sale of the Company, or the time the holder no longer holds the minimum share ownership required for the applicable right.",
+        "mutated_text": "Investor rights under this Agreement continue after a qualified IPO, sale of the Company, or reduction in the holder's ownership unless each affected Major Investor signs a written release."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "GOV-R013-DEFINED-REQUISITE-HOLDERS-LOWERED",
+      "rule_id": "R-013",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Major Investor\" means a holder of at least {share_threshold} shares of {series_name}. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding {series_name}, voting as a single class.",
+        "mutated_text": "\"Major Investor\" means a holder of at least 100,000 shares of {series_name}. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding {series_name}."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    }
+  ]
+}

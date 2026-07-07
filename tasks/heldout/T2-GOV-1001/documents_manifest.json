@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Stockholders' Agreement",
+      "type": "stockholders_agreement",
+      "path": "docs/stockholders_agreement.md",
+      "sha256": "8109ba66a9a7c8e5df74fbd393d09c28ddb875c17f374377097c894a7ff0fac3",
+      "is_distractor": false
+    }
+  ]
+}

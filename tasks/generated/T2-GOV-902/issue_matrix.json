@@ -1,0 +1,104 @@
+{
+  "issues": [
+    {
+      "issue_id": "I-001",
+      "deviation_ids": [
+        "D-001"
+      ],
+      "rule_id": "R-002",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-002",
+      "deviation_ids": [
+        "D-002"
+      ],
+      "rule_id": "R-013",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-003",
+      "deviation_ids": [
+        "D-003"
+      ],
+      "rule_id": "R-007",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
+      ],
+      "rule_id": "R-011",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-005",
+      "deviation_ids": [
+        "D-005"
+      ],
+      "rule_id": "R-004",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Investor overlap disclosure for a potential strategic partner",
+      "context_anchor": "Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+      "match_keywords": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "absent_terms": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before AAA, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
+      "why_benign": "The dispute-resolution canary says confidential arbitration is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "The Company has issued Common Stock and Series A Preferred Stock, and each holder agrees to exercise rights under this Agreement in good faith.",
+      "why_benign": "Describing the capital structure and good-faith exercise of rights does not conflict with the company-side playbook."
+    }
+  ]
+}

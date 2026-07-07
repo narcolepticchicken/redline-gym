@@ -1,0 +1,128 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-GOV-001",
+  "practice_area": "corporate_governance",
+  "title": "Company-Side Stockholders' Agreement Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "Board composition should preserve founder-designee control at this post-Series A stage while giving the Series A investors a customary single designee.",
+      "fallback": "The Board will consist of five directors: three Founder Designees, one Series A Designee, and one independent director approved by the Founder Designees and the Requisite Holders.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if founder designees do not hold a board majority or investors can control the board at this stage.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Protective provisions should be limited to a closed, enumerated list of major corporate actions and should not create an open-ended investor veto.",
+      "fallback": "Investor consent rights are limited to the enumerated protective provisions in this Agreement, and no other investor approval is required unless Company separately agrees in writing.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if investors receive approval rights over unspecified, discretionary, or open-ended matters.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-003",
+      "position": "The agreement should not require investor consent for ordinary-course operations, budgets, hiring, vendor contracts, product decisions, or routine financing administration.",
+      "fallback": "Company may conduct ordinary-course operations without investor consent, including budgets, hiring, vendor contracts, product decisions, and routine financing administration.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if routine operating decisions require investor consent.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Drag-along rights should include customary conditions: board approval, Requisite Holder approval, equal treatment within each share class, no uncapped indemnity, and required founder participation only on the same basis as other holders.",
+      "fallback": "Drag-along applies only to a board-approved sale approved by the Requisite Holders, with equal treatment within each share class and no stockholder obligation for uncapped indemnity or non-pro rata liability.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if drag-along can force a sale without customary approval, equal-treatment, or liability protections.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-005",
+      "position": "Tag-along rights should let non-selling holders participate pro rata when founders or major investors sell a meaningful block, subject to ordinary permitted transfers.",
+      "fallback": "For covered transfers by founders or Major Investors, other eligible holders may participate pro rata on the same price and terms, excluding permitted transfers.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if a significant founder or investor sale can proceed without customary pro rata tag-along participation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-006",
+      "position": "ROFR rights should run to the Company first before any investor secondary purchase right.",
+      "fallback": "Before any investor secondary right applies, Company has the first right to purchase offered shares on the same terms stated in the transfer notice.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if investors can buy offered shares before Company has the first purchase right.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Transfer restrictions should include customary permitted-transferee carve-outs for affiliates, estate planning vehicles, and family members, while keeping recipients bound by the agreement.",
+      "fallback": "Transfer restrictions do not apply to permitted transfers to affiliates, estate planning vehicles, or family members if the recipient agrees in writing to be bound by this Agreement.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if transfer limits omit customary permitted-transferee carve-outs or fail to bind recipients.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Information rights should be bounded to quarterly unaudited statements, annual audited statements, and reasonable access limits; there should be no unrestricted inspection right.",
+      "fallback": "Major Investors receive quarterly unaudited financial statements, annual audited financial statements, and reasonable inspection access during business hours subject to confidentiality, privilege, trade-secret, and competitive-sensitivity limits.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if investors receive monthly reporting, unrestricted inspection, or access beyond reasonable confidentiality and sensitivity limits.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-009",
+      "position": "Preemptive rights should include standard exclusions for equity plans, acquisition consideration, strategic issuances, equipment or lease financing, and securities issued in a public offering.",
+      "fallback": "Preemptive rights exclude issuances under equity incentive plans, acquisition consideration, strategic transactions, equipment or lease financing, debt with equity features, and public offerings.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if preemptive rights apply to standard excluded issuances or block ordinary financing and compensation structures.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Company information shared with investors should remain confidential and may be withheld where disclosure would harm privilege, trade secrets, legal compliance, or competitive sensitivity.",
+      "fallback": "Each receiving holder must keep Company information confidential and Company may withhold information when disclosure could harm privilege, trade secrets, legal compliance, or competitive sensitivity.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if investors may freely disclose company information or Company cannot withhold sensitive information.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-011",
+      "position": "Side-letter MFN rights should be limited to enumerated economic or information items and should not automatically import any future investor right.",
+      "fallback": "Any MFN applies only to the enumerated economic or information terms expressly listed in the side letter and does not import governance, veto, board, transfer, or operational consent rights.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if an MFN can import any future investor right without a closed list of covered items.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-012",
+      "position": "Investor rights should terminate on an IPO, a sale of the Company, or when the holder no longer owns the required minimum shares.",
+      "fallback": "Investor rights terminate upon a qualified IPO, a sale of the Company, or when the holder no longer holds the minimum share ownership required for those rights.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if investor rights survive an IPO, acquisition, or loss of the required ownership threshold.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-013",
+      "position": "Defined approval terms should not quietly lower investor consent thresholds; Requisite Holders and Major Investor definitions should preserve collective Series A consent by meaningful holders.",
+      "fallback": "Requisite Holders means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,000,000 shares of Series A Preferred Stock.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if definitions lower investor approval thresholds or let a small holder exercise consent rights.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-014",
+      "position": "Delaware governing law is acceptable for this engagement and should not be flagged by itself.",
+      "fallback": "No change; Delaware governing law is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses Delaware law.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "Confidential arbitration of disputes is acceptable for this engagement and should not be flagged by itself.",
+      "fallback": "No change; confidential arbitration of disputes is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses confidential arbitration.",
+      "is_canary": true
+    }
+  ]
+}

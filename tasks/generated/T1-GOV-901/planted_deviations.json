@@ -1,0 +1,112 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-009",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "11",
+        "span": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering."
+      },
+      "original_text": "Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+      "mutated_text": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-010",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "12",
+        "span": "Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations."
+      },
+      "original_text": "Each holder receiving Company information will keep that information confidential, use it only to monitor its investment, and disclose it only to representatives bound by comparable confidentiality obligations.",
+      "mutated_text": "Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "4",
+        "span": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters."
+      },
+      "original_text": "No investor approval is required for matters not listed in this Section 4.",
+      "mutated_text": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-006",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right."
+      },
+      "original_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.",
+      "mutated_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before AAA, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
+      "why_benign": "The dispute-resolution canary says confidential arbitration is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "The Company has issued Common Stock and Series A Preferred Stock, and each holder agrees to exercise rights under this Agreement in good faith.",
+      "why_benign": "Describing the capital structure and good-faith exercise of rights does not conflict with the company-side playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Investor overlap disclosure for a potential strategic partner",
+      "context_anchor": "Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+      "match_keywords": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "absent_terms": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=901",
+    "attempt_seed=901",
+    "playbook=PB-GOV-001",
+    "tier=T1",
+    "task_id=T1-GOV-901",
+    "D-001 GOV-R009-DIRECT-PREEMPTIVE-NO-EXCLUSIONS direct_term_swap applied to R-009",
+    "D-002 GOV-R010-DIRECT-CONFIDENTIALITY-DISCLOSURE direct_term_swap applied to R-010",
+    "D-003 GOV-R003-DIRECT-ORDINARY-COURSE-CONSENT direct_term_swap applied to R-003",
+    "D-004 GOV-R006-DIRECT-INVESTOR-ROFR-FIRST direct_term_swap applied to R-006",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

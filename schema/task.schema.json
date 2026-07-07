@@ -16,7 +16,7 @@
   "properties": {
     "task_id": {
       "type": "string",
-      "pattern": "^T[1-3]-[A-Z]+-[0-9]{3}$"
+      "pattern": "^T[1-3]-[A-Z]+-[0-9]{3,4}$"
     },
     "practice_area": {
       "type": "string",

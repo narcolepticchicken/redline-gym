@@ -1,0 +1,129 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-009",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "3",
+        "span": "Company may update objectives from time to time. Any material reduction in title, reporting line, responsibilities, authority, or budget will be treated as an involuntary termination without Cause."
+      },
+      "original_text": "Company may change Executive's title, duties, reporting line, responsibilities, authority, office location, and business objectives from time to time based on business needs, without creating severance rights unless this Agreement expressly provides otherwise.",
+      "mutated_text": "Company may update objectives from time to time. Any material reduction in title, reporting line, responsibilities, authority, or budget will be treated as an involuntary termination without Cause.",
+      "mechanism": "cross_ref_override",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "9",
+        "span": "Separation payments will begin on the first regular payroll date after employment ends and will continue according to Company's payroll schedule."
+      },
+      "original_text": "No severance is owed unless Executive signs and does not revoke a release of claims in a form acceptable to Company within 45 days after separation.",
+      "mutated_text": "Separation payments will begin on the first regular payroll date after employment ends and will continue according to Company's payroll schedule.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "11",
+        "span": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources."
+      },
+      "original_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement.",
+      "mutated_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources.",
+      "mechanism": "omission",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property."
+      },
+      "original_text": "\"Cause\" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company.",
+      "mutated_text": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 12 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9."
+      },
+      "original_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to six months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
+      "mutated_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 12 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Except for claims that cannot lawfully be arbitrated and claims for emergency injunctive relief, employment-related disputes will be resolved by individual arbitration before JAMS.",
+      "why_benign": "The arbitration canary says individual arbitration of employment disputes is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Company will pay Executive an annualized base salary of $300,000, less required withholdings and deductions, payable in accordance with Company's regular payroll practices.",
+      "why_benign": "A market base salary paid through regular payroll is expected and does not conflict with the playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Golden-parachute and Section 280G change-in-control tax exposure",
+      "context_anchor": "Company anticipates acquisition interest during Executive's tenure and needs deal-readiness on golden-parachute and Section 280G exposure.",
+      "match_keywords": [
+        "280g",
+        "parachute",
+        "golden parachute",
+        "change in control",
+        "excise tax"
+      ],
+      "absent_terms": [
+        "280g",
+        "parachute",
+        "golden parachute",
+        "change in control",
+        "excise tax"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=712",
+    "attempt_seed=712",
+    "playbook=PB-EMP-001",
+    "tier=T2",
+    "task_id=T2-EMP-712",
+    "D-001 EMP-R009-CROSS-DUTY-GUARANTEE cross_ref_override applied to R-009",
+    "D-002 EMP-R003-OMISSION-RELEASE-CONDITION omission applied to R-003",
+    "D-003 EMP-R004-OMISSION-PRIOR-INVENTIONS omission applied to R-004",
+    "D-004 EMP-R002-DEFINED-CAUSE-FELONY defined_term_shift applied to R-002",
+    "D-005 EMP-R001-DIRECT-SEVERANCE-MULTIPLE direct_term_swap applied to R-001",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

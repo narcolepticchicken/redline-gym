@@ -1,0 +1,164 @@
+{
+  "playbook_id": "PB-GOV-001",
+  "doc_type": "stockholders_agreement",
+  "filename": "stockholders_agreement.md",
+  "heading_template": "# Stockholders' Agreement",
+  "title_template": "Stockholders' Agreement",
+  "surface_slots": {
+    "company_name": ["Atlas Harbor AI, Inc.", "Keystone BioSystems, Inc.", "Northgate Robotics, Inc."],
+    "founder_group": ["Founders", "Founder Holders", "Founder Stockholders"],
+    "lead_investor": ["Vector Seed Partners", "Summit Trail Ventures", "Lighthouse Growth Fund"],
+    "series_name": ["Series A Preferred Stock"],
+    "share_threshold": ["1,000,000"],
+    "quarterly_days": ["45"],
+    "annual_days": ["120"],
+    "tag_threshold": ["10%"],
+    "ipo_threshold": ["$50,000,000"],
+    "arbitration_provider": ["JAMS", "AAA"]
+  },
+  "client_context_template": "Client is a founder-led Delaware startup after its Series A financing. Review the stockholders' agreement from the Company and founder side as company counsel. Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+  "instruction_template": "Review the stockholders' agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "preamble_template": "This Stockholders' Agreement (the \"Agreement\") is entered into by and among {company_name} (the \"Company\"), the holders of {series_name}, and the {founder_group}.",
+  "section_order_variants": [
+    ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+    ["1", "2", "3", "4", "6", "5", "7", "8", "9", "10", "11", "12", "13", "14", "15"],
+    ["1", "2", "3", "4", "5", "7", "6", "8", "9", "10", "12", "11", "13", "15", "14"]
+  ],
+  "sections": [
+    {
+      "id": "1",
+      "heading": "Parties and Share Classes",
+      "paragraphs": [
+        "The parties intend this Agreement to govern voting, transfer, information, participation, and related stockholder rights after the Company's Series A financing. The Company has issued Common Stock and {series_name}, and each holder agrees to exercise rights under this Agreement in good faith."
+      ]
+    },
+    {
+      "id": "2",
+      "heading": "Definitions",
+      "paragraphs": [
+        "\"Major Investor\" means a holder of at least {share_threshold} shares of {series_name}. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding {series_name}, voting as a single class. \"Permitted Transferee\" means an affiliate, estate planning vehicle, or family member of a transferring holder that agrees in writing to be bound by this Agreement."
+      ]
+    },
+    {
+      "id": "3",
+      "heading": "Board Composition",
+      "paragraphs": [
+        "The Board will consist of five directors: three Founder Designees selected by the {founder_group}, one Series A Designee selected by the Requisite Holders, and one independent director approved by the Founder Designees and the Requisite Holders."
+      ]
+    },
+    {
+      "id": "4",
+      "heading": "Protective Provisions",
+      "paragraphs": [
+        "So long as at least 25% of the originally issued {series_name} remains outstanding, the Company will not take any of the following actions without Requisite Holder approval: amend the charter in a manner that adversely affects the {series_name}, create a senior security, redeem shares other than as required by existing agreements, declare dividends outside the charter, incur debt above $1,000,000 outside the approved budget, sell substantially all assets, or liquidate the Company. No investor approval is required for matters not listed in this Section 4."
+      ]
+    },
+    {
+      "id": "5",
+      "heading": "Ordinary-Course Authority",
+      "paragraphs": [
+        "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration."
+      ]
+    },
+    {
+      "id": "6",
+      "heading": "Drag-Along Rights",
+      "paragraphs": [
+        "If the Board and the Requisite Holders approve a sale of the Company, each stockholder will vote for and support the transaction if holders within each share class receive the same form and amount of consideration per share, subject to charter preferences. No stockholder will be required to provide uncapped indemnity, non-pro rata liability, or a non-compete covenant as a condition to the drag-along."
+      ]
+    },
+    {
+      "id": "7",
+      "heading": "Tag-Along Rights",
+      "paragraphs": [
+        "If a Founder Holder or Major Investor proposes to transfer more than {tag_threshold} of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms."
+      ]
+    },
+    {
+      "id": "8",
+      "heading": "Right of First Refusal",
+      "paragraphs": [
+        "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right."
+      ]
+    },
+    {
+      "id": "9",
+      "heading": "Transfer Restrictions",
+      "paragraphs": [
+        "No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective."
+      ]
+    },
+    {
+      "id": "10",
+      "heading": "Information Rights",
+      "paragraphs": [
+        "Each Major Investor may receive quarterly unaudited financial statements within {quarterly_days} days after quarter-end and annual audited financial statements within {annual_days} days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits."
+      ]
+    },
+    {
+      "id": "11",
+      "heading": "Preemptive Rights",
+      "paragraphs": [
+        "Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering."
+      ]
+    },
+    {
+      "id": "12",
+      "heading": "Confidentiality",
+      "paragraphs": [
+        "Each holder receiving Company information will keep that information confidential, use it only to monitor its investment, and disclose it only to representatives bound by comparable confidentiality obligations. The Company may withhold information if disclosure could harm attorney-client privilege, trade secrets, legal compliance, or competitive sensitivity."
+      ]
+    },
+    {
+      "id": "13",
+      "heading": "Side Letters and MFN",
+      "paragraphs": [
+        "Any side-letter MFN right applies only to the economic fee terms and information delivery dates expressly listed in the applicable side letter. No MFN imports governance, veto, board, transfer, operational consent, or other investor rights unless the Company expressly agrees in a signed amendment."
+      ]
+    },
+    {
+      "id": "14",
+      "heading": "Termination of Rights",
+      "paragraphs": [
+        "Investor rights under this Agreement terminate upon the earliest of a qualified IPO with gross proceeds of at least {ipo_threshold}, a sale of the Company, or the time the holder no longer holds the minimum share ownership required for the applicable right."
+      ]
+    },
+    {
+      "id": "15",
+      "heading": "Governing Law and Dispute Resolution",
+      "paragraphs": [
+        "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules. Any dispute arising under this Agreement will be resolved by confidential arbitration before {arbitration_provider}, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction."
+      ]
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before {arbitration_provider}, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
+      "why_benign": "The dispute-resolution canary says confidential arbitration is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "The Company has issued Common Stock and {series_name}, and each holder agrees to exercise rights under this Agreement in good faith.",
+      "why_benign": "Describing the capital structure and good-faith exercise of rights does not conflict with the company-side playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Investor overlap disclosure for a potential strategic partner",
+      "context_anchor": "Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+      "match_keywords": ["strategic partner", "overlap disclosure", "competitive overlap", "platform partner"],
+      "absent_terms": ["strategic partner", "overlap disclosure", "competitive overlap", "platform partner"],
+      "expected_action": "escalate"
+    }
+  ]
+}

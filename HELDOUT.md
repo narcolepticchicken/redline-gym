@@ -10,6 +10,9 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: Added corporate governance stockholders' agreement held-out seed
+  `tasks/heldout/T2-GOV-1001` for `PB-GOV-001` while adding the fifth practice
+  area.
 - 2026-07-07: EMP missing-info M-001 was retargeted from equity approval
   process details inside the existing equity topic to the absent company-side
   treatment of golden-parachute and Section 280G change-in-control tax
