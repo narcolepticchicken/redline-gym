@@ -1,0 +1,44 @@
+{
+  "failing_evidence": {},
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 6,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 1,
+      "passed": true,
+      "yes_votes": 2
+    }
+  },
+  "total": 6
+}

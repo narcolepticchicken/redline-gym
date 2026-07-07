@@ -1,0 +1,1 @@
+{"gaps":["Processor obligation to maintain records of processing activities","Notification of law enforcement or government access requests for personal data","Data retention and deletion during the active engagement"]}

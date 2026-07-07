@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Executive Employment Agreement",
+      "type": "employment_agreement",
+      "path": "docs/executive_employment_agreement.md",
+      "sha256": "5c279117bf1ce49893b72fb1b7a0d2cc56ddecb66b23af866d71fd7a2a13528d",
+      "is_distractor": false
+    }
+  ]
+}

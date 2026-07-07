@@ -1,0 +1,10 @@
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "rule_id": "R-001",
+      "section": "3. Purpose Limitation",
+      "quote": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer"
+    }
+  ]
+}

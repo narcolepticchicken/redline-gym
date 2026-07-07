@@ -20,7 +20,7 @@
     "law_state": ["Delaware"],
     "arbitration_provider": ["JAMS", "AAA"]
   },
-  "client_context_template": "Client is a mid-size tech company hiring a {position_title}. Review the executive employment agreement from the Company side for legal and business risk. Equity grant approvals are handled outside this draft by the company's compensation approval process.",
+  "client_context_template": "Client is a mid-size tech company hiring a {position_title}. Review the executive employment agreement from the Company side for legal and business risk. Company anticipates acquisition interest during Executive's tenure and needs deal-readiness on golden-parachute and Section 280G exposure.",
   "instruction_template": "Review the executive employment agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
   "preamble_template": "This Executive Employment Agreement (the \"Agreement\") is entered into by and between {company_name} (\"Company\") and {executive_name} (\"Executive\") as of {start_date}.",
   "section_order_variants": [
@@ -159,10 +159,10 @@
   "missing_info": [
     {
       "missing_info_id": "M-001",
-      "topic": "Equity grant approval status",
-      "context_anchor": "Equity grant approvals are handled outside this draft by the company's compensation approval process.",
-      "match_keywords": ["equity approval", "grant approval", "compensation approval", "approval process"],
-      "absent_terms": ["equity grant approval", "grant approval", "compensation approval process"],
+      "topic": "Golden-parachute and Section 280G change-in-control tax exposure",
+      "context_anchor": "Company anticipates acquisition interest during Executive's tenure and needs deal-readiness on golden-parachute and Section 280G exposure.",
+      "match_keywords": ["280g", "parachute", "golden parachute", "change in control", "excise tax"],
+      "absent_terms": ["280g", "parachute", "golden parachute", "change in control", "excise tax"],
       "expected_action": "escalate"
     }
   ]

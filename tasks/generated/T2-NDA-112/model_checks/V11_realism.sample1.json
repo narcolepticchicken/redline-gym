@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Confidential Information ... 2. Affiliates and Representatives ... 3. Purpose and Use ... 4. Protection Standard ... 5. Compelled Disclosure ... 6. Exclusions ... 7. No Obligation to Proceed ... 8. Return or Destruction ... 9. Term and Survival ... 10. No License; Ownership ... 11. Equitable Relief ... 12. Residual Rights ... 13. Governing Law; Miscellaneous",
+    "q2": "\"Confidential Information\" means all non-public information...\" and \"Recipient may disclose Confidential Information to its directors...\"",
+    "q3": "\"continues for two years,\" \"continue for three years after disclosure,\" \"so long as they qualify as trade secrets\"",
+    "q4": "\"This Mutual Confidentiality Agreement is entered into as of September 3, 2026, by and between Cedarline Robotics, Inc. and Stonepath Data LLC.\"",
+    "q5": "\"If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary.\"",
+    "q6": "\"Confidential Information includes written, electronic, oral, visual, technical, financial, product, customer, operational, and business information.\" / \"This Agreement may be signed in counterparts and by electronic signature.\""
+  }
+}

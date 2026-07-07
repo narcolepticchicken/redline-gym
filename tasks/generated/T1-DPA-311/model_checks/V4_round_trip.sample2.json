@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "quote": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer",
+      "rule_id": "R-001",
+      "section": "3"
+    },
+    {
+      "quote": "Vendor will maintain TLS in transit and an annual access review, and may replace other controls on 30 days' notice if monthly production uptime remains at 99.5%.",
+      "rule_id": "R-004",
+      "section": "5"
+    },
+    {
+      "quote": "After the relationship ends, Vendor will remove hosted account content within 90 days and will not be required to provide written completion evidence.",
+      "rule_id": "R-007",
+      "section": "10"
+    },
+    {
+      "quote": "Vendor may move hosted records among facilities and affiliates in the United States, Canada, Ireland, India, and Singapore without standard contractual clauses or transfer impact documentation.",
+      "rule_id": "R-009",
+      "section": "12"
+    },
+    {
+      "quote": "total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable.",
+      "rule_id": "R-012",
+      "section": "15"
+    }
+  ]
+}

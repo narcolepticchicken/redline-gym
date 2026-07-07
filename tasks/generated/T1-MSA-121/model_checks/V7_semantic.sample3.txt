@@ -1,0 +1,1 @@
+{"gaps":["Hosting location and cross-border data transfer basis","Deletion or return of Customer Data upon termination or exit (including certified deletion evidence)"]}

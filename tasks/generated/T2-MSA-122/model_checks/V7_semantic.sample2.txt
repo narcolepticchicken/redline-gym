@@ -1,0 +1,1 @@
+{"gaps": ["Hosting location and cross-border transfer basis visibility", "Certified deletion of Customer Data upon exit"]}

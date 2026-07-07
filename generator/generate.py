@@ -173,6 +173,7 @@ def _generate_candidate(
             ]
         }
         missing_info, context_anchors = _render_missing_info(base["missing_info"], params)
+        _validate_missing_info_gap_integrity(missing_info, doc_text, playbook)
         client_context = _append_context_anchors(_render(base["client_context_template"], params), context_anchors)
         planted = {
             "deviations": deviations,
@@ -366,6 +367,64 @@ def _render_missing_info(entries: list[dict[str, Any]], params: dict[str, str]) 
             )
         anchors.append(anchor)
     return rendered, anchors
+
+
+def _validate_missing_info_gap_integrity(
+    missing_info: list[dict[str, Any]],
+    doc_text: str,
+    playbook: dict[str, Any],
+) -> None:
+    doc_lower = doc_text.lower()
+    for item in missing_info:
+        item_id = item.get("missing_info_id", "<unknown>")
+        keywords = item.get("match_keywords", [])
+        for keyword in keywords:
+            keyword_lower = keyword.lower()
+            if keyword_lower in doc_lower:
+                section = _matching_document_section(doc_text, keyword_lower)
+                raise GenerationError(
+                    f"{item_id} missing_info keyword '{keyword}' appears in document section {section}; "
+                    "topic is present, so the item is mis-typed"
+                )
+
+        for rule in playbook.get("rules", []):
+            rule_text = _flatten_rule_text(rule).lower()
+            for keyword in keywords:
+                if keyword.lower() in rule_text:
+                    raise GenerationError(
+                        f"{item_id} missing_info keyword '{keyword}' appears in playbook rule "
+                        f"{rule.get('rule_id', '<unknown>')}; rule-covered topics are violations, not gaps"
+                    )
+
+
+def _matching_document_section(doc_text: str, keyword: str) -> str:
+    hit = doc_text.lower().find(keyword)
+    if hit == -1:
+        return "document text"
+
+    current = "document preamble"
+    for match in re.finditer(r"^##\s+(.+)$", doc_text, re.MULTILINE):
+        if match.start() > hit:
+            break
+        current = match.group(1).strip()
+    return current
+
+
+def _flatten_rule_text(rule: dict[str, Any]) -> str:
+    values: list[str] = []
+
+    def collect(value: Any) -> None:
+        if isinstance(value, str):
+            values.append(value)
+        elif isinstance(value, list):
+            for item in value:
+                collect(item)
+        elif isinstance(value, dict):
+            for item in value.values():
+                collect(item)
+
+    collect(rule)
+    return "\n".join(values)
 
 
 def _append_context_anchors(client_context: str, anchors: list[str]) -> str:

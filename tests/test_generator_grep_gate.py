@@ -4,8 +4,10 @@ from pathlib import Path
 import random
 import shutil
 
+import pytest
+
 import generator.generate as generate_module
-from generator.generate import T2_GREP_RECALL_MAX, generate_instance, measure_grep_bot_recall
+from generator.generate import GenerationError, T2_GREP_RECALL_MAX, generate_instance, measure_grep_bot_recall
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +64,42 @@ def test_render_base_renumbers_sections_and_cross_refs() -> None:
     assert "## 2. One" in text
     assert "See Section 1." in text
     assert section_map == {"2": "1", "1": "2"}
+
+
+def test_missing_info_gap_guard_refuses_topic_present_in_document() -> None:
+    missing_info = [
+        {
+            "missing_info_id": "M-777",
+            "match_keywords": ["approval process"],
+        }
+    ]
+    doc_text = "# Agreement\n\n## 6. Equity Awards\n\nThe equity approval process is complete.\n"
+    playbook = {"rules": []}
+
+    with pytest.raises(GenerationError, match="M-777.*approval process.*6\\. Equity Awards.*mis-typed"):
+        generate_module._validate_missing_info_gap_integrity(missing_info, doc_text, playbook)
+
+
+def test_missing_info_gap_guard_refuses_rule_covered_topic() -> None:
+    missing_info = [
+        {
+            "missing_info_id": "M-778",
+            "match_keywords": ["excise tax"],
+        }
+    ]
+    doc_text = "# Agreement\n\n## 8. Termination\n\nSeverance is six months of salary.\n"
+    playbook = {
+        "rules": [
+            {
+                "rule_id": "R-099",
+                "position": "The agreement should allocate excise tax exposure.",
+                "fallback": "Escalate tax exposure.",
+            }
+        ]
+    }
+
+    with pytest.raises(GenerationError, match="M-778.*excise tax.*R-099.*rule-covered"):
+        generate_module._validate_missing_info_gap_integrity(missing_info, doc_text, playbook)
 
 
 def test_generated_t2_tranche_is_grep_resistant() -> None:

@@ -1,7 +1,7 @@
 {
   "task_id": "T2-EMP-702",
   "practice_area": "employment",
-  "client_context": "Client is a mid-size tech company hiring a Vice President of Product. Review the executive employment agreement from the Company side for legal and business risk. Equity grant approvals are handled outside this draft by the company's compensation approval process.",
+  "client_context": "Client is a mid-size tech company hiring a Vice President of Product. Review the executive employment agreement from the Company side for legal and business risk. Company anticipates acquisition interest during Executive's tenure and needs deal-readiness on golden-parachute and Section 280G exposure.",
   "instruction": "Review the executive employment agreement against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
   "deliverable": {
     "card_schema_id": "redline-gym.issue-card.v1"

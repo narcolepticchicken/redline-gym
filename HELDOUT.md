@@ -10,6 +10,11 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: EMP missing-info M-001 was retargeted from equity approval
+  process details inside the existing equity topic to the absent company-side
+  treatment of golden-parachute and Section 280G change-in-control tax
+  exposure. Replaced stale EMP held-out seed `tasks/heldout/T2-EMP-801` with
+  fresh seed `tasks/heldout/T2-EMP-802`.
 - 2026-07-07: Added employment executive agreement held-out seed
   `tasks/heldout/T2-EMP-801` for `PB-EMP-001` while extending the generator
   to the employment practice area.

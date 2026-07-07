@@ -1,0 +1,10 @@
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "quote": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "rule_id": "R-005",
+      "section": "4"
+    }
+  ]
+}

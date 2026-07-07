@@ -52,18 +52,21 @@
   "missing_info": [
     {
       "missing_info_id": "M-001",
-      "topic": "Equity grant approval status",
-      "context_anchor": "Equity grant approvals are handled outside this draft by the company's compensation approval process.",
+      "topic": "Golden-parachute and Section 280G change-in-control tax exposure",
+      "context_anchor": "Company anticipates acquisition interest during Executive's tenure and needs deal-readiness on golden-parachute and Section 280G exposure.",
       "match_keywords": [
-        "equity approval",
-        "grant approval",
-        "compensation approval",
-        "approval process"
+        "280g",
+        "parachute",
+        "golden parachute",
+        "change in control",
+        "excise tax"
       ],
       "absent_terms": [
-        "equity grant approval",
-        "grant approval",
-        "compensation approval process"
+        "280g",
+        "parachute",
+        "golden parachute",
+        "change in control",
+        "excise tax"
       ],
       "expected_action": "escalate"
     }

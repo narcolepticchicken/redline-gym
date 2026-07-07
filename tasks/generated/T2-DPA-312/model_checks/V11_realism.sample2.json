@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Roles and Scope ... 15. Term and Transition Assistance",
+    "q2": "\"Personal Data\" means information relating to an identified or identifiable person... (Section 2) and \"Vendor will process Personal Data only on documented instructions from Customer\" (Section 3).",
+    "q3": "\"within 2 business days\" (Section 3)",
+    "q4": "\"Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data\" (Section 5)",
+    "q5": "\"Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing.\" (Section 10)",
+    "q6": "\"Vendor will process Personal Data only on documented instructions from Customer\" (Section 3) and \"Vendor will provide export files and transfer coordination\" (Section 15)"
+  }
+}

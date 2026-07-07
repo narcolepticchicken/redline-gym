@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "",
+    "q3": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Security Incident.",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "gaps": [
+    "Records of processing activities (ROPA)",
+    "Sensitive personal data handling",
+    "Notification of government requests for personal data",
+    "Vendor obligation to comply with applicable data protection laws"
+  ]
+}

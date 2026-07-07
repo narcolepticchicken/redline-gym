@@ -1,1 +1,0 @@
-(a) **PER‑RULE** (is the playbook rule itself legally sound and aligned with a real
