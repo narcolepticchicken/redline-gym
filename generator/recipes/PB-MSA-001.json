@@ -19,7 +19,7 @@
       "mechanism": "omission",
       "section": "14",
       "templates": {
-        "original_text": "{vendor_role} will defend and indemnify {customer_role} against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that {vendor_role}'s performance violates applicable law.",
+                "original_text": "Each party will defend and indemnify the other from third-party claims arising from the indemnifying party's breach, unlawful conduct, or materials it provides. {vendor_role} will also defend and indemnify {customer_role} against claims alleging that the services or Deliverables infringe intellectual property rights.",
         "mutated_text": "{vendor_role} will defend {customer_role} against third-party claims only to the extent finally determined by a court to arise from {vendor_role}'s willful misconduct."
       },
       "expected_action": "redline_with_fallback",
@@ -70,7 +70,7 @@
       "mechanism": "direct_term_swap",
       "section": "5",
       "templates": {
-        "original_text": "{vendor_role} will process Customer Data only to provide and support the services, to comply with {customer_role}'s documented instructions, and as otherwise expressly authorized in an Order Form.",
+                "original_text": "{vendor_role} will process Customer Data only under {customer_role}'s documented instructions.",
         "mutated_text": "{vendor_role} may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship."
       },
       "expected_action": "redline_with_fallback",
@@ -82,7 +82,7 @@
       "mechanism": "cross_ref_override",
       "section": "12",
       "templates": {
-        "original_text": "If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay only accrued, undisputed fees and approved reimbursable expenses incurred before the effective date.",
+                "original_text": "If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay only accrued, undisputed fees for services performed before the effective date plus undisputed reimbursable expenses approved in writing.",
         "mutated_text": "If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay an exit charge equal to the full unpaid balance for that Order Form."
       },
       "expected_action": "redline_with_fallback",
@@ -94,7 +94,7 @@
       "mechanism": "direct_term_swap",
       "section": "10",
       "templates": {
-        "original_text": "Each Order Form has the initial term stated in it and will not automatically extend unless {customer_role} signs a renewal order or gives written approval for a renewal period of one year or less.",
+                "original_text": "Each Order Form will have an initial term of no more than one year and will not automatically extend unless {customer_role} signs a renewal order or gives written approval for a renewal period of one year or less.",
         "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of {renewal_years} years each unless either party sends non-continuation notice at least {notice_days} days before the current period ends."
       },
       "slots": {
@@ -173,8 +173,8 @@
       "mechanism": "omission",
       "section": "7",
       "templates": {
-        "original_text": "{vendor_role} may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work and binds each service partner to written obligations at least as protective as {vendor_role}'s obligations for Customer Data, confidentiality, security, and service performance.",
-        "mutated_text": "{vendor_role} may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work as if performed by {vendor_role}."
+                "original_text": "{vendor_role} may use affiliates, infrastructure providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work and binds each service partner to written obligations at least as protective as {vendor_role}'s obligations for Customer Data, confidentiality, security, and service performance.",
+                "mutated_text": "{vendor_role} may use affiliates, infrastructure providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work as if performed by {vendor_role}."
       },
       "expected_action": "redline_with_fallback",
       "severity": "high"

@@ -1,0 +1,1 @@
+{"verdict":"FAIL","violations":[{"rule_id":"R-010","section":"7","quote":"Seller has 35 days to review the statement"}]}

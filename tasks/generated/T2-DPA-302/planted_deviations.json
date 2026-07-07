@@ -22,7 +22,7 @@
         "section": "2",
         "span": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
       },
-      "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
+      "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data created from or relating to Customer personal data, except only where data has been irreversibly anonymized under applicable law.",
       "mutated_text": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
@@ -50,7 +50,7 @@
         "section": "3",
         "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
       },
-      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+      "original_text": "Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law. Vendor will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
       "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
       "mechanism": "direct_term_swap",
       "severity": "critical",

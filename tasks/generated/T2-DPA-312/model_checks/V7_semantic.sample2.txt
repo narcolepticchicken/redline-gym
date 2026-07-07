@@ -1,7 +1,0 @@
-{
-  "gaps": [
-    "Processor's obligation to maintain records of processing activities",
-    "Notification of government or law enforcement access requests for personal data",
-    "Contractual safeguards for special categories of personal data (sensitive data)"
-  ]
-}

@@ -22,7 +22,7 @@
         "section": "8",
         "span": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction."
       },
-      "original_text": "Vendor will notify Customer within 48 hours after discovering a Personal Data Breach.",
+      "original_text": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach.",
       "mutated_text": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
       "mechanism": "direct_term_swap",
       "severity": "critical",

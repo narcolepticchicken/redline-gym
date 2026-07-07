@@ -1,0 +1,144 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement."
+      },
+      "original_text": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, including project-specific tools, frameworks, and know-how developed in the course of performance.",
+      "mutated_text": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement.",
+      "mechanism": "defined_term_shift",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-010",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "18",
+        "span": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent."
+      },
+      "original_text": "Neither party may assign this Agreement without the other party's prior written consent, except to an affiliate or successor in connection with a merger, reorganization, or sale of substantially all assets if the assignee assumes the assigning party's obligations.",
+      "mutated_text": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "17",
+        "span": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $500,000 per occurrence if available on commercially reasonable terms."
+      },
+      "original_text": "Vendor will maintain commercially reasonable insurance at its own expense, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence.",
+      "mutated_text": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $500,000 per occurrence if available on commercially reasonable terms.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "14",
+        "span": "Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct."
+      },
+      "original_text": "Each party will defend and indemnify the other from third-party claims arising from the indemnifying party's breach, unlawful conduct, or materials it provides. Vendor will also defend and indemnify Customer against claims alleging that the services or Deliverables infringe intellectual property rights.",
+      "mutated_text": "Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "18",
+        "span": "Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16."
+      },
+      "original_text": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14.",
+      "mutated_text": "Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice.",
+      "why_benign": "The payment canary says net-45 terms after receipt of an undisputed invoice are acceptable."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Vendor may charge interest on undisputed overdue amounts at one percent per month or the highest rate allowed by law, whichever is lower.",
+      "why_benign": "A capped late-payment charge on undisputed overdue amounts is outside this playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Processing geography and cross-border transfer basis",
+      "context_anchor": "The production service will process customer personal data across hosted systems.",
+      "match_keywords": [
+        "hosting region",
+        "data residency",
+        "cross-border",
+        "international transfer",
+        "processing geography"
+      ],
+      "absent_terms": [
+        "hosting region",
+        "data residency",
+        "transfer impact assessment"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Certified deletion evidence at exit",
+      "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
+      "match_keywords": [
+        "deletion certificate",
+        "certificate of deletion",
+        "certified deletion",
+        "destruction certificate"
+      ],
+      "absent_terms": [
+        "deletion certificate",
+        "certificate of deletion",
+        "destruction certificate"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=603",
+    "attempt_seed=603",
+    "playbook=PB-MSA-001",
+    "tier=T2",
+    "task_id=T2-MSA-603",
+    "D-001 MSA-R003-DEFINED-DELIVERABLES defined_term_shift applied to R-003",
+    "D-002 MSA-R010-DIRECT-ASSIGNMENT direct_term_swap applied to R-010",
+    "D-003 MSA-R011-DIRECT-INSURANCE direct_term_swap applied to R-011",
+    "D-004 MSA-R002-OMISSION-INDEMNITY omission applied to R-002",
+    "D-005 MSA-R001-CROSS-LIABILITY cross_ref_override applied to R-001",
+    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

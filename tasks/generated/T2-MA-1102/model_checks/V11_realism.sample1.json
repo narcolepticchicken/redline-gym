@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Excluded Liabilities has the meaning stated in Section 5.",
+    "q2": "Buyer assumes only the Assumed Liabilities",
+    "q3": "18 months after closing",
+    "q4": "Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.",
+    "q5": "The purchase price is $42,000,000.",
+    "q6": "Within 60 days after closing, Buyer will deliver a closing statement showing final working capital against a target of $1,200,000."
+  }
+}

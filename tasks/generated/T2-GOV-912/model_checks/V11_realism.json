@@ -1,0 +1,50 @@
+{
+  "failing_evidence": {
+    "q2": [
+      "If a Founder Holder or Major Investor proposes to transfer more than 10%...",
+      "Section 6 uses \"Founder Holder\" but the agreement defines only \"Founder Stockholders\" and \"Major Investor\"; \"Founder Holder\" is neither a defined term nor a consistent usage with the defined party.",
+      "Section 6 uses \"Founder Holder\" but the Definitions section defines only \"Founder Stockholders\"; no definition of \"Founder Holder\" appears anywhere."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 3,
+      "passed": false,
+      "yes_votes": 0
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 1,
+      "passed": true,
+      "yes_votes": 2
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

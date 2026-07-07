@@ -1,7 +1,0 @@
-{
-  "score": 5,
-  "weakest": [
-    "Section 6 contains unnatural phrasing and drafting-register anomalies, such as 'reasonably understands was already known', 'becomes available from any source', and 'can be used in Recipient's ordinary business without reference', which are vague and untypical for a professionally drafted exclusion clause, undermining overall coherence.",
-    "The definition of 'Purpose' is embedded within the 'Confidential Information' definition section without a distinct subsection or heading, creating a minor structural disorganization that detracts from the clarity of the document's architecture."
-  ]
-}

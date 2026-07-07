@@ -1,1 +1,0 @@
-{"gaps":["Vendor obligation to comply with applicable data protection laws","Vendor obligation to maintain records of processing activities","Vendor obligation to notify Customer of legally binding requests for personal data from government authorities"]}

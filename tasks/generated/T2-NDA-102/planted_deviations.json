@@ -22,7 +22,7 @@
         "section": "5",
         "span": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary."
       },
-      "original_text": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
+      "original_text": "Before any compelled disclosure required by law, regulation, subpoena, court order, or governmental request, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
       "mutated_text": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary.",
       "mechanism": "omission",
       "severity": "medium",

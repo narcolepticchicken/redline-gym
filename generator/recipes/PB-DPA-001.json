@@ -19,7 +19,7 @@
       "mechanism": "direct_term_swap",
       "section": "4",
       "templates": {
-        "original_text": "{vendor_role} will process Personal Data only to provide, secure, support, and improve the services for {customer_role} and will not use Personal Data for {vendor_role}'s own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+        "original_text": "{vendor_role} will process Personal Data only as necessary to provide the services to {customer_role}, secure and support those services, or comply with applicable law. {vendor_role} will not use Personal Data for {vendor_role}'s own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
         "mutated_text": "{vendor_role} may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than {customer_role}."
       },
       "expected_action": "redline_with_fallback",
@@ -55,7 +55,7 @@
       "mechanism": "direct_term_swap",
       "section": "8",
       "templates": {
-        "original_text": "{vendor_role} will notify {customer_role} within {breach_hours} hours after discovering a Personal Data Breach.",
+        "original_text": "{vendor_role} will notify {customer_role} without undue delay and in any event within {breach_hours} hours after discovering a Personal Data Breach.",
         "mutated_text": "{vendor_role} will send an initial written alert about a Personal Data Breach within {late_notice} after discovering it only if forensic review confirms outbound extraction."
       },
       "slots": {
@@ -133,7 +133,7 @@
       "mechanism": "defined_term_shift",
       "section": "2",
       "templates": {
-        "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for {customer_role}, processed on behalf of {customer_role}, or created from {customer_role}'s use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
+        "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for {customer_role}, processed on behalf of {customer_role}, or created from {customer_role}'s use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data created from or relating to {customer_role} personal data, except only where data has been irreversibly anonymized under applicable law.",
         "mutated_text": "\"Personal Data\" means raw individual records uploaded by {customer_role} that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
       },
       "expected_action": "redline_with_fallback",

@@ -47,9 +47,9 @@ Disclosure does not transfer title to a party's materials. The receiving side ma
 
 Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies.
 
-## 12. Residual Rights
+## 12. No Additional Rights
 
-No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.
+Except as expressly stated in this Agreement, no additional use, disclosure, license, assignment, or ownership right is granted by either party.
 
 ## 13. Governing Law; Miscellaneous
 

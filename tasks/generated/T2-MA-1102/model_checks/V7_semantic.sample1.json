@@ -1,0 +1,12 @@
+{
+  "gaps": [
+    "Earnout provision and mechanism (contract contains no earnout clause, while Buyer needs earnout scenario revenue diligence)",
+    "Material Adverse Effect closing condition (no clause conditioning Buyer's obligation to close on absence of a material adverse effect)",
+    "Intellectual property non-infringement, validity, and third-party claim representation (no clause addressing whether the purchased IP infringes third-party rights or is subject to IP claims)",
+    "Data privacy, security, and regulatory compliance representation (no clause covering compliance with data protection laws, security practices, or handling of personal data, despite customer records being purchased assets)",
+    "Purchase price allocation for tax purposes (no clause allocating the purchase price among the purchased assets for federal and state tax reporting)",
+    "Confidentiality obligation (no clause restricting Seller's use or disclosure of business, customer, or technical information after closing)",
+    "Non-solicitation and non-interference covenant (no clause preventing Seller from soliciting customers or employees of the acquired business post-closing)",
+    "Exclusive jurisdiction or dispute resolution clause (no clause specifying exclusive forum, venue, or mechanism for resolving disputes arising under the agreement)"
+  ]
+}

@@ -1,5 +1,16 @@
 # Open design questions — require Aaron's ruling (2026-07-07)
 
+**RULINGS:**
+- **Q1 RULED 2026-07-07 (Aaron): Option A — fallback-as-floor.** Text weaker
+  than the rule's fallback is non-compliant. Consequence: all bases and the
+  hand-built T2 brought up to fallback floor; per-rule bounds (Option C)
+  deferred to v1.1 if ever needed.
+- **Q2 entailed by A: fix at source** — confirmed answer-key omissions and
+  below-floor base text are repaired in bases/templates; keys stay exhaustive.
+  (Confirm at the review sitting.)
+- **Q3 still open** (V4 detectability threshold; current reported gates
+  T1=100%, T2≥60%).
+
 These define ground truth. Not decided autonomously on principle: the system
 exists to be lawyer-verifiable, so a lawyer sets the bar.
 

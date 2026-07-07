@@ -27,8 +27,11 @@ trusting us.** Work that doesn't advance one of these five conditions is drift:
    grep-bot ≤ 60% of honest, cheater < honest, stronger model outranks weaker.
 4. **Every point is auditable** — composite → channels → specific document
    spans a lawyer can confirm by eye in the graded-redline report.
-5. **Assurance is evidence** — per release: gate table, ≥2 independent
-   attorneys' agreement rate on a sample, known limits stated plainly.
+5. **Assurance is evidence** — per release: gate table, the attorney sign-off
+   coverage as it actually is (AMENDED 2026-07-07, Aaron: do not count on a
+   second attorney — single-attorney sign-off plus full span-level
+   auditability plus (v0.2) multi-model convergent rankings is the assurance
+   story), known limits stated plainly.
 
 Anti-goals: demo impressiveness, hub applause, instance count, training lift,
 speed. A number either passed the gates or it is void — nothing "preliminary".

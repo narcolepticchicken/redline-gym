@@ -10,6 +10,12 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: Ruling A (fallback-as-floor) changed the clean MSA, DPA, and
+  NDA generator bases and affected recipe originals. Replaced stale held-out
+  seeds `tasks/heldout/T2-DPA-605`, `tasks/heldout/T2-MSA-602`, and
+  `tasks/heldout/T2-NDA-601` with fresh incremented seeds
+  `tasks/heldout/T2-DPA-606`, `tasks/heldout/T2-MSA-603`, and
+  `tasks/heldout/T2-NDA-602`.
 - 2026-07-07: Added buyer-side M&A asset purchase agreement held-out seed
   `tasks/heldout/T2-MA-1201` for `PB-MA-001` while adding the sixth practice
   area.

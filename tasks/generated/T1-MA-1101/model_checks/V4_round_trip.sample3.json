@@ -1,0 +1,24 @@
+{
+  "found": [
+    {
+      "quote": "General representations and warranties survive for 12 months after closing, and fundamental representations expire at the same time.",
+      "rule_id": "R-003",
+      "section": "9"
+    },
+    {
+      "quote": "Seller will use commercially reasonable efforts after closing to request counterparty consents for Material Contracts, but receipt of those consents is not a condition to Buyer's obligation to close.",
+      "rule_id": "R-007",
+      "section": "11"
+    },
+    {
+      "quote": "Buyer's closing statement will be final and binding when delivered, with no separate objection, negotiation, or accountant review process.",
+      "rule_id": "R-010",
+      "section": "7"
+    },
+    {
+      "quote": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
+      "rule_id": "R-011",
+      "section": "14"
+    }
+  ]
+}

@@ -8,11 +8,11 @@ For personal data processed under this DPA, Customer acts as controller or busin
 
 ## 2. Definitions
 
-"Personal Data" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset. "Processing" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return. "Personal Data Breach" means a suspected or actual breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to Personal Data.
+"Personal Data" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data created from or relating to Customer personal data, except only where data has been irreversibly anonymized under applicable law. "Processing" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return. "Personal Data Breach" means a suspected or actual breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to Personal Data.
 
 ## 3. Purpose Limitation
 
-Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
+Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law. Vendor will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
 
 ## 4. Documented Instructions
 
@@ -28,7 +28,7 @@ Vendor will limit Personal Data access to personnel who need it to perform the s
 
 ## 7. Breach Notice
 
-Vendor will notify Customer within 24 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
+Vendor will notify Customer without undue delay and in any event within 24 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
 
 ## 8. Subprocessors
 
@@ -40,7 +40,7 @@ Vendor will notify Customer within 2 business days if it receives a request from
 
 ## 10. Return and Deletion
 
-After the relationship ends, Vendor will remove hosted account content within 90 days and will not be required to provide written completion evidence. Retained copies required by law or archival controls remain subject to this DPA until deleted.
+After the relationship ends, Vendor will remove hosted account content within 90 days and will not be required to provide written completion evidence. Retained copies required by law remain subject to this DPA until deleted.
 
 ## 11. Audit and Assurance
 

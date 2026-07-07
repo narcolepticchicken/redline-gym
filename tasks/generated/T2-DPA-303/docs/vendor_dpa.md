@@ -32,7 +32,7 @@ Vendor may use subprocessors only with Customer's prior written approval or thro
 
 ## 8. Breach Notice
 
-Vendor will notify Customer within 24 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
+Vendor will notify Customer without undue delay and in any event within 24 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide written updates every 24 hours until Customer receives a written closure notice.
 
 ## 9. Data Subject Requests
 
@@ -40,7 +40,7 @@ Vendor will notify Customer within 2 business days if it receives a request from
 
 ## 10. Return and Deletion
 
-Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 30 days and certify completion in writing. Retained copies required by law or archival controls remain subject to this DPA until deleted.
+Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 30 days and certify completion in writing. Retained copies required by law remain subject to this DPA until deleted.
 
 ## 11. Audit and Assurance
 

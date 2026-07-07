@@ -1,0 +1,8 @@
+{
+  "gaps": [
+    "Material Adverse Effect closing condition",
+    "Earnout provisions",
+    "Purchase price allocation",
+    "Dispute resolution (jurisdiction/venue)"
+  ]
+}

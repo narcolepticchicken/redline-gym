@@ -55,12 +55,11 @@
       "topic": "Processing geography and cross-border transfer basis",
       "context_anchor": "The production service will process customer personal data across hosted systems.",
       "match_keywords": [
-        "hosting",
-        "region",
+        "hosting region",
         "data residency",
         "cross-border",
-        "transfer",
-        "geography"
+        "international transfer",
+        "processing geography"
       ],
       "absent_terms": [
         "hosting region",
@@ -74,11 +73,10 @@
       "topic": "Certified deletion evidence at exit",
       "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
       "match_keywords": [
-        "deletion",
-        "certificate",
-        "certified",
-        "exit",
-        "destruction"
+        "deletion certificate",
+        "certificate of deletion",
+        "certified deletion",
+        "destruction certificate"
       ],
       "absent_terms": [
         "deletion certificate",

@@ -22,7 +22,7 @@
         "section": "12",
         "span": "If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form."
       },
-      "original_text": "If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees and approved reimbursable expenses incurred before the effective date.",
+      "original_text": "If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees for services performed before the effective date plus undisputed reimbursable expenses approved in writing.",
       "mutated_text": "If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form.",
       "mechanism": "cross_ref_override",
       "severity": "medium",
@@ -92,7 +92,7 @@
         "section": "10",
         "span": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 180 days before the current period ends."
       },
-      "original_text": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
+      "original_text": "Each Order Form will have an initial term of no more than one year and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
       "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 180 days before the current period ends.",
       "mechanism": "direct_term_swap",
       "severity": "medium",

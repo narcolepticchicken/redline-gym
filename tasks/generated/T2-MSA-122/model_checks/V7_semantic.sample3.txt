@@ -1,1 +1,0 @@
-{"gaps":["Hosting location and subprocessor location disclosure","Cross-border data transfer mechanism","Data deletion obligation and certified deletion evidence at exit"]}

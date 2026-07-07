@@ -20,11 +20,11 @@ Vendor will perform the services in a professional and workmanlike manner using 
 
 ## 5. Data Handling
 
-Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form. Vendor will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. Vendor will comply with laws applicable to Vendor's provision of the services.
+Vendor will process Customer Data only under Customer's documented instructions. Vendor will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. Vendor will comply with applicable privacy and security laws.
 
 ## 6. Service Partners
 
-Vendor may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work and binds each service partner to written obligations at least as protective as Vendor's obligations for Customer Data, confidentiality, security, and service performance.
+Vendor may use affiliates, infrastructure providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work and binds each service partner to written obligations at least as protective as Vendor's obligations for Customer Data, confidentiality, security, and service performance.
 
 ## 7. Notice Regarding Protected Records
 
@@ -40,11 +40,11 @@ Vendor will invoice Customer as stated in the applicable Order Form. Unless an O
 
 ## 10. Term and Extension
 
-This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.
+This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form will have an initial term of no more than one year and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.
 
 ## 11. Customer Exit Right
 
-Customer may terminate any Order Form for convenience on thirty days' written notice. Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date.
+Customer may terminate any Order Form for convenience on thirty days' written notice. Customer will pay fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing and incurred before that date.
 
 ## 12. Transition Assistance
 
@@ -56,7 +56,7 @@ Each party will protect the other party's non-public business, technical, financ
 
 ## 14. Third-Party Claims
 
-Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct. Customer will defend and indemnify Vendor against third-party claims arising from Customer materials, Customer's unlawful use of the services, or use of the services contrary to this Agreement. The indemnified party must promptly notify the indemnifying party, provide reasonable cooperation, and allow control of the defense subject to the indemnified party's right to participate at its own expense.
+Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct. The indemnified party must promptly notify the indemnifying party, provide reasonable cooperation, and allow control of the defense subject to the indemnified party's right to participate at its own expense.
 
 ## 15. Warranties and Disclaimers
 

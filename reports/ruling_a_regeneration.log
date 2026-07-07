@@ -1,0 +1,130 @@
+## playbooks/privacy/PB-DPA-001.json tier=T1 seed=301 out=tasks/generated/T1-DPA-301
+Generated T1-DPA-301 at tasks/generated/T1-DPA-301
+grep_bot attempt_seed=301 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-009/direct_term_swap, D-002:R-005/direct_term_swap, D-003:R-002/direct_term_swap, D-004:R-007/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/privacy/PB-DPA-001.json tier=T1 seed=311 out=tasks/generated/T1-DPA-311
+Generated T1-DPA-311 at tasks/generated/T1-DPA-311
+grep_bot attempt_seed=311 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-007/direct_term_swap, D-002:R-009/direct_term_swap, D-003:R-012/direct_term_swap, D-004:R-004/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/privacy/PB-DPA-001.json tier=T2 seed=302 out=tasks/generated/T2-DPA-302
+Generated T2-DPA-302 at tasks/generated/T2-DPA-302
+grep_bot attempt_seed=302 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-008/cross_ref_override, D-002:R-011/defined_term_shift, D-003:R-010/omission, D-004:R-002/direct_term_swap, D-005:R-006/omission
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/privacy/PB-DPA-001.json tier=T2 seed=303 out=tasks/generated/T2-DPA-303
+Generated T2-DPA-303 at tasks/generated/T2-DPA-303
+grep_bot attempt_seed=303 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-001/defined_term_shift, D-002:R-011/defined_term_shift, D-003:R-010/omission, D-004:R-007/cross_ref_override, D-005:R-002/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/privacy/PB-DPA-001.json tier=T2 seed=312 out=tasks/generated/T2-DPA-312
+Generated T2-DPA-312 at tasks/generated/T2-DPA-312
+grep_bot attempt_seed=312 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-003/omission, D-002:R-005/direct_term_swap, D-003:R-001/defined_term_shift, D-004:R-007/cross_ref_override, D-005:R-013/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-MSA-001.json tier=T1 seed=105 out=tasks/generated/T1-MSA-105
+## playbooks/contracts/PB-MSA-001.json tier=T1 seed=105 out=tasks/generated/T1-MSA-105
+## playbooks/contracts/PB-MSA-001.json tier=T1 seed=105 out=tasks/generated/T1-MSA-105
+Generated T1-MSA-105 at tasks/generated/T1-MSA-105
+grep_bot attempt_seed=105 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-007/direct_term_swap, D-002:R-010/direct_term_swap, D-003:R-011/direct_term_swap, D-004:R-005/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-MSA-001.json tier=T1 seed=121 out=tasks/generated/T1-MSA-121
+Generated T1-MSA-121 at tasks/generated/T1-MSA-121
+grep_bot attempt_seed=121 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-005/direct_term_swap, D-002:R-010/direct_term_swap, D-003:R-011/direct_term_swap, D-004:R-009/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-MSA-001.json tier=T2 seed=104 out=tasks/generated/T2-MSA-104
+Generated T2-MSA-104 at tasks/generated/T2-MSA-104
+grep_bot attempt_seed=104 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-001/cross_ref_override, D-002:R-011/direct_term_swap, D-003:R-002/omission, D-004:R-006/cross_ref_override, D-005:R-003/defined_term_shift
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-MSA-001.json tier=T2 seed=106 out=tasks/generated/T2-MSA-106
+Generated T2-MSA-106 at tasks/generated/T2-MSA-106
+grep_bot attempt_seed=106 recall=0.200000 matched_rule_ids=R-008
+Coherence: PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-006/cross_ref_override, D-002:R-003/defined_term_shift, D-003:R-005/direct_term_swap, D-004:R-008/cross_ref_override, D-005:R-012/omission
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-MSA-001.json tier=T2 seed=122 out=tasks/generated/T2-MSA-122
+Generated T2-MSA-122 at tasks/generated/T2-MSA-122
+grep_bot attempt_seed=122 recall=0.200000 matched_rule_ids=R-008
+Coherence: PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-012/omission, D-002:R-003/defined_term_shift, D-003:R-004/defined_term_shift, D-004:R-007/direct_term_swap, D-005:R-008/cross_ref_override
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-NDA-001.json tier=T1 seed=101 out=tasks/generated/T1-NDA-101
+Generated T1-NDA-101 at tasks/generated/T1-NDA-101
+grep_bot attempt_seed=101 recall=0.250000 matched_rule_ids=R-003
+Coherence: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-005/direct_term_swap, D-002:R-008/direct_term_swap, D-003:R-003/direct_term_swap, D-004:R-004/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-NDA-001.json tier=T1 seed=103 out=tasks/generated/T1-NDA-103
+Generated T1-NDA-103 at tasks/generated/T1-NDA-103
+grep_bot attempt_seed=103 recall=0.500000 matched_rule_ids=R-003,R-009
+Coherence: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-003/direct_term_swap, D-002:R-008/direct_term_swap, D-003:R-009/direct_term_swap, D-004:R-001/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-NDA-001.json tier=T1 seed=111 out=tasks/generated/T1-NDA-111
+Generated T1-NDA-111 at tasks/generated/T1-NDA-111
+grep_bot attempt_seed=111 recall=0.500000 matched_rule_ids=R-003,R-009
+Coherence: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-004/direct_term_swap, D-002:R-009/direct_term_swap, D-003:R-003/direct_term_swap, D-004:R-005/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-NDA-001.json tier=T2 seed=102 out=tasks/generated/T2-NDA-102
+Generated T2-NDA-102 at tasks/generated/T2-NDA-102
+grep_bot attempt_seed=102 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-010/cross_ref_override, D-002:R-007/omission, D-003:R-008/direct_term_swap, D-004:R-002/defined_term_shift, D-005:R-001/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-NDA-001.json tier=T2 seed=112 out=tasks/generated/T2-NDA-112
+Generated T2-NDA-112 at tasks/generated/T2-NDA-112
+grep_bot attempt_seed=112 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-004/direct_term_swap, D-002:R-002/defined_term_shift, D-003:R-010/cross_ref_override, D-004:R-007/omission, D-005:R-006/omission
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/privacy/PB-DPA-001.json tier=T2 seed=606 out=tasks/heldout/T2-DPA-606
+Generated T2-DPA-606 at tasks/heldout/T2-DPA-606
+grep_bot attempt_seed=606 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-001/defined_term_shift, D-002:R-002/direct_term_swap, D-003:R-007/cross_ref_override, D-004:R-006/omission, D-005:R-008/cross_ref_override
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-MSA-001.json tier=T2 seed=603 out=tasks/heldout/T2-MSA-603
+Generated T2-MSA-603 at tasks/heldout/T2-MSA-603
+grep_bot attempt_seed=603 recall=0.000000 matched_rule_ids=none
+Coherence: PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-003/defined_term_shift, D-002:R-010/direct_term_swap, D-003:R-011/direct_term_swap, D-004:R-002/omission, D-005:R-001/cross_ref_override
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+## playbooks/contracts/PB-NDA-001.json tier=T2 seed=602 out=tasks/heldout/T2-NDA-602
+Generated T2-NDA-602 at tasks/heldout/T2-NDA-602
+grep_bot attempt_seed=602 recall=0.400000 matched_rule_ids=R-003,R-009
+grep_bot attempt_seed=1602 recall=0.200000 matched_rule_ids=R-009
+Coherence: PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes
+Deviations: D-001:R-010/cross_ref_override, D-002:R-007/omission, D-003:R-002/defined_term_shift, D-004:R-009/direct_term_swap, D-005:R-005/direct_term_swap
+Validators: PASS with model-backed checks marked STUBBED where applicable
+
+Regeneration complete. Log: reports/ruling_a_regeneration.log

@@ -50,7 +50,7 @@
         "section": "10",
         "span": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 60 days before the current period ends."
       },
-      "original_text": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
+      "original_text": "Each Order Form will have an initial term of no more than one year and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
       "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 60 days before the current period ends.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
@@ -97,12 +97,11 @@
       "topic": "Processing geography and cross-border transfer basis",
       "context_anchor": "The production service will process customer personal data across hosted systems.",
       "match_keywords": [
-        "hosting",
-        "region",
+        "hosting region",
         "data residency",
         "cross-border",
-        "transfer",
-        "geography"
+        "international transfer",
+        "processing geography"
       ],
       "absent_terms": [
         "hosting region",
@@ -116,11 +115,10 @@
       "topic": "Certified deletion evidence at exit",
       "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
       "match_keywords": [
-        "deletion",
-        "certificate",
-        "certified",
-        "exit",
-        "destruction"
+        "deletion certificate",
+        "certificate of deletion",
+        "certified deletion",
+        "destruction certificate"
       ],
       "absent_terms": [
         "deletion certificate",

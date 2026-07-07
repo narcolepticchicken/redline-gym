@@ -19,10 +19,10 @@
       "rule_id": "R-005",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "8",
+        "section": "7",
         "span": "Vendor will send an initial written alert about a Personal Data Breach within 10 business days after discovering it only if forensic review confirms outbound extraction."
       },
-      "original_text": "Vendor will notify Customer within 72 hours after discovering a Personal Data Breach.",
+      "original_text": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach.",
       "mutated_text": "Vendor will send an initial written alert about a Personal Data Breach within 10 business days after discovering it only if forensic review confirms outbound extraction.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
@@ -33,10 +33,10 @@
       "rule_id": "R-002",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "5",
+        "section": "3",
         "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
       },
-      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+      "original_text": "Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law. Vendor will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
       "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
@@ -47,10 +47,10 @@
       "rule_id": "R-007",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "11",
+        "section": "10",
         "span": "After the relationship ends, Vendor will remove hosted account content within 120 days and will not be required to provide written completion evidence."
       },
-      "original_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing.",
+      "original_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 30 days and certify completion in writing.",
       "mutated_text": "After the relationship ends, Vendor will remove hosted account content within 120 days and will not be required to provide written completion evidence.",
       "mechanism": "direct_term_swap",
       "severity": "high",

@@ -51,7 +51,7 @@
       "id": "5",
       "heading": "Data Handling",
       "paragraphs": [
-        "{vendor_role} will process Customer Data only to provide and support the services, to comply with {customer_role}'s documented instructions, and as otherwise expressly authorized in an Order Form. {vendor_role} will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. {vendor_role} will comply with laws applicable to {vendor_role}'s provision of the services."
+                "{vendor_role} will process Customer Data only under {customer_role}'s documented instructions. {vendor_role} will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. {vendor_role} will comply with applicable privacy and security laws."
       ]
     },
     {
@@ -65,7 +65,7 @@
       "id": "7",
       "heading": "Service Partners",
       "paragraphs": [
-        "{vendor_role} may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work and binds each service partner to written obligations at least as protective as {vendor_role}'s obligations for Customer Data, confidentiality, security, and service performance."
+                "{vendor_role} may use affiliates, infrastructure providers, implementation contractors, and other service partners to perform portions of the services, provided {vendor_role} remains responsible for their work and binds each service partner to written obligations at least as protective as {vendor_role}'s obligations for Customer Data, confidentiality, security, and service performance."
       ]
     },
     {
@@ -86,21 +86,21 @@
       "id": "10",
       "heading": "Term and Extension",
       "paragraphs": [
-        "This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form has the initial term stated in it and will not automatically extend unless {customer_role} signs a renewal order or gives written approval for a renewal period of one year or less."
+                "This Agreement begins on the effective date of the first Order Form and continues while any Order Form remains in effect. Each Order Form will have an initial term of no more than one year and will not automatically extend unless {customer_role} signs a renewal order or gives written approval for a renewal period of one year or less."
       ]
     },
     {
       "id": "11",
       "heading": "Customer Exit Right",
       "paragraphs": [
-        "{customer_role} may terminate any Order Form for convenience on thirty days' written notice. {customer_role} will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date."
+                "{customer_role} may terminate any Order Form for convenience on thirty days' written notice. {customer_role} will pay fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing and incurred before that date."
       ]
     },
     {
       "id": "12",
       "heading": "Transition Assistance",
       "paragraphs": [
-        "Upon expiration or termination, {vendor_role} will provide reasonable transition assistance at its then-current professional services rates for up to thirty days if requested by {customer_role}. If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay only accrued, undisputed fees and approved reimbursable expenses incurred before the effective date."
+                "Upon expiration or termination, {vendor_role} will provide reasonable transition assistance at its then-current professional services rates for up to thirty days if requested by {customer_role}. If {customer_role} ends an Order Form without {vendor_role} default, {customer_role} will pay only accrued, undisputed fees for services performed before the effective date plus undisputed reimbursable expenses approved in writing."
       ]
     },
     {
@@ -114,7 +114,7 @@
       "id": "14",
       "heading": "Third-Party Claims",
       "paragraphs": [
-        "{vendor_role} will defend and indemnify {customer_role} against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that {vendor_role}'s performance violates applicable law. {customer_role} will defend and indemnify {vendor_role} against third-party claims arising from Customer materials, {customer_role}'s unlawful use of the services, or use of the services contrary to this Agreement. The indemnified party must promptly notify the indemnifying party, provide reasonable cooperation, and allow control of the defense subject to the indemnified party's right to participate at its own expense."
+                "Each party will defend and indemnify the other from third-party claims arising from the indemnifying party's breach, unlawful conduct, or materials it provides. {vendor_role} will also defend and indemnify {customer_role} against claims alleging that the services or Deliverables infringe intellectual property rights. The indemnified party must promptly notify the indemnifying party, provide reasonable cooperation, and allow control of the defense subject to the indemnified party's right to participate at its own expense."
       ]
     },
     {
@@ -171,7 +171,7 @@
       "missing_info_id": "M-001",
       "topic": "Processing geography and cross-border transfer basis",
       "context_anchor": "The production service will process customer personal data across hosted systems.",
-      "match_keywords": ["hosting", "region", "data residency", "cross-border", "transfer", "geography"],
+      "match_keywords": ["hosting region", "data residency", "cross-border", "international transfer", "processing geography"],
       "absent_terms": ["hosting region", "data residency", "transfer impact assessment"],
       "expected_action": "escalate"
     },
@@ -179,7 +179,7 @@
       "missing_info_id": "M-002",
       "topic": "Certified deletion evidence at exit",
       "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
-      "match_keywords": ["deletion", "certificate", "certified", "exit", "destruction"],
+      "match_keywords": ["deletion certificate", "certificate of deletion", "certified deletion", "destruction certificate"],
       "absent_terms": ["deletion certificate", "certificate of deletion", "destruction certificate"],
       "expected_action": "escalate"
     }

@@ -1,0 +1,10 @@
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "rule_id": "R-009",
+      "section": "12",
+      "quote": "excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering."
+    }
+  ]
+}

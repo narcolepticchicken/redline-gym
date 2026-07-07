@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": false,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections are sequentially numbered 1 through 16; cross-references such as \"Assumed Liabilities\" to Section 3, \"Excluded Liabilities\" to Section 5, and Schedules 3, 8(a)-(c) are present and resolve.",
+    "q2": "Defined term \"Assumed Liabilities\" in Section 1 includes \"all liabilities incurred in the ordinary course of Seller's operation of the business before closing,\" but Section 3 states the assumed items \"are limited to customer support obligations arising after closing under assigned customer contracts, post-closing service credits issued by Buyer, and ordinary vendor obligations first arising after closing under assigned contracts,\" creating inconsistent usage.",
+    "q3": "All time and quantity phrases are specific: 18 months, 24 months, 60 days, 35 days, 12 months, $42,000,000, 15%, 18%, $150,000. No vague or non-commercial phrasing is present.",
+    "q4": "The document uses modern contractual language (e.g., \"entered into by and between,\" \"acknowledges that,\" \"this Agreement\") without archaic terms such as \"whereas,\" \"hereof,\" or \"witnesseth.\"",
+    "q5": "Section 12 contains an internally contradictory sentence: \"nothing in this Agreement creates an admission of successor liability or assumed employment obligations\" followed by \"Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.\"",
+    "q6": "The register is uniform throughout all sections, maintaining a consistent formal commercial-contract tone without sudden shifts in authorship style."
+  }
+}

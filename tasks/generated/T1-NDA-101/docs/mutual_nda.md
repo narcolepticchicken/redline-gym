@@ -21,7 +21,7 @@ Recipient will protect Confidential Information using the same degree of care th
 
 ## 5. Compelled Disclosure
 
-If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.
+Before any compelled disclosure required by law, regulation, subpoena, court order, or governmental request, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.
 
 ## 6. Exclusions
 
@@ -47,9 +47,9 @@ No license, assignment, or ownership interest is granted by disclosure of Confid
 
 Each party acknowledges that unauthorized use or disclosure may cause irreparable harm for which equitable relief may be appropriate, without limiting other remedies.
 
-## 12. Residual Rights
+## 12. No Additional Rights
 
-No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.
+Except as expressly stated in this Agreement, no additional use, disclosure, license, assignment, or ownership right is granted by either party.
 
 ## 13. Governing Law; Miscellaneous
 

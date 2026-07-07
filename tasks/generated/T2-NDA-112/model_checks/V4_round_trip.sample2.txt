@@ -1,7 +1,0 @@
-{"found":[
-  {"rule_id":"R-002","section":"2","quote":"The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides."},
-  {"rule_id":"R-004","section":"3","quote":"Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions."},
-  {"rule_id":"R-006","section":"2","quote":"Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose."},
-  {"rule_id":"R-007","section":"5","quote":"If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary."},
-  {"rule_id":"R-010","section":"10","quote":"The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work."}
-]}

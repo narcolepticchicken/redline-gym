@@ -1,0 +1,91 @@
+{
+  "found_stable": [
+    {
+      "quote": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.",
+      "rule_id": "R-001",
+      "section": "1"
+    },
+    {
+      "quote": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement.",
+      "rule_id": "R-006",
+      "section": "10"
+    },
+    {
+      "quote": "For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.",
+      "rule_id": "R-008",
+      "section": "12"
+    },
+    {
+      "quote": "Seller has 35 days to review the statement, deliver a written objection notice, and meet with Buyer in good faith.",
+      "rule_id": "R-010",
+      "section": "7"
+    },
+    {
+      "quote": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
+      "rule_id": "R-011",
+      "section": "14"
+    },
+    {
+      "quote": "For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule.",
+      "rule_id": "R-012",
+      "section": "15"
+    }
+  ],
+  "found_union": [
+    {
+      "quote": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.",
+      "rule_id": "R-001",
+      "section": "1. Definitions and Transaction Structure"
+    },
+    {
+      "quote": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement.",
+      "rule_id": "R-006",
+      "section": "10. Independent Investigation and Fraud Preservation"
+    },
+    {
+      "quote": "For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.",
+      "rule_id": "R-008",
+      "section": "12. Employee Matters"
+    },
+    {
+      "quote": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
+      "rule_id": "R-011",
+      "section": "14. Closing Conditions"
+    },
+    {
+      "quote": "For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule.",
+      "rule_id": "R-012",
+      "section": "15. Disclosure Schedule Administration"
+    },
+    {
+      "quote": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.",
+      "rule_id": "R-001",
+      "section": "1"
+    },
+    {
+      "quote": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement.",
+      "rule_id": "R-006",
+      "section": "10"
+    },
+    {
+      "quote": "For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.",
+      "rule_id": "R-008",
+      "section": "12"
+    },
+    {
+      "quote": "Seller has 35 days to review the statement, deliver a written objection notice, and meet with Buyer in good faith.",
+      "rule_id": "R-010",
+      "section": "7"
+    },
+    {
+      "quote": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
+      "rule_id": "R-011",
+      "section": "14"
+    },
+    {
+      "quote": "For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule.",
+      "rule_id": "R-012",
+      "section": "15"
+    }
+  ]
+}

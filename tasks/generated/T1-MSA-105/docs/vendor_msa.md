@@ -20,7 +20,7 @@ Vendor will perform the services in a professional and workmanlike manner using 
 
 ## 5. Data Handling
 
-Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship. Vendor will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. Vendor will comply with laws applicable to Vendor's provision of the services.
+Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship. Vendor will maintain administrative, technical, and physical safeguards designed to protect Customer Data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access. Vendor will comply with applicable privacy and security laws.
 
 ## 6. Notice Regarding Protected Records
 
@@ -28,7 +28,7 @@ Vendor will notify Customer without undue delay and in any event within 72 hours
 
 ## 7. Service Partners
 
-Vendor may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work and binds each service partner to written obligations at least as protective as Vendor's obligations for Customer Data, confidentiality, security, and service performance.
+Vendor may use affiliates, infrastructure providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work and binds each service partner to written obligations at least as protective as Vendor's obligations for Customer Data, confidentiality, security, and service performance.
 
 ## 8. Ownership and Licenses
 
@@ -44,11 +44,11 @@ This Agreement begins on the effective date of the first Order Form and continue
 
 ## 11. Customer Exit Right
 
-Customer may terminate any Order Form for convenience on thirty days' written notice. Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date.
+Customer may terminate any Order Form for convenience on thirty days' written notice. Customer will pay fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing and incurred before that date.
 
 ## 12. Transition Assistance
 
-Upon expiration or termination, Vendor will provide reasonable transition assistance at its then-current professional services rates for up to thirty days if requested by Customer. If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees and approved reimbursable expenses incurred before the effective date.
+Upon expiration or termination, Vendor will provide reasonable transition assistance at its then-current professional services rates for up to thirty days if requested by Customer. If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees for services performed before the effective date plus undisputed reimbursable expenses approved in writing.
 
 ## 13. Confidentiality
 
@@ -56,7 +56,7 @@ Each party will protect the other party's non-public business, technical, financ
 
 ## 14. Third-Party Claims
 
-Vendor will defend and indemnify Customer against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that Vendor's performance violates applicable law. Customer will defend and indemnify Vendor against third-party claims arising from Customer materials, Customer's unlawful use of the services, or use of the services contrary to this Agreement. The indemnified party must promptly notify the indemnifying party, provide reasonable cooperation, and allow control of the defense subject to the indemnified party's right to participate at its own expense.
+Each party will defend and indemnify the other from third-party claims arising from the indemnifying party's breach, unlawful conduct, or materials it provides. Vendor will also defend and indemnify Customer against claims alleging that the services or Deliverables infringe intellectual property rights. The indemnified party must promptly notify the indemnifying party, provide reasonable cooperation, and allow control of the defense subject to the indemnified party's right to participate at its own expense.
 
 ## 15. Warranties and Disclaimers
 

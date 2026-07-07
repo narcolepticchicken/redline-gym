@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 16 sequentially; cross-references to Section 3 (Assumed Liabilities) and Section 5 (Excluded Liabilities) resolve correctly.",
+    "q2": "Assumed Liabilities defined in Section 1 and used in 3; Excluded Liabilities defined by reference in 1 and in Section 5, used in 9; all terms used consistently.",
+    "q3": "All time/quantity terms are specific and commercial: '18 months', '24 months', '60 days', '35 days', '$42,000,000', '$150,000', '12 months before closing'. No vague phrases like 'next quarter' or 'reasonable while'.",
+    "q4": "No archaic diction; language is modern (e.g., 'will', 'shall', 'At closing', 'within 60 days') without words like 'hereby', 'thereof', or 'witnesseth'.",
+    "q5": "No sentence is internally contradictory or grammatically broken; e.g., the successor-liability acknowledgment in Section 12 is a single, coherent sentence.",
+    "q6": "Phrasing register is uniform across all sections, maintaining a consistent modern contractual style without any section reading like a different author."
+  }
+}

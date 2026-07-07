@@ -8,7 +8,7 @@ For personal data processed under this DPA, Customer acts as controller or busin
 
 ## 2. Definitions
 
-"Personal Data" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset. "Processing" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting. "Personal Data Breach" means a suspected or actual breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to Personal Data.
+"Personal Data" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data created from or relating to Customer personal data, except only where data has been irreversibly anonymized under applicable law. "Processing" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting. "Personal Data Breach" means a suspected or actual breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to Personal Data.
 
 ## 3. Documented Instructions
 
@@ -16,7 +16,7 @@ Vendor will process Personal Data only on documented instructions from Customer,
 
 ## 4. Purpose Limitation
 
-Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
+Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law. Vendor will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
 
 ## 5. Security Measures
 
@@ -40,7 +40,7 @@ Vendor will notify Customer within 2 business days if it receives a request from
 
 ## 10. Return and Deletion
 
-Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing. Retained copies required by law or archival controls remain subject to this DPA until deleted.
+Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 15 days and certify completion in writing. Retained copies required by law remain subject to this DPA until deleted.
 
 ## 11. Audit and Assurance
 
