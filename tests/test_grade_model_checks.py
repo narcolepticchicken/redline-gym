@@ -67,7 +67,17 @@ def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
         checks / "V7_semantic.json",
         {"gaps": ["personal data handling instructions are absent", "certified deletion evidence"]},
     )
-    _dump(checks / "V11_realism.json", {"scores": [9, 8, 9], "median": 9, "spread": 1, "weakest_union": []})
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": False, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ],
+            mechanical_q1=True,
+        ),
+    )
 
     row = grade_task(task_dir)
 
@@ -78,8 +88,9 @@ def test_grade_model_checks_from_fixture_json(tmp_path: Path) -> None:
     assert row["v4_extra"] == 1
     assert row["v7"] == "PASS"
     assert row["v11"] == "PASS"
-    assert row["v11_score"] == 9
-    assert row["v11_spread"] == 1
+    assert row["v11_passed"] == 6
+    assert row["v11_total"] == 6
+    assert row["v11_failing_questions"] == []
 
 
 def test_v4_union_and_stable_aggregation() -> None:
@@ -109,7 +120,35 @@ def test_v4_union_and_stable_aggregation() -> None:
     assert [(item["rule_id"], item["section"]) for item in aggregate["found_stable"]] == [("R-001", "2")]
 
 
-def test_v11_spread_marks_unstable_summary_cell(tmp_path: Path) -> None:
+def test_v11_majority_vote_aggregates_and_propagates_failing_evidence() -> None:
+    aggregate = aggregate_v11_samples(
+        [
+            _v11_sample(
+                {"q1": True, "q2": True, "q3": False, "q4": True, "q5": True, "q6": True},
+                {"q3": "a reasonable while"},
+            ),
+            _v11_sample(
+                {"q1": True, "q2": True, "q3": False, "q4": True, "q5": True, "q6": True},
+                {"q3": "the next quarter"},
+            ),
+            _v11_sample({"q1": False, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+        ],
+        mechanical_q1=True,
+    )
+
+    assert aggregate["passed"] == 5
+    assert aggregate["total"] == 6
+    assert aggregate["per_question"]["q1"] == {"passed": True, "yes_votes": 2, "no_votes": 1}
+    assert aggregate["per_question"]["q3"] == {"passed": False, "yes_votes": 1, "no_votes": 2}
+    assert aggregate["failing_evidence"] == {"q3": ["a reasonable while", "the next quarter"]}
+    assert aggregate["mechanical_agreement"]["q1"] == {
+        "mechanical_passed": True,
+        "judge_passed": True,
+        "agrees": True,
+    }
+
+
+def test_v11_gate_passes_at_five_of_six_and_summary_lists_failures(tmp_path: Path) -> None:
     task_dir = tmp_path / "T1-NDA-998"
     checks = task_dir / "model_checks"
     checks.mkdir(parents=True)
@@ -136,20 +175,52 @@ def test_v11_spread_marks_unstable_summary_cell(tmp_path: Path) -> None:
         },
     )
     _dump(checks / "V7_semantic.json", {"gaps": []})
-    _dump(checks / "V11_realism.json", aggregate_v11_samples([
-        {"score": 9, "weakest": ["numbering"]},
-        {"score": 6, "weakest": ["cross-reference"]},
-        {"score": 3, "weakest": ["numbering"]},
-    ]))
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": False, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": False, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ]
+        ),
+    )
 
     row = grade_task(task_dir)
     summary = tmp_path / "summary.md"
     update_summary(row, summary)
 
-    assert row["v11"] == "UNSTABLE"
-    assert row["v11_score"] == 6
-    assert row["v11_spread"] == 6
-    assert "UNSTABLE 6.0 (6)" in summary.read_text()
+    assert row["v11"] == "PASS"
+    assert row["v11_passed"] == 5
+    assert row["v11_failing_questions"] == ["q3"]
+    assert "V11 reg 5/6 failing q3" in summary.read_text()
+
+
+def test_v11_gate_fails_below_five_of_six(tmp_path: Path) -> None:
+    task_dir = tmp_path / "T1-NDA-996"
+    checks = task_dir / "model_checks"
+    checks.mkdir(parents=True)
+    _dump(task_dir / "task.json", {"difficulty_tier": "T1"})
+    _dump(task_dir / "planted_deviations.json", {"deviations": [], "missing_info": []})
+    _dump(checks / "V3_clean_base.json", {"verdict": "PASS", "violations": []})
+    _dump(checks / "V4_round_trip.json", {"found_union": [], "found_stable": []})
+    _dump(checks / "V7_semantic.json", {"gaps": []})
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": False, "q4": False, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": False, "q4": False, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ]
+        ),
+    )
+
+    row = grade_task(task_dir)
+
+    assert row["v11"] == "FAIL"
+    assert row["v11_passed"] == 4
+    assert row["v11_failing_questions"] == ["q3", "q4"]
 
 
 def test_quote_overlap_matches_planted_deviation_when_section_differs(tmp_path: Path) -> None:
@@ -188,7 +259,16 @@ def test_quote_overlap_matches_planted_deviation_when_section_differs(tmp_path: 
         },
     )
     _dump(checks / "V7_semantic.json", {"gaps": []})
-    _dump(checks / "V11_realism.json", {"score": 8, "weakest": []})
+    _dump(
+        checks / "V11_realism.json",
+        aggregate_v11_samples(
+            [
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+                _v11_sample({"q1": True, "q2": True, "q3": True, "q4": True, "q5": True, "q6": True}),
+            ]
+        ),
+    )
 
     row = grade_task(task_dir)
 
@@ -209,22 +289,30 @@ def test_update_summary_replaces_existing_row(tmp_path: Path) -> None:
         "v7": "PASS",
         "v7_uncovered": [],
         "v11": "PASS",
-        "v11_score": 9,
-        "v11_median": 9,
-        "v11_spread": 0,
+        "v11_passed": 6,
+        "v11_total": 6,
+        "v11_failing_questions": [],
+        "v11_score": 6,
     }
     update_summary(row, summary)
-    changed = dict(row, v4_matched=1, v4_extra=1, v11_score=8, v11_median=8, v11_spread=1)
+    changed = dict(row, v4_matched=1, v4_extra=1, v11="FAIL", v11_passed=4, v11_failing_questions=["q3", "q4"], v11_score=4)
     update_summary(changed, summary)
 
     text = summary.read_text()
     assert text.count("tasks/generated/T1-NDA-101") == 1
-    assert "| tasks/generated/T1-NDA-101 | PASS | 1/2 | PASS | 1 | PASS | 8.0 (1) |" in text
+    assert "| tasks/generated/T1-NDA-101 | PASS | 1/2 | PASS | 1 | PASS | V11 reg 4/6 failing q3,q4 |" in text
 
 
 def test_parse_json_response_tolerates_fenced_json() -> None:
-    assert parse_json_response('```json\n{"score": 9, "weakest": []}\n```') == {"score": 9, "weakest": []}
+    payload = '{"answers":{"q1":true},"evidence":{"q1":""}}'
+    assert parse_json_response(f"```json\n{payload}\n```") == {"answers": {"q1": True}, "evidence": {"q1": ""}}
 
 
 def _dump(path: Path, payload: dict) -> None:
     path.write_text(json.dumps(payload, indent=2) + "\n")
+
+
+def _v11_sample(answers: dict[str, bool], evidence: dict[str, str] | None = None) -> dict:
+    complete_evidence = {qid: "" for qid in answers}
+    complete_evidence.update(evidence or {})
+    return {"answers": answers, "evidence": complete_evidence}

@@ -9,13 +9,23 @@ from __future__ import annotations
 import json
 import pathlib
 import re
-import statistics
 import sys
 from collections import Counter
 from typing import Any
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from scoring.judge_deepseek import DeepSeekJudge  # noqa: E402
+
+
+V11_QUESTION_IDS = ("q1", "q2", "q3", "q4", "q5", "q6")
+V11_QUESTIONS = {
+    "q1": "section numbering is sequential and cross-references resolve",
+    "q2": "defined terms are defined once and used consistently",
+    "q3": 'no vague or non-commercial time/quantity phrasing, e.g. "the next quarter" or "a reasonable while"',
+    "q4": "no archaic or out-of-register legal diction relative to the rest of the document",
+    "q5": "no sentence reads as internally contradictory or grammatically broken",
+    "q6": "clause phrasing register is consistent across sections, with no section reading like a different author mid-document",
+}
 
 
 SCHEMA_INSTRUCTIONS = {
@@ -34,11 +44,11 @@ SCHEMA_INSTRUCTIONS = {
         "Each gap should be a concise material missing-information topic."
     ),
     "V11_realism": (
-        'Return STRICT JSON only, matching this schema exactly: {"score":0-10,"weakest":["...",...]}. '
-        "Score PROSE REGISTER AND STRUCTURAL COHERENCE ONLY. Aggressive, one-sided, "
-        "or customer-unfavorable substantive terms are EXPECTED content and must not reduce the score. "
-        "Deduct only for unnatural phrasing, drafting-register anomalies, broken numbering or "
-        "cross-references, or internal incoherence."
+        'Return STRICT JSON only, matching this schema exactly: '
+        '{"answers":{"q1":true|false,"q2":true|false,"q3":true|false,"q4":true|false,"q5":true|false,"q6":true|false},'
+        '"evidence":{"q1":"quote or empty","q2":"quote or empty","q3":"quote or empty","q4":"quote or empty","q5":"quote or empty","q6":"quote or empty"}}. '
+        "Answer true when the register check is healthy. Answer false only for prose register or structural coherence defects. "
+        "One-sided, aggressive, or customer-unfavorable SUBSTANCE is expected and must not affect any answer."
     ),
 }
 
@@ -102,8 +112,11 @@ def main(argv: list[str] | None = None) -> int:
             + shipped
         ),
         "V11_realism": (
-            "Score this contract 0-10 on whether it reads as a coherent, professionally drafted agreement "
-            "in prose register and structure. Do not grade the business favorability of the terms.\n\n"
+            "Answer this fixed battery of register and structural-coherence questions for the contract below. "
+            "Each yes/true answer means healthy. One-sided or aggressive SUBSTANCE is expected in these fixtures "
+            "and must not affect any answer; judge only prose register and structural coherence.\n\n"
+            + "\n".join(f"{qid}: {question}" for qid, question in V11_QUESTIONS.items())
+            + "\n\n"
             + shipped
         ),
     }
@@ -139,7 +152,10 @@ def main(argv: list[str] | None = None) -> int:
             if len(samples) != sample_count:
                 print(f"=== {name} ===\nERROR: only {len(samples)}/{sample_count} valid samples; aggregate not written\n")
                 continue
-            aggregate = aggregate_v4_samples(samples) if name == "V4_round_trip" else aggregate_v11_samples(samples)
+            if name == "V4_round_trip":
+                aggregate = aggregate_v4_samples(samples)
+            else:
+                aggregate = aggregate_v11_samples(samples, mechanical_q1=_mechanical_v11_q1(shipped))
             (out_dir / f"{name}.json").write_text(json.dumps(aggregate, indent=2, sort_keys=True) + "\n")
             print(f"=== {name} ===\n{json.dumps(aggregate, indent=2, sort_keys=True)[:1200]}\n")
         elif samples:
@@ -215,10 +231,18 @@ def _validate_shape(name: str, payload: dict[str, Any]) -> None:
         _require_keys(name, payload, {"gaps"})
         _require_list(name, payload["gaps"])
     elif name == "V11_realism":
-        _require_keys(name, payload, {"score", "weakest"})
-        if not isinstance(payload["score"], (int, float)) or not 0 <= payload["score"] <= 10:
-            raise ValueError("V11 score must be a number from 0 to 10")
-        _require_list(name, payload["weakest"])
+        _require_keys(name, payload, {"answers", "evidence"})
+        if not isinstance(payload["answers"], dict):
+            raise ValueError("V11 answers must be an object")
+        if not isinstance(payload["evidence"], dict):
+            raise ValueError("V11 evidence must be an object")
+        _require_keys(name, payload["answers"], set(V11_QUESTION_IDS))
+        _require_keys(name, payload["evidence"], set(V11_QUESTION_IDS))
+        for qid in V11_QUESTION_IDS:
+            if not isinstance(payload["answers"][qid], bool):
+                raise ValueError(f"V11 {qid} answer must be true or false")
+            if not isinstance(payload["evidence"][qid], str):
+                raise ValueError(f"V11 {qid} evidence must be a string")
 
 
 def aggregate_v4_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
@@ -242,25 +266,68 @@ def aggregate_v4_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
     return {"found_union": found_union, "found_stable": found_stable}
 
 
-def aggregate_v11_samples(samples: list[dict[str, Any]]) -> dict[str, Any]:
-    scores = [sample["score"] for sample in samples if isinstance(sample.get("score"), (int, float))]
-    if not scores:
-        raise ValueError("V11 samples did not contain numeric scores")
-    weakest_union: list[str] = []
-    seen_weakest: set[str] = set()
-    for sample in samples:
-        for item in sample.get("weakest", []):
-            text = str(item)
-            key = text.strip().lower()
-            if key and key not in seen_weakest:
-                weakest_union.append(text)
-                seen_weakest.add(key)
-    return {
-        "scores": scores,
-        "median": statistics.median(scores),
-        "spread": max(scores) - min(scores),
-        "weakest_union": weakest_union,
+def aggregate_v11_samples(samples: list[dict[str, Any]], mechanical_q1: bool | None = None) -> dict[str, Any]:
+    per_question: dict[str, dict[str, Any]] = {}
+    failing_evidence: dict[str, list[str]] = {}
+
+    for qid in V11_QUESTION_IDS:
+        votes = [sample["answers"][qid] for sample in samples if isinstance(sample.get("answers", {}).get(qid), bool)]
+        if not votes:
+            raise ValueError(f"V11 samples did not contain boolean answers for {qid}")
+        yes_votes = sum(1 for vote in votes if vote)
+        no_votes = len(votes) - yes_votes
+        passed = yes_votes > no_votes
+        per_question[qid] = {
+            "passed": passed,
+            "yes_votes": yes_votes,
+            "no_votes": no_votes,
+        }
+        if not passed:
+            failing_evidence[qid] = _v11_failing_evidence(samples, qid)
+
+    passed_count = sum(1 for result in per_question.values() if result["passed"])
+    aggregate: dict[str, Any] = {
+        "passed": passed_count,
+        "total": len(V11_QUESTION_IDS),
+        "per_question": per_question,
+        "failing_evidence": failing_evidence,
     }
+    if mechanical_q1 is not None:
+        judge_q1 = bool(per_question["q1"]["passed"])
+        aggregate["mechanical_agreement"] = {
+            "q1": {
+                "mechanical_passed": mechanical_q1,
+                "judge_passed": judge_q1,
+                "agrees": mechanical_q1 == judge_q1,
+            }
+        }
+    return aggregate
+
+
+def _v11_failing_evidence(samples: list[dict[str, Any]], qid: str) -> list[str]:
+    evidence: list[str] = []
+    seen: set[str] = set()
+    for sample in samples:
+        if sample.get("answers", {}).get(qid) is not False:
+            continue
+        text = str(sample.get("evidence", {}).get(qid, "")).strip()
+        key = text.lower()
+        if text and key not in seen:
+            evidence.append(text)
+            seen.add(key)
+    return evidence
+
+
+def _mechanical_v11_q1(doc_text: str) -> bool:
+    section_numbers = [int(match.group(1)) for match in re.finditer(r"^##\s+([0-9]+)\.", doc_text, re.MULTILINE)]
+    expected = list(range(1, len(section_numbers) + 1))
+    if section_numbers != expected:
+        return False
+    section_ids = {str(number) for number in section_numbers}
+    return not any(
+        match.group(1) not in section_ids
+        for match in re.finditer(r"\bSection\s+([0-9]+)\b", doc_text)
+    )
 
 
 def _v4_item_key(item: dict[str, Any]) -> tuple[str, str]:

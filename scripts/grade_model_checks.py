@@ -11,6 +11,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 SUMMARY_PATH = ROOT / "reports" / "model_checks_summary.md"
+V11_TOTAL = 6
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -51,10 +52,9 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
         if not any(any(keyword in gap.lower() for keyword in keywords) for gap in gaps):
             uncovered_topics.append(item.get("topic", ""))
 
-    median = v11.get("median", v11.get("score"))
-    spread = v11.get("spread", 0 if isinstance(v11.get("score"), (int, float)) else None)
+    passed, total, failing_questions = _v11_result(v11)
     v4_gate = _v4_gate(task.get("difficulty_tier", ""), recall)
-    v11_status = _v11_status(median, spread)
+    v11_status = _v11_status(passed)
     try:
         rel_task = str(task_dir.relative_to(ROOT))
     except ValueError:
@@ -71,9 +71,10 @@ def grade_task(task_dir: Path) -> dict[str, Any]:
         "v7": "PASS" if not uncovered_topics else "FAIL",
         "v7_uncovered": uncovered_topics,
         "v11": v11_status,
-        "v11_score": median,
-        "v11_median": median,
-        "v11_spread": spread,
+        "v11_passed": passed,
+        "v11_total": total,
+        "v11_failing_questions": failing_questions,
+        "v11_score": passed,
     }
 
 
@@ -85,7 +86,7 @@ def update_summary(row: dict[str, Any], summary_path: Path = SUMMARY_PATH) -> No
     lines = [
         "# Model Checks Summary",
         "",
-        "| Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 median (spread) |",
+        "| Task | V3 clean base | V4 recall | V4 reported gate | V4 found-but-not-planted | V7 missing info | V11 register |",
         "|---|---|---:|---|---:|---|---|",
     ]
     for task in sorted(rows):
@@ -115,7 +116,7 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
             v4_extra = int(cells[3])
             v7 = cells[4]
             score_text = cells[5]
-        median, spread, v11_status = _parse_v11_cell(score_text)
+        v11_fields = _parse_v11_cell(score_text)
         rows[cells[0]] = {
             "task": cells[0],
             "v3": cells[1],
@@ -126,10 +127,7 @@ def _read_existing_rows(summary_path: Path) -> dict[str, dict[str, Any]]:
             "v4_gate": v4_gate,
             "v7": v7,
             "v7_uncovered": [],
-            "v11": v11_status,
-            "v11_score": median,
-            "v11_median": median,
-            "v11_spread": spread,
+            **v11_fields,
         }
     return rows
 
@@ -138,7 +136,8 @@ def _format_row(row: dict[str, Any]) -> str:
     return (
         f"{row['task']}: V3={row['v3']} "
         f"V4={row['v4_matched']}/{row['v4_total']} gate={row['v4_gate']} extra={row['v4_extra']} "
-        f"V7={row['v7']} V11={row['v11']} score={row['v11_score']} spread={row.get('v11_spread', 0)}"
+        f"V7={row['v7']} V11={row['v11']} reg={row.get('v11_passed', 0)}/{row.get('v11_total', V11_TOTAL)} "
+        f"failing={','.join(row.get('v11_failing_questions', [])) or 'none'}"
     )
 
 
@@ -217,37 +216,75 @@ def _longest_common_substring_len(left: str, right: str) -> int:
     return best
 
 
-def _v11_status(median: Any, spread: Any) -> str:
-    if isinstance(spread, (int, float)) and spread > 2:
-        return "UNSTABLE"
-    if isinstance(median, (int, float)) and median >= 8:
+def _v11_result(v11: dict[str, Any]) -> tuple[int, int, list[str]]:
+    if isinstance(v11.get("passed"), int):
+        passed = int(v11["passed"])
+        total = int(v11.get("total", V11_TOTAL))
+        return passed, total, _v11_failing_questions(v11.get("per_question", {}))
+
+    legacy_score = v11.get("median", v11.get("score", 0))
+    passed = V11_TOTAL if isinstance(legacy_score, (int, float)) and legacy_score >= 8 else 0
+    return passed, V11_TOTAL, []
+
+
+def _v11_failing_questions(per_question: Any) -> list[str]:
+    if not isinstance(per_question, dict):
+        return []
+    failing: list[str] = []
+    for qid in sorted(per_question):
+        value = per_question[qid]
+        passed = value.get("passed") if isinstance(value, dict) else value
+        if passed is False:
+            failing.append(str(qid))
+    return failing
+
+
+def _v11_status(passed: Any) -> str:
+    if isinstance(passed, int) and passed >= 5:
         return "PASS"
     return "FAIL"
 
 
 def _format_v11_cell(row: dict[str, Any]) -> str:
-    median = float(row["v11_score"])
-    spread = row.get("v11_spread", 0)
-    spread_text = _format_number(spread)
-    score_text = f"{median:.1f} ({spread_text})"
-    if row.get("v11") == "UNSTABLE":
-        return f"UNSTABLE {score_text}"
-    return score_text
+    if "v11_legacy_cell" in row:
+        return f"legacy {row['v11_legacy_cell']}"
+    passed = int(row.get("v11_passed", 0))
+    total = int(row.get("v11_total", V11_TOTAL))
+    failing = list(row.get("v11_failing_questions", []))
+    suffix = ",".join(failing) if failing else "none"
+    return f"V11 reg {passed}/{total} failing {suffix}"
 
 
-def _parse_v11_cell(cell: str) -> tuple[float, float, str]:
-    unstable = "UNSTABLE" in cell.upper()
+def _parse_v11_cell(cell: str) -> dict[str, Any]:
+    reg_match = re.search(r"(\d+)\s*/\s*(\d+)", cell)
+    if reg_match:
+        passed = int(reg_match.group(1))
+        total = int(reg_match.group(2))
+        failing_match = re.search(r"failing\s+([A-Za-z0-9_, -]+)", cell, flags=re.IGNORECASE)
+        failing_questions: list[str] = []
+        if failing_match:
+            failing_text = failing_match.group(1).strip()
+            if failing_text.lower() != "none":
+                failing_questions = [item for item in re.split(r"[\s,]+", failing_text) if item]
+        return {
+            "v11": _v11_status(passed),
+            "v11_passed": passed,
+            "v11_total": total,
+            "v11_failing_questions": failing_questions,
+            "v11_score": passed,
+        }
+
     numbers = [float(match) for match in re.findall(r"\d+(?:\.\d+)?", cell)]
-    median = numbers[0] if numbers else 0.0
-    spread = numbers[1] if len(numbers) > 1 else 0.0
-    status = "UNSTABLE" if unstable or spread > 2 else ("PASS" if median >= 8 else "FAIL")
-    return median, spread, status
-
-
-def _format_number(value: Any) -> str:
-    if isinstance(value, (int, float)) and float(value).is_integer():
-        return str(int(value))
-    return f"{float(value):.1f}"
+    legacy_score = numbers[0] if numbers else 0.0
+    passed = V11_TOTAL if legacy_score >= 8 else 0
+    return {
+        "v11": _v11_status(passed),
+        "v11_passed": passed,
+        "v11_total": V11_TOTAL,
+        "v11_failing_questions": [],
+        "v11_score": passed,
+        "v11_legacy_cell": cell,
+    }
 
 
 def _norm_item(value: Any) -> str:
