@@ -1,1 +1,1 @@
-{"gaps":["Handling of end-user personal data, including data protection, security measures, and breach notification","Compliance with applicable privacy and data protection laws (e.g., GDPR, CCPA) and international data transfer restrictions"]}
+{"gaps":["Personal data protection requirements for end-user data exchanged and processed under the agreement (e.g., compliance with privacy laws, data security measures, breach notification obligations, and restrictions on processing beyond the Purpose)"]}

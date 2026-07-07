@@ -1,1 +1,1 @@
-{"verdict":"PASS","violations":[]}
+{"verdict":"FAIL","violations":[{"rule_id":"R-007","section":"11","quote":"Retained copies required by law or archival controls remain subject to this DPA until deleted."}]}

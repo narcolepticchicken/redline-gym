@@ -1,9 +1,10 @@
 {
   "gaps": [
-    "No prior approval or objection process for subprocessors; vendor liability limited to service availability, missing written pass-through commitments and responsibility for subprocessor data protection compliance.",
-    "Breach notification timeline allows 10 business days after internal review, not without undue delay and within 48 hours of discovery.",
-    "No audit or inspection rights; assurance limited to annual SOC 2 report and questionnaire with no cause-based follow-up or independent assessor access.",
-    "Personnel confidentiality obligations not explicitly required; only onboarding materials mentioned without binding confidentiality duties.",
-    "Personal Data definition does not explicitly exclude irreversibly anonymized data, creating ambiguity over the status of de-identified data derived from Customer data."
+    "The definition of 'Processing' excludes diagnostic review, metric creation, cache retention, format conversion, and support troubleshooting, leaving personal data handling in those activities unprotected by the DPA.",
+    "Subprocessor use lacks mandatory prior consent, objection rights, and written obligations that are at least as protective as the DPA.",
+    "Vendor responsibility for subprocessors is limited to 'service availability' and does not extend to data protection breaches or compliance.",
+    "Personnel confidentiality duties are not required; only provision of internal onboarding materials is mentioned.",
+    "Breach notification timeline is not linked to discovery and could be delayed indefinitely due to the requirement for internal confirmation and executive review.",
+    "The DPA provides no customer audit or inspection rights, even for cause; it limits verification to an annual SOC 2 report and questionnaires, with further review blocked unless Vendor agrees."
   ]
 }

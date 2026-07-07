@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "quote": "Vendor will defend and indemnify Customer against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that Vendor's performance violates applicable law.",
+      "rule_id": "R-002",
+      "section": "14"
+    },
+    {
+      "quote": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship.",
+      "rule_id": "R-005",
+      "section": "5"
+    },
+    {
+      "quote": "Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date.",
+      "rule_id": "R-006",
+      "section": "11"
+    },
+    {
+      "quote": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent.",
+      "rule_id": "R-010",
+      "section": "18"
+    },
+    {
+      "quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms.",
+      "rule_id": "R-011",
+      "section": "17"
+    }
+  ]
+}

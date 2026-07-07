@@ -1,7 +1,19 @@
 {
-  "score": 6,
-  "weakest": [
-    "Section 1 contains an obvious drafting typo\u2014\u2018records normalization, normalization, mapping\u2019\u2014which disrupts the professional prose register.",
-    "Section 18 states that all recovery for Section 13 or Section 14 claims is limited to the Section 16 cap, but Section 16 expressly excludes those categories (confidentiality and indemnification obligations) from the cap, creating a direct internal contradiction that undermines structural coherence."
+  "median": 6,
+  "scores": [
+    6,
+    6,
+    5
+  ],
+  "spread": 1,
+  "weakest_union": [
+    "Section 1 services description repeats 'normalization' ('hosted records normalization, normalization, mapping'), a clear drafting typo.",
+    "Section 7 heading uses 'Protected Records', an undefined term not present in Section 2 definitions, creating ambiguity.",
+    "Section 18's 'Despite any contrary sentence' clause limits recovery for Section 13 and Section 14 claims to the Section 16 cap, directly contradicting Section 16's explicit exclusion of confidentiality and indemnification obligations from that cap.",
+    "Section 1 contains a redundant phrase ('records normalization, normalization, mapping, and workflow services'), indicating a drafting anomaly.",
+    "The final sentence of Section 18 imposes a liability cap on Sections 13 and 14 claims that directly contradicts the express uncapped categories listed in Section 16, creating an irreconcilable internal contradiction and undermining structural coherence.",
+    "Section 18's sentence limiting recovery for Section 13 and Section 14 claims directly contradicts Section 16's explicit carve-outs for confidentiality and indemnification obligations, creating a material internal inconsistency.",
+    "Section 7's heading 'Notice Regarding Protected Records' introduces an undefined term and mismatches the section's actual subject matter, which is security incident notification.",
+    "Section 1 contains a redundant duplication of the word 'normalization' ('hosted records normalization, normalization, mapping and workflow services')."
   ]
 }

@@ -1,0 +1,10 @@
+{
+  "score": 3,
+  "weakest": [
+    "The definition of 'Processing' is narrowly limited to live hosting of raw records, contradicting the broad scope statement in Section 1 and rendering many operative obligations inapplicable to key data-handling activities such as diagnostics or metric creation, creating severe internal incoherence.",
+    "Section 6 is titled 'Personnel Confidentiality' but fails to impose any confidentiality obligation on personnel; it only requires access limitation and provision of onboarding materials, resulting in a material misalignment between heading and content.",
+    "The use of the informal phrase 'courtesy update' in Section 7 deviates from professional drafting register.",
+    "Section 5 contains an internal contradiction: it permits processing to 'improve the services' but simultaneously prohibits use for 'product development', a common form of service improvement, leaving the scope unclear.",
+    "The breach notice clause (Section 8) ties the 10-business-day deadline to an undefined internal 'confirmation and executive review' process, making the notice trigger subjective and the timeline effectively open-ended, which undermines coherence."
+  ]
+}

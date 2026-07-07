@@ -1,0 +1,1 @@
+{"score": 8, "weakest": ["Section 6 (Personnel Confidentiality) is internally incoherent: it omits any confidentiality obligation, and the sole substantive clause—providing internal onboarding materials—is irrelevant to confidentiality, leaving the section disconnected from its heading."]}

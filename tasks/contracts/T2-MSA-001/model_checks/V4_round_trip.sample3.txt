@@ -1,0 +1,34 @@
+{
+  "found": [
+    {
+      "rule_id": "R-002",
+      "section": "14",
+      "quote": "Vendor will defend and indemnify Customer against third-party claims alleging that the services or Deliverables infringe intellectual property rights or that Vendor's performance violates applicable law."
+    },
+    {
+      "rule_id": "R-004",
+      "section": "6",
+      "quote": "Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "5",
+      "quote": "Vendor will process Customer Data only to provide and support the services, to comply with Customer's documented instructions, and as otherwise expressly authorized in an Order Form."
+    },
+    {
+      "rule_id": "R-006",
+      "section": "11",
+      "quote": "Customer will pay fees for services performed before the effective termination date and approved reimbursable expenses incurred before that date."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "10",
+      "quote": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 180 days before the current period ends."
+    },
+    {
+      "rule_id": "R-013",
+      "section": "7",
+      "quote": "Vendor may use affiliates, hosting providers, implementation contractors, and other service partners to perform portions of the services, provided Vendor remains responsible for their work as if performed by Vendor."
+    }
+  ]
+}

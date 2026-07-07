@@ -1,7 +1,8 @@
-{
-  "gaps": [
-    "Personal Data definition narrowly limited to raw uploaded records while excluding transformed outputs, statistical summaries, service measurements, and derived data, leaving normalization service results unprotected.",
-    "No specified security controls (encryption at rest/transit, access restrictions, logging, vulnerability management, incident response); only vague 'commercially suitable' safeguards mentioned.",
-    "Personnel confidentiality obligations not mandated—only internal onboarding materials referenced, no binding confidentiality duty for staff accessing Personal Data."
-  ]
-}
+{"gaps": [
+  "No authorization for Vendor to process Personal Data to comply with legal obligations absent Customer instructions",
+  "Security measures are vague ('commercially suitable') without required technical safeguards (encryption, access controls, logging, vulnerability management, incident response)",
+  "Vendor may change operational controls without notice, undermining customer oversight",
+  "Personnel access not conditioned on confidentiality obligations; only onboarding materials required",
+  "Personal Data definition excludes derived, pseudonymized, aggregated, telemetry, log, and usage data, creating a de-identification loophole",
+  "Liability cap for data protection breaches limited to 3 months' fees and consequential damages excluded, not aligned with MSA cap"
+]}

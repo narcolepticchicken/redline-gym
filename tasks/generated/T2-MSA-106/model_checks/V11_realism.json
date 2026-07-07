@@ -1,4 +1,13 @@
 {
-  "score": 10,
-  "weakest": []
+  "median": 10,
+  "scores": [
+    7,
+    10,
+    10
+  ],
+  "spread": 3,
+  "weakest_union": [
+    "Section 15's second sentence directly conflicts with the first sentence by purporting to apply the implied warranty disclaimer despite any express warranty, creating an incoherent exception.",
+    "Section 12's exit charge for termination without Vendor default conflicts with Section 11's statement that termination for convenience only requires payment for services performed, rendering the financial obligations ambiguous."
+  ]
 }

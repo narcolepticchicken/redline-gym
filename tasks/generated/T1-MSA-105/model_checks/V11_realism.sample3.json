@@ -1,0 +1,8 @@
+{
+  "score": 7,
+  "weakest": [
+    "Section 1 contains a drafting error with repeated \"normalization\" (\"hosted records normalization, normalization, mapping...\") that makes the prose less professional.",
+    "Section 6 heading \"Notice Regarding Protected Records\" uses an undefined term and is inconsistent with the defined term \"Security Incident\" used throughout the section.",
+    "Section 15 refers to \"service-level commitments\" as if they are expressly stated in the Agreement, but no such commitments appear, creating a dangling cross-reference."
+  ]
+}

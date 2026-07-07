@@ -1,1 +1,1 @@
-{"verdict":"PASS","violations":[]}
+{"verdict": "FAIL", "violations": [{"rule_id": "R-007", "section": "5", "quote": "If Recipient is required by law, regulation, subpoena, court order, or governmental request to disclose Confidential Information, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment."}]}

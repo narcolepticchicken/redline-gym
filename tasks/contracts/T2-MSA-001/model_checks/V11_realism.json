@@ -1,6 +1,16 @@
 {
-  "score": 3,
-  "weakest": [
-    "Section 18 contains a sentence stating all recovery for Section 13 (Confidentiality) and Section 14 (Indemnification) claims is limited to the cap in Section 16, directly contradicting Section 16 which explicitly excludes breaches of confidentiality and indemnification obligations from that cap. This creates a fatal internal inconsistency that undermines the agreement's coherence."
+  "median": 5,
+  "scores": [
+    5,
+    5,
+    7
+  ],
+  "spread": 2,
+  "weakest_union": [
+    "Section 18 contains a sentence capping recovery for Section 13 (confidentiality) and Section 14 (indemnification) claims, directly contradicting Section 16's express exclusion of those claims from the liability cap, creating a fundamental internal inconsistency.",
+    "Section 16 contains a direct internal contradiction: it first excludes confidentiality and indemnification claims from the liability cap, then states that all recovery for Section 13 or Section 14 claims is limited to the cap.",
+    "The definition of 'Security Incident' requires a completed written forensic report approved by Vendor's incident response lead, imposing a condition that renders the notice obligation practically inoperative and disrupts the structural coherence of the breach notification section.",
+    "Section 6 uses 'give written alert' instead of the standard drafting register term 'give written notice,' a minor anomaly.",
+    "Section 18 states that all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16, but Section 16 expressly excludes breaches of confidentiality (Section 13) and indemnification obligations (Section 14) from its liability cap. This direct, irreconcilable internal contradiction undermines structural coherence."
   ]
 }

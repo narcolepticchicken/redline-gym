@@ -1,6 +1,14 @@
 {
-  "score": 9,
-  "weakest": [
-    "Compelled disclosure clause (Section 5) uses a conditional permissive structure (\"may make the required disclosure without advance notice... and without seeking confidential treatment unless counsel determines those steps are necessary\") that creates a minor awkwardness in reading flow, though the meaning remains decipherable."
+  "median": 6,
+  "scores": [
+    10,
+    6,
+    6
+  ],
+  "spread": 4,
+  "weakest_union": [
+    "Section 10 permits the receiving side to keep and apply generalized ideas and know-how from the disclosed materials, while Section 12 expressly denies the right to use residual knowledge or unaided memory unless approved in writing, creating a direct internal contradiction.",
+    "Clause 10 grants a right to keep and apply generalized ideas, techniques, and know-how, while Clause 12 expressly denies any right to use residual knowledge, unaided memory, or retained impressions unless approved in writing, creating a direct internal contradiction that undermines structural coherence.",
+    "Clause 5 permits disclosure without advance notice or protective steps 'unless counsel determines those steps are necessary,' but fails to state the consequence of that determination (e.g., whether notice or protective measures then become mandatory), introducing drafting ambiguity."
   ]
 }

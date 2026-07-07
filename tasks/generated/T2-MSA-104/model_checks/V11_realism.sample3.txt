@@ -1,0 +1,8 @@
+{
+  "score": 5,
+  "weakest": [
+    "Section 18's sentence limiting recovery for Section 13 and Section 14 claims directly contradicts Section 16's explicit carve-outs for confidentiality and indemnification obligations, creating a material internal inconsistency.",
+    "Section 7's heading 'Notice Regarding Protected Records' introduces an undefined term and mismatches the section's actual subject matter, which is security incident notification.",
+    "Section 1 contains a redundant duplication of the word 'normalization' ('hosted records normalization, normalization, mapping and workflow services')."
+  ]
+}

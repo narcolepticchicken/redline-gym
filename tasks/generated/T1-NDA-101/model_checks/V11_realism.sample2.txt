@@ -1,0 +1,8 @@
+{
+  "score": 6,
+  "weakest": [
+    "Section 6 Exclusions uses vague, non-standard phrasing ('reasonably understands was already known', 'becomes available from any source', 'can be used in Recipient's ordinary business without reference') that undermines clarity and professional register.",
+    "Section 3 uses the undefined term 'Representatives', creating structural incoherence and ambiguity.",
+    "Section 8 Return or Destruction carves out 'ordinary business recordkeeping' without defining scope or continuing obligations, creating internal tension with the obligation to return or destroy."
+  ]
+}

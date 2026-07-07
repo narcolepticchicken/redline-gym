@@ -1,7 +1,20 @@
 {
-  "score": 5,
-  "weakest": [
-    "The defined term 'Processing' is narrowly restricted to 'live hosting of raw individual records in the production database', which directly conflicts with the broad usage of 'process' and 'processed' in Sections 1, 5, and elsewhere. This creates a severe internal inconsistency that undermines the entire DPA's scope and obligations.",
-    "Section 6 ('Personnel Confidentiality') completely omits any requirement for personnel to observe confidentiality obligations regarding personal data. The heading promises confidentiality, but the body only limits access and mentions internal onboarding materials, leaving a critical gap and making the section incoherent with its title."
+  "median": 4,
+  "scores": [
+    7,
+    3,
+    4
+  ],
+  "spread": 4,
+  "weakest_union": [
+    "Section 6 (Personnel Confidentiality) imposes no confidentiality duty and instead contains a non-sequitur about providing internal onboarding materials, creating a structural incoherence with its heading.",
+    "Section 7 (Subprocessors) uses the informal phrase 'courtesy update' which departs from formal contract register and reads as unnatural phrasing.",
+    "The definition of 'Processing' is narrowly limited to live hosting of raw records, contradicting the broad scope statement in Section 1 and rendering many operative obligations inapplicable to key data-handling activities such as diagnostics or metric creation, creating severe internal incoherence.",
+    "Section 6 is titled 'Personnel Confidentiality' but fails to impose any confidentiality obligation on personnel; it only requires access limitation and provision of onboarding materials, resulting in a material misalignment between heading and content.",
+    "The use of the informal phrase 'courtesy update' in Section 7 deviates from professional drafting register.",
+    "Section 5 contains an internal contradiction: it permits processing to 'improve the services' but simultaneously prohibits use for 'product development', a common form of service improvement, leaving the scope unclear.",
+    "The breach notice clause (Section 8) ties the 10-business-day deadline to an undefined internal 'confirmation and executive review' process, making the notice trigger subjective and the timeline effectively open-ended, which undermines coherence.",
+    "Section 6 (Personnel Confidentiality) does not impose any confidentiality obligation; it merely limits access and states Vendor will provide internal onboarding materials, making it incoherent relative to its title and purpose.",
+    "Section 7 (Subprocessors) uses the informal, non-standard phrase 'courtesy update' and limits Vendor's responsibility to service availability rather than subprocessor compliance, which is a drafting-register anomaly and structural incoherence."
   ]
 }

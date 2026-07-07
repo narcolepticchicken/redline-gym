@@ -1,6 +1,12 @@
 {
-  "score": 10,
-  "weakest": [
-    "None"
+  "median": 10,
+  "scores": [
+    10,
+    9,
+    10
+  ],
+  "spread": 1,
+  "weakest_union": [
+    "Definition of 'Personal Data' includes a slightly awkward and circular clause 'to the extent such data relates to a person, household, device, customer account, or customer dataset' that reads as added-on rather than fully integrated."
   ]
 }

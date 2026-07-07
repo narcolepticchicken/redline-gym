@@ -1,0 +1,19 @@
+{
+  "found": [
+    {
+      "rule_id": "R-002",
+      "section": "14",
+      "quote": "Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct. Customer will defend and indemnify Vendor against third-party claims arising from Customer materials, Customer’s unlawful use of the services, or use of the services contrary to this Agreement."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "10",
+      "quote": "Each Order Form has the initial term stated in it and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."
+    },
+    {
+      "rule_id": "R-011",
+      "section": "17",
+      "quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms."
+    }
+  ]
+}

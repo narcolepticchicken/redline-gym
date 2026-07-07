@@ -1,5 +1,1 @@
-{
-  "gaps": [
-    "Data protection, privacy, and security obligations for personal data of end users exchanged and processed under the agreement"
-  ]
-}
+{"gaps":["Data privacy and security obligations for personal data of end users exchanged or processed under the NDA"]}

@@ -1,0 +1,1 @@
+{"score": 7, "weakest": ["Section 6 (Personnel Confidentiality) imposes no confidentiality duty and instead contains a non-sequitur about providing internal onboarding materials, creating a structural incoherence with its heading.", "Section 7 (Subprocessors) uses the informal phrase 'courtesy update' which departs from formal contract register and reads as unnatural phrasing."]}

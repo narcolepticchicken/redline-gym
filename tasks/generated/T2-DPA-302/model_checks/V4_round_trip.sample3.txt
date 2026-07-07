@@ -1,0 +1,34 @@
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "2",
+      "quote": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
+    },
+    {
+      "rule_id": "R-003",
+      "section": "7",
+      "quote": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "8",
+      "quote": "Vendor will send an initial written alert within 10 business days after its internal response team completes confirmation and executive review."
+    },
+    {
+      "rule_id": "R-008",
+      "section": "10",
+      "quote": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing."
+    },
+    {
+      "rule_id": "R-010",
+      "section": "6",
+      "quote": "Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service."
+    },
+    {
+      "rule_id": "R-014",
+      "section": "10",
+      "quote": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing."
+    }
+  ]
+}

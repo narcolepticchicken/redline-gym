@@ -1,0 +1,1 @@
+{"score":7,"weakest":["Section 18 states that all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16, but Section 16 expressly excludes breaches of confidentiality (Section 13) and indemnification obligations (Section 14) from its liability cap. This direct, irreconcilable internal contradiction undermines structural coherence."]}

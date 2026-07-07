@@ -1,0 +1,8 @@
+{
+  "score": 5,
+  "weakest": [
+    "Section 16 contains a direct internal contradiction: it first excludes confidentiality and indemnification claims from the liability cap, then states that all recovery for Section 13 or Section 14 claims is limited to the cap.",
+    "The definition of 'Security Incident' requires a completed written forensic report approved by Vendor's incident response lead, imposing a condition that renders the notice obligation practically inoperative and disrupts the structural coherence of the breach notification section.",
+    "Section 6 uses 'give written alert' instead of the standard drafting register term 'give written notice,' a minor anomaly."
+  ]
+}

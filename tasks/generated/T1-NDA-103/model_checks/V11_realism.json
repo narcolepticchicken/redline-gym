@@ -1,7 +1,15 @@
 {
-  "score": 5,
-  "weakest": [
-    "Section 6 contains unnatural phrasing and drafting-register anomalies, such as 'reasonably understands was already known', 'becomes available from any source', and 'can be used in Recipient's ordinary business without reference', which are vague and untypical for a professionally drafted exclusion clause, undermining overall coherence.",
-    "The definition of 'Purpose' is embedded within the 'Confidential Information' definition section without a distinct subsection or heading, creating a minor structural disorganization that detracts from the clarity of the document's architecture."
+  "median": 7,
+  "scores": [
+    10,
+    7,
+    5
+  ],
+  "spread": 5,
+  "weakest_union": [
+    "Section 6 exclusion clause uses inconsistent grammatical structures and a subjective 'reasonably understands' standard, reducing professional register",
+    "Section 10 uses 'sentence' rather than 'provision', a minor drafting anomaly",
+    "Undefined term 'Representatives' used in Section 2 (Affiliates and Representatives) without a corresponding definition, breaking internal coherence.",
+    "Section 6 Exclusions uses non-standard, vague phrasing (e.g., 'reasonably understands was already known,' 'becomes available from any source,' 'can be used in Recipient's ordinary business without reference') that undermines clarity and is a drafting-register anomaly."
   ]
 }

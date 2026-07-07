@@ -1,4 +1,1 @@
-{
-  "verdict": "PASS",
-  "violations": []
-}
+{"verdict":"PASS","violations":[]}

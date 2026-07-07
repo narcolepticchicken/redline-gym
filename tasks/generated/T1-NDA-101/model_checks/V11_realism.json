@@ -1,4 +1,18 @@
 {
-  "score": 10,
-  "weakest": []
+  "median": 7,
+  "scores": [
+    7,
+    6,
+    8
+  ],
+  "spread": 2,
+  "weakest_union": [
+    "The term 'Representatives' is used in Section 3 without any definition, creating an internal gap and undermining structural coherence.",
+    "The definition of 'Purpose' is embedded within the 'Confidential Information' definition in Section 1, disrupting the logical organization of defined terms.",
+    "Section 4 combines a positive duty of care with a limitation-on-liability phrase ('will not be responsible for inadvertent disclosures absent gross negligence') in a single sentence, resulting in slight drafting awkwardness.",
+    "Section 6 Exclusions uses vague, non-standard phrasing ('reasonably understands was already known', 'becomes available from any source', 'can be used in Recipient's ordinary business without reference') that undermines clarity and professional register.",
+    "Section 3 uses the undefined term 'Representatives', creating structural incoherence and ambiguity.",
+    "Section 8 Return or Destruction carves out 'ordinary business recordkeeping' without defining scope or continuing obligations, creating internal tension with the obligation to return or destroy.",
+    "Section 6's exclusion language is unusually vague and not drafted in standard legal prose; 'reasonably understands was already known' and 'becomes available from any source' lack necessary qualifiers, introducing ambiguity and drafting-register inconsistency."
+  ]
 }

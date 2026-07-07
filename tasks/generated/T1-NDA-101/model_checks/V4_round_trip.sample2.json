@@ -1,0 +1,24 @@
+{
+  "found": [
+    {
+      "quote": "Confidential Information does not include information that Recipient reasonably understands was already known, becomes available from any source, or can be used in Recipient's ordinary business without reference to the disclosed materials.",
+      "rule_id": "R-003",
+      "section": "6"
+    },
+    {
+      "quote": "Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions.",
+      "rule_id": "R-004",
+      "section": "2"
+    },
+    {
+      "quote": "Recipient will protect Confidential Information using the same degree of care that it uses for its own information and will not be responsible for inadvertent disclosures absent gross negligence.",
+      "rule_id": "R-005",
+      "section": "4"
+    },
+    {
+      "quote": "Upon Discloser's written request, Recipient will return or destroy Confidential Information within 15 days, except retained copies may be kept for ordinary business recordkeeping.",
+      "rule_id": "R-008",
+      "section": "8"
+    }
+  ]
+}
