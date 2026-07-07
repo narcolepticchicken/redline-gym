@@ -20,7 +20,7 @@ Vendor will maintain administrative, technical, and physical safeguards appropri
 
 ## 4. Purpose Limitation
 
-Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.
+Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.
 
 ## 6. Personnel Confidentiality
 
@@ -28,11 +28,11 @@ Vendor will limit Personal Data access to personnel who need it to perform the s
 
 ## 7. Subprocessors
 
-Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.
+Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.
 
 ## 8. Breach Notice
 
-Vendor will notify Customer without undue delay and in any event within 36 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
+Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
 
 ## 9. Data Subject Requests
 
@@ -48,7 +48,7 @@ Upon termination or expiration of the services, or earlier upon Customer's writt
 
 ## 12. International Transfers
 
-Vendor may move hosted records among its global facilities and affiliates based on operational needs and regional capacity. Vendor will provide reasonable information and cooperation for transfer assessments relating to the services.
+Vendor will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required. Vendor will provide reasonable information and cooperation for transfer assessments relating to the services.
 
 ## 13. Regulatory Cooperation
 

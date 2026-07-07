@@ -56,8 +56,8 @@ Taking into account the nature of Processing and information available to Vendor
 
 ## 14. Liability and Order of Precedence
 
-Claims arising from Vendor's breach of this DPA are subject to the liability cap and exclusions stated in the master services agreement and are not subject to any lower cap, special exclusion, or separate damages waiver for data protection obligations. If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.
+For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable. If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.
 
 ## 15. Term and Transition Assistance
 
-This addendum begins on signature and expires automatically one year later unless the parties sign a renewal. For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards.
+This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer. For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards.

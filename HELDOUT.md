@@ -17,3 +17,7 @@ that access.
 - 2026-07-07: Added privacy DPA held-out seed `tasks/heldout/T2-DPA-401`
   for `PB-DPA-001` while adding the cybersecurity/privacy practice-area
   generator tranche.
+- 2026-07-07: DPA recipes were revised after adjudication to remap the
+  narrowed `Processing` definition deviation and remove an unanchored
+  data-subject-categories missing-info item. Replaced stale
+  `tasks/heldout/T2-DPA-401` with fresh seed `tasks/heldout/T2-DPA-402`.

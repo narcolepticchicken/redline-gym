@@ -6,7 +6,7 @@
   "rules": [
     {
       "rule_id": "R-001",
-      "position": "Vendor processing authority should be tied to the customer's documented instructions and the agreed services.",
+      "position": "The DPA's covered-activity perimeter and vendor authority should keep personal-data work under the customer's documented instructions and the agreed services.",
       "fallback": "Vendor will process personal data only on Customer's documented instructions and only as necessary to provide the services or comply with applicable law.",
       "severity": "critical",
       "escalation_trigger": "Escalate if the vendor can act outside documented customer directions.",

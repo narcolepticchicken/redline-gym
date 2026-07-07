@@ -138,7 +138,7 @@
     },
     {
       "recipe_id": "DPA-R011-DEFINED-PROCESSING",
-      "rule_id": "R-011",
+      "rule_id": "R-001",
       "mechanism": "defined_term_shift",
       "section": "2",
       "templates": {

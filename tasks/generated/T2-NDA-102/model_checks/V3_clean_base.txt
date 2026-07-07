@@ -1,0 +1,5 @@
+FAIL: violations found.
+
+- **R-005 [high]** – Section 4: “using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.” The playbook position requires the care standard to be no less than the recipient uses for its own “similar confidential information.” The phrase “of similar importance” narrows the comparability pool and deviates from the fallback, creating a substantive gap.
+
+- **R-012 [high]** – Section 12: “No right to use residual knowledge, unaided memory, or retained impressions is granted under this Agreement unless the parties approve that right in a signed writing.” The playbook position requires residual knowledge clauses to be absent unless expressly approved by the client. This clause addresses residual knowledge and must be removed from the clean base.

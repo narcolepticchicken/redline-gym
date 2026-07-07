@@ -5,11 +5,11 @@
       "deviation_ids": [
         "D-001"
       ],
-      "rule_id": "R-011",
+      "rule_id": "R-007",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "critical",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -17,7 +17,7 @@
       "deviation_ids": [
         "D-002"
       ],
-      "rule_id": "R-010",
+      "rule_id": "R-006",
       "doc_ids": [
         "DOC-01"
       ],
@@ -29,11 +29,11 @@
       "deviation_ids": [
         "D-003"
       ],
-      "rule_id": "R-003",
+      "rule_id": "R-001",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "high",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -41,7 +41,7 @@
       "deviation_ids": [
         "D-004"
       ],
-      "rule_id": "R-007",
+      "rule_id": "R-012",
       "doc_ids": [
         "DOC-01"
       ],
@@ -53,7 +53,7 @@
       "deviation_ids": [
         "D-005"
       ],
-      "rule_id": "R-001",
+      "rule_id": "R-011",
       "doc_ids": [
         "DOC-01"
       ],
@@ -62,16 +62,6 @@
     }
   ],
   "missing_info": [
-    {
-      "missing_info_id": "M-001",
-      "topic": "Categories of data subjects and records",
-      "absent_terms": [
-        "employee benefits records",
-        "end user profile categories",
-        "minor data subjects"
-      ],
-      "expected_action": "escalate"
-    },
     {
       "missing_info_id": "M-002",
       "topic": "Current subprocessor list location",

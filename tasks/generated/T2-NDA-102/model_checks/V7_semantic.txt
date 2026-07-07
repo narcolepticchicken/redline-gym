@@ -1,0 +1,4 @@
+FAIL
+
+**Topic the contract is silent on:** Whether "Confidential Information" includes information disclosed *before* the Effective Date.  
+**Reason:** Playbook R-001 [high] requires coverage of all non-public information disclosed by either party, with the fallback expressly covering information disclosed “whether before or after the effective date.” The contract’s definition in Section 1 contains no temporal scope, and the Agreement’s forward-looking term (Section 9) leaves pre-Agreement disclosures unprotected. Because the parties are evaluating a strategic pilot and may already have exchanged sensitive records, this gap is material and should be escalated.

@@ -2,7 +2,7 @@
   "deviations": [
     {
       "deviation_id": "D-001",
-      "rule_id": "R-011",
+      "rule_id": "R-001",
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "2",
@@ -30,16 +30,16 @@
     },
     {
       "deviation_id": "D-003",
-      "rule_id": "R-009",
+      "rule_id": "R-005",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "12",
-        "span": "Vendor may move hosted records among its global facilities and affiliates based on operational needs and regional capacity."
+        "section": "8",
+        "span": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review."
       },
-      "original_text": "Vendor will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required.",
-      "mutated_text": "Vendor may move hosted records among its global facilities and affiliates based on operational needs and regional capacity.",
+      "original_text": "Vendor will notify Customer without undue delay and in any event within 36 hours after discovering a Personal Data Breach.",
+      "mutated_text": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review.",
       "mechanism": "direct_term_swap",
-      "severity": "high",
+      "severity": "critical",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -58,16 +58,16 @@
     },
     {
       "deviation_id": "D-005",
-      "rule_id": "R-002",
+      "rule_id": "R-003",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "4",
-        "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
+        "section": "7",
+        "span": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability."
       },
-      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
-      "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
-      "mechanism": "direct_term_swap",
-      "severity": "critical",
+      "original_text": "Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.",
+      "mutated_text": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "mechanism": "omission",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     }
   ],
@@ -93,16 +93,6 @@
   ],
   "missing_info": [
     {
-      "missing_info_id": "M-001",
-      "topic": "Categories of data subjects and records",
-      "absent_terms": [
-        "employee benefits records",
-        "end user profile categories",
-        "minor data subjects"
-      ],
-      "expected_action": "escalate"
-    },
-    {
       "missing_info_id": "M-002",
       "topic": "Current subprocessor list location",
       "absent_terms": [
@@ -119,10 +109,10 @@
     "playbook=PB-DPA-001",
     "tier=T2",
     "task_id=T2-DPA-302",
-    "D-001 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-011",
+    "D-001 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-001",
     "D-002 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
-    "D-003 DPA-R009-DIRECT-TRANSFERS direct_term_swap applied to R-009",
+    "D-003 DPA-R005-DIRECT-BREACH-HOURS direct_term_swap applied to R-005",
     "D-004 DPA-R008-CROSS-AUDIT-LIMIT cross_ref_override applied to R-008",
-    "D-005 DPA-R002-DIRECT-PURPOSE direct_term_swap applied to R-002"
+    "D-005 DPA-R003-OMISSION-FLOWDOWN omission applied to R-003"
   ]
 }

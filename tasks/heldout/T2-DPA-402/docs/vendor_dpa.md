@@ -1,10 +1,10 @@
 # Vendor Data Processing Addendum
 
-This Data Processing Addendum ("DPA") is entered into by and between Cedarline Robotics, Inc. ("Customer") and LatticeBridge Systems, LLC ("Vendor") and supplements the parties' master services agreement for the workflow automation service.
+This Data Processing Addendum ("DPA") is entered into by and between Cedarline Robotics, Inc. ("Customer") and LatticeBridge Systems, LLC ("Vendor") and supplements the parties' master services agreement for the records normalization service.
 
 ## 1. Roles and Scope
 
-For personal data processed under this DPA, Customer acts as controller or business and Vendor acts as processor or service provider. This DPA applies to all personal data submitted to, accessed by, or generated through the workflow automation service on behalf of Customer.
+For personal data processed under this DPA, Customer acts as controller or business and Vendor acts as processor or service provider. This DPA applies to all personal data submitted to, accessed by, or generated through the records normalization service on behalf of Customer.
 
 ## 2. Definitions
 
@@ -24,19 +24,19 @@ Vendor will process Personal Data only to provide, secure, support, and improve 
 
 ## 6. Personnel Confidentiality
 
-Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service.
+Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.
 
 ## 7. Subprocessors
 
-Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.
+Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.
 
 ## 8. Breach Notice
 
-Vendor will notify Customer without undue delay and in any event within 36 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
+Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach. The notice will describe known facts, affected systems or data categories, mitigation steps, and a contact for follow-up, and Vendor will provide timely updates as information develops.
 
 ## 9. Data Subject Requests
 
-Vendor will promptly notify Customer if it receives a request from an individual relating to Personal Data and will not respond except on Customer's documented instructions or as required by law. Vendor will provide reasonable assistance for access, deletion, correction, portability, opt-out, and objection requests using information available to Vendor.
+Vendor will promptly notify Customer if it receives a request from an individual relating to Personal Data and will not respond except on Customer's documented instructions or as required by law. Vendor will refer individual inquiries to Customer when it can identify the account associated with the request.
 
 ## 11. Audit and Assurance
 
@@ -56,7 +56,7 @@ Taking into account the nature of Processing and information available to Vendor
 
 ## 14. Liability and Order of Precedence
 
-Claims arising from Vendor's breach of this DPA are subject to the liability cap and exclusions stated in the master services agreement and are not subject to any lower cap, special exclusion, or separate damages waiver for data protection obligations. If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.
+For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable. If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.
 
 ## 15. Term and Transition Assistance
 

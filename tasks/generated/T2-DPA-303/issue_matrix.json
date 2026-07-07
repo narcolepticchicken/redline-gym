@@ -41,11 +41,11 @@
       "deviation_ids": [
         "D-004"
       ],
-      "rule_id": "R-013",
+      "rule_id": "R-012",
       "doc_ids": [
         "DOC-01"
       ],
-      "severity": "medium",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -62,16 +62,6 @@
     }
   ],
   "missing_info": [
-    {
-      "missing_info_id": "M-001",
-      "topic": "Categories of data subjects and records",
-      "absent_terms": [
-        "employee benefits records",
-        "end user profile categories",
-        "minor data subjects"
-      ],
-      "expected_action": "escalate"
-    },
     {
       "missing_info_id": "M-002",
       "topic": "Current subprocessor list location",

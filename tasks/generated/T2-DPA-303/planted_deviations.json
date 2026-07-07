@@ -44,16 +44,16 @@
     },
     {
       "deviation_id": "D-004",
-      "rule_id": "R-013",
+      "rule_id": "R-012",
       "doc_id": "DOC-01",
       "clause_anchor": {
-        "section": "15",
-        "span": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal."
+        "section": "14",
+        "span": "For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable."
       },
-      "original_text": "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer.",
-      "mutated_text": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+      "original_text": "Claims arising from Vendor's breach of this DPA are subject to the liability cap and exclusions stated in the master services agreement and are not subject to any lower cap, special exclusion, or separate damages waiver for data protection obligations.",
+      "mutated_text": "For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable.",
       "mechanism": "direct_term_swap",
-      "severity": "medium",
+      "severity": "high",
       "expected_action": "redline_with_fallback"
     },
     {
@@ -93,16 +93,6 @@
   ],
   "missing_info": [
     {
-      "missing_info_id": "M-001",
-      "topic": "Categories of data subjects and records",
-      "absent_terms": [
-        "employee benefits records",
-        "end user profile categories",
-        "minor data subjects"
-      ],
-      "expected_action": "escalate"
-    },
-    {
       "missing_info_id": "M-002",
       "topic": "Current subprocessor list location",
       "absent_terms": [
@@ -122,7 +112,7 @@
     "D-001 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
     "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
     "D-003 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
-    "D-004 DPA-R013-DIRECT-TERM direct_term_swap applied to R-013",
+    "D-004 DPA-R012-DIRECT-LIABILITY direct_term_swap applied to R-012",
     "D-005 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007"
   ]
 }
