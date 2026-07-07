@@ -1,0 +1,127 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-003",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "7",
+        "span": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability."
+      },
+      "original_text": "Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.",
+      "mutated_text": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction."
+      },
+      "original_text": "Vendor will notify Customer within 48 hours after discovering a Personal Data Breach.",
+      "mutated_text": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
+      },
+      "original_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+      "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "15",
+        "span": "For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards."
+      },
+      "original_text": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+      "mutated_text": "For up to 30 days after termination, Vendor will provide export files and transfer coordination. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-013",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "15",
+        "span": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal."
+      },
+      "original_text": "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer.",
+      "mutated_text": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA.",
+      "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+      "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.",
+      "why_benign": "A DPA precedence clause for personal-data processing is customary and client-protective."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-002",
+      "topic": "Vendor obligation to maintain records of processing activities",
+      "context_anchor": "Customer must demonstrate processor accountability to its own regulators and relies on Vendor to maintain records of processing activities for the services.",
+      "match_keywords": [
+        "records of processing",
+        "processing records",
+        "record-keeping",
+        "processing activities"
+      ],
+      "absent_terms": [
+        "records of processing",
+        "processing records",
+        "record-keeping",
+        "processing activities"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=312",
+    "attempt_seed=312",
+    "playbook=PB-DPA-001",
+    "tier=T2",
+    "task_id=T2-DPA-312",
+    "D-001 DPA-R003-OMISSION-FLOWDOWN omission applied to R-003",
+    "D-002 DPA-R005-DIRECT-BREACH-HOURS direct_term_swap applied to R-005",
+    "D-003 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-001",
+    "D-004 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007",
+    "D-005 DPA-R013-DIRECT-TERM direct_term_swap applied to R-013",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+  ]
+}

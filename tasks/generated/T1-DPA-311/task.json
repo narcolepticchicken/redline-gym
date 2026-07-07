@@ -1,0 +1,12 @@
+{
+  "task_id": "T1-DPA-311",
+  "practice_area": "privacy",
+  "client_context": "Client is a mid-size tech company whose vendor will process customer personal data through a production records normalization service. Review the DPA from the customer/controller side and escalate practical privacy or security gaps. Customer must demonstrate processor accountability to its own regulators and relies on Vendor to maintain records of processing activities for the services.",
+  "instruction": "Review the vendor DPA against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "deliverable": {
+    "card_schema_id": "redline-gym.issue-card.v1"
+  },
+  "turn_cap": 25,
+  "difficulty_tier": "T1",
+  "playbook_ref": "playbooks/privacy/PB-DPA-001.json"
+}

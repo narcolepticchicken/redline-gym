@@ -1,0 +1,104 @@
+{
+  "issues": [
+    {
+      "issue_id": "I-001",
+      "deviation_ids": [
+        "D-001"
+      ],
+      "rule_id": "R-003",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-002",
+      "deviation_ids": [
+        "D-002"
+      ],
+      "rule_id": "R-005",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-003",
+      "deviation_ids": [
+        "D-003"
+      ],
+      "rule_id": "R-001",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-004",
+      "deviation_ids": [
+        "D-004"
+      ],
+      "rule_id": "R-007",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "issue_id": "I-005",
+      "deviation_ids": [
+        "D-005"
+      ],
+      "rule_id": "R-013",
+      "doc_ids": [
+        "DOC-01"
+      ],
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-002",
+      "topic": "Vendor obligation to maintain records of processing activities",
+      "context_anchor": "Customer must demonstrate processor accountability to its own regulators and relies on Vendor to maintain records of processing activities for the services.",
+      "match_keywords": [
+        "records of processing",
+        "processing records",
+        "record-keeping",
+        "processing activities"
+      ],
+      "absent_terms": [
+        "records of processing",
+        "processing records",
+        "record-keeping",
+        "processing activities"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA.",
+      "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+      "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.",
+      "why_benign": "A DPA precedence clause for personal-data processing is customary and client-protective."
+    }
+  ]
+}

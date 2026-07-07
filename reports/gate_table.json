@@ -186,8 +186,89 @@
         "status": "OK"
       },
       "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-DPA-311",
+      "task_id": "T1-DPA-311",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-EMP-701",
+      "task_id": "T1-EMP-701",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
       "task": "tasks/generated/T1-MSA-105",
       "task_id": "T1-MSA-105",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-MSA-121",
+      "task_id": "T1-MSA-121",
       "validators": "PASS"
     },
     {
@@ -242,6 +323,33 @@
       "random_gate": "UNMEASURED",
       "task": "tasks/generated/T1-NDA-103",
       "task_id": "T1-NDA-103",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.5375,
+        "recall": 0.5,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T1-NDA-111",
+      "task_id": "T1-NDA-111",
       "validators": "PASS"
     },
     {
@@ -321,6 +429,87 @@
         "status": "OK"
       },
       "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-DPA-312",
+      "task_id": "T2-DPA-312",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.365,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-EMP-702",
+      "task_id": "T2-EMP-702",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.363636,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-EMP-703",
+      "task_id": "T2-EMP-703",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
       "task": "tasks/generated/T2-MSA-104",
       "task_id": "T2-MSA-104",
       "validators": "PASS"
@@ -356,6 +545,33 @@
       "cheater_llm": "SKIPPED (no key)",
       "deepseek_judge": "SKIPPED (no key)",
       "grep": {
+        "composite": 0.366667,
+        "recall": 0.2,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-MSA-122",
+      "task_id": "T2-MSA-122",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
         "composite": 0.25,
         "recall": 0.0,
         "status": "OK"
@@ -377,6 +593,33 @@
       "random_gate": "UNMEASURED",
       "task": "tasks/generated/T2-NDA-102",
       "task_id": "T2-NDA-102",
+      "validators": "PASS"
+    },
+    {
+      "cheater_llm": "SKIPPED (no key)",
+      "deepseek_judge": "SKIPPED (no key)",
+      "grep": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "grep_gate": "UNMEASURED",
+      "honest_llm": "SKIPPED (no key)",
+      "mechanical_ceiling": null,
+      "null": {
+        "composite": 0.0,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "null_gate": "PASS",
+      "random": {
+        "composite": 0.25,
+        "recall": 0.0,
+        "status": "OK"
+      },
+      "random_gate": "UNMEASURED",
+      "task": "tasks/generated/T2-NDA-112",
+      "task_id": "T2-NDA-112",
       "validators": "PASS"
     }
   ]

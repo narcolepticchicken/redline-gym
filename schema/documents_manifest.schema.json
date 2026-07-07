@@ -23,7 +23,7 @@
           },
           "type": {
             "type": "string",
-            "enum": ["msa", "sow", "nda", "addendum", "exhibit"]
+            "enum": ["msa", "sow", "nda", "addendum", "exhibit", "employment_agreement"]
           },
           "path": {
             "type": "string",

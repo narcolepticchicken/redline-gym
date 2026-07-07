@@ -1,0 +1,128 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-EMP-001",
+  "practice_area": "employment",
+  "title": "Company-Side Executive Employment Agreement Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "The agreement should preserve at-will employment while defining any company-approved separation pay in a bounded way.",
+      "fallback": "Executive's employment is at will. If Company terminates Executive without Cause and Executive satisfies the agreement's conditions, severance is limited to six months of base salary unless Company approves a different amount in writing.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if the agreement creates tenure protection or an open-ended severance obligation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Cause should be broad enough to cover serious misconduct, dishonesty, policy violations, material duty failures, legal violations, and conduct harmful to the company.",
+      "fallback": "Cause includes material failure to perform duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of the agreement, or conduct that materially harms Company.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if Company can end employment for cause only after an unusually narrow event.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-003",
+      "position": "Separation pay should be conditioned on the executive signing and not revoking a release of claims in favor of the company.",
+      "fallback": "No severance is owed unless Executive timely signs and does not revoke a release of claims in a form acceptable to Company.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if severance is payable without a claims release condition.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Confidentiality and invention assignment should protect company information and assign work-created intellectual property, while documenting any prior inventions excluded from the assignment.",
+      "fallback": "Executive will protect Company confidential information, assign all inventions and work product created within the scope of employment or using Company resources, and list excluded prior inventions on a signed schedule.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if company information or employment-created intellectual property is not protected.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-005",
+      "position": "The agreement should not guarantee a fixed employment term or continued employment through a specified date.",
+      "fallback": "Delete any fixed-term employment guarantee and state that employment is at will and may end at any time by either party.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Company cannot end employment without waiting for a stated term to expire.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-006",
+      "position": "Any bonus should be discretionary or tied to defined metrics and should not become guaranteed merely because employment continues.",
+      "fallback": "Any bonus is discretionary unless a written bonus plan states objective metrics, approval requirements, and payment timing.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if the agreement promises an automatic or guaranteed bonus.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Equity should be governed by the applicable plan and award documents, with no vesting acceleration or extra grant rights beyond those documents.",
+      "fallback": "Equity awards are governed solely by the applicable equity plan and award agreements, and this agreement does not create additional grants, vesting rights, or acceleration.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if a side clause gives equity rights beyond the plan or award documents.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Restrictive covenants should stay within enforceable norms and avoid overbroad non-competes that create enforceability risk.",
+      "fallback": "Restrictive covenants must be limited to enforceable customer, employee, and confidential-information protections; delete any overbroad non-compete or narrow it to the maximum lawful scope approved by Company.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if a covenant is likely unenforceable or materially broader than needed to protect the company.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-009",
+      "position": "The agreement should not promise a permanent title, reporting line, duties, or authority in a way that could support a constructive-termination claim.",
+      "fallback": "Company may change Executive's title, duties, reporting line, responsibilities, and authority based on business needs, without creating severance rights unless expressly approved by Company.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if ordinary business changes could trigger severance or good-reason rights.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Compensation and equity should remain subject to clawback, recoupment, and forfeiture policies required by law, exchange rules, or company policy.",
+      "fallback": "All incentive compensation and equity are subject to applicable clawback, recoupment, and forfeiture requirements under law, listing rules, and Company policy.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if executive compensation is insulated from required clawback rules.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-011",
+      "position": "Indemnification and D&O insurance should be standard for an executive role and limited by company governing documents, insurance terms, and applicable law.",
+      "fallback": "Company will provide indemnification and D&O insurance coverage on the same basis as similarly situated officers, subject to Company governing documents, policy terms, and applicable law.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if indemnification is unlimited, personal, or broader than standard officer protection.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-012",
+      "position": "The executive should devote full business efforts to the company and avoid conflicting outside activities unless company approval is obtained.",
+      "fallback": "Executive will devote full business time and best efforts to Company and will not engage in outside employment, consulting, board service, or business activity that conflicts with Company without prior written approval.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if outside activities can conflict with the executive's company responsibilities.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-013",
+      "position": "Severance timing should comply with tax rules for deferred compensation and should not force payment before required release and timing conditions are satisfied.",
+      "fallback": "Severance will be paid only at times and in a manner that complies with Section 409A or an available exemption, after required release conditions are satisfied.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if payment timing creates avoidable deferred-compensation tax risk.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-014",
+      "position": "Individual arbitration of employment disputes is acceptable for this engagement and should not be flagged by itself.",
+      "fallback": "No change; individual arbitration of employment disputes is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses individual arbitration.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "Delaware governing law is acceptable for this engagement and should not be flagged by itself.",
+      "fallback": "No change; Delaware governing law is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses Delaware law.",
+      "is_canary": true
+    }
+  ]
+}

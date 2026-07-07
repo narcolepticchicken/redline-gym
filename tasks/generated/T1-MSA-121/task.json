@@ -1,0 +1,12 @@
+{
+  "task_id": "T1-MSA-121",
+  "practice_area": "contracts",
+  "client_context": "Client is a mid-size U.S. tech company buying a production records normalization service that will process customer records. Procurement requires visibility into hosting location/cross-border transfer basis and certified deletion at exit; absence of those details should be escalated. The production service will process customer personal data across hosted systems. Procurement requires certified deletion evidence when customer data exits the service.",
+  "instruction": "Review the vendor MSA against the playbook. Flag deviations with exact quotes, propose fallback text where required, and escalate missing information.",
+  "deliverable": {
+    "card_schema_id": "redline-gym.issue-card.v1"
+  },
+  "turn_cap": 25,
+  "difficulty_tier": "T1",
+  "playbook_ref": "playbooks/contracts/PB-MSA-001.json"
+}

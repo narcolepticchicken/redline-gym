@@ -10,6 +10,9 @@ that access.
 
 ## Regeneration Log
 
+- 2026-07-07: Added employment executive agreement held-out seed
+  `tasks/heldout/T2-EMP-801` for `PB-EMP-001` while extending the generator
+  to the employment practice area.
 - 2026-07-07: DPA missing-info M-002 was retargeted from an existing
   subprocessor-detail clause to the absent obligation for Vendor to maintain
   records of processing activities. Removed the stale DPA held-out seed
