@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 15 sequentially; internal references (e.g., 'this Section 4', 'the transfer notice') resolve without missing targets.",
+    "q2": "The capitalized term 'Founder Holders' appears in the introductory clause (\"the holders of Series A Preferred Stock, and the Founder Holders\") but is never defined anywhere in the document.",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

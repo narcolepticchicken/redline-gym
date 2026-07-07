@@ -1,0 +1,96 @@
+{
+  "found_stable": [
+    {
+      "quote": "Processing means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "rule_id": "R-001",
+      "section": "2"
+    },
+    {
+      "quote": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "rule_id": "R-003",
+      "section": "7"
+    },
+    {
+      "quote": "Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+      "rule_id": "R-004",
+      "section": "5"
+    },
+    {
+      "quote": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
+      "rule_id": "R-005",
+      "section": "8"
+    },
+    {
+      "quote": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+      "rule_id": "R-013",
+      "section": "15"
+    }
+  ],
+  "found_union": [
+    {
+      "quote": "Processing means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "rule_id": "R-001",
+      "section": "2"
+    },
+    {
+      "quote": "Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law.",
+      "rule_id": "R-001",
+      "section": "4"
+    },
+    {
+      "quote": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "rule_id": "R-003",
+      "section": "7"
+    },
+    {
+      "quote": "Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+      "rule_id": "R-004",
+      "section": "5"
+    },
+    {
+      "quote": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
+      "rule_id": "R-005",
+      "section": "8"
+    },
+    {
+      "quote": "Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
+      "rule_id": "R-007",
+      "section": "15"
+    },
+    {
+      "quote": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+      "rule_id": "R-013",
+      "section": "15"
+    },
+    {
+      "quote": "Within 10 business days after Customer's written request, Vendor will provide data-flow summaries, security control mappings, transfer records, and subprocessor evidence for privacy impact assessments, regulator inquiries, consultations, and documentation needed to demonstrate compliance for the services.",
+      "rule_id": "R-006",
+      "section": "13"
+    },
+    {
+      "quote": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "rule_id": "R-001",
+      "section": "2. Definitions"
+    },
+    {
+      "quote": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
+      "rule_id": "R-003",
+      "section": "7. Subprocessors"
+    },
+    {
+      "quote": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
+      "rule_id": "R-005",
+      "section": "8. Breach Notice"
+    },
+    {
+      "quote": "Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
+      "rule_id": "R-007",
+      "section": "15. Term and Transition Assistance"
+    },
+    {
+      "quote": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+      "rule_id": "R-013",
+      "section": "15. Term and Transition Assistance"
+    }
+  ]
+}

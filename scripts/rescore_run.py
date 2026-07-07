@@ -30,7 +30,12 @@ try:
     for run_arg in sys.argv[1:]:
         for transcript in sorted(pathlib.Path(run_arg).glob("*/episode.jsonl")):
             task_id = transcript.parent.name
-            task_dir = pathlib.Path("tasks/contracts") / task_id
+            candidates = [pathlib.Path("tasks/contracts") / task_id,
+                          pathlib.Path("tasks/generated") / task_id]
+            task_dir = next((c for c in candidates if c.exists()), None)
+            if task_dir is None:
+                print(f"skip {task_id}: no task dir found")
+                continue
             flags, escalations, card = [], [], None
             for line in transcript.read_text().splitlines():
                 action = json.loads(line).get("action", {})

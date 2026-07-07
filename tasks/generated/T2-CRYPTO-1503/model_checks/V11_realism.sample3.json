@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section numbering runs 1 through 15 sequentially; cross-reference 'Notwithstanding Section 5' in Section 7 resolves to Section 5.",
+    "q2": "'Customer Assets' is defined in Section 2 and used consistently thereafter in Sections 3,4,5,6,7,8,10,11,12,13,14.",
+    "q3": "Section 7: 'Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit' contains vague temporal phrasing ('in the ordinary course').",
+    "q4": "No archaic legal diction (e.g., heretofore, witnesseth, aforesaid) appears; language such as 'entered into by and between' is standard modern register.",
+    "q5": "All sentences are structurally complete and lack internal contradiction; no grammatically broken constructions were found.",
+    "q6": "Register is consistent throughout; all sections employ similar modern contractual phrasing (e.g., 'will' to express obligations) without authorial shifts."
+  }
+}

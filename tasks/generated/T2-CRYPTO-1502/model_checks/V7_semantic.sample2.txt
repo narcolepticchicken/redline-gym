@@ -1,0 +1,8 @@
+{"gaps": [
+  "Wallet whitelisting and withdrawal address approval process",
+  "Fees and compensation structure",
+  "Confidentiality and data protection obligations",
+  "Force majeure",
+  "Business continuity and disaster recovery obligations",
+  "Tax reporting responsibilities (excluding staking-specific disclosure)"
+]}

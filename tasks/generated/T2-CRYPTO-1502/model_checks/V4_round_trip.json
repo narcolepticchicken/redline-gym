@@ -1,0 +1,51 @@
+{
+  "found_stable": [
+    {
+      "quote": "Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
+      "rule_id": "R-002",
+      "section": "8"
+    },
+    {
+      "quote": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
+      "rule_id": "R-003",
+      "section": "5"
+    },
+    {
+      "quote": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time.",
+      "rule_id": "R-005",
+      "section": "9"
+    }
+  ],
+  "found_union": [
+    {
+      "quote": "Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
+      "rule_id": "R-002",
+      "section": "8"
+    },
+    {
+      "quote": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
+      "rule_id": "R-003",
+      "section": "5"
+    },
+    {
+      "quote": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time.",
+      "rule_id": "R-005",
+      "section": "9"
+    },
+    {
+      "quote": "Custodian's portal status page will be the exclusive source for operational-control information, and Custodian has no duty to provide supplemental evidence after incidents or control changes.",
+      "rule_id": "R-006",
+      "section": "15"
+    },
+    {
+      "quote": "Customer retains all beneficial ownership of Customer Assets. Custodian will not sell, lend, pledge, rehypothecate, transfer, encumber, invest, stake, or otherwise use Customer Assets for Custodian's own account or for any other customer without Customer's prior written consent.",
+      "rule_id": "R-003",
+      "section": "3"
+    },
+    {
+      "quote": "\"Customer Assets\" means supported units recorded to Customer's primary custody account, excluding chain-split property, promotional distributions, validator proceeds, and other network-originated items unless Custodian separately credits them.",
+      "rule_id": "R-008",
+      "section": "2"
+    }
+  ]
+}

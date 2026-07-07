@@ -1,0 +1,49 @@
+{
+  "failing_evidence": {
+    "q2": [
+      "\"Good Reason\" means a material reduction in base salary or required relocation by more than 50 miles, in each case only if Company fails to cure after written notice from Executive.",
+      "\"Good Reason\" means a material reduction in base salary or required relocation by more than 50 miles, in each case only if Company fails to cure after written notice from Executive. Defined but never referenced elsewhere in the Agreement."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 2,
+      "passed": false,
+      "yes_votes": 1
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

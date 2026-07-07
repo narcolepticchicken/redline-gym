@@ -1,0 +1,50 @@
+{
+  "failing_evidence": {
+    "q2": [
+      "Defined term \"Processing\" is capitalized in its definition in Section 2 but never used in the document; instead, lowercase \"process\" appears (e.g., Section 3: \"Vendor will process Personal Data only...\"), creating inconsistent usage.",
+      "Processing means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting (Section 2); Vendor will process Personal Data only on documented instructions from Customer... (Section 3)",
+      "Processing means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting. Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 3,
+      "passed": false,
+      "yes_votes": 0
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

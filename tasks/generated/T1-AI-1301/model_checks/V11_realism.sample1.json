@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 15 sequentially; cross-reference in Section 4: 'subject to the bounded use restrictions in Section 6' resolves correctly.",
+    "q2": "Defined terms in Section 2: 'Customer Data', 'Customer Fine-Tune Artifacts', 'Approved Regions' are used consistently throughout, and 'Customer', 'Vendor' defined in preamble and used uniformly.",
+    "q3": "All time/quantity phrases are specific and commercial: '5 days' notice', '30 days' written notice', '12 months', '30 days' retention', '15 days after request', '60 days'. No 'next quarter' or 'reasonable while'.",
+    "q4": "Contract uses modern, technical prose: 'hosted model API access, fine-tuning services, embedding support' with no archaic terms like 'witnesseth' or 'heretofore'.",
+    "q5": "All sentences are complete and non-contradictory, e.g., 'Vendor will maintain a written security program, annual penetration testing, encryption in transit and at rest, and access controls appropriate for hosted model services.' No grammatical breaks or internal contradictions.",
+    "q6": "Register is consistent modern commercial drafting across all sections, from the title to Section 15, with no section sounding like a different author."
+  }
+}

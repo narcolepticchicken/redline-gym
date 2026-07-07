@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Parties and Share Classes ... 2. Definitions ... 3. Board Composition ... 15. Termination of Rights",
+    "q2": "\"Major Investor\" means a holder of at least 1,000,000 shares of Series A Preferred Stock. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class. \"Permitted Transferee\" means an affiliate, estate planning vehicle, or family member of a transferring holder that agrees in writing to be bound by this Agreement.",
+    "q3": "monthly unaudited financial statements within 15 days after month-end",
+    "q4": "This Stockholders' Agreement (the \"Agreement\") is entered into by and among Keystone BioSystems, Inc. (the \"Company\"), the holders of Series A Preferred Stock, and the Founder Holders.",
+    "q5": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.",
+    "q6": "Each stockholder will vote ... the holder must first offer ... management may conduct"
+  }
+}

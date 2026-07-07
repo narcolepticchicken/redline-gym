@@ -1,0 +1,1 @@
+{"answers":{"q1":true,"q2":true,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"Section 3 references 'bounded use restrictions in Section 7'; Section 9 says 'Notwithstanding Section 4'","q2":"Customer Fine-Tune Artifacts defined in Section 2 and used in Sections 6 and 12 consistently","q3":"","q4":"","q5":"","q6":""}}

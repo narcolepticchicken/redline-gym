@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "If any sentence conflicts with Section 10, Section 10 controls.",
+    "q2": "\"Confidential Information\" means all non-public information disclosed...",
+    "q3": "",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

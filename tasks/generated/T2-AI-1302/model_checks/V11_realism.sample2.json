@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1-15 sequential, cross-reference to Section 7 in Section 3, to Section 4 in Section 9, to Section 13 in Section 13 all resolve.",
+    "q2": "Defined terms 'Customer Data', 'Customer Fine-Tune Artifacts', 'Approved Regions' used consistently; no redefinition.",
+    "q3": "Section 10: 'if Vendor gives prompt written notice' uses vague time phrasing 'prompt'.",
+    "q4": "No archaic legal diction; uses 'will' and modern phrasing throughout.",
+    "q5": "All sentences grammatically complete; 'Notwithstanding Section 4' creates cross-section override, not internal contradiction.",
+    "q6": "Consistent modern commercial register across all sections."
+  }
+}

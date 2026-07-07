@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": false,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "",
+    "q2": "",
+    "q3": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit",
+    "q4": "",
+    "q5": "",
+    "q6": ""
+  }
+}

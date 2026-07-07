@@ -1,0 +1,1 @@
+{"gaps": ["Fee schedule and payment terms", "Indemnification obligations", "Confidentiality of customer information", "Force majeure provisions", "Wallet whitelisting requirements", "Data privacy and security obligations", "Business continuity and disaster recovery plans"]}

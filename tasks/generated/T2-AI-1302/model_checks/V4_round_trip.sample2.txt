@@ -1,0 +1,44 @@
+{
+  "found": [
+    {
+      "rule_id": "R-001",
+      "section": "9",
+      "quote": "Notwithstanding Section 4, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services."
+    },
+    {
+      "rule_id": "R-002",
+      "section": "2",
+      "quote": "\"Customer Fine-Tune Artifacts\" means only configuration files and evaluation summaries created specifically for Customer, excluding fine-tuned weights, adapters, embeddings, and platform-level deliverables."
+    },
+    {
+      "rule_id": "R-004",
+      "section": "12",
+      "quote": "Vendor will defend and indemnify Customer against third-party claims alleging that the hosted model service, model outputs, Customer Fine-Tune Artifacts, or other Vendor-provided deliverables infringe or misappropriate intellectual property rights."
+    },
+    {
+      "rule_id": "R-005",
+      "section": "7",
+      "quote": "Vendor may update any use, content, safety, moderation, customer-eligibility, or product-operation policy at any time, and each update is binding immediately upon posting whether or not required by law or security need."
+    },
+    {
+      "rule_id": "R-006",
+      "section": "8",
+      "quote": "Uptime, latency, support targets, service credits, escalation rights, and remediation plans are aspirational and do not create any remedy for Customer."
+    },
+    {
+      "rule_id": "R-008",
+      "section": "9",
+      "quote": "Vendor will process and store Customer Data only in the Approved Regions."
+    },
+    {
+      "rule_id": "R-009",
+      "section": "7",
+      "quote": "Vendor may update any use, content, safety, moderation, customer-eligibility, or product-operation policy at any time, and each update is binding immediately upon posting whether or not required by law or security need."
+    },
+    {
+      "rule_id": "R-012",
+      "section": "15",
+      "quote": "Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order."
+    }
+  ]
+}

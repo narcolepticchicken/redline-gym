@@ -1,0 +1,6 @@
+{"found":[
+  {"rule_id":"R-006","section":"8","quote":"Uptime, latency, support targets, service credits, escalation rights, and remediation plans are aspirational and do not create any remedy for Customer."},
+  {"rule_id":"R-007","section":"9","quote":"Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality."},
+  {"rule_id":"R-011","section":"14","quote":"The cap applies to all claims and obligations, including data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, and IP indemnity claims."},
+  {"rule_id":"R-013","section":"13","quote":"Vendor has no obligation to assist with Customer's regulatory-change requests, transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, or other documentation for Customer's AI compliance obligations unless the parties sign a separate paid statement of work."}
+]}

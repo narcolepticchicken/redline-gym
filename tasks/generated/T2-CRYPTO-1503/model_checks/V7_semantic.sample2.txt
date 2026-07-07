@@ -1,0 +1,11 @@
+{"gaps": [
+  "Fee schedule, pricing, and payment terms",
+  "Wallet whitelisting or address validation controls",
+  "Confidentiality and data protection obligations",
+  "Prohibition on custodian lien or set-off over assets",
+  "Amendment procedure",
+  "Termination for cause and default/breach remedies",
+  "Force majeure",
+  "Insurance claim proceeds allocation to customer",
+  "Business continuity and disaster recovery obligations"
+]}

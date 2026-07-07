@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section numbering is sequential 1-15; cross-reference 'Except for the carve-outs in this Section 13' resolves to the Liability section.",
+    "q2": "Definitions of 'Digital Assets,' 'Customer Assets,' 'Authorized Instruction' are given once and used consistently (e.g., 'Customer Assets' in Sections 3, 4, 5).",
+    "q3": "All time/quantity phrasing is specific or commercial: '10 business days,' '5 business days,' '10 days' notice'; no vague non-commercial expressions like 'a reasonable while.'",
+    "q4": "No archaic legal diction; language is modern ('entered into,' 'in accordance with,' 'prompt notice').",
+    "q5": "All sentences are grammatically intact and not internally contradictory; the liability provisions may conflict across sentences but each sentence itself is coherent.",
+    "q6": "Register is consistent throughout; all sections use similar formal commercial prose without stylistic breaks."
+  }
+}

@@ -1,0 +1,1 @@
+{"gaps":["Fee structure and payment obligations","Wallet whitelisting approval requirements for transfers","Indemnification provisions","Confidentiality and non-disclosure obligations","Termination for cause (material breach)"]}

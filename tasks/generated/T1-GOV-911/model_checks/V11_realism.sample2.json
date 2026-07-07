@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1\u201315; cross-reference 'Except for the closed list in Section 4' in Section 5 resolves.",
+    "q2": "'Major Investor' defined in Section 2 and used in Section 6: 'If a Major Investor proposes...'",
+    "q3": "Specific time: 'within 15 days after month-end' in Section 10.",
+    "q4": "Modern register: 'Any dispute... will be resolved by confidential arbitration' without archaic terms.",
+    "q5": "Grammatically intact: 'The Board will consist of five directors: two Founder Designees... one independent director...'",
+    "q6": "Consistent register: Section 3 'The Board will consist...' and Section 12 'Each Major Investor has a pro rata right...'"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "gaps_union": [
+    "Records of processing activities (processor Art. 30 obligation)",
+    "Prohibition on sale of personal data (CCPA/CPRA service provider requirement)",
+    "Notification of legal requests (government/third-party access demands)",
+    "Data retention limits during service term",
+    "No clause requiring Vendor to maintain records of processing activities.",
+    "No clause addressing Vendor's obligations upon receiving legally binding requests from government or law enforcement for Personal Data.",
+    "Vendor obligation to maintain records of processing activities",
+    "Procedures for government or law enforcement access requests (e.g., notification to Customer)"
+  ]
+}

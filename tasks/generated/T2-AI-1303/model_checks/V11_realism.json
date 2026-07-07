@@ -1,0 +1,50 @@
+{
+  "failing_evidence": {
+    "q2": [
+      "Definition of \"Approved Regions\" in Section 2 but no subsequent use in the Agreement.",
+      "Defined term \"Approved Regions\" is defined in Section 2 but never used anywhere else in the document.",
+      "\"Approved Regions\" means United States and European Union."
+    ]
+  },
+  "mechanical_agreement": {
+    "q1": {
+      "agrees": true,
+      "judge_passed": true,
+      "mechanical_passed": true
+    }
+  },
+  "passed": 5,
+  "per_question": {
+    "q1": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q2": {
+      "no_votes": 3,
+      "passed": false,
+      "yes_votes": 0
+    },
+    "q3": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q4": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q5": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    },
+    "q6": {
+      "no_votes": 0,
+      "passed": true,
+      "yes_votes": 3
+    }
+  },
+  "total": 6
+}

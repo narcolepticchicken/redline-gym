@@ -1,0 +1,19 @@
+{
+  "found": [
+    {
+      "quote": "Notwithstanding Section 3, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
+      "rule_id": "R-002",
+      "section": "8"
+    },
+    {
+      "quote": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
+      "rule_id": "R-003",
+      "section": "5"
+    },
+    {
+      "quote": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time.",
+      "rule_id": "R-005",
+      "section": "9"
+    }
+  ]
+}

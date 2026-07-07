@@ -1,0 +1,24 @@
+{
+  "found": [
+    {
+      "quote": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "rule_id": "R-001",
+      "section": "2"
+    },
+    {
+      "quote": "Vendor will limit Personal Data access to personnel who need it to perform the services. Vendor will provide internal onboarding materials to personnel assigned to the service.",
+      "rule_id": "R-010",
+      "section": "6"
+    },
+    {
+      "quote": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
+      "rule_id": "R-011",
+      "section": "2"
+    },
+    {
+      "quote": "Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
+      "rule_id": "R-007",
+      "section": "15"
+    }
+  ]
+}

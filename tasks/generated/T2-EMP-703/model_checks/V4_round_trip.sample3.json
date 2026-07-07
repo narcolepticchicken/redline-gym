@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "quote": "Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement.",
+      "rule_id": "R-001",
+      "section": "1. Position and At-Will Employment"
+    },
+    {
+      "quote": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
+      "rule_id": "R-002",
+      "section": "2. Definitions"
+    },
+    {
+      "quote": "Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement.",
+      "rule_id": "R-005",
+      "section": "1. Position and At-Will Employment"
+    },
+    {
+      "quote": "At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.",
+      "rule_id": "R-007",
+      "section": "7. Reviews and Administration"
+    },
+    {
+      "quote": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements.",
+      "rule_id": "R-013",
+      "section": "9. Release and Payment Timing"
+    }
+  ]
+}

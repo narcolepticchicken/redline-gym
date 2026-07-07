@@ -1,0 +1,44 @@
+{
+  "found": [
+    {
+      "quote": "Notwithstanding Section 4, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services.",
+      "rule_id": "R-001",
+      "section": "9"
+    },
+    {
+      "quote": "Customer Fine-Tune Artifacts means only configuration files and evaluation summaries created specifically for Customer, excluding fine-tuned weights, adapters, embeddings, and platform-level deliverables.",
+      "rule_id": "R-002",
+      "section": "2"
+    },
+    {
+      "quote": "Customer Fine-Tune Artifacts means only configuration files and evaluation summaries created specifically for Customer, excluding fine-tuned weights, adapters, embeddings, and platform-level deliverables.",
+      "rule_id": "R-004",
+      "section": "2"
+    },
+    {
+      "quote": "Vendor may update any use, content, safety, moderation, customer-eligibility, or product-operation policy at any time, and each update is binding immediately upon posting whether or not required by law or security need.",
+      "rule_id": "R-005",
+      "section": "7"
+    },
+    {
+      "quote": "Vendor may process and store Customer Data in any region used by Vendor or its subprocessors.",
+      "rule_id": "R-008",
+      "section": "9"
+    },
+    {
+      "quote": "Vendor may retain prompts, outputs, telemetry, embeddings, and logs for up to 540 days for operations, analytics, support, and service planning.",
+      "rule_id": "R-008",
+      "section": "9"
+    },
+    {
+      "quote": "Vendor may update any use, content, safety, moderation, customer-eligibility, or product-operation policy at any time, and each update is binding immediately upon posting whether or not required by law or security need.",
+      "rule_id": "R-009",
+      "section": "7"
+    },
+    {
+      "quote": "Upon expiration or termination, Vendor may provide transition assistance only if the parties agree to a separate professional-services order.",
+      "rule_id": "R-012",
+      "section": "15"
+    }
+  ]
+}

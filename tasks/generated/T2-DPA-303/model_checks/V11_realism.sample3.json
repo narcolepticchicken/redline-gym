@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections are numbered 1 through 15 sequentially; no internal cross\u2011references fail to resolve.",
+    "q2": "\u201cPersonal Data,\u201d \u201cProcessing,\u201d and \u201cPersonal Data Breach\u201d are defined once in Section 2 and used consistently throughout.",
+    "q3": "All time/quantity phrases are specific: \u201cwithin 2 business days,\u201d \u201cwithin 24 hours,\u201d \u201cevery 24 hours,\u201d \u201cwithin 30 days,\u201d \u201cat least 30 days\u2019 notice,\u201d \u201cup to 30 days,\u201d \u201c365 days.\u201d",
+    "q4": "No archaic diction; prose is modern, e.g., \u201cVendor will maintain administrative, technical, and physical safeguards \u2026\u201d",
+    "q5": "No sentence is internally contradictory or grammatically broken; all clauses parse cleanly.",
+    "q6": "Phrasing register is uniform\u2014active voice, plain English, and consistent use of \u201cVendor will\u201d/\u201cVendor may\u201d across all sections."
+  }
+}

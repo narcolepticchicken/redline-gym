@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections are numbered 1–15 sequentially; cross-reference in Section 8 ('Notwithstanding Section 3') resolves to Section 3.",
+    "q2": "'Customer Assets' defined in Section 2 and used consistently throughout (e.g., Sections 4, 5, 7, 8, 14).",
+    "q3": "Uses precise commercial time periods such as 'within 24 hours', '2 business days', '5 business days', '10 business days', and 'annual'.",
+    "q4": "Language is modern and plain throughout, e.g., 'Customer retains all beneficial ownership' without archaic terms.",
+    "q5": "All sentences are grammatically intact; example complex sentence: 'Withdrawals, address changes, key ceremonies, and signing events require multi-party approval, role separation, hardware-backed key protection, and logged review by authorized Custodian personnel.'",
+    "q6": "Register is uniform; compare Section 1 ('Customer appoints Custodian to safeguard Customer Assets…') with Section 15 ('Neither party waives any remedy by delaying enforcement…')."
+  }
+}

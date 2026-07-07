@@ -1,0 +1,1 @@
+{"answers":{"q1":true,"q2":false,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"","q2":"Defined term \"Processing\" is capitalized in its definition in Section 2 but never used in the document; instead, lowercase \"process\" appears (e.g., Section 3: \"Vendor will process Personal Data only...\"), creating inconsistent usage.","q3":"","q4":"","q5":"","q6":""}}

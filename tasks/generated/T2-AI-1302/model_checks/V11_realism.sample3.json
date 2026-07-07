@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "subject to the bounded use restrictions in Section 7",
+    "q2": "\"Customer Data\" means only source files uploaded by Customer...",
+    "q3": "retain prompts, outputs, telemetry, embeddings, and logs for no more than 30 days",
+    "q4": "Vendor will provide Customer with hosted model API access...",
+    "q5": "Customer remains responsible for its application workflow, user-facing product decisions, and compliance choices not expressly assigned to Vendor in this Agreement.",
+    "q6": "Vendor will provide Customer with hosted model API access... Vendor will maintain a written security program..."
+  }
+}

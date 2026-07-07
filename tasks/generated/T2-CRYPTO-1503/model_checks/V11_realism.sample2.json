@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Notwithstanding Section 5 (in \u00a77) and Section 5 exists; sections 1\u201315 sequential",
+    "q2": "Customer Assets defined once in \u00a72 and used consistently thereafter",
+    "q3": "All time references use specific commercial phrases (e.g., 10 business days, 5 business days) with no non\u2011commercial phrasing like \u2018a reasonable while\u2019",
+    "q4": "No archaic legal diction (e.g., no whereas, herein, or witnesseth)",
+    "q5": "All sentences are grammatically complete and free of internal contradiction",
+    "q6": "Consistent modern register throughout, using \u2018will\u2019 not \u2018shall\u2019, no authorial shifts"
+  }
+}

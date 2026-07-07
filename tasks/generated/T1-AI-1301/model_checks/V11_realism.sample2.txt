@@ -1,0 +1,1 @@
+{"answers":{"q1":true,"q2":false,"q3":true,"q4":true,"q5":true,"q6":true},"evidence":{"q1":"","q2":"Defined term \"Services\" is never defined in Section 2 (Definitions) or elsewhere, yet it appears capitalized throughout, e.g., Section 3: \"generated for Customer through the Services.\"","q3":"","q4":"","q5":"","q6":""}}

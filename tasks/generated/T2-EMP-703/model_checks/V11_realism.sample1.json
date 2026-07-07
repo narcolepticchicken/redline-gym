@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Section 8 cross-references 'subject to Section 9' and Section 9 exists; numbering is sequential.",
+    "q2": "'Cause' and 'Good Reason' are defined once in Section 2; 'Cause' is used consistently in Section 8.",
+    "q3": "All time/quantity phrases are specific: 'six months', '45 days', '50 miles', '25%', no vague terms.",
+    "q4": "Language is modern commercial English; no archaic terms like 'hereinabove' or 'witnesseth' appear.",
+    "q5": "All sentences are grammatically complete and internally coherent; no broken or self-contradictory sentences.",
+    "q6": "Register is uniformly modern and plain; no section diverges into legalese or casual tone."
+  }
+}

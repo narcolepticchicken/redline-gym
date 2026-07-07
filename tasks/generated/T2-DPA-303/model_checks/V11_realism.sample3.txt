@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections are numbered 1 through 15 sequentially; no internal cross‑references fail to resolve.",
+    "q2": "“Personal Data,” “Processing,” and “Personal Data Breach” are defined once in Section 2 and used consistently throughout.",
+    "q3": "All time/quantity phrases are specific: “within 2 business days,” “within 24 hours,” “every 24 hours,” “within 30 days,” “at least 30 days’ notice,” “up to 30 days,” “365 days.”",
+    "q4": "No archaic diction; prose is modern, e.g., “Vendor will maintain administrative, technical, and physical safeguards …”",
+    "q5": "No sentence is internally contradictory or grammatically broken; all clauses parse cleanly.",
+    "q6": "Phrasing register is uniform—active voice, plain English, and consistent use of “Vendor will”/“Vendor may” across all sections."
+  }
+}

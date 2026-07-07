@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Notwithstanding Section 3 (Section 8 cross-reference resolves to existing Section 3; sections numbered 1 through 15 sequentially).",
+    "q2": "Section 2 defines 'Digital Assets'; Section 1 uses 'supported Digital Assets' consistently.",
+    "q3": "within 24 hours after receipt and in any event no later than 2 business days after receipt (Section 8).",
+    "q4": "Custodian will not sell, lend, pledge, rehypothecate, transfer, encumber, invest, stake, or otherwise use Customer Assets (Section 3) \u2013 modern, no archaic diction.",
+    "q5": "Custodian will maintain at least 97% of Customer Assets in cold-storage wallets except for assets needed to process pending Authorized Instructions. (Section 6, grammatically sound).",
+    "q6": "Consistent modern register: 'Custodian will not sell, lend, pledge...' (Section 3) and 'Except for the carve-outs in this Section 13, each party's aggregate liability...' (Section 13)."
+  }
+}

@@ -1,0 +1,1 @@
+{"gaps": ["Confidentiality obligations", "Breach notification obligations", "Data Processing Agreement (DPA) / privacy compliance roles", "Age-gating and children's data protection obligations"]}

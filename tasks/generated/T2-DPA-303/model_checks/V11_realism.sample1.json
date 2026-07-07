@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections are numbered 1 through 15 sequentially without gaps or cross-reference issues.",
+    "q2": "'Personal Data' is defined in Section 2 and used consistently thereafter, e.g., in Sections 5, 8, 10; 'Processing' and 'Personal Data Breach' are also defined once and used without redefinition.",
+    "q3": "Timeframes are specific: 'within 24 hours' (Section 8), 'within 2 business days' (Sections 3,9), 'within 10 business days' (Sections 9,12,13), '30 days' (Sections 10,15), '365 days' (Section 15). No vague phrases.",
+    "q4": "Language is modern and commercial throughout, e.g., 'encryption at rest and in transit,' 'role-based access controls,' 'multi-factor authentication,' 'SOC 2 Type II report,' 'subprocessors,' 'notice-and-objection process.' No archaic diction.",
+    "q5": "All sentences are grammatically sound and non-contradictory, e.g., 'Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.'",
+    "q6": "Register is uniform: formal, contractual prose with precise obligations and numeric timeframes; no section diverges into markedly different authorship or tone."
+  }
+}

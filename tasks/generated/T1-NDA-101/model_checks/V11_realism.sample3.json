@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": false,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections 1 through 13 are sequential; cross-reference in Section 10 resolves to itself.",
+    "q2": "'Representatives' is capitalized as a defined term but never defined.",
+    "q3": "No vague or non-commercial time/quantity phrasing found; 'prompt' is commercial and specific timeframes are stated.",
+    "q4": "No archaic or out-of-register legal diction; the language is modern and consistent.",
+    "q5": "No internally contradictory or grammatically broken sentences found.",
+    "q6": "Register is consistently plain English and modern across all sections; no authorial shift."
+  }
+}

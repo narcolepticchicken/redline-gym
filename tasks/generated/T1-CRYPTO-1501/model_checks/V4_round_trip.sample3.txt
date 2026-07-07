@@ -1,0 +1,29 @@
+{
+  "found": [
+    {
+      "rule_id": "R-005",
+      "section": "10",
+      "quote": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time."
+    },
+    {
+      "rule_id": "R-006",
+      "section": "9",
+      "quote": "Custodian will provide prompt notice of material control failures and reasonable written follow-up information within 10 business days after Customer's request."
+    },
+    {
+      "rule_id": "R-007",
+      "section": "7",
+      "quote": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding."
+    },
+    {
+      "rule_id": "R-010",
+      "section": "13",
+      "quote": "All claims against Custodian, including losses from compromise, internal misconduct, operational error, transfer failures, or missing balances, are limited to fees paid during the three months before the event."
+    },
+    {
+      "rule_id": "R-012",
+      "section": "11",
+      "quote": "Custodian may route holdings through affiliates, liquidity venues, and third-party vault providers selected by Custodian, and those providers are responsible only under their own service terms."
+    }
+  ]
+}
