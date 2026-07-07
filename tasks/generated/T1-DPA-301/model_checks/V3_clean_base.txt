@@ -1,0 +1,10 @@
+{
+  "verdict": "FAIL",
+  "violations": [
+    {
+      "rule_id": "R-005",
+      "section": "8",
+      "quote": "Vendor will notify Customer within 72 hours after discovering a Personal Data Breach."
+    }
+  ]
+}

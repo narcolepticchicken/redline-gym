@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1 through 15 sequentially, no broken internal cross-references.",
+    "q2": "Defined terms 'Personal Data,' 'Processing,' 'Personal Data Breach' in §2 and used consistently throughout (e.g., 'Personal Data Breach' in §8).",
+    "q3": "'within 24 hours' (§8), 'within 10 business days' (§9, §12, §13), '30 days' (§10), '365 days' (§15) – all specific and commercial.",
+    "q4": "No archaic phrasing; language is modern (e.g., 'Vendor will maintain administrative, technical, and physical safeguards…' §5).",
+    "q5": "All sentences grammatically sound; for example, §14 liability clause is complex but not contradictory or broken.",
+    "q6": "Uniform register across sections – consistent use of 'Vendor will…' and 'Customer may…' without stylistic shifts."
+  }
+}

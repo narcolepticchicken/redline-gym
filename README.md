@@ -8,6 +8,7 @@ specified in `SPEC.md`.
 ```bash
 git clone <repo-url>
 cd redline-gym
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ./scripts/run_gates.sh
 python3 scripts/make_validity_report.py

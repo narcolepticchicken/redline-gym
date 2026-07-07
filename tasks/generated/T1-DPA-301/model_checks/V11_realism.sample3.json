@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "1. Roles and Scope ... 15. Term and Transition Assistance",
+    "q2": "\"Personal Data\" means ... \"Vendor will process Personal Data only on documented instructions\"",
+    "q3": "\"within 10 business days after discovering it\"",
+    "q4": "\"Vendor will process Personal Data only on documented instructions from Customer\"",
+    "q5": "\"Vendor will process Personal Data only on documented instructions from Customer, including this DPA, the master services agreement, order forms, and written directions from authorized Customer personnel.\"",
+    "q6": "\"Vendor will process Personal Data only on documented instructions from Customer...\" and \"Vendor will provide export files, transfer coordination, and deletion support...\""
+  }
+}

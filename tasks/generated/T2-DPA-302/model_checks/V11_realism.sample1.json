@@ -1,0 +1,18 @@
+{
+  "answers": {
+    "q1": true,
+    "q2": true,
+    "q3": true,
+    "q4": true,
+    "q5": true,
+    "q6": true
+  },
+  "evidence": {
+    "q1": "Sections numbered 1-15 consecutively; cross-reference in S.4 'this DPA, the master services agreement, order forms' resolves to external documents only.",
+    "q2": "'Personal Data', 'Processing', 'Personal Data Breach' defined in S.2 and used consistently thereafter.",
+    "q3": "'within 48 hours' (S.7), 'within 2 business days' (S.4, S.9), 'within 15 days' (S.10) \u2014 all definite commercial timeframes.",
+    "q4": "No archaic terms; uses modern phrasing like 'entered into by and between', 'will', and 'including'.",
+    "q5": "All sentences are grammatically sound and non-contradictory, e.g., 'Vendor will notify Customer within 48 hours after discovering a Personal Data Breach.'",
+    "q6": "Consistent active-voice register with 'Vendor will...' throughout, e.g., S.4 'Vendor will process...', S.5 'Vendor will maintain...', S.7 'Vendor will notify...'."
+  }
+}
