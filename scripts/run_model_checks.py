@@ -9,7 +9,7 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
-from scoring.judge_claude_sub import ClaudeSubscriptionJudge  # noqa: E402
+from scoring.judge_deepseek import DeepSeekJudge  # noqa: E402
 
 task_dir = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "tasks/contracts/T1-NDA-001")
 out_dir = task_dir / "model_checks"
@@ -36,7 +36,7 @@ for d in pdv["deviations"]:
         sys.exit(f'cannot revert {d["deviation_id"]}: span count {clean.count(d["mutated_text"])}')
     clean = clean.replace(d["mutated_text"], d["original_text"], 1)
 
-judge = ClaudeSubscriptionJudge()
+judge = DeepSeekJudge()
 results = {}
 
 results["V3_clean_base"] = judge.clean_base_judge_pass(

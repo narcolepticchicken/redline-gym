@@ -1,0 +1,9 @@
+Score: 5. FAIL. The contract reads below a professionally coherent standard due to unusual, contradictory, and self-serving drafting that undermines its internal consistency and reliability.
+
+**Weakest passages:**
+
+1. **Section 6 (Exclusions)** – The phrase *“information that Recipient believes from general recollection was previously known, becomes available through any source, or is independently useful to Recipient’s business”* is extraordinarily broad and uses subjective, non-verifiable language (“believes from general recollection,” “independently useful”). This deviates sharply from standard objective exclusion criteria and reads as an artificially planted, unenforceable carve-out.
+
+2. **Section 2 (Purpose and Use)** – The use permission is internally contradictory. While Section 1 defines “Purpose” narrowly as *“evaluating, negotiating, and, if agreed, performing the contemplated AI workflow pilot,”* Section 2 immediately adds *“and for internal business planning, product evaluation, and commercial opportunity analysis.”* This undercuts the defined term and creates an inconsistent grant that no coherent agreement would include without narrowing the Purpose definition.
+
+3. **Section 4 (Protection Standard)** – The sentence *“Recipient will protect Confidential Information using the same degree of care that it uses for its own information and will not be responsible for inadvertent disclosures absent gross negligence”* conflates the standard of care with a liability disclaimer and introduces a gross-negligence threshold for inadvertent disclosures. The drafting is grammatically awkward and lacks the typical, objective “reasonable care” benchmark, making it sound artificial and self-defeating for a mutual agreement.

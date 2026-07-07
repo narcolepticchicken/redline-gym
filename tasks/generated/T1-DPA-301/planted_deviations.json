@@ -1,0 +1,113 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "5",
+        "span": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
+      },
+      "original_text": "Vendor will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+      "mutated_text": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-001",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "3",
+        "span": "Vendor may determine the steps, tools, and handling methods it considers useful for operating the service, unless Customer gives a written objection."
+      },
+      "original_text": "Vendor will process Personal Data only on documented instructions from Customer, including this DPA, the master services agreement, order forms, and written directions from authorized Customer personnel.",
+      "mutated_text": "Vendor may determine the steps, tools, and handling methods it considers useful for operating the service, unless Customer gives a written objection.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-005",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "8",
+        "span": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review."
+      },
+      "original_text": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach.",
+      "mutated_text": "Vendor will send an initial written alert within the next monthly service review after its internal response team completes confirmation and executive review.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "10",
+        "span": "After the relationship ends, Vendor will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence."
+      },
+      "original_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 45 days and certify completion in writing.",
+      "mutated_text": "After the relationship ends, Vendor will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.",
+      "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.",
+      "why_benign": "A DPA precedence clause for personal-data processing is customary and client-protective."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Categories of data subjects and records",
+      "absent_terms": [
+        "employee benefits records",
+        "end user profile categories",
+        "minor data subjects"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Current subprocessor list location",
+      "absent_terms": [
+        "subprocessor portal",
+        "subprocessor schedule url",
+        "current subprocessors list"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=301",
+    "attempt_seed=301",
+    "playbook=PB-DPA-001",
+    "tier=T1",
+    "task_id=T1-DPA-301",
+    "D-001 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
+    "D-002 DPA-R001-DIRECT-INSTRUCTIONS direct_term_swap applied to R-001",
+    "D-003 DPA-R005-DIRECT-BREACH-HOURS direct_term_swap applied to R-005",
+    "D-004 DPA-R007-DIRECT-DELETION-CERT direct_term_swap applied to R-007"
+  ]
+}

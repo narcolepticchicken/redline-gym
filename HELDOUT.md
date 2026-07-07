@@ -14,3 +14,6 @@ that access.
   Replaced stale `tasks/heldout/T2-NDA-201` with fresh seed
   `tasks/heldout/T2-NDA-203`. MSA held-out seed 202 was unchanged because MSA
   recipes did not change.
+- 2026-07-07: Added privacy DPA held-out seed `tasks/heldout/T2-DPA-401`
+  for `PB-DPA-001` while adding the cybersecurity/privacy practice-area
+  generator tranche.

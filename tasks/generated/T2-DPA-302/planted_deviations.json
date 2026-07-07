@@ -1,0 +1,128 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
+      },
+      "original_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+      "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-010",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "6",
+        "span": "Vendor will provide internal onboarding materials to personnel assigned to the service."
+      },
+      "original_text": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.",
+      "mutated_text": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-009",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "12",
+        "span": "Vendor may move hosted records among its global facilities and affiliates based on operational needs and regional capacity."
+      },
+      "original_text": "Vendor will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required.",
+      "mutated_text": "Vendor may move hosted records among its global facilities and affiliates based on operational needs and regional capacity.",
+      "mechanism": "direct_term_swap",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-008",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "11",
+        "span": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing."
+      },
+      "original_text": "On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause.",
+      "mutated_text": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing.",
+      "mechanism": "cross_ref_override",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-002",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "4",
+        "span": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer."
+      },
+      "original_text": "Vendor will process Personal Data only to provide, secure, support, and improve the services for Customer and will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+      "mutated_text": "Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.",
+      "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.",
+      "why_benign": "A DPA precedence clause for personal-data processing is customary and client-protective."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Categories of data subjects and records",
+      "absent_terms": [
+        "employee benefits records",
+        "end user profile categories",
+        "minor data subjects"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Current subprocessor list location",
+      "absent_terms": [
+        "subprocessor portal",
+        "subprocessor schedule url",
+        "current subprocessors list"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=302",
+    "attempt_seed=302",
+    "playbook=PB-DPA-001",
+    "tier=T2",
+    "task_id=T2-DPA-302",
+    "D-001 DPA-R011-DEFINED-PROCESSING defined_term_shift applied to R-011",
+    "D-002 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
+    "D-003 DPA-R009-DIRECT-TRANSFERS direct_term_swap applied to R-009",
+    "D-004 DPA-R008-CROSS-AUDIT-LIMIT cross_ref_override applied to R-008",
+    "D-005 DPA-R002-DIRECT-PURPOSE direct_term_swap applied to R-002"
+  ]
+}

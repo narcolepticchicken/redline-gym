@@ -1,0 +1,188 @@
+{
+  "playbook_id": "PB-DPA-001",
+  "entries": [
+    {
+      "recipe_id": "DPA-R001-DIRECT-INSTRUCTIONS",
+      "rule_id": "R-001",
+      "mechanism": "direct_term_swap",
+      "section": "3",
+      "templates": {
+        "original_text": "{vendor_role} will process Personal Data only on documented instructions from {customer_role}, including this DPA, the master services agreement, order forms, and written directions from authorized {customer_role} personnel.",
+        "mutated_text": "{vendor_role} may determine the steps, tools, and handling methods it considers useful for operating the service, unless {customer_role} gives a written objection."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "DPA-R002-DIRECT-PURPOSE",
+      "rule_id": "R-002",
+      "mechanism": "direct_term_swap",
+      "section": "4",
+      "templates": {
+        "original_text": "{vendor_role} will process Personal Data only to provide, secure, support, and improve the services for {customer_role} and will not use Personal Data for {vendor_role}'s own analytics, benchmarking, product development, model training, advertising, or other independent business purposes.",
+        "mutated_text": "{vendor_role} may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than {customer_role}."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "DPA-R003-OMISSION-FLOWDOWN",
+      "rule_id": "R-003",
+      "mechanism": "omission",
+      "section": "7",
+      "templates": {
+        "original_text": "{vendor_role} may use subprocessors only with {customer_role}'s prior written approval or through an agreed notice-and-objection process. {vendor_role} will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.",
+        "mutated_text": "{vendor_role} may appoint outside hosting, support, and operations providers after giving {customer_role} a courtesy update. {vendor_role} remains responsible for service availability."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R004-DIRECT-SECURITY",
+      "rule_id": "R-004",
+      "mechanism": "direct_term_swap",
+      "section": "5",
+      "templates": {
+        "original_text": "{vendor_role} will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+        "mutated_text": "{vendor_role} will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "DPA-R005-DIRECT-BREACH-HOURS",
+      "rule_id": "R-005",
+      "mechanism": "direct_term_swap",
+      "section": "8",
+      "templates": {
+        "original_text": "{vendor_role} will notify {customer_role} without undue delay and in any event within {breach_hours} hours after discovering a Personal Data Breach.",
+        "mutated_text": "{vendor_role} will send an initial written alert within {late_notice} after its internal response team completes confirmation and executive review."
+      },
+      "slots": {
+        "late_notice": ["five business days", "ten business days", "the next monthly service review"]
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "DPA-R006-OMISSION-RIGHTS-HELP",
+      "rule_id": "R-006",
+      "mechanism": "omission",
+      "section": "9",
+      "templates": {
+        "original_text": "{vendor_role} will provide reasonable assistance for access, deletion, correction, portability, opt-out, and objection requests using information available to {vendor_role}.",
+        "mutated_text": "{vendor_role} will refer individual inquiries to {customer_role} when it can identify the account associated with the request."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R007-DIRECT-DELETION-CERT",
+      "rule_id": "R-007",
+      "mechanism": "direct_term_swap",
+      "section": "10",
+      "templates": {
+        "original_text": "Upon termination or expiration of the services, or earlier upon {customer_role}'s written request, {vendor_role} will return or delete Personal Data at {customer_role}'s direction within {deletion_days} days and certify completion in writing.",
+        "mutated_text": "After the relationship ends, {vendor_role} will remove hosted account content on its ordinary operations schedule and will not be required to provide written completion evidence."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R008-CROSS-AUDIT-LIMIT",
+      "rule_id": "R-008",
+      "mechanism": "cross_ref_override",
+      "section": "11",
+      "templates": {
+        "original_text": "On at least {audit_days} days' notice, {customer_role} or its independent assessor may audit or inspect controls relevant to Personal Data no more than once per year, and more frequently after a material incident, regulatory request, or reasonable cause.",
+        "mutated_text": "After annual assurance materials are delivered, no further control review is available for the same contract year unless {vendor_role} agrees in writing."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    },
+    {
+      "recipe_id": "DPA-R009-DIRECT-TRANSFERS",
+      "rule_id": "R-009",
+      "mechanism": "direct_term_swap",
+      "section": "12",
+      "templates": {
+        "original_text": "{vendor_role} will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required.",
+        "mutated_text": "{vendor_role} may move hosted records among its global facilities and affiliates based on operational needs and regional capacity."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R010-OMISSION-PERSONNEL-CONF",
+      "rule_id": "R-010",
+      "mechanism": "omission",
+      "section": "6",
+      "templates": {
+        "original_text": "{vendor_role} will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.",
+        "mutated_text": "{vendor_role} will provide internal onboarding materials to personnel assigned to the service."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R011-DEFINED-PERSONAL-DATA",
+      "rule_id": "R-011",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for {customer_role}, processed on behalf of {customer_role}, or created from {customer_role}'s use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
+        "mutated_text": "\"Personal Data\" means raw individual records uploaded by {customer_role} that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "DPA-R011-DEFINED-PROCESSING",
+      "rule_id": "R-011",
+      "mechanism": "defined_term_shift",
+      "section": "2",
+      "templates": {
+        "original_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+        "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "critical"
+    },
+    {
+      "recipe_id": "DPA-R012-DIRECT-LIABILITY",
+      "rule_id": "R-012",
+      "mechanism": "direct_term_swap",
+      "section": "14",
+      "templates": {
+        "original_text": "Claims arising from {vendor_role}'s breach of this DPA are subject to the liability cap and exclusions stated in the master services agreement and are not subject to any lower cap, special exclusion, or separate damages waiver for data protection obligations.",
+        "mutated_text": "For matters arising under this addendum, total recovery against {vendor_role} will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R013-CROSS-OPERATIONAL-COPIES",
+      "rule_id": "R-007",
+      "mechanism": "cross_ref_override",
+      "section": "15",
+      "templates": {
+        "original_text": "For up to {transition_days} days after termination, {vendor_role} will provide reasonable termination assistance to support secure transition, return, or deletion.",
+        "mutated_text": "For up to {transition_days} days after termination, {vendor_role} will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "high"
+    },
+    {
+      "recipe_id": "DPA-R013-DIRECT-TERM",
+      "rule_id": "R-013",
+      "mechanism": "direct_term_swap",
+      "section": "15",
+      "templates": {
+        "original_text": "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as {vendor_role} processes or retains Personal Data on behalf of {customer_role}.",
+        "mutated_text": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal."
+      },
+      "expected_action": "redline_with_fallback",
+      "severity": "medium"
+    }
+  ]
+}

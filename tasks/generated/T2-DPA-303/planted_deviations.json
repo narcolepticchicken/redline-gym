@@ -1,0 +1,128 @@
+{
+  "deviations": [
+    {
+      "deviation_id": "D-001",
+      "rule_id": "R-010",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "6",
+        "span": "Vendor will provide internal onboarding materials to personnel assigned to the service."
+      },
+      "original_text": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training appropriate to their roles.",
+      "mutated_text": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
+      "mechanism": "omission",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-002",
+      "rule_id": "R-011",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "2",
+        "span": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations."
+      },
+      "original_text": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data to the extent such data relates to a person, household, device, customer account, or customer dataset.",
+      "mutated_text": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
+      "mechanism": "defined_term_shift",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-003",
+      "rule_id": "R-004",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "5",
+        "span": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available."
+      },
+      "original_text": "Vendor will maintain administrative, technical, and physical safeguards appropriate to the nature of the Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+      "mutated_text": "Vendor will use safeguards it considers commercially suitable for the platform and may change operational controls without notice if the overall service remains available.",
+      "mechanism": "direct_term_swap",
+      "severity": "critical",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-004",
+      "rule_id": "R-013",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "15",
+        "span": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal."
+      },
+      "original_text": "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer.",
+      "mutated_text": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+      "mechanism": "direct_term_swap",
+      "severity": "medium",
+      "expected_action": "redline_with_fallback"
+    },
+    {
+      "deviation_id": "D-005",
+      "rule_id": "R-007",
+      "doc_id": "DOC-01",
+      "clause_anchor": {
+        "section": "15",
+        "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards."
+      },
+      "original_text": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "mutated_text": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition. Operational copies retained for continuity, diagnostics, or legal administration may be kept under internal retention standards.",
+      "mechanism": "cross_ref_override",
+      "severity": "high",
+      "expected_action": "redline_with_fallback"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Vendor will provide an annual SOC 2 Type II report, responses to reasonable security and privacy questionnaires, and other information reasonably necessary to demonstrate compliance with this DPA.",
+      "why_benign": "The audit canary says an annual SOC 2 Type II report may satisfy routine assurance if follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "For up to 30 days after termination, Vendor will provide reasonable termination assistance to support secure transition, return, or deletion.",
+      "why_benign": "The transition canary says a 30-day termination assistance period is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "If this DPA conflicts with the master services agreement regarding Personal Data, this DPA controls for that Processing.",
+      "why_benign": "A DPA precedence clause for personal-data processing is customary and client-protective."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Categories of data subjects and records",
+      "absent_terms": [
+        "employee benefits records",
+        "end user profile categories",
+        "minor data subjects"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Current subprocessor list location",
+      "absent_terms": [
+        "subprocessor portal",
+        "subprocessor schedule url",
+        "current subprocessors list"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=303",
+    "attempt_seed=303",
+    "playbook=PB-DPA-001",
+    "tier=T2",
+    "task_id=T2-DPA-303",
+    "D-001 DPA-R010-OMISSION-PERSONNEL-CONF omission applied to R-010",
+    "D-002 DPA-R011-DEFINED-PERSONAL-DATA defined_term_shift applied to R-011",
+    "D-003 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
+    "D-004 DPA-R013-DIRECT-TERM direct_term_swap applied to R-013",
+    "D-005 DPA-R013-CROSS-OPERATIONAL-COPIES cross_ref_override applied to R-007"
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-DPA-001",
+  "practice_area": "privacy",
+  "title": "Customer-Side Vendor Data Processing Addendum Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "Vendor processing authority should be tied to the customer's documented instructions and the agreed services.",
+      "fallback": "Vendor will process personal data only on Customer's documented instructions and only as necessary to provide the services or comply with applicable law.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the vendor can act outside documented customer directions.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Use boundaries should prevent vendor reuse for unrelated analytics, product development, benchmarking, or model training.",
+      "fallback": "Vendor will not use personal data for its own analytics, benchmarking, product development, model training, or other independent business purposes.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the vendor can repurpose protected material for independent business benefit.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-003",
+      "position": "Downstream processors should require customer approval, written pass-through commitments, and vendor responsibility for their acts and omissions.",
+      "fallback": "Vendor may use subprocessors only with Customer's prior approval or the agreed notice-and-objection process, must bind each subprocessor to written obligations at least as protective as this DPA, and remains liable for subprocessor performance.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if downstream providers can handle protected data without approval controls, equivalent written duties, or vendor responsibility.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Safeguards should include encryption in storage and transit, access controls, logging, vulnerability management, and incident response controls appropriate for customer personal data.",
+      "fallback": "Vendor will maintain administrative, technical, and physical safeguards including encryption at rest and in transit, access controls, logging, vulnerability management, and incident response controls appropriate to the nature of the personal data.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if core safeguards are missing or left to vendor discretion without objective commitments.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-005",
+      "position": "Alert timing should support controller obligations by requiring notice without undue delay and within a fixed hour limit after discovery.",
+      "fallback": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a personal-data breach.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if breach timing is too slow or starts only after full confirmation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-006",
+      "position": "Operational support should require reasonable assistance with data subject requests and regulator-facing inquiries involving the services.",
+      "fallback": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if the customer lacks practical support for rights requests or official inquiries.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Exit handling should restore customer control at service end through return or disposal and written completion evidence.",
+      "fallback": "At termination or expiration, Vendor will return or delete personal data at Customer's direction and certify completion, except for legally required retained copies that remain protected by this DPA.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if exit procedures lack return, deletion, or confirmation evidence.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Assurance rights should give the customer a practical way to verify privacy, security, and processing compliance on a reasonable cadence and for cause.",
+      "fallback": "Vendor will provide reasonable information needed to demonstrate compliance and will permit audits or inspections by Customer or an independent assessor on reasonable notice, no more than annually absent a material incident or reasonable cause.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if the customer has no practical way to verify compliance.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-009",
+      "position": "Cross-border movement should require lawful transfer safeguards and cooperation with transfer assessments where required.",
+      "fallback": "Vendor will not transfer personal data internationally unless a lawful transfer mechanism is in place and Vendor provides reasonable assistance with required transfer assessments.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if protected data can move internationally without a lawful mechanism.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Personnel commitments should require authorized processing staff to protect personal data under confidentiality duties.",
+      "fallback": "Vendor will ensure personnel authorized to process personal data are subject to confidentiality obligations and receive access only as needed to perform the services.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if personnel access is not limited or covered by confidentiality commitments.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-011",
+      "position": "Coverage should prevent de-identification loopholes by keeping pseudonymized, aggregated, derived, telemetry, and usage data within the DPA when created from customer personal data.",
+      "fallback": "Personal data includes pseudonymized, aggregated, derived, telemetry, log, and usage data created from or relating to Customer personal data, except only where data has been irreversibly anonymized under applicable law.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if derived or technical data can escape the DPA while still linked to customer data or accounts.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-012",
+      "position": "Financial responsibility for DPA breaches should not be carved below the negotiated MSA cap or excluded from the meaningful risk allocation.",
+      "fallback": "Claims arising from Vendor's breach of this DPA are subject to the MSA liability cap and are not subject to a lower cap, exclusion, or damages waiver specific to data protection obligations.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if data protection claims are uniquely under-capped or excluded.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-013",
+      "position": "The DPA term should remain coextensive with the services and continue while vendor retains protected material.",
+      "fallback": "This DPA remains in effect for the duration of the services and for as long as Vendor processes or retains personal data on behalf of Customer.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if the DPA expires before processing or retention ends.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-014",
+      "position": "An annual SOC 2 Type II report in lieu of routine on-site audit is acceptable if incident and cause-based follow-up rights remain available.",
+      "fallback": "No change; annual SOC 2 Type II reporting may satisfy routine audit requests if cause-based follow-up rights remain available.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because routine assurance is satisfied through an annual SOC 2 Type II report.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "A 30-day termination assistance period is acceptable for this vendor relationship and should not be flagged by itself.",
+      "fallback": "No change; a 30-day termination assistance period is acceptable for this engagement.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because termination assistance lasts 30 days.",
+      "is_canary": true
+    }
+  ]
+}

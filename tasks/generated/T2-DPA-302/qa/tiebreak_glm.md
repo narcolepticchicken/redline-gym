@@ -1,0 +1,3 @@
+1. **Side with REVIEWER.** Rule R-011 explicitly governs the definition of "Personal Data" to include derived and telemetry data, which the DPA already satisfies. The narrowed definition of "Processing" is a separate concern not covered by R-011, making D-001 a mis-attributed deviation. 
+
+2. **Side with REVIEWER.** An answer key must remain strictly machine-checkable and anchored to explicit playbook rules. Since no rule mandates the enumeration of data-subject categories, escalating this omission introduces ambiguity and exceeds the defined scope of the task.
