@@ -58,9 +58,17 @@ class DeepSeekJudge(ModelCheck):
         last_exc: Exception | None = None
         for _ in range(2):
             try:
-                with urllib.request.urlopen(request, timeout=180) as response:
+                with urllib.request.urlopen(request, timeout=300) as response:
                     data = json.loads(response.read().decode("utf-8"))
-                return data["choices"][0]["message"]["content"]
+                choice = data["choices"][0]
+                content = choice["message"].get("content") or ""
+                if not content and choice.get("finish_reason") == "length":
+                    # Reasoning model spent the whole budget thinking; one
+                    # retry with triple the cap (bug class: empty-content-on-length).
+                    if max_tokens < 30000:
+                        return self._chat(prompt, max_tokens=max_tokens * 3)
+                    raise RuntimeError("DeepSeek returned empty content at max budget")
+                return content
             except urllib.error.URLError as exc:
                 last_exc = exc
         raise RuntimeError(f"DeepSeek judge request failed: {last_exc}") from last_exc

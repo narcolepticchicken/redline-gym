@@ -24,7 +24,7 @@ Vendor will process Customer Data only to provide and support the services, to c
 
 ## 6. Notice Regarding Protected Records
 
-Vendor will give written alert within thirty business days after its incident lead confirms a Covered Event. The alert will summarize known facts, affected systems, remedial steps taken or planned, and a contact for follow-up. Vendor will reasonably cooperate with Customer's investigation and customer communications.
+Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident. The alert will summarize known facts, affected systems, remedial steps taken or planned, and a contact for follow-up. Vendor will reasonably cooperate with Customer's investigation and customer communications.
 
 ## 7. Service Partners
 

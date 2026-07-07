@@ -76,10 +76,10 @@
       "doc_id": "DOC-01",
       "clause_anchor": {
         "section": "6",
-        "span": "Vendor will give written alert within thirty business days after its incident lead confirms a Covered Event."
+        "span": "Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident."
       },
       "original_text": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering a Security Incident.",
-      "mutated_text": "Vendor will give written alert within thirty business days after its incident lead confirms a Covered Event.",
+      "mutated_text": "Vendor will give written alert within thirty business days after its incident lead confirms a Security Incident.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
       "expected_action": "redline_with_fallback"

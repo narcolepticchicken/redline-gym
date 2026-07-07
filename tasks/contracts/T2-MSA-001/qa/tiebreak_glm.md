@@ -1,0 +1,8 @@
+1. **Ruling: Side with REVIEWER (with specific third resolution to revise the document).** 
+**Rationale:** For a deviation to be machine-checkable and unambiguous, it must have an operational effect on the targeted rule. Because the operative clause relies on an undefined term ("Covered Event") rather than the narrowed definition ("Security Incident"), the mutation creates a non-functional trap. The instance must be revised so Section 6 explicitly uses the "Security Incident" definition, ensuring the 72-hour breach notification violation is detectable and enforceable.
+
+2. **Ruling: Side with DRAFTER.** 
+**Rationale:** By explicitly excluding "Vendor Methods created, refined, or reduced to practice during the engagement," the clause targets bespoke processes developed specifically for the project. This goes far beyond retaining pre-existing general methods and unambiguously violates the R-003 requirement that project-specific work product belong to the client. It serves as a clear, machine-checkable deviation.
+
+3. **Ruling: Side with DRAFTER.** 
+**Rationale:** The sentence reads like a standard, albeit aggressive, overarching limitation of liability clause meant to override any conflicting carve-outs. "Despite any contrary sentence..." is common boilerplate used by vendors attempting to cap all liability, making it a realistic drafting maneuver rather than an implausible planted flag. It functions perfectly as a blunt but valid deviation.
