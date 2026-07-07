@@ -64,7 +64,7 @@ REVIEW — output these sections in order, be specific, cite sections/quotes:
 """
 
     judge = DeepSeekJudge()
-    review = judge._chat(prompt, max_tokens=5000)
+    review = judge._chat(prompt, max_tokens=12000)
     out = task_dir / "qa"
     out.mkdir(exist_ok=True)
     (out / "review_deepseek.md").write_text(review)

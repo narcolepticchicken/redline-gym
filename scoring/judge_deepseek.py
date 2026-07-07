@@ -69,12 +69,13 @@ class DeepSeekJudge(ModelCheck):
                 self._record_usage(data.get("usage"), payload["model"])
                 choice = data["choices"][0]
                 content = choice["message"].get("content") or ""
-                if not content and choice.get("finish_reason") == "length":
-                    # Reasoning model spent the whole budget thinking; one
-                    # retry with triple the cap (bug class: empty-content-on-length).
+                if choice.get("finish_reason") == "length" and len(content) < 500:
+                    # Reasoning model spent the budget thinking; empty OR tiny
+                    # partial content both mean the answer got squeezed out —
+                    # retry with triple the cap.
                     if max_tokens < 30000:
                         return self._chat(prompt, max_tokens=max_tokens * 3)
-                    raise RuntimeError("DeepSeek returned empty content at max budget")
+                    raise RuntimeError("DeepSeek returned truncated content at max budget")
                 return content
             except (urllib.error.URLError, OSError) as exc:
                 last_exc = exc
