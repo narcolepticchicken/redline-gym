@@ -36,7 +36,7 @@ class DeepSeekJudge(ModelCheck):
     def realism_judge(self, task_text: str = "", playbook_text: str = "", *_: Any, **__: Any) -> str:
         return self._chat(validator_prompt("V11 realism/coherence", task_text, playbook_text))
 
-    def _chat(self, prompt: str) -> str:
+    def _chat(self, prompt: str, max_tokens: int = 2000) -> str:
         api_key = os.getenv("DEEPSEEK_API_KEY")
         if not api_key:
             raise RuntimeError(GATE_MESSAGE)
@@ -44,7 +44,7 @@ class DeepSeekJudge(ModelCheck):
             "model": MODEL,
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0,
-            "max_tokens": 2000,
+            "max_tokens": max_tokens,
         }
         request = urllib.request.Request(
             f"{BASE_URL}/chat/completions",

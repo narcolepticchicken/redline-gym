@@ -1,0 +1,128 @@
+{
+  "header": "DRAFT-FOR-HUMAN-REVIEW",
+  "playbook_id": "PB-MSA-001",
+  "practice_area": "contracts",
+  "title": "Customer-Side Vendor MSA Review Playbook",
+  "rules": [
+    {
+      "rule_id": "R-001",
+      "position": "Monetary exposure should sit at annual spend, with excluded categories for privacy, secrecy, defense obligations, infringement, and gross misconduct.",
+      "fallback": "Except for breaches of confidentiality, data protection obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability is capped at the fees paid or payable under the applicable Order Form during the twelve months before the event giving rise to the claim.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if high-risk claim categories are financially limited after negotiation.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-002",
+      "position": "Defense obligations should be mutual: Vendor covers third-party claims from its service, IP infringement, and law violations; Customer covers materials it provides and misuse outside the agreement.",
+      "fallback": "Each party will defend and indemnify the other from third-party claims arising from the indemnifying party's breach, unlawful conduct, or materials it provides; Vendor will also cover claims alleging that the services or deliverables infringe third-party intellectual property rights.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Vendor refuses balanced third-party claim protection for its service or infringement risk.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-003",
+      "position": "Bespoke work product prepared for the client should belong to the client, while Vendor may retain pre-existing materials only to the extent they do not prevent the intended use.",
+      "fallback": "Vendor assigns to Customer all right, title, and interest in project-specific deliverables upon payment, and grants Customer a perpetual license to any embedded pre-existing materials necessary to use those deliverables.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Customer cannot own or freely use project-specific work product.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-004",
+      "position": "Regulatory clock information must reach the client no later than 72 hours after discovery of suspected or actual unauthorized access, acquisition, use, loss, or disclosure.",
+      "fallback": "Vendor will notify Customer without undue delay and in any event within 72 hours after discovering any suspected or actual unauthorized access to, acquisition of, use of, loss of, or disclosure of Customer Data.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if reporting timing is too slow for privacy, regulatory, or customer notice obligations.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-005",
+      "position": "Vendor must handle Customer Data under written instructions, maintain appropriate technical and organizational safeguards, and comply with applicable privacy and security laws.",
+      "fallback": "Vendor will process Customer Data only under Customer's documented instructions, maintain appropriate administrative, technical, and physical safeguards, and comply with applicable privacy and security laws.",
+      "severity": "critical",
+      "escalation_trigger": "Escalate if the service can process personal information without written instructions, safeguards, or legal compliance commitments.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-006",
+      "position": "Discretionary cancellation should be available on 30 days' written notice without penalty beyond accrued, undisputed amounts.",
+      "fallback": "Customer may terminate any Order Form for convenience on 30 days' written notice and will owe only fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if optional exit requires a material penalty or payment for unused services.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-007",
+      "position": "Lock-in control should stay with Customer; commitments longer than one year require Customer's signed approval.",
+      "fallback": "Each Order Form will have an initial term of no more than one year and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if Customer is locked into a multi-year continuation without affirmative written approval.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-008",
+      "position": "Warranty disclaimers may exclude implied warranties but must preserve express service warranties, security commitments, indemnities, and confidentiality remedies.",
+      "fallback": "Warranty disclaimers do not limit Vendor's express warranties, service-level commitments, data protection obligations, confidentiality obligations, indemnification obligations, or remedies expressly stated in this Agreement.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if disclaimer language erases express promises or core remedies.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-009",
+      "position": "Agreement changes should require both parties' written approval; Vendor should not be able to revise legal or commercial terms unilaterally.",
+      "fallback": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if Vendor can alter binding terms without Customer's written approval.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-010",
+      "position": "Assignment should require consent, with a reasonable exception for merger, reorganization, or sale of substantially all assets by either party.",
+      "fallback": "Neither party may assign this Agreement without the other party's prior written consent, except to an affiliate or successor in connection with a merger, reorganization, or sale of substantially all assets, provided the assignee assumes the assigning party's obligations.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if Vendor may transfer performance or sensitive data obligations freely.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-011",
+      "position": "Vendor should carry commercially reasonable insurance, including technology E&O/cyber coverage of at least $5 million and general liability of at least $2 million.",
+      "fallback": "Vendor will maintain, at its own expense, commercially reasonable insurance, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if insurance is absent or materially below the risk profile of production data processing.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-012",
+      "position": "Customer should have audit rights for security, privacy, service records, and compliance, exercised on reasonable notice and no more than annually unless cause exists.",
+      "fallback": "Customer or its independent auditor may audit Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance on reasonable notice no more than annually, and more often after a material incident or reasonable cause.",
+      "severity": "medium",
+      "escalation_trigger": "Escalate if Customer lacks a practical way to verify security, privacy, or service compliance.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-013",
+      "position": "External firms handling protected material should be bound to written commitments at least as protective as Vendor's obligations for Customer Data, confidentiality, security, and service performance.",
+      "fallback": "Vendor may use subcontractors only if Vendor remains responsible for their acts and omissions and binds each subcontractor to written obligations at least as protective as Vendor's obligations regarding Customer Data, confidentiality, security, and service performance.",
+      "severity": "high",
+      "escalation_trigger": "Escalate if downstream providers can handle protected material without equivalent written commitments.",
+      "is_canary": false
+    },
+    {
+      "rule_id": "R-014",
+      "position": "Payment terms of net 45 days after receipt of an undisputed invoice are acceptable for this engagement and should not be flagged.",
+      "fallback": "No change; net 45 payment terms after receipt of an undisputed invoice are acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because invoices are payable net 45.",
+      "is_canary": true
+    },
+    {
+      "rule_id": "R-015",
+      "position": "Delaware governing law is acceptable for this engagement and should not be flagged.",
+      "fallback": "No change; Delaware governing law is acceptable.",
+      "severity": "low",
+      "escalation_trigger": "Never escalate solely because the agreement uses Delaware law.",
+      "is_canary": true
+    }
+  ]
+}
