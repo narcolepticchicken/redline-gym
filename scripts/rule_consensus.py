@@ -180,12 +180,12 @@ def query_provider(provider_name: str, spec: dict[str, str], prompt: str) -> dic
             }
 
 
-def chat_once(spec: dict[str, str], api_key: str, prompt: str) -> str:
+def chat_once(spec: dict[str, str], api_key: str, prompt: str, max_tokens: int = 400) -> str:
     payload = {
         "model": spec["model"],
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0,
-        "max_tokens": 400,
+        "max_tokens": max_tokens,
     }
     request = urllib.request.Request(
         f"{spec['base'].rstrip('/')}/chat/completions",
@@ -193,9 +193,14 @@ def chat_once(spec: dict[str, str], api_key: str, prompt: str) -> str:
         headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=180) as response:
+    with urllib.request.urlopen(request, timeout=300) as response:
         data = json.loads(response.read().decode("utf-8"))
-    return str(data["choices"][0]["message"].get("content") or "")
+    content = str(data["choices"][0]["message"].get("content") or "")
+    if not content.strip() and max_tokens < 8000:
+        # Reasoning models can burn the whole budget thinking (empty-content-
+        # on-length class): escalate the cap and retry once per level.
+        return chat_once(spec, api_key, prompt, max_tokens=max_tokens * 5)
+    return content
 
 
 def parse_provider_json(text: str, *, strip_think_prefix: bool = False) -> dict[str, Any]:
