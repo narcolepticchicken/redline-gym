@@ -1,134 +1,104 @@
 # Redline Gym
 
-Phase 1 + Phase 2 implementation for the playbook-driven contract review environment
-specified in `SPEC.md`.
+**A practice world with an automatic grader for AI contract-reviewers — where every score can be checked by a skeptical lawyer, because every planted mistake is on the record.**
+
+Redline Gym generates realistic legal contracts with **known, deliberately planted problems**, gives an AI agent the documents plus the client's playbook, and mechanically scores whether the agent found the problems, quoted the right clauses, proposed the right fixes, and raised the right questions. No LLM judge decides correctness. The answer key exists before the agent ever sees the document — because we wrote the mistakes in ourselves.
+
+- **44 task instances** across 7 practice areas: NDAs, vendor MSAs, data-processing agreements, executive employment, stockholders' agreements, M&A asset purchases, AI vendor agreements, digital-asset custody
+- **Deterministic span-level rewards** — recall/precision on planted mistakes, exact-quote grounding, fallback-edit matching, schema conformance, abstention on deliberate gaps
+- **Built-in honeypots and baselines** that catch bluffing, keyword-matching, and doing nothing
+- **One command reproduces the published gate table** from a fresh clone
+- Apache-2.0
+
+---
+
+## The idea in one example
+
+Every instance starts from a clean, playbook-compliant contract. A mutation engine plants mistakes and writes the answer key *in the same operation*:
+
+> **The client's playbook says:** Confidential Information covers all non-public information disclosed by either party — oral, visual, written, electronic — whether or not marked.
+>
+> **The planted contract says:** *"Confidential Information" means information disclosed by or on behalf of a Discloser that is **marked confidential at the time of disclosure** or confirmed as confidential in writing **within ten days** after disclosure.*
+
+That clause isn't gibberish — it's what opposing counsel actually sends you. An agent scores by flagging it, quoting it exactly, and proposing the playbook's fix. Mistakes here are never typos; they're **terms that hurt the client**, findable only by reading. The hard tier buries them in poisoned definitions and innocent-looking "Notwithstanding…" clauses several sections away.
+
+## How we know the scores mean anything
+
+Anyone can claim their benchmark measures skill. Redline Gym ships the evidence:
+
+| Check | What it catches | Result (published table) |
+|---|---|---|
+| **Do-nothing agent** | Scores paid out by scaffolding | 0.000 everywhere |
+| **Keyword bot** (given the scoring keywords!) | Instances solvable by Ctrl-F | ≤ 57% of honest, 0% recall on the hard tier |
+| **Four mechanical cheating strategies** | Blanket-flagging, canary-citing, quote fabrication, playbook parroting | All lose or get branded GAMED |
+| **Honeypot rules** | Agents inventing violations | Episode marked GAMED, precision zeroed |
+| **Honest frontier model** (GLM-5.2, n=5/task) | Whether reading actually wins | 0.67–0.76 on dev T2; **0.82–0.93 on held-out** |
+| **Fresh-clone reproduction** | "Works on my machine" | Gate table byte-identical |
+
+Every instance also passes 11 programmatic validators (mutation anti-drift, keyword-leakage scans, structural coherence, answer-key anchoring), an adversarial three-model QA pipeline (draft → independent review → tiebreak), and an attorney review protocol — coverage stated exactly in [`reports/attorney_signoff_v01.md`](reports/attorney_signoff_v01.md).
+
+## What we found (including against ourselves)
+
+The held-out one-shot evaluation ran once, after the ground truth locked, and its results are published as measured ([`reports/gate_results_t2.md`](reports/gate_results_t2.md)):
+
+- **Strategy gates hold.** Doing nothing, grepping, and every gaming strategy lose on instances no development process ever touched.
+- **The difficulty band failed high.** An engaged frontier-lane model scores 0.82–0.93 on the hard tier — the tier is easier for strong models than our calibration assumed. This is a real negative finding and it ships on the label; recalibration (multi-document T3 tier) is the v0.2 headline.
+- **Models sometimes just… quit.** GLM-5.2 occasionally submits an empty review even after a confirmation bounce (~1 in 5 episodes; worse on some instance families). The environment scores this honestly as zero — it's a reliability behavior the environment measures, not noise we hide.
+
+During three days of construction, this verification stack caught (in our own work): a scorer paying 55% for doing nothing, honeypot labels visible to the agent, answer-key items graders couldn't reach, phantom distractor spans, unreliable single-sample judging, and a generator emitting out-of-order sections. Every one is in the commit history. **The pipeline that catches defects is the product; the contracts are the demo.**
 
 ## Quickstart
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/narcolepticchicken/redline-gym
 cd redline-gym
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-./scripts/run_gates.sh
+./scripts/run_gates.sh          # reproduces the deterministic gate table, no API keys needed
 python3 scripts/make_validity_report.py
 ```
 
-The gate command is deterministic without API keys: pytest, local validators,
-null/random/grep baselines, and mechanical cheater ceilings run locally. Model
-backed honest/cheater/judge steps are reported as skipped when keys are absent.
+With no API keys, every deterministic result reproduces and model-backed steps print `SKIPPED` rather than silently passing. To run live agents or the model-backed validators, export `GLM_API_KEY` / `DEEPSEEK_API_KEY` (any OpenAI-compatible endpoints; see `baselines/llm_common.py`).
 
-## Layout
-
-- `schema/`: JSON Schemas for `task.json`, `documents_manifest.json`,
-  `playbook`, `planted_deviations.json`, `issue_matrix.json`, and `rubric.json`.
-- `validators/`: V1-V11 validator CLI. Programmatic checks run locally;
-  model-backed checks are marked stubbed and raise behind `ModelCheck`.
-- `scoring/`: Seven-channel scoring core with default weights and mandatory
-  channel decomposition.
-- `tasks/contracts/T1-NDA-001/`: Hand-assembled smoke-test NDA instance.
-- `tasks/generated/`: Seeded Phase 3a pilot tranche generated by
-  `python3 -m generator`.
-- `tasks/heldout/`: Reserved split; see `HELDOUT.md`.
-- `playbooks/contracts/PB-NDA-001.json`: Draft human-review playbook with
-  exactly two canary rules and zero planted deviations for those canaries.
-- `scripts/derive.py`: One-way derivation for `issue_matrix.json` and
-  `rubric.json` from planted deviations plus playbook.
-- `env/`: Gym-like episode loop with manifest-gated document actions.
-- `baselines/`: Null, random, grep, honest GLM, and cheater GLM runners.
-- `report/`: Static offline HTML renderer for episode and run summaries.
-
-## Commands
+Run one episode yourself:
 
 ```bash
-python3 scripts/derive.py tasks/contracts/T1-NDA-001
-python3 -m validators tasks/contracts/T1-NDA-001
-python3 -m pytest -q
-./scripts/run_gates.sh
-python3 scripts/make_validity_report.py
-python3 -m validators.model_checks v11-realism
+python3 -m baselines.grep_bot --task tasks/generated/T2-DPA-302 --seed 0    # watch keyword-matching fail
+python3 -m baselines.honest_llm --task tasks/generated/T2-DPA-302 --seed 0  # needs GLM_API_KEY
 ```
 
-The `validators.model_checks` command reads `REDLINE_GYM_MODEL_PROVIDER`,
-`REDLINE_GYM_MODEL`, and `REDLINE_GYM_MODEL_ENDPOINT` from the environment but
-always raises `NotImplementedError` in Phase 1.
+## What's in the box
 
-## Phase 2 Commands
-
-Run a baseline episode:
-
-```bash
-python3 -m baselines.null_agent --task tasks/contracts/T1-NDA-001 --seed 0
-python3 -m baselines.random_flagger --task tasks/contracts/T1-NDA-001 --seed 0
-python3 -m baselines.grep_bot --task tasks/contracts/T1-NDA-001 --seed 0
-```
-
-Run a custom scripted episode from Python:
-
-```python
-from env import Episode
-
-episode = Episode("tasks/contracts/T1-NDA-001", seed=0, run_dir="runs/manual-smoke")
-observation = episode.reset()
-observation = episode.step({"action": "list_docs"})
-observation = episode.step({"action": "finalize", "card": {"summary": "Done.", "issues": [], "escalations": []}})
-```
-
-Render reports:
-
-```bash
-python3 -m report --run runs/null_agent-seed0
-python3 -m report --run runs/null_agent-seed0/T1-NDA-001
-```
-
-GLM-backed baselines are gated. They exit before any network call unless
-`GLM_API_KEY` is set:
-
-```bash
-python3 -m baselines.honest_llm --task tasks/contracts/T1-NDA-001 --seed 0
-python3 -m baselines.cheater_llm --task tasks/contracts/T1-NDA-001 --seed 0
-```
-
-The Claude subscription judge adapter is post-hoc only. Dry-run prints prompts;
-real `claude -p` execution requires `REDLINE_JUDGE_ENABLED=1`:
-
-```bash
-python3 -m scoring.judge_claude_sub fallback --proposed "..." --expected "..." --dry-run
-```
-
-## Phase 1 Status
-
-| Area | Status |
+| Path | What it is |
 |---|---|
-| Schemas | Implemented |
-| Derived `issue_matrix.json` | Implemented via `scripts/derive.py` |
-| Derived `rubric.json` | Implemented via `scripts/derive.py` |
-| V1 rubric citations | Implemented |
-| V2 mutation anti-drift | Implemented |
-| V3 clean-base judge pass | Stubbed behind `ModelCheck` |
-| V4 round-trip extractor | Stubbed behind `ModelCheck` |
-| V5 issue/deviation mapping | Implemented |
-| V6 distractor rule scan | Implemented |
-| V7 string-search absence check | Implemented |
-| V7 semantic absence check | Stubbed behind `ModelCheck` |
-| V8 schemas, instruction length, hashes | Implemented |
-| V9 canary emptiness | Implemented |
-| V10 tranche leakage stats | Implemented |
-| V11 realism judge | Stubbed behind `ModelCheck` |
-| Scoring channels 1-7 | Implemented; channel 4 judge tiebreak stubbed |
-| Env wrapper | Phase 2 implemented |
-| Baselines | Phase 2 implemented |
-| Report renderer | Phase 2 implemented |
+| `tasks/` | 36 dev instances + 8 held-out (never touched in development; scored once) |
+| `playbooks/` | 7 practice-area playbooks — the client positions that define ground truth |
+| `generator/` | Seeded mutation engine; refuses to emit instances failing any integrity gate |
+| `env/` | Gym-style episode loop (read, search, flag, escalate, finalize) |
+| `scoring/` | Seven deterministic reward channels + honeypot gating |
+| `baselines/` | Null, random, grep-bot, mechanical cheaters, honest/cheater LLM drivers |
+| `validators/` | The 11-check instance validator stack |
+| `reports/` | Gate tables, validity report, attorney sign-off record, consensus results |
+| `SPEC.md` | The full design contract, including the release checklist this repo shipped against |
 
-## Phase 2 Status
+## Known limits (v0.1)
 
-| Deliverable | Status | Notes |
-|---|---|---|
-| `env/` episode loop | Implemented | `reset()`/`step()` actions, JSONL transcript, manifest-only doc access, timeout scoring |
-| Playbook redaction | Implemented | Agent observations expose only `rule_id`, `position`, `fallback`, `severity` |
-| Local baselines | Implemented | `null_agent`, `random_flagger`, and `grep_bot` write runs and print score summaries |
-| GLM baselines | Implemented and gated | `honest_llm` and `cheater_llm` require `GLM_API_KEY`; no import-time network calls |
-| Static reports | Implemented | Per-episode `report.html` and run-level `index.html`, inline CSS only |
-| Claude judge adapter | Implemented and gated | Dry-run prompt tests; real subprocess requires `REDLINE_JUDGE_ENABLED=1` |
-| Validator sign-off preservation | Implemented | Signed status line and `Human sign-off:` block survive regeneration |
-| Phase 2 tests | Implemented | Episode, timeout, redaction, deterministic baseline, report smoke, sign-off, judge dry-run |
+Stated plainly, per the project's own rules: single-attorney review with declared partial coverage (record in `reports/`); difficulty band miscalibrated for frontier models (see above); one model lane measured (no stronger-vs-weaker ranking yet); English-only, US-market conventions; 44 instances is a pilot-scale distribution.
+
+## Roadmap
+
+**v0.1.1** — remaining attorney review items, two deferred rule adjudications. **v0.2** — T3 multi-document tier and band recalibration, multi-model rankings, quit-mode study, `verifiers`-compatible wrapper for hub publication. **v1.0** — 35+ instances per area, RL training runs.
+
+## Citation
+
+```bibtex
+@software{redline_gym_2026,
+  title  = {Redline Gym: a verifiable RL environment for playbook-driven contract review},
+  author = {Aaron and contributors},
+  year   = {2026},
+  url    = {https://github.com/narcolepticchicken/redline-gym},
+  license = {Apache-2.0}
+}
+```
+
+Built in the open, defects and all. If you find a mistake we didn't plant — file an issue; that's the point.
