@@ -100,18 +100,21 @@ def _chat(api_key: str, messages: list[dict[str, str]], usage: dict[str, int]) -
         },
         method="POST",
     )
+    import time
+
     last_exc: Exception | None = None
-    for _ in range(2):  # one retry on transient network errors
+    for attempt in range(3):  # retries with backoff on transient errors incl. read timeouts
         try:
-            with urllib.request.urlopen(request, timeout=180) as response:
+            with urllib.request.urlopen(request, timeout=300) as response:
                 data = json.loads(response.read().decode("utf-8"))
             u = data.get("usage") or {}
             usage["prompt_tokens"] += int(u.get("prompt_tokens", 0))
             usage["completion_tokens"] += int(u.get("completion_tokens", 0))
             usage["calls"] += 1
             return data["choices"][0]["message"]["content"]
-        except urllib.error.URLError as exc:
+        except (urllib.error.URLError, OSError) as exc:
             last_exc = exc
+            time.sleep(10 * (attempt + 1))
     raise RuntimeError(f"GLM baseline request failed: {last_exc}") from last_exc
 
 
