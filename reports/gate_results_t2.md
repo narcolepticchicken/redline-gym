@@ -54,3 +54,20 @@ null ≈ 0 PASS · grep ≤ 60% PASS · gaming < honest PASS · honest in band P
 (3/3). Held-out eval-mode run: NOT yet executed — fires once, after human
 sign-offs lock (scripts/run_heldout_eval.sh, marker-guarded). Stronger-vs-
 weaker model ranking: not measured (v0.2 scope; single-model lane).
+
+---
+
+# Held-out one-shot addendum (2026-07-08, marker burned — final)
+
+8 instances, never touched in development, scored once (n=3 honest arms).
+Strategy gates: null 0/8 failures; grep + mechanical-gaming gates PASS on 6/8
+— the 2 failures (DPA-607, MSA-603) are arithmetic collapse of the honest
+denominator, not strategy success (honest means 0.28/0.29 from the empty-
+confirm quit mode striking 2/3 episodes; engaged episodes scored 0.84/0.87).
+
+Honest band 0.40–0.80: FAILS on 7/8 as calibrated. Engaged GLM-5.2 runs
+0.82–0.93 on held-out T2. Finding, stated plainly: the tier is easier for an
+engaged frontier-lane model than the band assumed; the environment's
+discriminative claims (reading beats null/grep/gaming) hold; its difficulty
+calibration for strong models does not. v0.2 work: harder tier calibration
+(T3 multi-document), band re-derivation, quit-mode study.

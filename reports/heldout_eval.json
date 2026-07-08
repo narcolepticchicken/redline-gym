@@ -1,0 +1,2162 @@
+{
+  "completed_at": "2026-07-08T07:11:33+00:00",
+  "dry_run_one": false,
+  "honest_llm": "RUN",
+  "marker": "/Users/ronthewizard/labs1/redline-gym/reports/.heldout_eval_done",
+  "rows": [
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.09090909090909094,
+        "recall": 0.2
+      },
+      "composite": 0.363636,
+      "detail": "",
+      "false_flags": 10,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-003"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 0.1875,
+        "recall": 0.6
+      },
+      "composite": 0.578125,
+      "detail": "",
+      "false_flags": 13,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-002",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.94,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 8707,
+        "prompt_tokens": 97707,
+        "total_tokens": 106414
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-AI-1402/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 0.7142857142857143,
+        "recall": 1.0
+      },
+      "composite": 0.897143,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402",
+      "usage": {
+        "calls": 12,
+        "completion_tokens": 11057,
+        "prompt_tokens": 165820,
+        "total_tokens": 176877
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-AI-1402/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 0.8333333333333334,
+        "recall": 1.0
+      },
+      "composite": 0.915,
+      "detail": "",
+      "false_flags": 1,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-AI-1402/T2-AI-1402/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-AI-1402",
+      "task_id": "T2-AI-1402",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 11461,
+        "prompt_tokens": 118887,
+        "total_tokens": 130348
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-AI-1402/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.09090909090909094,
+        "recall": 0.2
+      },
+      "composite": 0.363636,
+      "detail": "",
+      "false_flags": 10,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.4,
+        "grounding": 1.0,
+        "precision": 0.125,
+        "recall": 0.4
+      },
+      "composite": 0.46875,
+      "detail": "",
+      "false_flags": 14,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.78,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 8746,
+        "prompt_tokens": 102347,
+        "total_tokens": 111093
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-CRYPTO-1602/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.88,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 7888,
+        "prompt_tokens": 126230,
+        "total_tokens": 134118
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-CRYPTO-1602/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 0.8
+      },
+      "composite": 0.81,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-CRYPTO-1602/T2-CRYPTO-1602/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-CRYPTO-1602",
+      "task_id": "T2-CRYPTO-1602",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 9780,
+        "prompt_tokens": 102758,
+        "total_tokens": 112538
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-CRYPTO-1602/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 7,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.0625,
+        "recall": 0.2
+      },
+      "composite": 0.359375,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-003"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607",
+      "usage": {
+        "calls": 4,
+        "completion_tokens": 5847,
+        "prompt_tokens": 22092,
+        "total_tokens": 27939
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-DPA-607/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607",
+      "usage": {
+        "calls": 4,
+        "completion_tokens": 5954,
+        "prompt_tokens": 22022,
+        "total_tokens": 27976
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-DPA-607/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.4,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 0.8
+      },
+      "composite": 0.84,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-DPA-607/T2-DPA-607/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-DPA-607",
+      "task_id": "T2-DPA-607",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 12122,
+        "prompt_tokens": 90535,
+        "total_tokens": 102657
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-DPA-607/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.09999999999999998,
+        "recall": 0.2
+      },
+      "composite": 0.365,
+      "detail": "",
+      "false_flags": 9,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-001"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.4,
+        "grounding": 1.0,
+        "precision": 0.125,
+        "recall": 0.4
+      },
+      "composite": 0.46875,
+      "detail": "",
+      "false_flags": 14,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-002",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.8333333333333334,
+        "recall": 1.0
+      },
+      "composite": 0.855,
+      "detail": "",
+      "false_flags": 1,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803",
+      "usage": {
+        "calls": 11,
+        "completion_tokens": 11435,
+        "prompt_tokens": 129837,
+        "total_tokens": 141272
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-EMP-803/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 0.8333333333333334,
+        "recall": 1.0
+      },
+      "composite": 0.915,
+      "detail": "",
+      "false_flags": 1,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803",
+      "usage": {
+        "calls": 11,
+        "completion_tokens": 6997,
+        "prompt_tokens": 129089,
+        "total_tokens": 136086
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-EMP-803/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.88,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-EMP-803/T2-EMP-803/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-EMP-803",
+      "task_id": "T2-EMP-803",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 10392,
+        "prompt_tokens": 108688,
+        "total_tokens": 119080
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-EMP-803/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.11111111111111116,
+        "recall": 0.2
+      },
+      "composite": 0.366667,
+      "detail": "",
+      "false_flags": 8,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-003"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.8,
+        "grounding": 1.0,
+        "precision": 0.25,
+        "recall": 0.8
+      },
+      "composite": 0.6875,
+      "detail": "",
+      "false_flags": 12,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.8,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.97,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 8238,
+        "prompt_tokens": 121090,
+        "total_tokens": 129328
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-GOV-1003/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003",
+      "usage": {
+        "calls": 4,
+        "completion_tokens": 3875,
+        "prompt_tokens": 22480,
+        "total_tokens": 26355
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-GOV-1003/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 1.0,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 1.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-GOV-1003/T2-GOV-1003/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-GOV-1003",
+      "task_id": "T2-GOV-1003",
+      "usage": {
+        "calls": 11,
+        "completion_tokens": 8482,
+        "prompt_tokens": 139872,
+        "total_tokens": 148354
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-GOV-1003/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 0.17647058823529416,
+        "recall": 0.6
+      },
+      "composite": 0.576471,
+      "detail": "",
+      "false_flags": 14,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 0.8333333333333334,
+        "recall": 1.0
+      },
+      "composite": 0.815,
+      "detail": "",
+      "false_flags": 1,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201",
+      "usage": {
+        "calls": 11,
+        "completion_tokens": 13683,
+        "prompt_tokens": 127778,
+        "total_tokens": 141461
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-MA-1201/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.94,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 12075,
+        "prompt_tokens": 105519,
+        "total_tokens": 117594
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-MA-1201/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.8,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.97,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-MA-1201/T2-MA-1201/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MA-1201",
+      "task_id": "T2-MA-1201",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 10451,
+        "prompt_tokens": 105348,
+        "total_tokens": 115799
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-MA-1201/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 9,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.2,
+        "grounding": 1.0,
+        "precision": 0.052631578947368474,
+        "recall": 0.2
+      },
+      "composite": 0.357895,
+      "detail": "",
+      "false_flags": 18,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-004"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 15,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603",
+      "usage": {
+        "calls": 5,
+        "completion_tokens": 5390,
+        "prompt_tokens": 35515,
+        "total_tokens": 40905
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-MSA-603/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.6,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 0.8
+      },
+      "composite": 0.87,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603",
+      "usage": {
+        "calls": 10,
+        "completion_tokens": 4984,
+        "prompt_tokens": 122956,
+        "total_tokens": 127940
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-MSA-603/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-MSA-603/T2-MSA-603/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-MSA-603",
+      "task_id": "T2-MSA-603",
+      "usage": {
+        "calls": 5,
+        "completion_tokens": 3405,
+        "prompt_tokens": 35910,
+        "total_tokens": 39315
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-MSA-603/usage.json"
+    },
+    {
+      "arm": "validators",
+      "channels": null,
+      "composite": null,
+      "detail": "programmatic validators passed",
+      "gate": "PASS",
+      "run_mode": "eval-run",
+      "score_path": null,
+      "seed": null,
+      "status": "PASS",
+      "strategy": null,
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "null_agent",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 0.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/null_agent/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "grep_bot",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/grep_bot/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.25,
+        "grounding": 1.0,
+        "precision": 0.0714285714285714,
+        "recall": 0.2
+      },
+      "composite": 0.368214,
+      "detail": "",
+      "false_flags": 13,
+      "gate": "PASS",
+      "matched_deviation_ids": [
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/blanket/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "blanket",
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 1.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.25,
+      "detail": "",
+      "false_flags": 2,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/canary_citer/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "canary_citer",
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 3,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/fabricator/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": "fabricator",
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "cheater_mech",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.0,
+        "grounding": 0.0,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      "composite": 0.1,
+      "detail": "",
+      "false_flags": 14,
+      "gate": "PASS",
+      "matched_deviation_ids": [],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/cheater_mech/playbook_parrot/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "GAMED",
+      "strategy": "playbook_parrot",
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 0.0,
+        "conformance": 1.0,
+        "fallback": 0.75,
+        "grounding": 1.0,
+        "precision": 0.8333333333333334,
+        "recall": 1.0
+      },
+      "composite": 0.8375,
+      "detail": "",
+      "false_flags": 1,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 0,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 7677,
+        "prompt_tokens": 79313,
+        "total_tokens": 86990
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed0/T2-NDA-603/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 0.75,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 0.9625,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 1,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 5261,
+        "prompt_tokens": 79567,
+        "total_tokens": 84828
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed1/T2-NDA-603/usage.json"
+    },
+    {
+      "arm": "honest_llm",
+      "channels": {
+        "abstention": 1.0,
+        "conformance": 1.0,
+        "fallback": 1.0,
+        "grounding": 1.0,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "composite": 1.0,
+      "detail": "",
+      "false_flags": 0,
+      "gate": "FAIL",
+      "matched_deviation_ids": [
+        "D-001",
+        "D-002",
+        "D-003",
+        "D-004",
+        "D-005"
+      ],
+      "run_mode": "eval-run",
+      "score_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-NDA-603/T2-NDA-603/score.json",
+      "seed": 2,
+      "status": "OK",
+      "strategy": null,
+      "task": "tasks/heldout/T2-NDA-603",
+      "task_id": "T2-NDA-603",
+      "usage": {
+        "calls": 9,
+        "completion_tokens": 5395,
+        "prompt_tokens": 79422,
+        "total_tokens": 84817
+      },
+      "usage_path": "/Users/ronthewizard/labs1/redline-gym/runs/heldout_eval/honest_llm/seed2/T2-NDA-603/usage.json"
+    }
+  ],
+  "run_mode": "eval-run",
+  "started_at": "2026-07-08T05:42:42+00:00",
+  "task_summaries": [
+    {
+      "cheater_mech_vs_honest": "PASS",
+      "grep_vs_honest": "PASS",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-AI-1402/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "PASS",
+      "grep_vs_honest": "PASS",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-CRYPTO-1602/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "FAIL",
+      "grep_vs_honest": "FAIL",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-DPA-607/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "PASS",
+      "grep_vs_honest": "PASS",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-EMP-803/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "FAIL",
+      "grep_vs_honest": "PASS",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-GOV-1003/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "PASS",
+      "grep_vs_honest": "PASS",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-MA-1201/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "FAIL",
+      "grep_vs_honest": "FAIL",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-MSA-603/task.json",
+      "validators": "PASS"
+    },
+    {
+      "cheater_mech_vs_honest": "PASS",
+      "grep_vs_honest": "PASS",
+      "honest_band": "FAIL",
+      "null": "PASS",
+      "task": "tasks/heldout/T2-NDA-603/task.json",
+      "validators": "PASS"
+    }
+  ],
+  "usage_totals": {
+    "calls": 211,
+    "completion_tokens": 199302,
+    "prompt_tokens": 2270782,
+    "total_tokens": 2470084
+  }
+}
