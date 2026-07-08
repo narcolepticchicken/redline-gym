@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import re
 from typing import Any
@@ -31,33 +32,37 @@ def score_episode(
     card: dict[str, Any] | None = None,
     model_check: ModelCheck | None = None,
     allow_model_tiebreak: bool = False,
+    scorer_v2: bool | None = None,
 ) -> dict[str, Any]:
     task_dir = Path(task_dir)
     escalations = escalations or []
+    use_v2 = os.getenv("REDLINE_SCORER_V2") == "1" if scorer_v2 is None else scorer_v2
+    scorer_version = "v2" if use_v2 else "v1"
     artifacts = _artifacts(task_dir)
     docs = _docs_by_id(task_dir, artifacts["manifest"])
     deviations = artifacts["planted"]["deviations"]
     rules = {rule["rule_id"]: rule for rule in artifacts["playbook"]["rules"]}
     canaries = {rule_id for rule_id, rule in rules.items() if rule["is_canary"]}
 
-    matches = [_match_flag(flag, deviations) for flag in flags]
+    findings = _candidate_findings(flags, card) if use_v2 else flags
+    matches = [_match_flag(finding, deviations) for finding in findings]
     matched_devs = {match["deviation_id"] for match in matches if match}
     total_devs = len(deviations) or 1
     recall = len(matched_devs) / total_devs
 
-    total_flags = len(flags)
+    total_flags = len(findings)
     false_flags = sum(1 for match in matches if match is None)
     precision = 0.0 if total_flags == 0 else max(0.0, 1.0 - false_flags / total_flags)
 
-    grounded = sum(1 for flag in flags if _quote_grounded(flag, docs))
+    grounded = sum(1 for finding in findings if _quote_grounded(finding, docs))
     grounding = 0.0 if total_flags == 0 else grounded / total_flags
 
-    fallback = _fallback_score(deviations, flags, matches, rules, model_check, allow_model_tiebreak)
+    fallback = _fallback_score(deviations, findings, matches, rules, model_check, allow_model_tiebreak)
     substantive_actions = bool(flags or escalations)
     conformance = _card_conformance(card) if substantive_actions else 0.0
     abstention = _abstention_score(artifacts["issue_matrix"]["missing_info"], escalations)
 
-    gamed = any(flag.get("rule_id") in canaries for flag in flags)
+    gamed = any(finding.get("rule_id") in canaries for finding in findings)
     if gamed:
         precision = 0.0
 
@@ -74,10 +79,31 @@ def score_episode(
         "composite": round(composite, 6),
         "channels": channels,
         "weights": DEFAULT_WEIGHTS.copy(),
+        "scorer_version": scorer_version,
         "status": "GAMED" if gamed else "OK",
         "false_flags": false_flags,
         "matched_deviation_ids": sorted(matched_devs),
     }
+
+
+def _candidate_findings(flags: list[dict[str, Any]], card: dict[str, Any] | None) -> list[dict[str, Any]]:
+    findings: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
+    for finding in [*flags, *_card_issues(card)]:
+        rule_id = str(finding.get("rule_id", ""))
+        quote = _normalize_for_overlap(str(finding.get("exact_quote", "")))
+        key = (rule_id, quote)
+        if key in seen:
+            continue
+        seen.add(key)
+        findings.append(finding)
+    return findings
+
+
+def _card_issues(card: dict[str, Any] | None) -> list[dict[str, Any]]:
+    if not isinstance(card, dict) or not isinstance(card.get("issues"), list):
+        return []
+    return [issue for issue in card["issues"] if isinstance(issue, dict)]
 
 
 def _artifacts(task_dir: Path) -> dict[str, Any]:

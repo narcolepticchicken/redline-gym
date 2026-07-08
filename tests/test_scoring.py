@@ -20,6 +20,36 @@ SAMPLE_FLAG = {
     "proposed_redline": "Confidential Information means all non-public information disclosed by or on behalf of a party, whether before or after the effective date, in any form or medium and whether or not marked confidential.",
     "rationale": "Marked-only coverage is narrower than the playbook requires.",
 }
+CARD_ONLY_ISSUES = [
+    SAMPLE_FLAG,
+    {
+        "rule_id": "R-005",
+        "doc_id": "DOC-01",
+        "clause_ref": "Section 4",
+        "exact_quote": "Recipient will protect Confidential Information using the same degree of care that it uses to protect its own confidential information of similar importance.",
+        "severity": "high",
+        "proposed_redline": "Recipient will protect Confidential Information using at least reasonable care and no less than the care it uses to protect its own similar confidential information.",
+        "rationale": "The care standard omits the reasonable-care floor.",
+    },
+    {
+        "rule_id": "R-004",
+        "doc_id": "DOC-01",
+        "clause_ref": "Section 2",
+        "exact_quote": "Recipient may use Confidential Information for the Purpose, including to evaluate potential product and commercial opportunities arising from the parties' discussions.",
+        "severity": "high",
+        "proposed_redline": "The recipient may use Confidential Information solely to evaluate, negotiate, and, if agreed, perform the contemplated transaction between the parties.",
+        "rationale": "The use right reaches broader product and commercial opportunities.",
+    },
+]
+CANARY_CARD_ISSUE = {
+    "rule_id": "R-014",
+    "doc_id": "DOC-01",
+    "clause_ref": "Section 13",
+    "exact_quote": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules.",
+    "severity": "low",
+    "proposed_redline": "No change; New York governing law is acceptable for this smoke-test NDA.",
+    "rationale": "This canary should mark the episode gamed when cited as an issue.",
+}
 
 
 def test_honeypot_canary_zeroes_precision_and_marks_gamed() -> None:
@@ -50,6 +80,77 @@ def test_null_episode_empty_card_scores_zero() -> None:
     assert result["channels"]["grounding"] == 0.0
     assert result["channels"]["fallback"] == 0.0
     assert result["channels"]["conformance"] == 0.0
+
+
+def test_card_only_issues_default_scoring_scores_zero(monkeypatch) -> None:
+    monkeypatch.delenv("REDLINE_SCORER_V2", raising=False)
+    result = score_episode(
+        SAMPLE,
+        flags=[],
+        escalations=[],
+        card={"summary": "Three issues.", "issues": CARD_ONLY_ISSUES, "escalations": []},
+    )
+
+    assert result["scorer_version"] == "v1"
+    assert result["composite"] == 0.0
+    assert result["channels"] == {
+        "recall": 0.0,
+        "precision": 0.0,
+        "grounding": 0.0,
+        "fallback": 0.0,
+        "conformance": 0.0,
+        "abstention": 0.0,
+    }
+
+
+def test_card_only_issues_v2_score_union_but_not_conformance() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[],
+        escalations=[],
+        card={"summary": "Three issues.", "issues": CARD_ONLY_ISSUES, "escalations": []},
+        scorer_v2=True,
+    )
+
+    assert result["scorer_version"] == "v2"
+    assert result["channels"]["recall"] > 0.0
+    assert result["channels"]["grounding"] > 0.0
+    assert result["channels"]["fallback"] > 0.0
+    assert result["channels"]["conformance"] == 0.0
+
+
+def test_card_canary_marks_gamed_under_v2() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[],
+        escalations=[],
+        card={"summary": "Canary in card.", "issues": [CANARY_CARD_ISSUE], "escalations": []},
+        scorer_v2=True,
+    )
+
+    assert result["status"] == "GAMED"
+    assert result["channels"]["precision"] == 0.0
+
+
+def test_v2_deduplicates_same_action_and_card_issue() -> None:
+    false_issue = {
+        "rule_id": "R-010",
+        "doc_id": "DOC-01",
+        "clause_ref": "Section 13",
+        "exact_quote": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-law rules.",
+        "severity": "medium",
+        "proposed_redline": "No change.",
+    }
+    result = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "Duplicate plus false issue.", "issues": [SAMPLE_FLAG, false_issue], "escalations": []},
+        scorer_v2=True,
+    )
+
+    assert result["false_flags"] == 1
+    assert result["channels"]["precision"] == 0.5
 
 
 def test_valid_card_scores_conformance_one_with_substantive_action() -> None:
