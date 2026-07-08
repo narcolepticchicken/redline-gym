@@ -167,7 +167,12 @@ def _chat(api_key: str, messages: list[dict[str, str]], usage: dict[str, int]) -
     import urllib.error
     import urllib.request
 
-    payload = {"model": _model(), "messages": messages, "temperature": _temperature()}
+    payload = {
+        "model": _model(),
+        "messages": messages,
+        "temperature": _temperature(),
+        "max_tokens": int(os.getenv("REDLINE_AGENT_MAX_TOKENS", "4000")),
+    }
     request = urllib.request.Request(
         f"{_base_url()}/chat/completions",
         data=json.dumps(payload).encode("utf-8"),
@@ -188,7 +193,9 @@ def _chat(api_key: str, messages: list[dict[str, str]], usage: dict[str, int]) -
             usage["prompt_tokens"] += int(u.get("prompt_tokens", 0))
             usage["completion_tokens"] += int(u.get("completion_tokens", 0))
             usage["calls"] += 1
-            return data["choices"][0]["message"]["content"]
+            # Thinking models may omit/empty `content` when reasoning exhausts
+            # the budget; return "" and let the corrective-retry path handle it.
+            return data["choices"][0]["message"].get("content") or ""
         except (urllib.error.URLError, OSError) as exc:
             last_exc = exc
             time.sleep(10 * (attempt + 1))
