@@ -11,14 +11,15 @@ from env import Episode
 from .common import default_run_dir, finalize_card, parser
 
 
-BASE_URL = "https://api.z.ai/api/coding/paas/v4"
-MODEL = "glm-5.2"
-GATE_MESSAGE = "GLM_API_KEY not set; honest/cheater baselines are gated on the lab serving lane"
+BASE_URL = os.getenv("REDLINE_AGENT_BASE_URL", "https://api.z.ai/api/coding/paas/v4")
+MODEL = os.getenv("REDLINE_AGENT_MODEL", "glm-5.2")
+KEY_ENV = os.getenv("REDLINE_AGENT_KEY_ENV", "GLM_API_KEY")
+GATE_MESSAGE = f"{KEY_ENV} not set; agent baselines are gated on the lab serving lane"
 
 
 def run_llm_baseline(name: str, system_prompt: str, argv: list[str] | None = None) -> int:
     args = parser(name).parse_args(argv)
-    api_key = os.getenv("GLM_API_KEY")
+    api_key = os.getenv(KEY_ENV)
     if not api_key:
         print(GATE_MESSAGE, file=sys.stderr)
         return 1
@@ -119,6 +120,8 @@ def _chat(api_key: str, messages: list[dict[str, str]], usage: dict[str, int]) -
 
 
 def _parse_action(content: str) -> dict[str, Any]:
+    import re as _re
+    content = _re.sub(r"^\s*<think>.*?</think>\s*", "", content, count=1, flags=_re.DOTALL | _re.IGNORECASE)
     try:
         action = json.loads(content)
     except json.JSONDecodeError:
