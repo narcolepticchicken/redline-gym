@@ -2,3 +2,5 @@ runs/
 __pycache__/
 *.pyc
 .pytest_cache/
+runs_*/
+runs_void_loose_scorer_2026-07-06/
