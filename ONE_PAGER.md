@@ -28,6 +28,21 @@ These gates have already earned their keep. In week one they caught: a scorer pa
 
 ## Status & trajectory
 
-Working today: episode loop (gym-style reset/step, JSONL transcripts, ≤30K tokens/episode), five baselines, per-channel score decomposition, HTML graded-redline reports (caught/missed/false-flag color-coded — legible to a non-ML viewer in seconds), one fully signed instance. Difficulty tiers: T1 direct swaps → T2 cross-reference overrides & defined-term shifts (where keyword-matching dies) → T3 multi-document (MSA + SOW + security addendum, later docs quietly overriding earlier ones). Scaling: mutation-engine procedural generation across 7 practice areas → 35 → 350 instances; a verifiers-compatible wrapper is planned for Environments Hub publication.
+Working today: episode loop (gym-style reset/step, JSONL transcripts), a seeded
+generator with refuse-to-emit gates (keyword-leakage, structural coherence,
+answer-key anchoring, distractor-span integrity), 36 dev + 8 held-out instances
+across 7 practice areas (NDA, MSA, DPA/privacy, employment, corporate
+governance, M&A, AI services, digital-asset custody), five scripted baselines
+plus a four-strategy mechanical gaming suite, multi-sampled model-backed
+validators (clean-base, round-trip detectability, gap-finding, register
+battery) with metered judge spend, per-channel score decomposition, HTML
+graded-redline reports, and one-command reproducibility (fresh clone →
+identical gate table, proven). Measured on the discriminating tier with
+GLM-5.2: keyword-bot ≤ 57% of honest everywhere; mechanical gaming ceilings
+0.41–0.58 vs honest engaged performance 0.81–0.97; do-nothing scores exactly
+0. Every gate number ships with its measured token cost; unmeasured gates say
+UNMEASURED. Human sign-off runs through a single-attorney review sitting with
+span-level walkthroughs; the validity report states coverage and limits
+plainly. A verifiers-compatible wrapper for hub publication is v0.2.
 
 **Ask:** feedback on the design, and interest in the Hub as a home for the first transactional-legal environment.
