@@ -369,8 +369,8 @@ def build_page(out_path: pathlib.Path) -> tuple[str, int, dict[str, list[str]]]:
 
 <h2>Done</h2>
 <div class="lead">
- <p>When complete tell Claude <b>"sitting done"</b> plus any items flagged.</p>
- <p class="dim">Use this box for anything Aaron wants Claude to know after the sitting.</p>
+ <p>When complete tell your assistant <b>"sitting done"</b> plus any items flagged.</p>
+ <p class="dim">Use this box for anything Aaron wants the assistant to know after the sitting.</p>
  <textarea data-note-text="flagged_items" placeholder="Items flagged..."></textarea>
 </div>
 </main>
@@ -413,7 +413,7 @@ def build_page(out_path: pathlib.Path) -> tuple[str, int, dict[str, list[str]]]:
    const pct = boxes.length ? (100 * k / boxes.length) : 0;
    document.getElementById('fill').style.width = pct.toFixed(1) + '%';
    document.getElementById('count').textContent = k + ' / ' + boxes.length +
-     (k === boxes.length ? ' - all confirmed. Tell Claude "sitting done" plus any items flagged.' : ' confirmed');
+     (k === boxes.length ? ' - all confirmed. Say "sitting done" plus any items flagged.' : ' confirmed');
  }}
  update();
 </script></body></html>"""

@@ -22,7 +22,7 @@ No LLM judge in the reward path. A subscription-CLI judge exists only as a post-
 
 ## The legitimacy protocol (the part we think matters most)
 
-Every instance passes 11 validators (mutation anti-drift, round-trip detectability, realism scoring, cross-tranche leakage scan, canary-emptiness), then tri-model QA — GPT-5.5 drafts, Claude Opus reviews, DeepSeek adjudicates disagreements — then a human lawyer signs off. Environment-level gates run before any score is believed: **null agent ≤ 0.05, cheater < honest, grep-bot as a published upper bound on keyword-detectability**.
+Every instance passes 11 validators (mutation anti-drift, round-trip detectability, realism scoring, cross-tranche leakage scan, canary-emptiness), then tri-model QA — GPT-5.5 drafts, an independent second model reviews, a third adjudicates disagreements — then a human lawyer signs off. Environment-level gates run before any score is believed: **null agent ≤ 0.05, cheater < honest, grep-bot as a published upper bound on keyword-detectability**.
 
 These gates have already earned their keep. In week one they caught: a scorer paying a do-nothing agent 0.55 composite via vacuous defaults (precision=1.0 when nothing is claimed); the honeypot label "Canary:" leaking into agent-visible rule text; and a baseline with an answer-key string hardcoded in. All fixed, all documented. This follows from prior work on agent-eval measurement validity (the "harness floor" paper — scores that come from scaffold, not skill).
 

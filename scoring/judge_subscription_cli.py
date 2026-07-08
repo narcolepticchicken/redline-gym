@@ -13,7 +13,7 @@ ENABLE_ENV = "REDLINE_JUDGE_ENABLED"
 JUDGE_MODEL = os.getenv("REDLINE_JUDGE_MODEL", "sonnet")
 
 
-class ClaudeSubscriptionJudge(ModelCheck):
+class SubscriptionCLIJudge(ModelCheck):
     def __init__(self, *, dry_run: bool = False) -> None:
         super().__init__()
         self.dry_run = dry_run
@@ -40,9 +40,9 @@ class ClaudeSubscriptionJudge(ModelCheck):
             print(prompt)
             return prompt
         if os.getenv(ENABLE_ENV) != "1":
-            raise RuntimeError(f"{ENABLE_ENV}=1 is required before executing claude -p")
+            raise RuntimeError(f"{ENABLE_ENV}=1 is required before executing the subscription CLI")
         completed = subprocess.run(
-            ["claude", "-p", "--model", JUDGE_MODEL, prompt],
+            [os.getenv("SUBSCRIPTION_JUDGE_CLI", "claude"), "-p", "--model", JUDGE_MODEL, prompt],
             check=True,
             text=True,
             capture_output=True,
@@ -71,7 +71,7 @@ def validator_prompt(check_name: str, task_text: str, playbook_text: str) -> str
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Claude subscription judge adapter for Redline Gym.")
+    parser = argparse.ArgumentParser(description="Subscription CLI judge adapter for Redline Gym.")
     parser.add_argument(
         "check",
         choices=["fallback", "v3-clean-base", "v4-round-trip", "v7-semantic", "v11-realism"],

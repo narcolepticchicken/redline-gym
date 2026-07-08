@@ -84,10 +84,10 @@ rate, multi-model rankings. Stated as known limits, not hidden.
    quotes. An LLM judge appears only as a tiebreak on fallback-edit correctness,
    never as the primary reward source.
 5. **Harness isolation.** Agent rollouts run through the lab's own serving/eval
-   scripts only — never through Claude Code's or Codex's harness. Judge
+   scripts only — never through interactive coding-assistant harnesses. Judge
    tiebreaks are post-hoc scoring of static transcripts (DeepSeek v4 Pro via
-   scoring/judge_deepseek.py; switched from sonnet-on-subscription 2026-07-06
-   when the Claude monthly cap hit — sonnet adapter retained) — never inside
+   scoring/judge_deepseek.py; switched from the subscription CLI judge
+   2026-07-06 on a provider cap — that adapter retained) — never inside
    a live episode. Codex builds code; it does not execute experiments.
 6. **Observability from hour one.** Every episode logs full transcript +
    per-channel reward breakdown. No composite score without its decomposition.
@@ -256,7 +256,7 @@ diagnostic, and it never escalates).
 
 ## 8. Environment-level legitimacy gates (run before any use)
 
-Baselines (all via lab serving scripts, never Claude Code/Codex harness):
+Baselines (all via lab serving scripts, never coding-assistant harnesses):
 - **null** — finalizes immediately. Gate: composite ≤ 0.05. If higher, the env
   is paying out for scaffold, not agent (harness-floor test).
 - **random-flagger** — flags random clauses. Gate: ≈ precision noise floor.
@@ -318,7 +318,7 @@ wrapper deferred to Phase 4.
    another machine. Building fresh to this spec; if the code surfaces, diff it
    against generator/ before Phase 3.
 2. Playbook QA pipeline: draft (GPT-5.5 via codex) → independent review by a
-   Claude-family subagent (different family than the drafter) → disagreements
+   second-model reviewer (different family than the drafter) → disagreements
    tie-broken by a third family (GLM/DeepSeek token-plan lane) → Aaron red-pens
    (final human gate, ~30 min/area).
 3. Base docs: open-source forms approved (oneNDA / Bonterms / Common Paper),
@@ -328,7 +328,7 @@ wrapper deferred to Phase 4.
    before scaling.
 5. Judge tiebreaks (channel 4, V11): DeepSeek v4 Pro (DEEPSEEK_API_KEY from
    Keychain at launch), post-hoc on static transcripts — switched from
-   sonnet-on-subscription 2026-07-06 (Claude monthly cap hit; Aaron's call).
-   No Anthropic API keys anywhere. Never inside a live episode (invariant 5).
+   the subscription CLI judge 2026-07-06 (provider cap; Aaron's call).
+   No first-party judge API keys anywhere. Never inside a live episode (invariant 5).
 6. Aaron signs verification reports (~15 min/task).
 7. Repo home: labs1/redline-gym (git-inited; commits only on Aaron's say-so).

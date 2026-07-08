@@ -10,7 +10,7 @@ from baselines.random_flagger import main as random_flagger_main
 from env import Episode
 from report.renderer import render_path
 from scoring.core import score_episode
-from scoring.judge_claude_sub import ClaudeSubscriptionJudge
+from scoring.judge_subscription_cli import SubscriptionCLIJudge
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -185,8 +185,8 @@ def test_signed_verification_report_survives_validator_regeneration(tmp_path: Pa
     assert after_signoff == before_signoff
 
 
-def test_claude_judge_dry_run_prints_prompt(capsys) -> None:
-    judge = ClaudeSubscriptionJudge(dry_run=True)
+def test_subscription_judge_dry_run_prints_prompt(capsys) -> None:
+    judge = SubscriptionCLIJudge(dry_run=True)
     judge.fallback_tiebreak_judge("proposed text", "expected text")
     output = capsys.readouterr().out
     assert "Redline Gym channel-4 fallback tiebreak" in output

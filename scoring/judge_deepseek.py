@@ -8,10 +8,10 @@ from typing import Any
 
 from validators.model_checks import ModelCheck
 
-from .judge_claude_sub import fallback_tiebreak_prompt, validator_prompt
+from .judge_subscription_cli import fallback_tiebreak_prompt, validator_prompt
 
-# Judge lane switched from sonnet-on-subscription to DeepSeek v4 Pro
-# (Aaron, 2026-07-06 — Claude subscription monthly cap hit). Post-hoc only;
+# Judge lane switched to DeepSeek v4 Pro (Aaron, 2026-07-06 — the prior
+# subscription judge lane hit its monthly cap). Post-hoc only;
 # never called inside a live episode (SPEC invariant 5 unchanged).
 BASE_URL = "https://api.deepseek.com"
 MODEL = os.getenv("REDLINE_JUDGE_MODEL", "deepseek-v4-pro")
