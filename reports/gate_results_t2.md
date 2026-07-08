@@ -71,3 +71,20 @@ engaged frontier-lane model than the band assumed; the environment's
 discriminative claims (reading beats null/grep/gaming) hold; its difficulty
 calibration for strong models does not. v0.2 work: harder tier calibration
 (T3 multi-document), band re-derivation, quit-mode study.
+
+---
+
+# Correction (2026-07-08, scorer-v2 finding) — the "empty-confirm quit mode" was misdiagnosed
+
+v0.1 scoring credited only findings raised via interactive flag_issue actions.
+Rescoring the same transcripts under v0.2 union semantics (action flags ∪
+final-card issues; scripts/rescore_v2.py) shows every honest-arm 0.0 in the
+tables above carried a populated findings card (4–6 matched findings each;
+e.g. DPA-302 seed0: v1 0.0 → v2 0.55). The correct characterization is
+WRONG-CHANNEL FILING, not quitting; v1-scored honest means understate the
+models. The published v0.1 tables stand as measured under v1 semantics with
+this correction attached; v0.2 will publish union-scored tables and a
+recalibrated difficulty band (which this correction pushes further above the
+v0.1 honest band). The confirmation-bounce message ("card is empty") was also
+miscalibrated to v1 semantics — models with populated cards reasonably
+confirmed it.
