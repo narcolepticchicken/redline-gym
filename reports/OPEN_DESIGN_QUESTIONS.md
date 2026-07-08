@@ -8,8 +8,12 @@
 - **Q2 entailed by A: fix at source** — confirmed answer-key omissions and
   below-floor base text are repaired in bases/templates; keys stay exhaustive.
   (Confirm at the review sitting.)
-- **Q3 still open** (V4 detectability threshold; current reported gates
-  T1=100%, T2≥60%).
+- **Q3 RULED 2026-07-07 (Aaron): KEEP the 60% bar.** T2 detectability stands
+  at ≥60% of planted deviations findable by the no-answer-key reader.
+  Consequence: T2-MSA-001 (4/7 = 57%) ships carrying an honest V4 FAIL note —
+  "subtlest traps evade a single-pass machine reader; human review found them;
+  kept as a hard instance." The bar was not lowered to pass the instance that
+  raised the question.
 
 These define ground truth. Not decided autonomously on principle: the system
 exists to be lawyer-verifiable, so a lawyer sets the bar.
