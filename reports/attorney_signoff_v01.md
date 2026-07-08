@@ -34,3 +34,11 @@ Attorney judgment where within practice expertise; for out-of-domain areas,
 attorney review plus unanimous three-model endorsement with stated reasons;
 machine QA (tri-model draft/review/tiebreak + adjudicated audits) underneath
 everything. This record states coverage exactly as it occurred.
+
+## Consensus dissent disposition (clean rerun, 119 rules: 115 endorsed, 4 dissents)
+
+- PB-NDA-001 R-013, R-014 (GLM-solo dissents): superseded by the attorney's
+  direct 18/18 signature on T1-NDA-001, which reviewed both items explicitly.
+- PB-EMP-001 R-007, PB-MA-001 R-004 (GLM-solo dissents): DEFERRED to attorney
+  adjudication in v0.1.1; dissenting reasons preserved in
+  reports/rule_consensus.md. Affected instances ship with this disclosure.
