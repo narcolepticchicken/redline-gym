@@ -56,8 +56,56 @@ Any side-letter MFN right applies only to the economic fee terms and information
 
 ## 14. Governing Law and Dispute Resolution
 
-This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules. Any dispute arising under this Agreement will be resolved by confidential arbitration before JAMS, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.
+This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules. Any dispute arising under this Agreement will be resolved by confidential arbitration before JAMS, except that any party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.
 
 ## 15. Termination of Rights
 
 Investor rights under this Agreement terminate upon the earliest of a qualified IPO with gross proceeds of at least $50,000,000, a sale of the Company, or the time the holder no longer holds the minimum share ownership required for the applicable right.
+
+## 16. Signature Pages and Stockholder Schedule
+
+This Agreement is executed by the Company and by each Founder Holder and holder of Series A Preferred Stock listed on the attached schedule.
+
+### Schedule A - Stockholders
+
+Founder Holders:
+
+- Maya Chen
+- Julian Ortega
+
+Series A Preferred Stock Holders:
+
+- Northline Ventures I, L.P.
+- Alder Crest Opportunity Fund, L.P.
+
+### Execution
+
+IN WITNESS WHEREOF, the parties have executed this Agreement as of the date first written above.
+
+ATLAS HARBOR AI, INC.
+
+By: ______________________________
+Name: ____________________________
+Title: _____________________________
+
+FOUNDER HOLDER: MAYA CHEN
+
+Signature: _________________________
+Name: Maya Chen
+
+FOUNDER HOLDER: JULIAN ORTEGA
+
+Signature: _________________________
+Name: Julian Ortega
+
+NORTHLINE VENTURES I, L.P.
+
+By: ______________________________
+Name: ____________________________
+Title: _____________________________
+
+ALDER CREST OPPORTUNITY FUND, L.P.
+
+By: ______________________________
+Name: ____________________________
+Title: _____________________________

@@ -39,11 +39,11 @@
     }
   ],
   "generation_log": [
-    "seed=9001",
-    "attempt_seed=9001",
+    "seed=9051",
+    "attempt_seed=9051",
     "playbook=PB-MA-001",
     "tier=T1",
-    "task_id=T1-MA-9001",
+    "task_id=T1-MA-9051",
     "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes",
     "distractor_check PASS registered=3 dropped_absent=none"
   ]

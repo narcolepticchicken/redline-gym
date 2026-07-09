@@ -89,7 +89,7 @@
       "id": "9",
       "heading": "Survival and Indemnification",
       "paragraphs": [
-        "General representations and warranties survive for {survival_months} months after closing, and fundamental representations survive for {fundamental_years} years or the longest period permitted by law. Seller will indemnify Buyer for breaches, Excluded Liabilities, and fraud. Seller's indemnification cap is {cap_percent} of the purchase price, subject to a true deductible basket of {basket_amount} that applies only to losses above the deductible amount and does not recover from the first dollar."
+        "General representations and warranties survive for {survival_months} months after closing, and fundamental representations survive for {fundamental_years} years or the longest period permitted by law. Seller will indemnify Buyer for breaches, Excluded Liabilities, and fraud. Seller's indemnification cap is {cap_percent} of the purchase price, subject to a true deductible basket of {basket_amount} that applies only to losses above the deductible amount and does not recover from the first dollar. Notwithstanding anything to the contrary, the indemnification cap and basket do not apply to claims based on Fraud, intentional misrepresentation, or willful misconduct."
       ]
     },
     {

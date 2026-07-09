@@ -45,7 +45,7 @@ Executive will protect Company's non-public business, technical, financial, prod
 
 ## 11. Inventions and Company Property
 
-Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement. Upon request or separation, Executive will return Company property and records.
+Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive represents that Executive has no prior inventions excluded from this assignment. Upon request or separation, Executive will return Company property and records.
 
 ## 12. Restrictive Covenants
 

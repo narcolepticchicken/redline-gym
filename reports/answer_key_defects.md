@@ -83,3 +83,15 @@
 
 - V3_clean_base R-009 section 12: The section excludes securities issued 'with debt financing' broadly, whereas the fallback limits the exclusion to 'debt with equity features'. This broader exclusion is less protective of preemptive rights, constituting a genuine violation.
   Quote: excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, with debt financing, or in a public offering.
+
+## 2026-07-09 — arguable unplanted span in MA instances (model-review finding)
+
+The MA base template's section-9 indemnification cap lacked a fraud qualifier,
+arguably conflicting with rule R-006's position (fraud claims must not be
+limited) even though R-006's planted mutation targets section 10. Impact: on
+seeded MA instances generated from the pre-fix base, an agent flagging the
+unqualified cap under R-006 takes a precision penalty on an arguable span.
+Found during clean-instance review (gpt-5.6-sol pass); base fixed 2026-07-09
+by pure append (fraud carve-out sentence) in generator/bases/PB-MA-001.json.
+Existing generated/held-out MA instances are frozen and retain the old text —
+disposition (regenerate vs. accept as documented ambiguity) is a v0.2 call.
