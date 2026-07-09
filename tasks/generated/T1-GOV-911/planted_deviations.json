@@ -12,7 +12,12 @@
       "mutated_text": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Each Major Investor may receive quarterly unaudited financial statements within 45 days after quarter-end and annual audited financial statements within 120 days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits.",
+      "expected_redline_key_slots": [
+        "45",
+        "120"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +31,11 @@
       "mutated_text": "If a Major Investor proposes to transfer more than 10% of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms, but transfers by Founder Holders are excluded from tag-along rights.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "If a Founder Holder or Major Investor proposes to transfer more than 10% of the shares held by that holder to a third party other than a Permitted Transferee, the other eligible holders may participate pro rata in the proposed transfer on the same price and terms.",
+      "expected_redline_key_slots": [
+        "10%"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +49,9 @@
       "mutated_text": "Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "No stockholder will be required to provide uncapped indemnity, non-pro rata liability, or a non-compete covenant as a condition to the drag-along.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +65,11 @@
       "mutated_text": "The Board will consist of five directors: two Founder Designees selected by the Founder Holders, two Series A Designees selected by the Requisite Holders, and one independent director selected solely by the Series A Designees.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "The Board will consist of five directors: three Founder Designees selected by the Founder Holders, one Series A Designee selected by the Requisite Holders, and one independent director approved by the Founder Designees and the Requisite Holders.",
+      "expected_redline_key_slots": [
+        "Founder Holders"
+      ]
     }
   ],
   "distractors": [

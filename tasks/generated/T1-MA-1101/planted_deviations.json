@@ -12,7 +12,12 @@
       "mutated_text": "General representations and warranties survive for 12 months after closing, and fundamental representations expire at the same time.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "General representations and warranties survive for 18 months after closing, and fundamental representations survive for six years or the longest period permitted by law.",
+      "expected_redline_key_slots": [
+        "18",
+        "six"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +31,11 @@
       "mutated_text": "Buyer's closing statement will be final and binding when delivered, with no separate objection, negotiation, or accountant review process.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Seller has 35 days to review the statement, deliver a written objection notice, and meet with Buyer in good faith. Unresolved disputed items will be submitted to an independent accountant for final resolution.",
+      "expected_redline_key_slots": [
+        "35"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +49,9 @@
       "mutated_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +65,9 @@
       "mutated_text": "Seller will use commercially reasonable efforts after closing to request counterparty consents for Material Contracts, but receipt of those consents is not a condition to Buyer's obligation to close.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Receipt of all required counterparty consents to assign the Material Contracts is a condition to Buyer's obligation to close, except for specific consents Buyer waives in writing.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [
@@ -105,6 +118,7 @@
     "D-002 MA-R010-DIRECT-ADJUSTMENT-NO-OBJECTION direct_term_swap applied to R-010",
     "D-003 MA-R011-DIRECT-NO-MAE-CONDITION-DROPPED direct_term_swap applied to R-011",
     "D-004 MA-R007-DIRECT-MATERIAL-CONTRACT-CONSENTS-NOT-CONDITION direct_term_swap applied to R-007",
-    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

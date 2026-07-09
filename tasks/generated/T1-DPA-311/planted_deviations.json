@@ -12,7 +12,13 @@
       "mutated_text": "After the relationship ends, Vendor will remove hosted account content within 90 days and will not be required to provide written completion evidence.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Upon termination or expiration of the services, or earlier upon Customer's written request, Vendor will return or delete Personal Data at Customer's direction within 30 days and certify completion in writing.",
+      "expected_redline_key_slots": [
+        "Customer",
+        "Vendor",
+        "30"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +32,11 @@
       "mutated_text": "Vendor may move hosted records among facilities and affiliates in the United States, Canada, Ireland, India, and Singapore without standard contractual clauses or transfer impact documentation.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will not transfer Personal Data to another country unless a lawful transfer mechanism is in place, including standard contractual clauses or another legally recognized safeguard where required.",
+      "expected_redline_key_slots": [
+        "Vendor"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +50,11 @@
       "mutated_text": "For matters arising under this addendum, total recovery against Vendor will not exceed fees paid for the affected service during the three months before the event, and consequential loss is unavailable.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Claims arising from Vendor's breach of this DPA are subject to the liability cap and exclusions stated in the master services agreement and are not subject to any lower cap, special exclusion, or separate damages waiver for data protection obligations.",
+      "expected_redline_key_slots": [
+        "Vendor"
+      ]
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +68,11 @@
       "mutated_text": "Vendor will maintain TLS in transit and an annual access review, and may replace other controls on 30 days' notice if monthly production uptime remains at 99.5%.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will maintain administrative, technical, and physical safeguards for hosted Personal Data, including encryption at rest and in transit, role-based access controls, multi-factor authentication for administrative access, security logging, vulnerability management, backup controls, and incident response procedures.",
+      "expected_redline_key_slots": [
+        "Vendor"
+      ]
     }
   ],
   "distractors": [
@@ -107,6 +125,7 @@
     "D-002 DPA-R009-DIRECT-TRANSFERS direct_term_swap applied to R-009",
     "D-003 DPA-R012-DIRECT-LIABILITY direct_term_swap applied to R-012",
     "D-004 DPA-R004-DIRECT-SECURITY direct_term_swap applied to R-004",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

@@ -1,0 +1,52 @@
+{
+  "deviations": [],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Any dispute arising under this Agreement will be resolved by confidential arbitration before JAMS, except that either party may seek temporary or preliminary injunctive relief in a court of competent jurisdiction.",
+      "why_benign": "The dispute-resolution canary says confidential arbitration is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "The Company has issued Common Stock and Series A Preferred Stock, and each holder agrees to exercise rights under this Agreement in good faith.",
+      "why_benign": "Describing the capital structure and good-faith exercise of rights does not conflict with the company-side playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Investor overlap disclosure for a potential strategic partner",
+      "context_anchor": "Company is also considering a strategic partner and needs investor overlap disclosure reviewed.",
+      "match_keywords": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "absent_terms": [
+        "strategic partner",
+        "overlap disclosure",
+        "competitive overlap",
+        "platform partner"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=9001",
+    "attempt_seed=9001",
+    "playbook=PB-GOV-001",
+    "tier=T1",
+    "task_id=T1-GOV-9001",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
+  ]
+}

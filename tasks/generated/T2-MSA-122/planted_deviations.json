@@ -12,7 +12,12 @@
       "mutated_text": "Vendor will provide its then-current standard security summary upon written request no more than once per year.",
       "mechanism": "omission",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause.",
+      "expected_redline_key_slots": [
+        "Customer",
+        "Vendor"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +31,9 @@
       "mutated_text": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement.",
       "mechanism": "defined_term_shift",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, including project-specific tools, frameworks, and know-how developed in the course of performance.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +47,9 @@
       "mutated_text": "\"Security Incident\" means confirmed outbound extraction of Customer Data that is evidenced by a completed written forensic report approved by Vendor's incident response lead.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Security Incident\" means any suspected or actual unauthorized access to, acquisition of, use of, loss of, or disclosure of Customer Data.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +63,11 @@
       "mutated_text": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 60 days before the current period ends.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Each Order Form will have an initial term of no more than one year and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less.",
+      "expected_redline_key_slots": [
+        "Customer"
+      ]
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +81,11 @@
       "mutated_text": "This disclaimer applies despite any express warranty, service commitment, indemnity, confidentiality obligation, data handling obligation, or remedy stated elsewhere in this Agreement.",
       "mechanism": "cross_ref_override",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "This disclaimer does not limit Vendor's confidentiality duties, data handling duties, indemnities, service-level commitments, or remedies expressly stated in this Agreement.",
+      "expected_redline_key_slots": [
+        "Vendor"
+      ]
     }
   ],
   "distractors": [
@@ -139,6 +156,7 @@
     "D-003 MSA-R004-DEFINED-INCIDENT defined_term_shift applied to R-004",
     "D-004 MSA-R007-DIRECT-RENEWAL direct_term_swap applied to R-007",
     "D-005 MSA-R008-CROSS-DISCLAIMER cross_ref_override applied to R-008",
-    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

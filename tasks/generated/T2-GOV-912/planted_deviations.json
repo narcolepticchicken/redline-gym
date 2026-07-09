@@ -12,7 +12,9 @@
       "mutated_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration. Notwithstanding Section 4, the Company will obtain Requisite Holder approval for any other matter that an investor reasonably identifies as material to its investment.",
       "mechanism": "off_playbook_addition",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,9 @@
       "mutated_text": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +44,9 @@
       "mutated_text": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "No investor approval is required for matters not listed in this Section 4.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +60,9 @@
       "mutated_text": "Each holder receiving Company information may disclose that information to prospective co-investors, financing sources, portfolio companies, and advisers without additional confidentiality obligations.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Each holder receiving Company information will keep that information confidential, use it only to monitor its investment, and disclose it only to representatives bound by comparable confidentiality obligations.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +76,12 @@
       "mutated_text": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Major Investor\" means a holder of at least 1,000,000 shares of Series A Preferred Stock. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class.",
+      "expected_redline_key_slots": [
+        "1,000,000",
+        "Series A Preferred Stock"
+      ]
     }
   ],
   "distractors": [

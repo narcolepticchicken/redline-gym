@@ -1,0 +1,50 @@
+{
+  "deviations": [],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of New York, without regard to conflict-of-laws rules.",
+      "why_benign": "The governing-law canary says New York law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "Custodian will provide an annual SOC 2 Type II report or equivalent controls report covering custody operations, key management, logical access, change management, incident response, and vendor oversight.",
+      "why_benign": "The assurance canary says annual SOC 2 Type II reporting may satisfy routine assurance when follow-up rights remain available."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Customer will provide reasonable AML, sanctions, tax, and KYC cooperation requested for the custody services.",
+      "why_benign": "Reasonable customer cooperation for AML, sanctions, tax, and KYC support is commercially expected and does not expand Custodian's freeze rights."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Customer wallet-whitelisting approval policy",
+      "context_anchor": "Customer also needs an internal policy describing wallet whitelisting approval before funds move.",
+      "match_keywords": [
+        "wallet whitelisting",
+        "whitelist approval",
+        "approved destination list"
+      ],
+      "absent_terms": [
+        "wallet whitelisting",
+        "whitelist approval",
+        "approved destination list"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=9001",
+    "attempt_seed=9001",
+    "playbook=PB-CRYPTO-001",
+    "tier=T1",
+    "task_id=T1-CRYPTO-9001",
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
+  ]
+}

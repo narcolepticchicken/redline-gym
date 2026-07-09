@@ -12,7 +12,12 @@
       "mutated_text": "Vendor may appoint outside hosting, support, and operations providers after giving Customer a courtesy update. Vendor remains responsible for service availability.",
       "mechanism": "omission",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor may use subprocessors only with Customer's prior written approval or through an agreed notice-and-objection process. Vendor will bind each subprocessor to written obligations at least as protective as this DPA for Personal Data and remains responsible for each subprocessor's acts and omissions.",
+      "expected_redline_key_slots": [
+        "Vendor",
+        "Customer"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +31,13 @@
       "mutated_text": "Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach.",
+      "expected_redline_key_slots": [
+        "Vendor",
+        "Customer",
+        "48"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +51,9 @@
       "mutated_text": "\"Processing\" means live hosting of raw individual records in the production database and does not include diagnostic review, metric creation, cache retention, format conversion, or support troubleshooting.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Processing\" means any operation performed on Personal Data, including collection, access, storage, hosting, organization, retrieval, transmission, analysis, deletion, and return.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +67,12 @@
       "mutated_text": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion. Operational copies retained for continuity, diagnostics, or legal administration may be kept for 365 days under internal retention standards.",
       "mechanism": "cross_ref_override",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.",
+      "expected_redline_key_slots": [
+        "30",
+        "Vendor"
+      ]
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +86,12 @@
       "mutated_text": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer.",
+      "expected_redline_key_slots": [
+        "Vendor",
+        "Customer"
+      ]
     }
   ],
   "distractors": [

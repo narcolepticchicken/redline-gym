@@ -12,7 +12,11 @@
       "mutated_text": "Recipient will protect Confidential Information using the same degree of care that it uses for its own information and will not be responsible for inadvertent disclosures absent gross negligence.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Recipient will protect Confidential Information using at least reasonable care, and in no event less than the degree of care that it uses to protect its own confidential information of similar importance.",
+      "expected_redline_key_slots": [
+        "Recipient"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -40,7 +44,11 @@
       "mutated_text": "Confidential Information does not include information that Recipient reasonably understands was already known, becomes available from any source, or can be used in Recipient's ordinary business without reference to the disclosed materials.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Confidential Information does not include information that Recipient can document was lawfully known without restriction, publicly available through no breach, independently developed without use of Confidential Information, or received from a third party without breach of duty.",
+      "expected_redline_key_slots": [
+        "Recipient"
+      ]
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +62,11 @@
       "mutated_text": "Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Recipient may use Confidential Information solely for the Purpose.",
+      "expected_redline_key_slots": [
+        "Recipient"
+      ]
     }
   ],
   "distractors": [

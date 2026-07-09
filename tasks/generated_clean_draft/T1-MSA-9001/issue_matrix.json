@@ -1,0 +1,60 @@
+{
+  "issues": [],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Processing geography and cross-border transfer basis",
+      "context_anchor": "The production service will process customer personal data across hosted systems.",
+      "match_keywords": [
+        "hosting region",
+        "data residency",
+        "cross-border",
+        "international transfer",
+        "processing geography"
+      ],
+      "absent_terms": [
+        "hosting region",
+        "data residency",
+        "transfer impact assessment"
+      ],
+      "expected_action": "escalate"
+    },
+    {
+      "missing_info_id": "M-002",
+      "topic": "Certified deletion evidence at exit",
+      "context_anchor": "Procurement requires certified deletion evidence when customer data exits the service.",
+      "match_keywords": [
+        "deletion certificate",
+        "certificate of deletion",
+        "certified deletion",
+        "destruction certificate"
+      ],
+      "absent_terms": [
+        "deletion certificate",
+        "certificate of deletion",
+        "destruction certificate"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice.",
+      "why_benign": "The payment canary says net-45 terms after receipt of an undisputed invoice are acceptable."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Vendor may charge interest on undisputed overdue amounts at one percent per month or the highest rate allowed by law, whichever is lower.",
+      "why_benign": "A capped late-payment charge on undisputed overdue amounts is outside this playbook."
+    }
+  ]
+}

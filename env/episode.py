@@ -48,6 +48,8 @@ class Episode:
         self.flags: list[dict[str, Any]] = []
         self.escalations: list[dict[str, Any]] = []
         self.card: dict[str, Any] | None = None
+        self.read_ranges: dict[str, list[tuple[int, int]]] = {}
+        self.search_count = 0
         self.num_turns = 0
         self.done = False
         self.ended_by: str | None = None
@@ -58,6 +60,8 @@ class Episode:
         self.flags = []
         self.escalations = []
         self.card = None
+        self.read_ranges = {}
+        self.search_count = 0
         self.num_turns = 0
         self.done = False
         self.ended_by = None
@@ -204,6 +208,7 @@ class Episode:
         start = max(1, int(action.get("start", 1)))
         end = int(action.get("end", start + 24))
         end = min(len(doc.lines), max(start, end))
+        self.read_ranges.setdefault(doc.doc_id, []).append((start, end))
         observation = self._base_observation(event="read_doc")
         observation["doc"] = {
             "doc_id": doc.doc_id,
@@ -218,6 +223,7 @@ class Episode:
         return observation
 
     def _search_action(self, action: dict[str, Any]) -> dict[str, Any]:
+        self.search_count += 1
         query = str(action.get("query", "")).strip()
         terms = [term for term in re.split(r"\W+", query.lower()) if term]
         hits: list[dict[str, Any]] = []
@@ -295,7 +301,14 @@ class Episode:
             fh.write(json.dumps(record, sort_keys=True) + "\n")
 
     def _write_score(self) -> dict[str, Any]:
-        score = score_episode(self.task_dir, self.flags, self.escalations, self.card)
+        score = score_episode(
+            self.task_dir,
+            self.flags,
+            self.escalations,
+            self.card,
+            read_ranges=self.read_ranges,
+            search_count=self.search_count,
+        )
         score.update(
             {
                 "run_id": self.run_id,

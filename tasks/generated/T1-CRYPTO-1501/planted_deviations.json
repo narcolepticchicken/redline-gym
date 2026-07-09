@@ -12,7 +12,9 @@
       "mutated_text": "All claims against Custodian, including losses from compromise, internal misconduct, operational error, transfer failures, or missing balances, are limited to fees paid during the three months before the event.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "The cap does not limit Custodian's responsibility up to the value of affected Customer Assets for theft, fraud, willful misconduct, gross negligence, security breach, or unauthorized transfer caused by Custodian, its personnel, or its subcustodians.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,11 @@
       "mutated_text": "Custodian will maintain commercially reasonable crime and technology coverage, with policy amounts, deductibles, exclusions, and covered causes determined by Custodian from time to time.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Custodian will maintain insurance covering theft, cyber compromise, insider misconduct, and key-loss events affecting Customer Assets with limits of at least the greater of $75,000,000 or the value of Customer Assets under custody.",
+      "expected_redline_key_slots": [
+        "75,000,000"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +46,13 @@
       "mutated_text": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
+      "expected_redline_key_slots": [
+        "24",
+        "2",
+        "Customer"
+      ]
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +66,11 @@
       "mutated_text": "Custodian may route holdings through affiliates, liquidity venues, and third-party vault providers selected by Custodian, and those providers are responsible only under their own service terms.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Custodian may use subcustodians only with Customer's prior notice or approval. Custodian will bind each subcustodian to written obligations at least as protective as this Agreement for Customer Assets and remains responsible for each subcustodian's acts and omissions.",
+      "expected_redline_key_slots": [
+        "Customer"
+      ]
     }
   ],
   "distractors": [

@@ -45,6 +45,11 @@
           },
           "original_text": {"type": "string", "minLength": 1},
           "mutated_text": {"type": "string", "minLength": 1},
+          "expected_redline_text": {"type": "string", "minLength": 1},
+          "expected_redline_key_slots": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
           "mechanism": {
             "type": "string",
             "enum": [

@@ -12,7 +12,11 @@
       "mutated_text": "Vendor may provide as little as 5 days' notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Vendor may make urgent or operational model changes without prior notice whenever it determines notice is impractical.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, replacement, or hosted-model swap that could materially affect behavior, safety, latency, or output quality. Emergency changes needed to address an active security vulnerability may be made sooner if Vendor gives prompt written notice and describes the expected customer impact.",
+      "expected_redline_key_slots": [
+        "60"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +30,9 @@
       "mutated_text": "Vendor has no obligation to assist with Customer's regulatory-change requests, transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, or other documentation for Customer's AI compliance obligations unless the parties sign a separate paid statement of work.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will reasonably cooperate with Customer's regulatory-change requests related to AI services. Upon request, Vendor will provide available transparency artifacts, model documentation, risk summaries, technical information, conformity-support materials, and other documentation reasonably needed for Customer's AI compliance obligations.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +46,12 @@
       "mutated_text": "Vendor will use commercially reasonable efforts to make the production API available and responsive. Uptime, latency, support targets, service credits, escalation rights, and remediation plans are aspirational and do not create any remedy for Customer.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will provide 99.9% monthly uptime for the production API and will use commercially reasonable efforts to maintain median API latency below 900 milliseconds for ordinary text requests. If monthly uptime falls below 99.9%, Customer will receive a service credit equal to 10% of the affected monthly fees. Repeated service-level failures trigger executive escalation and a remediation plan.",
+      "expected_redline_key_slots": [
+        "900",
+        "10"
+      ]
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +65,9 @@
       "mutated_text": "Each party's aggregate liability is capped at fees paid or payable in the twelve months before the event giving rise to liability. The cap applies to all claims and obligations, including data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, and IP indemnity claims.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Except for the carve-outs in this Section 14, each party's aggregate liability is capped at fees paid or payable in the twelve months before the event giving rise to liability. The cap does not limit Vendor's obligations for data breaches, confidentiality breaches, security violations, payment obligations, willful misconduct, or IP indemnity claims.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [

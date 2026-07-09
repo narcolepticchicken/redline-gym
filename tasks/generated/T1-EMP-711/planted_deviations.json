@@ -12,7 +12,11 @@
       "mutated_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 18 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to six months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
+      "expected_redline_key_slots": [
+        "six"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +30,11 @@
       "mutated_text": "During employment and for 24 months after separation, Executive will not provide services to any business that competes with Company anywhere in North America.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "During employment and for six months after separation, Executive will not provide substantially similar executive services to a business unit that directly competes with a Company product or service for which Executive had material responsibility, but only to the extent enforceable under applicable law.",
+      "expected_redline_key_slots": [
+        "six"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +48,9 @@
       "mutated_text": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +64,9 @@
       "mutated_text": "Company will personally reimburse Executive for all employment-related claims, costs, judgments, settlements, and taxes without regard to Company governing documents, insurance terms, or applicable law.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Company will provide indemnification and D&O insurance coverage to Executive on the same basis as similarly situated officers, subject to Company's governing documents, policy terms, and applicable law.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [

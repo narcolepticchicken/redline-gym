@@ -88,3 +88,34 @@ recalibrated difficulty band (which this correction pushes further above the
 v0.1 honest band). The confirmation-bounce message ("card is empty") was also
 miscalibrated to v1 semantics — models with populated cards reasonably
 confirmed it.
+
+---
+
+# Post-M2 mechanical re-derivation (2026-07-09 — tiered fallback scoring)
+
+Dev instances regenerated with `expected_redline_text` (documents byte-identical;
+`tasks/contracts/T2-MSA-001` hand-built, not regenerated, scores v1). Mechanical
+baselines re-run deterministically, seed 0. Honest arms NOT re-run (spend-gated;
+v0.2 tables will publish them under tiered semantics).
+
+| Task | Baseline | Old | New | Δ |
+|---|---|---:|---:|---|
+| T2-MSA-001 (v1 path) | blanket | 0.409 | 0.4086 | ~0 (rounding) |
+| T2-DPA-302 (tiered_v2) | blanket | 0.469 | 0.4088 | **−0.060** |
+| T2-EMP-702 (tiered_v2) | blanket | 0.578 | 0.5256 | **−0.052** |
+| T2-EMP-702 (tiered_v2) | grep-bot | 0.365 | 0.3575 | −0.008 |
+
+All other mechanical baselines (null, cheater_empty, canary_citer, fabricator,
+playbook_parrot) bit-identical to the prior table; canary_citer and
+playbook_parrot still GAMED. Mechanism: blanket's verbatim-playbook-fallback
+proposals are now graded against the drafted expected redline text and mostly
+miss the exact/span/containment tiers, so its fallback contribution collapses —
+the gaming ceilings move DOWN, widening every gate margin. Grep-bot loses a
+small measured amount on EMP-702 for the same reason.
+
+Clean-instance row (draft T1-MSA-9001, task_type=clean): all 7 mechanical
+baselines score exactly 0.000000 — none performs read_doc/search, so the
+engagement gate zeroes every channel. The do-nothing strategy on clean tasks
+is measured at 0.0, not assumed. Note: cheater_empty is presently
+code-identical to null_agent (both finalize empty and confirm); it exists as a
+named battery entry for the clean-task gate.

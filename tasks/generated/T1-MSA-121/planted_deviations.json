@@ -12,7 +12,12 @@
       "mutated_text": "Vendor may process Customer Data to provide and improve the services, develop analytics, and perform other business purposes reasonably related to the service relationship.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will process Customer Data only under Customer's documented instructions.",
+      "expected_redline_key_slots": [
+        "Vendor",
+        "Customer"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +31,9 @@
       "mutated_text": "Vendor may assign this Agreement or delegate performance to any successor, affiliate, subcontractor, or financing source without Customer's consent.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Neither party may assign this Agreement without the other party's prior written consent, except to an affiliate or successor in connection with a merger, reorganization, or sale of substantially all assets if the assignee assumes the assigning party's obligations.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +47,11 @@
       "mutated_text": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $500,000 per occurrence if available on commercially reasonable terms.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Vendor will maintain commercially reasonable insurance at its own expense, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence.",
+      "expected_redline_key_slots": [
+        "Vendor"
+      ]
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +65,9 @@
       "mutated_text": "Vendor may modify service terms, acceptable use limits, and other online policies by posting an updated version to its website, effective upon posting.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [
@@ -124,6 +137,7 @@
     "D-002 MSA-R010-DIRECT-ASSIGNMENT direct_term_swap applied to R-010",
     "D-003 MSA-R011-DIRECT-INSURANCE direct_term_swap applied to R-011",
     "D-004 MSA-R009-DIRECT-AMENDMENT direct_term_swap applied to R-009",
-    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=18 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

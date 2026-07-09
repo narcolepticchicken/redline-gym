@@ -13,12 +13,16 @@ import tempfile
 from string import Formatter
 from typing import Any
 
+
+ROOT = Path(__file__).resolve().parents[1]
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(ROOT))
+
 from baselines import grep_bot
 from env import Episode
 from validators.checks import run_all, write_report
 
 
-ROOT = Path(__file__).resolve().parents[1]
 GENERATOR_DIR = Path(__file__).resolve().parent
 ALLOWED_MECHANISMS = {
     "T1": {"direct_term_swap"},
@@ -42,10 +46,11 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--tier", choices=["T1", "T2"], required=True)
     parser.add_argument("--seed", type=int, required=True)
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--clean", action="store_true")
     args = parser.parse_args(argv)
 
     try:
-        log = generate_instance(args.playbook, args.tier, args.seed, args.out)
+        log = generate_instance(args.playbook, args.tier, args.seed, args.out, clean=args.clean)
     except GenerationError as exc:
         print(f"REFUSED: {exc}", file=sys.stderr)
         return 1
@@ -54,7 +59,13 @@ def main(argv: list[str] | None = None) -> int:
     return 0
 
 
-def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) -> list[str]:
+def generate_instance(
+    playbook_path: Path,
+    tier: str,
+    seed: int,
+    out_dir: Path,
+    clean: bool = False,
+) -> list[str]:
     playbook_path = _repo_path(playbook_path)
     out_dir = _repo_path(out_dir)
     playbook = _load_json(playbook_path)
@@ -77,6 +88,7 @@ def generate_instance(playbook_path: Path, tier: str, seed: int, out_dir: Path) 
                 seed=seed,
                 attempt_seed=attempt_seed,
                 out_dir=out_dir,
+                clean=clean,
             )
         except GrepGateError as exc:
             grep_logs.append(
@@ -114,13 +126,14 @@ def _generate_candidate(
     seed: int,
     attempt_seed: int,
     out_dir: Path,
+    clean: bool = False,
 ) -> tuple[list[dict[str, Any]], dict[str, Any], str]:
     rng = random.Random(attempt_seed)
     playbook_id = playbook["playbook_id"]
     params = _surface_params(base, rng, seed)
     task_id = _task_id(playbook_id, tier, seed)
     doc_text, section_map = _render_base(base, params, rng)
-    selected = _select_recipes(recipe_entries, tier, rng)
+    selected = [] if clean else _select_recipes(recipe_entries, tier, rng)
 
     if out_dir.exists():
         shutil.rmtree(out_dir)
@@ -156,6 +169,9 @@ def _generate_candidate(
                 "severity": recipe["severity"],
                 "expected_action": recipe["expected_action"],
             }
+            if recipe["expected_action"] == "redline_with_fallback":
+                deviation["expected_redline_text"] = original
+                deviation["expected_redline_key_slots"] = rendered["expected_redline_key_slots"]
             deviations.append(deviation)
             generation_log.append(
                 f"{deviation['deviation_id']} {recipe['recipe_id']} {recipe['mechanism']} applied to {recipe['rule_id']}"
@@ -182,6 +198,11 @@ def _generate_candidate(
         _validate_missing_info_gap_integrity(missing_info, doc_text, playbook)
         client_context = _append_context_anchors(_render(base["client_context_template"], params), context_anchors)
         distractors, distractor_detail = _registered_distractors(base["distractors"], params, doc_text)
+        if clean and (deviations or len(distractors) < 3):
+            raise GenerationError(
+                f"clean instance requires zero deviations and at least 3 distractors; "
+                f"found deviations={len(deviations)} distractors={len(distractors)}"
+            )
         generation_log.append(f"distractor_check {distractor_detail}")
         planted = {
             "deviations": deviations,
@@ -199,6 +220,8 @@ def _generate_candidate(
             "difficulty_tier": tier,
             "playbook_ref": str(playbook_path.relative_to(ROOT)),
         }
+        if clean:
+            task["task_type"] = "clean"
         _dump_json(out_dir / "task.json", task)
         _dump_json(out_dir / "documents_manifest.json", manifest)
         _dump_json(out_dir / "planted_deviations.json", planted)
@@ -269,12 +292,19 @@ def _append_grep_report(
         f"- coherence check: {coherence_detail}",
         "",
     ]
+    gate_text = "\n".join(lines)
     marker = "Human sign-off:"
     index = text.find(marker)
-    if index == -1:
-        path.write_text(text.rstrip() + "\n\n" + "\n".join(lines))
+    gate_marker = "## Emit-Time Baseline Gate"
+    gate_index = text.find(gate_marker)
+    if gate_index != -1:
+        gate_end = index if index != -1 and index > gate_index else len(text)
+        path.write_text(text[:gate_index].rstrip() + "\n\n" + gate_text + text[gate_end:])
         return
-    path.write_text(text[:index] + "\n".join(lines) + text[index:])
+    if index == -1:
+        path.write_text(text.rstrip() + "\n\n" + gate_text)
+        return
+    path.write_text(text[:index] + gate_text + text[index:])
 
 
 def _repo_path(path: Path) -> Path:
@@ -341,7 +371,7 @@ def _render_recipe(
     params: dict[str, str],
     rng: random.Random,
     section_map: dict[str, str],
-) -> dict[str, str]:
+) -> dict[str, Any]:
     scoped = dict(params)
     for key, values in recipe.get("slots", {}).items():
         scoped[key] = str(rng.choice(values))
@@ -349,7 +379,21 @@ def _render_recipe(
     return {
         "original_text": _rewrite_section_refs(_render(templates["original_text"], scoped), section_map),
         "mutated_text": _rewrite_section_refs(_render(templates["mutated_text"], scoped), section_map),
+        "expected_redline_key_slots": _template_slot_values(templates["original_text"], scoped),
     }
+
+
+def _template_slot_values(template: str, params: dict[str, str]) -> list[str]:
+    values: list[str] = []
+    seen: set[str] = set()
+    for _, field_name, _, _ in Formatter().parse(template):
+        if not field_name:
+            continue
+        value = str(params[field_name])
+        if value not in seen:
+            seen.add(value)
+            values.append(value)
+    return values
 
 
 def _render_entries(entries: list[dict[str, Any]], params: dict[str, str]) -> list[dict[str, Any]]:
@@ -555,3 +599,7 @@ class GrepGateError(GenerationError):
         super().__init__(f"grep_bot recall {recall:.6f} matched rule_ids {', '.join(rule_ids) or 'none'}")
         self.recall = recall
         self.rule_ids = rule_ids
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

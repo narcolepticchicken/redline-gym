@@ -12,7 +12,13 @@
       "mutated_text": "Custodian will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding.",
       "mechanism": "direct_term_swap",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
+      "expected_redline_key_slots": [
+        "24",
+        "2",
+        "Customer"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +32,11 @@
       "mutated_text": "\"Customer Assets\" means supported units recorded to Customer's primary custody account, excluding chain-split property, promotional distributions, validator proceeds, and other network-originated items unless Custodian separately credits them.",
       "mechanism": "defined_term_shift",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Customer Assets\" means all Digital Assets, private-key control rights, proceeds, forks, airdrops, staking rewards, and network distributions credited to or held for Customer.",
+      "expected_redline_key_slots": [
+        "Customer"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +50,9 @@
       "mutated_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues. Notwithstanding Section 5, Custodian may deploy idle balances for settlement liquidity, inventory smoothing, and collateral substitutions until a withdrawal is pending.",
       "mechanism": "cross_ref_override",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +66,9 @@
       "mutated_text": "Neither party waives any remedy by delaying enforcement, and operational notices may be delivered through the custody portal or by email to the notice contacts designated by the parties. Custodian's portal status page will be the exclusive source for operational-control information, and Custodian has no duty to provide supplemental evidence after incidents or control changes.",
       "mechanism": "off_playbook_addition",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Neither party waives any remedy by delaying enforcement, and operational notices may be delivered through the custody portal or by email to the notice contacts designated by the parties.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +82,11 @@
       "mutated_text": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
       "mechanism": "omission",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law. Custodian will maintain records sufficient to identify Customer Assets as held for Customer.",
+      "expected_redline_key_slots": [
+        "Customer"
+      ]
     }
   ],
   "distractors": [

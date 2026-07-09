@@ -1,0 +1,50 @@
+{
+  "deviations": [],
+  "distractors": [
+    {
+      "distractor_id": "X-001",
+      "doc_id": "DOC-01",
+      "span": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+      "why_benign": "The governing-law canary says Delaware law is acceptable for this engagement."
+    },
+    {
+      "distractor_id": "X-002",
+      "doc_id": "DOC-01",
+      "span": "The parties will sign and close this Agreement on the same date, and the simultaneous sign-and-close structure reflects the size and diligence posture of this transaction.",
+      "why_benign": "The sign-and-close canary says simultaneous signing and closing is acceptable for this deal size."
+    },
+    {
+      "distractor_id": "X-003",
+      "doc_id": "DOC-01",
+      "span": "Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.",
+      "why_benign": "The transaction-structure statement supports buyer-side asset-purchase treatment and does not violate the playbook."
+    }
+  ],
+  "missing_info": [
+    {
+      "missing_info_id": "M-001",
+      "topic": "Earnout scenario revenue diligence",
+      "context_anchor": "Buyer also needs earnout scenario revenue diligence reviewed.",
+      "match_keywords": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "absent_terms": [
+        "earnout scenario",
+        "revenue diligence",
+        "deferred revenue review"
+      ],
+      "expected_action": "escalate"
+    }
+  ],
+  "generation_log": [
+    "seed=9001",
+    "attempt_seed=9001",
+    "playbook=PB-MA-001",
+    "tier=T1",
+    "task_id=T1-MA-9001",
+    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
+  ]
+}

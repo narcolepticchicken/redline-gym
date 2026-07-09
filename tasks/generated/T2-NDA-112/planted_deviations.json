@@ -12,7 +12,11 @@
       "mutated_text": "Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Recipient may use Confidential Information solely for the Purpose.",
+      "expected_redline_key_slots": [
+        "Recipient"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +30,9 @@
       "mutated_text": "The protections of this Agreement apply only to the two named signatories. Related entities may participate only if they are added by a schedule signed by both sides.",
       "mechanism": "defined_term_shift",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Affiliate\" means any entity controlling, controlled by, or under common control with a party. Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its controlled affiliates' compliance.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +46,9 @@
       "mutated_text": "Disclosure does not transfer title to a party's materials. The receiving side may keep and apply generalized ideas, techniques, and know-how drawn from the other side's materials in later work.",
       "mechanism": "cross_ref_override",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "No license, assignment, or ownership interest is granted by disclosure of Confidential Information except the limited right to use it as expressly permitted by this Agreement. If any sentence conflicts with Section 10, Section 10 controls.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +62,12 @@
       "mutated_text": "If Recipient receives a legally binding demand to produce Confidential Information, Recipient may make the required disclosure without advance notice to Discloser and without seeking confidential treatment unless counsel determines those steps are necessary.",
       "mechanism": "omission",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Before any compelled disclosure required by law, regulation, subpoena, court order, or governmental request, Recipient will, to the extent legally permitted, provide prompt notice to Discloser and reasonably cooperate with Discloser in seeking confidential or protective treatment.",
+      "expected_redline_key_slots": [
+        "Recipient",
+        "Discloser"
+      ]
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +81,11 @@
       "mutated_text": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose.",
       "mechanism": "omission",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement.",
+      "expected_redline_key_slots": [
+        "Recipient"
+      ]
     }
   ],
   "distractors": [
@@ -115,6 +132,7 @@
     "D-003 NDA-R010-CROSS-NO-LICENSE cross_ref_override applied to R-010",
     "D-004 NDA-R007-OMISSION-COMPELLED omission applied to R-007",
     "D-005 NDA-R006-OMISSION-REP-DUTIES omission applied to R-006",
-    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=13 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=2 dropped_absent=none"
   ]
 }

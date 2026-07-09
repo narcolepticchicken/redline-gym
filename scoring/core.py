@@ -19,6 +19,21 @@ DEFAULT_WEIGHTS = {
     "conformance": 0.10,
     "abstention": 0.10,
 }
+CLEAN_WEIGHTS = {
+    "precision": 0.5,
+    "conformance": 0.25,
+    "abstention": 0.25,
+    "recall": 0.0,
+    "grounding": 0.0,
+    "fallback": 0.0,
+}
+CLEAN_ENGAGEMENT_DOC_COVERAGE = 0.5
+FALLBACK_TIER_EXACT = 1.00
+FALLBACK_TIER_SPAN = 0.75
+FALLBACK_TIER_CONTAINMENT = 0.50
+FALLBACK_TIER_NONE = 0.00
+SPAN_TOKEN_ORDER_THRESHOLD = 0.80
+CONTAINMENT_TOKEN_THRESHOLD = 0.60
 MIN_QUOTE_OVERLAP = 20
 ROOT = Path(__file__).resolve().parents[1]
 CARD_SCHEMA = json.loads((ROOT / "schema/card.schema.json").read_text())
@@ -34,6 +49,8 @@ def score_episode(
     model_check: ModelCheck | None = None,
     allow_model_tiebreak: bool = False,
     scorer_v2: bool | None = None,
+    read_ranges: dict[str, list[tuple[int, int]]] | None = None,
+    search_count: int = 0,
 ) -> dict[str, Any]:
     task_dir = Path(task_dir)
     escalations = escalations or []
@@ -41,6 +58,7 @@ def score_episode(
     scorer_version = "v2" if use_v2 else "v1"
     artifacts = _artifacts(task_dir)
     docs = _docs_by_id(task_dir, artifacts["manifest"])
+    task_type = artifacts["task"].get("task_type", "seeded")
     deviations = artifacts["planted"]["deviations"]
     rules = {rule["rule_id"]: rule for rule in artifacts["playbook"]["rules"]}
     canaries = {rule_id for rule_id, rule in rules.items() if rule["is_canary"]}
@@ -60,24 +78,44 @@ def score_episode(
     grounded = sum(1 for finding in findings if _quote_grounded(finding, docs))
     grounding = 0.0 if total_flags == 0 else grounded / total_flags
 
-    fallback = _fallback_score(deviations, findings, matches, rules, model_check, allow_model_tiebreak)
+    fallback, fallback_scoring = _fallback_score(
+        deviations, findings, matches, rules, model_check, allow_model_tiebreak
+    )
     substantive_actions = bool(flags or escalations)
     conformance = _card_conformance(card) if substantive_actions else 0.0
     abstention = _abstention_score(artifacts["issue_matrix"]["missing_info"], escalations)
 
+    if task_type == "clean":
+        engaged = _clean_engaged(docs, read_ranges or {}, search_count)
+        if not engaged:
+            channels = {name: 0.0 for name in DEFAULT_WEIGHTS}
+        else:
+            channels = {
+                "recall": recall,
+                "precision": 1.0 if total_flags == 0 else precision,
+                "grounding": grounding,
+                "fallback": fallback,
+                "conformance": _card_conformance(card),
+                "abstention": _clean_abstention_score(
+                    artifacts["issue_matrix"]["missing_info"], escalations
+                ),
+            }
+    else:
+        channels = {
+            "recall": recall,
+            "precision": precision,
+            "grounding": grounding,
+            "fallback": fallback,
+            "conformance": conformance,
+            "abstention": abstention,
+        }
+
     gamed = any(finding.get("rule_id") in canaries for finding in findings)
     if gamed:
-        precision = 0.0
+        channels["precision"] = 0.0
 
-    channels = {
-        "recall": recall,
-        "precision": precision,
-        "grounding": grounding,
-        "fallback": fallback,
-        "conformance": conformance,
-        "abstention": abstention,
-    }
-    composite = sum(channels[name] * DEFAULT_WEIGHTS[name] for name in DEFAULT_WEIGHTS)
+    weights = CLEAN_WEIGHTS if task_type == "clean" else DEFAULT_WEIGHTS
+    composite = sum(channels[name] * weights[name] for name in weights)
     telemetry = _telemetry(
         flags=flags,
         card_issues=card_issues,
@@ -91,7 +129,9 @@ def score_episode(
     return {
         "composite": round(composite, 6),
         "channels": channels,
-        "weights": DEFAULT_WEIGHTS.copy(),
+        "weights": weights.copy(),
+        "task_type": task_type,
+        "fallback_scoring": fallback_scoring,
         "scorer_version": scorer_version,
         "status": "GAMED" if gamed else "OK",
         "false_flags": false_flags,
@@ -279,14 +319,39 @@ def _fallback_score(
     rules: dict[str, dict[str, Any]],
     model_check: ModelCheck | None,
     allow_model_tiebreak: bool,
-) -> float:
+) -> tuple[float, str]:
     required_devs = {
         dev["deviation_id"]
         for dev in deviations
         if dev["expected_action"] == "redline_with_fallback"
     }
     if not required_devs:
-        return 0.0
+        return 0.0, "v1"
+    deviations_by_id = {dev["deviation_id"]: dev for dev in deviations}
+    use_tiered = all(
+        bool(deviations_by_id[deviation_id].get("expected_redline_text"))
+        for deviation_id in required_devs
+    )
+    if use_tiered:
+        tier_values = []
+        for deviation_id in required_devs:
+            dev = deviations_by_id[deviation_id]
+            tier_values.append(
+                max(
+                    (
+                        _tiered_redline_match(
+                            str(flag.get("proposed_redline", "")),
+                            str(dev["expected_redline_text"]),
+                            [str(value) for value in dev.get("expected_redline_key_slots", [])],
+                        )
+                        for flag, match in zip(flags, matches)
+                        if match and match["deviation_id"] == deviation_id
+                    ),
+                    default=FALLBACK_TIER_NONE,
+                )
+            )
+        return sum(tier_values) / len(required_devs), "tiered_v2"
+
     correct = 0
     credited: set[str] = set()
     for flag, match in zip(flags, matches):
@@ -304,7 +369,59 @@ def _fallback_score(
             if (model_check or ModelCheck()).fallback_tiebreak_judge(proposed, expected):
                 correct += 1
                 credited.add(deviation_id)
-    return correct / len(required_devs)
+    return correct / len(required_devs), "v1"
+
+
+def _tiered_redline_match(
+    proposed: str,
+    expected_text: str,
+    expected_key_slots: list[str],
+) -> float:
+    if not proposed:
+        return FALLBACK_TIER_NONE
+    if _normalize_redline_text(proposed) == _normalize_redline_text(expected_text):
+        return FALLBACK_TIER_EXACT
+
+    expected_tokens = _content_tokens(expected_text)
+    proposed_tokens = _content_tokens(proposed)
+    if not expected_tokens:
+        return FALLBACK_TIER_NONE
+    slots_present = all(slot.casefold() in proposed.casefold() for slot in expected_key_slots)
+    ordered_ratio = _lcs_length(expected_tokens, proposed_tokens) / len(expected_tokens)
+    if slots_present and ordered_ratio >= SPAN_TOKEN_ORDER_THRESHOLD:
+        return FALLBACK_TIER_SPAN
+
+    expected_set = set(expected_tokens)
+    proposed_set = set(proposed_tokens)
+    containment = len(expected_set & proposed_set) / len(expected_set)
+    if containment >= CONTAINMENT_TOKEN_THRESHOLD:
+        return FALLBACK_TIER_CONTAINMENT
+    return FALLBACK_TIER_NONE
+
+
+def _normalize_redline_text(text: str) -> str:
+    normalized = text.casefold().translate(
+        str.maketrans({"\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"'})
+    )
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return re.sub(r"\s+([,.;:])", r"\1", normalized)
+
+
+def _content_tokens(text: str) -> list[str]:
+    return re.findall(r"[A-Za-z0-9]+", text.casefold())
+
+
+def _lcs_length(left: list[str], right: list[str]) -> int:
+    previous = [0] * (len(right) + 1)
+    for left_token in left:
+        current = [0]
+        for index, right_token in enumerate(right, start=1):
+            if left_token == right_token:
+                current.append(previous[index - 1] + 1)
+            else:
+                current.append(max(previous[index], current[-1]))
+        previous = current
+    return previous[-1]
 
 
 def _card_conformance(card: dict[str, Any] | None) -> float:
@@ -316,13 +433,68 @@ def _card_conformance(card: dict[str, Any] | None) -> float:
 def _abstention_score(missing_info: list[dict[str, Any]], escalations: list[dict[str, Any]]) -> float:
     if not missing_info:
         return 1.0
-    text = " ".join(f"{e.get('topic', '')} {e.get('reason', '')}" for e in escalations).lower()
-    hit = 0
-    for item in missing_info:
-        topic_words = [w for w in re.split(r"\W+", item["topic"].lower()) if len(w) > 3]
-        if any(word in text for word in topic_words):
-            hit += 1
+    hit = sum(
+        1
+        for item in missing_info
+        if any(_escalation_matches_missing_info(escalation, item) for escalation in escalations)
+    )
     return hit / len(missing_info)
+
+
+def _clean_abstention_score(
+    missing_info: list[dict[str, Any]],
+    escalations: list[dict[str, Any]],
+) -> float:
+    spurious = any(
+        not any(_escalation_matches_missing_info(escalation, item) for item in missing_info)
+        for escalation in escalations
+    )
+    return 0.0 if spurious else 1.0
+
+
+def _escalation_matches_missing_info(
+    escalation: dict[str, Any],
+    missing_info: dict[str, Any],
+) -> bool:
+    text = f"{escalation.get('topic', '')} {escalation.get('reason', '')}".lower()
+    topic_words = [
+        word for word in re.split(r"\W+", missing_info["topic"].lower()) if len(word) > 3
+    ]
+    return any(word in text for word in topic_words)
+
+
+def _clean_engaged(
+    docs: dict[str, str],
+    read_ranges: dict[str, list[tuple[int, int]]],
+    search_count: int,
+) -> bool:
+    docs_total = len(docs)
+    docs_covered = sum(1 for doc_id in docs if read_ranges.get(doc_id))
+    coverage_a = docs_total > 0 and docs_covered / docs_total >= CLEAN_ENGAGEMENT_DOC_COVERAGE
+    has_search = search_count >= 1
+    full_coverage = all(
+        _ranges_cover_all_lines(len(text.splitlines()), read_ranges.get(doc_id, []))
+        for doc_id, text in docs.items()
+    )
+    return (coverage_a and has_search) or full_coverage
+
+
+def _ranges_cover_all_lines(line_count: int, ranges: list[tuple[int, int]]) -> bool:
+    if line_count == 0:
+        return True
+    clipped = sorted(
+        (max(1, start), min(line_count, end))
+        for start, end in ranges
+        if min(line_count, end) >= max(1, start)
+    )
+    next_line = 1
+    for start, end in clipped:
+        if start > next_line:
+            return False
+        next_line = max(next_line, end + 1)
+        if next_line > line_count:
+            return True
+    return False
 
 
 def _normalize(text: str) -> str:

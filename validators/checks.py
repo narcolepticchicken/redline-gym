@@ -13,6 +13,7 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_DIR = ROOT / "schema"
 MODEL_STUB_MESSAGE = "requires lab serving lane -- do not run from build tooling"
+REDLINE_FALLBACK_TOKEN_OVERLAP_THRESHOLD = 0.075
 
 
 @dataclass
@@ -191,9 +192,15 @@ def v9_canary_empty(task_dir: Path) -> ValidationResult:
 
 
 def v10_leakage_scan(path: Path) -> ValidationResult:
-    task_dirs = _collect_task_dirs(path)
+    task_dirs = [
+        task_dir
+        for task_dir in _collect_task_dirs(path)
+        if _load_json(task_dir / "task.json").get("task_type") != "clean"
+    ]
     if len(task_dirs) < 2:
-        return ValidationResult("V10", "tranche leakage scan", "PASS", "single task; variance gate not applicable")
+        return ValidationResult(
+            "V10", "tranche leakage scan", "PASS", "fewer than two seeded tasks; variance gate not applicable"
+        )
     sections_by_task = []
     mechanisms_by_task = []
     starts_by_task = []
@@ -216,6 +223,46 @@ def v11_realism_stub(_: Path) -> ValidationResult:
     return ValidationResult("V11", "realism/coherence judge", "STUBBED", MODEL_STUB_MESSAGE)
 
 
+def v12_redline_text_consistency(task_dir: Path) -> ValidationResult:
+    a = _task_artifacts(task_dir)
+    rules = {rule["rule_id"]: rule for rule in a["playbook"]["rules"]}
+    errors = []
+    for dev in a["planted"]["deviations"]:
+        if "expected_redline_text" not in dev:
+            continue
+        expected = str(dev["expected_redline_text"])
+        if not expected.strip():
+            errors.append(f"{dev['deviation_id']} expected_redline_text is empty")
+            continue
+        if expected == dev["mutated_text"]:
+            errors.append(f"{dev['deviation_id']} expected_redline_text equals mutated_text")
+        fallback = str(rules.get(dev["rule_id"], {}).get("fallback", ""))
+        expected_tokens = set(_content_tokens(expected))
+        fallback_tokens = set(_content_tokens(fallback))
+        denominator = min(len(expected_tokens), len(fallback_tokens))
+        overlap = len(expected_tokens & fallback_tokens) / denominator if denominator else 0.0
+        if overlap < REDLINE_FALLBACK_TOKEN_OVERLAP_THRESHOLD:
+            errors.append(
+                f"{dev['deviation_id']} expected/fallback token overlap {overlap:.6f} "
+                f"is below {REDLINE_FALLBACK_TOKEN_OVERLAP_THRESHOLD:.3f}"
+            )
+    return _result("V12", "redline text consistency", errors)
+
+
+def v13_clean_instance_integrity(task_dir: Path) -> ValidationResult:
+    a = _task_artifacts(task_dir)
+    if a["task"].get("task_type") != "clean":
+        return ValidationResult("V13", "clean instance integrity", "PASS", "not applicable to seeded task")
+    errors = []
+    deviations = a["planted"]["deviations"]
+    distractors = a["planted"]["distractors"]
+    if deviations:
+        errors.append(f"clean task has {len(deviations)} planted deviations")
+    if len(distractors) < 3:
+        errors.append(f"clean task has {len(distractors)} distractors; requires at least 3")
+    return _result("V13", "clean instance integrity", errors)
+
+
 def run_all(task_dir: Path) -> list[ValidationResult]:
     task_dir = task_dir.resolve()
     return [
@@ -231,6 +278,8 @@ def run_all(task_dir: Path) -> list[ValidationResult]:
         v9_canary_empty(task_dir),
         v10_leakage_scan(task_dir.parent),
         v11_realism_stub(task_dir),
+        v12_redline_text_consistency(task_dir),
+        v13_clean_instance_integrity(task_dir),
     ]
 
 
@@ -305,3 +354,7 @@ def _collect_task_dirs(path: Path) -> list[Path]:
 
 def _surface_key(text: str) -> str:
     return re.sub(r"\s+", " ", text.lower()).strip()[:80]
+
+
+def _content_tokens(text: str) -> list[str]:
+    return re.findall(r"[A-Za-z0-9]+", text.lower())

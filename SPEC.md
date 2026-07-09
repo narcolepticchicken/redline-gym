@@ -172,6 +172,19 @@ GAMED; a flag on the same span citing another/no rule ⇒ ordinary false flag.
 expected_action must be mechanically consistent with the rule's
 escalation_trigger (a term past an escalation threshold ⇒ escalate).
 
+**v0.2 generator additions (2026-07-09, RedlineBench-teardown items):** (a) the
+mutation engine emits `expected_redline_text` (+ `expected_redline_key_slots`)
+for every redline_with_fallback deviation at plant time — the playbook fallback
+rendered with instance slot values; machine-rendered from attorney-signed
+fallback text, guarded by V12, flagged for human spot-check per tranche. Dev
+instances were regenerated additively (document bytes hash-identical; only
+answer keys gained fields). `tasks/heldout/` was NOT regenerated and scores
+under v1 fallback matching via the backward-compat path. (b) Clean instances:
+`task_type: "clean"` recipes plant ZERO deviations with ≥3 distractors (V13);
+correct behavior is an engaged review ending in an empty-card finalize through
+the confirm bounce. Drafts live in `tasks/generated_clean_draft/` until
+red-penned; target mix ≤15% of any published suite.
+
 Held-out rule (condition 2): `tasks/heldout/` is never read by development
 tooling, prompts, or humans outside a formal eval run. No dev script, review,
 or red-pen page touches it; gate numbers published for held-out instances come
@@ -202,6 +215,12 @@ V11. Realism/coherence: a judge scores each shipped doc 0–10 on "reads as a
     where mutated clauses sound "off" and the model learns to flag weird prose
     instead of playbook violations. (Adapted from LegalWorld's
     stage-authenticity preflight.)
+V12. Redline-text consistency (v0.2): every `expected_redline_text` is
+    non-empty, differs from the mutated text, and shares content-token overlap
+    with its rule's fallback above threshold (0.075 — set low because some
+    legitimate fallbacks paraphrase; threshold is a listed sitting item).
+V13. Clean-instance integrity (v0.2): `task_type: "clean"` ⇒ zero planted
+    deviations and ≥3 distractor spans; not applicable to seeded tasks.
 
 ---
 
@@ -264,6 +283,29 @@ detection also runs over the union; citing a canary `rule_id` in either channel
 zeros precision and marks the episode GAMED. Published v0.1 tables remain
 v1-scored; v0.2 numbers must be labeled as rescored/opt-in.
 
+**v0.2 M-additions (2026-07-09):**
+- *Telemetry (reporting-only, never reward):* every score carries a `telemetry`
+  block — flag/card/union counts, duplicate-finding density, flags per matched
+  deviation, quote/redline length means, filing channel, distractor hits, and
+  per-category recall via `scoring/rule_categories.json` (machine-drafted,
+  unreviewed, canary rules deliberately excluded from the public mapping).
+- *Tiered fallback (M2):* where the answer key carries `expected_redline_text`,
+  the fallback channel scores the agent's `proposed_redline` deterministically:
+  1.00 normalized-exact; 0.75 span match (key slots present + ≥80% content
+  tokens in order); 0.50 containment (≥60% content tokens, any order); else 0.
+  `score.json` reports `fallback_scoring: "v1"|"tiered_v2"`. Instances without
+  the field (all of `tasks/heldout/`) score v1 — verified byte-identical on 12
+  real held-out episodes. Tier thresholds are constants pending a one-time
+  human calibration (~20 labeled proposed_redlines). Dev rescores under
+  tiered_v2 are NOT comparable to pre-M2 dev numbers; label accordingly.
+- *Clean tasks (M1):* `task_type: "clean"` reweights the composite to
+  precision 0.5 / conformance 0.25 / abstention 0.25 (recall/grounding/fallback
+  weight 0). Credit requires ENGAGEMENT — (≥50% of docs read AND ≥1 search) OR
+  full read coverage — otherwise all channels are 0 (inverted vacuous-credit:
+  the do-nothing agent scores 0.0, measured). Abstention = 1.0 iff no spurious
+  escalations. Honeypot unchanged: canary citation on a clean task ⇒ GAMED.
+  Clean and seeded composites are never averaged without a task_type label.
+
 ---
 
 ## 8. Environment-level legitimacy gates (run before any use)
@@ -280,6 +322,10 @@ Baselines (all via lab serving scripts, never coding-assistant harnesses):
 - **cheater** — explicitly prompted to game (verbose flags, blanket flagging,
   canary claims). Gate: strictly < honest. (Institutionalizes the 0.51-vs-0.81
   bypass finding: gaming must lose.)
+- **empty-confirm cheater** (v0.2, added with clean tasks) — reads nothing,
+  finalizes empty, confirms the bounce. Gate: 0.0 on seeded tasks
+  (vacuous-credit) AND 0.0 on clean tasks (engagement gate); the always-empty
+  strategy is additionally capped suite-wide by the ≤15% clean mix.
 
 Also: seed-variance across ≥3 generation seeds reported; per-channel breakdown
 for every baseline; **judge-alignment sampling** — for any channel using an LLM

@@ -1,0 +1,12 @@
+{
+  "card_schema_id": "redline-gym.issue-card.v1",
+  "weights": {
+    "recall": 0.35,
+    "precision": 0.15,
+    "grounding": 0.15,
+    "fallback": 0.15,
+    "conformance": 0.1,
+    "abstention": 0.1
+  },
+  "criteria": []
+}

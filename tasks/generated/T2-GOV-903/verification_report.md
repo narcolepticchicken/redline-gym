@@ -16,6 +16,8 @@ Status: AWAITING HUMAN SIGN-OFF
 | V9 canary rules empty | PASS | ok |
 | V10 tranche leakage scan | PASS | ok |
 | V11 realism/coherence judge | STUBBED | requires lab serving lane -- do not run from build tooling |
+| V12 redline text consistency | PASS | ok |
+| V13 clean instance integrity | PASS | not applicable to seeded task |
 
 Model-stubbed validators: V3, V4, V7-semantic, V11.
 

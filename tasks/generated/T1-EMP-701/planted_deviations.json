@@ -12,7 +12,9 @@
       "mutated_text": "Incentive compensation and equity paid or granted under this Agreement will not be reduced, recovered, or forfeited after payment or vesting except by Executive's written consent.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "All incentive compensation and equity are subject to applicable clawback, recoupment, and forfeiture requirements under law, listing rules, and Company policy.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,11 @@
       "mutated_text": "During employment and for 36 months after separation, Executive will not provide services to any business that competes with Company anywhere in North America.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "During employment and for six months after separation, Executive will not provide substantially similar executive services to a business unit that directly competes with a Company product or service for which Executive had material responsibility, but only to the extent enforceable under applicable law.",
+      "expected_redline_key_slots": [
+        "six"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +46,11 @@
       "mutated_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to 18 months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "If Company terminates Executive's employment without Cause and not because of death or disability, Company will provide severance equal to six months of Executive's then-current base salary, paid in regular payroll installments, subject to Section 9.",
+      "expected_redline_key_slots": [
+        "six"
+      ]
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +64,11 @@
       "mutated_text": "Executive will receive an annual bonus equal to 60% of base salary for each calendar year in which Executive remains employed for at least one day.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Executive is eligible for a target annual bonus equal to 45% of base salary. Any bonus is discretionary unless a written bonus plan approved by Company states objective metrics, approval requirements, and payment timing, and Executive must remain employed through the payment date unless the written plan states otherwise.",
+      "expected_redline_key_slots": [
+        "45%"
+      ]
     }
   ],
   "distractors": [
@@ -109,6 +123,7 @@
     "D-002 EMP-R008-DIRECT-NONCOMPETE-DURATION direct_term_swap applied to R-008",
     "D-003 EMP-R001-DIRECT-SEVERANCE-MULTIPLE direct_term_swap applied to R-001",
     "D-004 EMP-R006-DIRECT-GUARANTEED-BONUS direct_term_swap applied to R-006",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

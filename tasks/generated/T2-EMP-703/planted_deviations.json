@@ -12,7 +12,9 @@
       "mutated_text": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Cause\" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,9 @@
       "mutated_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources.",
       "mechanism": "omission",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +44,9 @@
       "mutated_text": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.",
       "mechanism": "cross_ref_override",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +60,9 @@
       "mutated_text": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +76,9 @@
       "mutated_text": "Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Executive's employment with Company is at will, and either Company or Executive may end the employment relationship at any time, with or without Cause, notice, or reason, subject only to the express severance terms in this Agreement.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [

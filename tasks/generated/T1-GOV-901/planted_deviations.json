@@ -12,7 +12,11 @@
       "mutated_text": "Investor rights under this Agreement continue after a qualified IPO, sale of the Company, or reduction in the holder's ownership unless each affected Major Investor signs a written release.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Investor rights under this Agreement terminate upon the earliest of a qualified IPO with gross proceeds of at least $50,000,000, a sale of the Company, or the time the holder no longer holds the minimum share ownership required for the applicable right.",
+      "expected_redline_key_slots": [
+        "$50,000,000"
+      ]
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +30,12 @@
       "mutated_text": "Each Major Investor may receive monthly unaudited financial statements within 15 days after month-end and may inspect all Company books, records, source materials, employee communications, and facilities at any time without limitation.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Each Major Investor may receive quarterly unaudited financial statements within 45 days after quarter-end and annual audited financial statements within 120 days after fiscal year-end. Inspection access is limited to reasonable requests during normal business hours and remains subject to confidentiality, attorney-client privilege, trade-secret protection, legal compliance, and competitive-sensitivity limits.",
+      "expected_redline_key_slots": [
+        "45",
+        "120"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +49,9 @@
       "mutated_text": "Each Major Investor has a pro rata right to purchase its share of every security issued by the Company, including securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, debt with equity features, or in a public offering.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Each Major Investor has a pro rata right to purchase its share of new securities issued by the Company, excluding securities issued under equity incentive plans, as acquisition consideration, in strategic transactions, in equipment or lease financing, debt with equity features, or in a public offering.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +65,9 @@
       "mutated_text": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "No investor approval is required for matters not listed in this Section 4.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [

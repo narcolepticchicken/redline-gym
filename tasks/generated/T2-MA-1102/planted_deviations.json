@@ -12,7 +12,9 @@
       "mutated_text": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 3, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Assumed Liabilities\" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 3.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,9 @@
       "mutated_text": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement.",
       "mechanism": "omission",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Buyer acknowledges that it has conducted an independent investigation and is not relying on statements outside this Agreement, but nothing in this Section 10 limits any claim based on Fraud, intentional misrepresentation, or willful misconduct.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +44,9 @@
       "mutated_text": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations. For continuity purposes, Buyer acknowledges it will be treated as Seller's successor employer for all transferred employees and will honor Seller's employment practices after closing.",
       "mechanism": "off_playbook_addition",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Buyer may decide which Seller employees receive offers. Any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +60,9 @@
       "mutated_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, and delivery of lien releases.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +76,9 @@
       "mutated_text": "A disclosure schedule qualifies the specific representation or warranty that expressly references that schedule by number. For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule.",
       "mechanism": "cross_ref_override",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "A disclosure schedule qualifies only the specific representation or warranty that expressly references that schedule by number. No disclosure schedule qualifies any other representation or warranty unless that representation or warranty specifically references the schedule item.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [
@@ -120,6 +130,7 @@
     "D-003 MA-R008-OFFPLAYBOOK-EMPLOYEE-SUCCESSOR-ADMISSION off_playbook_addition applied to R-008",
     "D-004 MA-R011-DIRECT-NO-MAE-CONDITION-DROPPED direct_term_swap applied to R-011",
     "D-005 MA-R012-CROSS-SCHEDULES-QUALIFY-ALL-REPS cross_ref_override applied to R-012",
-    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=16 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

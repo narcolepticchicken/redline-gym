@@ -12,7 +12,9 @@
       "mutated_text": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Cause\" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,9 @@
       "mutated_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources.",
       "mechanism": "omission",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed excluded prior inventions on a signed schedule attached to this Agreement.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +44,9 @@
       "mutated_text": "Company will personally reimburse Executive for all employment-related claims, costs, judgments, settlements, and taxes without regard to Company governing documents, insurance terms, or applicable law.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Company will provide indemnification and D&O insurance coverage to Executive on the same basis as similarly situated officers, subject to Company's governing documents, policy terms, and applicable law.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +60,9 @@
       "mutated_text": "Incentive compensation and equity paid or granted under this Agreement will not be reduced, recovered, or forfeited after payment or vesting except by Executive's written consent.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "All incentive compensation and equity are subject to applicable clawback, recoupment, and forfeiture requirements under law, listing rules, and Company policy.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +76,9 @@
       "mutated_text": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.",
       "mechanism": "cross_ref_override",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [
@@ -124,6 +134,7 @@
     "D-003 EMP-R011-DIRECT-INDEMNITY-EXPANSION direct_term_swap applied to R-011",
     "D-004 EMP-R010-DIRECT-CLAWBACK-CARVEOUT direct_term_swap applied to R-010",
     "D-005 EMP-R007-CROSS-ANNUAL-ACCELERATION cross_ref_override applied to R-007",
-    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes"
+    "coherence_check PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes",
+    "distractor_check PASS registered=3 dropped_absent=none"
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "documents": [
+    {
+      "doc_id": "DOC-01",
+      "title": "Asset Purchase Agreement",
+      "type": "asset_purchase_agreement",
+      "path": "docs/asset_purchase_agreement.md",
+      "sha256": "2a7b00cdc1da1f95093a2bda4ebd5b00bffb53d797c50f3bdb3b6ff676f9fce5",
+      "is_distractor": false
+    }
+  ]
+}

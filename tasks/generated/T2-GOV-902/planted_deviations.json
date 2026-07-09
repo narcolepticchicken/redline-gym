@@ -12,7 +12,9 @@
       "mutated_text": "These restrictions apply to all transfers unless the Board and the Requisite Holders approve the transfer in writing before it is effective.",
       "mechanism": "direct_term_swap",
       "severity": "medium",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-002",
@@ -26,7 +28,12 @@
       "mutated_text": "\"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
       "mechanism": "defined_term_shift",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "\"Major Investor\" means a holder of at least 1,000,000 shares of Series A Preferred Stock. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class.",
+      "expected_redline_key_slots": [
+        "1,000,000",
+        "Series A Preferred Stock"
+      ]
     },
     {
       "deviation_id": "D-003",
@@ -40,7 +47,9 @@
       "mutated_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-004",
@@ -54,7 +63,9 @@
       "mutated_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration. Notwithstanding Section 4, the Company will obtain Requisite Holder approval for any other matter that an investor reasonably identifies as material to its investment.",
       "mechanism": "off_playbook_addition",
       "severity": "critical",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "Except for the closed list in Section 4, management may conduct the Company's ordinary-course operations without investor consent, including budgets within board-approved limits, hiring, vendor contracts, product decisions, customer arrangements, and routine financing administration.",
+      "expected_redline_key_slots": []
     },
     {
       "deviation_id": "D-005",
@@ -68,7 +79,9 @@
       "mutated_text": "Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along.",
       "mechanism": "direct_term_swap",
       "severity": "high",
-      "expected_action": "redline_with_fallback"
+      "expected_action": "redline_with_fallback",
+      "expected_redline_text": "No stockholder will be required to provide uncapped indemnity, non-pro rata liability, or a non-compete covenant as a condition to the drag-along.",
+      "expected_redline_key_slots": []
     }
   ],
   "distractors": [

@@ -50,6 +50,10 @@
       "type": "string",
       "enum": ["T1", "T2", "T3"]
     },
+    "task_type": {
+      "type": "string",
+      "enum": ["seeded", "clean"]
+    },
     "playbook_ref": {
       "type": "string",
       "pattern": "^playbooks/[a-z_]+/PB-[A-Z]+-[0-9]{3}\\.json$"
