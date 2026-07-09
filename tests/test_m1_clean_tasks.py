@@ -14,7 +14,7 @@ from validators.checks import v13_clean_instance_integrity
 
 ROOT = Path(__file__).resolve().parents[1]
 SEEDED_SAMPLE = ROOT / "tasks/contracts/T1-NDA-001"
-CLEAN_SAMPLE = ROOT / "tasks/generated_clean_draft/T1-MSA-9001"
+CLEAN_SAMPLE = ROOT / "tasks/generated/T1-MSA-9001"
 EMPTY_CARD = {"summary": "No issues identified.", "issues": [], "escalations": []}
 
 

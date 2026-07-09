@@ -217,8 +217,9 @@ V11. Realism/coherence: a judge scores each shipped doc 0–10 on "reads as a
     stage-authenticity preflight.)
 V12. Redline-text consistency (v0.2): every `expected_redline_text` is
     non-empty, differs from the mutated text, and shares content-token overlap
-    with its rule's fallback above threshold (0.075 — set low because some
-    legitimate fallbacks paraphrase; threshold is a listed sitting item).
+    with its rule's fallback above threshold (0.075 — RULED KEEP 2026-07-09:
+    measured minimum legitimate overlap is 0.0769 across all 153 entries and a
+    full-population audit found zero defects a higher bar would catch).
 V13. Clean-instance integrity (v0.2): `task_type: "clean"` ⇒ zero planted
     deviations and ≥3 distractor spans; not applicable to seeded tasks.
 

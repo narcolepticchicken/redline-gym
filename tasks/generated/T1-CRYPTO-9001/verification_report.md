@@ -30,3 +30,6 @@ Model-stubbed validators: V3, V4, V7-semantic, V11.
 - coherence check: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
 
 Human sign-off: name ____________________ date __________
+
+PROMOTED 2026-07-09: model review pass (gpt-5.6-sol, full playbook-rule sweep,
+distractor + coherence check) + Aaron ruling. See reports/sol review pass.
