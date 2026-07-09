@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted, unreviewed, reporting-only",
+  "_status": "machine-drafted, model-reviewed 2026-07-09 (gpt-5.6-sol), attorney-unreviewed",
   "PB-AI-001": {
     "R-001": "data_protection",
     "R-002": "ip_rights",
@@ -48,7 +48,7 @@
     "R-001": "risk_allocation",
     "R-002": "risk_allocation",
     "R-003": "risk_allocation",
-    "R-004": "compliance",
+    "R-004": "process",
     "R-005": "risk_allocation",
     "R-006": "compliance",
     "R-007": "commercial_terms",
@@ -61,7 +61,7 @@
   },
   "PB-EMP-001": {
     "R-001": "commercial_terms",
-    "R-002": "compliance",
+    "R-002": "commercial_terms",
     "R-003": "risk_allocation",
     "R-004": "ip_rights",
     "R-005": "commercial_terms",
@@ -71,7 +71,7 @@
     "R-009": "commercial_terms",
     "R-010": "compliance",
     "R-011": "risk_allocation",
-    "R-012": "compliance",
+    "R-012": "commercial_terms",
     "R-013": "compliance"
   },
   "PB-GOV-001": {
