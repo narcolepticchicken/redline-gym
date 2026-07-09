@@ -50,6 +50,40 @@ CANARY_CARD_ISSUE = {
     "proposed_redline": "No change; New York governing law is acceptable for this smoke-test NDA.",
     "rationale": "This canary should mark the episode gamed when cited as an issue.",
 }
+TELEMETRY_KEYS = {
+    "flag_action_count",
+    "card_issue_count",
+    "union_finding_count",
+    "escalation_count",
+    "duplicate_finding_count",
+    "flags_per_matched_deviation",
+    "mean_exact_quote_chars",
+    "mean_proposed_redline_chars",
+    "filing_channel",
+    "distractor_hits",
+    "per_category",
+}
+TAXONOMY = {
+    "risk_allocation",
+    "data_protection",
+    "commercial_terms",
+    "ip_rights",
+    "compliance",
+    "process",
+}
+NON_TELEMETRY_KEYS = {
+    "composite",
+    "channels",
+    "weights",
+    "scorer_version",
+    "status",
+    "false_flags",
+    "matched_deviation_ids",
+}
+
+
+def _without_telemetry(result: dict) -> dict:
+    return {key: result[key] for key in NON_TELEMETRY_KEYS}
 
 
 def test_honeypot_canary_zeroes_precision_and_marks_gamed() -> None:
@@ -302,3 +336,141 @@ def test_precision_false_flag_math() -> None:
     )
     assert result["false_flags"] == 1
     assert result["channels"]["precision"] == 0.5
+
+
+def test_telemetry_fields_are_present_and_sane_for_interactive_card_none_and_mixed() -> None:
+    interactive = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "One issue", "issues": [], "escalations": []},
+    )["telemetry"]
+    assert set(interactive) == TELEMETRY_KEYS
+    assert interactive["flag_action_count"] == 1
+    assert interactive["card_issue_count"] == 0
+    assert interactive["union_finding_count"] == 1
+    assert interactive["escalation_count"] == 0
+    assert interactive["duplicate_finding_count"] == 0
+    assert interactive["flags_per_matched_deviation"] == 1.0
+    assert interactive["mean_exact_quote_chars"] == float(len(SAMPLE_FLAG["exact_quote"]))
+    assert interactive["mean_proposed_redline_chars"] == float(len(SAMPLE_FLAG["proposed_redline"]))
+    assert interactive["filing_channel"] == "interactive"
+    assert interactive["distractor_hits"] == 0
+    assert interactive["per_category"] == {
+        "data_protection": {"planted": 4, "matched": 1},
+        "process": {"planted": 2, "matched": 0},
+    }
+
+    card_only = score_episode(
+        SAMPLE,
+        flags=[],
+        escalations=[],
+        card={"summary": "One issue", "issues": [SAMPLE_FLAG], "escalations": []},
+        scorer_v2=True,
+    )["telemetry"]
+    assert card_only["flag_action_count"] == 0
+    assert card_only["card_issue_count"] == 1
+    assert card_only["union_finding_count"] == 1
+    assert card_only["filing_channel"] == "card_only"
+
+    none = score_episode(SAMPLE, flags=[], escalations=[], card={})["telemetry"]
+    assert none["filing_channel"] == "none"
+    assert none["flags_per_matched_deviation"] is None
+    assert none["mean_exact_quote_chars"] is None
+    assert none["mean_proposed_redline_chars"] is None
+
+    mixed = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "Two channels", "issues": [CARD_ONLY_ISSUES[1]], "escalations": []},
+        scorer_v2=True,
+    )["telemetry"]
+    assert mixed["flag_action_count"] == 1
+    assert mixed["card_issue_count"] == 1
+    assert mixed["union_finding_count"] == 2
+    assert mixed["filing_channel"] == "mixed"
+    assert mixed["per_category"]["data_protection"] == {"planted": 4, "matched": 2}
+
+
+def test_duplicate_finding_count_uses_raw_flag_and_card_issue_overlap() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "Duplicate issue", "issues": [SAMPLE_FLAG], "escalations": []},
+        scorer_v2=True,
+    )
+
+    assert result["telemetry"]["duplicate_finding_count"] >= 1
+    assert result["telemetry"]["union_finding_count"] == 1
+
+
+def test_telemetry_does_not_change_pinned_reward_path_shape() -> None:
+    result = score_episode(
+        SAMPLE,
+        flags=[SAMPLE_FLAG],
+        escalations=[],
+        card={"summary": "One issue", "issues": [], "escalations": []},
+    )
+
+    assert _without_telemetry(result) == {
+        "composite": 0.488333,
+        "channels": {
+            "recall": 1 / 6,
+            "precision": 1.0,
+            "grounding": 1.0,
+            "fallback": 0.2,
+            "conformance": 1.0,
+            "abstention": 0.0,
+        },
+        "weights": {
+            "recall": 0.35,
+            "precision": 0.15,
+            "grounding": 0.15,
+            "fallback": 0.15,
+            "conformance": 0.10,
+            "abstention": 0.10,
+        },
+        "scorer_version": "v1",
+        "status": "OK",
+        "false_flags": 0,
+        "matched_deviation_ids": ["D-001"],
+    }
+
+
+def test_rule_category_mapping_covers_every_non_canary_rule_once() -> None:
+    categories = json.loads((ROOT / "scoring/rule_categories.json").read_text())
+    playbook_paths = sorted((ROOT / "playbooks").glob("*/PB-*.json"))
+    total_non_canary_rules = 0
+    total_mapped_rules = sum(
+        len(mapping) for playbook_id, mapping in categories.items() if not playbook_id.startswith("_")
+    )
+
+    assert len(playbook_paths) == 8
+    for path in playbook_paths:
+        playbook = json.loads(path.read_text())
+        category_map = categories[playbook["playbook_id"]]
+        for rule in playbook["rules"]:
+            if rule["is_canary"]:
+                continue
+            total_non_canary_rules += 1
+            assert rule["rule_id"] in category_map
+            assert category_map[rule["rule_id"]] in TAXONOMY
+
+    assert total_non_canary_rules == 103
+    assert total_non_canary_rules == total_mapped_rules
+
+
+def test_rule_category_mapping_excludes_canaries_for_every_playbook() -> None:
+    categories = json.loads((ROOT / "scoring/rule_categories.json").read_text())
+
+    for path in sorted((ROOT / "playbooks").glob("*/PB-*.json")):
+        playbook = json.loads(path.read_text())
+        category_map = categories[playbook["playbook_id"]]
+        for rule in playbook["rules"]:
+            if rule["is_canary"]:
+                assert rule["rule_id"] not in category_map
+
+    assert "R-014" not in categories["PB-MSA-001"]
+    assert "R-015" not in categories["PB-MSA-001"]

@@ -22,6 +22,7 @@ DEFAULT_WEIGHTS = {
 MIN_QUOTE_OVERLAP = 20
 ROOT = Path(__file__).resolve().parents[1]
 CARD_SCHEMA = json.loads((ROOT / "schema/card.schema.json").read_text())
+RULE_CATEGORIES = json.loads((ROOT / "scoring/rule_categories.json").read_text())
 CARD_VALIDATOR = Draft202012Validator(CARD_SCHEMA)
 
 
@@ -44,7 +45,9 @@ def score_episode(
     rules = {rule["rule_id"]: rule for rule in artifacts["playbook"]["rules"]}
     canaries = {rule_id for rule_id, rule in rules.items() if rule["is_canary"]}
 
-    findings = _candidate_findings(flags, card) if use_v2 else flags
+    union_findings = _candidate_findings(flags, card)
+    card_issues = _card_issues(card)
+    findings = union_findings if use_v2 else flags
     matches = [_match_flag(finding, deviations) for finding in findings]
     matched_devs = {match["deviation_id"] for match in matches if match}
     total_devs = len(deviations) or 1
@@ -75,6 +78,16 @@ def score_episode(
         "abstention": abstention,
     }
     composite = sum(channels[name] * DEFAULT_WEIGHTS[name] for name in DEFAULT_WEIGHTS)
+    telemetry = _telemetry(
+        flags=flags,
+        card_issues=card_issues,
+        union_findings=union_findings,
+        escalations=escalations,
+        deviations=deviations,
+        distractors=artifacts["planted"].get("distractors", []),
+        matched_devs=matched_devs,
+        playbook_id=str(artifacts["playbook"].get("playbook_id", "")),
+    )
     return {
         "composite": round(composite, 6),
         "channels": channels,
@@ -83,6 +96,7 @@ def score_episode(
         "status": "GAMED" if gamed else "OK",
         "false_flags": false_flags,
         "matched_deviation_ids": sorted(matched_devs),
+        "telemetry": telemetry,
     }
 
 
@@ -136,6 +150,115 @@ def _has_quote_overlap(quote: str, mutated_text: str) -> bool:
     if len(normalized_quote) < MIN_QUOTE_OVERLAP or len(normalized_mutated) < MIN_QUOTE_OVERLAP:
         return False
     return normalized_quote in normalized_mutated or normalized_mutated in normalized_quote
+
+
+def _telemetry(
+    *,
+    flags: list[dict[str, Any]],
+    card_issues: list[dict[str, Any]],
+    union_findings: list[dict[str, Any]],
+    escalations: list[dict[str, Any]],
+    deviations: list[dict[str, Any]],
+    distractors: list[dict[str, Any]],
+    matched_devs: set[str],
+    playbook_id: str,
+) -> dict[str, Any]:
+    union_finding_count = len(union_findings)
+    raw_findings = [*flags, *card_issues]
+    return {
+        "flag_action_count": len(flags),
+        "card_issue_count": len(card_issues),
+        "union_finding_count": union_finding_count,
+        "escalation_count": len(escalations),
+        "duplicate_finding_count": _duplicate_finding_count(raw_findings),
+        "flags_per_matched_deviation": (
+            None if not matched_devs else union_finding_count / len(matched_devs)
+        ),
+        "mean_exact_quote_chars": _mean_chars(union_findings, "exact_quote"),
+        "mean_proposed_redline_chars": _mean_chars(union_findings, "proposed_redline"),
+        "filing_channel": _filing_channel(flags, card_issues, deviations, matched_devs),
+        "distractor_hits": _distractor_hits(union_findings, distractors),
+        "per_category": _per_category(deviations, matched_devs, playbook_id),
+    }
+
+
+def _duplicate_finding_count(findings: list[dict[str, Any]]) -> int:
+    duplicates = 0
+    for index, finding in enumerate(findings):
+        if any(_same_finding_cluster(finding, earlier) for earlier in findings[:index]):
+            duplicates += 1
+    return duplicates
+
+
+def _same_finding_cluster(left: dict[str, Any], right: dict[str, Any]) -> bool:
+    return (
+        left.get("rule_id") == right.get("rule_id")
+        and left.get("doc_id") == right.get("doc_id")
+        and _has_quote_overlap(str(left.get("exact_quote", "")), str(right.get("exact_quote", "")))
+    )
+
+
+def _mean_chars(findings: list[dict[str, Any]], field: str) -> float | None:
+    lengths = [len(str(value)) for finding in findings if (value := finding.get(field, ""))]
+    if not lengths:
+        return None
+    return sum(lengths) / len(lengths)
+
+
+def _filing_channel(
+    flags: list[dict[str, Any]],
+    card_issues: list[dict[str, Any]],
+    deviations: list[dict[str, Any]],
+    matched_devs: set[str],
+) -> str:
+    if not matched_devs:
+        return "none"
+    interactive_devs = _matched_deviation_ids(flags, deviations)
+    card_devs = _matched_deviation_ids(card_issues, deviations)
+    if matched_devs <= interactive_devs and matched_devs.isdisjoint(card_devs):
+        return "interactive"
+    if matched_devs <= card_devs and matched_devs.isdisjoint(interactive_devs):
+        return "card_only"
+    return "mixed"
+
+
+def _matched_deviation_ids(findings: list[dict[str, Any]], deviations: list[dict[str, Any]]) -> set[str]:
+    return {
+        match["deviation_id"]
+        for finding in findings
+        if (match := _match_flag(finding, deviations))
+    }
+
+
+def _distractor_hits(findings: list[dict[str, Any]], distractors: list[dict[str, Any]]) -> int:
+    return sum(
+        1
+        for finding in findings
+        if any(
+            finding.get("doc_id") == distractor.get("doc_id")
+            and _has_quote_overlap(
+                str(finding.get("exact_quote", "")),
+                str(distractor.get("span", "")),
+            )
+            for distractor in distractors
+        )
+    )
+
+
+def _per_category(
+    deviations: list[dict[str, Any]],
+    matched_devs: set[str],
+    playbook_id: str,
+) -> dict[str, dict[str, int]]:
+    category_map = RULE_CATEGORIES.get(playbook_id, {})
+    per_category: dict[str, dict[str, int]] = {}
+    for deviation in deviations:
+        category = category_map.get(deviation["rule_id"], "uncategorized")
+        bucket = per_category.setdefault(category, {"planted": 0, "matched": 0})
+        bucket["planted"] += 1
+        if deviation["deviation_id"] in matched_devs:
+            bucket["matched"] += 1
+    return per_category
 
 
 def _normalize_for_overlap(text: str) -> str:
