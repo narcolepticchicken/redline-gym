@@ -1,380 +1,429 @@
 {
-  "rows": [
+  "banner": "DRAFT-INSTANCES / UNSIGNED-FAMILIES \u2014 machine-drafted, model-reviewed families; not a release gate.",
+  "manifest": "reports/t2n_tranche_manifest.json",
+  "strategy_rows": [
     {
       "strategy": "accept_all",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "accept_all_but_1_harm",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_1_harm/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_1_harm/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "accept_all_but_2_harms",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_2_harms/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_2_harms/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "always_reject_counter",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/always_reject_counter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 0.0,
+          "RU": 1.0,
+          "Jmacro": 0.0,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/always_reject_counter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     },
     {
       "strategy": "before_text_quoter",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/before_text_quoter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/before_text_quoter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "blanket_position_then_clause_match",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/blanket_position_then_clause_match/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/blanket_position_then_clause_match/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "cheapest_harm_oracle",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/cheapest_harm_oracle/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/cheapest_harm_oracle/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "common_threshold_lookup",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/common_threshold_lookup/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 1.0,
+          "RU": 0.0,
+          "Jmacro": 0.0,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/common_threshold_lookup/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     },
     {
       "strategy": "duplicate_action_washer",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 28,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/duplicate_action_washer/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/duplicate_action_washer/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "phase1_only",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/phase1_only/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/phase1_only/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "prior_location_replayer",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/prior_location_replayer/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/prior_location_replayer/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "reject_all_nearest_rule",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 28,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/reject_all_nearest_rule/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/reject_all_nearest_rule/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "slot_extractor_counter",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/slot_extractor_counter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 0.17857142857142858,
+          "RU": 0.6785714285714286,
+          "Jmacro": 0.17857142857142858,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/slot_extractor_counter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     },
     {
       "strategy": "turn2_only",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/turn2_only/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.0,
-          "matched_positions": 0,
-          "deviation_count": 0
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/turn2_only/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.0,
-          "matched_positions": 0,
-          "deviation_count": 0
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "unit_normalizing_slot_extractor",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/unit_normalizing_slot_extractor/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 0.17857142857142858,
+          "RU": 0.6785714285714286,
+          "Jmacro": 0.17857142857142858,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/unit_normalizing_slot_extractor/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     }
   ],
-  "quota_constrained_batch_attacker": "quota_constrained_batch_attacker is SKIPPED: its definition needs release-wide quota/tranche membership across >=28-instance, >=4-tranche evaluation. Episodes have no cross-episode state or batch API; fabricating either would violate the observable-side-information boundary. V10 assesses this attack at release audit time, not on these two pilots."
+  "v10_lookup": {
+    "code": "V10-T2N-2",
+    "name": "one-level lookup classifiers",
+    "status": "PASS",
+    "detail": "ok"
+  },
+  "v10_permutation_mi": {
+    "code": "V10-T2N-3",
+    "name": "permutation mutual information",
+    "status": "PASS",
+    "detail": "ok"
+  },
+  "v10_quota_batch_attacker": {
+    "code": "V10-T2N-4",
+    "name": "quota-constrained batch attacker",
+    "status": "FAIL",
+    "detail": "heuristic=max_slot_value; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.821429; balanced accuracy 0.821 >=0.60"
+  },
+  "counter_macro_gate": {
+    "metrics": {
+      "status": "EVALUATED",
+      "RA": 1.0,
+      "RU": 1.0,
+      "Jmacro": 1.0,
+      "acceptable_n": 28,
+      "unacceptable_n": 28
+    },
+    "gated": {
+      "status": "EVALUATED",
+      "composite": 0.9873397172404481,
+      "mean_E": 0.9873397172404481,
+      "counter_gate_pass": true
+    }
+  },
+  "all_concessions": [
+    {
+      "label": "T2N-AI-1302-AC-S9001",
+      "composite": 1.0,
+      "gate_pass": true
+    },
+    {
+      "label": "T2N-EMP-702-AC-S9002",
+      "composite": 1.0,
+      "gate_pass": true
+    },
+    {
+      "label": "T2N-GOV-902-AC-S9003",
+      "composite": 1.0,
+      "gate_pass": true
+    }
+  ],
+  "inventory": [
+    {
+      "area": "ai",
+      "base": "T2-AI-1302",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": true
+    },
+    {
+      "area": "ai",
+      "base": "T2-AI-1303",
+      "mixed_eligible": false,
+      "reason": "only 1 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "crypto",
+      "base": "T2-CRYPTO-1502",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "crypto",
+      "base": "T2-CRYPTO-1503",
+      "mixed_eligible": false,
+      "reason": "only 1 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-302",
+      "mixed_eligible": true,
+      "reason": "usable: two counter-family rule matches",
+      "mixed_instances": 14,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-303",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-312",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-702",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": true
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-703",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-712",
+      "mixed_eligible": false,
+      "reason": "only 1 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-902",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": true
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-903",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-912",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "ma",
+      "base": "T2-MA-1102",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "ma",
+      "base": "T2-MA-1103",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-104",
+      "mixed_eligible": true,
+      "reason": "usable: two counter-family rule matches",
+      "mixed_instances": 14,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-106",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-122",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-NDA-102",
+      "mixed_eligible": false,
+      "reason": "one seeded deviation has expected_action=escalate, not redline_with_fallback",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-NDA-112",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    }
+  ]
 }

@@ -1,0 +1,68 @@
+{
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D002",
+    "rule_id": "R-011",
+    "exact_quote": "\"Personal Data\" means raw individual records uploaded by Customer that directly name a natural person, but excludes service measurements, statistical summaries, transformed outputs, connection metadata, and account-level observations.",
+    "proposed_redline": "\"Personal Data\" means information relating to an identified or identifiable person that is provided by or for Customer, processed on behalf of Customer, or created from Customer's use of the services, including pseudonymized, aggregated, derived, telemetry, log, and usage data created from or relating to Customer personal data, except only where data has been irreversibly anonymized under applicable law."
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-002",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Vendor may study service records, build trend reports, tune automated systems, create commercial benchmarks, and enhance offerings for accounts other than Customer.",
+    "proposed_redline": "Vendor will process Personal Data only as necessary to provide the services to Customer, secure and support those services, or comply with applicable law. Vendor will not use Personal Data for Vendor's own analytics, benchmarking, product development, model training, advertising, or other independent business purposes."
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-005",
+    "exact_quote": "\n\nVendor need not notify Customer of a personal-data breach until ten business days after Vendor completes its internal investigation.",
+    "proposed_redline": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a personal-data breach."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-006",
+    "exact_quote": "Vendor will not assist with data-subject requests or regulator inquiries, although it may reference privacy assessments and available information.",
+    "proposed_redline": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D001"
+  }
+}

@@ -235,9 +235,41 @@ def v10_t2n_permutation_mi(records: Sequence[Mapping[str, Any]], features: Seque
     return _result("V10-T2N-3", "permutation mutual information", errors)
 
 
-def v10_t2n_quota_batch_attacker(*_: Any, **__: Any) -> ValidationResult:
-    """v4 §1.6 item 4 needs the later observation-serving/env integration."""
-    raise NotImplementedError("v4 §1.6 item 4 quota-constrained batch attacker requires the env observation-serving integration step")
+def v10_t2n_quota_batch_attacker(records: Sequence[Mapping[str, Any]] | None = None, *,
+                                  quota: Mapping[str, int] | None = None,
+                                  heuristic: str = "max_slot_value") -> ValidationResult:
+    """Quota-forced public-slot batch attack from v4 §1.6 item 4.
+
+    The no-argument branch deliberately preserves the pre-integration API used
+    by existing callers; a release audit supplies its already-collected public
+    records and aggregate quota explicitly.
+    """
+    if records is None:
+        raise NotImplementedError("v4 §1.6 item 4 quota-constrained batch attacker requires the env observation-serving integration step")
+    if heuristic != "max_slot_value":
+        return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL", f"unknown heuristic {heuristic!r}")
+    labels = [str(record.get("label", "")) for record in records]
+    if set(labels) - {"acceptable", "unacceptable"}:
+        return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL", "labels must be acceptable/unacceptable")
+    supplied = dict(quota or Counter(labels))
+    if supplied.get("acceptable", 0) + supplied.get("unacceptable", 0) != len(records):
+        return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL", "quota does not total record count")
+    def numeric_max(record: Mapping[str, Any]) -> float:
+        values = record.get("counter_text_slots", {})
+        if not isinstance(values, Mapping): return float("-inf")
+        found = []
+        for value in values.values():
+            match = re.search(r"-?\d+(?:\.\d+)?", str(value))
+            if match: found.append(float(match.group()))
+        return max(found) if found else float("-inf")
+    ranked = sorted(enumerate(records), key=lambda item: (-numeric_max(item[1]), item[0]))
+    acceptable_indices = {index for index, _ in ranked[:int(supplied.get("acceptable", 0))]}
+    predictions = ["acceptable" if i in acceptable_indices else "unacceptable" for i in range(len(records))]
+    accuracy = _balanced_accuracy(labels, predictions) if labels else 0.0
+    errors = [f"balanced accuracy {accuracy:.3f} >=0.60"] if accuracy >= .60 else []
+    detail = f"heuristic=max_slot_value; quota={dict(supplied)}; balanced accuracy={accuracy:.6f}"
+    if errors: detail += "; " + "; ".join(errors)
+    return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL" if errors else "PASS", detail)
 
 
 def v10_t2n_fresh_process_isolation() -> ValidationResult:

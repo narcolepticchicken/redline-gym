@@ -1,0 +1,68 @@
+{
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D005"
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D003",
+    "rule_id": "R-002",
+    "exact_quote": "Vendor will defend Customer against third-party claims only to the extent finally determined by a court to arise from Vendor's willful misconduct.",
+    "proposed_redline": "Each party will defend and indemnify the other from third-party claims arising from the indemnifying party's breach, unlawful conduct, or materials it provides. Vendor will also defend and indemnify Customer against claims alleging that the services or Deliverables infringe intellectual property rights."
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-006",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form.",
+    "proposed_redline": "If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees for services performed before the effective date plus undisputed reimbursable expenses approved in writing."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D002",
+    "rule_id": "R-011",
+    "exact_quote": "Vendor will maintain $1 million per claim but excludes technology E&O/cyber coverage, while retaining $2 million in general liability and 30-day certificate delivery.",
+    "proposed_redline": "Vendor will maintain, at its own expense, commercially reasonable insurance, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D001"
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-009",
+    "exact_quote": "\n\nVendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval.",
+    "proposed_redline": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties."
+  }
+}

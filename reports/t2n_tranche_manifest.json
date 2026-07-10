@@ -1,0 +1,2175 @@
+{
+  "mixed_count": 28,
+  "acceptable_count": 28,
+  "unacceptable_count": 28,
+  "all_concessions_count": 3,
+  "instances": [
+    {
+      "label": "T2N-DPA-302-S7302",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 7302,
+      "kind": "mixed",
+      "existing_pilot": true
+    },
+    {
+      "label": "T2N-DPA-302-S1",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 1,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S2",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 2,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S3",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 3,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S4",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 4,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S5",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 5,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S6",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 6,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S7",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 7,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S8",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 8,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S9",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 9,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S10",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 10,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S11",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 11,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S12",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 12,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-DPA-302-S13",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 13,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S4104",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 4104,
+      "kind": "mixed",
+      "existing_pilot": true
+    },
+    {
+      "label": "T2N-MSA-104-S1",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 1,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S2",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 2,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S3",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 3,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S4",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 4,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S5",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 5,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S6",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 6,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S7",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 7,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S8",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 8,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S9",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 9,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S10",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 10,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S11",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 11,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S12",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 12,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-MSA-104-S13",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 13,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-AI-1302-AC-S9001",
+      "base": "T2-AI-1302",
+      "area": "ai",
+      "seed": 9001,
+      "kind": "all_concessions",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-EMP-702-AC-S9002",
+      "base": "T2-EMP-702",
+      "area": "employment",
+      "seed": 9002,
+      "kind": "all_concessions",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-GOV-902-AC-S9003",
+      "base": "T2-GOV-902",
+      "area": "governance",
+      "seed": 9003,
+      "kind": "all_concessions",
+      "existing_pilot": false
+    }
+  ],
+  "inventory": [
+    {
+      "area": "ai",
+      "base": "T2-AI-1302",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": true
+    },
+    {
+      "area": "ai",
+      "base": "T2-AI-1303",
+      "mixed_eligible": false,
+      "reason": "only 1 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "crypto",
+      "base": "T2-CRYPTO-1502",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "crypto",
+      "base": "T2-CRYPTO-1503",
+      "mixed_eligible": false,
+      "reason": "only 1 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-302",
+      "mixed_eligible": true,
+      "reason": "usable: two counter-family rule matches",
+      "mixed_instances": 14,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-303",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-312",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-702",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": true
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-703",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-712",
+      "mixed_eligible": false,
+      "reason": "only 1 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-902",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": true
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-903",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-912",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "ma",
+      "base": "T2-MA-1102",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "ma",
+      "base": "T2-MA-1103",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-104",
+      "mixed_eligible": true,
+      "reason": "usable: two counter-family rule matches",
+      "mixed_instances": 14,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-106",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-122",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-NDA-102",
+      "mixed_eligible": false,
+      "reason": "one seeded deviation has expected_action=escalate, not redline_with_fallback",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-NDA-112",
+      "mixed_eligible": false,
+      "reason": "only 0 counter-family rule match(es); needs two",
+      "mixed_instances": 0,
+      "all_concessions": false
+    }
+  ],
+  "all_concession_episode_checks": [
+    {
+      "label": "T2N-AI-1302-AC-S9001",
+      "composite": 1.0,
+      "gate_pass": true
+    },
+    {
+      "label": "T2N-EMP-702-AC-S9002",
+      "composite": 1.0,
+      "gate_pass": true
+    },
+    {
+      "label": "T2N-GOV-902-AC-S9003",
+      "composite": 1.0,
+      "gate_pass": true
+    }
+  ],
+  "all_concessions_compliant": true,
+  "all_concessions_four_compliant": false,
+  "counter_records": [
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 0,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S7302"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 0,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S7302"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 1,
+      "event_ordinal": 4,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S1"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 1,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S1"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 2,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S2"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 2,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S2"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 3,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S3"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 3,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S3"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": true
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": true
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 4,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": true
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": true
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S4"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 24
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": false
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 4,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 24
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": false
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S4"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 5,
+      "event_ordinal": 4,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S5"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 5,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S5"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": true
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": true
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 6,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": true
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": true
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S6"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 24
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": false
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 6,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 24
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": false
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S6"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": true
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": true
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 7,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": true
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": true
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S7"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 24
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": false
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 7,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 24
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": false
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S7"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": true
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": true
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 8,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": true
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": true
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S8"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 24
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": false
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 8,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 24
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": false
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S8"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 9,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S9"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 9,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S9"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": true
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": true
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 10,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": true
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": true
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S10"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 24
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": false
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 10,
+      "event_ordinal": 6,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 24
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": false
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S10"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 11,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S11"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 11,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S11"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 12,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S12"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 12,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S12"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "data_subject_support_included": false
+      },
+      "phase1_context_slots": {
+        "regulator_support_included": false
+      },
+      "decoy_values": [
+        "privacy assessments",
+        "available information"
+      ],
+      "task_ordinal": 13,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-RIGHTS-01",
+      "observation": {
+        "counter_text_slots": {
+          "data_subject_support_included": false
+        },
+        "phase1_context_slots": {
+          "regulator_support_included": false
+        },
+        "decoy_values": [
+          "privacy assessments",
+          "available information"
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S13"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "routine_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "cause_followup_available": true
+      },
+      "decoy_values": [
+        10,
+        45
+      ],
+      "task_ordinal": 13,
+      "event_ordinal": 7,
+      "section_bucket": "11",
+      "playbook_rule": "R-008",
+      "family_split": "CF-DPA-AUDIT-01",
+      "observation": {
+        "counter_text_slots": {
+          "routine_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "cause_followup_available": true
+        },
+        "decoy_values": [
+          10,
+          45
+        ]
+      },
+      "public_task_id": "T2N-DPA-302-S13"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 1
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": false
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 14,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 1
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": false
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S4104"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cap_months": 12
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": true
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 14,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 12
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": true
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S4104"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 15,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S1"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 15,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S1"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 16,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S2"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 16,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S2"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 17,
+      "event_ordinal": 5,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S3"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 17,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S3"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 1
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": false
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 18,
+      "event_ordinal": 3,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 1
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": false
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S4"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cap_months": 12
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": true
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 18,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 12
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": true
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S4"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 19,
+      "event_ordinal": 3,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S5"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 19,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S5"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 1
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": false
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 20,
+      "event_ordinal": 5,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 1
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": false
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S6"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cap_months": 12
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": true
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 20,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 12
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": true
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S6"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 1
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": false
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 21,
+      "event_ordinal": 5,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 1
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": false
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S7"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cap_months": 12
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": true
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 21,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 12
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": true
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S7"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 1
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": false
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 22,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 1
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": false
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S8"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cap_months": 12
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": true
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 22,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 12
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": true
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S8"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 23,
+      "event_ordinal": 5,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S9"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 23,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S9"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 1
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": false
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 24,
+      "event_ordinal": 5,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 1
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": false
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S10"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cap_months": 12
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": true
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 24,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 12
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": true
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S10"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 25,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S11"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 25,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S11"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 26,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S12"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 26,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S12"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "cyber_limit_millions": 5
+      },
+      "phase1_context_slots": {
+        "cyber_coverage_included": true
+      },
+      "decoy_values": [
+        2,
+        30
+      ],
+      "task_ordinal": 27,
+      "event_ordinal": 4,
+      "section_bucket": "17",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MSA-INSURANCE-01",
+      "observation": {
+        "counter_text_slots": {
+          "cyber_limit_millions": 5
+        },
+        "phase1_context_slots": {
+          "cyber_coverage_included": true
+        },
+        "decoy_values": [
+          2,
+          30
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S13"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "cap_months": 3
+      },
+      "phase1_context_slots": {
+        "privacy_and_ip_carved_out": false
+      },
+      "decoy_values": [
+        30,
+        45
+      ],
+      "task_ordinal": 27,
+      "event_ordinal": 6,
+      "section_bucket": "18",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MSA-LIABILITY-01",
+      "observation": {
+        "counter_text_slots": {
+          "cap_months": 3
+        },
+        "phase1_context_slots": {
+          "privacy_and_ip_carved_out": false
+        },
+        "decoy_values": [
+          30,
+          45
+        ]
+      },
+      "public_task_id": "T2N-MSA-104-S13"
+    }
+  ]
+}

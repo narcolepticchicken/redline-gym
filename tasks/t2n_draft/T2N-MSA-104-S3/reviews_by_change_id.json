@@ -1,0 +1,68 @@
+{
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-003",
+    "exact_quote": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement.",
+    "proposed_redline": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, including project-specific tools, frameworks, and know-how developed in the course of performance."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-006",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: If Customer ends an Order Form without Vendor default, Customer will pay an exit charge equal to the full unpaid balance for that Order Form.",
+    "proposed_redline": "If Customer ends an Order Form without Vendor default, Customer will pay only accrued, undisputed fees for services performed before the effective date plus undisputed reimbursable expenses approved in writing."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-001",
+    "exact_quote": "Liability is capped at three months of fees, including confidentiality, data-protection, indemnity, and infringement claims; claim notice is 30 days and invoices remain net 45.",
+    "proposed_redline": "Except for breaches of confidentiality, data protection obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability is capped at the fees paid or payable under the applicable Order Form during the twelve months before the event giving rise to the claim."
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-009",
+    "exact_quote": "\n\nVendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval.",
+    "proposed_redline": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties."
+  }
+}

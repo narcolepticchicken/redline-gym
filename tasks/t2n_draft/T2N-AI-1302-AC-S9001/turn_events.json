@@ -1,0 +1,77 @@
+{
+  "expected_child_counts": {
+    "total": 5,
+    "harmful": 0,
+    "benign": 5,
+    "prior": 5,
+    "novel": 0,
+    "canary": 0
+  },
+  "events": [
+    {
+      "event_id": "EV-CONCESSION-1",
+      "event_type": "concession",
+      "children": [
+        {
+          "change_id": "CH-CONCESSION-1",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-002"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-CONCESSION-2",
+      "event_type": "concession",
+      "children": [
+        {
+          "change_id": "CH-CONCESSION-2",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-009"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-CONCESSION-4",
+      "event_type": "concession",
+      "children": [
+        {
+          "change_id": "CH-CONCESSION-4",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-006"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-CONCESSION-5",
+      "event_type": "concession",
+      "children": [
+        {
+          "change_id": "CH-CONCESSION-5",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-001"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-CONCESSION-3",
+      "event_type": "concession",
+      "children": [
+        {
+          "change_id": "CH-CONCESSION-3",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-012"
+        }
+      ]
+    }
+  ]
+}
