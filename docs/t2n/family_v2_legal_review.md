@@ -143,3 +143,11 @@ The design memo's claim that 31–45 days become acceptable with certified destr
 Count: **1**.
 
 1. **CF-MSA-LIABILITY-V2 / PB-MSA-001 R-001:** decide whether 12 months of fees is only a ceiling on ordinary mutual exposure (current predicate) or also a floor for Vendor ordinary liability. The position and customer-side economics can support the latter; the exact escalation trigger expressly focuses on capping high-risk categories and supports the current former reading.
+
+---
+
+## Aaron ruling 2026-07-10: MSA R-001 borderline
+
+RULED: ceiling only. The 12-month cap is an upper bound; counters lowering it
+may be acceptable when other protections compensate. Current corpus encoding
+stands unchanged.
