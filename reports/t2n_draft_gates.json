@@ -1,0 +1,380 @@
+{
+  "rows": [
+    {
+      "strategy": "accept_all",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "accept_all_but_1_harm",
+      "predicted": 0.2,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_1_harm/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_1_harm/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "accept_all_but_2_harms",
+      "predicted": 0.2,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_2_harms/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/accept_all_but_2_harms/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "always_reject_counter",
+      "predicted": 0,
+      "tranche_gated": true,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/always_reject_counter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/always_reject_counter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "before_text_quoter",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/before_text_quoter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/before_text_quoter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "blanket_position_then_clause_match",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/blanket_position_then_clause_match/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/blanket_position_then_clause_match/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "cheapest_harm_oracle",
+      "predicted": 0.2,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/cheapest_harm_oracle/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/cheapest_harm_oracle/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "common_threshold_lookup",
+      "predicted": 0,
+      "tranche_gated": true,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/common_threshold_lookup/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/common_threshold_lookup/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "duplicate_action_washer",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "GAMED",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/duplicate_action_washer/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "GAMED",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/duplicate_action_washer/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "phase1_only",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/phase1_only/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/phase1_only/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "prior_location_replayer",
+      "predicted": 0.2,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/prior_location_replayer/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": false,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/prior_location_replayer/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "reject_all_nearest_rule",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "GAMED",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/reject_all_nearest_rule/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "GAMED",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/reject_all_nearest_rule/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "slot_extractor_counter",
+      "predicted": 0,
+      "tranche_gated": true,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/slot_extractor_counter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/slot_extractor_counter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    },
+    {
+      "strategy": "turn2_only",
+      "predicted": 0,
+      "tranche_gated": false,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/turn2_only/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.0,
+          "matched_positions": 0,
+          "deviation_count": 0
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/turn2_only/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.0,
+          "matched_positions": 0,
+          "deviation_count": 0
+        }
+      }
+    },
+    {
+      "strategy": "unit_normalizing_slot_extractor",
+      "predicted": 0,
+      "tranche_gated": true,
+      "pilots": {
+        "T2N-DPA-302-S7302": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/unit_normalizing_slot_extractor/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        },
+        "T2N-MSA-104-S4104": {
+          "composite": 0.0,
+          "status": "OK",
+          "family_ok": true,
+          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates_verify/unit_normalizing_slot_extractor/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
+          "blanket_recall": 0.4,
+          "matched_positions": 2,
+          "deviation_count": 5
+        }
+      }
+    }
+  ],
+  "quota_constrained_batch_attacker": "quota_constrained_batch_attacker is SKIPPED: its definition needs release-wide quota/tranche membership across >=28-instance, >=4-tranche evaluation. Episodes have no cross-episode state or batch API; fabricating either would violate the observable-side-information boundary. V10 assesses this attack at release audit time, not on these two pilots."
+}
