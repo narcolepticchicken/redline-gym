@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/t2n/turn_events.schema.json",
+  "description": "T2-N parent events and child truth. total has minimum 8 so the v4 §1.5 seven-child ambiguity is rejected early; V14 independently checks exact C8/C9 composition and counts.",
+  "type": "object", "additionalProperties": false,
+  "required": ["expected_child_counts", "events"],
+  "properties": {
+    "expected_child_counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["total", "harmful", "benign", "prior", "novel", "canary"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 8, "maximum": 9},
+        "harmful": {"type": "integer", "minimum": 3, "maximum": 5},
+        "benign": {"type": "integer", "minimum": 3, "maximum": 5},
+        "prior": {"enum": [6, 7]}, "novel": {"const": 1}, "canary": {"const": 1}
+      }
+    },
+    "events": {
+      "type": "array", "minItems": 7,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["event_id", "event_type", "children"],
+        "properties": {
+          "event_id": {"type": "string", "pattern": "^EV-[A-Z0-9-]+$"},
+          "event_type": {"enum": ["concession", "regression", "sneaky_reinsert", "counter_proposal", "new_deviation", "benign_canary_change"]},
+          "children": {
+            "type": "array", "minItems": 1, "maxItems": 2,
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["change_id", "child_role", "origin", "expected_disposition", "rule_id"],
+              "properties": {
+                "change_id": {"type": "string", "pattern": "^CH-[A-Z0-9-]+$"},
+                "child_role": {"enum": ["sole", "source_cleanup", "inserted_effect"]},
+                "origin": {"enum": ["prior_position", "novel_insertion", "canary_probe"]},
+                "expected_disposition": {"enum": ["accept", "reject"]},
+                "rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"}
+              }
+            }
+          },
+          "counter_inputs": {
+            "type": "object", "additionalProperties": false,
+            "required": ["counter_family_id", "counter_class", "counter_text_slots", "phase1_context_slots", "decoy_values"],
+            "properties": {
+              "counter_family_id": {"type": "string", "minLength": 1},
+              "counter_class": {"enum": ["acceptable", "unacceptable"]},
+              "counter_text_slots": {"type": "object", "minProperties": 1, "additionalProperties": {"type": ["string", "number", "boolean"]}},
+              "phase1_context_slots": {"type": "object", "minProperties": 1, "additionalProperties": {"type": ["string", "number", "boolean"]}},
+              "decoy_values": {"type": "array", "minItems": 2, "items": {"type": ["string", "number"]}}
+            }
+          }
+        },
+        "allOf": [{"if": {"properties": {"event_type": {"const": "counter_proposal"}}, "required": ["event_type"]}, "then": {"required": ["counter_inputs"]}, "else": {"not": {"required": ["counter_inputs"]}}}]
+      }
+    }
+  }
+}

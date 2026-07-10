@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/t2n/patch_ledger.schema.json",
+  "description": "All offsets address canonical phase-1 document bytes. Child ranges must not overlap in that coordinate space and replay occurs in ascending start_offset order; V14 enforces both cross-record invariants.",
+  "type": "object", "additionalProperties": false,
+  "required": ["contract_id", "patches"],
+  "properties": {
+    "contract_id": {"const": "t2n-reward-v4"},
+    "patches": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["change_id", "event_id", "event_type", "child_role", "origin", "op", "precondition_sha256", "doc_id", "section_ref", "start_offset", "end_offset", "before_text", "after_text", "expected_disposition", "expected_rule_id", "expected_clause_id", "ground_span", "edit_required", "transition_row_id"],
+        "properties": {
+          "change_id": {"type": "string", "pattern": "^CH-[A-Z0-9-]+$"},
+          "event_id": {"type": "string", "pattern": "^EV-[A-Z0-9-]+$"},
+          "event_type": {"enum": ["concession", "regression", "sneaky_reinsert", "counter_proposal", "new_deviation", "benign_canary_change"]},
+          "child_role": {"enum": ["sole", "source_cleanup", "inserted_effect"]},
+          "origin": {"enum": ["prior_position", "novel_insertion", "canary_probe"]},
+          "op": {"enum": ["replace", "insert_before", "insert_after", "delete"]},
+          "precondition_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "doc_id": {"type": "string", "pattern": "^DOC-[0-9]{2}$"},
+          "section_ref": {"type": "string", "minLength": 1},
+          "start_offset": {"type": "integer", "minimum": 0},
+          "end_offset": {"type": "integer", "minimum": 0},
+          "before_text": {"type": "string"},
+          "after_text": {"type": "string"},
+          "expected_disposition": {"enum": ["accept", "reject"]},
+          "expected_rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"},
+          "expected_clause_id": {"type": "string", "minLength": 1},
+          "source_clause_id": {"type": "string", "minLength": 1},
+          "ground_span": {"type": "string", "minLength": 1},
+          "edit_required": {"type": "boolean"},
+          "expected_redline_text": {"type": "string", "minLength": 1},
+          "prior_source_deviation_id": {"type": "string", "pattern": "^D-[0-9]{3}$"},
+          "counter_family_id": {"type": "string", "minLength": 1},
+          "counter_class": {"enum": ["acceptable", "unacceptable"]},
+          "counter_guard_id": {"type": "string", "minLength": 1},
+          "transition_row_id": {"enum": ["TR-01", "TR-02", "TR-03", "TR-04", "TR-05", "TR-06", "TR-07"]},
+          "plant_position": {
+            "type": "object", "additionalProperties": false,
+            "required": ["source_deviation_id", "phase1_decision", "rule_id", "clause_id", "fallback_text"],
+            "properties": {
+              "source_deviation_id": {"type": "string", "pattern": "^D-[0-9]{3}$"},
+              "phase1_decision": {"enum": ["accept", "reject"]},
+              "rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"},
+              "clause_id": {"type": "string", "minLength": 1},
+              "fallback_text": {"type": "string", "minLength": 1},
+              "comparator_record_id": {"type": "string", "minLength": 1}
+            }
+          }
+        },
+        "allOf": [
+          {"if": {"properties": {"origin": {"const": "prior_position"}}, "required": ["origin"]}, "then": {"required": ["prior_source_deviation_id", "plant_position", "source_clause_id"]}, "else": {"not": {"anyOf": [{"required": ["prior_source_deviation_id"]}, {"required": ["plant_position"]}]}}},
+          {"if": {"properties": {"op": {"enum": ["insert_before", "insert_after"]}}, "required": ["op"]}, "then": {"properties": {"before_text": {"maxLength": 0}}}},
+          {"if": {"properties": {"op": {"const": "delete"}}, "required": ["op"]}, "then": {"properties": {"after_text": {"maxLength": 0}}}},
+          {"if": {"properties": {"event_type": {"const": "counter_proposal"}}, "required": ["event_type"]}, "then": {"required": ["counter_family_id", "counter_class", "counter_guard_id"]}}
+        ]
+      }
+    }
+  }
+}

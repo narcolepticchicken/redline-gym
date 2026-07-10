@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/t2n/card_t2n.schema.json",
+  "description": "T2-N card. V14 cross-checks that this changes array is an exact change_id-keyed copy of the canonical interactive review_change map; JSON Schema cannot compare two external artifacts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["changes", "escalations", "summary"],
+  "properties": {
+    "changes": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["action", "change_id", "origin", "decision"],
+        "properties": {
+          "action": {"const": "review_change"},
+          "change_id": {"type": "string", "pattern": "^CH-[A-Z0-9-]+$"},
+          "origin": {"enum": ["prior_position", "novel_insertion", "canary_probe"]},
+          "decision": {"enum": ["accept", "reject"]},
+          "prior_position_id": {"type": "string", "pattern": "^POS-[A-Z0-9-]+$"},
+          "rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"},
+          "exact_quote": {"type": "string", "minLength": 1, "pattern": "\\S"},
+          "proposed_redline": {"type": "string", "minLength": 1, "pattern": "\\S"}
+        },
+        "allOf": [
+          {"if": {"properties": {"origin": {"const": "prior_position"}}, "required": ["origin"]}, "then": {"required": ["prior_position_id"]}, "else": {"not": {"required": ["prior_position_id"]}}},
+          {"if": {"properties": {"decision": {"const": "reject"}}, "required": ["decision"]}, "then": {"required": ["rule_id", "exact_quote"]}}
+        ]
+      }
+    },
+    "escalations": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["missing_info_id", "reason"],
+        "properties": {
+          "missing_info_id": {"type": "string", "pattern": "^M-[0-9]{3}$"},
+          "reason": {"type": "string", "minLength": 1, "pattern": "\\S"}
+        }
+      }
+    },
+    "summary": {"type": "string", "minLength": 1, "pattern": "\\S"}
+  }
+}

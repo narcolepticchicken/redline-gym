@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://redline-gym.local/schema/t2n/review_action.schema.json",
+  "description": "A submitted review_change paired with the target ledger origin. Only review_change may disposition a change_id; flag_issue uses a separate issue-ID namespace.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["action", "change_id", "origin", "decision"],
+  "properties": {
+    "action": {"const": "review_change"},
+    "change_id": {"type": "string", "pattern": "^CH-[A-Z0-9-]+$"},
+    "origin": {"enum": ["prior_position", "novel_insertion", "canary_probe"]},
+    "decision": {"enum": ["accept", "reject"]},
+    "prior_position_id": {"type": "string", "pattern": "^POS-[A-Z0-9-]+$"},
+    "rule_id": {"type": "string", "pattern": "^R-[0-9]{3}$"},
+    "exact_quote": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "proposed_redline": {"type": "string", "minLength": 1, "pattern": "\\S"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"origin": {"const": "prior_position"}}, "required": ["origin"]},
+      "then": {"required": ["prior_position_id"]},
+      "else": {"not": {"required": ["prior_position_id"]}}
+    },
+    {
+      "if": {"properties": {"decision": {"const": "reject"}}, "required": ["decision"]},
+      "then": {"required": ["rule_id", "exact_quote"]}
+    }
+  ]
+}
