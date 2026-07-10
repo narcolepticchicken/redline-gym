@@ -1,380 +1,1056 @@
 {
-  "rows": [
+  "banner": "DRAFT-INSTANCES / UNSIGNED-FAMILIES \u2014 machine-drafted v2 families; attorney line-item review pending; not a release gate.",
+  "manifest": "reports/t2n_tranche_manifest.json",
+  "strategy_rows": [
     {
       "strategy": "accept_all",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/accept_all/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/accept_all/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "accept_all_but_1_harm",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/accept_all_but_1_harm/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/accept_all_but_1_harm/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "accept_all_but_2_harms",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/accept_all_but_2_harms/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/accept_all_but_2_harms/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "always_reject_counter",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/always_reject_counter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 0.0,
+          "RU": 1.0,
+          "Jmacro": 0.0,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/always_reject_counter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     },
     {
       "strategy": "before_text_quoter",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/before_text_quoter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/before_text_quoter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "blanket_position_then_clause_match",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/blanket_position_then_clause_match/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/blanket_position_then_clause_match/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "cheapest_harm_oracle",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/cheapest_harm_oracle/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/cheapest_harm_oracle/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "common_threshold_lookup",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/common_threshold_lookup/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 1.0,
+          "RU": 0.0,
+          "Jmacro": 0.0,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/common_threshold_lookup/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     },
     {
       "strategy": "duplicate_action_washer",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 28,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/duplicate_action_washer/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/duplicate_action_washer/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "phase1_only",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/phase1_only/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/phase1_only/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "prior_location_replayer",
       "predicted": 0.2,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/prior_location_replayer/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/prior_location_replayer/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "reject_all_nearest_rule",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 28,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/reject_all_nearest_rule/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "GAMED",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/reject_all_nearest_rule/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "slot_extractor_counter",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/slot_extractor_counter/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 0.6428571428571429,
+          "RU": 0.42857142857142855,
+          "Jmacro": 0.42857142857142855,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/slot_extractor_counter/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     },
     {
       "strategy": "turn2_only",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": false,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/turn2_only/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.0,
-          "matched_positions": 0,
-          "deviation_count": 0
-        },
-        "T2N-MSA-104-S4104": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/turn2_only/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.0,
-          "matched_positions": 0,
-          "deviation_count": 0
-        }
-      }
+      "tranche_result": null
     },
     {
       "strategy": "unit_normalizing_slot_extractor",
       "predicted": 0,
+      "min": 0.0,
+      "mean": 0.0,
+      "max": 0.0,
+      "worst_instances": [
+        "T2N-V2-AI-01-S21238",
+        "T2N-V2-AI-02-S21171",
+        "T2N-V2-AI-03-S21308",
+        "T2N-V2-AI-04-S21139",
+        "T2N-V2-CRYPTO-01-S21287",
+        "T2N-V2-CRYPTO-02-S21305",
+        "T2N-V2-CRYPTO-03-S21255",
+        "T2N-V2-CRYPTO-04-S21239",
+        "T2N-V2-PRIVACY-01-S21302",
+        "T2N-V2-PRIVACY-02-S21405",
+        "T2N-V2-PRIVACY-03-S21474",
+        "T2N-V2-PRIVACY-04-S21237",
+        "T2N-V2-EMPLOYMENT-01-S21623",
+        "T2N-V2-EMPLOYMENT-02-S21403",
+        "T2N-V2-EMPLOYMENT-03-S21523",
+        "T2N-V2-EMPLOYMENT-04-S21575",
+        "T2N-V2-GOVERNANCE-01-S21689",
+        "T2N-V2-GOVERNANCE-02-S21554",
+        "T2N-V2-GOVERNANCE-03-S21640",
+        "T2N-V2-GOVERNANCE-04-S21471",
+        "T2N-V2-MA-01-S21687",
+        "T2N-V2-MA-02-S21637",
+        "T2N-V2-MA-03-S21502",
+        "T2N-V2-MA-04-S21707",
+        "T2N-V2-CONTRACTS-01-S21634",
+        "T2N-V2-CONTRACTS-02-S21788",
+        "T2N-V2-CONTRACTS-03-S21670",
+        "T2N-V2-CONTRACTS-04-S21756"
+      ],
+      "gamed_count": 0,
       "tranche_gated": true,
-      "pilots": {
-        "T2N-DPA-302-S7302": {
-          "composite": 0.0,
-          "status": "OK",
-          "family_ok": false,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/unit_normalizing_slot_extractor/T2N-DPA-302-S7302/T2-DPA-302/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+      "tranche_result": {
+        "metrics": {
+          "status": "EVALUATED",
+          "RA": 0.6428571428571429,
+          "RU": 0.42857142857142855,
+          "Jmacro": 0.42857142857142855,
+          "acceptable_n": 28,
+          "unacceptable_n": 28
         },
-        "T2N-MSA-104-S4104": {
+        "gated": {
+          "status": "EVALUATED",
           "composite": 0.0,
-          "status": "OK",
-          "family_ok": true,
-          "transcript_path": "/Users/ronthewizard/labs1/redline-gym/runs/t2n_gates/unit_normalizing_slot_extractor/T2N-MSA-104-S4104/T2-MSA-104/episode.jsonl",
-          "blanket_recall": 0.4,
-          "matched_positions": 2,
-          "deviation_count": 5
+          "mean_E": 0.0,
+          "counter_gate_pass": false
         }
       }
     }
   ],
-  "quota_constrained_batch_attacker": "quota_constrained_batch_attacker is SKIPPED: its definition needs release-wide quota/tranche membership across >=28-instance, >=4-tranche evaluation. Episodes have no cross-episode state or batch API; fabricating either would violate the observable-side-information boundary. V10 assesses this attack at release audit time, not on these two pilots."
+  "v10_lookup": {
+    "code": "V10-T2N-2",
+    "name": "one-level lookup classifiers",
+    "status": "PASS",
+    "detail": "balanced_accuracy: task_ordinal[heldout=0]=0.500000, event_ordinal[heldout=0]=0.428571, section_bucket[heldout=0]=0.142857, operation[heldout=0]=0.500000, surface_template_hash[heldout=0]=0.500000, playbook_rule[heldout=0]=0.214286, family_split[heldout=0]=0.000000, task_ordinal[heldout=1]=0.500000, event_ordinal[heldout=1]=0.428571, section_bucket[heldout=1]=0.285714, operation[heldout=1]=0.500000, surface_template_hash[heldout=1]=0.500000, playbook_rule[heldout=1]=0.071429, family_split[heldout=1]=0.071429, task_ordinal[heldout=2]=0.500000, event_ordinal[heldout=2]=0.214286, section_bucket[heldout=2]=0.214286, operation[heldout=2]=0.500000, surface_template_hash[heldout=2]=0.500000, playbook_rule[heldout=2]=0.428571, family_split[heldout=2]=0.142857, task_ordinal[heldout=3]=0.500000, event_ordinal[heldout=3]=0.500000, section_bucket[heldout=3]=0.142857, operation[heldout=3]=0.500000, surface_template_hash[heldout=3]=0.500000, playbook_rule[heldout=3]=0.357143, family_split[heldout=3]=0.285714"
+  },
+  "v10_permutation_mi": {
+    "code": "V10-T2N-3",
+    "name": "permutation mutual information",
+    "status": "PASS",
+    "detail": "event_ordinal:holm_p=1.000000,normalized_mi=0.027110; task_ordinal:holm_p=1.000000,normalized_mi=0.000000; section_bucket:holm_p=1.000000,normalized_mi=0.048161"
+  },
+  "v10_quota_batch_attackers": {
+    "max_slot_value": {
+      "code": "V10-T2N-4",
+      "name": "quota-constrained batch attacker",
+      "status": "PASS",
+      "detail": "heuristic=max_slot_value; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.464286"
+    },
+    "min_slot_value": {
+      "code": "V10-T2N-4",
+      "name": "quota-constrained batch attacker",
+      "status": "PASS",
+      "detail": "heuristic=min_slot_value; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.464286"
+    },
+    "sum_slots": {
+      "code": "V10-T2N-4",
+      "name": "quota-constrained batch attacker",
+      "status": "PASS",
+      "detail": "heuristic=sum_slots; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.464286"
+    },
+    "mean_slots": {
+      "code": "V10-T2N-4",
+      "name": "quota-constrained batch attacker",
+      "status": "PASS",
+      "detail": "heuristic=mean_slots; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.464286"
+    },
+    "single_threshold_per_slot": {
+      "code": "V10-T2N-4",
+      "name": "quota-constrained batch attacker",
+      "status": "PASS",
+      "detail": "heuristic=single_threshold_per_slot; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.535714; best_slot=decoy_values.1; acceptable_direction=high"
+    },
+    "single_slot_logistic": {
+      "code": "V10-T2N-4",
+      "name": "quota-constrained batch attacker",
+      "status": "PASS",
+      "detail": "heuristic=single_slot_logistic; quota={'acceptable': 28, 'unacceptable': 28}; balanced accuracy=0.535714; best_slot=decoy_values.0; coefficient=0.188117"
+    }
+  },
+  "counter_macro_gate": {
+    "metrics": {
+      "status": "EVALUATED",
+      "RA": 1.0,
+      "RU": 1.0,
+      "Jmacro": 1.0,
+      "acceptable_n": 28,
+      "unacceptable_n": 28
+    },
+    "gated": {
+      "status": "EVALUATED",
+      "composite": 0.9972870822658103,
+      "mean_E": 0.9972870822658103,
+      "counter_gate_pass": true
+    }
+  },
+  "family_heldout_split": {
+    "status": "PASS",
+    "playbooks": [
+      {
+        "playbook_id": "PB-AI-001",
+        "train_family_ids": [
+          "CF-AI-CUSTOM-ASSETS-V2",
+          "CF-AI-EXIT-V2",
+          "CF-AI-POLICY-CHANGE-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-AI-TRAINING-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-AI-TRAINING-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-CRYPTO-001",
+        "train_family_ids": [
+          "CF-CRYPTO-ASSET-USE-V2",
+          "CF-CRYPTO-ASSURANCE-V2",
+          "CF-CRYPTO-DISTRIBUTIONS-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-CRYPTO-ESTATE-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-CRYPTO-ESTATE-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-DPA-001",
+        "train_family_ids": [
+          "CF-DPA-INSTRUCTIONS-V2",
+          "CF-DPA-SUBPROCESSOR-V2",
+          "CF-DPA-SUPPORT-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-DPA-USE-BOUNDARY-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-DPA-USE-BOUNDARY-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-EMP-001",
+        "train_family_ids": [
+          "CF-EMP-BONUS-V2",
+          "CF-EMP-CAUSE-V2",
+          "CF-EMP-EQUITY-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-EMP-INVENTIONS-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-EMP-INVENTIONS-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-GOV-001",
+        "train_family_ids": [
+          "CF-GOV-PROTECTIVE-V2",
+          "CF-GOV-ROFR-V2",
+          "CF-GOV-THRESHOLD-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-GOV-TRANSFER-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-GOV-TRANSFER-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-MA-001",
+        "train_family_ids": [
+          "CF-MA-ASSUMPTION-V2",
+          "CF-MA-FRAUD-V2",
+          "CF-MA-MAE-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-MA-WORKFORCE-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-MA-WORKFORCE-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-MSA-001",
+        "train_family_ids": [
+          "CF-MSA-DISCLAIMER-V2",
+          "CF-MSA-LIABILITY-V2",
+          "CF-MSA-TERMINATION-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-MSA-WORK-PRODUCT-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-MSA-WORK-PRODUCT-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-NDA-001",
+        "train_family_ids": [
+          "CF-NDA-AFFILIATES-V2",
+          "CF-NDA-RETURN-V2",
+          "CF-NDA-SURVIVAL-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-NDA-COMPELLED-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-NDA-COMPELLED-V2"
+        ],
+        "train_heldout_disjoint": true
+      }
+    ]
+  },
+  "all_concessions": [
+    {
+      "label": "T2N-V2-AI-AC-S29001",
+      "composite": 1.0,
+      "gate_pass": true
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-AC-S29002",
+      "composite": 1.0,
+      "gate_pass": true
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-AC-S29003",
+      "composite": 1.0,
+      "gate_pass": true
+    }
+  ],
+  "inventory": [
+    {
+      "area": "ai",
+      "base": "T2-AI-1302",
+      "playbook_id": "PB-AI-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-002', 'R-009', 'R-012']",
+      "mixed_instances": 2,
+      "all_concessions": true
+    },
+    {
+      "area": "ai",
+      "base": "T2-AI-1303",
+      "playbook_id": "PB-AI-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-002', 'R-009', 'R-012']",
+      "mixed_instances": 2,
+      "all_concessions": false
+    },
+    {
+      "area": "crypto",
+      "base": "T2-CRYPTO-1502",
+      "playbook_id": "PB-CRYPTO-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-002', 'R-003', 'R-006', 'R-008']",
+      "mixed_instances": 2,
+      "all_concessions": false
+    },
+    {
+      "area": "crypto",
+      "base": "T2-CRYPTO-1503",
+      "playbook_id": "PB-CRYPTO-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-002', 'R-003', 'R-006', 'R-008']",
+      "mixed_instances": 2,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-302",
+      "playbook_id": "PB-DPA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-002', 'R-006']",
+      "mixed_instances": 2,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-303",
+      "playbook_id": "PB-DPA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-001', 'R-002']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "privacy",
+      "base": "T2-DPA-312",
+      "playbook_id": "PB-DPA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-001', 'R-003']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-702",
+      "playbook_id": "PB-EMP-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-004', 'R-007']",
+      "mixed_instances": 2,
+      "all_concessions": true
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-703",
+      "playbook_id": "PB-EMP-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-004', 'R-007']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "employment",
+      "base": "T2-EMP-712",
+      "playbook_id": "PB-EMP-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-006', 'R-007']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-902",
+      "playbook_id": "PB-GOV-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-002', 'R-006', 'R-007', 'R-013']",
+      "mixed_instances": 2,
+      "all_concessions": true
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-903",
+      "playbook_id": "PB-GOV-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-006', 'R-013']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "governance",
+      "base": "T2-GOV-912",
+      "playbook_id": "PB-GOV-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-007', 'R-013']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "ma",
+      "base": "T2-MA-1102",
+      "playbook_id": "PB-MA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-006', 'R-008', 'R-011']",
+      "mixed_instances": 2,
+      "all_concessions": false
+    },
+    {
+      "area": "ma",
+      "base": "T2-MA-1103",
+      "playbook_id": "PB-MA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-006', 'R-008', 'R-011']",
+      "mixed_instances": 2,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-104",
+      "playbook_id": "PB-MSA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-001', 'R-003', 'R-006']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-106",
+      "playbook_id": "PB-MSA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-003', 'R-006', 'R-008']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-MSA-122",
+      "playbook_id": "PB-MSA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-003', 'R-008']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-NDA-102",
+      "playbook_id": "PB-NDA-001",
+      "mixed_eligible": false,
+      "reason": "one seeded deviation has expected_action=escalate and no expected_redline_text",
+      "mixed_instances": 0,
+      "all_concessions": false
+    },
+    {
+      "area": "contracts",
+      "base": "T2-NDA-112",
+      "playbook_id": "PB-NDA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-002', 'R-007']",
+      "mixed_instances": 1,
+      "all_concessions": false
+    }
+  ]
 }

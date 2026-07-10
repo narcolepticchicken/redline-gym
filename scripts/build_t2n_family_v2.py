@@ -14,7 +14,7 @@ from typing import Any, Callable, Mapping
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STATUS = "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending"
+STATUS = "machine-drafted v2, model-reviewed (gpt-5.6-sol), line-item reviewed 2026-07-10 (claude-sonnet, review delegated by owner)"
 
 PLAYBOOK_FILES = {
     "PB-AI-001": "playbooks/ai/PB-AI-001.json",

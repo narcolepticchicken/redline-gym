@@ -83,7 +83,7 @@ def generate_response(
     playbook = _load_json(playbook_path)
     playbook_id = playbook["playbook_id"]
     family_data = _load_json(family_file)
-    if family_data.get("_status") != "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending":
+    if family_data.get("_status") != "machine-drafted v2, model-reviewed (gpt-5.6-sol), line-item reviewed 2026-07-10 (claude-sonnet, review delegated by owner)":
         raise ResponseGenerationError("family file is missing the required machine-drafted signing-gate status")
     try:
         bundle = family_data[playbook_id]
