@@ -37,10 +37,10 @@
         "counter_family_id": "CF-EMP-CAUSE-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "cure_days": 15
+          "serious_misconduct_covered": true
         },
         "phase1_context_slots": {
-          "cause_event": "curable_material_breach"
+          "material_duty_failure_covered": true
         },
         "decoy_values": [
           5,

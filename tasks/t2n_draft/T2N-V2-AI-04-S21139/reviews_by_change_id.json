@@ -6,7 +6,7 @@
     "decision": "reject",
     "prior_position_id": "POS-D002",
     "rule_id": "R-002",
-    "exact_quote": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 30 days. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.",
+    "exact_quote": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only nonexclusive use. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.",
     "proposed_redline": "Customer owns all fine-tuned weights, adapters, embeddings, prompts, configuration artifacts, and related deliverables created specifically for Customer; if Vendor cannot assign ownership, Customer receives exclusive use and portability rights."
   },
   "CH-NEW-DEVIATION": {

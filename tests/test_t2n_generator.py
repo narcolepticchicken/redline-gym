@@ -71,7 +71,7 @@ def test_all_area_families_validate_and_meet_playbook_quotas():
     all_families = []
     for area in AREA_FILES:
         data = load(ROOT / "generator" / "t2n_families" / f"{area}.json")
-        assert data["_status"] == "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending"
+        assert data["_status"] == "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending"
         for playbook_id, bundle in data.items():
             if playbook_id.startswith("_"):
                 continue

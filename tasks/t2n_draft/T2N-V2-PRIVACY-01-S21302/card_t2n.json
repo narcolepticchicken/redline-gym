@@ -50,7 +50,7 @@
       "decision": "reject",
       "prior_position_id": "POS-D005",
       "rule_id": "R-006",
-      "exact_quote": "Vendor will reasonably assist Customer with each data-subject request relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 15 days. Customer may group up to 10 related requests in one intake, and Vendor provides status updates every 4 days while work remains open.",
+      "exact_quote": "Vendor's support covers data-subject requests and privacy assessments but excludes regulator inquiries. Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor. Customer may group up to 10 related requests in one intake, and the intake portal produces automated status notices every 6 days while a request record remains open.",
       "proposed_redline": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor."
     },
     {

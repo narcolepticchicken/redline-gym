@@ -50,11 +50,10 @@
         "counter_family_id": "CF-NDA-AFFILIATES-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "affiliate_covered": true,
-          "party_responsible": true
+          "affiliate_covered": true
         },
         "phase1_context_slots": {
-          "affiliate_participates": true
+          "party_responsible": true
         },
         "decoy_values": [
           10,
@@ -111,7 +110,7 @@
         "counter_family_id": "CF-NDA-COMPELLED-V2",
         "counter_class": "unacceptable",
         "counter_text_slots": {
-          "compelled_notice_hours": 36,
+          "prompt_notice": false,
           "reasonable_cooperation": true
         },
         "phase1_context_slots": {

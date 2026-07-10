@@ -110,14 +110,14 @@
         "counter_family_id": "CF-DPA-SUPPORT-V2",
         "counter_class": "unacceptable",
         "counter_text_slots": {
-          "response_days": 15
+          "supported_request_types": 2
         },
         "phase1_context_slots": {
-          "request_type": "data_subject"
+          "practical_support": true
         },
         "decoy_values": [
           10,
-          4
+          6
         ]
       }
     },

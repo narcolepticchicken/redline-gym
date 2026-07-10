@@ -24,7 +24,7 @@
         "counter_family_id": "CF-AI-CUSTOM-ASSETS-V2",
         "counter_class": "unacceptable",
         "counter_text_slots": {
-          "portability_days": 30
+          "portable_export_available": true
         },
         "phase1_context_slots": {
           "asset_control": "nonexclusive_use"

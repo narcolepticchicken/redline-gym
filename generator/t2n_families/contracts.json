@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-MSA-001": {
     "counter_families": [
       {
@@ -775,7 +775,7 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "not affiliate_participates or (affiliate_covered and party_responsible)"
+          "expression": "affiliate_covered and party_responsible"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": false,
@@ -783,14 +783,10 @@
           "affiliate_covered": [
             false,
             true
-          ],
-          "party_responsible": [
-            false,
-            true
           ]
         },
         "phase1_context_slots": {
-          "affiliate_participates": [
+          "party_responsible": [
             false,
             true
           ]
@@ -813,11 +809,6 @@
             "express party responsible",
             "defined party responsible",
             "operative party responsible condition"
-          ],
-          "affiliate_participates": [
-            "express affiliate participates",
-            "defined affiliate participates",
-            "operative affiliate participates condition"
           ]
         },
         "counterfactual_twins": [
@@ -827,10 +818,6 @@
           },
           {
             "varied_input": "party_responsible",
-            "label_flipped": true
-          },
-          {
-            "varied_input": "affiliate_participates",
             "label_flipped": true
           },
           {
@@ -846,13 +833,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 3 days and refreshes its authorized-recipient list every 10 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 3 days and refreshes its authorized-recipient list every 10 days.",
               "counter_text_slots": {
-                "affiliate_covered": true,
-                "party_responsible": true
+                "affiliate_covered": true
               },
               "phase1_context_slots": {
-                "affiliate_participates": true
+                "party_responsible": true
               },
               "decoy_values": [
                 3,
@@ -860,13 +846,12 @@
               ]
             },
             {
-              "text": "No controlled affiliate presently discloses or receives Confidential Information; any later participating controlled affiliate will be covered. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 5 days and refreshes its authorized-recipient list every 40 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 5 days and refreshes its authorized-recipient list every 40 days.",
               "counter_text_slots": {
-                "affiliate_covered": true,
-                "party_responsible": true
+                "affiliate_covered": true
               },
               "phase1_context_slots": {
-                "affiliate_participates": false
+                "party_responsible": true
               },
               "decoy_values": [
                 5,
@@ -874,13 +859,12 @@
               ]
             },
             {
-              "text": "No controlled affiliate presently discloses or receives Confidential Information; any later participating controlled affiliate will be covered. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 7 days and refreshes its authorized-recipient list every 30 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 7 days and refreshes its authorized-recipient list every 30 days.",
               "counter_text_slots": {
-                "affiliate_covered": true,
-                "party_responsible": true
+                "affiliate_covered": true
               },
               "phase1_context_slots": {
-                "affiliate_participates": false
+                "party_responsible": true
               },
               "decoy_values": [
                 7,
@@ -888,13 +872,12 @@
               ]
             },
             {
-              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 20 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 20 days.",
               "counter_text_slots": {
-                "affiliate_covered": true,
-                "party_responsible": true
+                "affiliate_covered": true
               },
               "phase1_context_slots": {
-                "affiliate_participates": true
+                "party_responsible": true
               },
               "decoy_values": [
                 10,
@@ -904,13 +887,12 @@
           ],
           "unacceptable": [
             {
-              "text": "A controlled affiliate participates as a discloser or recipient. Participating affiliates are excluded from the NDA's protections and duties, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 5 days and refreshes its authorized-recipient list every 30 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Participating affiliates are excluded from the NDA's protections and duties, and its party is responsible only for its own disclosure decision; the affiliate has no NDA duty. A party identifies a participating affiliate within 5 days and refreshes its authorized-recipient list every 30 days.",
               "counter_text_slots": {
-                "affiliate_covered": false,
-                "party_responsible": true
+                "affiliate_covered": false
               },
               "phase1_context_slots": {
-                "affiliate_participates": true
+                "party_responsible": true
               },
               "decoy_values": [
                 5,
@@ -918,13 +900,12 @@
               ]
             },
             {
-              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 3 days and refreshes its authorized-recipient list every 40 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 3 days and refreshes its authorized-recipient list every 40 days.",
               "counter_text_slots": {
-                "affiliate_covered": true,
-                "party_responsible": false
+                "affiliate_covered": true
               },
               "phase1_context_slots": {
-                "affiliate_participates": true
+                "party_responsible": false
               },
               "decoy_values": [
                 3,
@@ -932,13 +913,12 @@
               ]
             },
             {
-              "text": "A controlled affiliate participates as a discloser or recipient. Participating affiliates are excluded from the NDA's protections and duties, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 10 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Participating affiliates are excluded from the NDA's protections and duties, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 10 days.",
               "counter_text_slots": {
-                "affiliate_covered": false,
-                "party_responsible": false
+                "affiliate_covered": false
               },
               "phase1_context_slots": {
-                "affiliate_participates": true
+                "party_responsible": false
               },
               "decoy_values": [
                 10,
@@ -946,13 +926,12 @@
               ]
             },
             {
-              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 7 days and refreshes its authorized-recipient list every 20 days.",
+              "text": "Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 7 days and refreshes its authorized-recipient list every 20 days.",
               "counter_text_slots": {
-                "affiliate_covered": true,
-                "party_responsible": false
+                "affiliate_covered": true
               },
               "phase1_context_slots": {
-                "affiliate_participates": true
+                "party_responsible": false
               },
               "decoy_values": [
                 7,
@@ -978,16 +957,14 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "reasonable_cooperation and (notice_legally_prohibited or compelled_notice_hours <= 24)"
+          "expression": "reasonable_cooperation and (notice_legally_prohibited or prompt_notice)"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
-          "compelled_notice_hours": [
-            12,
-            24,
-            36,
-            48
+          "prompt_notice": [
+            false,
+            true
           ],
           "reasonable_cooperation": [
             false,
@@ -1009,10 +986,10 @@
           "disclosure_log_days"
         ],
         "render_forms": {
-          "compelled_notice_hours": [
-            "express compelled notice hours",
-            "defined compelled notice hours",
-            "operative compelled notice hours condition"
+          "prompt_notice": [
+            "express prompt notice",
+            "defined prompt notice",
+            "operative prompt notice condition"
           ],
           "reasonable_cooperation": [
             "express reasonable cooperation",
@@ -1027,7 +1004,7 @@
         },
         "counterfactual_twins": [
           {
-            "varied_input": "compelled_notice_hours",
+            "varied_input": "prompt_notice",
             "label_flipped": true
           },
           {
@@ -1051,9 +1028,9 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Recipient will give Discloser notice 24 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 4 days and updates the disclosure log within 20 days.",
+              "text": "Recipient will give Discloser prompt advance notice as soon as practicable before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 4 days and updates the disclosure log within 20 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 24,
+                "prompt_notice": true,
                 "reasonable_cooperation": true
               },
               "phase1_context_slots": {
@@ -1067,7 +1044,7 @@
             {
               "text": "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 6 days and updates the disclosure log within 10 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 48,
+                "prompt_notice": false,
                 "reasonable_cooperation": true
               },
               "phase1_context_slots": {
@@ -1079,9 +1056,9 @@
               ]
             },
             {
-              "text": "Recipient will give Discloser notice 12 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 40 days.",
+              "text": "Recipient will give Discloser prompt advance notice as soon as practicable before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 40 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 12,
+                "prompt_notice": true,
                 "reasonable_cooperation": true
               },
               "phase1_context_slots": {
@@ -1095,7 +1072,7 @@
             {
               "text": "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 2 days and updates the disclosure log within 30 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 24,
+                "prompt_notice": true,
                 "reasonable_cooperation": true
               },
               "phase1_context_slots": {
@@ -1109,9 +1086,9 @@
           ],
           "unacceptable": [
             {
-              "text": "Recipient will give Discloser notice 48 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 6 days and updates the disclosure log within 40 days.",
+              "text": "Recipient will notify Discloser only after completing a compelled disclosure, even though advance notice is legally permitted. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 6 days and updates the disclosure log within 40 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 48,
+                "prompt_notice": false,
                 "reasonable_cooperation": true
               },
               "phase1_context_slots": {
@@ -1123,9 +1100,9 @@
               ]
             },
             {
-              "text": "Recipient will give Discloser notice 24 hours before a compelled disclosure. Recipient has no obligation to cooperate in seeking protective treatment. Recipient preserves supporting material for a protective-order request for 4 days and updates the disclosure log within 10 days.",
+              "text": "Recipient will give Discloser prompt advance notice as soon as practicable before a compelled disclosure. Recipient has no obligation to cooperate in seeking protective treatment. Recipient preserves supporting material for a protective-order request for 4 days and updates the disclosure log within 10 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 24,
+                "prompt_notice": true,
                 "reasonable_cooperation": false
               },
               "phase1_context_slots": {
@@ -1139,7 +1116,7 @@
             {
               "text": "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. Recipient has no obligation to cooperate in seeking protective treatment. Recipient preserves supporting material for a protective-order request for 2 days and updates the disclosure log within 20 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 12,
+                "prompt_notice": false,
                 "reasonable_cooperation": false
               },
               "phase1_context_slots": {
@@ -1151,9 +1128,9 @@
               ]
             },
             {
-              "text": "Recipient will give Discloser notice 36 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 30 days.",
+              "text": "Recipient will notify Discloser only after completing a compelled disclosure, even though advance notice is legally permitted. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 30 days.",
               "counter_text_slots": {
-                "compelled_notice_hours": 36,
+                "prompt_notice": false,
                 "reasonable_cooperation": true
               },
               "phase1_context_slots": {
@@ -1183,26 +1160,22 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "return_days <= 30 or (return_days <= 45 and certified_destruction and legal_hold_carveout_narrow)"
+          "expression": "return_days <= 30 and retained_copies_protected"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
           "return_days": [
             15,
+            18,
+            22,
             30,
             35,
-            40,
-            45,
-            60
-          ],
-          "certified_destruction": [
-            false,
-            true
+            45
           ]
         },
         "phase1_context_slots": {
-          "legal_hold_carveout_narrow": [
+          "retained_copies_protected": [
             false,
             true
           ]
@@ -1221,15 +1194,10 @@
             "defined return days",
             "operative return days condition"
           ],
-          "certified_destruction": [
-            "express certified destruction",
-            "defined certified destruction",
-            "operative certified destruction condition"
-          ],
-          "legal_hold_carveout_narrow": [
-            "express legal hold carveout narrow",
-            "defined legal hold carveout narrow",
-            "operative legal hold carveout narrow condition"
+          "retained_copies_protected": [
+            "express retained copies protected",
+            "defined retained copies protected",
+            "operative retained copies protected condition"
           ]
         },
         "counterfactual_twins": [
@@ -1238,11 +1206,7 @@
             "label_flipped": true
           },
           {
-            "varied_input": "certified_destruction",
-            "label_flipped": true
-          },
-          {
-            "varied_input": "legal_hold_carveout_narrow",
+            "varied_input": "retained_copies_protected",
             "label_flipped": true
           },
           {
@@ -1258,13 +1222,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 15 days. Recipient need not certify completion. Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations. Ordinary backup media rotate every 21 days, and Recipient updates its destruction log within 20 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 15 days. Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations. Ordinary backup media rotate every 21 days, and Recipient updates its destruction log within 20 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 15,
-                "certified_destruction": false
+                "return_days": 15
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": false
+                "retained_copies_protected": true
               },
               "decoy_values": [
                 21,
@@ -1272,13 +1235,12 @@
               ]
             },
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 30 days. Recipient need not certify completion. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 28 days, and Recipient updates its destruction log within 10 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 30 days. Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations. Ordinary backup media rotate every 28 days, and Recipient updates its destruction log within 10 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 30,
-                "certified_destruction": false
+                "return_days": 30
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": true
+                "retained_copies_protected": true
               },
               "decoy_values": [
                 28,
@@ -1286,13 +1248,12 @@
               ]
             },
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 45 days. Recipient will certify completion in writing. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 7 days, and Recipient updates its destruction log within 5 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 18 days. Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations. Ordinary backup media rotate every 7 days, and Recipient updates its destruction log within 5 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 45,
-                "certified_destruction": true
+                "return_days": 18
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": true
+                "retained_copies_protected": true
               },
               "decoy_values": [
                 7,
@@ -1300,13 +1261,12 @@
               ]
             },
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 35 days. Recipient will certify completion in writing. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 14 days, and Recipient updates its destruction log within 25 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 22 days. Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations. Ordinary backup media rotate every 14 days, and Recipient updates its destruction log within 25 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 35,
-                "certified_destruction": true
+                "return_days": 22
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": true
+                "retained_copies_protected": true
               },
               "decoy_values": [
                 14,
@@ -1316,13 +1276,12 @@
           ],
           "unacceptable": [
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 35 days. Recipient need not certify completion. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 28 days, and Recipient updates its destruction log within 5 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 35 days. Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations. Ordinary backup media rotate every 28 days, and Recipient updates its destruction log within 5 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 35,
-                "certified_destruction": false
+                "return_days": 35
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": true
+                "retained_copies_protected": true
               },
               "decoy_values": [
                 28,
@@ -1330,13 +1289,12 @@
               ]
             },
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 45 days. Recipient will certify completion in writing. Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations. Ordinary backup media rotate every 21 days, and Recipient updates its destruction log within 10 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 30 days. Archival, legal-hold, and backup copies may remain without continuing confidentiality or use restrictions. Ordinary backup media rotate every 21 days, and Recipient updates its destruction log within 10 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 45,
-                "certified_destruction": true
+                "return_days": 30
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": false
+                "retained_copies_protected": false
               },
               "decoy_values": [
                 21,
@@ -1344,13 +1302,12 @@
               ]
             },
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 60 days. Recipient will certify completion in writing. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 14 days, and Recipient updates its destruction log within 20 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 45 days. Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations. Ordinary backup media rotate every 14 days, and Recipient updates its destruction log within 20 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 60,
-                "certified_destruction": true
+                "return_days": 45
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": true
+                "retained_copies_protected": true
               },
               "decoy_values": [
                 14,
@@ -1358,13 +1315,12 @@
               ]
             },
             {
-              "text": "Upon request, Recipient will return or destroy Confidential Information within 40 days. Recipient need not certify completion. Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations. Ordinary backup media rotate every 7 days, and Recipient updates its destruction log within 25 days after completing the process.",
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 15 days. Archival, legal-hold, and backup copies may remain without continuing confidentiality or use restrictions. Ordinary backup media rotate every 7 days, and Recipient updates its destruction log within 25 days after completing the process.",
               "counter_text_slots": {
-                "return_days": 40,
-                "certified_destruction": false
+                "return_days": 15
               },
               "phase1_context_slots": {
-                "legal_hold_carveout_narrow": false
+                "retained_copies_protected": false
               },
               "decoy_values": [
                 7,
@@ -1447,7 +1403,7 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Confidentiality obligations continue for 3 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 60 days' notice, and trade-secret designations are administratively reviewed every 24 months without ending protection.",
+              "text": "Confidentiality obligations continue for 3 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 60 days' notice, and trade-secret designations are administratively reviewed every 24 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 3
               },
@@ -1460,7 +1416,7 @@
               ]
             },
             {
-              "text": "Confidentiality obligations continue for 4 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 15 days' notice, and trade-secret designations are administratively reviewed every 18 months without ending protection.",
+              "text": "Confidentiality obligations continue for 4 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 15 days' notice, and trade-secret designations are administratively reviewed every 18 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 4
               },
@@ -1473,7 +1429,7 @@
               ]
             },
             {
-              "text": "Confidentiality obligations continue for 5 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 30 days' notice, and trade-secret designations are administratively reviewed every 12 months without ending protection.",
+              "text": "Confidentiality obligations continue for 5 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 30 days' notice, and trade-secret designations are administratively reviewed every 12 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 5
               },
@@ -1486,7 +1442,7 @@
               ]
             },
             {
-              "text": "Confidentiality obligations continue for 3 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 45 days' notice, and trade-secret designations are administratively reviewed every 6 months without ending protection.",
+              "text": "Confidentiality obligations continue for 3 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 45 days' notice, and trade-secret designations are administratively reviewed every 6 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 3
               },
@@ -1501,7 +1457,7 @@
           ],
           "unacceptable": [
             {
-              "text": "Confidentiality obligations continue for 2 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 15 days' notice, and trade-secret designations are administratively reviewed every 12 months without ending protection.",
+              "text": "Confidentiality obligations continue for 2 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 15 days' notice, and trade-secret designations are administratively reviewed every 12 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 2
               },
@@ -1514,7 +1470,7 @@
               ]
             },
             {
-              "text": "Confidentiality obligations continue for 3 years after disclosure. Trade-secret protection expires automatically at the end of the same 3-year period. A party may request a survival-status confirmation on 60 days' notice, and trade-secret designations are administratively reviewed every 18 months without ending protection.",
+              "text": "Confidentiality obligations continue for 3 years after disclosure. Trade-secret protection expires automatically at the end of the same 3-year period. A party may request a survival-status confirmation on 60 days' notice, and trade-secret designations are administratively reviewed every 18 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 3
               },
@@ -1527,7 +1483,7 @@
               ]
             },
             {
-              "text": "Confidentiality obligations continue for 1 years after disclosure. Trade-secret protection expires automatically at the end of the same 1-year period. A party may request a survival-status confirmation on 45 days' notice, and trade-secret designations are administratively reviewed every 24 months without ending protection.",
+              "text": "Confidentiality obligations continue for 1 year after disclosure. Trade-secret protection expires automatically at the end of the same 1-year period. A party may request a survival-status confirmation on 45 days' notice, and trade-secret designations are administratively reviewed every 24 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 1
               },
@@ -1540,7 +1496,7 @@
               ]
             },
             {
-              "text": "Confidentiality obligations continue for 4 years after disclosure. Trade-secret protection expires automatically at the end of the same 4-year period. A party may request a survival-status confirmation on 30 days' notice, and trade-secret designations are administratively reviewed every 6 months without ending protection.",
+              "text": "Confidentiality obligations continue for 4 years after disclosure. Trade-secret protection expires automatically at the end of the same 4-year period. A party may request a survival-status confirmation on 30 days' notice, and trade-secret designations are administratively reviewed every 6 months without the review itself changing the stated legal term.",
               "counter_text_slots": {
                 "ordinary_survival_years": 4
               },

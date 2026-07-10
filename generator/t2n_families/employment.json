@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-EMP-001": {
     "counter_families": [
       {
@@ -14,24 +14,20 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "cause_event == 'incurable_serious' or (cause_event == 'curable_material_breach' and cure_days >= 10)"
+          "expression": "serious_misconduct_covered and material_duty_failure_covered"
         },
         "has_qualitative_decisive_input": true,
-        "has_arithmetic_interaction": true,
+        "has_arithmetic_interaction": false,
         "counter_text_slots": {
-          "cure_days": [
-            0,
-            10,
-            15,
-            5,
-            7
+          "serious_misconduct_covered": [
+            false,
+            true
           ]
         },
         "phase1_context_slots": {
-          "cause_event": [
-            "curable_material_breach",
-            "incurable_serious",
-            "minor_nonmaterial"
+          "material_duty_failure_covered": [
+            false,
+            true
           ]
         },
         "decoy_values": [
@@ -43,24 +39,24 @@
           "investigation_meeting_days"
         ],
         "render_forms": {
-          "cure_days": [
-            "express cure days",
-            "defined cure days",
-            "operative cure days condition"
+          "serious_misconduct_covered": [
+            "express serious misconduct covered",
+            "defined serious misconduct covered",
+            "operative serious misconduct covered condition"
           ],
-          "cause_event": [
-            "express cause event",
-            "defined cause event",
-            "operative cause event condition"
+          "material_duty_failure_covered": [
+            "express material duty failure covered",
+            "defined material duty failure covered",
+            "operative material duty failure covered condition"
           ]
         },
         "counterfactual_twins": [
           {
-            "varied_input": "cure_days",
+            "varied_input": "serious_misconduct_covered",
             "label_flipped": true
           },
           {
-            "varied_input": "cause_event",
+            "varied_input": "material_duty_failure_covered",
             "label_flipped": true
           },
           {
@@ -76,12 +72,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Cause includes the complete signed list. Fraud, dishonesty, willful misconduct, and other incurable serious grounds permit termination without a cure period. Company provides the written Cause notice within 1 days after its determination and offers an investigation meeting within 2 days.",
+              "text": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement. Company provides the written Cause notice by day 1 after its determination and offers an investigation meeting within 2 days.",
               "counter_text_slots": {
-                "cure_days": 0
+                "serious_misconduct_covered": true
               },
               "phase1_context_slots": {
-                "cause_event": "incurable_serious"
+                "material_duty_failure_covered": true
               },
               "decoy_values": [
                 1,
@@ -89,12 +85,12 @@
               ]
             },
             {
-              "text": "Cause includes the complete signed list. A curable material duty or agreement breach carries a 10-day cure period; fraud, dishonesty, and willful misconduct remain incurable grounds. Company provides the written Cause notice within 3 days after its determination and offers an investigation meeting within 8 days.",
+              "text": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement. Company provides the written Cause notice by day 3 after its determination and offers an investigation meeting within 8 days.",
               "counter_text_slots": {
-                "cure_days": 10
+                "serious_misconduct_covered": true
               },
               "phase1_context_slots": {
-                "cause_event": "curable_material_breach"
+                "material_duty_failure_covered": true
               },
               "decoy_values": [
                 3,
@@ -102,12 +98,12 @@
               ]
             },
             {
-              "text": "Cause includes the complete signed list. A curable material duty or agreement breach carries a 15-day cure period; fraud, dishonesty, and willful misconduct remain incurable grounds. Company provides the written Cause notice within 5 days after its determination and offers an investigation meeting within 6 days.",
+              "text": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement. Company provides the written Cause notice by day 5 after its determination and offers an investigation meeting within 6 days.",
               "counter_text_slots": {
-                "cure_days": 15
+                "serious_misconduct_covered": true
               },
               "phase1_context_slots": {
-                "cause_event": "curable_material_breach"
+                "material_duty_failure_covered": true
               },
               "decoy_values": [
                 5,
@@ -115,12 +111,12 @@
               ]
             },
             {
-              "text": "Cause includes the complete signed list. Fraud, dishonesty, willful misconduct, and other incurable serious grounds permit termination without a cure period. Company provides the written Cause notice within 7 days after its determination and offers an investigation meeting within 4 days.",
+              "text": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement. Company provides the written Cause notice by day 7 after its determination and offers an investigation meeting within 4 days.",
               "counter_text_slots": {
-                "cure_days": 0
+                "serious_misconduct_covered": true
               },
               "phase1_context_slots": {
-                "cause_event": "incurable_serious"
+                "material_duty_failure_covered": true
               },
               "decoy_values": [
                 7,
@@ -130,12 +126,12 @@
           ],
           "unacceptable": [
             {
-              "text": "Cause includes the complete signed list. A curable material duty or agreement breach carries a 5-day cure period; fraud, dishonesty, and willful misconduct remain incurable grounds. Company provides the written Cause notice within 3 days after its determination and offers an investigation meeting within 6 days.",
+              "text": "Cause excludes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement. Company provides the written Cause notice by day 3 after its determination and offers an investigation meeting within 6 days.",
               "counter_text_slots": {
-                "cure_days": 5
+                "serious_misconduct_covered": false
               },
               "phase1_context_slots": {
-                "cause_event": "curable_material_breach"
+                "material_duty_failure_covered": true
               },
               "decoy_values": [
                 3,
@@ -143,12 +139,12 @@
               ]
             },
             {
-              "text": "Cause extends to the identified minor nonmaterial event after a 15-day cure period even though it does not materially breach a duty, policy, law, or agreement and does not materially harm Company. Company provides the written Cause notice within 1 days after its determination and offers an investigation meeting within 8 days.",
+              "text": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause does not include material duty failures, material policy violations, or material breach of the agreement. Company provides the written Cause notice by day 1 after its determination and offers an investigation meeting within 8 days.",
               "counter_text_slots": {
-                "cure_days": 15
+                "serious_misconduct_covered": true
               },
               "phase1_context_slots": {
-                "cause_event": "minor_nonmaterial"
+                "material_duty_failure_covered": false
               },
               "decoy_values": [
                 1,
@@ -156,12 +152,12 @@
               ]
             },
             {
-              "text": "Cause extends to the identified minor nonmaterial event after a 10-day cure period even though it does not materially breach a duty, policy, law, or agreement and does not materially harm Company. Company provides the written Cause notice within 7 days after its determination and offers an investigation meeting within 2 days.",
+              "text": "Cause excludes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause does not include material duty failures, material policy violations, or material breach of the agreement. Company provides the written Cause notice by day 7 after its determination and offers an investigation meeting within 2 days.",
               "counter_text_slots": {
-                "cure_days": 10
+                "serious_misconduct_covered": false
               },
               "phase1_context_slots": {
-                "cause_event": "minor_nonmaterial"
+                "material_duty_failure_covered": false
               },
               "decoy_values": [
                 7,
@@ -169,12 +165,12 @@
               ]
             },
             {
-              "text": "Cause includes the complete signed list. A curable material duty or agreement breach carries a 7-day cure period; fraud, dishonesty, and willful misconduct remain incurable grounds. Company provides the written Cause notice within 5 days after its determination and offers an investigation meeting within 4 days.",
+              "text": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause does not include material duty failures, material policy violations, or material breach of the agreement. Company provides the written Cause notice by day 5 after its determination and offers an investigation meeting within 4 days.",
               "counter_text_slots": {
-                "cure_days": 7
+                "serious_misconduct_covered": true
               },
               "phase1_context_slots": {
-                "cause_event": "curable_material_breach"
+                "material_duty_failure_covered": false
               },
               "decoy_values": [
                 5,
@@ -375,7 +371,7 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "target_bonus_percent == 0 or (objective_written_plan and target_bonus_percent <= 30)"
+          "expression": "target_bonus_percent == 0 or objective_written_plan"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
@@ -462,9 +458,9 @@
               ]
             },
             {
-              "text": "Executive is eligible for a target bonus of 20% only under a signed written plan stating objective metrics, approval requirements, and payment timing. Company reviews reported metrics every 15 days and processes an approved payment within 5 days after certification.",
+              "text": "Executive is eligible for a target bonus of 40% only under a signed written plan stating objective metrics, approval requirements, and payment timing. Company reviews reported metrics every 15 days and processes an approved payment within 5 days after certification.",
               "counter_text_slots": {
-                "target_bonus_percent": 20
+                "target_bonus_percent": 40
               },
               "phase1_context_slots": {
                 "objective_written_plan": true
@@ -503,12 +499,12 @@
               ]
             },
             {
-              "text": "Executive is eligible for a target bonus of 40% only under a signed written plan stating objective metrics, approval requirements, and payment timing. Company reviews reported metrics every 45 days and processes an approved payment within 10 days after certification.",
+              "text": "Executive automatically earns a 40% bonus through continued employment, without objective metrics or further approval. Company reviews reported metrics every 45 days and processes an approved payment within 10 days after certification.",
               "counter_text_slots": {
                 "target_bonus_percent": 40
               },
               "phase1_context_slots": {
-                "objective_written_plan": true
+                "objective_written_plan": false
               },
               "decoy_values": [
                 45,
@@ -529,12 +525,12 @@
               ]
             },
             {
-              "text": "Executive is eligible for a target bonus of 35% only under a signed written plan stating objective metrics, approval requirements, and payment timing. Company reviews reported metrics every 15 days and processes an approved payment within 20 days after certification.",
+              "text": "Executive automatically earns a 35% bonus through continued employment, without objective metrics or further approval. Company reviews reported metrics every 15 days and processes an approved payment within 20 days after certification.",
               "counter_text_slots": {
                 "target_bonus_percent": 35
               },
               "phase1_context_slots": {
-                "objective_written_plan": true
+                "objective_written_plan": false
               },
               "decoy_values": [
                 15,
@@ -556,7 +552,7 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "acceleration_percent == 0 or (plan_authorized and acceleration_percent <= 100)"
+          "expression": "acceleration_percent == 0 or plan_authorized"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
@@ -564,7 +560,7 @@
           "acceleration_percent": [
             0,
             100,
-            125,
+            25,
             50,
             75
           ]
@@ -697,12 +693,12 @@
               ]
             },
             {
-              "text": "The applicable plan and signed award document expressly authorize acceleration of 125% of the unvested award; no extra-plan equity right is created. Company delivers award notices within 15 days after approval, and any vested-option exercise window stated in the award remains 120 days.",
+              "text": "This agreement independently accelerates 25% of the unvested award even though the applicable plan and award document do not authorize it. Company delivers award notices within 15 days after approval, and any vested-option exercise window stated in the award remains 120 days.",
               "counter_text_slots": {
-                "acceleration_percent": 125
+                "acceleration_percent": 25
               },
               "phase1_context_slots": {
-                "plan_authorized": true
+                "plan_authorized": false
               },
               "decoy_values": [
                 15,

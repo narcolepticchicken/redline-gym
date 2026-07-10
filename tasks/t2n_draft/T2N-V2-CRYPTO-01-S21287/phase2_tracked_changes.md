@@ -36,7 +36,7 @@ Custodian may stake Customer Assets only after Customer's express opt-in and pri
 ## 8. Transfers and Withdrawals
 
 Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.
-<!-- CH-COUNTER-2 -->~~Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.~~ **Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for its own account. A use consent expires after 30 days, and Custodian reconciles affected asset balances within 24 hours.**
+<!-- CH-COUNTER-2 -->~~Routine liquidity records may be maintained to support network fees, reconciliation, and pending transfer queues, but those records do not permit Custodian to borrow, deploy, or encumber Customer Assets.~~ **Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets. A use consent expires after 30 days, and Custodian reconciles affected asset balances within 24 hours.**
 
 ## 9. Insurance
 

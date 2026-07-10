@@ -43,7 +43,7 @@ For clarity, the 99.9% uptime commitment continues to carry service credits.
 ## 9. Data Residency, Retention, and Logs
 
 Vendor will process and store Customer Data only in the Approved Regions. Vendor will retain prompts, outputs, telemetry, embeddings, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing.
-Vendor will not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service. Any opt-in expires after 45 days, and records for an approved tuning run are available for audit within 28 days.
+Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used. Any opt-in expires after 45 days, and records for an approved tuning run are available for audit within 28 days.
 
 ## 10. Model Lifecycle Management
 

@@ -110,10 +110,10 @@
         "counter_family_id": "CF-MA-MAE-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "mae_occurred": false
+          "purchased_assets_covered": true
         },
         "phase1_context_slots": {
-          "buyer_may_refuse_closing": false
+          "acquired_business_covered": true
         },
         "decoy_values": [
           7,

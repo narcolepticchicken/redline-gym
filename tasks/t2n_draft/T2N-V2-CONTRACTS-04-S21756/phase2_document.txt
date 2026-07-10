@@ -12,7 +12,7 @@ The parties confirm that this NDA does not include a non-solicit covenant.
 
 ## 2. Affiliates and Representatives
 
-A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 20 days.
+Controlled affiliates may participate as disclosers or recipients. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 20 days.
 Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose.
 
 For purposes of this clause, the following additional term applies: Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions.
@@ -27,7 +27,7 @@ Recipient will protect Confidential Information using at least reasonable care, 
 
 ## 5. Compelled Disclosure
 
-Recipient will give Discloser notice 36 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 30 days.
+Recipient will notify Discloser only after completing a compelled disclosure, even though advance notice is legally permitted. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 30 days.
 
 ## 6. Exclusions
 

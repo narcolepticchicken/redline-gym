@@ -16,7 +16,7 @@
       "decision": "reject",
       "prior_position_id": "POS-D001",
       "rule_id": "R-001",
-      "exact_quote": "Buyer assumes liabilities expressly enumerated in 7 identified schedule sections. No signed amendment adds other obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 60 days after discovery.",
+      "exact_quote": "Buyer assumes obligations listed only in an unsigned addendum. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 60 days after discovery.",
       "proposed_redline": "Buyer assumes only the liabilities expressly listed in Section 4, and all other liabilities of Seller are excluded unless Buyer expressly agrees in a signed amendment."
     },
     {

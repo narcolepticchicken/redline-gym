@@ -60,7 +60,7 @@ For 24 months after closing, Seller principals will not compete with the acquire
 
 ## 14. Closing Conditions
 
-<!-- CH-COUNTER-1 -->~~Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.~~ **No Material Adverse Effect has occurred before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 7 days and updates the closing-condition record every 8 days.**<!-- CH-SNEAK-INSERTED -->**
+<!-- CH-COUNTER-1 -->~~Buyer's obligation to close is conditioned on Seller's representations being true in all material respects, Seller's covenant compliance, receipt of required consents, delivery of lien releases, and no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing.~~ **Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 7 and updates the closing-condition record every 8 days.**<!-- CH-SNEAK-INSERTED -->**
 
 For purposes of this clause, the following additional term applies: "Assumed Liabilities" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 4, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.**
 

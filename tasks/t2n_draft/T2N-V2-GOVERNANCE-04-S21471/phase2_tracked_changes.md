@@ -38,7 +38,7 @@ If a Founder Holder or Major Investor proposes to transfer more than 10% of the 
 
 ## 9. Transfer Restrictions
 
-No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. <!-- CH-COUNTER-1 -->~~These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.~~ **A transfer to the identified family member is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 3 days and delivers the executed joinder within 1 days after transfer.**<!-- CH-SNEAK-INSERTED -->**
+No holder may transfer shares except in compliance with securities laws, this Agreement, and Company policies. <!-- CH-COUNTER-1 -->~~These restrictions do not apply to a transfer to a Permitted Transferee, provided the recipient signs a joinder agreeing to be bound by this Agreement before the transfer is effective.~~ **A transfer to the identified family member is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 3 days and delivers the ministerial transfer record by day 1 after transfer.**<!-- CH-SNEAK-INSERTED -->**
 
 For purposes of this clause, the following additional term applies: Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along.**
 

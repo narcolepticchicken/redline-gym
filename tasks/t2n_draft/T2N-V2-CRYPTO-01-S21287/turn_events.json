@@ -78,7 +78,7 @@
         "counter_family_id": "CF-CRYPTO-ASSET-USE-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "asset_use_scope": "none"
+          "asset_use_scope": "specified"
         },
         "phase1_context_slots": {
           "written_consent": true

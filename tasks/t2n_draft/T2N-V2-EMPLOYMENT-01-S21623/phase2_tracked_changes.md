@@ -31,7 +31,7 @@ Subject to separate approval and the terms of Company's equity plan, Executive m
 
 ## 7. Reviews and Administration
 
-<!-- CH-COUNTER-1 -->~~Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.~~ **The applicable plan and signed award document expressly authorize acceleration of 125% of the unvested award; no extra-plan equity right is created. Company delivers award notices within 15 days after approval, and any vested-option exercise window stated in the award remains 120 days.**<!-- CH-SNEAK-INSERTED -->**
+<!-- CH-COUNTER-1 -->~~Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment.~~ **This agreement independently accelerates 25% of the unvested award even though the applicable plan and award document do not authorize it. Company delivers award notices within 15 days after approval, and any vested-option exercise window stated in the award remains 120 days.**<!-- CH-SNEAK-INSERTED -->**
 
 For purposes of this clause, the following additional term applies: Company will personally reimburse Executive for all employment-related claims, costs, judgments, settlements, and taxes without regard to Company governing documents, insurance terms, or applicable law.**
 

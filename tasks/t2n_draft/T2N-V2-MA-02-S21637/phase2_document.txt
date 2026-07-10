@@ -60,7 +60,7 @@ For 24 months after closing, Seller principals will not compete with the acquire
 
 ## 14. Closing Conditions
 
-A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 5 days and updates the closing-condition record every 8 days.
+A Material Adverse Effect is not a condition to Buyer's obligation to close, including effects on both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 5 and updates the closing-condition record every 8 days.
 
 ## 15. Disclosure Schedule Administration
 

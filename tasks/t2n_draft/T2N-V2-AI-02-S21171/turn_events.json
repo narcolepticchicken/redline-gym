@@ -97,7 +97,7 @@
         "counter_family_id": "CF-AI-TRAINING-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "training_scope": "none"
+          "training_scope": "identified_files"
         },
         "phase1_context_slots": {
           "written_opt_in": true

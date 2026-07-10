@@ -24,10 +24,10 @@
         "counter_family_id": "CF-DPA-INSTRUCTIONS-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "customer_notice_days": 10
+          "vendor_authority": "legal_requirement"
         },
         "phase1_context_slots": {
-          "processing_basis": "documented_instruction"
+          "processing_scope": "agreed_services"
         },
         "decoy_values": [
           45,

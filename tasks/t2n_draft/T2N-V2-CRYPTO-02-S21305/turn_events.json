@@ -127,7 +127,7 @@
           "soc_interval_months": 12
         },
         "phase1_context_slots": {
-          "incident_notice_hours": 120
+          "prompt_failure_notice": false
         },
         "decoy_values": [
           5,

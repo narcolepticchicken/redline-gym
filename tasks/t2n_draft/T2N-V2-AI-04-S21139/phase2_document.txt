@@ -8,7 +8,7 @@ Vendor will provide Customer with hosted model API access, fine-tuning services,
 
 ## 2. Definitions
 
-Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 30 days. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.
+Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only nonexclusive use. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.
 
 Vendor may use Customer prompts, outputs, and telemetry to train and improve models without Customer opt-in.
 

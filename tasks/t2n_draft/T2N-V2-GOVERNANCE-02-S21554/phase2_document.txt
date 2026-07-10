@@ -8,7 +8,7 @@ The parties intend this Agreement to govern voting, transfer, information, parti
 
 ## 2. Definitions
 
-Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 500000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 12 hours after the deadline. "Permitted Transferee" means an affiliate, estate planning vehicle, or family member of a transferring holder that agrees in writing to be bound by this Agreement.
+Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 500,000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 12 hours after the deadline. "Permitted Transferee" means an affiliate, estate planning vehicle, or family member of a transferring holder that agrees in writing to be bound by this Agreement.
 
 For purposes of this clause, the following additional term applies: Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.
 

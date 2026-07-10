@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-CRYPTO-001": {
     "counter_families": [
       {
@@ -14,7 +14,7 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "asset_use_scope == 'none' or (asset_use_scope == 'specified' and written_consent)"
+          "expression": "asset_use_scope == 'none' or written_consent"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": false,
@@ -86,9 +86,9 @@
               ]
             },
             {
-              "text": "Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for its own account. A use consent expires after 30 days, and Custodian reconciles affected asset balances within 24 hours.",
+              "text": "Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets. A use consent expires after 30 days, and Custodian reconciles affected asset balances within 24 hours.",
               "counter_text_slots": {
-                "asset_use_scope": "none"
+                "asset_use_scope": "specified"
               },
               "phase1_context_slots": {
                 "written_consent": true
@@ -99,9 +99,9 @@
               ]
             },
             {
-              "text": "Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets. A use consent expires after 45 days, and Custodian reconciles affected asset balances within 12 hours.",
+              "text": "Customer's prior written consent expressly authorizes Custodian to lend, pledge, transfer, or otherwise use Customer Assets for the listed treasury and operational purposes. A use consent expires after 45 days, and Custodian reconciles affected asset balances within 12 hours.",
               "counter_text_slots": {
-                "asset_use_scope": "specified"
+                "asset_use_scope": "general"
               },
               "phase1_context_slots": {
                 "written_consent": true
@@ -112,9 +112,9 @@
               ]
             },
             {
-              "text": "Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets. A use consent expires after 60 days, and Custodian reconciles affected asset balances within 8 hours.",
+              "text": "Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for its own account. A use consent expires after 60 days, and Custodian reconciles affected asset balances within 8 hours.",
               "counter_text_slots": {
-                "asset_use_scope": "specified"
+                "asset_use_scope": "none"
               },
               "phase1_context_slots": {
                 "written_consent": true
@@ -140,12 +140,12 @@
               ]
             },
             {
-              "text": "Custodian may lend, pledge, transfer, or otherwise use Customer Assets for treasury and operational purposes. A use consent expires after 15 days, and Custodian reconciles affected asset balances within 24 hours.",
+              "text": "Custodian may lend, pledge, transfer, or otherwise use Customer Assets for treasury and operational purposes without Customer consent. A use consent expires after 15 days, and Custodian reconciles affected asset balances within 24 hours.",
               "counter_text_slots": {
                 "asset_use_scope": "general"
               },
               "phase1_context_slots": {
-                "written_consent": true
+                "written_consent": false
               },
               "decoy_values": [
                 15,
@@ -319,7 +319,7 @@
               ]
             },
             {
-              "text": "Custodian holds legal and beneficial title to Customer Assets, which are excluded from Custodian's bankruptcy estate. Custodian updates beneficial-title records every 10 days and refreshes its insolvency analysis every 6 months.",
+              "text": "The Agreement does not acknowledge Customer's ownership of Customer Assets; it nevertheless states that the assets are excluded from Custodian's bankruptcy estate. Custodian updates beneficial-title records every 10 days and refreshes its insolvency analysis every 6 months.",
               "counter_text_slots": {
                 "estate_treatment": "excluded"
               },
@@ -332,7 +332,7 @@
               ]
             },
             {
-              "text": "Custodian holds legal and beneficial title to Customer Assets, which are intended to remain outside Custodian's bankruptcy estate to the fullest extent permitted by law. Custodian updates beneficial-title records every 5 days and refreshes its insolvency analysis every 12 months.",
+              "text": "The Agreement does not acknowledge Customer's ownership of Customer Assets; it nevertheless states that the assets are intended to remain outside Custodian's bankruptcy estate to the fullest extent permitted by law. Custodian updates beneficial-title records every 5 days and refreshes its insolvency analysis every 12 months.",
               "counter_text_slots": {
                 "estate_treatment": "fullest_extent"
               },
@@ -345,7 +345,7 @@
               ]
             },
             {
-              "text": "Custodian holds legal and beneficial title to Customer Assets, which are subject to ordinary creditor and bankruptcy claims, with no contractual estate exclusion. Custodian updates beneficial-title records every 20 days and refreshes its insolvency analysis every 18 months.",
+              "text": "The Agreement does not acknowledge Customer's ownership of Customer Assets; it nevertheless states that the assets are subject to ordinary creditor and bankruptcy claims, with no contractual estate exclusion. Custodian updates beneficial-title records every 20 days and refreshes its insolvency analysis every 18 months.",
               "counter_text_slots": {
                 "estate_treatment": "missing"
               },
@@ -372,7 +372,7 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "soc_interval_months <= 12 and incident_notice_hours <= 72"
+          "expression": "soc_interval_months <= 12 and prompt_failure_notice"
         },
         "has_qualitative_decisive_input": false,
         "has_arithmetic_interaction": true,
@@ -386,13 +386,9 @@
           ]
         },
         "phase1_context_slots": {
-          "incident_notice_hours": [
-            120,
-            24,
-            36,
-            48,
-            72,
-            96
+          "prompt_failure_notice": [
+            false,
+            true
           ]
         },
         "decoy_values": [
@@ -409,10 +405,10 @@
             "defined soc interval months",
             "operative soc interval months condition"
           ],
-          "incident_notice_hours": [
-            "express incident notice hours",
-            "defined incident notice hours",
-            "operative incident notice hours condition"
+          "prompt_failure_notice": [
+            "express prompt failure notice",
+            "defined prompt failure notice",
+            "operative prompt failure notice condition"
           ]
         },
         "counterfactual_twins": [
@@ -421,7 +417,7 @@
             "label_flipped": true
           },
           {
-            "varied_input": "incident_notice_hours",
+            "varied_input": "prompt_failure_notice",
             "label_flipped": true
           },
           {
@@ -437,12 +433,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 72 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 15 days and may be organized into 9 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, prompt notice of a material control failure, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 15 days after Customer's request and may be organized into 9 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 12
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 72
+                "prompt_failure_notice": true
               },
               "decoy_values": [
                 15,
@@ -450,12 +446,12 @@
               ]
             },
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 6 months, notice of a material control failure within 48 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 20 days and may be organized into 4 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 6 months, prompt notice of a material control failure, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 20 days after Customer's request and may be organized into 4 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 6
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 48
+                "prompt_failure_notice": true
               },
               "decoy_values": [
                 20,
@@ -463,12 +459,12 @@
               ]
             },
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 9 months, notice of a material control failure within 24 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 5 days and may be organized into 3 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 9 months, prompt notice of a material control failure, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 5 days after Customer's request and may be organized into 3 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 9
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 24
+                "prompt_failure_notice": true
               },
               "decoy_values": [
                 5,
@@ -476,12 +472,12 @@
               ]
             },
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 36 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 10 days and may be organized into 10 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, prompt notice of a material control failure, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 10 days after Customer's request and may be organized into 10 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 12
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 36
+                "prompt_failure_notice": true
               },
               "decoy_values": [
                 10,
@@ -491,12 +487,12 @@
           ],
           "unacceptable": [
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 18 months, notice of a material control failure within 48 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 20 days and may be organized into 3 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 18 months, prompt notice of a material control failure, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 20 days after Customer's request and may be organized into 3 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 18
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 48
+                "prompt_failure_notice": true
               },
               "decoy_values": [
                 20,
@@ -504,12 +500,12 @@
               ]
             },
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 9 months, notice of a material control failure within 96 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 15 days and may be organized into 4 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 9 months, notice of a material control failure only with the next routine controls report, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 15 days after Customer's request and may be organized into 4 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 9
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 96
+                "prompt_failure_notice": false
               },
               "decoy_values": [
                 15,
@@ -517,12 +513,12 @@
               ]
             },
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 15 months, notice of a material control failure within 72 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 10 days and may be organized into 9 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 15 months, prompt notice of a material control failure, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 10 days after Customer's request and may be organized into 9 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 15
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 72
+                "prompt_failure_notice": true
               },
               "decoy_values": [
                 10,
@@ -530,12 +526,12 @@
               ]
             },
             {
-              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 120 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 5 days and may be organized into 10 control-evidence categories.",
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure only with the next routine controls report, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 5 days after Customer's request and may be organized into 10 control-evidence categories.",
               "counter_text_slots": {
                 "soc_interval_months": 12
               },
               "phase1_context_slots": {
-                "incident_notice_hours": 120
+                "prompt_failure_notice": false
               },
               "decoy_values": [
                 5,

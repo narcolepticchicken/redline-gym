@@ -14,7 +14,7 @@ from typing import Any, Callable, Mapping
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STATUS = "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending"
+STATUS = "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending"
 
 PLAYBOOK_FILES = {
     "PB-AI-001": "playbooks/ai/PB-AI-001.json",
@@ -67,11 +67,11 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
     "PB-AI-001": (
         FamilySpec(
             "CF-AI-TRAINING-V2", "R-001",
-            "training_scope == 'none' or (training_scope == 'identified_files' and written_opt_in)",
+            "training_scope == 'none' or written_opt_in",
             ("training_scope",), ("written_opt_in",),
-            (c(training_scope="none", written_opt_in=False), c(training_scope="none", written_opt_in=True),
-             c(training_scope="identified_files", written_opt_in=True), c(training_scope="identified_files", written_opt_in=True)),
-            (c(training_scope="identified_files", written_opt_in=False), c(training_scope="all_service_activity", written_opt_in=True),
+            (c(training_scope="none", written_opt_in=False), c(training_scope="identified_files", written_opt_in=True),
+             c(training_scope="all_service_activity", written_opt_in=True), c(training_scope="none", written_opt_in=True)),
+            (c(training_scope="identified_files", written_opt_in=False), c(training_scope="all_service_activity", written_opt_in=False),
              c(training_scope="all_service_activity", written_opt_in=False), c(training_scope="identified_files", written_opt_in=False)),
             ("opt_in_expiry_days", "training_audit_sample_days"), ((30, 45, 60, 75), (7, 14, 21, 28)),
             "Any opt-in expires after {d0} days, and records for an approved tuning run are available for audit within {d1} days.",
@@ -80,59 +80,64 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
                 if x["training_scope"] == "none" else
                 ("Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used."
                  if x["training_scope"] == "identified_files" and x["written_opt_in"] else
-                 ("Vendor may use the expressly identified fine-tuning files for the approved tuning run based on Customer's oral or implied approval, without a prior written opt-in."
-                  if x["training_scope"] == "identified_files" else
-                  ("After Customer's written enrollment, Vendor may use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services."
-                   if x["written_opt_in"] else
+                 ("Customer's prior express written opt-in authorizes Vendor to use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services."
+                  if x["written_opt_in"] else
+                  ("Vendor may use the expressly identified fine-tuning files for the approved tuning run based on Customer's oral or implied approval, without a prior written opt-in."
+                   if x["training_scope"] == "identified_files" else
                    "Vendor may use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services without Customer opt-in.")))
             ), True, False,
         ),
         FamilySpec(
             "CF-AI-CUSTOM-ASSETS-V2", "R-002",
-            "asset_control == 'assigned' or (asset_control == 'exclusive_use' and portability_days <= 30)",
-            ("portability_days",), ("asset_control",),
-            (c(portability_days=15, asset_control="assigned"), c(portability_days=30, asset_control="exclusive_use"),
-             c(portability_days=45, asset_control="assigned"), c(portability_days=21, asset_control="exclusive_use")),
-            (c(portability_days=45, asset_control="exclusive_use"), c(portability_days=30, asset_control="nonexclusive_use"),
-             c(portability_days=60, asset_control="nonexclusive_use"), c(portability_days=35, asset_control="exclusive_use")),
+            "portable_export_available and asset_control in {'assigned', 'exclusive_use'}",
+            ("portable_export_available",), ("asset_control",),
+            (c(portable_export_available=True, asset_control="assigned"), c(portable_export_available=True, asset_control="exclusive_use"),
+             c(portable_export_available=True, asset_control="assigned"), c(portable_export_available=True, asset_control="exclusive_use")),
+            (c(portable_export_available=False, asset_control="exclusive_use"), c(portable_export_available=True, asset_control="nonexclusive_use"),
+             c(portable_export_available=False, asset_control="nonexclusive_use"), c(portable_export_available=False, asset_control="assigned")),
             ("adapter_inventory_days", "export_link_hours"), ((10, 20, 25, 40), (24, 48, 72, 96)),
             "Vendor refreshes the customization-asset inventory every {d0} days and keeps each secure export link active for {d1} hours.",
             lambda x: (
-                f"Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation; Vendor will make a usable export available within {x['portability_days']} days after request."
-                if x["asset_control"] == "assigned" else
-                (f"Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within {x['portability_days']} days after request."
-                 if x["asset_control"] == "exclusive_use" else
-                 f"Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take {x['portability_days']} days.")
-            ), True, True,
+                ("Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation. "
+                 if x["asset_control"] == "assigned" else
+                 ("Where assignment is unavailable, Customer receives exclusive operational use of every Customer-specific customization asset. "
+                  if x["asset_control"] == "exclusive_use" else
+                  "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only nonexclusive use. "))
+                + ("Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset."
+                   if x["portable_export_available"] else
+                   "Vendor may withhold or deny a usable export of Customer-specific weights, adapters, embeddings, prompts, or configurations.")
+            ), True, False,
         ),
         FamilySpec(
             "CF-AI-POLICY-CHANGE-V2", "R-009",
-            "change_basis in {'law', 'objective_safety'} and notice_days >= 15",
+            "change_basis in {'law', 'objective_safety'} and notice_days > 0",
             ("notice_days",), ("change_basis",),
             (c(notice_days=15, change_basis="law"), c(notice_days=30, change_basis="objective_safety"),
              c(notice_days=45, change_basis="law"), c(notice_days=21, change_basis="objective_safety")),
-            (c(notice_days=7, change_basis="law"), c(notice_days=30, change_basis="commercial_discretion"),
-             c(notice_days=45, change_basis="commercial_discretion"), c(notice_days=10, change_basis="objective_safety")),
+            (c(notice_days=0, change_basis="law"), c(notice_days=30, change_basis="commercial_discretion"),
+             c(notice_days=45, change_basis="commercial_discretion"), c(notice_days=0, change_basis="objective_safety")),
             ("policy_archive_months", "customer_comment_days"), ((6, 12, 18, 24), (5, 10, 12, 20)),
             "Superseded policies remain archived for {d0} months, and Customer may submit implementation comments for {d1} days.",
             lambda x: (
-                f"A later acceptable-use or safety-policy change applies only when required by {('applicable law' if x['change_basis'] == 'law' else 'an objectively documented service-security or safety need')}, after {x['notice_days']} days' notice to Customer."
+                f"A later acceptable-use or safety-policy change applies only when required by {('applicable law' if x['change_basis'] == 'law' else 'an objectively documented service-security or safety need')}, "
+                + ("without advance notice to Customer." if x["notice_days"] == 0 else
+                   f"after {x['notice_days']} days' notice to Customer.")
                 if x["change_basis"] != "commercial_discretion" else
                 f"Vendor may expand its acceptable-use and safety policies for commercial or operational reasons on {x['notice_days']} days' notice, and the revised obligations will bind Customer."
             ), True, True,
         ),
         FamilySpec(
             "CF-AI-EXIT-V2", "R-012",
-            "export_coverage == 'complete' and transition_hours >= 20",
+            "export_coverage == 'complete' and transition_hours > 0",
             ("transition_hours",), ("export_coverage",),
             (c(transition_hours=20, export_coverage="complete"), c(transition_hours=40, export_coverage="complete"),
              c(transition_hours=60, export_coverage="complete"), c(transition_hours=30, export_coverage="complete")),
-            (c(transition_hours=10, export_coverage="complete"), c(transition_hours=40, export_coverage="data_only"),
-             c(transition_hours=60, export_coverage="data_only"), c(transition_hours=15, export_coverage="complete")),
+            (c(transition_hours=0, export_coverage="complete"), c(transition_hours=40, export_coverage="data_only"),
+             c(transition_hours=60, export_coverage="data_only"), c(transition_hours=0, export_coverage="complete")),
             ("export_window_days", "migration_checkpoint_days"), ((15, 30, 45, 60), (3, 7, 10, 14)),
-            "The secure export window remains open for {d0} days, with migration checkpoints every {d1} days while assistance is active.",
+            "The secure export window remains open for {d0} days, and migration-status records are updated every {d1} days during that window.",
             lambda x: (
-                f"At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide {x['transition_hours']} hours of migration assistance."
+                f"At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and {('provide ' + str(x['transition_hours']) + ' hours of migration assistance' if x['transition_hours'] else 'provide no migration assistance')}."
                 if x["export_coverage"] == "complete" else
                 f"At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide {x['transition_hours']} hours of migration assistance."
             ), True, True,
@@ -141,11 +146,11 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
     "PB-CRYPTO-001": (
         FamilySpec(
             "CF-CRYPTO-ASSET-USE-V2", "R-002",
-            "asset_use_scope == 'none' or (asset_use_scope == 'specified' and written_consent)",
+            "asset_use_scope == 'none' or written_consent",
             ("asset_use_scope",), ("written_consent",),
-            (c(asset_use_scope="none", written_consent=False), c(asset_use_scope="none", written_consent=True),
-             c(asset_use_scope="specified", written_consent=True), c(asset_use_scope="specified", written_consent=True)),
-            (c(asset_use_scope="specified", written_consent=False), c(asset_use_scope="general", written_consent=True),
+            (c(asset_use_scope="none", written_consent=False), c(asset_use_scope="specified", written_consent=True),
+             c(asset_use_scope="general", written_consent=True), c(asset_use_scope="none", written_consent=True)),
+            (c(asset_use_scope="specified", written_consent=False), c(asset_use_scope="general", written_consent=False),
              c(asset_use_scope="general", written_consent=False), c(asset_use_scope="specified", written_consent=False)),
             ("consent_expiry_days", "asset_reconciliation_hours"), ((15, 30, 45, 60), (4, 8, 12, 24)),
             "A use consent expires after {d0} days, and Custodian reconciles affected asset balances within {d1} hours.",
@@ -154,9 +159,11 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
                 if x["asset_use_scope"] == "none" else
                 ("Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets."
                  if x["asset_use_scope"] == "specified" and x["written_consent"] else
-                 ("Custodian may undertake the specifically identified asset use after oral or implied Customer approval, without prior written consent."
-                  if x["asset_use_scope"] == "specified" else
-                  f"Custodian may lend, pledge, transfer, or otherwise use Customer Assets for treasury and operational purposes{'' if x['written_consent'] else ' without Customer consent'}."))
+                 ("Customer's prior written consent expressly authorizes Custodian to lend, pledge, transfer, or otherwise use Customer Assets for the listed treasury and operational purposes."
+                  if x["written_consent"] else
+                  ("Custodian may undertake the specifically identified asset use after oral or implied Customer approval, without prior written consent."
+                   if x["asset_use_scope"] == "specified" else
+                   "Custodian may lend, pledge, transfer, or otherwise use Customer Assets for treasury and operational purposes without Customer consent.")))
             ), True, False,
         ),
         FamilySpec(
@@ -170,8 +177,9 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
             ("title_record_days", "insolvency_opinion_months"), ((5, 10, 15, 20), (6, 12, 18, 24)),
             "Custodian updates beneficial-title records every {d0} days and refreshes its insolvency analysis every {d1} months.",
             lambda x: (
-                ("Customer Assets are owned by Customer and are not Custodian property; they are " if x["customer_ownership_acknowledged"] else
-                 "Custodian holds legal and beneficial title to Customer Assets, which are ")
+                ("Customer Assets are owned by Customer and are not Custodian property; they are "
+                 if x["customer_ownership_acknowledged"] else
+                 "The Agreement does not acknowledge Customer's ownership of Customer Assets; it nevertheless states that the assets are ")
                 + ({"excluded": "excluded from Custodian's bankruptcy estate.",
                     "fullest_extent": "intended to remain outside Custodian's bankruptcy estate to the fullest extent permitted by law.",
                     "missing": "subject to ordinary creditor and bankruptcy claims, with no contractual estate exclusion."}[x["estate_treatment"]])
@@ -179,15 +187,20 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-CRYPTO-ASSURANCE-V2", "R-006",
-            "soc_interval_months <= 12 and incident_notice_hours <= 72",
-            ("soc_interval_months",), ("incident_notice_hours",),
-            (c(soc_interval_months=12, incident_notice_hours=72), c(soc_interval_months=6, incident_notice_hours=48),
-             c(soc_interval_months=9, incident_notice_hours=24), c(soc_interval_months=12, incident_notice_hours=36)),
-            (c(soc_interval_months=18, incident_notice_hours=48), c(soc_interval_months=9, incident_notice_hours=96),
-             c(soc_interval_months=15, incident_notice_hours=72), c(soc_interval_months=12, incident_notice_hours=120)),
+            "soc_interval_months <= 12 and prompt_failure_notice",
+            ("soc_interval_months",), ("prompt_failure_notice",),
+            (c(soc_interval_months=12, prompt_failure_notice=True), c(soc_interval_months=6, prompt_failure_notice=True),
+             c(soc_interval_months=9, prompt_failure_notice=True), c(soc_interval_months=12, prompt_failure_notice=True)),
+            (c(soc_interval_months=18, prompt_failure_notice=True), c(soc_interval_months=9, prompt_failure_notice=False),
+             c(soc_interval_months=15, prompt_failure_notice=True), c(soc_interval_months=12, prompt_failure_notice=False)),
             ("follow_up_days", "control_evidence_items"), ((5, 10, 15, 20), (3, 4, 9, 10)),
-            "Written incident follow-up is due within {d0} days and may be organized into {d1} control-evidence categories.",
-            fmt("Custodian will provide SOC 2 Type II or equivalent controls reporting every {soc_interval_months} months, notice of a material control failure within {incident_notice_hours} hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls."),
+            "Written controls follow-up is due within {d0} days after Customer's request and may be organized into {d1} control-evidence categories.",
+            lambda x: (
+                f"Custodian will provide SOC 2 Type II or equivalent controls reporting every {x['soc_interval_months']} months, "
+                + ("prompt notice of a material control failure, " if x["prompt_failure_notice"] else
+                   "notice of a material control failure only with the next routine controls report, ")
+                + "and reasonable written follow-up for Customer's treasury, audit, and regulatory controls."
+            ),
             False, True,
         ),
         FamilySpec(
@@ -216,21 +229,25 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
     "PB-DPA-001": (
         FamilySpec(
             "CF-DPA-INSTRUCTIONS-V2", "R-001",
-            "processing_basis == 'documented_instruction' or (processing_basis == 'legal_requirement' and customer_notice_days <= 5)",
-            ("customer_notice_days",), ("processing_basis",),
-            (c(customer_notice_days=5, processing_basis="documented_instruction"), c(customer_notice_days=5, processing_basis="legal_requirement"),
-             c(customer_notice_days=10, processing_basis="documented_instruction"), c(customer_notice_days=3, processing_basis="legal_requirement")),
-            (c(customer_notice_days=10, processing_basis="legal_requirement"), c(customer_notice_days=5, processing_basis="vendor_discretion"),
-             c(customer_notice_days=15, processing_basis="vendor_discretion"), c(customer_notice_days=7, processing_basis="legal_requirement")),
+            "vendor_authority == 'legal_requirement' or (vendor_authority == 'documented_instruction' and processing_scope == 'agreed_services')",
+            ("vendor_authority",), ("processing_scope",),
+            (c(vendor_authority="documented_instruction", processing_scope="agreed_services"), c(vendor_authority="legal_requirement", processing_scope="outside_services"),
+             c(vendor_authority="legal_requirement", processing_scope="agreed_services"), c(vendor_authority="documented_instruction", processing_scope="agreed_services")),
+            (c(vendor_authority="documented_instruction", processing_scope="outside_services"), c(vendor_authority="vendor_discretion", processing_scope="agreed_services"),
+             c(vendor_authority="vendor_discretion", processing_scope="outside_services"), c(vendor_authority="documented_instruction", processing_scope="outside_services")),
             ("instruction_log_days", "deletion_confirmation_days"), ((15, 30, 45, 60), (3, 6, 9, 12)),
             "Vendor updates the instruction log every {d0} days and supplies deletion confirmation within {d1} days after completion.",
             lambda x: (
-                f"Vendor will process personal data only on Customer's documented instructions and as necessary to provide the services; administrative notice of the processing is due within {x['customer_notice_days']} days."
-                if x["processing_basis"] == "documented_instruction" else
-                (f"Vendor may process personal data outside a service instruction only to the extent applicable law requires and will notify Customer, where legally permitted, within {x['customer_notice_days']} days."
-                 if x["processing_basis"] == "legal_requirement" else
-                 f"Vendor may process personal data outside Customer's instructions when Vendor considers the activity operationally useful and will notify Customer within {x['customer_notice_days']} days.")),
-            True, True,
+                "Vendor will process personal data only on Customer's documented instructions and as necessary to provide the services."
+                if x["vendor_authority"] == "documented_instruction" and x["processing_scope"] == "agreed_services" else
+                "Customer's documented instruction purports to authorize processing for activities outside the agreed services."
+                if x["vendor_authority"] == "documented_instruction" else
+                "Vendor may process personal data outside a service instruction only to the extent applicable law requires."
+                if x["vendor_authority"] == "legal_requirement" else
+                ("Vendor may process personal data outside Customer's instructions when Vendor considers the activity operationally useful for the agreed services."
+                 if x["processing_scope"] == "agreed_services" else
+                 "Vendor may process personal data outside Customer's instructions for operationally useful activities unrelated to the agreed services.")),
+            True, False,
         ),
         FamilySpec(
             "CF-DPA-USE-BOUNDARY-V2", "R-002",
@@ -253,20 +270,20 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-DPA-SUBPROCESSOR-V2", "R-003",
-            "pass_through_duties and (approval_route == 'prior_approval' or (approval_route == 'notice_objection' and advance_notice_days >= 30))",
+            "pass_through_duties and (approval_route == 'prior_approval' or (approval_route == 'notice_objection' and advance_notice_days > 0))",
             ("advance_notice_days", "pass_through_duties"), ("approval_route",),
             (c(advance_notice_days=15, pass_through_duties=True, approval_route="prior_approval"),
              c(advance_notice_days=30, pass_through_duties=True, approval_route="notice_objection"),
              c(advance_notice_days=45, pass_through_duties=True, approval_route="notice_objection"),
              c(advance_notice_days=30, pass_through_duties=True, approval_route="prior_approval")),
-            (c(advance_notice_days=15, pass_through_duties=True, approval_route="notice_objection"),
+            (c(advance_notice_days=0, pass_through_duties=True, approval_route="notice_objection"),
              c(advance_notice_days=30, pass_through_duties=False, approval_route="notice_objection"),
              c(advance_notice_days=45, pass_through_duties=False, approval_route="prior_approval"),
-             c(advance_notice_days=20, pass_through_duties=True, approval_route="notice_objection")),
+             c(advance_notice_days=0, pass_through_duties=True, approval_route="notice_objection")),
             ("objection_review_days", "subprocessor_audit_months"), ((5, 10, 12, 20), (3, 6, 9, 12)),
             "Vendor responds to a substantiated objection within {d0} days and reviews subprocessor compliance every {d1} months.",
             lambda x: (
-                f"Vendor may appoint a subprocessor through {('Customer prior approval' if x['approval_route'] == 'prior_approval' else 'the agreed notice-and-objection process on ' + str(x['advance_notice_days']) + ' days’ advance notice')}; "
+                f"Vendor may appoint a subprocessor through {('Customer prior approval requested ' + str(x['advance_notice_days']) + ' days before appointment' if x['approval_route'] == 'prior_approval' else ('the agreed notice-and-objection process with no advance notice' if x['advance_notice_days'] == 0 else 'the agreed notice-and-objection process on ' + str(x['advance_notice_days']) + ' days’ advance notice'))}; "
                 + ("Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance."
                    if x["pass_through_duties"] else
                    "Vendor need not impose equivalent written data-protection duties, although it remains the contracting party.")),
@@ -274,36 +291,44 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-DPA-SUPPORT-V2", "R-006",
-            "(request_type == 'data_subject' and response_days <= 10) or (request_type == 'regulator' and response_days <= 15)",
-            ("response_days",), ("request_type",),
-            (c(response_days=10, request_type="data_subject"), c(response_days=15, request_type="regulator"),
-             c(response_days=7, request_type="data_subject"), c(response_days=12, request_type="regulator")),
-            (c(response_days=15, request_type="data_subject"), c(response_days=20, request_type="regulator"),
-             c(response_days=12, request_type="data_subject"), c(response_days=18, request_type="regulator")),
-            ("request_batch_size", "status_update_days"), ((10, 20, 30, 40), (2, 4, 6, 8)),
-            "Customer may group up to {d0} related requests in one intake, and Vendor provides status updates every {d1} days while work remains open.",
-            lambda x: f"Vendor will reasonably assist Customer with each {('data-subject request' if x['request_type'] == 'data_subject' else 'regulator inquiry or privacy assessment')} relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within {x['response_days']} days.",
+            "supported_request_types == 3 and practical_support",
+            ("supported_request_types",), ("practical_support",),
+            (c(supported_request_types=3, practical_support=True), c(supported_request_types=3, practical_support=True),
+             c(supported_request_types=3, practical_support=True), c(supported_request_types=3, practical_support=True)),
+            (c(supported_request_types=2, practical_support=True), c(supported_request_types=3, practical_support=False),
+             c(supported_request_types=1, practical_support=False), c(supported_request_types=2, practical_support=False)),
+            ("request_batch_size", "status_update_days"), ((10, 20, 30, 40), (4, 6, 8, 10)),
+            "Customer may group up to {d0} related requests in one intake, and the intake portal produces automated status notices every {d1} days while a request record remains open.",
+            lambda x: (
+                ({3: "Vendor's support covers data-subject requests, regulator inquiries, and privacy assessments relating to the services. ",
+                  2: "Vendor's support covers data-subject requests and privacy assessments but excludes regulator inquiries. ",
+                  1: "Vendor's support covers data-subject requests only and excludes regulator inquiries and privacy assessments. "}[x["supported_request_types"]])
+                + ("Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor."
+                   if x["practical_support"] else
+                   "Vendor has no obligation to provide practical assistance or information for the covered request types.")
+            ),
             True, True,
         ),
     ),
     "PB-EMP-001": (
         FamilySpec(
             "CF-EMP-CAUSE-V2", "R-002",
-            "cause_event == 'incurable_serious' or (cause_event == 'curable_material_breach' and cure_days >= 10)",
-            ("cure_days",), ("cause_event",),
-            (c(cure_days=0, cause_event="incurable_serious"), c(cure_days=10, cause_event="curable_material_breach"),
-             c(cure_days=15, cause_event="curable_material_breach"), c(cure_days=0, cause_event="incurable_serious")),
-            (c(cure_days=5, cause_event="curable_material_breach"), c(cure_days=15, cause_event="minor_nonmaterial"),
-             c(cure_days=10, cause_event="minor_nonmaterial"), c(cure_days=7, cause_event="curable_material_breach")),
+            "serious_misconduct_covered and material_duty_failure_covered",
+            ("serious_misconduct_covered",), ("material_duty_failure_covered",),
+            (c(serious_misconduct_covered=True, material_duty_failure_covered=True), c(serious_misconduct_covered=True, material_duty_failure_covered=True),
+             c(serious_misconduct_covered=True, material_duty_failure_covered=True), c(serious_misconduct_covered=True, material_duty_failure_covered=True)),
+            (c(serious_misconduct_covered=False, material_duty_failure_covered=True), c(serious_misconduct_covered=True, material_duty_failure_covered=False),
+             c(serious_misconduct_covered=False, material_duty_failure_covered=False), c(serious_misconduct_covered=True, material_duty_failure_covered=False)),
             ("cause_notice_days", "investigation_meeting_days"), ((1, 3, 5, 7), (2, 4, 6, 8)),
-            "Company provides the written Cause notice within {d0} days after its determination and offers an investigation meeting within {d1} days.",
+            "Company provides the written Cause notice by day {d0} after its determination and offers an investigation meeting within {d1} days.",
             lambda x: (
-                ("Cause includes the complete signed list. Fraud, dishonesty, willful misconduct, and other incurable serious grounds permit termination without a cure period."
-                 if x["cause_event"] == "incurable_serious" else
-                 f"Cause includes the complete signed list. A curable material duty or agreement breach carries a {x['cure_days']}-day cure period; fraud, dishonesty, and willful misconduct remain incurable grounds."
-                 if x["cause_event"] == "curable_material_breach" else
-                 f"Cause extends to the identified minor nonmaterial event after a {x['cure_days']}-day cure period even though it does not materially breach a duty, policy, law, or agreement and does not materially harm Company.")
-            ), True, True,
+                ("Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. "
+                 if x["serious_misconduct_covered"] else
+                 "Cause excludes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. ")
+                + ("Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement."
+                   if x["material_duty_failure_covered"] else
+                   "Cause does not include material duty failures, material policy violations, or material breach of the agreement.")
+            ), True, False,
         ),
         FamilySpec(
             "CF-EMP-INVENTIONS-V2", "R-004",
@@ -325,12 +350,12 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-EMP-BONUS-V2", "R-006",
-            "target_bonus_percent == 0 or (objective_written_plan and target_bonus_percent <= 30)",
+            "target_bonus_percent == 0 or objective_written_plan",
             ("target_bonus_percent",), ("objective_written_plan",),
             (c(target_bonus_percent=0, objective_written_plan=False), c(target_bonus_percent=30, objective_written_plan=True),
-             c(target_bonus_percent=20, objective_written_plan=True), c(target_bonus_percent=0, objective_written_plan=True)),
-            (c(target_bonus_percent=20, objective_written_plan=False), c(target_bonus_percent=40, objective_written_plan=True),
-             c(target_bonus_percent=30, objective_written_plan=False), c(target_bonus_percent=35, objective_written_plan=True)),
+             c(target_bonus_percent=40, objective_written_plan=True), c(target_bonus_percent=0, objective_written_plan=True)),
+            (c(target_bonus_percent=20, objective_written_plan=False), c(target_bonus_percent=40, objective_written_plan=False),
+             c(target_bonus_percent=30, objective_written_plan=False), c(target_bonus_percent=35, objective_written_plan=False)),
             ("metric_review_days", "payment_processing_days"), ((15, 25, 45, 60), (5, 10, 15, 20)),
             "Company reviews reported metrics every {d0} days and processes an approved payment within {d1} days after certification.",
             lambda x: (
@@ -343,12 +368,12 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-EMP-EQUITY-V2", "R-007",
-            "acceleration_percent == 0 or (plan_authorized and acceleration_percent <= 100)",
+            "acceleration_percent == 0 or plan_authorized",
             ("acceleration_percent",), ("plan_authorized",),
             (c(acceleration_percent=0, plan_authorized=False), c(acceleration_percent=50, plan_authorized=True),
              c(acceleration_percent=100, plan_authorized=True), c(acceleration_percent=0, plan_authorized=True)),
             (c(acceleration_percent=50, plan_authorized=False), c(acceleration_percent=100, plan_authorized=False),
-             c(acceleration_percent=125, plan_authorized=True), c(acceleration_percent=75, plan_authorized=False)),
+             c(acceleration_percent=25, plan_authorized=False), c(acceleration_percent=75, plan_authorized=False)),
             ("award_notice_days", "exercise_window_days"), ((5, 10, 15, 20), (30, 60, 90, 120)),
             "Company delivers award notices within {d0} days after approval, and any vested-option exercise window stated in the award remains {d1} days.",
             lambda x: (
@@ -411,8 +436,8 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
              c(transferee_type="family_member", recipient_bound_in_writing=True), c(transferee_type="affiliate", recipient_bound_in_writing=True)),
             (c(transferee_type="affiliate", recipient_bound_in_writing=False), c(transferee_type="unrelated_third_party", recipient_bound_in_writing=True),
              c(transferee_type="family_member", recipient_bound_in_writing=False), c(transferee_type="estate_vehicle", recipient_bound_in_writing=False)),
-            ("transfer_notice_days", "joinder_delivery_days"), ((3, 5, 7, 10), (1, 2, 3, 4)),
-            "The transferor gives administrative notice within {d0} days and delivers the executed joinder within {d1} days after transfer.",
+            ("transfer_notice_days", "transfer_record_days"), ((3, 5, 7, 10), (1, 2, 3, 4)),
+            "The transferor gives administrative notice within {d0} days and delivers the ministerial transfer record by day {d1} after transfer.",
             lambda x: (
                 f"A transfer to the identified {x['transferee_type'].replace('_', ' ')} is "
                 + ("permitted only because the recipient agrees in writing to be bound by this Agreement."
@@ -430,31 +455,37 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
              c(series_a_approval_percent=75, major_investor_shares=1500000), c(series_a_approval_percent=55, major_investor_shares=1100000)),
             (c(series_a_approval_percent=40, major_investor_shares=1000000), c(series_a_approval_percent=60, major_investor_shares=750000),
              c(series_a_approval_percent=45, major_investor_shares=1200000), c(series_a_approval_percent=55, major_investor_shares=500000)),
-            ("notice_record_days", "vote_tabulation_hours"), ((3, 5, 7, 10), (12, 24, 36, 48)),
+            ("consent_record_years", "vote_tabulation_hours"), ((3, 5, 7, 10), (12, 24, 36, 48)),
             "Consent records are retained for {d0} years, and the vote tabulation is circulated within {d1} hours after the deadline.",
-            fmt("Requisite Holders means Major Investors holding at least {series_a_approval_percent}% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least {major_investor_shares} Series A shares."),
+            lambda x: f"Requisite Holders means Major Investors holding at least {x['series_a_approval_percent']}% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least {x['major_investor_shares']:,} Series A shares.",
             False, True,
         ),
     ),
     "PB-MA-001": (
         FamilySpec(
             "CF-MA-ASSUMPTION-V2", "R-001",
-            "not catch_all_liabilities and (assumed_liability_sections <= 5 or signed_amendment)",
-            ("assumed_liability_sections", "catch_all_liabilities"), ("signed_amendment",),
-            (c(assumed_liability_sections=4, catch_all_liabilities=False, signed_amendment=False),
-             c(assumed_liability_sections=5, catch_all_liabilities=False, signed_amendment=False),
-             c(assumed_liability_sections=7, catch_all_liabilities=False, signed_amendment=True),
-             c(assumed_liability_sections=6, catch_all_liabilities=False, signed_amendment=True)),
-            (c(assumed_liability_sections=6, catch_all_liabilities=True, signed_amendment=False),
-             c(assumed_liability_sections=7, catch_all_liabilities=False, signed_amendment=False),
-             c(assumed_liability_sections=5, catch_all_liabilities=True, signed_amendment=False),
-             c(assumed_liability_sections=8, catch_all_liabilities=True, signed_amendment=True)),
+            "catch_all_liability_categories == 0 and assumption_source in {'enumerated_agreement', 'signed_amendment'}",
+            ("catch_all_liability_categories",), ("assumption_source",),
+            (c(catch_all_liability_categories=0, assumption_source="enumerated_agreement"),
+             c(catch_all_liability_categories=0, assumption_source="signed_amendment"),
+             c(catch_all_liability_categories=0, assumption_source="enumerated_agreement"),
+             c(catch_all_liability_categories=0, assumption_source="signed_amendment")),
+            (c(catch_all_liability_categories=1, assumption_source="enumerated_agreement"),
+             c(catch_all_liability_categories=0, assumption_source="unsigned_addendum"),
+             c(catch_all_liability_categories=2, assumption_source="signed_amendment"),
+             c(catch_all_liability_categories=1, assumption_source="unsigned_addendum")),
             ("schedule_update_days", "claim_notice_days"), ((3, 2, 9, 10), (15, 30, 45, 60)),
             "Clerical schedule updates are circulated within {d0} days, and post-closing claim notices are due within {d1} days after discovery.",
             lambda x: (
-                f"Buyer assumes liabilities expressly enumerated in {x['assumed_liability_sections']} identified schedule sections. "
-                + ("The parties' signed amendment also expressly adds the identified obligations. " if x["signed_amendment"] else "No signed amendment adds other obligations. ")
-                + ("Buyer additionally assumes all ordinary-course and other unspecified Seller liabilities." if x["catch_all_liabilities"] else "All other Seller liabilities remain excluded.")),
+                ({"enumerated_agreement": ("Buyer assumes only the liabilities expressly enumerated in Section 4 of the Agreement. "
+                                            if x["catch_all_liability_categories"] == 0 else
+                                            "Buyer assumes the liabilities expressly enumerated in Section 4 of the Agreement. "),
+                  "signed_amendment": ("Buyer assumes only the identified obligations expressly added by a signed amendment. "
+                                       if x["catch_all_liability_categories"] == 0 else
+                                       "Buyer assumes the identified obligations expressly added by a signed amendment. "),
+                  "unsigned_addendum": "Buyer assumes obligations listed only in an unsigned addendum. "}[x["assumption_source"]])
+                + ("All other Seller liabilities remain excluded." if x["catch_all_liability_categories"] == 0 else
+                   f"Buyer additionally assumes {x['catch_all_liability_categories']} catch-all {'category' if x['catch_all_liability_categories'] == 1 else 'categories'} of ordinary-course or unspecified Seller liabilities.")),
             True, True,
         ),
         FamilySpec(
@@ -471,7 +502,7 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
                 ("Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct."
                  if x["fraud_claims_preserved"] else
                  "The no-reliance clause bars claims based on extra-contractual Fraud, intentional misrepresentation, and willful misconduct.")
-                + (" Those preserved claims remain outside every contractual liability cap." if not x["liability_cap_applies_to_fraud"] else
+                + (" The general contractual liability cap does not independently limit any fraud-based claim that survives the no-reliance clause." if not x["liability_cap_applies_to_fraud"] else
                    " Any surviving fraud-based claim remains subject to the general contractual liability cap.")),
             True, False,
         ),
@@ -495,19 +526,25 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-MA-MAE-V2", "R-011",
-            "not mae_occurred or buyer_may_refuse_closing",
-            ("mae_occurred",), ("buyer_may_refuse_closing",),
-            (c(mae_occurred=False, buyer_may_refuse_closing=False), c(mae_occurred=True, buyer_may_refuse_closing=True),
-             c(mae_occurred=False, buyer_may_refuse_closing=True), c(mae_occurred=True, buyer_may_refuse_closing=True)),
-            (c(mae_occurred=True, buyer_may_refuse_closing=False), c(mae_occurred=True, buyer_may_refuse_closing=False),
-             c(mae_occurred=True, buyer_may_refuse_closing=False), c(mae_occurred=True, buyer_may_refuse_closing=False)),
+            "purchased_assets_covered and acquired_business_covered",
+            ("purchased_assets_covered",), ("acquired_business_covered",),
+            (c(purchased_assets_covered=True, acquired_business_covered=True), c(purchased_assets_covered=True, acquired_business_covered=True),
+             c(purchased_assets_covered=True, acquired_business_covered=True), c(purchased_assets_covered=True, acquired_business_covered=True)),
+            (c(purchased_assets_covered=False, acquired_business_covered=True), c(purchased_assets_covered=True, acquired_business_covered=False),
+             c(purchased_assets_covered=False, acquired_business_covered=False), c(purchased_assets_covered=True, acquired_business_covered=False)),
             ("mae_notice_days", "condition_update_days"), ((1, 3, 5, 7), (2, 4, 6, 8)),
-            "Seller gives notice of a potential Material Adverse Effect within {d0} days and updates the closing-condition record every {d1} days.",
+            "Seller gives notice of a potential Material Adverse Effect by day {d0} and updates the closing-condition record every {d1} days.",
             lambda x: (
-                ("No Material Adverse Effect has occurred before closing. " if not x["mae_occurred"] else
-                 "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. ")
-                + ("Buyer may refuse to close while that closing condition is unsatisfied." if x["buyer_may_refuse_closing"] else
-                   "Buyer nevertheless remains unconditionally obligated to close.")),
+                ("Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing "
+                 if x["purchased_assets_covered"] or x["acquired_business_covered"] else
+                 "A Material Adverse Effect is not a condition to Buyer's obligation to close, including ")
+                + ("with respect to both the Purchased Assets and the acquired business."
+                   if x["purchased_assets_covered"] and x["acquired_business_covered"] else
+                   "with respect to the Purchased Assets only; an effect on the acquired business is excluded."
+                   if x["purchased_assets_covered"] else
+                   "with respect to the acquired business only; an effect on the Purchased Assets is excluded."
+                   if x["acquired_business_covered"] else
+                   "effects on both the Purchased Assets and the acquired business.")),
             True, False,
         ),
     ),
@@ -585,43 +622,45 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
     "PB-NDA-001": (
         FamilySpec(
             "CF-NDA-AFFILIATES-V2", "R-002",
-            "not affiliate_participates or (affiliate_covered and party_responsible)",
-            ("affiliate_covered", "party_responsible"), ("affiliate_participates",),
-            (c(affiliate_covered=True, party_responsible=True, affiliate_participates=True),
-             c(affiliate_covered=True, party_responsible=True, affiliate_participates=False),
-             c(affiliate_covered=True, party_responsible=True, affiliate_participates=False),
-             c(affiliate_covered=True, party_responsible=True, affiliate_participates=True)),
-            (c(affiliate_covered=False, party_responsible=True, affiliate_participates=True),
-             c(affiliate_covered=True, party_responsible=False, affiliate_participates=True),
-             c(affiliate_covered=False, party_responsible=False, affiliate_participates=True),
-             c(affiliate_covered=True, party_responsible=False, affiliate_participates=True)),
+            "affiliate_covered and party_responsible",
+            ("affiliate_covered",), ("party_responsible",),
+            (c(affiliate_covered=True, party_responsible=True),
+             c(affiliate_covered=True, party_responsible=True),
+             c(affiliate_covered=True, party_responsible=True),
+             c(affiliate_covered=True, party_responsible=True)),
+            (c(affiliate_covered=False, party_responsible=True),
+             c(affiliate_covered=True, party_responsible=False),
+             c(affiliate_covered=False, party_responsible=False),
+             c(affiliate_covered=True, party_responsible=False)),
             ("affiliate_notice_days", "recipient_list_days"), ((3, 5, 7, 10), (10, 20, 30, 40)),
             "A party identifies a participating affiliate within {d0} days and refreshes its authorized-recipient list every {d1} days.",
             lambda x: (
-                ("A controlled affiliate participates as a discloser or recipient. " if x["affiliate_participates"] else
-                 "No controlled affiliate presently discloses or receives Confidential Information; any later participating controlled affiliate will be covered. ")
+                "Controlled affiliates may participate as disclosers or recipients. "
                 + ("Each participating controlled affiliate is covered by the mutual obligations, " if x["affiliate_covered"] else
                    "Participating affiliates are excluded from the NDA's protections and duties, ")
-                + ("and its party remains responsible for affiliate compliance." if x["party_responsible"] else
+                + (("and its party remains responsible for affiliate compliance." if x["affiliate_covered"] else
+                    "and its party is responsible only for its own disclosure decision; the affiliate has no NDA duty.") if x["party_responsible"] else
                    "and neither party is responsible for its affiliate's compliance.")),
             True, False,
         ),
         FamilySpec(
             "CF-NDA-COMPELLED-V2", "R-007",
-            "reasonable_cooperation and (notice_legally_prohibited or compelled_notice_hours <= 24)",
-            ("compelled_notice_hours", "reasonable_cooperation"), ("notice_legally_prohibited",),
-            (c(compelled_notice_hours=24, reasonable_cooperation=True, notice_legally_prohibited=False),
-             c(compelled_notice_hours=48, reasonable_cooperation=True, notice_legally_prohibited=True),
-             c(compelled_notice_hours=12, reasonable_cooperation=True, notice_legally_prohibited=False),
-             c(compelled_notice_hours=24, reasonable_cooperation=True, notice_legally_prohibited=True)),
-            (c(compelled_notice_hours=48, reasonable_cooperation=True, notice_legally_prohibited=False),
-             c(compelled_notice_hours=24, reasonable_cooperation=False, notice_legally_prohibited=False),
-             c(compelled_notice_hours=12, reasonable_cooperation=False, notice_legally_prohibited=True),
-             c(compelled_notice_hours=36, reasonable_cooperation=True, notice_legally_prohibited=False)),
+            "reasonable_cooperation and (notice_legally_prohibited or prompt_notice)",
+            ("prompt_notice", "reasonable_cooperation"), ("notice_legally_prohibited",),
+            (c(prompt_notice=True, reasonable_cooperation=True, notice_legally_prohibited=False),
+             c(prompt_notice=False, reasonable_cooperation=True, notice_legally_prohibited=True),
+             c(prompt_notice=True, reasonable_cooperation=True, notice_legally_prohibited=False),
+             c(prompt_notice=True, reasonable_cooperation=True, notice_legally_prohibited=True)),
+            (c(prompt_notice=False, reasonable_cooperation=True, notice_legally_prohibited=False),
+             c(prompt_notice=True, reasonable_cooperation=False, notice_legally_prohibited=False),
+             c(prompt_notice=False, reasonable_cooperation=False, notice_legally_prohibited=True),
+             c(prompt_notice=False, reasonable_cooperation=True, notice_legally_prohibited=False)),
             ("protective_order_days", "disclosure_log_days"), ((2, 4, 6, 8), (10, 20, 30, 40)),
             "Recipient preserves supporting material for a protective-order request for {d0} days and updates the disclosure log within {d1} days.",
             lambda x: (
-                (f"Recipient will give Discloser notice {x['compelled_notice_hours']} hours before a compelled disclosure. "
+                (("Recipient will give Discloser prompt advance notice as soon as practicable before a compelled disclosure. "
+                  if x["prompt_notice"] else
+                  "Recipient will notify Discloser only after completing a compelled disclosure, even though advance notice is legally permitted. ")
                  if not x["notice_legally_prohibited"] else
                  "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. ")
                 + ("Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted."
@@ -631,25 +670,23 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
         ),
         FamilySpec(
             "CF-NDA-RETURN-V2", "R-008",
-            "return_days <= 30 or (return_days <= 45 and certified_destruction and legal_hold_carveout_narrow)",
-            ("return_days", "certified_destruction"), ("legal_hold_carveout_narrow",),
-            (c(return_days=15, certified_destruction=False, legal_hold_carveout_narrow=False),
-             c(return_days=30, certified_destruction=False, legal_hold_carveout_narrow=True),
-             c(return_days=45, certified_destruction=True, legal_hold_carveout_narrow=True),
-             c(return_days=35, certified_destruction=True, legal_hold_carveout_narrow=True)),
-            (c(return_days=35, certified_destruction=False, legal_hold_carveout_narrow=True),
-             c(return_days=45, certified_destruction=True, legal_hold_carveout_narrow=False),
-             c(return_days=60, certified_destruction=True, legal_hold_carveout_narrow=True),
-             c(return_days=40, certified_destruction=False, legal_hold_carveout_narrow=False)),
+            "return_days <= 30 and retained_copies_protected",
+            ("return_days",), ("retained_copies_protected",),
+            (c(return_days=15, retained_copies_protected=True),
+             c(return_days=30, retained_copies_protected=True),
+             c(return_days=18, retained_copies_protected=True),
+             c(return_days=22, retained_copies_protected=True)),
+            (c(return_days=35, retained_copies_protected=True),
+             c(return_days=30, retained_copies_protected=False),
+             c(return_days=45, retained_copies_protected=True),
+             c(return_days=15, retained_copies_protected=False)),
             ("backup_cycle_days", "destruction_log_days"), ((7, 14, 21, 28), (5, 10, 20, 25)),
             "Ordinary backup media rotate every {d0} days, and Recipient updates its destruction log within {d1} days after completing the process.",
             lambda x: (
                 f"Upon request, Recipient will return or destroy Confidential Information within {x['return_days']} days. "
-                + ("Recipient will certify completion in writing. " if x["certified_destruction"] else
-                   "Recipient need not certify completion. ")
-                + ("Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations."
-                   if x["legal_hold_carveout_narrow"] else
-                   "Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations.")),
+                + ("Only archival or legal-hold copies retained through required legal holds or routine automated backup may remain, and all retained copies remain subject to continuing confidentiality obligations."
+                   if x["retained_copies_protected"] else
+                   "Archival, legal-hold, and backup copies may remain without continuing confidentiality or use restrictions.")),
             True, True,
         ),
         FamilySpec(
@@ -661,9 +698,9 @@ SPECS: dict[str, tuple[FamilySpec, ...]] = {
             (c(ordinary_survival_years=2, trade_secret_tail=True), c(ordinary_survival_years=3, trade_secret_tail=False),
              c(ordinary_survival_years=1, trade_secret_tail=False), c(ordinary_survival_years=4, trade_secret_tail=False)),
             ("renewal_notice_days", "trade_secret_review_months"), ((15, 30, 45, 60), (6, 12, 18, 24)),
-            "A party may request a survival-status confirmation on {d0} days' notice, and trade-secret designations are administratively reviewed every {d1} months without ending protection.",
+            "A party may request a survival-status confirmation on {d0} days' notice, and trade-secret designations are administratively reviewed every {d1} months without the review itself changing the stated legal term.",
             lambda x: (
-                f"Confidentiality obligations continue for {x['ordinary_survival_years']} years after disclosure. "
+                f"Confidentiality obligations continue for {x['ordinary_survival_years']} {'year' if x['ordinary_survival_years'] == 1 else 'years'} after disclosure. "
                 + ("Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law."
                    if x["trade_secret_tail"] else
                    f"Trade-secret protection expires automatically at the end of the same {x['ordinary_survival_years']}-year period.")),

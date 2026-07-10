@@ -557,7 +557,7 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "training_scope": "none"
+        "training_scope": "identified_files"
       },
       "phase1_context_slots": {
         "written_opt_in": true
@@ -575,7 +575,7 @@
       "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "training_scope": "none"
+          "training_scope": "identified_files"
         },
         "phase1_context_slots": {
           "written_opt_in": true
@@ -623,7 +623,7 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "training_scope": "none"
+        "training_scope": "identified_files"
       },
       "phase1_context_slots": {
         "written_opt_in": true
@@ -641,7 +641,7 @@
       "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "training_scope": "none"
+          "training_scope": "identified_files"
         },
         "phase1_context_slots": {
           "written_opt_in": true
@@ -656,7 +656,7 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "portability_days": 30
+        "portable_export_available": true
       },
       "phase1_context_slots": {
         "asset_control": "nonexclusive_use"
@@ -674,7 +674,7 @@
       "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "portability_days": 30
+          "portable_export_available": true
         },
         "phase1_context_slots": {
           "asset_control": "nonexclusive_use"
@@ -757,7 +757,7 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "asset_use_scope": "none"
+        "asset_use_scope": "specified"
       },
       "phase1_context_slots": {
         "written_consent": true
@@ -775,7 +775,7 @@
       "area": "crypto",
       "observation": {
         "counter_text_slots": {
-          "asset_use_scope": "none"
+          "asset_use_scope": "specified"
         },
         "phase1_context_slots": {
           "written_consent": true
@@ -828,7 +828,7 @@
         "soc_interval_months": 12
       },
       "phase1_context_slots": {
-        "incident_notice_hours": 120
+        "prompt_failure_notice": false
       },
       "decoy_values": [
         5,
@@ -846,7 +846,7 @@
           "soc_interval_months": 12
         },
         "phase1_context_slots": {
-          "incident_notice_hours": 120
+          "prompt_failure_notice": false
         },
         "decoy_values": [
           5,
@@ -894,7 +894,7 @@
         "soc_interval_months": 12
       },
       "phase1_context_slots": {
-        "incident_notice_hours": 36
+        "prompt_failure_notice": true
       },
       "decoy_values": [
         10,
@@ -912,7 +912,7 @@
           "soc_interval_months": 12
         },
         "phase1_context_slots": {
-          "incident_notice_hours": 36
+          "prompt_failure_notice": true
         },
         "decoy_values": [
           10,
@@ -1025,14 +1025,14 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "response_days": 15
+        "supported_request_types": 2
       },
       "phase1_context_slots": {
-        "request_type": "data_subject"
+        "practical_support": true
       },
       "decoy_values": [
         10,
-        4
+        6
       ],
       "task_ordinal": 8,
       "event_ordinal": 5,
@@ -1043,14 +1043,14 @@
       "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "response_days": 15
+          "supported_request_types": 2
         },
         "phase1_context_slots": {
-          "request_type": "data_subject"
+          "practical_support": true
         },
         "decoy_values": [
           10,
-          4
+          6
         ]
       },
       "public_task_id": "T2N-V2-PRIVACY-01-S21302"
@@ -1058,10 +1058,10 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "customer_notice_days": 5
+        "vendor_authority": "legal_requirement"
       },
       "phase1_context_slots": {
-        "processing_basis": "legal_requirement"
+        "processing_scope": "outside_services"
       },
       "decoy_values": [
         30,
@@ -1076,10 +1076,10 @@
       "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "customer_notice_days": 5
+          "vendor_authority": "legal_requirement"
         },
         "phase1_context_slots": {
-          "processing_basis": "legal_requirement"
+          "processing_scope": "outside_services"
         },
         "decoy_values": [
           30,
@@ -1124,10 +1124,10 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "customer_notice_days": 10
+        "vendor_authority": "legal_requirement"
       },
       "phase1_context_slots": {
-        "processing_basis": "documented_instruction"
+        "processing_scope": "agreed_services"
       },
       "decoy_values": [
         45,
@@ -1142,10 +1142,10 @@
       "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "customer_notice_days": 10
+          "vendor_authority": "legal_requirement"
         },
         "phase1_context_slots": {
-          "processing_basis": "documented_instruction"
+          "processing_scope": "agreed_services"
         },
         "decoy_values": [
           45,
@@ -1225,14 +1225,14 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "response_days": 12
+        "supported_request_types": 3
       },
       "phase1_context_slots": {
-        "request_type": "regulator"
+        "practical_support": true
       },
       "decoy_values": [
         30,
-        2
+        4
       ],
       "task_ordinal": 11,
       "event_ordinal": 4,
@@ -1243,14 +1243,14 @@
       "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "response_days": 12
+          "supported_request_types": 3
         },
         "phase1_context_slots": {
-          "request_type": "regulator"
+          "practical_support": true
         },
         "decoy_values": [
           30,
-          2
+          4
         ]
       },
       "public_task_id": "T2N-V2-PRIVACY-04-S21237"
@@ -1258,10 +1258,10 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "acceleration_percent": 125
+        "acceleration_percent": 25
       },
       "phase1_context_slots": {
-        "plan_authorized": true
+        "plan_authorized": false
       },
       "decoy_values": [
         15,
@@ -1276,10 +1276,10 @@
       "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "acceleration_percent": 125
+          "acceleration_percent": 25
         },
         "phase1_context_slots": {
-          "plan_authorized": true
+          "plan_authorized": false
         },
         "decoy_values": [
           15,
@@ -1390,10 +1390,10 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cure_days": 15
+        "serious_misconduct_covered": true
       },
       "phase1_context_slots": {
-        "cause_event": "minor_nonmaterial"
+        "material_duty_failure_covered": false
       },
       "decoy_values": [
         1,
@@ -1408,10 +1408,10 @@
       "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "cure_days": 15
+          "serious_misconduct_covered": true
         },
         "phase1_context_slots": {
-          "cause_event": "minor_nonmaterial"
+          "material_duty_failure_covered": false
         },
         "decoy_values": [
           1,
@@ -1456,10 +1456,10 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cure_days": 15
+        "serious_misconduct_covered": true
       },
       "phase1_context_slots": {
-        "cause_event": "curable_material_breach"
+        "material_duty_failure_covered": true
       },
       "decoy_values": [
         5,
@@ -1474,10 +1474,10 @@
       "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "cure_days": 15
+          "serious_misconduct_covered": true
         },
         "phase1_context_slots": {
-          "cause_event": "curable_material_breach"
+          "material_duty_failure_covered": true
         },
         "decoy_values": [
           5,
@@ -1821,10 +1821,10 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "mae_occurred": false
+        "purchased_assets_covered": true
       },
       "phase1_context_slots": {
-        "buyer_may_refuse_closing": true
+        "acquired_business_covered": true
       },
       "decoy_values": [
         3,
@@ -1839,10 +1839,10 @@
       "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "mae_occurred": false
+          "purchased_assets_covered": true
         },
         "phase1_context_slots": {
-          "buyer_may_refuse_closing": true
+          "acquired_business_covered": true
         },
         "decoy_values": [
           3,
@@ -1887,10 +1887,10 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "mae_occurred": true
+        "purchased_assets_covered": false
       },
       "phase1_context_slots": {
-        "buyer_may_refuse_closing": false
+        "acquired_business_covered": false
       },
       "decoy_values": [
         5,
@@ -1905,10 +1905,10 @@
       "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "mae_occurred": true
+          "purchased_assets_covered": false
         },
         "phase1_context_slots": {
-          "buyer_may_refuse_closing": false
+          "acquired_business_covered": false
         },
         "decoy_values": [
           5,
@@ -1920,11 +1920,10 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "assumed_liability_sections": 7,
-        "catch_all_liabilities": false
+        "catch_all_liability_categories": 0
       },
       "phase1_context_slots": {
-        "signed_amendment": false
+        "assumption_source": "unsigned_addendum"
       },
       "decoy_values": [
         3,
@@ -1939,11 +1938,10 @@
       "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "assumed_liability_sections": 7,
-          "catch_all_liabilities": false
+          "catch_all_liability_categories": 0
         },
         "phase1_context_slots": {
-          "signed_amendment": false
+          "assumption_source": "unsigned_addendum"
         },
         "decoy_values": [
           3,
@@ -2021,10 +2019,10 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "mae_occurred": false
+        "purchased_assets_covered": true
       },
       "phase1_context_slots": {
-        "buyer_may_refuse_closing": false
+        "acquired_business_covered": true
       },
       "decoy_values": [
         7,
@@ -2039,10 +2037,10 @@
       "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "mae_occurred": false
+          "purchased_assets_covered": true
         },
         "phase1_context_slots": {
-          "buyer_may_refuse_closing": false
+          "acquired_business_covered": true
         },
         "decoy_values": [
           7,
@@ -2252,11 +2250,10 @@
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "affiliate_covered": true,
-        "party_responsible": true
+        "affiliate_covered": true
       },
       "phase1_context_slots": {
-        "affiliate_participates": true
+        "party_responsible": true
       },
       "decoy_values": [
         10,
@@ -2271,11 +2268,10 @@
       "area": "contracts",
       "observation": {
         "counter_text_slots": {
-          "affiliate_covered": true,
-          "party_responsible": true
+          "affiliate_covered": true
         },
         "phase1_context_slots": {
-          "affiliate_participates": true
+          "party_responsible": true
         },
         "decoy_values": [
           10,
@@ -2287,7 +2283,7 @@
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "compelled_notice_hours": 36,
+        "prompt_notice": false,
         "reasonable_cooperation": true
       },
       "phase1_context_slots": {
@@ -2306,7 +2302,7 @@
       "area": "contracts",
       "observation": {
         "counter_text_slots": {
-          "compelled_notice_hours": 36,
+          "prompt_notice": false,
           "reasonable_cooperation": true
         },
         "phase1_context_slots": {

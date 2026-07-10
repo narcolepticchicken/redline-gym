@@ -6,7 +6,7 @@ Buyer irrevocably waives every claim based on fraud, intentional misrepresentati
 
 ## 1. Definitions and Transaction Structure
 
-<!-- CH-COUNTER-1 -->~~"Assumed Liabilities" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 3.~~ **Buyer assumes liabilities expressly enumerated in 7 identified schedule sections. No signed amendment adds other obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 60 days after discovery.** "Excluded Liabilities" has the meaning stated in Section 5. Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.<!-- CH-CANARY -->**
+<!-- CH-COUNTER-1 -->~~"Assumed Liabilities" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 3.~~ **Buyer assumes obligations listed only in an unsigned addendum. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 60 days after discovery.** "Excluded Liabilities" has the meaning stated in Section 5. Buyer and Seller intend a purchase of assets and not a merger, consolidation, or equity acquisition.<!-- CH-CANARY -->**
 
 The parties confirm that signing and closing will occur simultaneously.**
 

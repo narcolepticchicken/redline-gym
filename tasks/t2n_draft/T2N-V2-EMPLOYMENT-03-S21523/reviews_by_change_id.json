@@ -15,7 +15,7 @@
     "decision": "reject",
     "prior_position_id": "POS-D004",
     "rule_id": "R-002",
-    "exact_quote": "Cause extends to the identified minor nonmaterial event after a 15-day cure period even though it does not materially breach a duty, policy, law, or agreement and does not materially harm Company. Company provides the written Cause notice within 1 days after its determination and offers an investigation meeting within 8 days.",
+    "exact_quote": "Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause does not include material duty failures, material policy violations, or material breach of the agreement. Company provides the written Cause notice by day 1 after its determination and offers an investigation meeting within 8 days.",
     "proposed_redline": "Cause includes material failure to perform duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of the agreement, or conduct that materially harms Company."
   },
   "CH-REGRESSION": {

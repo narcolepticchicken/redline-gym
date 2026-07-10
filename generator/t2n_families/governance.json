@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-GOV-001": {
     "counter_families": [
       {
@@ -418,7 +418,7 @@
         ],
         "decoy_ids": [
           "transfer_notice_days",
-          "joinder_delivery_days"
+          "transfer_record_days"
         ],
         "render_forms": {
           "transferee_type": [
@@ -446,7 +446,7 @@
             "label_flipped": false
           },
           {
-            "varied_input": "joinder_delivery_days",
+            "varied_input": "transfer_record_days",
             "label_flipped": false
           }
         ],
@@ -454,7 +454,7 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "A transfer to the identified affiliate is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 7 days and delivers the executed joinder within 3 days after transfer.",
+              "text": "A transfer to the identified affiliate is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 7 days and delivers the ministerial transfer record by day 3 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "affiliate"
               },
@@ -467,7 +467,7 @@
               ]
             },
             {
-              "text": "A transfer to the identified estate vehicle is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 10 days and delivers the executed joinder within 2 days after transfer.",
+              "text": "A transfer to the identified estate vehicle is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 10 days and delivers the ministerial transfer record by day 2 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "estate_vehicle"
               },
@@ -480,7 +480,7 @@
               ]
             },
             {
-              "text": "A transfer to the identified family member is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 3 days and delivers the executed joinder within 1 days after transfer.",
+              "text": "A transfer to the identified family member is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 3 days and delivers the ministerial transfer record by day 1 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "family_member"
               },
@@ -493,7 +493,7 @@
               ]
             },
             {
-              "text": "A transfer to the identified affiliate is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 5 days and delivers the executed joinder within 4 days after transfer.",
+              "text": "A transfer to the identified affiliate is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 5 days and delivers the ministerial transfer record by day 4 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "affiliate"
               },
@@ -508,7 +508,7 @@
           ],
           "unacceptable": [
             {
-              "text": "A transfer to the identified affiliate is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 10 days and delivers the executed joinder within 1 days after transfer.",
+              "text": "A transfer to the identified affiliate is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 10 days and delivers the ministerial transfer record by day 1 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "affiliate"
               },
@@ -521,7 +521,7 @@
               ]
             },
             {
-              "text": "A transfer to the identified unrelated third party is exempt from the ordinary transfer restrictions solely because the recipient signs a joinder, although it is not a customary permitted transferee. The transferor gives administrative notice within 7 days and delivers the executed joinder within 2 days after transfer.",
+              "text": "A transfer to the identified unrelated third party is exempt from the ordinary transfer restrictions solely because the recipient signs a joinder, although it is not a customary permitted transferee. The transferor gives administrative notice within 7 days and delivers the ministerial transfer record by day 2 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "unrelated_third_party"
               },
@@ -534,7 +534,7 @@
               ]
             },
             {
-              "text": "A transfer to the identified family member is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 5 days and delivers the executed joinder within 3 days after transfer.",
+              "text": "A transfer to the identified family member is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 5 days and delivers the ministerial transfer record by day 3 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "family_member"
               },
@@ -547,7 +547,7 @@
               ]
             },
             {
-              "text": "A transfer to the identified estate vehicle is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 3 days and delivers the executed joinder within 4 days after transfer.",
+              "text": "A transfer to the identified estate vehicle is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 3 days and delivers the ministerial transfer record by day 4 after transfer.",
               "counter_text_slots": {
                 "transferee_type": "estate_vehicle"
               },
@@ -603,7 +603,7 @@
           12
         ],
         "decoy_ids": [
-          "notice_record_days",
+          "consent_record_years",
           "vote_tabulation_hours"
         ],
         "render_forms": {
@@ -628,7 +628,7 @@
             "label_flipped": true
           },
           {
-            "varied_input": "notice_record_days",
+            "varied_input": "consent_record_years",
             "label_flipped": false
           },
           {
@@ -640,7 +640,7 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Requisite Holders means Major Investors holding at least 51% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1000000 Series A shares. Consent records are retained for 10 years, and the vote tabulation is circulated within 48 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 51% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,000,000 Series A shares. Consent records are retained for 10 years, and the vote tabulation is circulated within 48 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 51
               },
@@ -653,7 +653,7 @@
               ]
             },
             {
-              "text": "Requisite Holders means Major Investors holding at least 60% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1200000 Series A shares. Consent records are retained for 3 years, and the vote tabulation is circulated within 36 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 60% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,200,000 Series A shares. Consent records are retained for 3 years, and the vote tabulation is circulated within 36 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 60
               },
@@ -666,7 +666,7 @@
               ]
             },
             {
-              "text": "Requisite Holders means Major Investors holding at least 75% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1500000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 24 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 75% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,500,000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 24 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 75
               },
@@ -679,7 +679,7 @@
               ]
             },
             {
-              "text": "Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1100000 Series A shares. Consent records are retained for 7 years, and the vote tabulation is circulated within 12 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,100,000 Series A shares. Consent records are retained for 7 years, and the vote tabulation is circulated within 12 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 55
               },
@@ -694,7 +694,7 @@
           ],
           "unacceptable": [
             {
-              "text": "Requisite Holders means Major Investors holding at least 40% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1000000 Series A shares. Consent records are retained for 3 years, and the vote tabulation is circulated within 24 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 40% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,000,000 Series A shares. Consent records are retained for 3 years, and the vote tabulation is circulated within 24 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 40
               },
@@ -707,7 +707,7 @@
               ]
             },
             {
-              "text": "Requisite Holders means Major Investors holding at least 60% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 750000 Series A shares. Consent records are retained for 10 years, and the vote tabulation is circulated within 36 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 60% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 750,000 Series A shares. Consent records are retained for 10 years, and the vote tabulation is circulated within 36 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 60
               },
@@ -720,7 +720,7 @@
               ]
             },
             {
-              "text": "Requisite Holders means Major Investors holding at least 45% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1200000 Series A shares. Consent records are retained for 7 years, and the vote tabulation is circulated within 48 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 45% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,200,000 Series A shares. Consent records are retained for 7 years, and the vote tabulation is circulated within 48 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 45
               },
@@ -733,7 +733,7 @@
               ]
             },
             {
-              "text": "Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 500000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 12 hours after the deadline.",
+              "text": "Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 500,000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 12 hours after the deadline.",
               "counter_text_slots": {
                 "series_a_approval_percent": 55
               },

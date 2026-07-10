@@ -50,10 +50,10 @@
         "counter_family_id": "CF-EMP-EQUITY-V2",
         "counter_class": "unacceptable",
         "counter_text_slots": {
-          "acceleration_percent": 125
+          "acceleration_percent": 25
         },
         "phase1_context_slots": {
-          "plan_authorized": true
+          "plan_authorized": false
         },
         "decoy_values": [
           15,

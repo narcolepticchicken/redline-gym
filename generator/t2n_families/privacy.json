@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-DPA-001": {
     "counter_families": [
       {
@@ -14,24 +14,21 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "processing_basis == 'documented_instruction' or (processing_basis == 'legal_requirement' and customer_notice_days <= 5)"
+          "expression": "vendor_authority == 'legal_requirement' or (vendor_authority == 'documented_instruction' and processing_scope == 'agreed_services')"
         },
         "has_qualitative_decisive_input": true,
-        "has_arithmetic_interaction": true,
+        "has_arithmetic_interaction": false,
         "counter_text_slots": {
-          "customer_notice_days": [
-            10,
-            15,
-            3,
-            5,
-            7
-          ]
-        },
-        "phase1_context_slots": {
-          "processing_basis": [
+          "vendor_authority": [
             "documented_instruction",
             "legal_requirement",
             "vendor_discretion"
+          ]
+        },
+        "phase1_context_slots": {
+          "processing_scope": [
+            "agreed_services",
+            "outside_services"
           ]
         },
         "decoy_values": [
@@ -43,24 +40,24 @@
           "deletion_confirmation_days"
         ],
         "render_forms": {
-          "customer_notice_days": [
-            "express customer notice days",
-            "defined customer notice days",
-            "operative customer notice days condition"
+          "vendor_authority": [
+            "express vendor authority",
+            "defined vendor authority",
+            "operative vendor authority condition"
           ],
-          "processing_basis": [
-            "express processing basis",
-            "defined processing basis",
-            "operative processing basis condition"
+          "processing_scope": [
+            "express processing scope",
+            "defined processing scope",
+            "operative processing scope condition"
           ]
         },
         "counterfactual_twins": [
           {
-            "varied_input": "customer_notice_days",
+            "varied_input": "vendor_authority",
             "label_flipped": true
           },
           {
-            "varied_input": "processing_basis",
+            "varied_input": "processing_scope",
             "label_flipped": true
           },
           {
@@ -76,12 +73,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Vendor will process personal data only on Customer's documented instructions and as necessary to provide the services; administrative notice of the processing is due within 5 days. Vendor updates the instruction log every 15 days and supplies deletion confirmation within 3 days after completion.",
+              "text": "Vendor will process personal data only on Customer's documented instructions and as necessary to provide the services. Vendor updates the instruction log every 15 days and supplies deletion confirmation within 3 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 5
+                "vendor_authority": "documented_instruction"
               },
               "phase1_context_slots": {
-                "processing_basis": "documented_instruction"
+                "processing_scope": "agreed_services"
               },
               "decoy_values": [
                 15,
@@ -89,12 +86,12 @@
               ]
             },
             {
-              "text": "Vendor may process personal data outside a service instruction only to the extent applicable law requires and will notify Customer, where legally permitted, within 5 days. Vendor updates the instruction log every 30 days and supplies deletion confirmation within 12 days after completion.",
+              "text": "Vendor may process personal data outside a service instruction only to the extent applicable law requires. Vendor updates the instruction log every 30 days and supplies deletion confirmation within 12 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 5
+                "vendor_authority": "legal_requirement"
               },
               "phase1_context_slots": {
-                "processing_basis": "legal_requirement"
+                "processing_scope": "outside_services"
               },
               "decoy_values": [
                 30,
@@ -102,12 +99,12 @@
               ]
             },
             {
-              "text": "Vendor will process personal data only on Customer's documented instructions and as necessary to provide the services; administrative notice of the processing is due within 10 days. Vendor updates the instruction log every 45 days and supplies deletion confirmation within 9 days after completion.",
+              "text": "Vendor may process personal data outside a service instruction only to the extent applicable law requires. Vendor updates the instruction log every 45 days and supplies deletion confirmation within 9 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 10
+                "vendor_authority": "legal_requirement"
               },
               "phase1_context_slots": {
-                "processing_basis": "documented_instruction"
+                "processing_scope": "agreed_services"
               },
               "decoy_values": [
                 45,
@@ -115,12 +112,12 @@
               ]
             },
             {
-              "text": "Vendor may process personal data outside a service instruction only to the extent applicable law requires and will notify Customer, where legally permitted, within 3 days. Vendor updates the instruction log every 60 days and supplies deletion confirmation within 6 days after completion.",
+              "text": "Vendor will process personal data only on Customer's documented instructions and as necessary to provide the services. Vendor updates the instruction log every 60 days and supplies deletion confirmation within 6 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 3
+                "vendor_authority": "documented_instruction"
               },
               "phase1_context_slots": {
-                "processing_basis": "legal_requirement"
+                "processing_scope": "agreed_services"
               },
               "decoy_values": [
                 60,
@@ -130,12 +127,12 @@
           ],
           "unacceptable": [
             {
-              "text": "Vendor may process personal data outside a service instruction only to the extent applicable law requires and will notify Customer, where legally permitted, within 10 days. Vendor updates the instruction log every 30 days and supplies deletion confirmation within 9 days after completion.",
+              "text": "Customer's documented instruction purports to authorize processing for activities outside the agreed services. Vendor updates the instruction log every 30 days and supplies deletion confirmation within 9 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 10
+                "vendor_authority": "documented_instruction"
               },
               "phase1_context_slots": {
-                "processing_basis": "legal_requirement"
+                "processing_scope": "outside_services"
               },
               "decoy_values": [
                 30,
@@ -143,12 +140,12 @@
               ]
             },
             {
-              "text": "Vendor may process personal data outside Customer's instructions when Vendor considers the activity operationally useful and will notify Customer within 5 days. Vendor updates the instruction log every 15 days and supplies deletion confirmation within 12 days after completion.",
+              "text": "Vendor may process personal data outside Customer's instructions when Vendor considers the activity operationally useful for the agreed services. Vendor updates the instruction log every 15 days and supplies deletion confirmation within 12 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 5
+                "vendor_authority": "vendor_discretion"
               },
               "phase1_context_slots": {
-                "processing_basis": "vendor_discretion"
+                "processing_scope": "agreed_services"
               },
               "decoy_values": [
                 15,
@@ -156,12 +153,12 @@
               ]
             },
             {
-              "text": "Vendor may process personal data outside Customer's instructions when Vendor considers the activity operationally useful and will notify Customer within 15 days. Vendor updates the instruction log every 60 days and supplies deletion confirmation within 3 days after completion.",
+              "text": "Vendor may process personal data outside Customer's instructions for operationally useful activities unrelated to the agreed services. Vendor updates the instruction log every 60 days and supplies deletion confirmation within 3 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 15
+                "vendor_authority": "vendor_discretion"
               },
               "phase1_context_slots": {
-                "processing_basis": "vendor_discretion"
+                "processing_scope": "outside_services"
               },
               "decoy_values": [
                 60,
@@ -169,12 +166,12 @@
               ]
             },
             {
-              "text": "Vendor may process personal data outside a service instruction only to the extent applicable law requires and will notify Customer, where legally permitted, within 7 days. Vendor updates the instruction log every 45 days and supplies deletion confirmation within 6 days after completion.",
+              "text": "Customer's documented instruction purports to authorize processing for activities outside the agreed services. Vendor updates the instruction log every 45 days and supplies deletion confirmation within 6 days after completion.",
               "counter_text_slots": {
-                "customer_notice_days": 7
+                "vendor_authority": "documented_instruction"
               },
               "phase1_context_slots": {
-                "processing_basis": "legal_requirement"
+                "processing_scope": "outside_services"
               },
               "decoy_values": [
                 45,
@@ -376,14 +373,14 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "pass_through_duties and (approval_route == 'prior_approval' or (approval_route == 'notice_objection' and advance_notice_days >= 30))"
+          "expression": "pass_through_duties and (approval_route == 'prior_approval' or (approval_route == 'notice_objection' and advance_notice_days > 0))"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
           "advance_notice_days": [
+            0,
             15,
-            20,
             30,
             45
           ],
@@ -449,7 +446,7 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Vendor may appoint a subprocessor through Customer prior approval; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 12 days and reviews subprocessor compliance every 9 months.",
+              "text": "Vendor may appoint a subprocessor through Customer prior approval requested 15 days before appointment; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 12 days and reviews subprocessor compliance every 9 months.",
               "counter_text_slots": {
                 "advance_notice_days": 15,
                 "pass_through_duties": true
@@ -491,7 +488,7 @@
               ]
             },
             {
-              "text": "Vendor may appoint a subprocessor through Customer prior approval; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 10 days and reviews subprocessor compliance every 12 months.",
+              "text": "Vendor may appoint a subprocessor through Customer prior approval requested 30 days before appointment; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 10 days and reviews subprocessor compliance every 12 months.",
               "counter_text_slots": {
                 "advance_notice_days": 30,
                 "pass_through_duties": true
@@ -507,9 +504,9 @@
           ],
           "unacceptable": [
             {
-              "text": "Vendor may appoint a subprocessor through the agreed notice-and-objection process on 15 days’ advance notice; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 20 days and reviews subprocessor compliance every 3 months.",
+              "text": "Vendor may appoint a subprocessor through the agreed notice-and-objection process with no advance notice; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 20 days and reviews subprocessor compliance every 3 months.",
               "counter_text_slots": {
-                "advance_notice_days": 15,
+                "advance_notice_days": 0,
                 "pass_through_duties": true
               },
               "phase1_context_slots": {
@@ -535,7 +532,7 @@
               ]
             },
             {
-              "text": "Vendor may appoint a subprocessor through Customer prior approval; Vendor need not impose equivalent written data-protection duties, although it remains the contracting party. Vendor responds to a substantiated objection within 10 days and reviews subprocessor compliance every 9 months.",
+              "text": "Vendor may appoint a subprocessor through Customer prior approval requested 45 days before appointment; Vendor need not impose equivalent written data-protection duties, although it remains the contracting party. Vendor responds to a substantiated objection within 10 days and reviews subprocessor compliance every 9 months.",
               "counter_text_slots": {
                 "advance_notice_days": 45,
                 "pass_through_duties": false
@@ -549,9 +546,9 @@
               ]
             },
             {
-              "text": "Vendor may appoint a subprocessor through the agreed notice-and-objection process on 20 days’ advance notice; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 5 days and reviews subprocessor compliance every 12 months.",
+              "text": "Vendor may appoint a subprocessor through the agreed notice-and-objection process with no advance notice; Vendor must impose written duties at least as protective as this DPA and remains liable for subprocessor performance. Vendor responds to a substantiated objection within 5 days and reviews subprocessor compliance every 12 months.",
               "counter_text_slots": {
-                "advance_notice_days": 20,
+                "advance_notice_days": 0,
                 "pass_through_duties": true
               },
               "phase1_context_slots": {
@@ -577,53 +574,50 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "(request_type == 'data_subject' and response_days <= 10) or (request_type == 'regulator' and response_days <= 15)"
+          "expression": "supported_request_types == 3 and practical_support"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
-          "response_days": [
-            10,
-            12,
-            15,
-            18,
-            20,
-            7
+          "supported_request_types": [
+            1,
+            2,
+            3
           ]
         },
         "phase1_context_slots": {
-          "request_type": [
-            "data_subject",
-            "regulator"
+          "practical_support": [
+            false,
+            true
           ]
         },
         "decoy_values": [
           10,
-          2
+          4
         ],
         "decoy_ids": [
           "request_batch_size",
           "status_update_days"
         ],
         "render_forms": {
-          "response_days": [
-            "express response days",
-            "defined response days",
-            "operative response days condition"
+          "supported_request_types": [
+            "express supported request types",
+            "defined supported request types",
+            "operative supported request types condition"
           ],
-          "request_type": [
-            "express request type",
-            "defined request type",
-            "operative request type condition"
+          "practical_support": [
+            "express practical support",
+            "defined practical support",
+            "operative practical support condition"
           ]
         },
         "counterfactual_twins": [
           {
-            "varied_input": "response_days",
+            "varied_input": "supported_request_types",
             "label_flipped": true
           },
           {
-            "varied_input": "request_type",
+            "varied_input": "practical_support",
             "label_flipped": true
           },
           {
@@ -639,109 +633,109 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Vendor will reasonably assist Customer with each data-subject request relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 10 days. Customer may group up to 40 related requests in one intake, and Vendor provides status updates every 8 days while work remains open.",
+              "text": "Vendor's support covers data-subject requests, regulator inquiries, and privacy assessments relating to the services. Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor. Customer may group up to 40 related requests in one intake, and the intake portal produces automated status notices every 10 days while a request record remains open.",
               "counter_text_slots": {
-                "response_days": 10
+                "supported_request_types": 3
               },
               "phase1_context_slots": {
-                "request_type": "data_subject"
+                "practical_support": true
               },
               "decoy_values": [
                 40,
+                10
+              ]
+            },
+            {
+              "text": "Vendor's support covers data-subject requests, regulator inquiries, and privacy assessments relating to the services. Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor. Customer may group up to 10 related requests in one intake, and the intake portal produces automated status notices every 8 days while a request record remains open.",
+              "counter_text_slots": {
+                "supported_request_types": 3
+              },
+              "phase1_context_slots": {
+                "practical_support": true
+              },
+              "decoy_values": [
+                10,
                 8
               ]
             },
             {
-              "text": "Vendor will reasonably assist Customer with each regulator inquiry or privacy assessment relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 15 days. Customer may group up to 10 related requests in one intake, and Vendor provides status updates every 6 days while work remains open.",
+              "text": "Vendor's support covers data-subject requests, regulator inquiries, and privacy assessments relating to the services. Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor. Customer may group up to 20 related requests in one intake, and the intake portal produces automated status notices every 6 days while a request record remains open.",
               "counter_text_slots": {
-                "response_days": 15
+                "supported_request_types": 3
               },
               "phase1_context_slots": {
-                "request_type": "regulator"
+                "practical_support": true
               },
               "decoy_values": [
-                10,
+                20,
                 6
               ]
             },
             {
-              "text": "Vendor will reasonably assist Customer with each data-subject request relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 7 days. Customer may group up to 20 related requests in one intake, and Vendor provides status updates every 4 days while work remains open.",
+              "text": "Vendor's support covers data-subject requests, regulator inquiries, and privacy assessments relating to the services. Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor. Customer may group up to 30 related requests in one intake, and the intake portal produces automated status notices every 4 days while a request record remains open.",
               "counter_text_slots": {
-                "response_days": 7
+                "supported_request_types": 3
               },
               "phase1_context_slots": {
-                "request_type": "data_subject"
-              },
-              "decoy_values": [
-                20,
-                4
-              ]
-            },
-            {
-              "text": "Vendor will reasonably assist Customer with each regulator inquiry or privacy assessment relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 12 days. Customer may group up to 30 related requests in one intake, and Vendor provides status updates every 2 days while work remains open.",
-              "counter_text_slots": {
-                "response_days": 12
-              },
-              "phase1_context_slots": {
-                "request_type": "regulator"
+                "practical_support": true
               },
               "decoy_values": [
                 30,
-                2
+                4
               ]
             }
           ],
           "unacceptable": [
             {
-              "text": "Vendor will reasonably assist Customer with each data-subject request relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 15 days. Customer may group up to 10 related requests in one intake, and Vendor provides status updates every 4 days while work remains open.",
+              "text": "Vendor's support covers data-subject requests and privacy assessments but excludes regulator inquiries. Vendor will provide reasonable practical assistance, taking account of the processing and information available to Vendor. Customer may group up to 10 related requests in one intake, and the intake portal produces automated status notices every 6 days while a request record remains open.",
               "counter_text_slots": {
-                "response_days": 15
+                "supported_request_types": 2
               },
               "phase1_context_slots": {
-                "request_type": "data_subject"
+                "practical_support": true
               },
               "decoy_values": [
                 10,
-                4
-              ]
-            },
-            {
-              "text": "Vendor will reasonably assist Customer with each regulator inquiry or privacy assessment relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 20 days. Customer may group up to 40 related requests in one intake, and Vendor provides status updates every 6 days while work remains open.",
-              "counter_text_slots": {
-                "response_days": 20
-              },
-              "phase1_context_slots": {
-                "request_type": "regulator"
-              },
-              "decoy_values": [
-                40,
                 6
               ]
             },
             {
-              "text": "Vendor will reasonably assist Customer with each data-subject request relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 12 days. Customer may group up to 30 related requests in one intake, and Vendor provides status updates every 8 days while work remains open.",
+              "text": "Vendor's support covers data-subject requests, regulator inquiries, and privacy assessments relating to the services. Vendor has no obligation to provide practical assistance or information for the covered request types. Customer may group up to 40 related requests in one intake, and the intake portal produces automated status notices every 8 days while a request record remains open.",
               "counter_text_slots": {
-                "response_days": 12
+                "supported_request_types": 3
               },
               "phase1_context_slots": {
-                "request_type": "data_subject"
+                "practical_support": false
               },
               "decoy_values": [
-                30,
+                40,
                 8
               ]
             },
             {
-              "text": "Vendor will reasonably assist Customer with each regulator inquiry or privacy assessment relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 18 days. Customer may group up to 20 related requests in one intake, and Vendor provides status updates every 2 days while work remains open.",
+              "text": "Vendor's support covers data-subject requests only and excludes regulator inquiries and privacy assessments. Vendor has no obligation to provide practical assistance or information for the covered request types. Customer may group up to 30 related requests in one intake, and the intake portal produces automated status notices every 10 days while a request record remains open.",
               "counter_text_slots": {
-                "response_days": 18
+                "supported_request_types": 1
               },
               "phase1_context_slots": {
-                "request_type": "regulator"
+                "practical_support": false
+              },
+              "decoy_values": [
+                30,
+                10
+              ]
+            },
+            {
+              "text": "Vendor's support covers data-subject requests and privacy assessments but excludes regulator inquiries. Vendor has no obligation to provide practical assistance or information for the covered request types. Customer may group up to 20 related requests in one intake, and the intake portal produces automated status notices every 4 days while a request record remains open.",
+              "counter_text_slots": {
+                "supported_request_types": 2
+              },
+              "phase1_context_slots": {
+                "practical_support": false
               },
               "decoy_values": [
                 20,
-                2
+                4
               ]
             }
           ]

@@ -10,7 +10,7 @@ Company may not terminate Executive before the end of a guaranteed three-year em
 
 ## 2. Definitions
 
-<!-- CH-COUNTER-2 -->~~"Cause" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company.~~ **Cause includes the complete signed list. A curable material duty or agreement breach carries a 15-day cure period; fraud, dishonesty, and willful misconduct remain incurable grounds. Company provides the written Cause notice within 5 days after its determination and offers an investigation meeting within 6 days.** "Good Reason" means a material reduction in base salary or required relocation by more than 50 miles, in each case only if Company fails to cure after written notice from Executive.
+<!-- CH-COUNTER-2 -->~~"Cause" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company.~~ **Cause includes fraud, dishonesty, willful misconduct, breach of fiduciary duty, violation of law, and conduct materially harmful to Company. Cause also includes material failure to perform duties, material policy violations, and material breach of the agreement. Company provides the written Cause notice by day 5 after its determination and offers an investigation meeting within 6 days.** "Good Reason" means a material reduction in base salary or required relocation by more than 50 miles, in each case only if Company fails to cure after written notice from Executive.
 
 ## 3. Duties and Business Time
 

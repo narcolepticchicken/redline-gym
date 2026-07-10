@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-AI-001": {
     "counter_families": [
       {
@@ -14,7 +14,7 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "training_scope == 'none' or (training_scope == 'identified_files' and written_opt_in)"
+          "expression": "training_scope == 'none' or written_opt_in"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": false,
@@ -86,9 +86,9 @@
               ]
             },
             {
-              "text": "Vendor will not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service. Any opt-in expires after 45 days, and records for an approved tuning run are available for audit within 28 days.",
+              "text": "Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used. Any opt-in expires after 45 days, and records for an approved tuning run are available for audit within 28 days.",
               "counter_text_slots": {
-                "training_scope": "none"
+                "training_scope": "identified_files"
               },
               "phase1_context_slots": {
                 "written_opt_in": true
@@ -99,9 +99,9 @@
               ]
             },
             {
-              "text": "Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used. Any opt-in expires after 60 days, and records for an approved tuning run are available for audit within 21 days.",
+              "text": "Customer's prior express written opt-in authorizes Vendor to use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services. Any opt-in expires after 60 days, and records for an approved tuning run are available for audit within 21 days.",
               "counter_text_slots": {
-                "training_scope": "identified_files"
+                "training_scope": "all_service_activity"
               },
               "phase1_context_slots": {
                 "written_opt_in": true
@@ -112,9 +112,9 @@
               ]
             },
             {
-              "text": "Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used. Any opt-in expires after 75 days, and records for an approved tuning run are available for audit within 14 days.",
+              "text": "Vendor will not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service. Any opt-in expires after 75 days, and records for an approved tuning run are available for audit within 14 days.",
               "counter_text_slots": {
-                "training_scope": "identified_files"
+                "training_scope": "none"
               },
               "phase1_context_slots": {
                 "written_opt_in": true
@@ -140,12 +140,12 @@
               ]
             },
             {
-              "text": "After Customer's written enrollment, Vendor may use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services. Any opt-in expires after 30 days, and records for an approved tuning run are available for audit within 28 days.",
+              "text": "Vendor may use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services without Customer opt-in. Any opt-in expires after 30 days, and records for an approved tuning run are available for audit within 28 days.",
               "counter_text_slots": {
                 "training_scope": "all_service_activity"
               },
               "phase1_context_slots": {
-                "written_opt_in": true
+                "written_opt_in": false
               },
               "decoy_values": [
                 30,
@@ -193,18 +193,14 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "asset_control == 'assigned' or (asset_control == 'exclusive_use' and portability_days <= 30)"
+          "expression": "portable_export_available and asset_control in {'assigned', 'exclusive_use'}"
         },
         "has_qualitative_decisive_input": true,
-        "has_arithmetic_interaction": true,
+        "has_arithmetic_interaction": false,
         "counter_text_slots": {
-          "portability_days": [
-            15,
-            21,
-            30,
-            35,
-            45,
-            60
+          "portable_export_available": [
+            false,
+            true
           ]
         },
         "phase1_context_slots": {
@@ -223,10 +219,10 @@
           "export_link_hours"
         ],
         "render_forms": {
-          "portability_days": [
-            "express portability days",
-            "defined portability days",
-            "operative portability days condition"
+          "portable_export_available": [
+            "express portable export available",
+            "defined portable export available",
+            "operative portable export available condition"
           ],
           "asset_control": [
             "express asset control",
@@ -236,7 +232,7 @@
         },
         "counterfactual_twins": [
           {
-            "varied_input": "portability_days",
+            "varied_input": "portable_export_available",
             "label_flipped": true
           },
           {
@@ -256,9 +252,9 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation; Vendor will make a usable export available within 15 days after request. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 48 hours.",
+              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 48 hours.",
               "counter_text_slots": {
-                "portability_days": 15
+                "portable_export_available": true
               },
               "phase1_context_slots": {
                 "asset_control": "assigned"
@@ -269,9 +265,9 @@
               ]
             },
             {
-              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 30 days after request. Vendor refreshes the customization-asset inventory every 25 days and keeps each secure export link active for 24 hours.",
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use of every Customer-specific customization asset. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 25 days and keeps each secure export link active for 24 hours.",
               "counter_text_slots": {
-                "portability_days": 30
+                "portable_export_available": true
               },
               "phase1_context_slots": {
                 "asset_control": "exclusive_use"
@@ -282,9 +278,9 @@
               ]
             },
             {
-              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation; Vendor will make a usable export available within 45 days after request. Vendor refreshes the customization-asset inventory every 40 days and keeps each secure export link active for 96 hours.",
+              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 40 days and keeps each secure export link active for 96 hours.",
               "counter_text_slots": {
-                "portability_days": 45
+                "portable_export_available": true
               },
               "phase1_context_slots": {
                 "asset_control": "assigned"
@@ -295,9 +291,9 @@
               ]
             },
             {
-              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 21 days after request. Vendor refreshes the customization-asset inventory every 10 days and keeps each secure export link active for 72 hours.",
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use of every Customer-specific customization asset. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 10 days and keeps each secure export link active for 72 hours.",
               "counter_text_slots": {
-                "portability_days": 21
+                "portable_export_available": true
               },
               "phase1_context_slots": {
                 "asset_control": "exclusive_use"
@@ -310,9 +306,9 @@
           ],
           "unacceptable": [
             {
-              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 45 days after request. Vendor refreshes the customization-asset inventory every 25 days and keeps each secure export link active for 96 hours.",
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use of every Customer-specific customization asset. Vendor may withhold or deny a usable export of Customer-specific weights, adapters, embeddings, prompts, or configurations. Vendor refreshes the customization-asset inventory every 25 days and keeps each secure export link active for 96 hours.",
               "counter_text_slots": {
-                "portability_days": 45
+                "portable_export_available": false
               },
               "phase1_context_slots": {
                 "asset_control": "exclusive_use"
@@ -323,9 +319,9 @@
               ]
             },
             {
-              "text": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 30 days. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.",
+              "text": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only nonexclusive use. Vendor will provide a complete usable export on request and may not withhold any Customer-specific asset. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.",
               "counter_text_slots": {
-                "portability_days": 30
+                "portable_export_available": true
               },
               "phase1_context_slots": {
                 "asset_control": "nonexclusive_use"
@@ -336,9 +332,9 @@
               ]
             },
             {
-              "text": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 60 days. Vendor refreshes the customization-asset inventory every 10 days and keeps each secure export link active for 48 hours.",
+              "text": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only nonexclusive use. Vendor may withhold or deny a usable export of Customer-specific weights, adapters, embeddings, prompts, or configurations. Vendor refreshes the customization-asset inventory every 10 days and keeps each secure export link active for 48 hours.",
               "counter_text_slots": {
-                "portability_days": 60
+                "portable_export_available": false
               },
               "phase1_context_slots": {
                 "asset_control": "nonexclusive_use"
@@ -349,12 +345,12 @@
               ]
             },
             {
-              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 35 days after request. Vendor refreshes the customization-asset inventory every 40 days and keeps each secure export link active for 72 hours.",
+              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation. Vendor may withhold or deny a usable export of Customer-specific weights, adapters, embeddings, prompts, or configurations. Vendor refreshes the customization-asset inventory every 40 days and keeps each secure export link active for 72 hours.",
               "counter_text_slots": {
-                "portability_days": 35
+                "portable_export_available": false
               },
               "phase1_context_slots": {
-                "asset_control": "exclusive_use"
+                "asset_control": "assigned"
               },
               "decoy_values": [
                 40,
@@ -376,18 +372,17 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "change_basis in {'law', 'objective_safety'} and notice_days >= 15"
+          "expression": "change_basis in {'law', 'objective_safety'} and notice_days > 0"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
           "notice_days": [
-            10,
+            0,
             15,
             21,
             30,
-            45,
-            7
+            45
           ]
         },
         "phase1_context_slots": {
@@ -493,9 +488,9 @@
           ],
           "unacceptable": [
             {
-              "text": "A later acceptable-use or safety-policy change applies only when required by applicable law, after 7 days' notice to Customer. Superseded policies remain archived for 24 months, and Customer may submit implementation comments for 5 days.",
+              "text": "A later acceptable-use or safety-policy change applies only when required by applicable law, without advance notice to Customer. Superseded policies remain archived for 24 months, and Customer may submit implementation comments for 5 days.",
               "counter_text_slots": {
-                "notice_days": 7
+                "notice_days": 0
               },
               "phase1_context_slots": {
                 "change_basis": "law"
@@ -532,9 +527,9 @@
               ]
             },
             {
-              "text": "A later acceptable-use or safety-policy change applies only when required by an objectively documented service-security or safety need, after 10 days' notice to Customer. Superseded policies remain archived for 6 months, and Customer may submit implementation comments for 20 days.",
+              "text": "A later acceptable-use or safety-policy change applies only when required by an objectively documented service-security or safety need, without advance notice to Customer. Superseded policies remain archived for 6 months, and Customer may submit implementation comments for 20 days.",
               "counter_text_slots": {
-                "notice_days": 10
+                "notice_days": 0
               },
               "phase1_context_slots": {
                 "change_basis": "objective_safety"
@@ -559,14 +554,13 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "export_coverage == 'complete' and transition_hours >= 20"
+          "expression": "export_coverage == 'complete' and transition_hours > 0"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
           "transition_hours": [
-            10,
-            15,
+            0,
             20,
             30,
             40,
@@ -621,7 +615,7 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 20 hours of migration assistance. The secure export window remains open for 60 days, with migration checkpoints every 14 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 20 hours of migration assistance. The secure export window remains open for 60 days, and migration-status records are updated every 14 days during that window.",
               "counter_text_slots": {
                 "transition_hours": 20
               },
@@ -634,7 +628,7 @@
               ]
             },
             {
-              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 40 hours of migration assistance. The secure export window remains open for 15 days, with migration checkpoints every 10 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 40 hours of migration assistance. The secure export window remains open for 15 days, and migration-status records are updated every 10 days during that window.",
               "counter_text_slots": {
                 "transition_hours": 40
               },
@@ -647,7 +641,7 @@
               ]
             },
             {
-              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 60 hours of migration assistance. The secure export window remains open for 30 days, with migration checkpoints every 7 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 60 hours of migration assistance. The secure export window remains open for 30 days, and migration-status records are updated every 7 days during that window.",
               "counter_text_slots": {
                 "transition_hours": 60
               },
@@ -660,7 +654,7 @@
               ]
             },
             {
-              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 30 hours of migration assistance. The secure export window remains open for 45 days, with migration checkpoints every 3 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 30 hours of migration assistance. The secure export window remains open for 45 days, and migration-status records are updated every 3 days during that window.",
               "counter_text_slots": {
                 "transition_hours": 30
               },
@@ -675,9 +669,9 @@
           ],
           "unacceptable": [
             {
-              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 10 hours of migration assistance. The secure export window remains open for 15 days, with migration checkpoints every 7 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide no migration assistance. The secure export window remains open for 15 days, and migration-status records are updated every 7 days during that window.",
               "counter_text_slots": {
-                "transition_hours": 10
+                "transition_hours": 0
               },
               "phase1_context_slots": {
                 "export_coverage": "complete"
@@ -688,7 +682,7 @@
               ]
             },
             {
-              "text": "At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide 40 hours of migration assistance. The secure export window remains open for 60 days, with migration checkpoints every 10 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide 40 hours of migration assistance. The secure export window remains open for 60 days, and migration-status records are updated every 10 days during that window.",
               "counter_text_slots": {
                 "transition_hours": 40
               },
@@ -701,7 +695,7 @@
               ]
             },
             {
-              "text": "At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide 60 hours of migration assistance. The secure export window remains open for 45 days, with migration checkpoints every 14 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide 60 hours of migration assistance. The secure export window remains open for 45 days, and migration-status records are updated every 14 days during that window.",
               "counter_text_slots": {
                 "transition_hours": 60
               },
@@ -714,9 +708,9 @@
               ]
             },
             {
-              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 15 hours of migration assistance. The secure export window remains open for 30 days, with migration checkpoints every 3 days while assistance is active.",
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide no migration assistance. The secure export window remains open for 30 days, and migration-status records are updated every 3 days during that window.",
               "counter_text_slots": {
-                "transition_hours": 15
+                "transition_hours": 0
               },
               "phase1_context_slots": {
                 "export_coverage": "complete"

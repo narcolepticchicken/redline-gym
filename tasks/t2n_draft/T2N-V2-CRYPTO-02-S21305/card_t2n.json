@@ -63,7 +63,7 @@
       "decision": "reject",
       "prior_position_id": "POS-D004",
       "rule_id": "R-006",
-      "exact_quote": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 120 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 5 days and may be organized into 10 control-evidence categories.",
+      "exact_quote": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure only with the next routine controls report, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written controls follow-up is due within 5 days after Customer's request and may be organized into 10 control-evidence categories.",
       "proposed_redline": "Custodian will provide annual SOC 2 Type II or equivalent controls reporting, prompt notice of material control failures, and reasonable written follow-up information needed for Customer's treasury, audit, and regulatory controls."
     }
   ],

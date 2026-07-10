@@ -37,11 +37,10 @@
         "counter_family_id": "CF-MA-ASSUMPTION-V2",
         "counter_class": "unacceptable",
         "counter_text_slots": {
-          "assumed_liability_sections": 7,
-          "catch_all_liabilities": false
+          "catch_all_liability_categories": 0
         },
         "phase1_context_slots": {
-          "signed_amendment": false
+          "assumption_source": "unsigned_addendum"
         },
         "decoy_values": [
           3,

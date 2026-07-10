@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
+  "_status": "machine-drafted v2, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-MA-001": {
     "counter_families": [
       {
@@ -18,27 +18,22 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "not catch_all_liabilities and (assumed_liability_sections <= 5 or signed_amendment)"
+          "expression": "catch_all_liability_categories == 0 and assumption_source in {'enumerated_agreement', 'signed_amendment'}"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
         "counter_text_slots": {
-          "assumed_liability_sections": [
-            4,
-            5,
-            6,
-            7,
-            8
-          ],
-          "catch_all_liabilities": [
-            false,
-            true
+          "catch_all_liability_categories": [
+            0,
+            1,
+            2
           ]
         },
         "phase1_context_slots": {
-          "signed_amendment": [
-            false,
-            true
+          "assumption_source": [
+            "enumerated_agreement",
+            "signed_amendment",
+            "unsigned_addendum"
           ]
         },
         "decoy_values": [
@@ -50,33 +45,24 @@
           "claim_notice_days"
         ],
         "render_forms": {
-          "assumed_liability_sections": [
-            "express assumed liability sections",
-            "defined assumed liability sections",
-            "operative assumed liability sections condition"
+          "catch_all_liability_categories": [
+            "express catch all liability categories",
+            "defined catch all liability categories",
+            "operative catch all liability categories condition"
           ],
-          "catch_all_liabilities": [
-            "express catch all liabilities",
-            "defined catch all liabilities",
-            "operative catch all liabilities condition"
-          ],
-          "signed_amendment": [
-            "express signed amendment",
-            "defined signed amendment",
-            "operative signed amendment condition"
+          "assumption_source": [
+            "express assumption source",
+            "defined assumption source",
+            "operative assumption source condition"
           ]
         },
         "counterfactual_twins": [
           {
-            "varied_input": "assumed_liability_sections",
+            "varied_input": "catch_all_liability_categories",
             "label_flipped": true
           },
           {
-            "varied_input": "catch_all_liabilities",
-            "label_flipped": true
-          },
-          {
-            "varied_input": "signed_amendment",
+            "varied_input": "assumption_source",
             "label_flipped": true
           },
           {
@@ -92,13 +78,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 4 identified schedule sections. No signed amendment adds other obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 15 days after discovery.",
+              "text": "Buyer assumes only the liabilities expressly enumerated in Section 4 of the Agreement. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 15 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 4,
-                "catch_all_liabilities": false
+                "catch_all_liability_categories": 0
               },
               "phase1_context_slots": {
-                "signed_amendment": false
+                "assumption_source": "enumerated_agreement"
               },
               "decoy_values": [
                 3,
@@ -106,13 +91,12 @@
               ]
             },
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 5 identified schedule sections. No signed amendment adds other obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 2 days, and post-closing claim notices are due within 60 days after discovery.",
+              "text": "Buyer assumes only the identified obligations expressly added by a signed amendment. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 2 days, and post-closing claim notices are due within 60 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 5,
-                "catch_all_liabilities": false
+                "catch_all_liability_categories": 0
               },
               "phase1_context_slots": {
-                "signed_amendment": false
+                "assumption_source": "signed_amendment"
               },
               "decoy_values": [
                 2,
@@ -120,13 +104,12 @@
               ]
             },
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 7 identified schedule sections. The parties' signed amendment also expressly adds the identified obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 9 days, and post-closing claim notices are due within 45 days after discovery.",
+              "text": "Buyer assumes only the liabilities expressly enumerated in Section 4 of the Agreement. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 9 days, and post-closing claim notices are due within 45 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 7,
-                "catch_all_liabilities": false
+                "catch_all_liability_categories": 0
               },
               "phase1_context_slots": {
-                "signed_amendment": true
+                "assumption_source": "enumerated_agreement"
               },
               "decoy_values": [
                 9,
@@ -134,13 +117,12 @@
               ]
             },
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 6 identified schedule sections. The parties' signed amendment also expressly adds the identified obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 10 days, and post-closing claim notices are due within 30 days after discovery.",
+              "text": "Buyer assumes only the identified obligations expressly added by a signed amendment. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 10 days, and post-closing claim notices are due within 30 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 6,
-                "catch_all_liabilities": false
+                "catch_all_liability_categories": 0
               },
               "phase1_context_slots": {
-                "signed_amendment": true
+                "assumption_source": "signed_amendment"
               },
               "decoy_values": [
                 10,
@@ -150,13 +132,12 @@
           ],
           "unacceptable": [
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 6 identified schedule sections. No signed amendment adds other obligations. Buyer additionally assumes all ordinary-course and other unspecified Seller liabilities. Clerical schedule updates are circulated within 2 days, and post-closing claim notices are due within 45 days after discovery.",
+              "text": "Buyer assumes the liabilities expressly enumerated in Section 4 of the Agreement. Buyer additionally assumes 1 catch-all category of ordinary-course or unspecified Seller liabilities. Clerical schedule updates are circulated within 2 days, and post-closing claim notices are due within 45 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 6,
-                "catch_all_liabilities": true
+                "catch_all_liability_categories": 1
               },
               "phase1_context_slots": {
-                "signed_amendment": false
+                "assumption_source": "enumerated_agreement"
               },
               "decoy_values": [
                 2,
@@ -164,13 +145,12 @@
               ]
             },
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 7 identified schedule sections. No signed amendment adds other obligations. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 60 days after discovery.",
+              "text": "Buyer assumes obligations listed only in an unsigned addendum. All other Seller liabilities remain excluded. Clerical schedule updates are circulated within 3 days, and post-closing claim notices are due within 60 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 7,
-                "catch_all_liabilities": false
+                "catch_all_liability_categories": 0
               },
               "phase1_context_slots": {
-                "signed_amendment": false
+                "assumption_source": "unsigned_addendum"
               },
               "decoy_values": [
                 3,
@@ -178,13 +158,12 @@
               ]
             },
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 5 identified schedule sections. No signed amendment adds other obligations. Buyer additionally assumes all ordinary-course and other unspecified Seller liabilities. Clerical schedule updates are circulated within 10 days, and post-closing claim notices are due within 15 days after discovery.",
+              "text": "Buyer assumes the identified obligations expressly added by a signed amendment. Buyer additionally assumes 2 catch-all categories of ordinary-course or unspecified Seller liabilities. Clerical schedule updates are circulated within 10 days, and post-closing claim notices are due within 15 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 5,
-                "catch_all_liabilities": true
+                "catch_all_liability_categories": 2
               },
               "phase1_context_slots": {
-                "signed_amendment": false
+                "assumption_source": "signed_amendment"
               },
               "decoy_values": [
                 10,
@@ -192,13 +171,12 @@
               ]
             },
             {
-              "text": "Buyer assumes liabilities expressly enumerated in 8 identified schedule sections. The parties' signed amendment also expressly adds the identified obligations. Buyer additionally assumes all ordinary-course and other unspecified Seller liabilities. Clerical schedule updates are circulated within 9 days, and post-closing claim notices are due within 30 days after discovery.",
+              "text": "Buyer assumes obligations listed only in an unsigned addendum. Buyer additionally assumes 1 catch-all category of ordinary-course or unspecified Seller liabilities. Clerical schedule updates are circulated within 9 days, and post-closing claim notices are due within 30 days after discovery.",
               "counter_text_slots": {
-                "assumed_liability_sections": 8,
-                "catch_all_liabilities": true
+                "catch_all_liability_categories": 1
               },
               "phase1_context_slots": {
-                "signed_amendment": true
+                "assumption_source": "unsigned_addendum"
               },
               "decoy_values": [
                 9,
@@ -282,7 +260,7 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. Those preserved claims remain outside every contractual liability cap. The non-reliance schedule may contain 4 pages of identified statements, and a claimant gives fraud-claim notice within 30 days after discovery where practicable.",
+              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. The general contractual liability cap does not independently limit any fraud-based claim that survives the no-reliance clause. The non-reliance schedule may contain 4 pages of identified statements, and a claimant gives fraud-claim notice within 30 days after discovery where practicable.",
               "counter_text_slots": {
                 "fraud_claims_preserved": true
               },
@@ -295,7 +273,7 @@
               ]
             },
             {
-              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. Those preserved claims remain outside every contractual liability cap. The non-reliance schedule may contain 6 pages of identified statements, and a claimant gives fraud-claim notice within 15 days after discovery where practicable.",
+              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. The general contractual liability cap does not independently limit any fraud-based claim that survives the no-reliance clause. The non-reliance schedule may contain 6 pages of identified statements, and a claimant gives fraud-claim notice within 15 days after discovery where practicable.",
               "counter_text_slots": {
                 "fraud_claims_preserved": true
               },
@@ -308,7 +286,7 @@
               ]
             },
             {
-              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. Those preserved claims remain outside every contractual liability cap. The non-reliance schedule may contain 8 pages of identified statements, and a claimant gives fraud-claim notice within 60 days after discovery where practicable.",
+              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. The general contractual liability cap does not independently limit any fraud-based claim that survives the no-reliance clause. The non-reliance schedule may contain 8 pages of identified statements, and a claimant gives fraud-claim notice within 60 days after discovery where practicable.",
               "counter_text_slots": {
                 "fraud_claims_preserved": true
               },
@@ -321,7 +299,7 @@
               ]
             },
             {
-              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. Those preserved claims remain outside every contractual liability cap. The non-reliance schedule may contain 2 pages of identified statements, and a claimant gives fraud-claim notice within 45 days after discovery where practicable.",
+              "text": "Nothing in the no-reliance clause eliminates or waives claims based on Fraud, intentional misrepresentation, or willful misconduct. The general contractual liability cap does not independently limit any fraud-based claim that survives the no-reliance clause. The non-reliance schedule may contain 2 pages of identified statements, and a claimant gives fraud-claim notice within 45 days after discovery where practicable.",
               "counter_text_slots": {
                 "fraud_claims_preserved": true
               },
@@ -336,7 +314,7 @@
           ],
           "unacceptable": [
             {
-              "text": "The no-reliance clause bars claims based on extra-contractual Fraud, intentional misrepresentation, and willful misconduct. Those preserved claims remain outside every contractual liability cap. The non-reliance schedule may contain 6 pages of identified statements, and a claimant gives fraud-claim notice within 60 days after discovery where practicable.",
+              "text": "The no-reliance clause bars claims based on extra-contractual Fraud, intentional misrepresentation, and willful misconduct. The general contractual liability cap does not independently limit any fraud-based claim that survives the no-reliance clause. The non-reliance schedule may contain 6 pages of identified statements, and a claimant gives fraud-claim notice within 60 days after discovery where practicable.",
               "counter_text_slots": {
                 "fraud_claims_preserved": false
               },
@@ -590,18 +568,18 @@
         },
         "predicate": {
           "type": "interaction",
-          "expression": "not mae_occurred or buyer_may_refuse_closing"
+          "expression": "purchased_assets_covered and acquired_business_covered"
         },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": false,
         "counter_text_slots": {
-          "mae_occurred": [
+          "purchased_assets_covered": [
             false,
             true
           ]
         },
         "phase1_context_slots": {
-          "buyer_may_refuse_closing": [
+          "acquired_business_covered": [
             false,
             true
           ]
@@ -615,24 +593,24 @@
           "condition_update_days"
         ],
         "render_forms": {
-          "mae_occurred": [
-            "express mae occurred",
-            "defined mae occurred",
-            "operative mae occurred condition"
+          "purchased_assets_covered": [
+            "express purchased assets covered",
+            "defined purchased assets covered",
+            "operative purchased assets covered condition"
           ],
-          "buyer_may_refuse_closing": [
-            "express buyer may refuse closing",
-            "defined buyer may refuse closing",
-            "operative buyer may refuse closing condition"
+          "acquired_business_covered": [
+            "express acquired business covered",
+            "defined acquired business covered",
+            "operative acquired business covered condition"
           ]
         },
         "counterfactual_twins": [
           {
-            "varied_input": "mae_occurred",
+            "varied_input": "purchased_assets_covered",
             "label_flipped": true
           },
           {
-            "varied_input": "buyer_may_refuse_closing",
+            "varied_input": "acquired_business_covered",
             "label_flipped": true
           },
           {
@@ -648,12 +626,12 @@
         "render_pools": {
           "acceptable": [
             {
-              "text": "No Material Adverse Effect has occurred before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 7 days and updates the closing-condition record every 8 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 7 and updates the closing-condition record every 8 days.",
               "counter_text_slots": {
-                "mae_occurred": false
+                "purchased_assets_covered": true
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": false
+                "acquired_business_covered": true
               },
               "decoy_values": [
                 7,
@@ -661,12 +639,12 @@
               ]
             },
             {
-              "text": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer may refuse to close while that closing condition is unsatisfied. Seller gives notice of a potential Material Adverse Effect within 1 days and updates the closing-condition record every 6 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 1 and updates the closing-condition record every 6 days.",
               "counter_text_slots": {
-                "mae_occurred": true
+                "purchased_assets_covered": true
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": true
+                "acquired_business_covered": true
               },
               "decoy_values": [
                 1,
@@ -674,12 +652,12 @@
               ]
             },
             {
-              "text": "No Material Adverse Effect has occurred before closing. Buyer may refuse to close while that closing condition is unsatisfied. Seller gives notice of a potential Material Adverse Effect within 3 days and updates the closing-condition record every 4 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 3 and updates the closing-condition record every 4 days.",
               "counter_text_slots": {
-                "mae_occurred": false
+                "purchased_assets_covered": true
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": true
+                "acquired_business_covered": true
               },
               "decoy_values": [
                 3,
@@ -687,12 +665,12 @@
               ]
             },
             {
-              "text": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer may refuse to close while that closing condition is unsatisfied. Seller gives notice of a potential Material Adverse Effect within 5 days and updates the closing-condition record every 2 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 5 and updates the closing-condition record every 2 days.",
               "counter_text_slots": {
-                "mae_occurred": true
+                "purchased_assets_covered": true
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": true
+                "acquired_business_covered": true
               },
               "decoy_values": [
                 5,
@@ -702,12 +680,12 @@
           ],
           "unacceptable": [
             {
-              "text": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 1 days and updates the closing-condition record every 4 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to the acquired business only; an effect on the Purchased Assets is excluded. Seller gives notice of a potential Material Adverse Effect by day 1 and updates the closing-condition record every 4 days.",
               "counter_text_slots": {
-                "mae_occurred": true
+                "purchased_assets_covered": false
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": false
+                "acquired_business_covered": true
               },
               "decoy_values": [
                 1,
@@ -715,12 +693,12 @@
               ]
             },
             {
-              "text": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 7 days and updates the closing-condition record every 6 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to the Purchased Assets only; an effect on the acquired business is excluded. Seller gives notice of a potential Material Adverse Effect by day 7 and updates the closing-condition record every 6 days.",
               "counter_text_slots": {
-                "mae_occurred": true
+                "purchased_assets_covered": true
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": false
+                "acquired_business_covered": false
               },
               "decoy_values": [
                 7,
@@ -728,12 +706,12 @@
               ]
             },
             {
-              "text": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 5 days and updates the closing-condition record every 8 days.",
+              "text": "A Material Adverse Effect is not a condition to Buyer's obligation to close, including effects on both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 5 and updates the closing-condition record every 8 days.",
               "counter_text_slots": {
-                "mae_occurred": true
+                "purchased_assets_covered": false
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": false
+                "acquired_business_covered": false
               },
               "decoy_values": [
                 5,
@@ -741,12 +719,12 @@
               ]
             },
             {
-              "text": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 3 days and updates the closing-condition record every 2 days.",
+              "text": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred before closing with respect to the Purchased Assets only; an effect on the acquired business is excluded. Seller gives notice of a potential Material Adverse Effect by day 3 and updates the closing-condition record every 2 days.",
               "counter_text_slots": {
-                "mae_occurred": true
+                "purchased_assets_covered": true
               },
               "phase1_context_slots": {
-                "buyer_may_refuse_closing": false
+                "acquired_business_covered": false
               },
               "decoy_values": [
                 3,

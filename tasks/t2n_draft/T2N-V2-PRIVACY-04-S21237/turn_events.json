@@ -97,14 +97,14 @@
         "counter_family_id": "CF-DPA-SUPPORT-V2",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "response_days": 12
+          "supported_request_types": 3
         },
         "phase1_context_slots": {
-          "request_type": "regulator"
+          "practical_support": true
         },
         "decoy_values": [
           30,
-          2
+          4
         ]
       }
     },

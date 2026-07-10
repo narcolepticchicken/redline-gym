@@ -49,7 +49,7 @@
     "decision": "reject",
     "prior_position_id": "POS-D003",
     "rule_id": "R-011",
-    "exact_quote": "A Material Adverse Effect has occurred with respect to the Purchased Assets or acquired business before closing. Buyer nevertheless remains unconditionally obligated to close. Seller gives notice of a potential Material Adverse Effect within 5 days and updates the closing-condition record every 8 days.",
+    "exact_quote": "A Material Adverse Effect is not a condition to Buyer's obligation to close, including effects on both the Purchased Assets and the acquired business. Seller gives notice of a potential Material Adverse Effect by day 5 and updates the closing-condition record every 8 days.",
     "proposed_redline": "Buyer's obligation to close is conditioned on no Material Adverse Effect having occurred with respect to the Purchased Assets or the acquired business before closing."
   },
   "CH-SNEAK-SOURCE": {
