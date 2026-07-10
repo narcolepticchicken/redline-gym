@@ -8,7 +8,7 @@ from pathlib import Path
 import pytest
 
 from generator.t2n_response import generate_response
-from scoring.t2n_contract import validate_counter_family
+from scoring.t2n_contract import validate_counter_family, validate_family_pool_diversity
 from validators.t2n_checks import run_all_t2n, v14_t2n_ledger
 
 
@@ -68,21 +68,24 @@ def test_exact_c8_au_coverage_matrix(generated):
 
 def test_all_area_families_validate_and_meet_playbook_quotas():
     covered = set()
+    all_families = []
     for area in AREA_FILES:
         data = load(ROOT / "generator" / "t2n_families" / f"{area}.json")
-        assert data["_status"] == "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending"
+        assert data["_status"] == "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending"
         for playbook_id, bundle in data.items():
             if playbook_id.startswith("_"):
                 continue
             covered.add(playbook_id)
             families = bundle["counter_families"]
-            assert 2 <= len(families) <= 4
+            all_families.extend(families)
+            assert len(families) == 4
             for family in families:
                 assert validate_counter_family(family) == [], family["counter_family_id"]
             quota = ceil(len(families) / 3)
             assert sum(bool(f.get("has_qualitative_decisive_input")) for f in families) >= quota
             assert sum(bool(f.get("has_arithmetic_interaction")) for f in families) >= quota
     assert covered == set(PLAYBOOK_PATHS)
+    assert validate_family_pool_diversity(all_families) == []
 
 
 def test_canary_benignity_uses_actual_signed_canary(generated):

@@ -1,0 +1,68 @@
+{
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-005",
+    "exact_quote": "\n\nCompany may not terminate Executive before the end of a guaranteed three-year employment term.",
+    "proposed_redline": "Delete any fixed-term employment guarantee and state that employment is at will and may end at any time by either party."
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-002",
+    "exact_quote": "\"Cause\" means Executive's final conviction, after all appeals are exhausted, of a felony involving intentional physical harm to Company property.",
+    "proposed_redline": "\"Cause\" means Executive's material failure to perform assigned duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of this Agreement, or conduct that materially harms Company."
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-007",
+    "exact_quote": "The applicable plan and signed award document expressly authorize acceleration of 125% of the unvested award; no extra-plan equity right is created. Company delivers award notices within 15 days after approval, and any vested-option exercise window stated in the award remains 120 days.",
+    "proposed_redline": "Equity awards are governed solely by the applicable equity plan and award agreements, and this agreement does not create additional grants, vesting rights, or acceleration."
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D003",
+    "rule_id": "R-011",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Company will personally reimburse Executive for all employment-related claims, costs, judgments, settlements, and taxes without regard to Company governing documents, insurance terms, or applicable law.",
+    "proposed_redline": "Company will provide indemnification and D&O insurance coverage to Executive on the same basis as similarly situated officers, subject to Company's governing documents, policy terms, and applicable law."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  }
+}

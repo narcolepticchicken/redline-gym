@@ -28,7 +28,7 @@ def test_tranche_shape_and_inventory():
  assert MANIFEST['all_concessions_count'] == 3
  assert all_concessions_share_compliant(MANIFEST['mixed_count'],3) and not all_concessions_share_compliant(MANIFEST['mixed_count'],4)
  by_area={a:sum(r['mixed_instances'] for r in MANIFEST['inventory'] if r['area']==a) for a in ('privacy','contracts','ai','crypto','employment','governance','ma')}
- assert by_area['privacy'] and by_area['contracts'] and all(by_area[a]==0 for a in ('ai','crypto','employment','governance','ma'))
+ assert all(by_area[a] == 4 for a in by_area)
  assert {x['area'] for x in MANIFEST['instances'] if x['kind']=='all_concessions'} == {'ai','employment','governance'}
 
 def test_sampled_validators_and_all_concessions_episode(tmp_path):
@@ -42,13 +42,13 @@ def test_sampled_validators_and_all_concessions_episode(tmp_path):
  ep=Episode(task,run_dir=tmp_path/'bad');ep.reset();phase1(ep,task); ep.step({'action':'finalize','card':{'changes':[],'escalations':[],'summary':'x'}});ep.step({'action':'finalize','card':{'changes':[],'escalations':[],'summary':'x'}}); assert json.loads(ep.score_path.read_text())['composite']==0.0
 
 def test_quota_attacker_is_deterministic_and_backward_compatible():
- records=MANIFEST['counter_records']; quota={'acceptable':28,'unacceptable':28}
+ records=MANIFEST['counter_records']; quota={'acceptable':MANIFEST['acceptable_count'],'unacceptable':MANIFEST['unacceptable_count']}
  assert v10_t2n_quota_batch_attacker(records,quota=quota) == v10_t2n_quota_batch_attacker(records,quota=quota)
- # This 2-area/4-family draft repeats each family across seeds, so counter text
- # determines labels here; release-scale held-out-family gameability remains open.
- result=v10_t2n_quota_batch_attacker(records,quota=quota)
- assert result.status == 'FAIL'
- assert 'balanced accuracy=0.821429' in result.detail
+ for heuristic in ('max_slot_value','min_slot_value','sum_slots','mean_slots','single_threshold_per_slot','single_slot_logistic'):
+  result=v10_t2n_quota_batch_attacker(records,quota=quota,heuristic=heuristic)
+  assert result.status == 'PASS'
+  score=float(result.detail.split('balanced accuracy=',1)[1].split(';',1)[0])
+  assert score < .60
  with pytest.raises(NotImplementedError,match='item 4'): v10_t2n_quota_batch_attacker()
 
 def test_all_concession_generator_is_byte_deterministic(tmp_path):

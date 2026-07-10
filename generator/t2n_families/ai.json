@@ -1,30 +1,763 @@
 {
-  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
+  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
   "PB-AI-001": {
     "counter_families": [
       {
-        "counter_family_id": "CF-AI-MODEL-CHANGE-01", "rule_id": "R-007", "counter_guard_id": "GUARD-AI-EMERGENCY-NOTICE", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"advance_notice_days": 60}, "phase1_context_slots": {"emergency_notice_required": true}, "decoy_values": [10, 30], "decoy_ids": ["support_days", "archive_days"],
-        "render_forms": {"advance_notice_days": ["60 days' prior notice", "1,440 hours in advance", "notice by the sixtieth preceding day"], "emergency_notice_required": ["emergency fixes receive prompt notice", "security exceptions still require notice", "prompt notice follows an emergency change"]},
-        "counterfactual_twins": [{"varied_input": "advance_notice_days", "label_flipped": true}, {"varied_input": "emergency_notice_required", "label_flipped": true}, {"varied_input": "support_days", "label_flipped": false}, {"varied_input": "archive_days", "label_flipped": false}],
-        "expected_redline_text": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, or replacement that could materially affect behavior, safety, latency, or output quality, except for emergency security fixes with prompt notice.",
-        "acceptable": {"text": "Vendor will give 60 days' notice of material model changes, with prompt notice after emergency security fixes; support tickets close in 10 days and archives remain for 30 days.", "counter_text_slots": {"advance_notice_days": 60}, "phase1_context_slots": {"emergency_notice_required": true}, "decoy_values": [10, 30]},
-        "unacceptable": {"text": "Vendor will give 15 days' notice of material model changes and no notice for emergency security fixes; support tickets close in 10 days and archives remain for 30 days.", "counter_text_slots": {"advance_notice_days": 15}, "phase1_context_slots": {"emergency_notice_required": false}, "decoy_values": [10, 30]}
+        "counter_family_id": "CF-AI-TRAINING-V2",
+        "rule_id": "R-001",
+        "counter_guard_id": "GUARD-AI-TRAINING-V2",
+        "playbook_grounding": {
+          "position": "Vendor must not train, tune, retrain, or improve models using Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files unless Customer gives express opt-in approval.",
+          "fallback": "Vendor may not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service except with Customer's prior written opt-in approval.",
+          "escalation_trigger": "Escalate if Vendor can use Customer materials or service activity for model or service improvement without Customer's express opt-in.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "training_scope == 'none' or (training_scope == 'identified_files' and written_opt_in)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "training_scope": [
+            "all_service_activity",
+            "identified_files",
+            "none"
+          ]
+        },
+        "phase1_context_slots": {
+          "written_opt_in": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          30,
+          7
+        ],
+        "decoy_ids": [
+          "opt_in_expiry_days",
+          "training_audit_sample_days"
+        ],
+        "render_forms": {
+          "training_scope": [
+            "express training scope",
+            "defined training scope",
+            "operative training scope condition"
+          ],
+          "written_opt_in": [
+            "express written opt in",
+            "defined written opt in",
+            "operative written opt in condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "training_scope",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "written_opt_in",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "opt_in_expiry_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "training_audit_sample_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Vendor may not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service except with Customer's prior written opt-in approval.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Vendor will not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service. Any opt-in expires after 30 days, and records for an approved tuning run are available for audit within 7 days.",
+              "counter_text_slots": {
+                "training_scope": "none"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": false
+              },
+              "decoy_values": [
+                30,
+                7
+              ]
+            },
+            {
+              "text": "Vendor will not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service. Any opt-in expires after 45 days, and records for an approved tuning run are available for audit within 28 days.",
+              "counter_text_slots": {
+                "training_scope": "none"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": true
+              },
+              "decoy_values": [
+                45,
+                28
+              ]
+            },
+            {
+              "text": "Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used. Any opt-in expires after 60 days, and records for an approved tuning run are available for audit within 21 days.",
+              "counter_text_slots": {
+                "training_scope": "identified_files"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": true
+              },
+              "decoy_values": [
+                60,
+                21
+              ]
+            },
+            {
+              "text": "Vendor may use only the expressly identified fine-tuning files for the approved tuning run after Customer's prior written opt-in; no other Customer material or service activity may be used. Any opt-in expires after 75 days, and records for an approved tuning run are available for audit within 14 days.",
+              "counter_text_slots": {
+                "training_scope": "identified_files"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": true
+              },
+              "decoy_values": [
+                75,
+                14
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Vendor may use the expressly identified fine-tuning files for the approved tuning run based on Customer's oral or implied approval, without a prior written opt-in. Any opt-in expires after 45 days, and records for an approved tuning run are available for audit within 21 days.",
+              "counter_text_slots": {
+                "training_scope": "identified_files"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": false
+              },
+              "decoy_values": [
+                45,
+                21
+              ]
+            },
+            {
+              "text": "After Customer's written enrollment, Vendor may use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services. Any opt-in expires after 30 days, and records for an approved tuning run are available for audit within 28 days.",
+              "counter_text_slots": {
+                "training_scope": "all_service_activity"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": true
+              },
+              "decoy_values": [
+                30,
+                28
+              ]
+            },
+            {
+              "text": "Vendor may use Customer Data, prompts, outputs, telemetry, embeddings, and tuning files to improve its generally available models and services without Customer opt-in. Any opt-in expires after 75 days, and records for an approved tuning run are available for audit within 7 days.",
+              "counter_text_slots": {
+                "training_scope": "all_service_activity"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": false
+              },
+              "decoy_values": [
+                75,
+                7
+              ]
+            },
+            {
+              "text": "Vendor may use the expressly identified fine-tuning files for the approved tuning run based on Customer's oral or implied approval, without a prior written opt-in. Any opt-in expires after 60 days, and records for an approved tuning run are available for audit within 14 days.",
+              "counter_text_slots": {
+                "training_scope": "identified_files"
+              },
+              "phase1_context_slots": {
+                "written_opt_in": false
+              },
+              "decoy_values": [
+                60,
+                14
+              ]
+            }
+          ]
+        }
       },
       {
-        "counter_family_id": "CF-AI-RETENTION-01", "rule_id": "R-008", "counter_guard_id": "GUARD-AI-APPROVED-REGION", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"retention_days": 30}, "phase1_context_slots": {"approved_regions_only": true}, "decoy_values": [7, 90], "decoy_ids": ["backup_days", "report_days"],
-        "render_forms": {"retention_days": ["no more than 30 days", "a one-month maximum", "deleted by day thirty"], "approved_regions_only": ["approved regions only", "storage remains in authorized locations", "processing is geographically restricted"]},
-        "counterfactual_twins": [{"varied_input": "retention_days", "label_flipped": true}, {"varied_input": "approved_regions_only", "label_flipped": true}, {"varied_input": "backup_days", "label_flipped": false}, {"varied_input": "report_days", "label_flipped": false}],
-        "expected_redline_text": "Vendor will process and store Customer Data, prompts, outputs, telemetry, embeddings, and logs only in approved regions and retain prompts, outputs, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing.",
-        "acceptable": {"text": "Prompts, outputs, and logs remain in approved regions and are retained no more than 30 days; backup checks run every 7 days and reports remain available for 90 days.", "counter_text_slots": {"retention_days": 30}, "phase1_context_slots": {"approved_regions_only": true}, "decoy_values": [7, 90]},
-        "unacceptable": {"text": "Prompts, outputs, and logs may be stored in any region and retained for 180 days; backup checks run every 7 days and reports remain available for 90 days.", "counter_text_slots": {"retention_days": 180}, "phase1_context_slots": {"approved_regions_only": false}, "decoy_values": [7, 90]}
+        "counter_family_id": "CF-AI-CUSTOM-ASSETS-V2",
+        "rule_id": "R-002",
+        "counter_guard_id": "GUARD-AI-CUSTOM-ASSETS-V2",
+        "playbook_grounding": {
+          "position": "Agreement should give the client control over dedicated model customization assets created for its deployment, or at minimum exclusive operational use of them.",
+          "fallback": "Customer owns all fine-tuned weights, adapters, embeddings, prompts, configuration artifacts, and related deliverables created specifically for Customer; if Vendor cannot assign ownership, Customer receives exclusive use and portability rights.",
+          "escalation_trigger": "Escalate if Vendor can reuse, share, or deny Customer portability for Customer-specific fine-tuned artifacts.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "asset_control == 'assigned' or (asset_control == 'exclusive_use' and portability_days <= 30)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "portability_days": [
+            15,
+            21,
+            30,
+            35,
+            45,
+            60
+          ]
+        },
+        "phase1_context_slots": {
+          "asset_control": [
+            "assigned",
+            "exclusive_use",
+            "nonexclusive_use"
+          ]
+        },
+        "decoy_values": [
+          10,
+          24
+        ],
+        "decoy_ids": [
+          "adapter_inventory_days",
+          "export_link_hours"
+        ],
+        "render_forms": {
+          "portability_days": [
+            "express portability days",
+            "defined portability days",
+            "operative portability days condition"
+          ],
+          "asset_control": [
+            "express asset control",
+            "defined asset control",
+            "operative asset control condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "portability_days",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "asset_control",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "adapter_inventory_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "export_link_hours",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Customer owns all fine-tuned weights, adapters, embeddings, prompts, configuration artifacts, and related deliverables created specifically for Customer; if Vendor cannot assign ownership, Customer receives exclusive use and portability rights.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation; Vendor will make a usable export available within 15 days after request. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 48 hours.",
+              "counter_text_slots": {
+                "portability_days": 15
+              },
+              "phase1_context_slots": {
+                "asset_control": "assigned"
+              },
+              "decoy_values": [
+                20,
+                48
+              ]
+            },
+            {
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 30 days after request. Vendor refreshes the customization-asset inventory every 25 days and keeps each secure export link active for 24 hours.",
+              "counter_text_slots": {
+                "portability_days": 30
+              },
+              "phase1_context_slots": {
+                "asset_control": "exclusive_use"
+              },
+              "decoy_values": [
+                25,
+                24
+              ]
+            },
+            {
+              "text": "Customer owns all Customer-specific weights, adapters, embeddings, prompts, configurations, and related deliverables upon creation; Vendor will make a usable export available within 45 days after request. Vendor refreshes the customization-asset inventory every 40 days and keeps each secure export link active for 96 hours.",
+              "counter_text_slots": {
+                "portability_days": 45
+              },
+              "phase1_context_slots": {
+                "asset_control": "assigned"
+              },
+              "decoy_values": [
+                40,
+                96
+              ]
+            },
+            {
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 21 days after request. Vendor refreshes the customization-asset inventory every 10 days and keeps each secure export link active for 72 hours.",
+              "counter_text_slots": {
+                "portability_days": 21
+              },
+              "phase1_context_slots": {
+                "asset_control": "exclusive_use"
+              },
+              "decoy_values": [
+                10,
+                72
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 45 days after request. Vendor refreshes the customization-asset inventory every 25 days and keeps each secure export link active for 96 hours.",
+              "counter_text_slots": {
+                "portability_days": 45
+              },
+              "phase1_context_slots": {
+                "asset_control": "exclusive_use"
+              },
+              "decoy_values": [
+                25,
+                96
+              ]
+            },
+            {
+              "text": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 30 days. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.",
+              "counter_text_slots": {
+                "portability_days": 30
+              },
+              "phase1_context_slots": {
+                "asset_control": "nonexclusive_use"
+              },
+              "decoy_values": [
+                20,
+                24
+              ]
+            },
+            {
+              "text": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 60 days. Vendor refreshes the customization-asset inventory every 10 days and keeps each secure export link active for 48 hours.",
+              "counter_text_slots": {
+                "portability_days": 60
+              },
+              "phase1_context_slots": {
+                "asset_control": "nonexclusive_use"
+              },
+              "decoy_values": [
+                10,
+                48
+              ]
+            },
+            {
+              "text": "Where assignment is unavailable, Customer receives exclusive operational use and unrestricted portability of every Customer-specific customization asset, with a usable export due within 35 days after request. Vendor refreshes the customization-asset inventory every 40 days and keeps each secure export link active for 72 hours.",
+              "counter_text_slots": {
+                "portability_days": 35
+              },
+              "phase1_context_slots": {
+                "asset_control": "exclusive_use"
+              },
+              "decoy_values": [
+                40,
+                72
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-AI-POLICY-CHANGE-V2",
+        "rule_id": "R-009",
+        "counter_guard_id": "GUARD-AI-POLICY-CHANGE-V2",
+        "playbook_grounding": {
+          "position": "Customer obligations for provider conduct rules should remain bounded to published terms at signing or later changes required by law or objective safety needs, with notice.",
+          "fallback": "Customer will comply with Vendor's published acceptable-use and safety policies as of the effective date and later changes that are required by law or objectively necessary for service security or safety, provided Vendor gives reasonable notice.",
+          "escalation_trigger": "Escalate if Vendor can unilaterally expand safety or acceptable-use obligations without bounds or notice.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "change_basis in {'law', 'objective_safety'} and notice_days >= 15"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "notice_days": [
+            10,
+            15,
+            21,
+            30,
+            45,
+            7
+          ]
+        },
+        "phase1_context_slots": {
+          "change_basis": [
+            "commercial_discretion",
+            "law",
+            "objective_safety"
+          ]
+        },
+        "decoy_values": [
+          6,
+          5
+        ],
+        "decoy_ids": [
+          "policy_archive_months",
+          "customer_comment_days"
+        ],
+        "render_forms": {
+          "notice_days": [
+            "express notice days",
+            "defined notice days",
+            "operative notice days condition"
+          ],
+          "change_basis": [
+            "express change basis",
+            "defined change basis",
+            "operative change basis condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "notice_days",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "change_basis",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "policy_archive_months",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "customer_comment_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Customer will comply with Vendor's published acceptable-use and safety policies as of the effective date and later changes that are required by law or objectively necessary for service security or safety, provided Vendor gives reasonable notice.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "A later acceptable-use or safety-policy change applies only when required by applicable law, after 15 days' notice to Customer. Superseded policies remain archived for 18 months, and Customer may submit implementation comments for 12 days.",
+              "counter_text_slots": {
+                "notice_days": 15
+              },
+              "phase1_context_slots": {
+                "change_basis": "law"
+              },
+              "decoy_values": [
+                18,
+                12
+              ]
+            },
+            {
+              "text": "A later acceptable-use or safety-policy change applies only when required by an objectively documented service-security or safety need, after 30 days' notice to Customer. Superseded policies remain archived for 24 months, and Customer may submit implementation comments for 10 days.",
+              "counter_text_slots": {
+                "notice_days": 30
+              },
+              "phase1_context_slots": {
+                "change_basis": "objective_safety"
+              },
+              "decoy_values": [
+                24,
+                10
+              ]
+            },
+            {
+              "text": "A later acceptable-use or safety-policy change applies only when required by applicable law, after 45 days' notice to Customer. Superseded policies remain archived for 6 months, and Customer may submit implementation comments for 5 days.",
+              "counter_text_slots": {
+                "notice_days": 45
+              },
+              "phase1_context_slots": {
+                "change_basis": "law"
+              },
+              "decoy_values": [
+                6,
+                5
+              ]
+            },
+            {
+              "text": "A later acceptable-use or safety-policy change applies only when required by an objectively documented service-security or safety need, after 21 days' notice to Customer. Superseded policies remain archived for 12 months, and Customer may submit implementation comments for 20 days.",
+              "counter_text_slots": {
+                "notice_days": 21
+              },
+              "phase1_context_slots": {
+                "change_basis": "objective_safety"
+              },
+              "decoy_values": [
+                12,
+                20
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "A later acceptable-use or safety-policy change applies only when required by applicable law, after 7 days' notice to Customer. Superseded policies remain archived for 24 months, and Customer may submit implementation comments for 5 days.",
+              "counter_text_slots": {
+                "notice_days": 7
+              },
+              "phase1_context_slots": {
+                "change_basis": "law"
+              },
+              "decoy_values": [
+                24,
+                5
+              ]
+            },
+            {
+              "text": "Vendor may expand its acceptable-use and safety policies for commercial or operational reasons on 30 days' notice, and the revised obligations will bind Customer. Superseded policies remain archived for 18 months, and Customer may submit implementation comments for 10 days.",
+              "counter_text_slots": {
+                "notice_days": 30
+              },
+              "phase1_context_slots": {
+                "change_basis": "commercial_discretion"
+              },
+              "decoy_values": [
+                18,
+                10
+              ]
+            },
+            {
+              "text": "Vendor may expand its acceptable-use and safety policies for commercial or operational reasons on 45 days' notice, and the revised obligations will bind Customer. Superseded policies remain archived for 12 months, and Customer may submit implementation comments for 12 days.",
+              "counter_text_slots": {
+                "notice_days": 45
+              },
+              "phase1_context_slots": {
+                "change_basis": "commercial_discretion"
+              },
+              "decoy_values": [
+                12,
+                12
+              ]
+            },
+            {
+              "text": "A later acceptable-use or safety-policy change applies only when required by an objectively documented service-security or safety need, after 10 days' notice to Customer. Superseded policies remain archived for 6 months, and Customer may submit implementation comments for 20 days.",
+              "counter_text_slots": {
+                "notice_days": 10
+              },
+              "phase1_context_slots": {
+                "change_basis": "objective_safety"
+              },
+              "decoy_values": [
+                6,
+                20
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-AI-EXIT-V2",
+        "rule_id": "R-012",
+        "counter_guard_id": "GUARD-AI-EXIT-V2",
+        "playbook_grounding": {
+          "position": "Exit support must cover migration help and portable copies of Customer Data, prompts, outputs, embeddings, and Customer-specific fine-tuned artifacts.",
+          "fallback": "Upon expiration or termination, Vendor will provide reasonable transition assistance and export Customer Data, prompts, outputs, embeddings, and Customer-specific fine-tuned weights, adapters, and configuration artifacts in a usable format.",
+          "escalation_trigger": "Escalate if Customer cannot export fine-tunes, embeddings, or operational data needed to transition away from Vendor.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "export_coverage == 'complete' and transition_hours >= 20"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "transition_hours": [
+            10,
+            15,
+            20,
+            30,
+            40,
+            60
+          ]
+        },
+        "phase1_context_slots": {
+          "export_coverage": [
+            "complete",
+            "data_only"
+          ]
+        },
+        "decoy_values": [
+          15,
+          3
+        ],
+        "decoy_ids": [
+          "export_window_days",
+          "migration_checkpoint_days"
+        ],
+        "render_forms": {
+          "transition_hours": [
+            "express transition hours",
+            "defined transition hours",
+            "operative transition hours condition"
+          ],
+          "export_coverage": [
+            "express export coverage",
+            "defined export coverage",
+            "operative export coverage condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "transition_hours",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "export_coverage",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "export_window_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "migration_checkpoint_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Upon expiration or termination, Vendor will provide reasonable transition assistance and export Customer Data, prompts, outputs, embeddings, and Customer-specific fine-tuned weights, adapters, and configuration artifacts in a usable format.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 20 hours of migration assistance. The secure export window remains open for 60 days, with migration checkpoints every 14 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 20
+              },
+              "phase1_context_slots": {
+                "export_coverage": "complete"
+              },
+              "decoy_values": [
+                60,
+                14
+              ]
+            },
+            {
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 40 hours of migration assistance. The secure export window remains open for 15 days, with migration checkpoints every 10 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 40
+              },
+              "phase1_context_slots": {
+                "export_coverage": "complete"
+              },
+              "decoy_values": [
+                15,
+                10
+              ]
+            },
+            {
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 60 hours of migration assistance. The secure export window remains open for 30 days, with migration checkpoints every 7 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 60
+              },
+              "phase1_context_slots": {
+                "export_coverage": "complete"
+              },
+              "decoy_values": [
+                30,
+                7
+              ]
+            },
+            {
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 30 hours of migration assistance. The secure export window remains open for 45 days, with migration checkpoints every 3 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 30
+              },
+              "phase1_context_slots": {
+                "export_coverage": "complete"
+              },
+              "decoy_values": [
+                45,
+                3
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 10 hours of migration assistance. The secure export window remains open for 15 days, with migration checkpoints every 7 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 10
+              },
+              "phase1_context_slots": {
+                "export_coverage": "complete"
+              },
+              "decoy_values": [
+                15,
+                7
+              ]
+            },
+            {
+              "text": "At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide 40 hours of migration assistance. The secure export window remains open for 60 days, with migration checkpoints every 10 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 40
+              },
+              "phase1_context_slots": {
+                "export_coverage": "data_only"
+              },
+              "decoy_values": [
+                60,
+                10
+              ]
+            },
+            {
+              "text": "At exit Vendor will export Customer Data and final outputs, but may withhold embeddings, fine-tuned weights, adapters, and configurations; Vendor will provide 60 hours of migration assistance. The secure export window remains open for 45 days, with migration checkpoints every 14 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 60
+              },
+              "phase1_context_slots": {
+                "export_coverage": "data_only"
+              },
+              "decoy_values": [
+                45,
+                14
+              ]
+            },
+            {
+              "text": "At exit Vendor will export Customer Data, prompts, outputs, embeddings, fine-tuned weights, adapters, and configurations in a usable format and provide 15 hours of migration assistance. The secure export window remains open for 30 days, with migration checkpoints every 3 days while assistance is active.",
+              "counter_text_slots": {
+                "transition_hours": 15
+              },
+              "phase1_context_slots": {
+                "export_coverage": "complete"
+              },
+              "decoy_values": [
+                30,
+                3
+              ]
+            }
+          ]
+        }
       }
     ],
     "benign_change_templates": [
-      {"template_id": "BC-AI-DELAWARE", "rule_id": "R-014", "anchor_terms": ["Delaware"], "text": "The parties confirm that Delaware law governs this engagement."},
-      {"template_id": "BC-AI-UPTIME", "rule_id": "R-015", "anchor_terms": ["99.9%", "uptime"], "text": "For clarity, the 99.9% uptime commitment continues to carry service credits."}
+      {
+        "template_id": "BC-AI-DELAWARE",
+        "rule_id": "R-014",
+        "anchor_terms": [
+          "Delaware"
+        ],
+        "text": "The parties confirm that Delaware law governs this engagement."
+      },
+      {
+        "template_id": "BC-AI-UPTIME",
+        "rule_id": "R-015",
+        "anchor_terms": [
+          "99.9%",
+          "uptime"
+        ],
+        "text": "For clarity, the 99.9% uptime commitment continues to carry service credits."
+      }
     ],
-    "novel_deviation_templates": [{"template_id": "ND-AI-TRAINING", "rule_id": "R-001", "destination_terms": ["Data"], "text": "Vendor may use Customer prompts, outputs, and telemetry to train and improve models without Customer opt-in."}]
+    "novel_deviation_templates": [
+      {
+        "template_id": "ND-AI-TRAINING",
+        "rule_id": "R-001",
+        "destination_terms": [
+          "Data"
+        ],
+        "text": "Vendor may use Customer prompts, outputs, and telemetry to train and improve models without Customer opt-in."
+      }
+    ]
   }
 }

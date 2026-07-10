@@ -1,89 +1,1588 @@
 {
-  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
+  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
   "PB-MSA-001": {
     "counter_families": [
       {
-        "counter_family_id": "CF-MSA-LIABILITY-01",
+        "counter_family_id": "CF-MSA-LIABILITY-V2",
         "rule_id": "R-001",
-        "counter_guard_id": "GUARD-MSA-CARVEOUTS",
+        "counter_guard_id": "GUARD-MSA-LIABILITY-V2",
+        "playbook_grounding": {
+          "position": "Monetary exposure should sit at annual spend, with excluded categories for privacy, secrecy, defense obligations, infringement, and gross misconduct.",
+          "fallback": "Except for breaches of confidentiality, data protection obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability is capped at the fees paid or payable under the applicable Order Form during the twelve months before the event giving rise to the claim.",
+          "escalation_trigger": "Escalate if high-risk claim categories are financially limited after negotiation.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "cap_months <= 12 and high_risk_carveouts_preserved"
+        },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
-        "counter_text_slots": {"cap_months": 12},
-        "phase1_context_slots": {"privacy_and_ip_carved_out": true},
-        "decoy_values": [30, 45],
-        "decoy_ids": ["claim_notice_days", "invoice_days"],
+        "counter_text_slots": {
+          "cap_months": [
+            12,
+            15,
+            18,
+            24,
+            6,
+            9
+          ]
+        },
+        "phase1_context_slots": {
+          "high_risk_carveouts_preserved": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          15,
+          5
+        ],
+        "decoy_ids": [
+          "claim_notice_days",
+          "defense_update_days"
+        ],
         "render_forms": {
-          "cap_months": ["twelve months of fees", "annual fees", "fees paid in the preceding year"],
-          "privacy_and_ip_carved_out": ["privacy and IP claims are excluded", "the cap does not reach data or infringement claims", "data-protection and IP indemnity carve-outs remain"]
+          "cap_months": [
+            "express cap months",
+            "defined cap months",
+            "operative cap months condition"
+          ],
+          "high_risk_carveouts_preserved": [
+            "express high risk carveouts preserved",
+            "defined high risk carveouts preserved",
+            "operative high risk carveouts preserved condition"
+          ]
         },
         "counterfactual_twins": [
-          {"varied_input": "cap_months", "label_flipped": true},
-          {"varied_input": "privacy_and_ip_carved_out", "label_flipped": true},
-          {"varied_input": "claim_notice_days", "label_flipped": false},
-          {"varied_input": "invoice_days", "label_flipped": false}
+          {
+            "varied_input": "cap_months",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "high_risk_carveouts_preserved",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "claim_notice_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "defense_update_days",
+            "label_flipped": false
+          }
         ],
         "expected_redline_text": "Except for breaches of confidentiality, data protection obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability is capped at the fees paid or payable under the applicable Order Form during the twelve months before the event giving rise to the claim.",
-        "acceptable": {"text": "Liability is capped at twelve months of fees, but confidentiality, data-protection, indemnity, infringement, fraud, willful-misconduct, and gross-negligence claims remain outside the cap; claim notice is 30 days and invoices remain net 45.", "counter_text_slots": {"cap_months": 12}, "phase1_context_slots": {"privacy_and_ip_carved_out": true}, "decoy_values": [30, 45]},
-        "unacceptable": {"text": "Liability is capped at three months of fees, including confidentiality, data-protection, indemnity, and infringement claims; claim notice is 30 days and invoices remain net 45.", "counter_text_slots": {"cap_months": 3}, "phase1_context_slots": {"privacy_and_ip_carved_out": false}, "decoy_values": [30, 45]}
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 12 months before the event. Breaches of confidentiality and data protection, indemnification obligations, intellectual-property infringement, fraud, willful misconduct, and gross negligence remain outside the cap. A party gives claim notice within 15 days after discovery where practicable, and defense-status updates issue every 5 days.",
+              "counter_text_slots": {
+                "cap_months": 12
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": true
+              },
+              "decoy_values": [
+                15,
+                5
+              ]
+            },
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 6 months before the event. Breaches of confidentiality and data protection, indemnification obligations, intellectual-property infringement, fraud, willful misconduct, and gross negligence remain outside the cap. A party gives claim notice within 30 days after discovery where practicable, and defense-status updates issue every 20 days.",
+              "counter_text_slots": {
+                "cap_months": 6
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": true
+              },
+              "decoy_values": [
+                30,
+                20
+              ]
+            },
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 9 months before the event. Breaches of confidentiality and data protection, indemnification obligations, intellectual-property infringement, fraud, willful misconduct, and gross negligence remain outside the cap. A party gives claim notice within 45 days after discovery where practicable, and defense-status updates issue every 15 days.",
+              "counter_text_slots": {
+                "cap_months": 9
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": true
+              },
+              "decoy_values": [
+                45,
+                15
+              ]
+            },
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 12 months before the event. Breaches of confidentiality and data protection, indemnification obligations, intellectual-property infringement, fraud, willful misconduct, and gross negligence remain outside the cap. A party gives claim notice within 60 days after discovery where practicable, and defense-status updates issue every 10 days.",
+              "counter_text_slots": {
+                "cap_months": 12
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": true
+              },
+              "decoy_values": [
+                60,
+                10
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 18 months before the event. Breaches of confidentiality and data protection, indemnification obligations, intellectual-property infringement, fraud, willful misconduct, and gross negligence remain outside the cap. A party gives claim notice within 30 days after discovery where practicable, and defense-status updates issue every 15 days.",
+              "counter_text_slots": {
+                "cap_months": 18
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": true
+              },
+              "decoy_values": [
+                30,
+                15
+              ]
+            },
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 12 months before the event. The same cap also limits confidentiality, data protection, indemnification, infringement, fraud, willful-misconduct, and gross-negligence claims. A party gives claim notice within 15 days after discovery where practicable, and defense-status updates issue every 20 days.",
+              "counter_text_slots": {
+                "cap_months": 12
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": false
+              },
+              "decoy_values": [
+                15,
+                20
+              ]
+            },
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 24 months before the event. The same cap also limits confidentiality, data protection, indemnification, infringement, fraud, willful-misconduct, and gross-negligence claims. A party gives claim notice within 60 days after discovery where practicable, and defense-status updates issue every 5 days.",
+              "counter_text_slots": {
+                "cap_months": 24
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": false
+              },
+              "decoy_values": [
+                60,
+                5
+              ]
+            },
+            {
+              "text": "Each party's aggregate liability for ordinary claims is capped at fees paid or payable during the 15 months before the event. Breaches of confidentiality and data protection, indemnification obligations, intellectual-property infringement, fraud, willful misconduct, and gross negligence remain outside the cap. A party gives claim notice within 45 days after discovery where practicable, and defense-status updates issue every 10 days.",
+              "counter_text_slots": {
+                "cap_months": 15
+              },
+              "phase1_context_slots": {
+                "high_risk_carveouts_preserved": true
+              },
+              "decoy_values": [
+                45,
+                10
+              ]
+            }
+          ]
+        }
       },
       {
-        "counter_family_id": "CF-MSA-INSURANCE-01",
-        "rule_id": "R-011",
-        "counter_guard_id": "GUARD-MSA-CYBER-COVERAGE",
+        "counter_family_id": "CF-MSA-WORK-PRODUCT-V2",
+        "rule_id": "R-003",
+        "counter_guard_id": "GUARD-MSA-WORK-PRODUCT-V2",
+        "playbook_grounding": {
+          "position": "Bespoke work product prepared for the client should belong to the client, while Vendor may retain pre-existing materials only to the extent they do not prevent the intended use.",
+          "fallback": "Vendor assigns to Customer all right, title, and interest in project-specific deliverables upon payment, and grants Customer a perpetual license to any embedded pre-existing materials necessary to use those deliverables.",
+          "escalation_trigger": "Escalate if Customer cannot own or freely use project-specific work product.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "assigned_deliverable_percent == 100 and embedded_license == 'perpetual'"
+        },
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
-        "counter_text_slots": {"cyber_limit_millions": 5},
-        "phase1_context_slots": {"cyber_coverage_included": true},
-        "decoy_values": [2, 30],
-        "decoy_ids": ["general_limit_millions", "certificate_days"],
+        "counter_text_slots": {
+          "assigned_deliverable_percent": [
+            100,
+            50,
+            75
+          ]
+        },
+        "phase1_context_slots": {
+          "embedded_license": [
+            "one_year",
+            "perpetual",
+            "revocable"
+          ]
+        },
+        "decoy_values": [
+          5,
+          10
+        ],
+        "decoy_ids": [
+          "delivery_acceptance_days",
+          "source_inventory_days"
+        ],
         "render_forms": {
-          "cyber_limit_millions": ["$5 million per claim", "$5,000,000 per claim", "five million dollars of cyber coverage"],
-          "cyber_coverage_included": ["technology E&O/cyber is included", "the policy includes cyber liability", "technology errors and omissions remains covered"]
+          "assigned_deliverable_percent": [
+            "express assigned deliverable percent",
+            "defined assigned deliverable percent",
+            "operative assigned deliverable percent condition"
+          ],
+          "embedded_license": [
+            "express embedded license",
+            "defined embedded license",
+            "operative embedded license condition"
+          ]
         },
         "counterfactual_twins": [
-          {"varied_input": "cyber_limit_millions", "label_flipped": true},
-          {"varied_input": "cyber_coverage_included", "label_flipped": true},
-          {"varied_input": "general_limit_millions", "label_flipped": false},
-          {"varied_input": "certificate_days", "label_flipped": false}
+          {
+            "varied_input": "assigned_deliverable_percent",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "embedded_license",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "delivery_acceptance_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "source_inventory_days",
+            "label_flipped": false
+          }
         ],
-        "expected_redline_text": "Vendor will maintain, at its own expense, commercially reasonable insurance, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence.",
-        "acceptable": {"text": "Vendor will maintain $5 million per claim in technology E&O/cyber coverage and $2 million in general liability, with certificates delivered in 30 days.", "counter_text_slots": {"cyber_limit_millions": 5}, "phase1_context_slots": {"cyber_coverage_included": true}, "decoy_values": [2, 30]},
-        "unacceptable": {"text": "Vendor will maintain $1 million per claim but excludes technology E&O/cyber coverage, while retaining $2 million in general liability and 30-day certificate delivery.", "counter_text_slots": {"cyber_limit_millions": 1}, "phase1_context_slots": {"cyber_coverage_included": false}, "decoy_values": [2, 30]}
+        "expected_redline_text": "Vendor assigns to Customer all right, title, and interest in project-specific deliverables upon payment, and grants Customer a perpetual license to any embedded pre-existing materials necessary to use those deliverables.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Upon payment, Vendor assigns Customer 100% of the right, title, and interest in project-specific deliverables. For embedded pre-existing materials, Vendor grants a perpetual license sufficient for Customer to use the deliverables. Customer has 10 days to identify delivery defects, and Vendor updates the embedded-material inventory within 20 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 100
+              },
+              "phase1_context_slots": {
+                "embedded_license": "perpetual"
+              },
+              "decoy_values": [
+                10,
+                20
+              ]
+            },
+            {
+              "text": "Upon payment, Vendor assigns Customer 100% of the right, title, and interest in project-specific deliverables. For embedded pre-existing materials, Vendor grants a perpetual license sufficient for Customer to use the deliverables. Customer has 15 days to identify delivery defects, and Vendor updates the embedded-material inventory within 10 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 100
+              },
+              "phase1_context_slots": {
+                "embedded_license": "perpetual"
+              },
+              "decoy_values": [
+                15,
+                10
+              ]
+            },
+            {
+              "text": "Upon payment, Vendor assigns Customer 100% of the right, title, and interest in project-specific deliverables. For embedded pre-existing materials, Vendor grants a perpetual license sufficient for Customer to use the deliverables. Customer has 20 days to identify delivery defects, and Vendor updates the embedded-material inventory within 40 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 100
+              },
+              "phase1_context_slots": {
+                "embedded_license": "perpetual"
+              },
+              "decoy_values": [
+                20,
+                40
+              ]
+            },
+            {
+              "text": "Upon payment, Vendor assigns Customer 100% of the right, title, and interest in project-specific deliverables. For embedded pre-existing materials, Vendor grants a perpetual license sufficient for Customer to use the deliverables. Customer has 5 days to identify delivery defects, and Vendor updates the embedded-material inventory within 30 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 100
+              },
+              "phase1_context_slots": {
+                "embedded_license": "perpetual"
+              },
+              "decoy_values": [
+                5,
+                30
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Upon payment, Vendor assigns Customer 75% of the right, title, and interest in project-specific deliverables. For embedded pre-existing materials, Vendor grants a perpetual license sufficient for Customer to use the deliverables. Customer has 15 days to identify delivery defects, and Vendor updates the embedded-material inventory within 40 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 75
+              },
+              "phase1_context_slots": {
+                "embedded_license": "perpetual"
+              },
+              "decoy_values": [
+                15,
+                40
+              ]
+            },
+            {
+              "text": "Upon payment, Vendor assigns Customer 100% of the right, title, and interest in project-specific deliverables. The license to embedded pre-existing materials expires after one year, even if Customer still uses the deliverables. Customer has 10 days to identify delivery defects, and Vendor updates the embedded-material inventory within 10 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 100
+              },
+              "phase1_context_slots": {
+                "embedded_license": "one_year"
+              },
+              "decoy_values": [
+                10,
+                10
+              ]
+            },
+            {
+              "text": "Upon payment, Vendor assigns Customer 50% of the right, title, and interest in project-specific deliverables. The license to embedded pre-existing materials expires after one year, even if Customer still uses the deliverables. Customer has 5 days to identify delivery defects, and Vendor updates the embedded-material inventory within 20 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 50
+              },
+              "phase1_context_slots": {
+                "embedded_license": "one_year"
+              },
+              "decoy_values": [
+                5,
+                20
+              ]
+            },
+            {
+              "text": "Upon payment, Vendor assigns Customer 100% of the right, title, and interest in project-specific deliverables. Vendor may revoke the license to embedded pre-existing materials at its discretion. Customer has 20 days to identify delivery defects, and Vendor updates the embedded-material inventory within 30 days after a release.",
+              "counter_text_slots": {
+                "assigned_deliverable_percent": 100
+              },
+              "phase1_context_slots": {
+                "embedded_license": "revocable"
+              },
+              "decoy_values": [
+                20,
+                30
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-MSA-TERMINATION-V2",
+        "rule_id": "R-006",
+        "counter_guard_id": "GUARD-MSA-TERMINATION-V2",
+        "playbook_grounding": {
+          "position": "Discretionary cancellation should be available on 30 days' written notice without penalty beyond accrued, undisputed amounts.",
+          "fallback": "Customer may terminate any Order Form for convenience on 30 days' written notice and will owe only fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing.",
+          "escalation_trigger": "Escalate if optional exit requires a material penalty or payment for unused services.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "termination_notice_days <= 30 and unused_service_fee_percent == 0"
+        },
+        "has_qualitative_decisive_input": false,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "termination_notice_days": [
+            15,
+            20,
+            25,
+            30,
+            45,
+            60
+          ]
+        },
+        "phase1_context_slots": {
+          "unused_service_fee_percent": [
+            0,
+            10,
+            25,
+            50
+          ]
+        },
+        "decoy_values": [
+          5,
+          10
+        ],
+        "decoy_ids": [
+          "final_invoice_days",
+          "expense_dispute_days"
+        ],
+        "render_forms": {
+          "termination_notice_days": [
+            "express termination notice days",
+            "defined termination notice days",
+            "operative termination notice days condition"
+          ],
+          "unused_service_fee_percent": [
+            "express unused service fee percent",
+            "defined unused service fee percent",
+            "operative unused service fee percent condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "termination_notice_days",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "unused_service_fee_percent",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "final_invoice_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "expense_dispute_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Customer may terminate any Order Form for convenience on 30 days' written notice and will owe only fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Customer may terminate an Order Form for convenience on 30 days' written notice and owes accrued undisputed amounts and approved expenses only, with no charge for unused services after termination. Vendor submits the final invoice within 15 days, and Customer may dispute an expense item for 35 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 30
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 0
+              },
+              "decoy_values": [
+                15,
+                35
+              ]
+            },
+            {
+              "text": "Customer may terminate an Order Form for convenience on 15 days' written notice and owes accrued undisputed amounts and approved expenses only, with no charge for unused services after termination. Vendor submits the final invoice within 20 days, and Customer may dispute an expense item for 20 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 15
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 0
+              },
+              "decoy_values": [
+                20,
+                20
+              ]
+            },
+            {
+              "text": "Customer may terminate an Order Form for convenience on 20 days' written notice and owes accrued undisputed amounts and approved expenses only, with no charge for unused services after termination. Vendor submits the final invoice within 5 days, and Customer may dispute an expense item for 10 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 20
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 0
+              },
+              "decoy_values": [
+                5,
+                10
+              ]
+            },
+            {
+              "text": "Customer may terminate an Order Form for convenience on 30 days' written notice and owes accrued undisputed amounts and approved expenses only, with no charge for unused services after termination. Vendor submits the final invoice within 10 days, and Customer may dispute an expense item for 40 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 30
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 0
+              },
+              "decoy_values": [
+                10,
+                40
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Customer may terminate an Order Form for convenience on 45 days' written notice and owes accrued undisputed amounts and approved expenses only, with no charge for unused services after termination. Vendor submits the final invoice within 20 days, and Customer may dispute an expense item for 10 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 45
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 0
+              },
+              "decoy_values": [
+                20,
+                10
+              ]
+            },
+            {
+              "text": "Customer may terminate an Order Form for convenience on 30 days' written notice and owes accrued undisputed amounts and approved expenses, plus 25% of fees for unused services after termination. Vendor submits the final invoice within 15 days, and Customer may dispute an expense item for 20 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 30
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 25
+              },
+              "decoy_values": [
+                15,
+                20
+              ]
+            },
+            {
+              "text": "Customer may terminate an Order Form for convenience on 60 days' written notice and owes accrued undisputed amounts and approved expenses, plus 50% of fees for unused services after termination. Vendor submits the final invoice within 10 days, and Customer may dispute an expense item for 35 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 60
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 50
+              },
+              "decoy_values": [
+                10,
+                35
+              ]
+            },
+            {
+              "text": "Customer may terminate an Order Form for convenience on 25 days' written notice and owes accrued undisputed amounts and approved expenses, plus 10% of fees for unused services after termination. Vendor submits the final invoice within 5 days, and Customer may dispute an expense item for 40 days after receipt.",
+              "counter_text_slots": {
+                "termination_notice_days": 25
+              },
+              "phase1_context_slots": {
+                "unused_service_fee_percent": 10
+              },
+              "decoy_values": [
+                5,
+                40
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-MSA-DISCLAIMER-V2",
+        "rule_id": "R-008",
+        "counter_guard_id": "GUARD-MSA-DISCLAIMER-V2",
+        "playbook_grounding": {
+          "position": "Warranty disclaimers may exclude implied warranties but must preserve express service warranties, security commitments, indemnities, and confidentiality remedies.",
+          "fallback": "Warranty disclaimers do not limit Vendor's express warranties, service-level commitments, data protection obligations, confidentiality obligations, indemnification obligations, or remedies expressly stated in this Agreement.",
+          "escalation_trigger": "Escalate if disclaimer language erases express promises or core remedies.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "express_warranties_preserved and core_remedies_preserved"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "express_warranties_preserved": [
+            false,
+            true
+          ]
+        },
+        "phase1_context_slots": {
+          "core_remedies_preserved": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          15,
+          5
+        ],
+        "decoy_ids": [
+          "warranty_claim_days",
+          "remedy_response_days"
+        ],
+        "render_forms": {
+          "express_warranties_preserved": [
+            "express express warranties preserved",
+            "defined express warranties preserved",
+            "operative express warranties preserved condition"
+          ],
+          "core_remedies_preserved": [
+            "express core remedies preserved",
+            "defined core remedies preserved",
+            "operative core remedies preserved condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "express_warranties_preserved",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "core_remedies_preserved",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "warranty_claim_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "remedy_response_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Warranty disclaimers do not limit Vendor's express warranties, service-level commitments, data protection obligations, confidentiality obligations, indemnification obligations, or remedies expressly stated in this Agreement.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies remain unaffected. Customer gives warranty-claim detail within 60 days after discovery, and Vendor responds to a remedy request within 20 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": true
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": true
+              },
+              "decoy_values": [
+                60,
+                20
+              ]
+            },
+            {
+              "text": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies remain unaffected. Customer gives warranty-claim detail within 15 days after discovery, and Vendor responds to a remedy request within 15 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": true
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": true
+              },
+              "decoy_values": [
+                15,
+                15
+              ]
+            },
+            {
+              "text": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies remain unaffected. Customer gives warranty-claim detail within 30 days after discovery, and Vendor responds to a remedy request within 10 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": true
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": true
+              },
+              "decoy_values": [
+                30,
+                10
+              ]
+            },
+            {
+              "text": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies remain unaffected. Customer gives warranty-claim detail within 45 days after discovery, and Vendor responds to a remedy request within 5 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": true
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": true
+              },
+              "decoy_values": [
+                45,
+                5
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "The disclaimer excludes implied warranties. The disclaimer also eliminates Vendor's express warranties and service-level commitments. Data-protection, confidentiality, indemnification, and expressly stated remedies remain unaffected. Customer gives warranty-claim detail within 15 days after discovery, and Vendor responds to a remedy request within 10 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": false
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": true
+              },
+              "decoy_values": [
+                15,
+                10
+              ]
+            },
+            {
+              "text": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies are also disclaimed. Customer gives warranty-claim detail within 60 days after discovery, and Vendor responds to a remedy request within 15 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": true
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": false
+              },
+              "decoy_values": [
+                60,
+                15
+              ]
+            },
+            {
+              "text": "The disclaimer excludes implied warranties. The disclaimer also eliminates Vendor's express warranties and service-level commitments. Data-protection, confidentiality, indemnification, and expressly stated remedies are also disclaimed. Customer gives warranty-claim detail within 45 days after discovery, and Vendor responds to a remedy request within 20 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": false
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": false
+              },
+              "decoy_values": [
+                45,
+                20
+              ]
+            },
+            {
+              "text": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies are also disclaimed. Customer gives warranty-claim detail within 30 days after discovery, and Vendor responds to a remedy request within 5 days.",
+              "counter_text_slots": {
+                "express_warranties_preserved": true
+              },
+              "phase1_context_slots": {
+                "core_remedies_preserved": false
+              },
+              "decoy_values": [
+                30,
+                5
+              ]
+            }
+          ]
+        }
       }
     ],
     "benign_change_templates": [
-      {"template_id": "BC-MSA-NET45", "rule_id": "R-014", "anchor_terms": ["forty-five days", "undisputed invoices"], "anchor_text": "Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice.", "text": "For clarity, undisputed invoices remain payable net 45 after Customer receives the invoice."},
-      {"template_id": "BC-MSA-DELAWARE", "rule_id": "R-015", "anchor_terms": ["State of Delaware", "governed"], "anchor_text": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.", "text": "The parties confirm that Delaware law governs this Agreement."}
+      {
+        "template_id": "BC-MSA-NET45",
+        "rule_id": "R-014",
+        "anchor_terms": [
+          "forty-five days",
+          "undisputed invoices"
+        ],
+        "anchor_text": "Unless an Order Form states otherwise, undisputed invoices are due forty-five days after Customer receives the invoice.",
+        "text": "For clarity, undisputed invoices remain payable net 45 after Customer receives the invoice."
+      },
+      {
+        "template_id": "BC-MSA-DELAWARE",
+        "rule_id": "R-015",
+        "anchor_terms": [
+          "State of Delaware",
+          "governed"
+        ],
+        "anchor_text": "This Agreement is governed by the laws of the State of Delaware, without regard to conflict-of-law rules.",
+        "text": "The parties confirm that Delaware law governs this Agreement."
+      }
     ],
     "novel_deviation_templates": [
-      {"template_id": "ND-MSA-AMENDMENT", "rule_id": "R-009", "destination_terms": ["No amendment", "authorized representatives"], "text": "Vendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval."}
+      {
+        "template_id": "ND-MSA-AMENDMENT",
+        "rule_id": "R-009",
+        "destination_terms": [
+          "No amendment",
+          "authorized representatives"
+        ],
+        "text": "Vendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval."
+      }
     ]
   },
   "PB-NDA-001": {
     "counter_families": [
       {
-        "counter_family_id": "CF-NDA-RETURN-01", "rule_id": "R-008", "counter_guard_id": "GUARD-NDA-ARCHIVE-PROTECTED", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"destruction_days": 30}, "phase1_context_slots": {"retained_copies_protected": true}, "decoy_values": [5, 45], "decoy_ids": ["notice_days", "backup_cycle_days"],
-        "render_forms": {"destruction_days": ["within 30 days", "within one month", "by the thirtieth day"], "retained_copies_protected": ["retained copies remain protected", "archives stay confidential", "legal-hold copies remain subject to the NDA"]},
-        "counterfactual_twins": [{"varied_input": "destruction_days", "label_flipped": true}, {"varied_input": "retained_copies_protected", "label_flipped": true}, {"varied_input": "notice_days", "label_flipped": false}, {"varied_input": "backup_cycle_days", "label_flipped": false}],
-        "expected_redline_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-        "acceptable": {"text": "Recipient will return or destroy Confidential Information within 30 days, and retained archival or legal-hold copies remain protected; request notice is 5 days and the backup cycle is 45 days.", "counter_text_slots": {"destruction_days": 30}, "phase1_context_slots": {"retained_copies_protected": true}, "decoy_values": [5, 45]},
-        "unacceptable": {"text": "Recipient may wait 90 days to destroy Confidential Information, and retained archival or legal-hold copies are no longer protected; request notice is 5 days and the backup cycle is 45 days.", "counter_text_slots": {"destruction_days": 90}, "phase1_context_slots": {"retained_copies_protected": false}, "decoy_values": [5, 45]}
+        "counter_family_id": "CF-NDA-AFFILIATES-V2",
+        "rule_id": "R-002",
+        "counter_guard_id": "GUARD-NDA-AFFILIATES-V2",
+        "playbook_grounding": {
+          "position": "The NDA should apply mutually to both parties and their affiliates when affiliates disclose or receive information.",
+          "fallback": "Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its affiliates' compliance.",
+          "escalation_trigger": "Escalate affiliate coverage gaps if the transaction requires affiliate participation.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "not affiliate_participates or (affiliate_covered and party_responsible)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "affiliate_covered": [
+            false,
+            true
+          ],
+          "party_responsible": [
+            false,
+            true
+          ]
+        },
+        "phase1_context_slots": {
+          "affiliate_participates": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          3,
+          10
+        ],
+        "decoy_ids": [
+          "affiliate_notice_days",
+          "recipient_list_days"
+        ],
+        "render_forms": {
+          "affiliate_covered": [
+            "express affiliate covered",
+            "defined affiliate covered",
+            "operative affiliate covered condition"
+          ],
+          "party_responsible": [
+            "express party responsible",
+            "defined party responsible",
+            "operative party responsible condition"
+          ],
+          "affiliate_participates": [
+            "express affiliate participates",
+            "defined affiliate participates",
+            "operative affiliate participates condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "affiliate_covered",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "party_responsible",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "affiliate_participates",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "affiliate_notice_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "recipient_list_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Each party and its controlled affiliates may disclose or receive Confidential Information under this Agreement, and each party is responsible for its affiliates' compliance.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 3 days and refreshes its authorized-recipient list every 10 days.",
+              "counter_text_slots": {
+                "affiliate_covered": true,
+                "party_responsible": true
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": true
+              },
+              "decoy_values": [
+                3,
+                10
+              ]
+            },
+            {
+              "text": "No controlled affiliate presently discloses or receives Confidential Information; any later participating controlled affiliate will be covered. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 5 days and refreshes its authorized-recipient list every 40 days.",
+              "counter_text_slots": {
+                "affiliate_covered": true,
+                "party_responsible": true
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": false
+              },
+              "decoy_values": [
+                5,
+                40
+              ]
+            },
+            {
+              "text": "No controlled affiliate presently discloses or receives Confidential Information; any later participating controlled affiliate will be covered. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 7 days and refreshes its authorized-recipient list every 30 days.",
+              "counter_text_slots": {
+                "affiliate_covered": true,
+                "party_responsible": true
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": false
+              },
+              "decoy_values": [
+                7,
+                30
+              ]
+            },
+            {
+              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 20 days.",
+              "counter_text_slots": {
+                "affiliate_covered": true,
+                "party_responsible": true
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": true
+              },
+              "decoy_values": [
+                10,
+                20
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "A controlled affiliate participates as a discloser or recipient. Participating affiliates are excluded from the NDA's protections and duties, and its party remains responsible for affiliate compliance. A party identifies a participating affiliate within 5 days and refreshes its authorized-recipient list every 30 days.",
+              "counter_text_slots": {
+                "affiliate_covered": false,
+                "party_responsible": true
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": true
+              },
+              "decoy_values": [
+                5,
+                30
+              ]
+            },
+            {
+              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 3 days and refreshes its authorized-recipient list every 40 days.",
+              "counter_text_slots": {
+                "affiliate_covered": true,
+                "party_responsible": false
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": true
+              },
+              "decoy_values": [
+                3,
+                40
+              ]
+            },
+            {
+              "text": "A controlled affiliate participates as a discloser or recipient. Participating affiliates are excluded from the NDA's protections and duties, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 10 days and refreshes its authorized-recipient list every 10 days.",
+              "counter_text_slots": {
+                "affiliate_covered": false,
+                "party_responsible": false
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": true
+              },
+              "decoy_values": [
+                10,
+                10
+              ]
+            },
+            {
+              "text": "A controlled affiliate participates as a discloser or recipient. Each participating controlled affiliate is covered by the mutual obligations, and neither party is responsible for its affiliate's compliance. A party identifies a participating affiliate within 7 days and refreshes its authorized-recipient list every 20 days.",
+              "counter_text_slots": {
+                "affiliate_covered": true,
+                "party_responsible": false
+              },
+              "phase1_context_slots": {
+                "affiliate_participates": true
+              },
+              "decoy_values": [
+                7,
+                20
+              ]
+            }
+          ]
+        }
       },
       {
-        "counter_family_id": "CF-NDA-SURVIVAL-01", "rule_id": "R-009", "counter_guard_id": "GUARD-NDA-TRADE-SECRETS", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"confidentiality_years": 3}, "phase1_context_slots": {"trade_secret_tail": true}, "decoy_values": [10, 30], "decoy_ids": ["return_days", "notice_days"],
-        "render_forms": {"confidentiality_years": ["three years", "36 months", "through the third anniversary"], "trade_secret_tail": ["trade secrets remain protected", "the trade-secret tail continues", "trade secrets survive while legally protected"]},
-        "counterfactual_twins": [{"varied_input": "confidentiality_years", "label_flipped": true}, {"varied_input": "trade_secret_tail", "label_flipped": true}, {"varied_input": "return_days", "label_flipped": false}, {"varied_input": "notice_days", "label_flipped": false}],
+        "counter_family_id": "CF-NDA-COMPELLED-V2",
+        "rule_id": "R-007",
+        "counter_guard_id": "GUARD-NDA-COMPELLED-V2",
+        "playbook_grounding": {
+          "position": "Compelled disclosure should require prompt notice where legally permitted and reasonable cooperation to seek protective treatment.",
+          "fallback": "Before any compelled disclosure, Recipient will, to the extent legally permitted, provide prompt notice and reasonable cooperation so Discloser may seek protective treatment.",
+          "escalation_trigger": "Escalate any carve-out from notice or cooperation obligations.",
+          "deterministic_checks": {
+            "must_not_contain": [
+              "without prior notice"
+            ]
+          }
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "reasonable_cooperation and (notice_legally_prohibited or compelled_notice_hours <= 24)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "compelled_notice_hours": [
+            12,
+            24,
+            36,
+            48
+          ],
+          "reasonable_cooperation": [
+            false,
+            true
+          ]
+        },
+        "phase1_context_slots": {
+          "notice_legally_prohibited": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          2,
+          10
+        ],
+        "decoy_ids": [
+          "protective_order_days",
+          "disclosure_log_days"
+        ],
+        "render_forms": {
+          "compelled_notice_hours": [
+            "express compelled notice hours",
+            "defined compelled notice hours",
+            "operative compelled notice hours condition"
+          ],
+          "reasonable_cooperation": [
+            "express reasonable cooperation",
+            "defined reasonable cooperation",
+            "operative reasonable cooperation condition"
+          ],
+          "notice_legally_prohibited": [
+            "express notice legally prohibited",
+            "defined notice legally prohibited",
+            "operative notice legally prohibited condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "compelled_notice_hours",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "reasonable_cooperation",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "notice_legally_prohibited",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "protective_order_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "disclosure_log_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Before any compelled disclosure, Recipient will, to the extent legally permitted, provide prompt notice and reasonable cooperation so Discloser may seek protective treatment.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Recipient will give Discloser notice 24 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 4 days and updates the disclosure log within 20 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 24,
+                "reasonable_cooperation": true
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": false
+              },
+              "decoy_values": [
+                4,
+                20
+              ]
+            },
+            {
+              "text": "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 6 days and updates the disclosure log within 10 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 48,
+                "reasonable_cooperation": true
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": true
+              },
+              "decoy_values": [
+                6,
+                10
+              ]
+            },
+            {
+              "text": "Recipient will give Discloser notice 12 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 40 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 12,
+                "reasonable_cooperation": true
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": false
+              },
+              "decoy_values": [
+                8,
+                40
+              ]
+            },
+            {
+              "text": "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 2 days and updates the disclosure log within 30 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 24,
+                "reasonable_cooperation": true
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": true
+              },
+              "decoy_values": [
+                2,
+                30
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Recipient will give Discloser notice 48 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 6 days and updates the disclosure log within 40 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 48,
+                "reasonable_cooperation": true
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": false
+              },
+              "decoy_values": [
+                6,
+                40
+              ]
+            },
+            {
+              "text": "Recipient will give Discloser notice 24 hours before a compelled disclosure. Recipient has no obligation to cooperate in seeking protective treatment. Recipient preserves supporting material for a protective-order request for 4 days and updates the disclosure log within 10 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 24,
+                "reasonable_cooperation": false
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": false
+              },
+              "decoy_values": [
+                4,
+                10
+              ]
+            },
+            {
+              "text": "Where law temporarily prohibits advance notice, Recipient will notify Discloser promptly when the prohibition ends. Recipient has no obligation to cooperate in seeking protective treatment. Recipient preserves supporting material for a protective-order request for 2 days and updates the disclosure log within 20 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 12,
+                "reasonable_cooperation": false
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": true
+              },
+              "decoy_values": [
+                2,
+                20
+              ]
+            },
+            {
+              "text": "Recipient will give Discloser notice 36 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 30 days.",
+              "counter_text_slots": {
+                "compelled_notice_hours": 36,
+                "reasonable_cooperation": true
+              },
+              "phase1_context_slots": {
+                "notice_legally_prohibited": false
+              },
+              "decoy_values": [
+                8,
+                30
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-NDA-RETURN-V2",
+        "rule_id": "R-008",
+        "counter_guard_id": "GUARD-NDA-RETURN-V2",
+        "playbook_grounding": {
+          "position": "Return or destruction should occur promptly upon request, with archival and legal-hold copies remaining protected.",
+          "fallback": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
+          "escalation_trigger": "Escalate if the return/destruction period exceeds 30 days or retained copies are unprotected.",
+          "deterministic_checks": {
+            "must_not_contain": [
+              "ninety days"
+            ]
+          }
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "return_days <= 30 or (return_days <= 45 and certified_destruction and legal_hold_carveout_narrow)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "return_days": [
+            15,
+            30,
+            35,
+            40,
+            45,
+            60
+          ],
+          "certified_destruction": [
+            false,
+            true
+          ]
+        },
+        "phase1_context_slots": {
+          "legal_hold_carveout_narrow": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          7,
+          5
+        ],
+        "decoy_ids": [
+          "backup_cycle_days",
+          "destruction_log_days"
+        ],
+        "render_forms": {
+          "return_days": [
+            "express return days",
+            "defined return days",
+            "operative return days condition"
+          ],
+          "certified_destruction": [
+            "express certified destruction",
+            "defined certified destruction",
+            "operative certified destruction condition"
+          ],
+          "legal_hold_carveout_narrow": [
+            "express legal hold carveout narrow",
+            "defined legal hold carveout narrow",
+            "operative legal hold carveout narrow condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "return_days",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "certified_destruction",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "legal_hold_carveout_narrow",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "backup_cycle_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "destruction_log_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 15 days. Recipient need not certify completion. Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations. Ordinary backup media rotate every 21 days, and Recipient updates its destruction log within 20 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 15,
+                "certified_destruction": false
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": false
+              },
+              "decoy_values": [
+                21,
+                20
+              ]
+            },
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 30 days. Recipient need not certify completion. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 28 days, and Recipient updates its destruction log within 10 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 30,
+                "certified_destruction": false
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": true
+              },
+              "decoy_values": [
+                28,
+                10
+              ]
+            },
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 45 days. Recipient will certify completion in writing. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 7 days, and Recipient updates its destruction log within 5 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 45,
+                "certified_destruction": true
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": true
+              },
+              "decoy_values": [
+                7,
+                5
+              ]
+            },
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 35 days. Recipient will certify completion in writing. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 14 days, and Recipient updates its destruction log within 25 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 35,
+                "certified_destruction": true
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": true
+              },
+              "decoy_values": [
+                14,
+                25
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 35 days. Recipient need not certify completion. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 28 days, and Recipient updates its destruction log within 5 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 35,
+                "certified_destruction": false
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": true
+              },
+              "decoy_values": [
+                28,
+                5
+              ]
+            },
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 45 days. Recipient will certify completion in writing. Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations. Ordinary backup media rotate every 21 days, and Recipient updates its destruction log within 10 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 45,
+                "certified_destruction": true
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": false
+              },
+              "decoy_values": [
+                21,
+                10
+              ]
+            },
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 60 days. Recipient will certify completion in writing. Only archival or legal-hold copies strictly required by law or automated backup practice may remain, under continuing confidentiality obligations. Ordinary backup media rotate every 14 days, and Recipient updates its destruction log within 20 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 60,
+                "certified_destruction": true
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": true
+              },
+              "decoy_values": [
+                14,
+                20
+              ]
+            },
+            {
+              "text": "Upon request, Recipient will return or destroy Confidential Information within 40 days. Recipient need not certify completion. Archival copies retained through routine automated backup and copies held for documented legal, regulatory, or business-continuity needs remain protected by continuing confidentiality obligations. Ordinary backup media rotate every 7 days, and Recipient updates its destruction log within 25 days after completing the process.",
+              "counter_text_slots": {
+                "return_days": 40,
+                "certified_destruction": false
+              },
+              "phase1_context_slots": {
+                "legal_hold_carveout_narrow": false
+              },
+              "decoy_values": [
+                7,
+                25
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-NDA-SURVIVAL-V2",
+        "rule_id": "R-009",
+        "counter_guard_id": "GUARD-NDA-SURVIVAL-V2",
+        "playbook_grounding": {
+          "position": "Confidentiality obligations should last at least three years, and trade secrets should remain protected as long as they remain trade secrets.",
+          "fallback": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
+          "escalation_trigger": "Escalate if survival is shorter than three years or trade secrets expire automatically.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "ordinary_survival_years >= 3 and trade_secret_tail"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "ordinary_survival_years": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "phase1_context_slots": {
+          "trade_secret_tail": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          15,
+          6
+        ],
+        "decoy_ids": [
+          "renewal_notice_days",
+          "trade_secret_review_months"
+        ],
+        "render_forms": {
+          "ordinary_survival_years": [
+            "express ordinary survival years",
+            "defined ordinary survival years",
+            "operative ordinary survival years condition"
+          ],
+          "trade_secret_tail": [
+            "express trade secret tail",
+            "defined trade secret tail",
+            "operative trade secret tail condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "ordinary_survival_years",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "trade_secret_tail",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "renewal_notice_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "trade_secret_review_months",
+            "label_flipped": false
+          }
+        ],
         "expected_redline_text": "Confidentiality obligations continue for three years after disclosure, and trade secrets remain protected for so long as they qualify as trade secrets under applicable law.",
-        "acceptable": {"text": "Confidentiality lasts three years and trade secrets remain protected while they qualify; return occurs in 10 days and compelled-disclosure notice in 30 days.", "counter_text_slots": {"confidentiality_years": 3}, "phase1_context_slots": {"trade_secret_tail": true}, "decoy_values": [10, 30]},
-        "unacceptable": {"text": "Confidentiality lasts one year and all trade-secret protection ends then; return occurs in 10 days and compelled-disclosure notice in 30 days.", "counter_text_slots": {"confidentiality_years": 1}, "phase1_context_slots": {"trade_secret_tail": false}, "decoy_values": [10, 30]}
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Confidentiality obligations continue for 3 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 60 days' notice, and trade-secret designations are administratively reviewed every 24 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 3
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": true
+              },
+              "decoy_values": [
+                60,
+                24
+              ]
+            },
+            {
+              "text": "Confidentiality obligations continue for 4 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 15 days' notice, and trade-secret designations are administratively reviewed every 18 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 4
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": true
+              },
+              "decoy_values": [
+                15,
+                18
+              ]
+            },
+            {
+              "text": "Confidentiality obligations continue for 5 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 30 days' notice, and trade-secret designations are administratively reviewed every 12 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 5
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": true
+              },
+              "decoy_values": [
+                30,
+                12
+              ]
+            },
+            {
+              "text": "Confidentiality obligations continue for 3 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 45 days' notice, and trade-secret designations are administratively reviewed every 6 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 3
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": true
+              },
+              "decoy_values": [
+                45,
+                6
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Confidentiality obligations continue for 2 years after disclosure. Information qualifying as a trade secret remains protected for as long as it retains that status under applicable law. A party may request a survival-status confirmation on 15 days' notice, and trade-secret designations are administratively reviewed every 12 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 2
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": true
+              },
+              "decoy_values": [
+                15,
+                12
+              ]
+            },
+            {
+              "text": "Confidentiality obligations continue for 3 years after disclosure. Trade-secret protection expires automatically at the end of the same 3-year period. A party may request a survival-status confirmation on 60 days' notice, and trade-secret designations are administratively reviewed every 18 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 3
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": false
+              },
+              "decoy_values": [
+                60,
+                18
+              ]
+            },
+            {
+              "text": "Confidentiality obligations continue for 1 years after disclosure. Trade-secret protection expires automatically at the end of the same 1-year period. A party may request a survival-status confirmation on 45 days' notice, and trade-secret designations are administratively reviewed every 24 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 1
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": false
+              },
+              "decoy_values": [
+                45,
+                24
+              ]
+            },
+            {
+              "text": "Confidentiality obligations continue for 4 years after disclosure. Trade-secret protection expires automatically at the end of the same 4-year period. A party may request a survival-status confirmation on 30 days' notice, and trade-secret designations are administratively reviewed every 6 months without ending protection.",
+              "counter_text_slots": {
+                "ordinary_survival_years": 4
+              },
+              "phase1_context_slots": {
+                "trade_secret_tail": false
+              },
+              "decoy_values": [
+                30,
+                6
+              ]
+            }
+          ]
+        }
       }
     ],
     "benign_change_templates": [
-      {"template_id": "BC-NDA-NONSOLICIT", "rule_id": "R-013", "anchor_terms": ["non-solicit"], "text": "The parties confirm that this NDA does not include a non-solicit covenant."},
-      {"template_id": "BC-NDA-NY", "rule_id": "R-014", "anchor_terms": ["New York"], "text": "The parties confirm that New York law governs this Agreement."}
+      {
+        "template_id": "BC-NDA-NONSOLICIT",
+        "rule_id": "R-013",
+        "anchor_terms": [
+          "non-solicit"
+        ],
+        "text": "The parties confirm that this NDA does not include a non-solicit covenant."
+      },
+      {
+        "template_id": "BC-NDA-NY",
+        "rule_id": "R-014",
+        "anchor_terms": [
+          "New York"
+        ],
+        "text": "The parties confirm that New York law governs this Agreement."
+      }
     ],
-    "novel_deviation_templates": [{"template_id": "ND-NDA-RESIDUALS", "rule_id": "R-012", "destination_terms": ["Confidential"], "text": "Recipient may freely use all Confidential Information retained in unaided memory for any purpose."}]
+    "novel_deviation_templates": [
+      {
+        "template_id": "ND-NDA-RESIDUALS",
+        "rule_id": "R-012",
+        "destination_terms": [
+          "Confidential"
+        ],
+        "text": "Recipient may freely use all Confidential Information retained in unaided memory for any purpose."
+      }
+    ]
   }
 }

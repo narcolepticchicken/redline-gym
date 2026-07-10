@@ -1,0 +1,140 @@
+{
+  "expected_child_counts": {
+    "total": 8,
+    "harmful": 4,
+    "benign": 4,
+    "prior": 6,
+    "novel": 1,
+    "canary": 1
+  },
+  "events": [
+    {
+      "event_id": "EV-NEW-DEVIATION",
+      "event_type": "new_deviation",
+      "children": [
+        {
+          "change_id": "CH-NEW-DEVIATION",
+          "child_role": "sole",
+          "origin": "novel_insertion",
+          "expected_disposition": "reject",
+          "rule_id": "R-012"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-CANARY",
+      "event_type": "benign_canary_change",
+      "children": [
+        {
+          "change_id": "CH-CANARY",
+          "child_role": "sole",
+          "origin": "canary_probe",
+          "expected_disposition": "accept",
+          "rule_id": "R-013"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-COUNTER-1",
+      "event_type": "counter_proposal",
+      "children": [
+        {
+          "change_id": "CH-COUNTER-1",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-002"
+        }
+      ],
+      "counter_inputs": {
+        "counter_family_id": "CF-NDA-AFFILIATES-V2",
+        "counter_class": "acceptable",
+        "counter_text_slots": {
+          "affiliate_covered": true,
+          "party_responsible": true
+        },
+        "phase1_context_slots": {
+          "affiliate_participates": true
+        },
+        "decoy_values": [
+          10,
+          20
+        ]
+      }
+    },
+    {
+      "event_id": "EV-REGRESSION",
+      "event_type": "regression",
+      "children": [
+        {
+          "change_id": "CH-REGRESSION",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "reject",
+          "rule_id": "R-006"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-SNEAK",
+      "event_type": "sneaky_reinsert",
+      "children": [
+        {
+          "change_id": "CH-SNEAK-INSERTED",
+          "child_role": "inserted_effect",
+          "origin": "prior_position",
+          "expected_disposition": "reject",
+          "rule_id": "R-004"
+        },
+        {
+          "change_id": "CH-SNEAK-SOURCE",
+          "child_role": "source_cleanup",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-004"
+        }
+      ]
+    },
+    {
+      "event_id": "EV-COUNTER-2",
+      "event_type": "counter_proposal",
+      "children": [
+        {
+          "change_id": "CH-COUNTER-2",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "reject",
+          "rule_id": "R-007"
+        }
+      ],
+      "counter_inputs": {
+        "counter_family_id": "CF-NDA-COMPELLED-V2",
+        "counter_class": "unacceptable",
+        "counter_text_slots": {
+          "compelled_notice_hours": 36,
+          "reasonable_cooperation": true
+        },
+        "phase1_context_slots": {
+          "notice_legally_prohibited": false
+        },
+        "decoy_values": [
+          8,
+          30
+        ]
+      }
+    },
+    {
+      "event_id": "EV-CONCESSION",
+      "event_type": "concession",
+      "children": [
+        {
+          "change_id": "CH-CONCESSION",
+          "child_role": "sole",
+          "origin": "prior_position",
+          "expected_disposition": "accept",
+          "rule_id": "R-010"
+        }
+      ]
+    }
+  ]
+}

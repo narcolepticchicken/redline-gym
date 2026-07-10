@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D002"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D003"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D001",
+      "rule_id": "R-012",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Vendor will provide its then-current standard security summary upon written request no more than once per year.",
+      "proposed_redline": "Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D004",
+      "rule_id": "R-007",
+      "exact_quote": "Each Order Form has the initial term stated in it and then continues for additional periods of three years each unless either party sends non-continuation notice at least 60 days before the current period ends.",
+      "proposed_redline": "Each Order Form will have an initial term of no more than one year and will not automatically extend unless Customer signs a renewal order or gives written approval for a renewal period of one year or less."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-008",
+      "exact_quote": "The disclaimer excludes implied warranties. Vendor's express warranties and service-level commitments remain enforceable. Data-protection, confidentiality, indemnification, and expressly stated remedies are also disclaimed. Customer gives warranty-claim detail within 30 days after discovery, and Vendor responds to a remedy request within 5 days.",
+      "proposed_redline": "Warranty disclaimers do not limit Vendor's express warranties, service-level commitments, data protection obligations, confidentiality obligations, indemnification obligations, or remedies expressly stated in this Agreement."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-009",
+      "exact_quote": "\n\nVendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval.",
+      "proposed_redline": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties."
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

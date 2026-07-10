@@ -1,0 +1,68 @@
+{
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D005"
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-002",
+    "exact_quote": "Investor consent is required for any action the Investor considers material, whether or not enumerated or separately agreed by Company. A consent request remains open for 10 days, and supporting board materials are circulated 2 days before the vote.",
+    "proposed_redline": "Investor consent rights are limited to the enumerated protective provisions in this Agreement, and no other investor approval is required unless Company separately agrees in writing."
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-003",
+    "exact_quote": "\n\nInvestor consent is required for every budget, hire, vendor contract, and ordinary-course product decision.",
+    "proposed_redline": "Company may conduct ordinary-course operations without investor consent, including budgets, hiring, vendor contracts, product decisions, and routine financing administration."
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D003",
+    "rule_id": "R-006",
+    "exact_quote": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Major Investors on the same terms stated in the transfer notice. Only if the Major Investors decline or fail to purchase all offered shares may the Company exercise a secondary purchase right.",
+    "proposed_redline": "Before any holder transfers shares other than to a Permitted Transferee, the holder must first offer the shares to the Company on the same terms stated in the transfer notice. Only if the Company declines or fails to purchase all offered shares may eligible investors exercise any secondary purchase right."
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D001"
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-004",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Each stockholder must provide any indemnity, escrow, holdback, non-compete covenant, or other seller obligation requested by the buyer as a condition to the drag-along.",
+    "proposed_redline": "No stockholder will be required to provide uncapped indemnity, non-pro rata liability, or a non-compete covenant as a condition to the drag-along."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  }
+}

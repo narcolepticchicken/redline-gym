@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-005",
+      "exact_quote": "\n\nCompany may not terminate Executive before the end of a guaranteed three-year employment term.",
+      "proposed_redline": "Delete any fixed-term employment guarantee and state that employment is at will and may end at any time by either party."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-007",
+      "exact_quote": "Company may conduct annual compensation and performance reviews in its discretion. At each annual review, Company will credit Executive with 25% additional vesting of then-unvested equity notwithstanding any plan or award terms.",
+      "proposed_redline": "Company may conduct annual compensation and performance reviews in its discretion. Those reviews do not guarantee any future bonus, equity grant, vesting change, title, duties, authority, or continued employment."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D002",
+      "rule_id": "R-004",
+      "exact_quote": "Executive excludes an improvement made during employment because a related background invention appears on the schedule, including the employment-created improvement itself. Executive discloses potentially assigned inventions within 5 days and may propose clerical schedule updates within 20 days.",
+      "proposed_redline": "Executive will protect Company confidential information, assign all inventions and work product created within the scope of employment or using Company resources, and list excluded prior inventions on a signed schedule."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D004",
+      "rule_id": "R-010",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Incentive compensation and equity paid or granted under this Agreement will not be reduced, recovered, or forfeited after payment or vesting except by Executive's written consent.",
+      "proposed_redline": "All incentive compensation and equity are subject to applicable clawback, recoupment, and forfeiture requirements under law, listing rules, and Company policy."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D003"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D004"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

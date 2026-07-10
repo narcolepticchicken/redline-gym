@@ -1,0 +1,41 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION-1",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION-2",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D002"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION-4",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D004"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION-5",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D005"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION-3",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D003"
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

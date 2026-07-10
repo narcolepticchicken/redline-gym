@@ -83,7 +83,7 @@ def generate_response(
     playbook = _load_json(playbook_path)
     playbook_id = playbook["playbook_id"]
     family_data = _load_json(family_file)
-    if family_data.get("_status") != "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending":
+    if family_data.get("_status") != "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending":
         raise ResponseGenerationError("family file is missing the required machine-drafted signing-gate status")
     try:
         bundle = family_data[playbook_id]
@@ -97,14 +97,14 @@ def generate_response(
 
     rule_by_id = {rule["rule_id"]: rule for rule in playbook.get("rules", [])}
     canary_rule_ids = {rule_id for rule_id, rule in rule_by_id.items() if rule.get("is_canary") is True}
-    matching = [(family, next((d for d in deviations if d["rule_id"] == family["rule_id"]), None)) for family in families]
-    matching = [(family, deviation) for family, deviation in matching if deviation is not None]
+    # family_design_v2 §6: choose within each matching rule before choosing two
+    # distinct seeded deviations.  The old sorted-first walk made later family
+    # variants unreachable and prevented a meaningful family-held-out split.
     distinct: list[tuple[dict[str, Any], dict[str, Any]]] = []
-    used_deviations: set[str] = set()
-    for family, deviation in matching:
-        if deviation["deviation_id"] not in used_deviations:
-            distinct.append((family, deviation))
-            used_deviations.add(deviation["deviation_id"])
+    for deviation in deviations:
+        candidates = [family for family in families if family["rule_id"] == deviation["rule_id"]]
+        if candidates:
+            distinct.append((rng.choice(candidates), deviation))
     if len(distinct) < 2:
         raise ResponseGenerationError(
             f"{playbook_id} needs two different counter families matching two of the five seeded rules; found {len(distinct)}"
@@ -157,8 +157,17 @@ def generate_response(
         event_id="EV-SNEAK", change_id="CH-SNEAK-INSERTED", after_text=sneak_insert,
     ))
 
+    # One private pool index is shared by the AU pair. This couples only the
+    # nuisance route/decoy draw, never either label, and makes a task contribute
+    # matched marginal mass to both classes. The prose variant still varies by
+    # seed because the index is drawn from the episode RNG.
+    render_pool_index = rng.randrange(min(
+        len(family["render_pools"][counter_class])
+        for (family, _), counter_class in zip(counter_assignments, counter_classes)
+    ))
     for index, ((family, deviation), counter_class) in enumerate(zip(counter_assignments, counter_classes), start=1):
-        render = family[counter_class]
+        pool = family["render_pools"][counter_class]
+        render = pool[render_pool_index % len(pool)]
         event_id = f"EV-COUNTER-{index}"
         patch = _prior_replace(
             canonical, deviation, deviation_anchors[deviation["deviation_id"]],

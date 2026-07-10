@@ -1,0 +1,68 @@
+{
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-003",
+    "exact_quote": "Custodian will maintain account records showing balances credited to Customer and will make those records available through the custody portal.",
+    "proposed_redline": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law. Custodian will maintain records sufficient to identify Customer Assets as held for Customer."
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-007",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Customer will process release requests in the ordinary course when staffing, chain conditions, and portfolio review procedures permit, and estimated timing shown in the portal is nonbinding.",
+    "proposed_redline": "Custodian will process Authorized Instructions for withdrawals within 24 hours after receipt and in any event no later than 2 business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer."
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-002",
+    "exact_quote": "\n\nCustodian may pledge or rehypothecate Customer Assets for its own account without Customer consent.",
+    "proposed_redline": "Customer retains all beneficial ownership of Customer Assets, and Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for Custodian's own account without Customer's prior written consent."
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D001"
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-006",
+    "exact_quote": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 120 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 5 days and may be organized into 10 control-evidence categories.",
+    "proposed_redline": "Custodian will provide annual SOC 2 Type II or equivalent controls reporting, prompt notice of material control failures, and reasonable written follow-up information needed for Customer's treasury, audit, and regulatory controls."
+  }
+}

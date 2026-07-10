@@ -1,0 +1,68 @@
+{
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-005",
+    "exact_quote": "\n\nCompany may not terminate Executive before the end of a guaranteed three-year employment term.",
+    "proposed_redline": "Delete any fixed-term employment guarantee and state that employment is at will and may end at any time by either party."
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-002",
+    "exact_quote": "Cause extends to the identified minor nonmaterial event after a 15-day cure period even though it does not materially breach a duty, policy, law, or agreement and does not materially harm Company. Company provides the written Cause notice within 1 days after its determination and offers an investigation meeting within 8 days.",
+    "proposed_redline": "Cause includes material failure to perform duties, violation of Company policy, dishonesty, fraud, misconduct, breach of fiduciary duty, violation of law, material breach of the agreement, or conduct that materially harms Company."
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-012",
+    "exact_quote": "Executive may engage in outside employment, consulting, board service, or business activity if Executive determines it can be managed alongside Company responsibilities.",
+    "proposed_redline": "Executive will not engage in outside employment, consulting, board service, or business activity that conflicts with Company's business or Executive's duties unless Company gives prior written approval."
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D002",
+    "rule_id": "R-008",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: During employment and for 36 months after separation, Executive will not provide services to any business that competes with Company anywhere in North America.",
+    "proposed_redline": "During employment and for six months after separation, Executive will not provide substantially similar executive services to a business unit that directly competes with a Company product or service for which Executive had material responsibility, but only to the extent enforceable under applicable law."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D001"
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D002",
+    "rule_id": "R-003",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: \"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, but excludes Vendor Methods created, refined, or reduced to practice during the engagement.",
+    "proposed_redline": "\"Deliverables\" means reports, configured connectors, mappings, dashboards, documentation, and other final items identified in an Order Form, including project-specific tools, frameworks, and know-how developed in the course of performance."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-006",
+    "exact_quote": "Customer may terminate an Order Form for convenience on 45 days' written notice and owes accrued undisputed amounts and approved expenses only, with no charge for unused services after termination. Vendor submits the final invoice within 20 days, and Customer may dispute an expense item for 10 days after receipt.",
+    "proposed_redline": "Customer may terminate any Order Form for convenience on 30 days' written notice and will owe only fees for services performed before the effective termination date plus undisputed reimbursable expenses approved in writing."
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-012",
+    "exact_quote": "Vendor will provide its then-current standard security summary upon written request no more than once per year.",
+    "proposed_redline": "Upon reasonable notice, Customer or its independent auditor may review Vendor's records, systems, and controls relevant to the services, security, privacy, and compliance no more than once per year, and more frequently after a material incident or reasonable cause."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-009",
+    "exact_quote": "\n\nVendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval.",
+    "proposed_redline": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties."
+  }
+}

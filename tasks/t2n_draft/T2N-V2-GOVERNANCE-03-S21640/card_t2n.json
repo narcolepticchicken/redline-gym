@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D005"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D003",
+      "rule_id": "R-003",
+      "exact_quote": "Requisite Holder approval is required before approving annual budgets, hiring vice presidents, entering vendor contracts above $50,000, changing product roadmaps, signing customer arrangements, or administering routine financing matters.",
+      "proposed_redline": "No investor approval is required for matters not listed in this Section 4."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-003",
+      "exact_quote": "\n\nInvestor consent is required for every budget, hire, vendor contract, and ordinary-course product decision.",
+      "proposed_redline": "Company may conduct ordinary-course operations without investor consent, including budgets, hiring, vendor contracts, product decisions, and routine financing administration."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D002",
+      "rule_id": "R-007",
+      "exact_quote": "A transfer to the identified affiliate is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 10 days and delivers the executed joinder within 1 days after transfer.",
+      "proposed_redline": "Transfer restrictions do not apply to permitted transfers to affiliates, estate planning vehicles, or family members if the recipient agrees in writing to be bound by this Agreement."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D004"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-013",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: \"Major Investor\" means a holder of at least 100,000 shares of Series A Preferred Stock. \"Requisite Holders\" means any single Major Investor holding at least 10% of the outstanding Series A Preferred Stock.",
+      "proposed_redline": "\"Major Investor\" means a holder of at least 1,000,000 shares of Series A Preferred Stock. \"Requisite Holders\" means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

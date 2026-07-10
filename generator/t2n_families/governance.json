@@ -1,30 +1,781 @@
 {
-  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
+  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
   "PB-GOV-001": {
     "counter_families": [
       {
-        "counter_family_id": "CF-GOV-BOARD-01", "rule_id": "R-001", "counter_guard_id": "GUARD-GOV-FOUNDER-MAJORITY", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"founder_seats": 3}, "phase1_context_slots": {"founder_majority_preserved": true}, "decoy_values": [1, 30], "decoy_ids": ["investor_seats", "notice_days"],
-        "render_forms": {"founder_seats": ["three Founder Designees", "3 founder-appointed directors", "a trio of Founder Designees"], "founder_majority_preserved": ["founders retain a majority", "founder designees control more than half", "the founder bloc remains the board majority"]},
-        "counterfactual_twins": [{"varied_input": "founder_seats", "label_flipped": true}, {"varied_input": "founder_majority_preserved", "label_flipped": true}, {"varied_input": "investor_seats", "label_flipped": false}, {"varied_input": "notice_days", "label_flipped": false}],
-        "expected_redline_text": "The Board will consist of five directors: three Founder Designees, one Series A Designee, and one independent director approved by the Founder Designees and the Requisite Holders.",
-        "acceptable": {"text": "The five-member Board has three Founder Designees, preserving the founder majority, plus one Series A seat and one independent approved by the Founder Designees and Requisite Holders; meeting notice remains 30 days.", "counter_text_slots": {"founder_seats": 3}, "phase1_context_slots": {"founder_majority_preserved": true}, "decoy_values": [1, 30]},
-        "unacceptable": {"text": "The five-member Board has two Founder Designees and no founder majority, plus one Series A seat; meeting notice remains 30 days.", "counter_text_slots": {"founder_seats": 2}, "phase1_context_slots": {"founder_majority_preserved": false}, "decoy_values": [1, 30]}
+        "counter_family_id": "CF-GOV-PROTECTIVE-V2",
+        "rule_id": "R-002",
+        "counter_guard_id": "GUARD-GOV-PROTECTIVE-V2",
+        "playbook_grounding": {
+          "position": "Protective provisions should be limited to a closed, enumerated list of major corporate actions and should not create an open-ended investor veto.",
+          "fallback": "Investor consent rights are limited to the enumerated protective provisions in this Agreement, and no other investor approval is required unless Company separately agrees in writing.",
+          "escalation_trigger": "Escalate if investors receive approval rights over unspecified, discretionary, or open-ended matters.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "matter_enumerated or separately_agreed_in_writing"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "matter_enumerated": [
+            false,
+            true
+          ]
+        },
+        "phase1_context_slots": {
+          "separately_agreed_in_writing": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          3,
+          2
+        ],
+        "decoy_ids": [
+          "consent_response_days",
+          "board_packet_days"
+        ],
+        "render_forms": {
+          "matter_enumerated": [
+            "express matter enumerated",
+            "defined matter enumerated",
+            "operative matter enumerated condition"
+          ],
+          "separately_agreed_in_writing": [
+            "express separately agreed in writing",
+            "defined separately agreed in writing",
+            "operative separately agreed in writing condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "matter_enumerated",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "separately_agreed_in_writing",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "consent_response_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "board_packet_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Investor consent rights are limited to the enumerated protective provisions in this Agreement, and no other investor approval is required unless Company separately agrees in writing.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Investor consent is required for the identified action because it appears on the Agreement's closed list of protective provisions. A consent request remains open for 3 days, and supporting board materials are circulated 2 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": true
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": false
+              },
+              "decoy_values": [
+                3,
+                2
+              ]
+            },
+            {
+              "text": "Investor consent is required for the specifically identified matter under Company's separate signed written approval covenant. A consent request remains open for 5 days, and supporting board materials are circulated 8 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": false
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": true
+              },
+              "decoy_values": [
+                5,
+                8
+              ]
+            },
+            {
+              "text": "Investor consent is required for the identified action because it appears on the Agreement's closed list of protective provisions. A consent request remains open for 7 days, and supporting board materials are circulated 6 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": true
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": true
+              },
+              "decoy_values": [
+                7,
+                6
+              ]
+            },
+            {
+              "text": "Investor consent is required for the specifically identified matter under Company's separate signed written approval covenant. A consent request remains open for 10 days, and supporting board materials are circulated 4 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": false
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": true
+              },
+              "decoy_values": [
+                10,
+                4
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Investor consent is required for any action the Investor considers material, whether or not enumerated or separately agreed by Company. A consent request remains open for 5 days, and supporting board materials are circulated 6 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": false
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": false
+              },
+              "decoy_values": [
+                5,
+                6
+              ]
+            },
+            {
+              "text": "Investor consent is required for any action the Investor considers material, whether or not enumerated or separately agreed by Company. A consent request remains open for 3 days, and supporting board materials are circulated 8 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": false
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": false
+              },
+              "decoy_values": [
+                3,
+                8
+              ]
+            },
+            {
+              "text": "Investor consent is required for any action the Investor considers material, whether or not enumerated or separately agreed by Company. A consent request remains open for 10 days, and supporting board materials are circulated 2 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": false
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": false
+              },
+              "decoy_values": [
+                10,
+                2
+              ]
+            },
+            {
+              "text": "Investor consent is required for any action the Investor considers material, whether or not enumerated or separately agreed by Company. A consent request remains open for 7 days, and supporting board materials are circulated 4 days before the vote.",
+              "counter_text_slots": {
+                "matter_enumerated": false
+              },
+              "phase1_context_slots": {
+                "separately_agreed_in_writing": false
+              },
+              "decoy_values": [
+                7,
+                4
+              ]
+            }
+          ]
+        }
       },
       {
-        "counter_family_id": "CF-GOV-INFORMATION-01", "rule_id": "R-008", "counter_guard_id": "GUARD-GOV-SENSITIVITY", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"reporting_months": 3}, "phase1_context_slots": {"sensitivity_limits_apply": true}, "decoy_values": [10, 30], "decoy_ids": ["inspection_days", "audit_days"],
-        "render_forms": {"reporting_months": ["quarterly statements", "statements every three months", "four reporting periods per year"], "sensitivity_limits_apply": ["competitive-sensitivity limits apply", "privilege and trade secrets remain protected", "access remains subject to confidentiality limits"]},
-        "counterfactual_twins": [{"varied_input": "reporting_months", "label_flipped": true}, {"varied_input": "sensitivity_limits_apply", "label_flipped": true}, {"varied_input": "inspection_days", "label_flipped": false}, {"varied_input": "audit_days", "label_flipped": false}],
-        "expected_redline_text": "Major Investors receive quarterly unaudited financial statements, annual audited financial statements, and reasonable inspection access during business hours subject to confidentiality, privilege, trade-secret, and competitive-sensitivity limits.",
-        "acceptable": {"text": "Major Investors receive statements every three months, with inspection subject to privilege, trade-secret, and sensitivity limits; requests use 10 days' notice and audits use 30 days' notice.", "counter_text_slots": {"reporting_months": 3}, "phase1_context_slots": {"sensitivity_limits_apply": true}, "decoy_values": [10, 30]},
-        "unacceptable": {"text": "Major Investors receive monthly statements and unrestricted inspection without privilege, trade-secret, or sensitivity limits; requests use 10 days' notice and audits use 30 days' notice.", "counter_text_slots": {"reporting_months": 1}, "phase1_context_slots": {"sensitivity_limits_apply": false}, "decoy_values": [10, 30]}
+        "counter_family_id": "CF-GOV-ROFR-V2",
+        "rule_id": "R-006",
+        "counter_guard_id": "GUARD-GOV-ROFR-V2",
+        "playbook_grounding": {
+          "position": "ROFR rights should run to the Company first before any investor secondary purchase right.",
+          "fallback": "Before any investor secondary right applies, Company has the first right to purchase offered shares on the same terms stated in the transfer notice.",
+          "escalation_trigger": "Escalate if investors can buy offered shares before Company has the first purchase right.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "company_declined or investor_purchase_delay_days >= company_rofr_days"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "investor_purchase_delay_days": [
+            10,
+            15,
+            20,
+            25,
+            30
+          ]
+        },
+        "phase1_context_slots": {
+          "company_rofr_days": [
+            20,
+            30
+          ],
+          "company_declined": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          2,
+          5
+        ],
+        "decoy_ids": [
+          "transfer_notice_pages",
+          "closing_days"
+        ],
+        "render_forms": {
+          "investor_purchase_delay_days": [
+            "express investor purchase delay days",
+            "defined investor purchase delay days",
+            "operative investor purchase delay days condition"
+          ],
+          "company_rofr_days": [
+            "express company rofr days",
+            "defined company rofr days",
+            "operative company rofr days condition"
+          ],
+          "company_declined": [
+            "express company declined",
+            "defined company declined",
+            "operative company declined condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "investor_purchase_delay_days",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "company_rofr_days",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "company_declined",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "transfer_notice_pages",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "closing_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Before any investor secondary right applies, Company has the first right to purchase offered shares on the same terms stated in the transfer notice.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Company has 20 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed only after 20 days, once Company's first-purchase period has expired. The transfer notice may include up to 4 pages of term detail, and an authorized secondary closing occurs within 7 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 20
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 20,
+                "company_declined": false
+              },
+              "decoy_values": [
+                4,
+                7
+              ]
+            },
+            {
+              "text": "Company has 30 days to exercise its first right to purchase offered shares on the transfer-notice terms. Company has declined that right, so the signed investor secondary right may proceed on the same terms. The transfer notice may include up to 6 pages of term detail, and an authorized secondary closing occurs within 5 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 10
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 30,
+                "company_declined": true
+              },
+              "decoy_values": [
+                6,
+                5
+              ]
+            },
+            {
+              "text": "Company has 30 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed only after 30 days, once Company's first-purchase period has expired. The transfer notice may include up to 8 pages of term detail, and an authorized secondary closing occurs within 18 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 30
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 30,
+                "company_declined": false
+              },
+              "decoy_values": [
+                8,
+                18
+              ]
+            },
+            {
+              "text": "Company has 20 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed only after 25 days, once Company's first-purchase period has expired. The transfer notice may include up to 2 pages of term detail, and an authorized secondary closing occurs within 15 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 25
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 20,
+                "company_declined": false
+              },
+              "decoy_values": [
+                2,
+                15
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Company has 20 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed after 15 days, before Company's first-purchase period has expired. The transfer notice may include up to 6 pages of term detail, and an authorized secondary closing occurs within 18 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 15
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 20,
+                "company_declined": false
+              },
+              "decoy_values": [
+                6,
+                18
+              ]
+            },
+            {
+              "text": "Company has 30 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed after 25 days, before Company's first-purchase period has expired. The transfer notice may include up to 4 pages of term detail, and an authorized secondary closing occurs within 5 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 25
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 30,
+                "company_declined": false
+              },
+              "decoy_values": [
+                4,
+                5
+              ]
+            },
+            {
+              "text": "Company has 20 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed after 10 days, before Company's first-purchase period has expired. The transfer notice may include up to 2 pages of term detail, and an authorized secondary closing occurs within 7 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 10
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 20,
+                "company_declined": false
+              },
+              "decoy_values": [
+                2,
+                7
+              ]
+            },
+            {
+              "text": "Company has 30 days to exercise its first right to purchase offered shares on the transfer-notice terms. The investor secondary right may proceed after 20 days, before Company's first-purchase period has expired. The transfer notice may include up to 8 pages of term detail, and an authorized secondary closing occurs within 15 days after election.",
+              "counter_text_slots": {
+                "investor_purchase_delay_days": 20
+              },
+              "phase1_context_slots": {
+                "company_rofr_days": 30,
+                "company_declined": false
+              },
+              "decoy_values": [
+                8,
+                15
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-GOV-TRANSFER-V2",
+        "rule_id": "R-007",
+        "counter_guard_id": "GUARD-GOV-TRANSFER-V2",
+        "playbook_grounding": {
+          "position": "Transfer restrictions should include customary permitted-transferee carve-outs for affiliates, estate planning vehicles, and family members, while keeping recipients bound by the agreement.",
+          "fallback": "Transfer restrictions do not apply to permitted transfers to affiliates, estate planning vehicles, or family members if the recipient agrees in writing to be bound by this Agreement.",
+          "escalation_trigger": "Escalate if transfer limits omit customary permitted-transferee carve-outs or fail to bind recipients.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "transferee_type in {'affiliate', 'estate_vehicle', 'family_member'} and recipient_bound_in_writing"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "transferee_type": [
+            "affiliate",
+            "estate_vehicle",
+            "family_member",
+            "unrelated_third_party"
+          ]
+        },
+        "phase1_context_slots": {
+          "recipient_bound_in_writing": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          3,
+          1
+        ],
+        "decoy_ids": [
+          "transfer_notice_days",
+          "joinder_delivery_days"
+        ],
+        "render_forms": {
+          "transferee_type": [
+            "express transferee type",
+            "defined transferee type",
+            "operative transferee type condition"
+          ],
+          "recipient_bound_in_writing": [
+            "express recipient bound in writing",
+            "defined recipient bound in writing",
+            "operative recipient bound in writing condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "transferee_type",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "recipient_bound_in_writing",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "transfer_notice_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "joinder_delivery_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Transfer restrictions do not apply to permitted transfers to affiliates, estate planning vehicles, or family members if the recipient agrees in writing to be bound by this Agreement.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "A transfer to the identified affiliate is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 7 days and delivers the executed joinder within 3 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "affiliate"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": true
+              },
+              "decoy_values": [
+                7,
+                3
+              ]
+            },
+            {
+              "text": "A transfer to the identified estate vehicle is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 10 days and delivers the executed joinder within 2 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "estate_vehicle"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": true
+              },
+              "decoy_values": [
+                10,
+                2
+              ]
+            },
+            {
+              "text": "A transfer to the identified family member is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 3 days and delivers the executed joinder within 1 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "family_member"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": true
+              },
+              "decoy_values": [
+                3,
+                1
+              ]
+            },
+            {
+              "text": "A transfer to the identified affiliate is permitted only because the recipient agrees in writing to be bound by this Agreement. The transferor gives administrative notice within 5 days and delivers the executed joinder within 4 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "affiliate"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": true
+              },
+              "decoy_values": [
+                5,
+                4
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "A transfer to the identified affiliate is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 10 days and delivers the executed joinder within 1 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "affiliate"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": false
+              },
+              "decoy_values": [
+                10,
+                1
+              ]
+            },
+            {
+              "text": "A transfer to the identified unrelated third party is exempt from the ordinary transfer restrictions solely because the recipient signs a joinder, although it is not a customary permitted transferee. The transferor gives administrative notice within 7 days and delivers the executed joinder within 2 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "unrelated_third_party"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": true
+              },
+              "decoy_values": [
+                7,
+                2
+              ]
+            },
+            {
+              "text": "A transfer to the identified family member is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 5 days and delivers the executed joinder within 3 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "family_member"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": false
+              },
+              "decoy_values": [
+                5,
+                3
+              ]
+            },
+            {
+              "text": "A transfer to the identified estate vehicle is treated as a permitted transfer even though the recipient does not agree in writing to be bound. The transferor gives administrative notice within 3 days and delivers the executed joinder within 4 days after transfer.",
+              "counter_text_slots": {
+                "transferee_type": "estate_vehicle"
+              },
+              "phase1_context_slots": {
+                "recipient_bound_in_writing": false
+              },
+              "decoy_values": [
+                3,
+                4
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-GOV-THRESHOLD-V2",
+        "rule_id": "R-013",
+        "counter_guard_id": "GUARD-GOV-THRESHOLD-V2",
+        "playbook_grounding": {
+          "position": "Defined approval terms should not quietly lower investor consent thresholds; Requisite Holders and Major Investor definitions should preserve collective Series A consent by meaningful holders.",
+          "fallback": "Requisite Holders means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,000,000 shares of Series A Preferred Stock.",
+          "escalation_trigger": "Escalate if definitions lower investor approval thresholds or let a small holder exercise consent rights.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "series_a_approval_percent > 50 and major_investor_shares >= 1000000"
+        },
+        "has_qualitative_decisive_input": false,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "series_a_approval_percent": [
+            40,
+            45,
+            51,
+            55,
+            60,
+            75
+          ]
+        },
+        "phase1_context_slots": {
+          "major_investor_shares": [
+            1000000,
+            1100000,
+            1200000,
+            1500000,
+            500000,
+            750000
+          ]
+        },
+        "decoy_values": [
+          3,
+          12
+        ],
+        "decoy_ids": [
+          "notice_record_days",
+          "vote_tabulation_hours"
+        ],
+        "render_forms": {
+          "series_a_approval_percent": [
+            "express series a approval percent",
+            "defined series a approval percent",
+            "operative series a approval percent condition"
+          ],
+          "major_investor_shares": [
+            "express major investor shares",
+            "defined major investor shares",
+            "operative major investor shares condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "series_a_approval_percent",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "major_investor_shares",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "notice_record_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "vote_tabulation_hours",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Requisite Holders means Major Investors holding at least a majority of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1,000,000 shares of Series A Preferred Stock.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Requisite Holders means Major Investors holding at least 51% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1000000 Series A shares. Consent records are retained for 10 years, and the vote tabulation is circulated within 48 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 51
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 1000000
+              },
+              "decoy_values": [
+                10,
+                48
+              ]
+            },
+            {
+              "text": "Requisite Holders means Major Investors holding at least 60% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1200000 Series A shares. Consent records are retained for 3 years, and the vote tabulation is circulated within 36 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 60
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 1200000
+              },
+              "decoy_values": [
+                3,
+                36
+              ]
+            },
+            {
+              "text": "Requisite Holders means Major Investors holding at least 75% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1500000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 24 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 75
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 1500000
+              },
+              "decoy_values": [
+                5,
+                24
+              ]
+            },
+            {
+              "text": "Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1100000 Series A shares. Consent records are retained for 7 years, and the vote tabulation is circulated within 12 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 55
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 1100000
+              },
+              "decoy_values": [
+                7,
+                12
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Requisite Holders means Major Investors holding at least 40% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1000000 Series A shares. Consent records are retained for 3 years, and the vote tabulation is circulated within 24 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 40
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 1000000
+              },
+              "decoy_values": [
+                3,
+                24
+              ]
+            },
+            {
+              "text": "Requisite Holders means Major Investors holding at least 60% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 750000 Series A shares. Consent records are retained for 10 years, and the vote tabulation is circulated within 36 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 60
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 750000
+              },
+              "decoy_values": [
+                10,
+                36
+              ]
+            },
+            {
+              "text": "Requisite Holders means Major Investors holding at least 45% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 1200000 Series A shares. Consent records are retained for 7 years, and the vote tabulation is circulated within 48 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 45
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 1200000
+              },
+              "decoy_values": [
+                7,
+                48
+              ]
+            },
+            {
+              "text": "Requisite Holders means Major Investors holding at least 55% of the outstanding Series A Preferred Stock, voting as a single class, and Major Investor means a holder of at least 500000 Series A shares. Consent records are retained for 5 years, and the vote tabulation is circulated within 12 hours after the deadline.",
+              "counter_text_slots": {
+                "series_a_approval_percent": 55
+              },
+              "phase1_context_slots": {
+                "major_investor_shares": 500000
+              },
+              "decoy_values": [
+                5,
+                12
+              ]
+            }
+          ]
+        }
       }
     ],
     "benign_change_templates": [
-      {"template_id": "BC-GOV-DELAWARE", "rule_id": "R-014", "anchor_terms": ["Delaware"], "text": "The parties confirm that Delaware law governs this agreement."},
-      {"template_id": "BC-GOV-ARBITRATION", "rule_id": "R-015", "anchor_terms": ["arbitration"], "text": "The parties confirm that covered disputes will proceed through confidential arbitration."}
+      {
+        "template_id": "BC-GOV-DELAWARE",
+        "rule_id": "R-014",
+        "anchor_terms": [
+          "Delaware"
+        ],
+        "text": "The parties confirm that Delaware law governs this agreement."
+      },
+      {
+        "template_id": "BC-GOV-ARBITRATION",
+        "rule_id": "R-015",
+        "anchor_terms": [
+          "arbitration"
+        ],
+        "text": "The parties confirm that covered disputes will proceed through confidential arbitration."
+      }
     ],
-    "novel_deviation_templates": [{"template_id": "ND-GOV-VETO", "rule_id": "R-003", "destination_terms": ["Operations"], "text": "Investor consent is required for every budget, hire, vendor contract, and ordinary-course product decision."}]
+    "novel_deviation_templates": [
+      {
+        "template_id": "ND-GOV-VETO",
+        "rule_id": "R-003",
+        "destination_terms": [
+          "Operations"
+        ],
+        "text": "Investor consent is required for every budget, hire, vendor contract, and ordinary-course product decision."
+      }
+    ]
   }
 }

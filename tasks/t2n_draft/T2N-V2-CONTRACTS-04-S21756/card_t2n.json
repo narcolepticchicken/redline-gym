@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-012",
+      "exact_quote": "\n\nRecipient may freely use all Confidential Information retained in unaided memory for any purpose.",
+      "proposed_redline": "Delete the residual knowledge clause unless expressly approved by the client in writing."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D002"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-006",
+      "exact_quote": "Recipient may disclose Confidential Information to its directors, officers, employees, attorneys, accountants, consultants, financing sources, and other advisers who have a need to know the information for the Purpose.",
+      "proposed_redline": "Recipient may disclose Confidential Information to Representatives only on a need-to-know basis, provided those Representatives are bound by written or professional duties at least as protective as this Agreement."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D001",
+      "rule_id": "R-004",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Recipient may use Confidential Information for the Purpose and for internal business planning, product evaluation, and commercial opportunity analysis related to the parties' discussions.",
+      "proposed_redline": "Recipient may use Confidential Information solely for the Purpose."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D004",
+      "rule_id": "R-007",
+      "exact_quote": "Recipient will give Discloser notice 36 hours before a compelled disclosure. Recipient will provide reasonable cooperation so Discloser may seek protective treatment, to the extent legally permitted. Recipient preserves supporting material for a protective-order request for 8 days and updates the disclosure log within 30 days.",
+      "proposed_redline": "Before any compelled disclosure, Recipient will, to the extent legally permitted, provide prompt notice and reasonable cooperation so Discloser may seek protective treatment."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D003"
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

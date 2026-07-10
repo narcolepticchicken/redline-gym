@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-003",
+      "exact_quote": "Upon payment, Vendor assigns Customer 75% of the right, title, and interest in project-specific deliverables. For embedded pre-existing materials, Vendor grants a perpetual license sufficient for Customer to use the deliverables. Customer has 15 days to identify delivery defects, and Vendor updates the embedded-material inventory within 40 days after a release.",
+      "proposed_redline": "Vendor assigns to Customer all right, title, and interest in project-specific deliverables upon payment, and grants Customer a perpetual license to any embedded pre-existing materials necessary to use those deliverables."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D004"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D003"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D002",
+      "rule_id": "R-011",
+      "exact_quote": "Vendor will maintain insurance it determines is commercially reasonable, including general liability coverage of at least $250,000 per occurrence if available on commercially reasonable terms.",
+      "proposed_redline": "Vendor will maintain commercially reasonable insurance at its own expense, including technology errors and omissions/cyber liability coverage of at least $5,000,000 per claim and commercial general liability coverage of at least $2,000,000 per occurrence."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D001",
+      "rule_id": "R-001",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Despite any contrary sentence, all recovery for Section 13 or Section 14 claims is limited to the amount stated in Section 16.",
+      "proposed_redline": "Despite any contrary sentence, the limitation in Section 16 does not apply to claims under Section 13 or Section 14."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-009",
+      "exact_quote": "\n\nVendor may amend any legal or commercial term by posting revised terms on its website, effective immediately without Customer approval.",
+      "proposed_redline": "No amendment, modification, or waiver is effective unless in a writing signed by authorized representatives of both parties."
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

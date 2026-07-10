@@ -1,0 +1,68 @@
+{
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D002",
+    "rule_id": "R-002",
+    "exact_quote": "Vendor retains ownership and may reuse Customer-specific customization assets for other customers; Customer receives only a nonexclusive export license, and export may take 30 days. Vendor refreshes the customization-asset inventory every 20 days and keeps each secure export link active for 24 hours.",
+    "proposed_redline": "Customer owns all fine-tuned weights, adapters, embeddings, prompts, configuration artifacts, and related deliverables created specifically for Customer; if Vendor cannot assign ownership, Customer receives exclusive use and portability rights."
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-001",
+    "exact_quote": "\n\nVendor may use Customer prompts, outputs, and telemetry to train and improve models without Customer opt-in.",
+    "proposed_redline": "Vendor may not use Customer Data, prompts, outputs, telemetry, embeddings, or fine-tuning files to train, tune, retrain, or improve any model or service except with Customer's prior written opt-in approval."
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D005"
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-001",
+    "exact_quote": "Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Notwithstanding Section 4, service improvement data may include prompts, outputs, telemetry, embeddings, and logs and may be used to evaluate, benchmark, and improve models and services.",
+    "proposed_redline": "Vendor will delete or return Customer Data after the retention period except for backups retained under a documented deletion cycle. Vendor may prepare aggregate operational reports about uptime, support tickets, and capacity planning, provided those reports do not include Customer Data."
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-008",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Vendor may process and store Customer Data in any region used by Vendor or its subprocessors. Vendor may retain prompts, outputs, telemetry, embeddings, and logs for up to 540 days for operations, analytics, support, and service planning.",
+    "proposed_redline": "Vendor will process and store Customer Data only in the Approved Regions. Vendor will retain prompts, outputs, telemetry, embeddings, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing."
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D001"
+  }
+}

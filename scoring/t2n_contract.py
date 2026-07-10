@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 from math import sqrt
 import re
 from typing import Any, Mapping, Sequence
@@ -149,6 +150,21 @@ def validate_counter_family(record: Mapping[str, Any]) -> list[str]:
     if len(context_slots) < 1: errors.append("requires at least one independently varied phase-1 context/reservation slot")
     if len(record.get("decoy_values", [])) < 2: errors.append("requires at least two same-surface-type decoys")
     decisive = [*counter_slots, *context_slots]
+    grounding = record.get("playbook_grounding", {})
+    grounding_text = " ".join([
+        str(grounding.get("position", "")),
+        str(grounding.get("fallback", "")),
+        str(grounding.get("escalation_trigger", "")),
+        json.dumps(grounding.get("deterministic_checks", {}), sort_keys=True),
+    ]).lower()
+    decisive_tokens = {
+        token.lower()
+        for slot in decisive
+        for token in str(slot).split("_")
+        if len(token) >= 4
+    }
+    if not any(token in grounding_text for token in decisive_tokens):
+        errors.append("no decisive slot name is grounded in playbook_grounding text")
     forms = record.get("render_forms", {})
     for slot in decisive:
         if len(forms.get(slot, [])) < 3: errors.append(f"decisive input {slot} requires at least three render forms")
@@ -160,6 +176,129 @@ def validate_counter_family(record: Mapping[str, Any]) -> list[str]:
         is_decisive = twin.get("varied_input") in decisive
         if bool(twin.get("label_flipped")) != is_decisive:
             errors.append(f"counterfactual twin {twin.get('varied_input')} flips contrary to signed truth table")
+
+    # family_design_v2 §§2-3: v4's formula-level declarations are tightened by
+    # checks over the complete authored render population.  No frozen reward
+    # arithmetic, transition row, weight, floor, or existing check changes.
+    pools = record.get("render_pools")
+    if not isinstance(pools, Mapping):
+        errors.append("requires authored render_pools for acceptable and unacceptable classes")
+        return errors
+    realized: dict[str, list[Mapping[str, Any]]] = {}
+    for label in ("acceptable", "unacceptable"):
+        pool = pools.get(label)
+        if not isinstance(pool, list) or len(pool) < 4:
+            errors.append(f"{label} render pool requires at least four realized renders")
+            realized[label] = []
+            continue
+        realized[label] = [render for render in pool if isinstance(render, Mapping)]
+        if len(realized[label]) != len(pool):
+            errors.append(f"{label} render pool contains a non-object render")
+
+    expected_counter = set(counter_slots)
+    expected_context = set(context_slots)
+    decoy_ids = list(record.get("decoy_ids", []))
+    for label, pool in realized.items():
+        for index, render in enumerate(pool):
+            prefix = f"{label} render {index}"
+            if not str(render.get("text", "")).strip():
+                errors.append(f"{prefix} requires nonempty fully realized text")
+            rendered_counter = render.get("counter_text_slots")
+            rendered_context = render.get("phase1_context_slots")
+            rendered_decoys = render.get("decoy_values")
+            if not isinstance(rendered_counter, Mapping) or set(rendered_counter) != expected_counter:
+                errors.append(f"{prefix} counter slot set differs from family declaration")
+            if not isinstance(rendered_context, Mapping) or set(rendered_context) != expected_context:
+                errors.append(f"{prefix} context slot set differs from family declaration")
+            if not isinstance(rendered_decoys, list) or len(rendered_decoys) != len(decoy_ids):
+                errors.append(f"{prefix} decoy count differs from declared decoy IDs")
+            if (isinstance(rendered_counter, Mapping)
+                    and isinstance(rendered_context, Mapping)
+                    and isinstance(rendered_decoys, list)):
+                decisive_numeric = [
+                    (slot, value)
+                    for slots in (rendered_counter, rendered_context)
+                    for slot, value in slots.items()
+                    if isinstance(value, (int, float)) and not isinstance(value, bool)
+                ]
+                for value in rendered_decoys:
+                    if isinstance(value, (int, float)) and not isinstance(value, bool):
+                        for slot, decisive_value in decisive_numeric:
+                            if value == decisive_value:
+                                errors.append(
+                                    f"{prefix} decoy value {value} collides with decisive "
+                                    f"slot {slot} in the same render"
+                                )
+    if all(realized.values()):
+        def slot_values(label: str, source: str, slot: str | int) -> list[Any]:
+            values = []
+            for render in realized[label]:
+                container = render[source]
+                values.append(container[slot] if isinstance(slot, str) else container[slot])
+            return values
+
+        def check_overlap(name: str, acceptable_values: list[Any],
+                          unacceptable_values: list[Any]) -> None:
+            numeric = all(
+                isinstance(value, (int, float)) and not isinstance(value, bool)
+                for value in [*acceptable_values, *unacceptable_values]
+            )
+            if numeric:
+                overlaps = (
+                    min(acceptable_values) <= max(unacceptable_values)
+                    and min(unacceptable_values) <= max(acceptable_values)
+                )
+            else:
+                try:
+                    overlaps = bool(set(acceptable_values) & set(unacceptable_values))
+                except TypeError:
+                    overlaps = bool(
+                        {json.dumps(value, sort_keys=True) for value in acceptable_values}
+                        & {json.dumps(value, sort_keys=True) for value in unacceptable_values}
+                    )
+            if not overlaps:
+                surface = "ranges" if numeric else "value sets"
+                errors.append(
+                    f"{name} acceptable/unacceptable {surface} do not overlap (single-slot separable)"
+                )
+
+        for source, slots in (("counter_text_slots", sorted(expected_counter)),
+                              ("phase1_context_slots", sorted(expected_context))):
+            for slot in slots:
+                check_overlap(
+                    f"slot {slot}",
+                    slot_values("acceptable", source, slot),
+                    slot_values("unacceptable", source, slot),
+                )
+        for index, decoy_id in enumerate(decoy_ids):
+            check_overlap(
+                f"decoy {decoy_id}",
+                slot_values("acceptable", "decoy_values", index),
+                slot_values("unacceptable", "decoy_values", index),
+            )
+    if not str(record.get("expected_redline_text", "")).strip():
+        errors.append("requires one nonempty expected_redline_text valid for every unacceptable render")
+    return errors
+
+
+def validate_family_pool_diversity(
+    families: Sequence[Mapping[str, Any]],
+) -> list[str]:
+    """Reject reused decisive predicate descriptions across an authored corpus."""
+    expressions: dict[str, list[str]] = {}
+    for index, record in enumerate(families):
+        expression = re.sub(
+            r"\s+", " ", str(record.get("predicate", {}).get("expression", ""))
+        ).strip().lower()
+        family_id = str(record.get("counter_family_id", f"family[{index}]"))
+        expressions.setdefault(expression, []).append(family_id)
+    errors = []
+    for expression, family_ids in sorted(expressions.items()):
+        if len(family_ids) > 1:
+            errors.append(
+                f"predicate expression {expression!r} is duplicated by families "
+                + ", ".join(family_ids)
+            )
     return errors
 
 

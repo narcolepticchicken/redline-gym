@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D002"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D004"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D001",
+      "rule_id": "R-008",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing.",
+      "proposed_redline": "On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D003",
+      "rule_id": "R-010",
+      "exact_quote": "Vendor will provide internal onboarding materials to personnel assigned to the service.",
+      "proposed_redline": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-005",
+      "exact_quote": "\n\nVendor need not notify Customer of a personal-data breach until ten business days after Vendor completes its internal investigation.",
+      "proposed_redline": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a personal-data breach."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-006",
+      "exact_quote": "Vendor will reasonably assist Customer with each data-subject request relating to the services, taking account of the processing and information available to Vendor, and will begin the requested support within 15 days. Customer may group up to 10 related requests in one intake, and Vendor provides status updates every 4 days while work remains open.",
+      "proposed_redline": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}

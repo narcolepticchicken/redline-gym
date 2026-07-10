@@ -4,7 +4,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 import hashlib
 import json
-from math import log
+from math import exp, log
 from pathlib import Path
 import random
 import re
@@ -186,6 +186,7 @@ def v10_t2n_lookup_classifiers(tranches: Sequence[Sequence[Mapping[str, Any]]],
     if len(tranches) < 4:
         return ValidationResult("V10-T2N-2", "one-level lookup classifiers", "STUBBED", "insufficient data: requires at least four independently seeded tranches")
     errors = []
+    measurements = []
     for heldout_i in range(len(tranches)):
         train = [r for i, t in enumerate(tranches) if i != heldout_i for r in t]
         heldout = list(tranches[heldout_i])
@@ -198,8 +199,13 @@ def v10_t2n_lookup_classifiers(tranches: Sequence[Sequence[Mapping[str, Any]]],
             global_label = Counter(str(r["label"]) for r in train).most_common(1)[0][0]
             pred = [cells[r.get(feature)].most_common(1)[0][0] if cells[r.get(feature)] else global_label for r in heldout]
             score = _balanced_accuracy([str(r["label"]) for r in heldout], pred)
+            measurements.append(f"{feature}[heldout={heldout_i}]={score:.6f}")
             if score >= .60: errors.append(f"{feature} heldout {heldout_i} balanced accuracy {score:.3f} >=0.60")
-    return _result("V10-T2N-2", "one-level lookup classifiers", errors)
+    detail = "balanced_accuracy: " + ", ".join(measurements)
+    if errors:
+        detail += "; " + "; ".join(errors)
+    return ValidationResult("V10-T2N-2", "one-level lookup classifiers",
+                            "FAIL" if errors else "PASS", detail)
 
 
 def _mutual_information(xs: Sequence[Any], ys: Sequence[Any]) -> float:
@@ -227,12 +233,18 @@ def v10_t2n_permutation_mi(records: Sequence[Mapping[str, Any]], features: Seque
             exceed += _mutual_information(xs, perm) >= observed
         results.append((feature, (exceed + 1) / (permutations + 1), 0.0 if hy == 0 else observed / hy))
     errors = []
+    measurements = []
     running_adjusted = 0.0
     for rank, (feature, p, nmi) in enumerate(sorted(results, key=lambda x: x[1])):
         running_adjusted = max(running_adjusted, min(1.0, (len(results) - rank) * p))
+        measurements.append(f"{feature}:holm_p={running_adjusted:.6f},normalized_mi={nmi:.6f}")
         if running_adjusted < .05: errors.append(f"{feature} Holm-corrected p={running_adjusted:.6f} < 0.05")
         if nmi >= .05: errors.append(f"{feature} normalized MI {nmi:.6f} >=0.05")
-    return _result("V10-T2N-3", "permutation mutual information", errors)
+    detail = "; ".join(measurements)
+    if errors:
+        detail += "; " + "; ".join(errors)
+    return ValidationResult("V10-T2N-3", "permutation mutual information",
+                            "FAIL" if errors else "PASS", detail)
 
 
 def v10_t2n_quota_batch_attacker(records: Sequence[Mapping[str, Any]] | None = None, *,
@@ -246,7 +258,9 @@ def v10_t2n_quota_batch_attacker(records: Sequence[Mapping[str, Any]] | None = N
     """
     if records is None:
         raise NotImplementedError("v4 §1.6 item 4 quota-constrained batch attacker requires the env observation-serving integration step")
-    if heuristic != "max_slot_value":
+    supported = {"max_slot_value", "min_slot_value", "sum_slots", "mean_slots",
+                 "single_threshold_per_slot", "single_slot_logistic"}
+    if heuristic not in supported:
         return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL", f"unknown heuristic {heuristic!r}")
     labels = [str(record.get("label", "")) for record in records]
     if set(labels) - {"acceptable", "unacceptable"}:
@@ -254,20 +268,95 @@ def v10_t2n_quota_batch_attacker(records: Sequence[Mapping[str, Any]] | None = N
     supplied = dict(quota or Counter(labels))
     if supplied.get("acceptable", 0) + supplied.get("unacceptable", 0) != len(records):
         return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL", "quota does not total record count")
-    def numeric_max(record: Mapping[str, Any]) -> float:
-        values = record.get("counter_text_slots", {})
-        if not isinstance(values, Mapping): return float("-inf")
-        found = []
-        for value in values.values():
-            match = re.search(r"-?\d+(?:\.\d+)?", str(value))
-            if match: found.append(float(match.group()))
-        return max(found) if found else float("-inf")
-    ranked = sorted(enumerate(records), key=lambda item: (-numeric_max(item[1]), item[0]))
-    acceptable_indices = {index for index, _ in ranked[:int(supplied.get("acceptable", 0))]}
-    predictions = ["acceptable" if i in acceptable_indices else "unacceptable" for i in range(len(records))]
+    acceptable_quota = int(supplied.get("acceptable", 0))
+
+    def coerce(value: Any) -> float | None:
+        if isinstance(value, bool):
+            return None
+        match = re.search(r"-?\d+(?:\.\d+)?", str(value))
+        return float(match.group()) if match else None
+
+    def numeric_features(record: Mapping[str, Any]) -> dict[str, float]:
+        found: dict[str, float] = {}
+        for source in ("counter_text_slots", "phase1_context_slots"):
+            values = record.get(source, {})
+            if isinstance(values, Mapping):
+                for key, value in values.items():
+                    number = coerce(value)
+                    if number is not None:
+                        found[f"{source}.{key}"] = number
+        decoys = record.get("decoy_values", [])
+        if isinstance(decoys, Sequence) and not isinstance(decoys, (str, bytes)):
+            for index, value in enumerate(decoys):
+                number = coerce(value)
+                if number is not None:
+                    found[f"decoy_values.{index}"] = number
+        return found
+
+    feature_rows = [numeric_features(record) for record in records]
+
+    def quota_predictions(scores: Sequence[float], *, higher_is_acceptable: bool) -> list[str]:
+        ranked = sorted(range(len(scores)), key=lambda i: ((-scores[i]) if higher_is_acceptable else scores[i], i))
+        acceptable_indices = set(ranked[:acceptable_quota])
+        return ["acceptable" if i in acceptable_indices else "unacceptable" for i in range(len(scores))]
+
+    detail_suffix = ""
+    if heuristic in {"max_slot_value", "min_slot_value", "sum_slots", "mean_slots"}:
+        surfaces = [list(row.values()) for row in feature_rows]
+        if heuristic == "max_slot_value":
+            scores = [max(values) if values else float("-inf") for values in surfaces]
+            predictions = quota_predictions(scores, higher_is_acceptable=True)
+        elif heuristic == "min_slot_value":
+            scores = [min(values) if values else float("inf") for values in surfaces]
+            predictions = quota_predictions(scores, higher_is_acceptable=False)
+        elif heuristic == "sum_slots":
+            scores = [sum(values) for values in surfaces]
+            predictions = quota_predictions(scores, higher_is_acceptable=True)
+        else:
+            scores = [sum(values) / len(values) if values else 0.0 for values in surfaces]
+            predictions = quota_predictions(scores, higher_is_acceptable=True)
+    else:
+        feature_names = sorted({name for row in feature_rows for name in row})
+        if not feature_names:
+            predictions = quota_predictions([0.0] * len(records), higher_is_acceptable=True)
+            detail_suffix = "; no numeric slots"
+        elif heuristic == "single_threshold_per_slot":
+            candidates: list[tuple[float, str, str, list[str]]] = []
+            for name in feature_names:
+                present = [row[name] for row in feature_rows if name in row]
+                fill = sorted(present)[len(present) // 2]
+                values = [row.get(name, fill) for row in feature_rows]
+                for direction in (True, False):
+                    pred = quota_predictions(values, higher_is_acceptable=direction)
+                    candidates.append((_balanced_accuracy(labels, pred), name,
+                                       "high" if direction else "low", pred))
+            accuracy, name, direction, predictions = max(candidates, key=lambda item: (item[0], item[1], item[2]))
+            detail_suffix = f"; best_slot={name}; acceptable_direction={direction}"
+        else:
+            candidates = []
+            targets = [1.0 if label == "acceptable" else 0.0 for label in labels]
+            for name in feature_names:
+                present = [row[name] for row in feature_rows if name in row]
+                fill = sorted(present)[len(present) // 2]
+                raw = [row.get(name, fill) for row in feature_rows]
+                mean = sum(raw) / len(raw)
+                scale = (sum((value - mean) ** 2 for value in raw) / len(raw)) ** .5 or 1.0
+                xs = [(value - mean) / scale for value in raw]
+                intercept = weight = 0.0
+                for _ in range(400):
+                    probabilities = [1.0 / (1.0 + exp(-max(-30.0, min(30.0, intercept + weight * x)))) for x in xs]
+                    grad_i = sum(y - p for y, p in zip(targets, probabilities)) / len(xs)
+                    grad_w = sum((y - p) * x for x, y, p in zip(xs, targets, probabilities)) / len(xs)
+                    intercept += .2 * grad_i
+                    weight += .2 * grad_w
+                probabilities = [1.0 / (1.0 + exp(-max(-30.0, min(30.0, intercept + weight * x)))) for x in xs]
+                pred = quota_predictions(probabilities, higher_is_acceptable=True)
+                candidates.append((_balanced_accuracy(labels, pred), name, weight, pred))
+            accuracy, name, weight, predictions = max(candidates, key=lambda item: (item[0], item[1]))
+            detail_suffix = f"; best_slot={name}; coefficient={weight:.6f}"
     accuracy = _balanced_accuracy(labels, predictions) if labels else 0.0
     errors = [f"balanced accuracy {accuracy:.3f} >=0.60"] if accuracy >= .60 else []
-    detail = f"heuristic=max_slot_value; quota={dict(supplied)}; balanced accuracy={accuracy:.6f}"
+    detail = f"heuristic={heuristic}; quota={dict(supplied)}; balanced accuracy={accuracy:.6f}{detail_suffix}"
     if errors: detail += "; " + "; ".join(errors)
     return ValidationResult("V10-T2N-4", "quota-constrained batch attacker", "FAIL" if errors else "PASS", detail)
 

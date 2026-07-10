@@ -1,0 +1,68 @@
+{
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D004",
+    "rule_id": "R-002",
+    "exact_quote": "Vendor may use the resulting information for independent analytics, benchmarking, product development, and model improvement. The information remains personal data. Service-analytics working files are retained for 60 days, and anonymization controls are reviewed every 9 months.",
+    "proposed_redline": "Vendor will not use personal data for its own analytics, benchmarking, product development, model training, or other independent business purposes."
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-005",
+    "exact_quote": "\n\nVendor need not notify Customer of a personal-data breach until ten business days after Vendor completes its internal investigation.",
+    "proposed_redline": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a personal-data breach."
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D005"
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D003",
+    "rule_id": "R-010",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Vendor will provide internal onboarding materials to personnel assigned to the service.",
+    "proposed_redline": "Vendor will ensure those personnel are bound by confidentiality obligations and receive privacy and security training before receiving production access and at least once per calendar year."
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-008",
+    "exact_quote": "After annual assurance materials are delivered, no further control review is available for the same contract year unless Vendor agrees in writing.",
+    "proposed_redline": "On at least 30 days' notice, Customer or its independent assessor may audit or inspect controls relevant to Personal Data once per calendar year and one additional time after a Personal Data Breach, regulatory request, or documented good-faith cause."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  }
+}

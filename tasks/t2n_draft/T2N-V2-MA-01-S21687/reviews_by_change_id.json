@@ -1,0 +1,68 @@
+{
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-006",
+    "exact_quote": "\n\nBuyer irrevocably waives every claim based on fraud, intentional misrepresentation, or willful misconduct.",
+    "proposed_redline": "Nothing in the no-reliance clause limits any claim based on Fraud, intentional misrepresentation, or willful misconduct."
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-001",
+    "exact_quote": "\"Assumed Liabilities\" means the customer support obligations, post-closing service credits, ordinary vendor obligations expressly listed in Section 3, and all liabilities incurred in the ordinary course of Seller's operation of the business before closing.",
+    "proposed_redline": "\"Assumed Liabilities\" means only the customer support obligations, post-closing service credits, and ordinary vendor obligations expressly listed in Section 3."
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D003",
+    "rule_id": "R-008",
+    "exact_quote": "Buyer must offer employment to at least 75% of Seller's employees; terms of those offers otherwise remain determined by Buyer. The covenant constitutes Buyer's admission of successor liability and assumed employment obligations. An offeree receives 5 days to respond, and Buyer may schedule onboarding within 30 days after acceptance.",
+    "proposed_redline": "Buyer may decide which employees receive offers, any offers will be on terms determined by Buyer, and nothing in this Agreement creates an admission of successor liability or assumed employment obligations."
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-012",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: A disclosure schedule qualifies the specific representation or warranty that expressly references that schedule by number. For ease of administration, each schedule item is deemed disclosed for purposes of every representation and warranty wherever its relevance is reasonably apparent from the face of the schedule.",
+    "proposed_redline": "A disclosure schedule qualifies only the specific representation or warranty that expressly references that schedule by number. No disclosure schedule qualifies any other representation or warranty unless that representation or warranty specifically references the schedule item."
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D005"
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  }
+}

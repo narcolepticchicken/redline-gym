@@ -1,30 +1,782 @@
 {
-  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
+  "_status": "machine-drafted v2 scheme, unreviewed — review pass + Aaron line-item pending",
   "PB-CRYPTO-001": {
     "counter_families": [
       {
-        "counter_family_id": "CF-CRYPTO-COLD-01", "rule_id": "R-004", "counter_guard_id": "GUARD-CRYPTO-MULTIPARTY", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"cold_storage_percent": 95}, "phase1_context_slots": {"multiparty_approval": true}, "decoy_values": [24, 30], "decoy_ids": ["withdrawal_hours", "report_days"],
-        "render_forms": {"cold_storage_percent": ["at least 95%", "ninety-five percent or more", "a 0.95 cold-storage fraction"], "multiparty_approval": ["multi-party approval applies", "more than one approver is required", "key-signing requires multiple authorizers"]},
-        "counterfactual_twins": [{"varied_input": "cold_storage_percent", "label_flipped": true}, {"varied_input": "multiparty_approval", "label_flipped": true}, {"varied_input": "withdrawal_hours", "label_flipped": false}, {"varied_input": "report_days", "label_flipped": false}],
-        "expected_redline_text": "Custodian will keep at least 95% of Customer Assets in cold storage, except for assets needed for pending withdrawals, and will require multi-party approval for withdrawals and key-signing events.",
-        "acceptable": {"text": "Custodian will keep at least 95% of Customer Assets in cold storage and require multi-party approval; withdrawal review is 24 hours and reports arrive in 30 days.", "counter_text_slots": {"cold_storage_percent": 95}, "phase1_context_slots": {"multiparty_approval": true}, "decoy_values": [24, 30]},
-        "unacceptable": {"text": "Custodian may keep only 60% of Customer Assets in cold storage and permit single-party approval; withdrawal review is 24 hours and reports arrive in 30 days.", "counter_text_slots": {"cold_storage_percent": 60}, "phase1_context_slots": {"multiparty_approval": false}, "decoy_values": [24, 30]}
+        "counter_family_id": "CF-CRYPTO-ASSET-USE-V2",
+        "rule_id": "R-002",
+        "counter_guard_id": "GUARD-CRYPTO-ASSET-USE-V2",
+        "playbook_grounding": {
+          "position": "Customer should retain beneficial ownership, and the custodian should have no right to lend, pledge, rehypothecate, transfer, or use customer assets for the custodian's own account without customer written consent.",
+          "fallback": "Customer retains all beneficial ownership of Customer Assets, and Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for Custodian's own account without Customer's prior written consent.",
+          "escalation_trigger": "Escalate if the custodian can use, lend, pledge, transfer, or encumber customer assets without written customer consent.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "asset_use_scope == 'none' or (asset_use_scope == 'specified' and written_consent)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "asset_use_scope": [
+            "general",
+            "none",
+            "specified"
+          ]
+        },
+        "phase1_context_slots": {
+          "written_consent": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          15,
+          4
+        ],
+        "decoy_ids": [
+          "consent_expiry_days",
+          "asset_reconciliation_hours"
+        ],
+        "render_forms": {
+          "asset_use_scope": [
+            "express asset use scope",
+            "defined asset use scope",
+            "operative asset use scope condition"
+          ],
+          "written_consent": [
+            "express written consent",
+            "defined written consent",
+            "operative written consent condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "asset_use_scope",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "written_consent",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "consent_expiry_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "asset_reconciliation_hours",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Customer retains all beneficial ownership of Customer Assets, and Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for Custodian's own account without Customer's prior written consent.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for its own account. A use consent expires after 15 days, and Custodian reconciles affected asset balances within 4 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "none"
+              },
+              "phase1_context_slots": {
+                "written_consent": false
+              },
+              "decoy_values": [
+                15,
+                4
+              ]
+            },
+            {
+              "text": "Custodian will not lend, pledge, rehypothecate, transfer, encumber, or use Customer Assets for its own account. A use consent expires after 30 days, and Custodian reconciles affected asset balances within 24 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "none"
+              },
+              "phase1_context_slots": {
+                "written_consent": true
+              },
+              "decoy_values": [
+                30,
+                24
+              ]
+            },
+            {
+              "text": "Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets. A use consent expires after 45 days, and Custodian reconciles affected asset balances within 12 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "specified"
+              },
+              "phase1_context_slots": {
+                "written_consent": true
+              },
+              "decoy_values": [
+                45,
+                12
+              ]
+            },
+            {
+              "text": "Custodian may undertake only the specifically identified asset use after Customer's prior written consent and otherwise has no right to use Customer Assets. A use consent expires after 60 days, and Custodian reconciles affected asset balances within 8 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "specified"
+              },
+              "phase1_context_slots": {
+                "written_consent": true
+              },
+              "decoy_values": [
+                60,
+                8
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Custodian may undertake the specifically identified asset use after oral or implied Customer approval, without prior written consent. A use consent expires after 30 days, and Custodian reconciles affected asset balances within 12 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "specified"
+              },
+              "phase1_context_slots": {
+                "written_consent": false
+              },
+              "decoy_values": [
+                30,
+                12
+              ]
+            },
+            {
+              "text": "Custodian may lend, pledge, transfer, or otherwise use Customer Assets for treasury and operational purposes. A use consent expires after 15 days, and Custodian reconciles affected asset balances within 24 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "general"
+              },
+              "phase1_context_slots": {
+                "written_consent": true
+              },
+              "decoy_values": [
+                15,
+                24
+              ]
+            },
+            {
+              "text": "Custodian may lend, pledge, transfer, or otherwise use Customer Assets for treasury and operational purposes without Customer consent. A use consent expires after 60 days, and Custodian reconciles affected asset balances within 4 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "general"
+              },
+              "phase1_context_slots": {
+                "written_consent": false
+              },
+              "decoy_values": [
+                60,
+                4
+              ]
+            },
+            {
+              "text": "Custodian may undertake the specifically identified asset use after oral or implied Customer approval, without prior written consent. A use consent expires after 45 days, and Custodian reconciles affected asset balances within 8 hours.",
+              "counter_text_slots": {
+                "asset_use_scope": "specified"
+              },
+              "phase1_context_slots": {
+                "written_consent": false
+              },
+              "decoy_values": [
+                45,
+                8
+              ]
+            }
+          ]
+        }
       },
       {
-        "counter_family_id": "CF-CRYPTO-WITHDRAWAL-01", "rule_id": "R-007", "counter_guard_id": "GUARD-CRYPTO-HOLD-BASIS", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"outside_business_days": 2}, "phase1_context_slots": {"holds_limited_to_listed_causes": true}, "decoy_values": [5, 30], "decoy_ids": ["notice_days", "record_days"],
-        "render_forms": {"outside_business_days": ["no later than two business days", "before close of the second following business day", "by the second business day"], "holds_limited_to_listed_causes": ["holds require a listed cause", "delay exceptions are closed", "law, outage, or documented security is required"]},
-        "counterfactual_twins": [{"varied_input": "outside_business_days", "label_flipped": true}, {"varied_input": "holds_limited_to_listed_causes", "label_flipped": true}, {"varied_input": "notice_days", "label_flipped": false}, {"varied_input": "record_days", "label_flipped": false}],
-        "expected_redline_text": "Custodian will process authorized withdrawal requests within 24 hours and in any event no later than two business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
-        "acceptable": {"text": "Authorized withdrawals will complete no later than two business days, with delays limited to law, outage, or a documented security hold; notice is 5 days and records remain for 30 days.", "counter_text_slots": {"outside_business_days": 2}, "phase1_context_slots": {"holds_limited_to_listed_causes": true}, "decoy_values": [5, 30]},
-        "unacceptable": {"text": "Authorized withdrawals may take ten business days and Custodian may impose any discretionary hold; notice is 5 days and records remain for 30 days.", "counter_text_slots": {"outside_business_days": 10}, "phase1_context_slots": {"holds_limited_to_listed_causes": false}, "decoy_values": [5, 30]}
+        "counter_family_id": "CF-CRYPTO-ESTATE-V2",
+        "rule_id": "R-003",
+        "counter_guard_id": "GUARD-CRYPTO-ESTATE-V2",
+        "playbook_grounding": {
+          "position": "The agreement should acknowledge that custodied assets are not custodian property and are intended to stay outside the custodian's bankruptcy estate to the fullest extent permitted by law.",
+          "fallback": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law.",
+          "escalation_trigger": "Escalate if estate-treatment language is missing or suggests customer assets become custodian property.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "customer_ownership_acknowledged and estate_treatment in {'excluded', 'fullest_extent'}"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {
+          "estate_treatment": [
+            "excluded",
+            "fullest_extent",
+            "missing"
+          ]
+        },
+        "phase1_context_slots": {
+          "customer_ownership_acknowledged": [
+            false,
+            true
+          ]
+        },
+        "decoy_values": [
+          5,
+          6
+        ],
+        "decoy_ids": [
+          "title_record_days",
+          "insolvency_opinion_months"
+        ],
+        "render_forms": {
+          "estate_treatment": [
+            "express estate treatment",
+            "defined estate treatment",
+            "operative estate treatment condition"
+          ],
+          "customer_ownership_acknowledged": [
+            "express customer ownership acknowledged",
+            "defined customer ownership acknowledged",
+            "operative customer ownership acknowledged condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "estate_treatment",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "customer_ownership_acknowledged",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "title_record_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "insolvency_opinion_months",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Customer Assets are owned by Customer, are not property of Custodian, and are intended to be excluded from Custodian's bankruptcy estate to the fullest extent permitted by applicable law.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Customer Assets are owned by Customer and are not Custodian property; they are excluded from Custodian's bankruptcy estate. Custodian updates beneficial-title records every 10 days and refreshes its insolvency analysis every 12 months.",
+              "counter_text_slots": {
+                "estate_treatment": "excluded"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": true
+              },
+              "decoy_values": [
+                10,
+                12
+              ]
+            },
+            {
+              "text": "Customer Assets are owned by Customer and are not Custodian property; they are intended to remain outside Custodian's bankruptcy estate to the fullest extent permitted by law. Custodian updates beneficial-title records every 15 days and refreshes its insolvency analysis every 6 months.",
+              "counter_text_slots": {
+                "estate_treatment": "fullest_extent"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": true
+              },
+              "decoy_values": [
+                15,
+                6
+              ]
+            },
+            {
+              "text": "Customer Assets are owned by Customer and are not Custodian property; they are excluded from Custodian's bankruptcy estate. Custodian updates beneficial-title records every 20 days and refreshes its insolvency analysis every 24 months.",
+              "counter_text_slots": {
+                "estate_treatment": "excluded"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": true
+              },
+              "decoy_values": [
+                20,
+                24
+              ]
+            },
+            {
+              "text": "Customer Assets are owned by Customer and are not Custodian property; they are intended to remain outside Custodian's bankruptcy estate to the fullest extent permitted by law. Custodian updates beneficial-title records every 5 days and refreshes its insolvency analysis every 18 months.",
+              "counter_text_slots": {
+                "estate_treatment": "fullest_extent"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": true
+              },
+              "decoy_values": [
+                5,
+                18
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Customer Assets are owned by Customer and are not Custodian property; they are subject to ordinary creditor and bankruptcy claims, with no contractual estate exclusion. Custodian updates beneficial-title records every 15 days and refreshes its insolvency analysis every 24 months.",
+              "counter_text_slots": {
+                "estate_treatment": "missing"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": true
+              },
+              "decoy_values": [
+                15,
+                24
+              ]
+            },
+            {
+              "text": "Custodian holds legal and beneficial title to Customer Assets, which are excluded from Custodian's bankruptcy estate. Custodian updates beneficial-title records every 10 days and refreshes its insolvency analysis every 6 months.",
+              "counter_text_slots": {
+                "estate_treatment": "excluded"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": false
+              },
+              "decoy_values": [
+                10,
+                6
+              ]
+            },
+            {
+              "text": "Custodian holds legal and beneficial title to Customer Assets, which are intended to remain outside Custodian's bankruptcy estate to the fullest extent permitted by law. Custodian updates beneficial-title records every 5 days and refreshes its insolvency analysis every 12 months.",
+              "counter_text_slots": {
+                "estate_treatment": "fullest_extent"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": false
+              },
+              "decoy_values": [
+                5,
+                12
+              ]
+            },
+            {
+              "text": "Custodian holds legal and beneficial title to Customer Assets, which are subject to ordinary creditor and bankruptcy claims, with no contractual estate exclusion. Custodian updates beneficial-title records every 20 days and refreshes its insolvency analysis every 18 months.",
+              "counter_text_slots": {
+                "estate_treatment": "missing"
+              },
+              "phase1_context_slots": {
+                "customer_ownership_acknowledged": false
+              },
+              "decoy_values": [
+                20,
+                18
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-CRYPTO-ASSURANCE-V2",
+        "rule_id": "R-006",
+        "counter_guard_id": "GUARD-CRYPTO-ASSURANCE-V2",
+        "playbook_grounding": {
+          "position": "Assurance reporting should provide recurring SOC or equivalent controls reporting, incident-driven updates, and reasonable follow-up information for the customer's treasury controls.",
+          "fallback": "Custodian will provide annual SOC 2 Type II or equivalent controls reporting, prompt notice of material control failures, and reasonable written follow-up information needed for Customer's treasury, audit, and regulatory controls.",
+          "escalation_trigger": "Escalate if the customer has no recurring controls evidence or no reasonable path to follow up after material control events.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "soc_interval_months <= 12 and incident_notice_hours <= 72"
+        },
+        "has_qualitative_decisive_input": false,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "soc_interval_months": [
+            12,
+            15,
+            18,
+            6,
+            9
+          ]
+        },
+        "phase1_context_slots": {
+          "incident_notice_hours": [
+            120,
+            24,
+            36,
+            48,
+            72,
+            96
+          ]
+        },
+        "decoy_values": [
+          5,
+          3
+        ],
+        "decoy_ids": [
+          "follow_up_days",
+          "control_evidence_items"
+        ],
+        "render_forms": {
+          "soc_interval_months": [
+            "express soc interval months",
+            "defined soc interval months",
+            "operative soc interval months condition"
+          ],
+          "incident_notice_hours": [
+            "express incident notice hours",
+            "defined incident notice hours",
+            "operative incident notice hours condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "soc_interval_months",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "incident_notice_hours",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "follow_up_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "control_evidence_items",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Custodian will provide annual SOC 2 Type II or equivalent controls reporting, prompt notice of material control failures, and reasonable written follow-up information needed for Customer's treasury, audit, and regulatory controls.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 72 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 15 days and may be organized into 9 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 12
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 72
+              },
+              "decoy_values": [
+                15,
+                9
+              ]
+            },
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 6 months, notice of a material control failure within 48 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 20 days and may be organized into 4 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 6
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 48
+              },
+              "decoy_values": [
+                20,
+                4
+              ]
+            },
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 9 months, notice of a material control failure within 24 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 5 days and may be organized into 3 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 9
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 24
+              },
+              "decoy_values": [
+                5,
+                3
+              ]
+            },
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 36 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 10 days and may be organized into 10 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 12
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 36
+              },
+              "decoy_values": [
+                10,
+                10
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 18 months, notice of a material control failure within 48 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 20 days and may be organized into 3 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 18
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 48
+              },
+              "decoy_values": [
+                20,
+                3
+              ]
+            },
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 9 months, notice of a material control failure within 96 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 15 days and may be organized into 4 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 9
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 96
+              },
+              "decoy_values": [
+                15,
+                4
+              ]
+            },
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 15 months, notice of a material control failure within 72 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 10 days and may be organized into 9 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 15
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 72
+              },
+              "decoy_values": [
+                10,
+                9
+              ]
+            },
+            {
+              "text": "Custodian will provide SOC 2 Type II or equivalent controls reporting every 12 months, notice of a material control failure within 120 hours, and reasonable written follow-up for Customer's treasury, audit, and regulatory controls. Written incident follow-up is due within 5 days and may be organized into 10 control-evidence categories.",
+              "counter_text_slots": {
+                "soc_interval_months": 12
+              },
+              "phase1_context_slots": {
+                "incident_notice_hours": 120
+              },
+              "decoy_values": [
+                5,
+                10
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "counter_family_id": "CF-CRYPTO-DISTRIBUTIONS-V2",
+        "rule_id": "R-008",
+        "counter_guard_id": "GUARD-CRYPTO-DISTRIBUTIONS-V2",
+        "playbook_grounding": {
+          "position": "Forks, airdrops, staking rewards, and similar network distributions should belong to the customer by default unless the customer expressly declines support or the asset is legally unsupported.",
+          "fallback": "Unless Customer expressly declines support or applicable law prohibits support, Customer is entitled to forks, airdrops, staking rewards, and similar network distributions attributable to Customer Assets.",
+          "escalation_trigger": "Escalate if network distributions are retained by the custodian by default or excluded from customer entitlement without a narrow legal or support basis.",
+          "deterministic_checks": {}
+        },
+        "predicate": {
+          "type": "interaction",
+          "expression": "(support_exception == 'none' and customer_share_percent == 100) or (support_exception in {'customer_declines', 'law_prohibits'} and custodian_retention_percent == 0)"
+        },
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {
+          "customer_share_percent": [
+            0,
+            100,
+            50,
+            75
+          ],
+          "custodian_retention_percent": [
+            0,
+            25,
+            50
+          ]
+        },
+        "phase1_context_slots": {
+          "support_exception": [
+            "customer_declines",
+            "law_prohibits",
+            "none",
+            "operational_discretion"
+          ]
+        },
+        "decoy_values": [
+          3,
+          30
+        ],
+        "decoy_ids": [
+          "distribution_notice_days",
+          "claim_window_days"
+        ],
+        "render_forms": {
+          "customer_share_percent": [
+            "express customer share percent",
+            "defined customer share percent",
+            "operative customer share percent condition"
+          ],
+          "custodian_retention_percent": [
+            "express custodian retention percent",
+            "defined custodian retention percent",
+            "operative custodian retention percent condition"
+          ],
+          "support_exception": [
+            "express support exception",
+            "defined support exception",
+            "operative support exception condition"
+          ]
+        },
+        "counterfactual_twins": [
+          {
+            "varied_input": "customer_share_percent",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "custodian_retention_percent",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "support_exception",
+            "label_flipped": true
+          },
+          {
+            "varied_input": "distribution_notice_days",
+            "label_flipped": false
+          },
+          {
+            "varied_input": "claim_window_days",
+            "label_flipped": false
+          }
+        ],
+        "expected_redline_text": "Unless Customer expressly declines support or applicable law prohibits support, Customer is entitled to forks, airdrops, staking rewards, and similar network distributions attributable to Customer Assets.",
+        "render_pools": {
+          "acceptable": [
+            {
+              "text": "For forks, airdrops, staking rewards, and similar distributions attributable to Customer Assets, Customer receives 100% and Custodian retains 0%; no support exception applies. Custodian posts a distribution notice within 21 days and keeps the claim workflow open for 90 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 100,
+                "custodian_retention_percent": 0
+              },
+              "phase1_context_slots": {
+                "support_exception": "none"
+              },
+              "decoy_values": [
+                21,
+                90
+              ]
+            },
+            {
+              "text": "Customer's express written election declines support for the identified distribution; no amount is credited to Customer, and Custodian has no right to retain any portion for its own account. Custodian posts a distribution notice within 3 days and keeps the claim workflow open for 60 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 0,
+                "custodian_retention_percent": 0
+              },
+              "phase1_context_slots": {
+                "support_exception": "customer_declines"
+              },
+              "decoy_values": [
+                3,
+                60
+              ]
+            },
+            {
+              "text": "Applicable law prohibits support for the identified distribution; no amount is credited to Customer, and Custodian has no right to retain any portion for its own account. Custodian posts a distribution notice within 7 days and keeps the claim workflow open for 45 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 0,
+                "custodian_retention_percent": 0
+              },
+              "phase1_context_slots": {
+                "support_exception": "law_prohibits"
+              },
+              "decoy_values": [
+                7,
+                45
+              ]
+            },
+            {
+              "text": "For forks, airdrops, staking rewards, and similar distributions attributable to Customer Assets, Customer receives 100% and Custodian retains 0%; no support exception applies. Custodian posts a distribution notice within 14 days and keeps the claim workflow open for 30 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 100,
+                "custodian_retention_percent": 0
+              },
+              "phase1_context_slots": {
+                "support_exception": "none"
+              },
+              "decoy_values": [
+                14,
+                30
+              ]
+            }
+          ],
+          "unacceptable": [
+            {
+              "text": "For forks, airdrops, staking rewards, and similar distributions attributable to Customer Assets, Customer receives 50% and Custodian retains 50%; no support exception applies. Custodian posts a distribution notice within 3 days and keeps the claim workflow open for 45 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 50,
+                "custodian_retention_percent": 50
+              },
+              "phase1_context_slots": {
+                "support_exception": "none"
+              },
+              "decoy_values": [
+                3,
+                45
+              ]
+            },
+            {
+              "text": "Custodian may designate a distribution unsupported for operational convenience even though Customer has not declined support and law does not prohibit it; Customer is credited 0%, and Custodian retains 0%. Custodian posts a distribution notice within 21 days and keeps the claim workflow open for 60 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 0,
+                "custodian_retention_percent": 0
+              },
+              "phase1_context_slots": {
+                "support_exception": "operational_discretion"
+              },
+              "decoy_values": [
+                21,
+                60
+              ]
+            },
+            {
+              "text": "For forks, airdrops, staking rewards, and similar distributions attributable to Customer Assets, Customer receives 75% and Custodian retains 25%; no support exception applies. Custodian posts a distribution notice within 14 days and keeps the claim workflow open for 90 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 75,
+                "custodian_retention_percent": 25
+              },
+              "phase1_context_slots": {
+                "support_exception": "none"
+              },
+              "decoy_values": [
+                14,
+                90
+              ]
+            },
+            {
+              "text": "Custodian may designate a distribution unsupported for operational convenience even though Customer has not declined support and law does not prohibit it; Customer is credited 0%, and Custodian retains 25%. Custodian posts a distribution notice within 7 days and keeps the claim workflow open for 30 days.",
+              "counter_text_slots": {
+                "customer_share_percent": 0,
+                "custodian_retention_percent": 25
+              },
+              "phase1_context_slots": {
+                "support_exception": "operational_discretion"
+              },
+              "decoy_values": [
+                7,
+                30
+              ]
+            }
+          ]
+        }
       }
     ],
     "benign_change_templates": [
-      {"template_id": "BC-CRYPTO-NY", "rule_id": "R-014", "anchor_terms": ["New York"], "text": "The parties confirm that New York law governs this custody agreement."},
-      {"template_id": "BC-CRYPTO-SOC2", "rule_id": "R-015", "anchor_terms": ["SOC 2 Type II"], "text": "Annual SOC 2 Type II reporting may satisfy routine assurance while incident follow-up rights remain available."}
+      {
+        "template_id": "BC-CRYPTO-NY",
+        "rule_id": "R-014",
+        "anchor_terms": [
+          "New York"
+        ],
+        "text": "The parties confirm that New York law governs this custody agreement."
+      },
+      {
+        "template_id": "BC-CRYPTO-SOC2",
+        "rule_id": "R-015",
+        "anchor_terms": [
+          "SOC 2 Type II"
+        ],
+        "text": "Annual SOC 2 Type II reporting may satisfy routine assurance while incident follow-up rights remain available."
+      }
     ],
-    "novel_deviation_templates": [{"template_id": "ND-CRYPTO-REHYP", "rule_id": "R-002", "destination_terms": ["Ownership"], "text": "Custodian may pledge or rehypothecate Customer Assets for its own account without Customer consent."}]
+    "novel_deviation_templates": [
+      {
+        "template_id": "ND-CRYPTO-REHYP",
+        "rule_id": "R-002",
+        "destination_terms": [
+          "Ownership"
+        ],
+        "text": "Custodian may pledge or rehypothecate Customer Assets for its own account without Customer consent."
+      }
+    ]
   }
 }

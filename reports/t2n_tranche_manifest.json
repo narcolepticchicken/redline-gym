@@ -5,250 +5,250 @@
   "all_concessions_count": 3,
   "instances": [
     {
-      "label": "T2N-DPA-302-S7302",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 7302,
-      "kind": "mixed",
-      "existing_pilot": true
-    },
-    {
-      "label": "T2N-DPA-302-S1",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 1,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S2",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 2,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S3",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 3,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S4",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 4,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S5",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 5,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S6",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 6,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S7",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 7,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S8",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 8,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S9",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 9,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S10",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 10,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S11",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 11,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S12",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 12,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-DPA-302-S13",
-      "base": "T2-DPA-302",
-      "area": "privacy",
-      "seed": 13,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S4104",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 4104,
-      "kind": "mixed",
-      "existing_pilot": true
-    },
-    {
-      "label": "T2N-MSA-104-S1",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 1,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S2",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 2,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S3",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 3,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S4",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 4,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S5",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 5,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S6",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 6,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S7",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 7,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S8",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 8,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S9",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 9,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S10",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 10,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S11",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 11,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S12",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 12,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-MSA-104-S13",
-      "base": "T2-MSA-104",
-      "area": "contracts",
-      "seed": 13,
-      "kind": "mixed",
-      "existing_pilot": false
-    },
-    {
-      "label": "T2N-AI-1302-AC-S9001",
+      "label": "T2N-V2-AI-01-S21238",
       "base": "T2-AI-1302",
       "area": "ai",
-      "seed": 9001,
-      "kind": "all_concessions",
+      "seed": 21238,
+      "kind": "mixed",
       "existing_pilot": false
     },
     {
-      "label": "T2N-EMP-702-AC-S9002",
+      "label": "T2N-V2-AI-02-S21171",
+      "base": "T2-AI-1303",
+      "area": "ai",
+      "seed": 21171,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-AI-03-S21308",
+      "base": "T2-AI-1302",
+      "area": "ai",
+      "seed": 21308,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-AI-04-S21139",
+      "base": "T2-AI-1303",
+      "area": "ai",
+      "seed": 21139,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CRYPTO-01-S21287",
+      "base": "T2-CRYPTO-1502",
+      "area": "crypto",
+      "seed": 21287,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CRYPTO-02-S21305",
+      "base": "T2-CRYPTO-1503",
+      "area": "crypto",
+      "seed": 21305,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CRYPTO-03-S21255",
+      "base": "T2-CRYPTO-1502",
+      "area": "crypto",
+      "seed": 21255,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CRYPTO-04-S21239",
+      "base": "T2-CRYPTO-1503",
+      "area": "crypto",
+      "seed": 21239,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-PRIVACY-01-S21302",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 21302,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-PRIVACY-02-S21405",
+      "base": "T2-DPA-303",
+      "area": "privacy",
+      "seed": 21405,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-PRIVACY-03-S21474",
+      "base": "T2-DPA-312",
+      "area": "privacy",
+      "seed": 21474,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-PRIVACY-04-S21237",
+      "base": "T2-DPA-302",
+      "area": "privacy",
+      "seed": 21237,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-01-S21623",
       "base": "T2-EMP-702",
       "area": "employment",
-      "seed": 9002,
+      "seed": 21623,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-02-S21403",
+      "base": "T2-EMP-703",
+      "area": "employment",
+      "seed": 21403,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-03-S21523",
+      "base": "T2-EMP-712",
+      "area": "employment",
+      "seed": 21523,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-04-S21575",
+      "base": "T2-EMP-702",
+      "area": "employment",
+      "seed": 21575,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-01-S21689",
+      "base": "T2-GOV-902",
+      "area": "governance",
+      "seed": 21689,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-02-S21554",
+      "base": "T2-GOV-903",
+      "area": "governance",
+      "seed": 21554,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-03-S21640",
+      "base": "T2-GOV-912",
+      "area": "governance",
+      "seed": 21640,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-04-S21471",
+      "base": "T2-GOV-902",
+      "area": "governance",
+      "seed": 21471,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-MA-01-S21687",
+      "base": "T2-MA-1102",
+      "area": "ma",
+      "seed": 21687,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-MA-02-S21637",
+      "base": "T2-MA-1103",
+      "area": "ma",
+      "seed": 21637,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-MA-03-S21502",
+      "base": "T2-MA-1102",
+      "area": "ma",
+      "seed": 21502,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-MA-04-S21707",
+      "base": "T2-MA-1103",
+      "area": "ma",
+      "seed": 21707,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-01-S21634",
+      "base": "T2-MSA-104",
+      "area": "contracts",
+      "seed": 21634,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-02-S21788",
+      "base": "T2-MSA-106",
+      "area": "contracts",
+      "seed": 21788,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-03-S21670",
+      "base": "T2-MSA-122",
+      "area": "contracts",
+      "seed": 21670,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-04-S21756",
+      "base": "T2-NDA-112",
+      "area": "contracts",
+      "seed": 21756,
+      "kind": "mixed",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-AI-AC-S29001",
+      "base": "T2-AI-1302",
+      "area": "ai",
+      "seed": 29001,
       "kind": "all_concessions",
       "existing_pilot": false
     },
     {
-      "label": "T2N-GOV-902-AC-S9003",
+      "label": "T2N-V2-EMPLOYMENT-AC-S29002",
+      "base": "T2-EMP-702",
+      "area": "employment",
+      "seed": 29002,
+      "kind": "all_concessions",
+      "existing_pilot": false
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-AC-S29003",
       "base": "T2-GOV-902",
       "area": "governance",
-      "seed": 9003,
+      "seed": 29003,
       "kind": "all_concessions",
       "existing_pilot": false
     }
@@ -257,177 +257,197 @@
     {
       "area": "ai",
       "base": "T2-AI-1302",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-AI-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-002', 'R-009', 'R-012']",
+      "mixed_instances": 2,
       "all_concessions": true
     },
     {
       "area": "ai",
       "base": "T2-AI-1303",
-      "mixed_eligible": false,
-      "reason": "only 1 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-AI-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-002', 'R-009', 'R-012']",
+      "mixed_instances": 2,
       "all_concessions": false
     },
     {
       "area": "crypto",
       "base": "T2-CRYPTO-1502",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-CRYPTO-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-002', 'R-003', 'R-006', 'R-008']",
+      "mixed_instances": 2,
       "all_concessions": false
     },
     {
       "area": "crypto",
       "base": "T2-CRYPTO-1503",
-      "mixed_eligible": false,
-      "reason": "only 1 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-CRYPTO-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-002', 'R-003', 'R-006', 'R-008']",
+      "mixed_instances": 2,
       "all_concessions": false
     },
     {
       "area": "privacy",
       "base": "T2-DPA-302",
+      "playbook_id": "PB-DPA-001",
       "mixed_eligible": true,
-      "reason": "usable: two counter-family rule matches",
-      "mixed_instances": 14,
+      "reason": "usable: 2 authored rule overlaps ['R-002', 'R-006']",
+      "mixed_instances": 2,
       "all_concessions": false
     },
     {
       "area": "privacy",
       "base": "T2-DPA-303",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-DPA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-001', 'R-002']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "privacy",
       "base": "T2-DPA-312",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-DPA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-001', 'R-003']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "employment",
       "base": "T2-EMP-702",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-EMP-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-004', 'R-007']",
+      "mixed_instances": 2,
       "all_concessions": true
     },
     {
       "area": "employment",
       "base": "T2-EMP-703",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-EMP-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-004', 'R-007']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "employment",
       "base": "T2-EMP-712",
-      "mixed_eligible": false,
-      "reason": "only 1 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-EMP-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-006', 'R-007']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "governance",
       "base": "T2-GOV-902",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-GOV-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-002', 'R-006', 'R-007', 'R-013']",
+      "mixed_instances": 2,
       "all_concessions": true
     },
     {
       "area": "governance",
       "base": "T2-GOV-903",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-GOV-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-006', 'R-013']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "governance",
       "base": "T2-GOV-912",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-GOV-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-002', 'R-007', 'R-013']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "ma",
       "base": "T2-MA-1102",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-MA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-006', 'R-008', 'R-011']",
+      "mixed_instances": 2,
       "all_concessions": false
     },
     {
       "area": "ma",
       "base": "T2-MA-1103",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-MA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 4 authored rule overlaps ['R-001', 'R-006', 'R-008', 'R-011']",
+      "mixed_instances": 2,
       "all_concessions": false
     },
     {
       "area": "contracts",
       "base": "T2-MSA-104",
+      "playbook_id": "PB-MSA-001",
       "mixed_eligible": true,
-      "reason": "usable: two counter-family rule matches",
-      "mixed_instances": 14,
+      "reason": "usable: 3 authored rule overlaps ['R-001', 'R-003', 'R-006']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "contracts",
       "base": "T2-MSA-106",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-MSA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 3 authored rule overlaps ['R-003', 'R-006', 'R-008']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "contracts",
       "base": "T2-MSA-122",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-MSA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-003', 'R-008']",
+      "mixed_instances": 1,
       "all_concessions": false
     },
     {
       "area": "contracts",
       "base": "T2-NDA-102",
+      "playbook_id": "PB-NDA-001",
       "mixed_eligible": false,
-      "reason": "one seeded deviation has expected_action=escalate, not redline_with_fallback",
+      "reason": "one seeded deviation has expected_action=escalate and no expected_redline_text",
       "mixed_instances": 0,
       "all_concessions": false
     },
     {
       "area": "contracts",
       "base": "T2-NDA-112",
-      "mixed_eligible": false,
-      "reason": "only 0 counter-family rule match(es); needs two",
-      "mixed_instances": 0,
+      "playbook_id": "PB-NDA-001",
+      "mixed_eligible": true,
+      "reason": "usable: 2 authored rule overlaps ['R-002', 'R-007']",
+      "mixed_instances": 1,
       "all_concessions": false
     }
   ],
   "all_concession_episode_checks": [
     {
-      "label": "T2N-AI-1302-AC-S9001",
+      "label": "T2N-V2-AI-AC-S29001",
       "composite": 1.0,
       "gate_pass": true
     },
     {
-      "label": "T2N-EMP-702-AC-S9002",
+      "label": "T2N-V2-EMPLOYMENT-AC-S29002",
       "composite": 1.0,
       "gate_pass": true
     },
     {
-      "label": "T2N-GOV-902-AC-S9003",
+      "label": "T2N-V2-GOVERNANCE-AC-S29003",
       "composite": 1.0,
       "gate_pass": true
     }
@@ -436,1740 +456,2639 @@
   "all_concessions_four_compliant": false,
   "counter_records": [
     {
-      "label": "unacceptable",
+      "label": "acceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "notice_days": 21
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "change_basis": "objective_safety"
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        12,
+        20
       ],
       "task_ordinal": 0,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 2,
+      "section_bucket": "7",
+      "playbook_rule": "R-009",
+      "family_split": "CF-AI-POLICY-CHANGE-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "notice_days": 21
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "change_basis": "objective_safety"
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          12,
+          20
         ]
       },
-      "public_task_id": "T2N-DPA-302-S7302"
+      "public_task_id": "T2N-V2-AI-01-S21238"
     },
     {
-      "label": "acceptable",
+      "label": "unacceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "training_scope": "identified_files"
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "written_opt_in": false
       },
       "decoy_values": [
-        10,
-        45
+        60,
+        14
       ],
       "task_ordinal": 0,
-      "event_ordinal": 7,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
-      "observation": {
-        "counter_text_slots": {
-          "routine_interval_months": 12
-        },
-        "phase1_context_slots": {
-          "cause_followup_available": true
-        },
-        "decoy_values": [
-          10,
-          45
-        ]
-      },
-      "public_task_id": "T2N-DPA-302-S7302"
-    },
-    {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "data_subject_support_included": false
-      },
-      "phase1_context_slots": {
-        "regulator_support_included": false
-      },
-      "decoy_values": [
-        "privacy assessments",
-        "available information"
-      ],
-      "task_ordinal": 1,
       "event_ordinal": 4,
       "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "playbook_rule": "R-001",
+      "family_split": "CF-AI-TRAINING-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "training_scope": "identified_files"
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "written_opt_in": false
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          60,
+          14
         ]
       },
-      "public_task_id": "T2N-DPA-302-S1"
+      "public_task_id": "T2N-V2-AI-01-S21238"
     },
     {
-      "label": "acceptable",
+      "label": "unacceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "notice_days": 30
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "change_basis": "commercial_discretion"
       },
       "decoy_values": [
-        10,
-        45
+        18,
+        10
       ],
       "task_ordinal": 1,
-      "event_ordinal": 6,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "event_ordinal": 2,
+      "section_bucket": "7",
+      "playbook_rule": "R-009",
+      "family_split": "CF-AI-POLICY-CHANGE-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "notice_days": 30
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "change_basis": "commercial_discretion"
         },
         "decoy_values": [
-          10,
-          45
+          18,
+          10
         ]
       },
-      "public_task_id": "T2N-DPA-302-S1"
+      "public_task_id": "T2N-V2-AI-02-S21171"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "training_scope": "none"
+      },
+      "phase1_context_slots": {
+        "written_opt_in": true
+      },
+      "decoy_values": [
+        45,
+        28
+      ],
+      "task_ordinal": 1,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-001",
+      "family_split": "CF-AI-TRAINING-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
+      "observation": {
+        "counter_text_slots": {
+          "training_scope": "none"
+        },
+        "phase1_context_slots": {
+          "written_opt_in": true
+        },
+        "decoy_values": [
+          45,
+          28
+        ]
+      },
+      "public_task_id": "T2N-V2-AI-02-S21171"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "notice_days": 30
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "change_basis": "commercial_discretion"
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        18,
+        10
       ],
       "task_ordinal": 2,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 2,
+      "section_bucket": "7",
+      "playbook_rule": "R-009",
+      "family_split": "CF-AI-POLICY-CHANGE-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "notice_days": 30
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "change_basis": "commercial_discretion"
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          18,
+          10
         ]
       },
-      "public_task_id": "T2N-DPA-302-S2"
+      "public_task_id": "T2N-V2-AI-03-S21308"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "training_scope": "none"
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "written_opt_in": true
       },
       "decoy_values": [
-        10,
-        45
+        45,
+        28
       ],
       "task_ordinal": 2,
       "event_ordinal": 6,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "section_bucket": "9",
+      "playbook_rule": "R-001",
+      "family_split": "CF-AI-TRAINING-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "training_scope": "none"
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "written_opt_in": true
         },
         "decoy_values": [
-          10,
-          45
+          45,
+          28
         ]
       },
-      "public_task_id": "T2N-DPA-302-S2"
+      "public_task_id": "T2N-V2-AI-03-S21308"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "portability_days": 30
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "asset_control": "nonexclusive_use"
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        20,
+        24
       ],
       "task_ordinal": 3,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-002",
+      "family_split": "CF-AI-CUSTOM-ASSETS-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "portability_days": 30
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "asset_control": "nonexclusive_use"
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          20,
+          24
         ]
       },
-      "public_task_id": "T2N-DPA-302-S3"
+      "public_task_id": "T2N-V2-AI-04-S21139"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "notice_days": 30
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "change_basis": "objective_safety"
       },
       "decoy_values": [
-        10,
-        45
+        24,
+        10
       ],
       "task_ordinal": 3,
-      "event_ordinal": 6,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "event_ordinal": 2,
+      "section_bucket": "7",
+      "playbook_rule": "R-009",
+      "family_split": "CF-AI-POLICY-CHANGE-V2",
+      "playbook_id": "PB-AI-001",
+      "area": "ai",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "notice_days": 30
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "change_basis": "objective_safety"
         },
         "decoy_values": [
-          10,
-          45
+          24,
+          10
         ]
       },
-      "public_task_id": "T2N-DPA-302-S3"
+      "public_task_id": "T2N-V2-AI-04-S21139"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "customer_share_percent": 0,
+        "custodian_retention_percent": 0
+      },
+      "phase1_context_slots": {
+        "support_exception": "operational_discretion"
+      },
+      "decoy_values": [
+        21,
+        60
+      ],
+      "task_ordinal": 4,
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-008",
+      "family_split": "CF-CRYPTO-DISTRIBUTIONS-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
+      "observation": {
+        "counter_text_slots": {
+          "customer_share_percent": 0,
+          "custodian_retention_percent": 0
+        },
+        "phase1_context_slots": {
+          "support_exception": "operational_discretion"
+        },
+        "decoy_values": [
+          21,
+          60
+        ]
+      },
+      "public_task_id": "T2N-V2-CRYPTO-01-S21287"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "data_subject_support_included": true
+        "asset_use_scope": "none"
       },
       "phase1_context_slots": {
-        "regulator_support_included": true
+        "written_consent": true
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        30,
+        24
       ],
       "task_ordinal": 4,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 3,
+      "section_bucket": "8",
+      "playbook_rule": "R-002",
+      "family_split": "CF-CRYPTO-ASSET-USE-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": true
+          "asset_use_scope": "none"
         },
         "phase1_context_slots": {
-          "regulator_support_included": true
+          "written_consent": true
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          30,
+          24
         ]
       },
-      "public_task_id": "T2N-DPA-302-S4"
+      "public_task_id": "T2N-V2-CRYPTO-01-S21287"
     },
     {
-      "label": "unacceptable",
+      "label": "acceptable",
       "counter_text_slots": {
-        "routine_interval_months": 24
+        "customer_share_percent": 100,
+        "custodian_retention_percent": 0
       },
       "phase1_context_slots": {
-        "cause_followup_available": false
+        "support_exception": "none"
       },
       "decoy_values": [
-        10,
-        45
-      ],
-      "task_ordinal": 4,
-      "event_ordinal": 7,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
-      "observation": {
-        "counter_text_slots": {
-          "routine_interval_months": 24
-        },
-        "phase1_context_slots": {
-          "cause_followup_available": false
-        },
-        "decoy_values": [
-          10,
-          45
-        ]
-      },
-      "public_task_id": "T2N-DPA-302-S4"
-    },
-    {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "data_subject_support_included": false
-      },
-      "phase1_context_slots": {
-        "regulator_support_included": false
-      },
-      "decoy_values": [
-        "privacy assessments",
-        "available information"
+        14,
+        30
       ],
       "task_ordinal": 5,
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-008",
+      "family_split": "CF-CRYPTO-DISTRIBUTIONS-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
+      "observation": {
+        "counter_text_slots": {
+          "customer_share_percent": 100,
+          "custodian_retention_percent": 0
+        },
+        "phase1_context_slots": {
+          "support_exception": "none"
+        },
+        "decoy_values": [
+          14,
+          30
+        ]
+      },
+      "public_task_id": "T2N-V2-CRYPTO-02-S21305"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "soc_interval_months": 12
+      },
+      "phase1_context_slots": {
+        "incident_notice_hours": 120
+      },
+      "decoy_values": [
+        5,
+        10
+      ],
+      "task_ordinal": 5,
+      "event_ordinal": 7,
+      "section_bucket": "15",
+      "playbook_rule": "R-006",
+      "family_split": "CF-CRYPTO-ASSURANCE-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
+      "observation": {
+        "counter_text_slots": {
+          "soc_interval_months": 12
+        },
+        "phase1_context_slots": {
+          "incident_notice_hours": 120
+        },
+        "decoy_values": [
+          5,
+          10
+        ]
+      },
+      "public_task_id": "T2N-V2-CRYPTO-02-S21305"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "asset_use_scope": "specified"
+      },
+      "phase1_context_slots": {
+        "written_consent": false
+      },
+      "decoy_values": [
+        45,
+        8
+      ],
+      "task_ordinal": 6,
       "event_ordinal": 4,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "section_bucket": "8",
+      "playbook_rule": "R-002",
+      "family_split": "CF-CRYPTO-ASSET-USE-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "asset_use_scope": "specified"
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "written_consent": false
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          45,
+          8
         ]
       },
-      "public_task_id": "T2N-DPA-302-S5"
+      "public_task_id": "T2N-V2-CRYPTO-03-S21255"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "soc_interval_months": 12
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "incident_notice_hours": 36
       },
       "decoy_values": [
         10,
-        45
+        10
       ],
-      "task_ordinal": 5,
+      "task_ordinal": 6,
       "event_ordinal": 7,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "section_bucket": "15",
+      "playbook_rule": "R-006",
+      "family_split": "CF-CRYPTO-ASSURANCE-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "soc_interval_months": 12
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "incident_notice_hours": 36
         },
         "decoy_values": [
           10,
-          45
+          10
         ]
       },
-      "public_task_id": "T2N-DPA-302-S5"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "data_subject_support_included": true
-      },
-      "phase1_context_slots": {
-        "regulator_support_included": true
-      },
-      "decoy_values": [
-        "privacy assessments",
-        "available information"
-      ],
-      "task_ordinal": 6,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
-      "observation": {
-        "counter_text_slots": {
-          "data_subject_support_included": true
-        },
-        "phase1_context_slots": {
-          "regulator_support_included": true
-        },
-        "decoy_values": [
-          "privacy assessments",
-          "available information"
-        ]
-      },
-      "public_task_id": "T2N-DPA-302-S6"
+      "public_task_id": "T2N-V2-CRYPTO-03-S21255"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "routine_interval_months": 24
+        "customer_share_percent": 0,
+        "custodian_retention_percent": 25
       },
       "phase1_context_slots": {
-        "cause_followup_available": false
+        "support_exception": "operational_discretion"
       },
       "decoy_values": [
-        10,
-        45
+        7,
+        30
       ],
-      "task_ordinal": 6,
-      "event_ordinal": 6,
-      "section_bucket": "11",
+      "task_ordinal": 7,
+      "event_ordinal": 0,
+      "section_bucket": "2",
       "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "family_split": "CF-CRYPTO-DISTRIBUTIONS-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 24
+          "customer_share_percent": 0,
+          "custodian_retention_percent": 25
         },
         "phase1_context_slots": {
-          "cause_followup_available": false
+          "support_exception": "operational_discretion"
         },
         "decoy_values": [
-          10,
-          45
+          7,
+          30
         ]
       },
-      "public_task_id": "T2N-DPA-302-S6"
+      "public_task_id": "T2N-V2-CRYPTO-04-S21239"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "data_subject_support_included": true
+        "estate_treatment": "fullest_extent"
       },
       "phase1_context_slots": {
-        "regulator_support_included": true
+        "customer_ownership_acknowledged": true
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        5,
+        18
       ],
       "task_ordinal": 7,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 1,
+      "section_bucket": "4",
+      "playbook_rule": "R-003",
+      "family_split": "CF-CRYPTO-ESTATE-V2",
+      "playbook_id": "PB-CRYPTO-001",
+      "area": "crypto",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": true
+          "estate_treatment": "fullest_extent"
         },
         "phase1_context_slots": {
-          "regulator_support_included": true
+          "customer_ownership_acknowledged": true
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          5,
+          18
         ]
       },
-      "public_task_id": "T2N-DPA-302-S7"
+      "public_task_id": "T2N-V2-CRYPTO-04-S21239"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "use_purpose": "customer_service"
+      },
+      "phase1_context_slots": {
+        "data_state": "personal_data"
+      },
+      "decoy_values": [
+        30,
+        6
+      ],
+      "task_ordinal": 8,
+      "event_ordinal": 1,
+      "section_bucket": "3",
+      "playbook_rule": "R-002",
+      "family_split": "CF-DPA-USE-BOUNDARY-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
+      "observation": {
+        "counter_text_slots": {
+          "use_purpose": "customer_service"
+        },
+        "phase1_context_slots": {
+          "data_state": "personal_data"
+        },
+        "decoy_values": [
+          30,
+          6
+        ]
+      },
+      "public_task_id": "T2N-V2-PRIVACY-01-S21302"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "routine_interval_months": 24
+        "response_days": 15
       },
       "phase1_context_slots": {
-        "cause_followup_available": false
+        "request_type": "data_subject"
       },
       "decoy_values": [
         10,
-        45
-      ],
-      "task_ordinal": 7,
-      "event_ordinal": 6,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
-      "observation": {
-        "counter_text_slots": {
-          "routine_interval_months": 24
-        },
-        "phase1_context_slots": {
-          "cause_followup_available": false
-        },
-        "decoy_values": [
-          10,
-          45
-        ]
-      },
-      "public_task_id": "T2N-DPA-302-S7"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "data_subject_support_included": true
-      },
-      "phase1_context_slots": {
-        "regulator_support_included": true
-      },
-      "decoy_values": [
-        "privacy assessments",
-        "available information"
+        4
       ],
       "task_ordinal": 8,
       "event_ordinal": 5,
       "section_bucket": "9",
       "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "family_split": "CF-DPA-SUPPORT-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": true
+          "response_days": 15
         },
         "phase1_context_slots": {
-          "regulator_support_included": true
-        },
-        "decoy_values": [
-          "privacy assessments",
-          "available information"
-        ]
-      },
-      "public_task_id": "T2N-DPA-302-S8"
-    },
-    {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "routine_interval_months": 24
-      },
-      "phase1_context_slots": {
-        "cause_followup_available": false
-      },
-      "decoy_values": [
-        10,
-        45
-      ],
-      "task_ordinal": 8,
-      "event_ordinal": 7,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
-      "observation": {
-        "counter_text_slots": {
-          "routine_interval_months": 24
-        },
-        "phase1_context_slots": {
-          "cause_followup_available": false
+          "request_type": "data_subject"
         },
         "decoy_values": [
           10,
-          45
+          4
         ]
       },
-      "public_task_id": "T2N-DPA-302-S8"
+      "public_task_id": "T2N-V2-PRIVACY-01-S21302"
     },
     {
-      "label": "unacceptable",
+      "label": "acceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "customer_notice_days": 5
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "processing_basis": "legal_requirement"
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        30,
+        12
       ],
       "task_ordinal": 9,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 1,
+      "section_bucket": "2",
+      "playbook_rule": "R-001",
+      "family_split": "CF-DPA-INSTRUCTIONS-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "customer_notice_days": 5
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "processing_basis": "legal_requirement"
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          30,
+          12
         ]
       },
-      "public_task_id": "T2N-DPA-302-S9"
+      "public_task_id": "T2N-V2-PRIVACY-02-S21405"
     },
     {
-      "label": "acceptable",
+      "label": "unacceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "use_purpose": "independent"
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "data_state": "pseudonymized"
       },
       "decoy_values": [
-        10,
-        45
+        30,
+        3
       ],
       "task_ordinal": 9,
-      "event_ordinal": 6,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "event_ordinal": 2,
+      "section_bucket": "4",
+      "playbook_rule": "R-002",
+      "family_split": "CF-DPA-USE-BOUNDARY-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "use_purpose": "independent"
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "data_state": "pseudonymized"
         },
         "decoy_values": [
-          10,
-          45
+          30,
+          3
         ]
       },
-      "public_task_id": "T2N-DPA-302-S9"
+      "public_task_id": "T2N-V2-PRIVACY-02-S21405"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "data_subject_support_included": true
+        "customer_notice_days": 10
       },
       "phase1_context_slots": {
-        "regulator_support_included": true
+        "processing_basis": "documented_instruction"
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        45,
+        9
       ],
       "task_ordinal": 10,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-001",
+      "family_split": "CF-DPA-INSTRUCTIONS-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": true
+          "customer_notice_days": 10
         },
         "phase1_context_slots": {
-          "regulator_support_included": true
+          "processing_basis": "documented_instruction"
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          45,
+          9
         ]
       },
-      "public_task_id": "T2N-DPA-302-S10"
+      "public_task_id": "T2N-V2-PRIVACY-03-S21474"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "routine_interval_months": 24
+        "advance_notice_days": 45,
+        "pass_through_duties": false
       },
       "phase1_context_slots": {
-        "cause_followup_available": false
+        "approval_route": "prior_approval"
       },
       "decoy_values": [
         10,
-        45
+        9
       ],
       "task_ordinal": 10,
-      "event_ordinal": 6,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "event_ordinal": 1,
+      "section_bucket": "7",
+      "playbook_rule": "R-003",
+      "family_split": "CF-DPA-SUBPROCESSOR-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 24
+          "advance_notice_days": 45,
+          "pass_through_duties": false
         },
         "phase1_context_slots": {
-          "cause_followup_available": false
+          "approval_route": "prior_approval"
         },
         "decoy_values": [
           10,
-          45
+          9
         ]
       },
-      "public_task_id": "T2N-DPA-302-S10"
+      "public_task_id": "T2N-V2-PRIVACY-03-S21474"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "use_purpose": "independent"
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "data_state": "personal_data"
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        60,
+        9
       ],
       "task_ordinal": 11,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 1,
+      "section_bucket": "3",
+      "playbook_rule": "R-002",
+      "family_split": "CF-DPA-USE-BOUNDARY-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "use_purpose": "independent"
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "data_state": "personal_data"
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          60,
+          9
         ]
       },
-      "public_task_id": "T2N-DPA-302-S11"
+      "public_task_id": "T2N-V2-PRIVACY-04-S21237"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "response_days": 12
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "request_type": "regulator"
       },
       "decoy_values": [
-        10,
-        45
+        30,
+        2
       ],
       "task_ordinal": 11,
-      "event_ordinal": 7,
-      "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "event_ordinal": 4,
+      "section_bucket": "9",
+      "playbook_rule": "R-006",
+      "family_split": "CF-DPA-SUPPORT-V2",
+      "playbook_id": "PB-DPA-001",
+      "area": "privacy",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "response_days": 12
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "request_type": "regulator"
         },
         "decoy_values": [
-          10,
-          45
+          30,
+          2
         ]
       },
-      "public_task_id": "T2N-DPA-302-S11"
+      "public_task_id": "T2N-V2-PRIVACY-04-S21237"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "acceleration_percent": 125
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "plan_authorized": true
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        15,
+        120
       ],
       "task_ordinal": 12,
-      "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
+      "event_ordinal": 2,
+      "section_bucket": "7",
+      "playbook_rule": "R-007",
+      "family_split": "CF-EMP-EQUITY-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "data_subject_support_included": false
+          "acceleration_percent": 125
         },
         "phase1_context_slots": {
-          "regulator_support_included": false
+          "plan_authorized": true
         },
         "decoy_values": [
-          "privacy assessments",
-          "available information"
+          15,
+          120
         ]
       },
-      "public_task_id": "T2N-DPA-302-S12"
+      "public_task_id": "T2N-V2-EMPLOYMENT-01-S21623"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "routine_interval_months": 12
+        "asset_origin": "prior_invention"
       },
       "phase1_context_slots": {
-        "cause_followup_available": true
+        "signed_schedule": true
       },
       "decoy_values": [
-        10,
-        45
+        20,
+        40
       ],
       "task_ordinal": 12,
-      "event_ordinal": 7,
+      "event_ordinal": 4,
       "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "playbook_rule": "R-004",
+      "family_split": "CF-EMP-INVENTIONS-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "asset_origin": "prior_invention"
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "signed_schedule": true
         },
         "decoy_values": [
-          10,
-          45
+          20,
+          40
         ]
       },
-      "public_task_id": "T2N-DPA-302-S12"
+      "public_task_id": "T2N-V2-EMPLOYMENT-01-S21623"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "acceleration_percent": 50
+      },
+      "phase1_context_slots": {
+        "plan_authorized": true
+      },
+      "decoy_values": [
+        5,
+        90
+      ],
+      "task_ordinal": 13,
+      "event_ordinal": 3,
+      "section_bucket": "7",
+      "playbook_rule": "R-007",
+      "family_split": "CF-EMP-EQUITY-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
+      "observation": {
+        "counter_text_slots": {
+          "acceleration_percent": 50
+        },
+        "phase1_context_slots": {
+          "plan_authorized": true
+        },
+        "decoy_values": [
+          5,
+          90
+        ]
+      },
+      "public_task_id": "T2N-V2-EMPLOYMENT-02-S21403"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "data_subject_support_included": false
+        "asset_origin": "prior_invention"
       },
       "phase1_context_slots": {
-        "regulator_support_included": false
+        "signed_schedule": false
       },
       "decoy_values": [
-        "privacy assessments",
-        "available information"
+        10,
+        10
       ],
       "task_ordinal": 13,
       "event_ordinal": 5,
-      "section_bucket": "9",
-      "playbook_rule": "R-006",
-      "family_split": "CF-DPA-RIGHTS-01",
-      "observation": {
-        "counter_text_slots": {
-          "data_subject_support_included": false
-        },
-        "phase1_context_slots": {
-          "regulator_support_included": false
-        },
-        "decoy_values": [
-          "privacy assessments",
-          "available information"
-        ]
-      },
-      "public_task_id": "T2N-DPA-302-S13"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "routine_interval_months": 12
-      },
-      "phase1_context_slots": {
-        "cause_followup_available": true
-      },
-      "decoy_values": [
-        10,
-        45
-      ],
-      "task_ordinal": 13,
-      "event_ordinal": 7,
       "section_bucket": "11",
-      "playbook_rule": "R-008",
-      "family_split": "CF-DPA-AUDIT-01",
+      "playbook_rule": "R-004",
+      "family_split": "CF-EMP-INVENTIONS-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "routine_interval_months": 12
+          "asset_origin": "prior_invention"
         },
         "phase1_context_slots": {
-          "cause_followup_available": true
+          "signed_schedule": false
         },
         "decoy_values": [
           10,
-          45
+          10
         ]
       },
-      "public_task_id": "T2N-DPA-302-S13"
+      "public_task_id": "T2N-V2-EMPLOYMENT-02-S21403"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 1
+        "cure_days": 15
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": false
+        "cause_event": "minor_nonmaterial"
       },
       "decoy_values": [
-        2,
-        30
+        1,
+        8
+      ],
+      "task_ordinal": 14,
+      "event_ordinal": 1,
+      "section_bucket": "2",
+      "playbook_rule": "R-002",
+      "family_split": "CF-EMP-CAUSE-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
+      "observation": {
+        "counter_text_slots": {
+          "cure_days": 15
+        },
+        "phase1_context_slots": {
+          "cause_event": "minor_nonmaterial"
+        },
+        "decoy_values": [
+          1,
+          8
+        ]
+      },
+      "public_task_id": "T2N-V2-EMPLOYMENT-03-S21523"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "target_bonus_percent": 30
+      },
+      "phase1_context_slots": {
+        "objective_written_plan": true
+      },
+      "decoy_values": [
+        60,
+        10
       ],
       "task_ordinal": 14,
       "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "section_bucket": "6",
+      "playbook_rule": "R-006",
+      "family_split": "CF-EMP-BONUS-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 1
+          "target_bonus_percent": 30
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": false
+          "objective_written_plan": true
         },
         "decoy_values": [
-          2,
-          30
+          60,
+          10
         ]
       },
-      "public_task_id": "T2N-MSA-104-S4104"
+      "public_task_id": "T2N-V2-EMPLOYMENT-03-S21523"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cap_months": 12
+        "cure_days": 15
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": true
+        "cause_event": "curable_material_breach"
       },
       "decoy_values": [
-        30,
-        45
-      ],
-      "task_ordinal": 14,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 12
-        },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": true
-        },
-        "decoy_values": [
-          30,
-          45
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S4104"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "cyber_limit_millions": 5
-      },
-      "phase1_context_slots": {
-        "cyber_coverage_included": true
-      },
-      "decoy_values": [
-        2,
-        30
+        5,
+        6
       ],
       "task_ordinal": 15,
-      "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "event_ordinal": 1,
+      "section_bucket": "2",
+      "playbook_rule": "R-002",
+      "family_split": "CF-EMP-CAUSE-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 5
+          "cure_days": 15
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": true
+          "cause_event": "curable_material_breach"
         },
         "decoy_values": [
-          2,
-          30
+          5,
+          6
         ]
       },
-      "public_task_id": "T2N-MSA-104-S1"
+      "public_task_id": "T2N-V2-EMPLOYMENT-04-S21575"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 3
+        "asset_origin": "mixed_improvement"
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
+        "signed_schedule": true
       },
       "decoy_values": [
-        30,
-        45
+        5,
+        20
       ],
       "task_ordinal": 15,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "event_ordinal": 3,
+      "section_bucket": "11",
+      "playbook_rule": "R-004",
+      "family_split": "CF-EMP-INVENTIONS-V2",
+      "playbook_id": "PB-EMP-001",
+      "area": "employment",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 3
+          "asset_origin": "mixed_improvement"
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
+          "signed_schedule": true
         },
         "decoy_values": [
-          30,
-          45
+          5,
+          20
         ]
       },
-      "public_task_id": "T2N-MSA-104-S1"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "cyber_limit_millions": 5
-      },
-      "phase1_context_slots": {
-        "cyber_coverage_included": true
-      },
-      "decoy_values": [
-        2,
-        30
-      ],
-      "task_ordinal": 16,
-      "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
-      "observation": {
-        "counter_text_slots": {
-          "cyber_limit_millions": 5
-        },
-        "phase1_context_slots": {
-          "cyber_coverage_included": true
-        },
-        "decoy_values": [
-          2,
-          30
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S2"
+      "public_task_id": "T2N-V2-EMPLOYMENT-04-S21575"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 3
+        "matter_enumerated": false
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
+        "separately_agreed_in_writing": false
       },
       "decoy_values": [
-        30,
-        45
+        3,
+        8
       ],
       "task_ordinal": 16,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "event_ordinal": 3,
+      "section_bucket": "6",
+      "playbook_rule": "R-002",
+      "family_split": "CF-GOV-PROTECTIVE-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 3
+          "matter_enumerated": false
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
+          "separately_agreed_in_writing": false
         },
         "decoy_values": [
-          30,
-          45
+          3,
+          8
         ]
       },
-      "public_task_id": "T2N-MSA-104-S2"
+      "public_task_id": "T2N-V2-GOVERNANCE-01-S21689"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 5
+        "investor_purchase_delay_days": 10
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": true
+        "company_rofr_days": 30,
+        "company_declined": true
       },
       "decoy_values": [
-        2,
-        30
+        6,
+        5
       ],
-      "task_ordinal": 17,
+      "task_ordinal": 16,
       "event_ordinal": 5,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "section_bucket": "8",
+      "playbook_rule": "R-006",
+      "family_split": "CF-GOV-ROFR-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 5
+          "investor_purchase_delay_days": 10
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": true
+          "company_rofr_days": 30,
+          "company_declined": true
         },
         "decoy_values": [
-          2,
-          30
+          6,
+          5
         ]
       },
-      "public_task_id": "T2N-MSA-104-S3"
+      "public_task_id": "T2N-V2-GOVERNANCE-01-S21689"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 3
+        "series_a_approval_percent": 55
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
+        "major_investor_shares": 500000
       },
       "decoy_values": [
-        30,
-        45
+        5,
+        12
       ],
       "task_ordinal": 17,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-013",
+      "family_split": "CF-GOV-THRESHOLD-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 3
+          "series_a_approval_percent": 55
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
+          "major_investor_shares": 500000
         },
         "decoy_values": [
-          30,
-          45
+          5,
+          12
         ]
       },
-      "public_task_id": "T2N-MSA-104-S3"
-    },
-    {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "cyber_limit_millions": 1
-      },
-      "phase1_context_slots": {
-        "cyber_coverage_included": false
-      },
-      "decoy_values": [
-        2,
-        30
-      ],
-      "task_ordinal": 18,
-      "event_ordinal": 3,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
-      "observation": {
-        "counter_text_slots": {
-          "cyber_limit_millions": 1
-        },
-        "phase1_context_slots": {
-          "cyber_coverage_included": false
-        },
-        "decoy_values": [
-          2,
-          30
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S4"
+      "public_task_id": "T2N-V2-GOVERNANCE-02-S21554"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cap_months": 12
+        "matter_enumerated": false
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": true
+        "separately_agreed_in_writing": true
       },
       "decoy_values": [
-        30,
-        45
+        10,
+        4
       ],
-      "task_ordinal": 18,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "task_ordinal": 17,
+      "event_ordinal": 2,
+      "section_bucket": "6",
+      "playbook_rule": "R-002",
+      "family_split": "CF-GOV-PROTECTIVE-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 12
+          "matter_enumerated": false
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": true
+          "separately_agreed_in_writing": true
         },
         "decoy_values": [
-          30,
-          45
+          10,
+          4
         ]
       },
-      "public_task_id": "T2N-MSA-104-S4"
+      "public_task_id": "T2N-V2-GOVERNANCE-02-S21554"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 5
+        "matter_enumerated": true
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": true
+        "separately_agreed_in_writing": false
       },
       "decoy_values": [
-        2,
-        30
+        3,
+        2
       ],
-      "task_ordinal": 19,
-      "event_ordinal": 3,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "task_ordinal": 18,
+      "event_ordinal": 2,
+      "section_bucket": "5",
+      "playbook_rule": "R-002",
+      "family_split": "CF-GOV-PROTECTIVE-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 5
+          "matter_enumerated": true
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": true
+          "separately_agreed_in_writing": false
         },
         "decoy_values": [
-          2,
-          30
+          3,
+          2
         ]
       },
-      "public_task_id": "T2N-MSA-104-S5"
+      "public_task_id": "T2N-V2-GOVERNANCE-03-S21640"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 3
+        "transferee_type": "affiliate"
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
+        "recipient_bound_in_writing": false
       },
       "decoy_values": [
-        30,
-        45
+        10,
+        1
       ],
-      "task_ordinal": 19,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "task_ordinal": 18,
+      "event_ordinal": 4,
+      "section_bucket": "9",
+      "playbook_rule": "R-007",
+      "family_split": "CF-GOV-TRANSFER-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 3
+          "transferee_type": "affiliate"
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
+          "recipient_bound_in_writing": false
         },
         "decoy_values": [
-          30,
-          45
+          10,
+          1
         ]
       },
-      "public_task_id": "T2N-MSA-104-S5"
+      "public_task_id": "T2N-V2-GOVERNANCE-03-S21640"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 1
+        "matter_enumerated": false
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": false
+        "separately_agreed_in_writing": false
       },
       "decoy_values": [
-        2,
+        10,
+        2
+      ],
+      "task_ordinal": 19,
+      "event_ordinal": 2,
+      "section_bucket": "6",
+      "playbook_rule": "R-002",
+      "family_split": "CF-GOV-PROTECTIVE-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
+      "observation": {
+        "counter_text_slots": {
+          "matter_enumerated": false
+        },
+        "phase1_context_slots": {
+          "separately_agreed_in_writing": false
+        },
+        "decoy_values": [
+          10,
+          2
+        ]
+      },
+      "public_task_id": "T2N-V2-GOVERNANCE-04-S21471"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "transferee_type": "family_member"
+      },
+      "phase1_context_slots": {
+        "recipient_bound_in_writing": true
+      },
+      "decoy_values": [
+        3,
+        1
+      ],
+      "task_ordinal": 19,
+      "event_ordinal": 5,
+      "section_bucket": "9",
+      "playbook_rule": "R-007",
+      "family_split": "CF-GOV-TRANSFER-V2",
+      "playbook_id": "PB-GOV-001",
+      "area": "governance",
+      "observation": {
+        "counter_text_slots": {
+          "transferee_type": "family_member"
+        },
+        "phase1_context_slots": {
+          "recipient_bound_in_writing": true
+        },
+        "decoy_values": [
+          3,
+          1
+        ]
+      },
+      "public_task_id": "T2N-V2-GOVERNANCE-04-S21471"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "mandatory_offer_percent": 75
+      },
+      "phase1_context_slots": {
+        "successor_liability_admitted": true
+      },
+      "decoy_values": [
+        5,
         30
       ],
       "task_ordinal": 20,
-      "event_ordinal": 5,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "event_ordinal": 3,
+      "section_bucket": "12",
+      "playbook_rule": "R-008",
+      "family_split": "CF-MA-WORKFORCE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 1
+          "mandatory_offer_percent": 75
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": false
+          "successor_liability_admitted": true
         },
         "decoy_values": [
-          2,
+          5,
           30
         ]
       },
-      "public_task_id": "T2N-MSA-104-S6"
+      "public_task_id": "T2N-V2-MA-01-S21687"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cap_months": 12
+        "mae_occurred": false
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": true
+        "buyer_may_refuse_closing": true
       },
       "decoy_values": [
-        30,
-        45
+        3,
+        4
       ],
       "task_ordinal": 20,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "event_ordinal": 4,
+      "section_bucket": "13",
+      "playbook_rule": "R-011",
+      "family_split": "CF-MA-MAE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 12
+          "mae_occurred": false
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": true
+          "buyer_may_refuse_closing": true
         },
         "decoy_values": [
-          30,
-          45
+          3,
+          4
         ]
       },
-      "public_task_id": "T2N-MSA-104-S6"
+      "public_task_id": "T2N-V2-MA-01-S21687"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "mandatory_offer_percent": 0
+      },
+      "phase1_context_slots": {
+        "successor_liability_admitted": false
+      },
+      "decoy_values": [
+        3,
+        10
+      ],
+      "task_ordinal": 21,
+      "event_ordinal": 4,
+      "section_bucket": "12",
+      "playbook_rule": "R-008",
+      "family_split": "CF-MA-WORKFORCE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
+      "observation": {
+        "counter_text_slots": {
+          "mandatory_offer_percent": 0
+        },
+        "phase1_context_slots": {
+          "successor_liability_admitted": false
+        },
+        "decoy_values": [
+          3,
+          10
+        ]
+      },
+      "public_task_id": "T2N-V2-MA-02-S21637"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 1
+        "mae_occurred": true
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": false
+        "buyer_may_refuse_closing": false
       },
       "decoy_values": [
-        2,
-        30
+        5,
+        8
       ],
       "task_ordinal": 21,
       "event_ordinal": 5,
-      "section_bucket": "17",
+      "section_bucket": "14",
       "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "family_split": "CF-MA-MAE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 1
+          "mae_occurred": true
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": false
+          "buyer_may_refuse_closing": false
         },
         "decoy_values": [
-          2,
-          30
+          5,
+          8
         ]
       },
-      "public_task_id": "T2N-MSA-104-S7"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "cap_months": 12
-      },
-      "phase1_context_slots": {
-        "privacy_and_ip_carved_out": true
-      },
-      "decoy_values": [
-        30,
-        45
-      ],
-      "task_ordinal": 21,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 12
-        },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": true
-        },
-        "decoy_values": [
-          30,
-          45
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S7"
+      "public_task_id": "T2N-V2-MA-02-S21637"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 1
+        "assumed_liability_sections": 7,
+        "catch_all_liabilities": false
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": false
+        "signed_amendment": false
       },
       "decoy_values": [
-        2,
-        30
+        3,
+        60
+      ],
+      "task_ordinal": 22,
+      "event_ordinal": 1,
+      "section_bucket": "1",
+      "playbook_rule": "R-001",
+      "family_split": "CF-MA-ASSUMPTION-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
+      "observation": {
+        "counter_text_slots": {
+          "assumed_liability_sections": 7,
+          "catch_all_liabilities": false
+        },
+        "phase1_context_slots": {
+          "signed_amendment": false
+        },
+        "decoy_values": [
+          3,
+          60
+        ]
+      },
+      "public_task_id": "T2N-V2-MA-03-S21502"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "mandatory_offer_percent": 0
+      },
+      "phase1_context_slots": {
+        "successor_liability_admitted": false
+      },
+      "decoy_values": [
+        10,
+        20
       ],
       "task_ordinal": 22,
       "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "section_bucket": "12",
+      "playbook_rule": "R-008",
+      "family_split": "CF-MA-WORKFORCE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 1
+          "mandatory_offer_percent": 0
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": false
+          "successor_liability_admitted": false
         },
         "decoy_values": [
-          2,
-          30
+          10,
+          20
         ]
       },
-      "public_task_id": "T2N-MSA-104-S8"
+      "public_task_id": "T2N-V2-MA-03-S21502"
     },
     {
-      "label": "acceptable",
+      "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 12
+        "mandatory_offer_percent": 100
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": true
+        "successor_liability_admitted": false
       },
       "decoy_values": [
-        30,
-        45
+        10,
+        10
       ],
-      "task_ordinal": 22,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
+      "task_ordinal": 23,
+      "event_ordinal": 4,
+      "section_bucket": "12",
+      "playbook_rule": "R-008",
+      "family_split": "CF-MA-WORKFORCE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "cap_months": 12
+          "mandatory_offer_percent": 100
         },
         "phase1_context_slots": {
-          "privacy_and_ip_carved_out": true
+          "successor_liability_admitted": false
         },
         "decoy_values": [
-          30,
-          45
+          10,
+          10
         ]
       },
-      "public_task_id": "T2N-MSA-104-S8"
+      "public_task_id": "T2N-V2-MA-04-S21707"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 5
+        "mae_occurred": false
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": true
+        "buyer_may_refuse_closing": false
       },
       "decoy_values": [
-        2,
-        30
+        7,
+        8
       ],
       "task_ordinal": 23,
       "event_ordinal": 5,
-      "section_bucket": "17",
+      "section_bucket": "14",
       "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "family_split": "CF-MA-MAE-V2",
+      "playbook_id": "PB-MA-001",
+      "area": "ma",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 5
+          "mae_occurred": false
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": true
+          "buyer_may_refuse_closing": false
         },
         "decoy_values": [
-          2,
+          7,
+          8
+        ]
+      },
+      "public_task_id": "T2N-V2-MA-04-S21707"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "assigned_deliverable_percent": 75
+      },
+      "phase1_context_slots": {
+        "embedded_license": "perpetual"
+      },
+      "decoy_values": [
+        15,
+        40
+      ],
+      "task_ordinal": 24,
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-003",
+      "family_split": "CF-MSA-WORK-PRODUCT-V2",
+      "playbook_id": "PB-MSA-001",
+      "area": "contracts",
+      "observation": {
+        "counter_text_slots": {
+          "assigned_deliverable_percent": 75
+        },
+        "phase1_context_slots": {
+          "embedded_license": "perpetual"
+        },
+        "decoy_values": [
+          15,
+          40
+        ]
+      },
+      "public_task_id": "T2N-V2-CONTRACTS-01-S21634"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "termination_notice_days": 30
+      },
+      "phase1_context_slots": {
+        "unused_service_fee_percent": 0
+      },
+      "decoy_values": [
+        15,
+        35
+      ],
+      "task_ordinal": 24,
+      "event_ordinal": 2,
+      "section_bucket": "12",
+      "playbook_rule": "R-006",
+      "family_split": "CF-MSA-TERMINATION-V2",
+      "playbook_id": "PB-MSA-001",
+      "area": "contracts",
+      "observation": {
+        "counter_text_slots": {
+          "termination_notice_days": 30
+        },
+        "phase1_context_slots": {
+          "unused_service_fee_percent": 0
+        },
+        "decoy_values": [
+          15,
+          35
+        ]
+      },
+      "public_task_id": "T2N-V2-CONTRACTS-01-S21634"
+    },
+    {
+      "label": "unacceptable",
+      "counter_text_slots": {
+        "termination_notice_days": 45
+      },
+      "phase1_context_slots": {
+        "unused_service_fee_percent": 0
+      },
+      "decoy_values": [
+        20,
+        10
+      ],
+      "task_ordinal": 25,
+      "event_ordinal": 3,
+      "section_bucket": "12",
+      "playbook_rule": "R-006",
+      "family_split": "CF-MSA-TERMINATION-V2",
+      "playbook_id": "PB-MSA-001",
+      "area": "contracts",
+      "observation": {
+        "counter_text_slots": {
+          "termination_notice_days": 45
+        },
+        "phase1_context_slots": {
+          "unused_service_fee_percent": 0
+        },
+        "decoy_values": [
+          20,
+          10
+        ]
+      },
+      "public_task_id": "T2N-V2-CONTRACTS-02-S21788"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "express_warranties_preserved": true
+      },
+      "phase1_context_slots": {
+        "core_remedies_preserved": true
+      },
+      "decoy_values": [
+        60,
+        20
+      ],
+      "task_ordinal": 25,
+      "event_ordinal": 4,
+      "section_bucket": "15",
+      "playbook_rule": "R-008",
+      "family_split": "CF-MSA-DISCLAIMER-V2",
+      "playbook_id": "PB-MSA-001",
+      "area": "contracts",
+      "observation": {
+        "counter_text_slots": {
+          "express_warranties_preserved": true
+        },
+        "phase1_context_slots": {
+          "core_remedies_preserved": true
+        },
+        "decoy_values": [
+          60,
+          20
+        ]
+      },
+      "public_task_id": "T2N-V2-CONTRACTS-02-S21788"
+    },
+    {
+      "label": "acceptable",
+      "counter_text_slots": {
+        "assigned_deliverable_percent": 100
+      },
+      "phase1_context_slots": {
+        "embedded_license": "perpetual"
+      },
+      "decoy_values": [
+        5,
+        30
+      ],
+      "task_ordinal": 26,
+      "event_ordinal": 0,
+      "section_bucket": "2",
+      "playbook_rule": "R-003",
+      "family_split": "CF-MSA-WORK-PRODUCT-V2",
+      "playbook_id": "PB-MSA-001",
+      "area": "contracts",
+      "observation": {
+        "counter_text_slots": {
+          "assigned_deliverable_percent": 100
+        },
+        "phase1_context_slots": {
+          "embedded_license": "perpetual"
+        },
+        "decoy_values": [
+          5,
           30
         ]
       },
-      "public_task_id": "T2N-MSA-104-S9"
+      "public_task_id": "T2N-V2-CONTRACTS-03-S21670"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 3
+        "express_warranties_preserved": true
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
+        "core_remedies_preserved": false
       },
       "decoy_values": [
         30,
-        45
+        5
       ],
-      "task_ordinal": 23,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 3
-        },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
-        },
-        "decoy_values": [
-          30,
-          45
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S9"
-    },
-    {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "cyber_limit_millions": 1
-      },
-      "phase1_context_slots": {
-        "cyber_coverage_included": false
-      },
-      "decoy_values": [
-        2,
-        30
-      ],
-      "task_ordinal": 24,
+      "task_ordinal": 26,
       "event_ordinal": 5,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "section_bucket": "15",
+      "playbook_rule": "R-008",
+      "family_split": "CF-MSA-DISCLAIMER-V2",
+      "playbook_id": "PB-MSA-001",
+      "area": "contracts",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 1
+          "express_warranties_preserved": true
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": false
-        },
-        "decoy_values": [
-          2,
-          30
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S10"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "cap_months": 12
-      },
-      "phase1_context_slots": {
-        "privacy_and_ip_carved_out": true
-      },
-      "decoy_values": [
-        30,
-        45
-      ],
-      "task_ordinal": 24,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 12
-        },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": true
+          "core_remedies_preserved": false
         },
         "decoy_values": [
           30,
-          45
+          5
         ]
       },
-      "public_task_id": "T2N-MSA-104-S10"
+      "public_task_id": "T2N-V2-CONTRACTS-03-S21670"
     },
     {
       "label": "acceptable",
       "counter_text_slots": {
-        "cyber_limit_millions": 5
+        "affiliate_covered": true,
+        "party_responsible": true
       },
       "phase1_context_slots": {
-        "cyber_coverage_included": true
+        "affiliate_participates": true
       },
       "decoy_values": [
-        2,
-        30
+        10,
+        20
       ],
-      "task_ordinal": 25,
-      "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "task_ordinal": 27,
+      "event_ordinal": 2,
+      "section_bucket": "2",
+      "playbook_rule": "R-002",
+      "family_split": "CF-NDA-AFFILIATES-V2",
+      "playbook_id": "PB-NDA-001",
+      "area": "contracts",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 5
+          "affiliate_covered": true,
+          "party_responsible": true
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": true
+          "affiliate_participates": true
         },
         "decoy_values": [
-          2,
-          30
+          10,
+          20
         ]
       },
-      "public_task_id": "T2N-MSA-104-S11"
+      "public_task_id": "T2N-V2-CONTRACTS-04-S21756"
     },
     {
       "label": "unacceptable",
       "counter_text_slots": {
-        "cap_months": 3
+        "compelled_notice_hours": 36,
+        "reasonable_cooperation": true
       },
       "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
+        "notice_legally_prohibited": false
       },
       "decoy_values": [
-        30,
-        45
-      ],
-      "task_ordinal": 25,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 3
-        },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
-        },
-        "decoy_values": [
-          30,
-          45
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S11"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "cyber_limit_millions": 5
-      },
-      "phase1_context_slots": {
-        "cyber_coverage_included": true
-      },
-      "decoy_values": [
-        2,
-        30
-      ],
-      "task_ordinal": 26,
-      "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
-      "observation": {
-        "counter_text_slots": {
-          "cyber_limit_millions": 5
-        },
-        "phase1_context_slots": {
-          "cyber_coverage_included": true
-        },
-        "decoy_values": [
-          2,
-          30
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S12"
-    },
-    {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "cap_months": 3
-      },
-      "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
-      },
-      "decoy_values": [
-        30,
-        45
-      ],
-      "task_ordinal": 26,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 3
-        },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
-        },
-        "decoy_values": [
-          30,
-          45
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S12"
-    },
-    {
-      "label": "acceptable",
-      "counter_text_slots": {
-        "cyber_limit_millions": 5
-      },
-      "phase1_context_slots": {
-        "cyber_coverage_included": true
-      },
-      "decoy_values": [
-        2,
+        8,
         30
       ],
       "task_ordinal": 27,
-      "event_ordinal": 4,
-      "section_bucket": "17",
-      "playbook_rule": "R-011",
-      "family_split": "CF-MSA-INSURANCE-01",
+      "event_ordinal": 6,
+      "section_bucket": "5",
+      "playbook_rule": "R-007",
+      "family_split": "CF-NDA-COMPELLED-V2",
+      "playbook_id": "PB-NDA-001",
+      "area": "contracts",
       "observation": {
         "counter_text_slots": {
-          "cyber_limit_millions": 5
+          "compelled_notice_hours": 36,
+          "reasonable_cooperation": true
         },
         "phase1_context_slots": {
-          "cyber_coverage_included": true
+          "notice_legally_prohibited": false
         },
         "decoy_values": [
-          2,
+          8,
           30
         ]
       },
-      "public_task_id": "T2N-MSA-104-S13"
+      "public_task_id": "T2N-V2-CONTRACTS-04-S21756"
+    }
+  ],
+  "family_heldout_split": {
+    "status": "PASS",
+    "playbooks": [
+      {
+        "playbook_id": "PB-AI-001",
+        "train_family_ids": [
+          "CF-AI-CUSTOM-ASSETS-V2",
+          "CF-AI-EXIT-V2",
+          "CF-AI-POLICY-CHANGE-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-AI-TRAINING-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-AI-TRAINING-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-CRYPTO-001",
+        "train_family_ids": [
+          "CF-CRYPTO-ASSET-USE-V2",
+          "CF-CRYPTO-ASSURANCE-V2",
+          "CF-CRYPTO-DISTRIBUTIONS-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-CRYPTO-ESTATE-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-CRYPTO-ESTATE-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-DPA-001",
+        "train_family_ids": [
+          "CF-DPA-INSTRUCTIONS-V2",
+          "CF-DPA-SUBPROCESSOR-V2",
+          "CF-DPA-SUPPORT-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-DPA-USE-BOUNDARY-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-DPA-USE-BOUNDARY-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-EMP-001",
+        "train_family_ids": [
+          "CF-EMP-BONUS-V2",
+          "CF-EMP-CAUSE-V2",
+          "CF-EMP-EQUITY-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-EMP-INVENTIONS-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-EMP-INVENTIONS-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-GOV-001",
+        "train_family_ids": [
+          "CF-GOV-PROTECTIVE-V2",
+          "CF-GOV-ROFR-V2",
+          "CF-GOV-THRESHOLD-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-GOV-TRANSFER-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-GOV-TRANSFER-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-MA-001",
+        "train_family_ids": [
+          "CF-MA-ASSUMPTION-V2",
+          "CF-MA-FRAUD-V2",
+          "CF-MA-MAE-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-MA-WORKFORCE-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-MA-WORKFORCE-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-MSA-001",
+        "train_family_ids": [
+          "CF-MSA-DISCLAIMER-V2",
+          "CF-MSA-LIABILITY-V2",
+          "CF-MSA-TERMINATION-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-MSA-WORK-PRODUCT-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-MSA-WORK-PRODUCT-V2"
+        ],
+        "train_heldout_disjoint": true
+      },
+      {
+        "playbook_id": "PB-NDA-001",
+        "train_family_ids": [
+          "CF-NDA-AFFILIATES-V2",
+          "CF-NDA-RETURN-V2",
+          "CF-NDA-SURVIVAL-V2"
+        ],
+        "heldout_family_ids": [
+          "CF-NDA-COMPELLED-V2"
+        ],
+        "evaluation_family_ids": [
+          "CF-NDA-COMPELLED-V2"
+        ],
+        "train_heldout_disjoint": true
+      }
+    ]
+  },
+  "per_instance_validators": [
+    {
+      "label": "T2N-V2-AI-01-S21238",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
     },
     {
-      "label": "unacceptable",
-      "counter_text_slots": {
-        "cap_months": 3
-      },
-      "phase1_context_slots": {
-        "privacy_and_ip_carved_out": false
-      },
-      "decoy_values": [
-        30,
-        45
-      ],
-      "task_ordinal": 27,
-      "event_ordinal": 6,
-      "section_bucket": "18",
-      "playbook_rule": "R-001",
-      "family_split": "CF-MSA-LIABILITY-01",
-      "observation": {
-        "counter_text_slots": {
-          "cap_months": 3
+      "label": "T2N-V2-AI-02-S21171",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
         },
-        "phase1_context_slots": {
-          "privacy_and_ip_carved_out": false
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
         },
-        "decoy_values": [
-          30,
-          45
-        ]
-      },
-      "public_task_id": "T2N-MSA-104-S13"
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-AI-03-S21308",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-AI-04-S21139",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CRYPTO-01-S21287",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CRYPTO-02-S21305",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CRYPTO-03-S21255",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CRYPTO-04-S21239",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-PRIVACY-01-S21302",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-PRIVACY-02-S21405",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-PRIVACY-03-S21474",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-PRIVACY-04-S21237",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-01-S21623",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-02-S21403",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-03-S21523",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-EMPLOYMENT-04-S21575",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-01-S21689",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-02-S21554",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-03-S21640",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-GOVERNANCE-04-S21471",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-MA-01-S21687",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-MA-02-S21637",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-MA-03-S21502",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-MA-04-S21707",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-01-S21634",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-02-S21788",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-03-S21670",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
+    },
+    {
+      "label": "T2N-V2-CONTRACTS-04-S21756",
+      "results": [
+        {
+          "code": "V8-T2N",
+          "name": "T2-N artifact schemas",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V14",
+          "name": "T2-N ledger replay and child accounting",
+          "status": "PASS",
+          "detail": "ok"
+        },
+        {
+          "code": "V9-T2N",
+          "name": "canary turn-event integrity",
+          "status": "PASS",
+          "detail": "ok"
+        }
+      ]
     }
   ]
 }

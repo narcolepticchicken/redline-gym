@@ -7,7 +7,7 @@ from scoring.t2n_contract import (
     CHANNEL_WEIGHTS, TRANSITION_ROWS, all_concessions_share_compliant,
     compute_composite, evaluate_transition, gated_tranche_composite,
     score_all_concessions, tranche_counter_metrics,
-    validate_counter_family,
+    validate_counter_family, validate_family_pool_diversity,
 )
 
 
@@ -137,16 +137,85 @@ def test_tranche_gate_share_and_all_concessions():
         conformance=1, abstention=1)["score"] == 0
 
 
-def test_counter_family_realism_minimums_are_executable():
-    family = {"counter_text_slots": {"days": 30}, "phase1_context_slots": {"exception": False},
-              "decoy_values": [10, 20], "decoy_ids": ["d1", "d2"],
-              "render_forms": {"days": ["30 days", "one month", "30-day"],
-                               "exception": ["absent", "not present", "none"]},
+def _valid_counter_family():
+    return {"counter_family_id": "CF-TOY-ONE",
+              "counter_text_slots": {"notice_days": [20, 30, 40]},
+              "phase1_context_slots": {"notice_protection": ["standard", "enhanced"]},
+              "decoy_values": [0, 1], "decoy_ids": ["d1", "d2"],
+              "render_forms": {"notice_days": ["days", "calendar days", "notice period"],
+                               "notice_protection": ["protection", "safeguard", "condition"]},
               "counterfactual_twins": [
-                  {"varied_input": "days", "label_flipped": True},
-                  {"varied_input": "exception", "label_flipped": True},
+                  {"varied_input": "notice_days", "label_flipped": True},
+                  {"varied_input": "notice_protection", "label_flipped": True},
                   {"varied_input": "d1", "label_flipped": False},
-                  {"varied_input": "d2", "label_flipped": False}]}
+                  {"varied_input": "d2", "label_flipped": False}],
+              "playbook_grounding": {
+                  "position": "Notice should be prompt and protected.",
+                  "fallback": "Give notice within thirty days with appropriate protection.",
+                  "escalation_trigger": "Escalate an excessive notice period.",
+                  "deterministic_checks": {},
+              },
+              "predicate": {"type": "interaction", "expression": "notice_days <= 30 or notice_protection == 'enhanced'"},
+              "expected_redline_text": "Use the signed fallback.",
+              "render_pools": {
+                  "acceptable": [
+                      {"text": f"acceptable {days}-{protection}", "counter_text_slots": {"notice_days": days},
+                       "phase1_context_slots": {"notice_protection": protection}, "decoy_values": decoys}
+                      for days, protection, decoys in [(20, "standard", [1, 2]), (30, "standard", [2, 1]),
+                                                       (40, "enhanced", [3, 2]), (30, "enhanced", [2, 3])]],
+                  "unacceptable": [
+                      {"text": f"unacceptable {days}-{protection}", "counter_text_slots": {"notice_days": days},
+                       "phase1_context_slots": {"notice_protection": protection}, "decoy_values": decoys}
+                      for days, protection, decoys in [(35, "standard", [2, 2]), (40, "standard", [3, 1]),
+                                                       (50, "standard", [1, 3]), (35, "standard", [2, 2])]]}}
+
+
+def test_counter_family_realism_minimums_are_executable():
+    family = _valid_counter_family()
     assert validate_counter_family(family) == []
+    disjoint = copy.deepcopy(family)
+    for render, days in zip(disjoint["render_pools"]["acceptable"], (5, 6, 7, 8)):
+        render["counter_text_slots"]["notice_days"] = days
+    for render, days in zip(disjoint["render_pools"]["unacceptable"], (50, 60, 70, 80)):
+        render["counter_text_slots"]["notice_days"] = days
+    assert any("slot notice_days" in error and "ranges" in error for error in validate_counter_family(disjoint))
+
+    ungrounded = copy.deepcopy(family)
+    ungrounded["counter_text_slots"] = {"synthetic_route": [20, 30, 40]}
+    ungrounded["phase1_context_slots"] = {"binary_code": ["standard", "enhanced"]}
+    ungrounded["render_forms"]["synthetic_route"] = ungrounded["render_forms"].pop("notice_days")
+    ungrounded["render_forms"]["binary_code"] = ungrounded["render_forms"].pop("notice_protection")
+    for twin in ungrounded["counterfactual_twins"]:
+        if twin["varied_input"] == "notice_days":
+            twin["varied_input"] = "synthetic_route"
+        elif twin["varied_input"] == "notice_protection":
+            twin["varied_input"] = "binary_code"
+    for pool in ungrounded["render_pools"].values():
+        for render in pool:
+            render["counter_text_slots"] = {"synthetic_route": render["counter_text_slots"]["notice_days"]}
+            render["phase1_context_slots"] = {"binary_code": render["phase1_context_slots"]["notice_protection"]}
+    assert any("no decisive slot name is grounded" in error for error in validate_counter_family(ungrounded))
+
+    duplicate = copy.deepcopy(family)
+    duplicate["counter_family_id"] = "CF-TOY-TWO"
+    diversity_errors = validate_family_pool_diversity([family, duplicate])
+    assert len(diversity_errors) == 1
+    assert "CF-TOY-ONE" in diversity_errors[0] and "CF-TOY-TWO" in diversity_errors[0]
+
     family["decoy_values"] = [10]
     assert any("two" in error for error in validate_counter_family(family))
+
+
+def test_counter_family_rejects_same_render_decoy_decisive_collision():
+    family = _valid_counter_family()
+    assert validate_counter_family(family) == []
+
+    collided = copy.deepcopy(family)
+    render = collided["render_pools"]["acceptable"][0]
+    render["decoy_values"][0] = render["counter_text_slots"]["notice_days"]
+
+    errors = validate_counter_family(collided)
+    assert any(
+        "collides" in error and "20" in error and "notice_days" in error
+        for error in errors
+    )

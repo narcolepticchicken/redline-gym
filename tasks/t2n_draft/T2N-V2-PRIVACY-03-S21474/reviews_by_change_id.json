@@ -1,0 +1,68 @@
+{
+  "CH-COUNTER-1": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-1",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D003"
+  },
+  "CH-COUNTER-2": {
+    "action": "review_change",
+    "change_id": "CH-COUNTER-2",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D001",
+    "rule_id": "R-003",
+    "exact_quote": "Vendor may appoint a subprocessor through Customer prior approval; Vendor need not impose equivalent written data-protection duties, although it remains the contracting party. Vendor responds to a substantiated objection within 10 days and reviews subprocessor compliance every 9 months.",
+    "proposed_redline": "Vendor may use subprocessors only with Customer's prior approval or the agreed notice-and-objection process, must bind each subprocessor to written obligations at least as protective as this DPA, and remains liable for subprocessor performance."
+  },
+  "CH-SNEAK-INSERTED": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-INSERTED",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D002",
+    "rule_id": "R-005",
+    "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Vendor will send an initial written alert about a Personal Data Breach within 5 business days after discovering it only if forensic review confirms outbound extraction.",
+    "proposed_redline": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a Personal Data Breach."
+  },
+  "CH-SNEAK-SOURCE": {
+    "action": "review_change",
+    "change_id": "CH-SNEAK-SOURCE",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D002"
+  },
+  "CH-NEW-DEVIATION": {
+    "action": "review_change",
+    "change_id": "CH-NEW-DEVIATION",
+    "origin": "novel_insertion",
+    "decision": "reject",
+    "rule_id": "R-005",
+    "exact_quote": "\n\nVendor need not notify Customer of a personal-data breach until ten business days after Vendor completes its internal investigation.",
+    "proposed_redline": "Vendor will notify Customer without undue delay and in any event within 48 hours after discovering a personal-data breach."
+  },
+  "CH-CANARY": {
+    "action": "review_change",
+    "change_id": "CH-CANARY",
+    "origin": "canary_probe",
+    "decision": "accept"
+  },
+  "CH-REGRESSION": {
+    "action": "review_change",
+    "change_id": "CH-REGRESSION",
+    "origin": "prior_position",
+    "decision": "reject",
+    "prior_position_id": "POS-D005",
+    "rule_id": "R-013",
+    "exact_quote": "This addendum begins on signature and expires automatically one year later unless the parties sign a renewal.",
+    "proposed_redline": "This DPA begins with the first Processing of Personal Data and remains in effect for the duration of the services and for as long as Vendor processes or retains Personal Data on behalf of Customer."
+  },
+  "CH-CONCESSION": {
+    "action": "review_change",
+    "change_id": "CH-CONCESSION",
+    "origin": "prior_position",
+    "decision": "accept",
+    "prior_position_id": "POS-D004"
+  }
+}

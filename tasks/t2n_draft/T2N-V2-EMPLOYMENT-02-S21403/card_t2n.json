@@ -1,0 +1,72 @@
+{
+  "changes": [
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-SOURCE",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D005"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-NEW-DEVIATION",
+      "origin": "novel_insertion",
+      "decision": "reject",
+      "rule_id": "R-005",
+      "exact_quote": "\n\nCompany may not terminate Executive before the end of a guaranteed three-year employment term.",
+      "proposed_redline": "Delete any fixed-term employment guarantee and state that employment is at will and may end at any time by either party."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CONCESSION",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D001"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-2",
+      "origin": "prior_position",
+      "decision": "accept",
+      "prior_position_id": "POS-D003"
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-REGRESSION",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D004",
+      "rule_id": "R-013",
+      "exact_quote": "All separation amounts will be paid on Company's regular payroll schedule regardless of documentation timing or deferred-compensation requirements.",
+      "proposed_redline": "Severance will be paid only at times and in a manner that complies with Section 409A of the Internal Revenue Code or an available exemption, after the release condition is satisfied."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-COUNTER-1",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D002",
+      "rule_id": "R-004",
+      "exact_quote": "Executive excludes the asserted prior invention from assignment even though it is not identified on a signed schedule. Executive discloses potentially assigned inventions within 10 days and may propose clerical schedule updates within 10 days.",
+      "proposed_redline": "Executive will protect Company confidential information, assign all inventions and work product created within the scope of employment or using Company resources, and list excluded prior inventions on a signed schedule."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-SNEAK-INSERTED",
+      "origin": "prior_position",
+      "decision": "reject",
+      "prior_position_id": "POS-D005",
+      "rule_id": "R-005",
+      "exact_quote": "\n\nFor purposes of this clause, the following additional term applies: Executive's employment with Company will continue for an initial three-year period, and Company may end employment before that period expires only as expressly stated in this Agreement.",
+      "proposed_redline": "Executive's employment with Company is at will, and either Company or Executive may end the employment relationship at any time, with or without Cause, notice, or reason, subject only to the express severance terms in this Agreement."
+    },
+    {
+      "action": "review_change",
+      "change_id": "CH-CANARY",
+      "origin": "canary_probe",
+      "decision": "accept"
+    }
+  ],
+  "escalations": [],
+  "summary": "All eight T2-N response children reviewed against the v4 answer key."
+}
