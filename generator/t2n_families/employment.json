@@ -1,0 +1,30 @@
+{
+  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "PB-EMP-001": {
+    "counter_families": [
+      {
+        "counter_family_id": "CF-EMP-SEVERANCE-01", "rule_id": "R-001", "counter_guard_id": "GUARD-EMP-WITHOUT-CAUSE", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
+        "counter_text_slots": {"severance_months": 6}, "phase1_context_slots": {"only_without_cause": true}, "decoy_values": [10, 30], "decoy_ids": ["release_days", "payment_days"],
+        "render_forms": {"severance_months": ["six months of base salary", "a half-year of base pay", "base salary for 6 months"], "only_without_cause": ["only after termination without Cause", "limited to a without-Cause separation", "Cause terminations are excluded"]},
+        "counterfactual_twins": [{"varied_input": "severance_months", "label_flipped": true}, {"varied_input": "only_without_cause", "label_flipped": true}, {"varied_input": "release_days", "label_flipped": false}, {"varied_input": "payment_days", "label_flipped": false}],
+        "expected_redline_text": "Executive's employment is at will. If Company terminates Executive without Cause and Executive satisfies the agreement's conditions, severance is limited to six months of base salary unless Company approves a different amount in writing.",
+        "acceptable": {"text": "Employment remains at will, with six months of base salary only after termination without Cause; the release period is 10 days and payment begins in 30 days.", "counter_text_slots": {"severance_months": 6}, "phase1_context_slots": {"only_without_cause": true}, "decoy_values": [10, 30]},
+        "unacceptable": {"text": "Employment is guaranteed with twelve months of base salary after any separation, including Cause; the release period is 10 days and payment begins in 30 days.", "counter_text_slots": {"severance_months": 12}, "phase1_context_slots": {"only_without_cause": false}, "decoy_values": [10, 30]}
+      },
+      {
+        "counter_family_id": "CF-EMP-BONUS-01", "rule_id": "R-006", "counter_guard_id": "GUARD-EMP-METRICS", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
+        "counter_text_slots": {"target_percent": 25}, "phase1_context_slots": {"objective_metrics_required": true}, "decoy_values": [30, 90], "decoy_ids": ["notice_days", "review_days"],
+        "render_forms": {"target_percent": ["a 25% target", "one quarter of base salary", "twenty-five percent target bonus"], "objective_metrics_required": ["objective metrics govern", "written performance measures apply", "payment requires stated metrics"]},
+        "counterfactual_twins": [{"varied_input": "target_percent", "label_flipped": true}, {"varied_input": "objective_metrics_required", "label_flipped": true}, {"varied_input": "notice_days", "label_flipped": false}, {"varied_input": "review_days", "label_flipped": false}],
+        "expected_redline_text": "Any bonus is discretionary unless a written bonus plan states objective metrics, approval requirements, and payment timing.",
+        "acceptable": {"text": "The 25% target bonus remains subject to written objective metrics and approval; notice is 30 days and review occurs after 90 days.", "counter_text_slots": {"target_percent": 25}, "phase1_context_slots": {"objective_metrics_required": true}, "decoy_values": [30, 90]},
+        "unacceptable": {"text": "A 50% bonus is guaranteed without objective metrics or approval; notice is 30 days and review occurs after 90 days.", "counter_text_slots": {"target_percent": 50}, "phase1_context_slots": {"objective_metrics_required": false}, "decoy_values": [30, 90]}
+      }
+    ],
+    "benign_change_templates": [
+      {"template_id": "BC-EMP-ARBITRATION", "rule_id": "R-014", "anchor_terms": ["arbitration"], "text": "The parties confirm that employment disputes will proceed through individual arbitration."},
+      {"template_id": "BC-EMP-DELAWARE", "rule_id": "R-015", "anchor_terms": ["Delaware"], "text": "The parties confirm that Delaware law governs this agreement."}
+    ],
+    "novel_deviation_templates": [{"template_id": "ND-EMP-TERM", "rule_id": "R-005", "destination_terms": ["Term"], "text": "Company may not terminate Executive before the end of a guaranteed three-year employment term."}]
+  }
+}

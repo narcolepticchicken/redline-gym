@@ -1,0 +1,30 @@
+{
+  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "PB-AI-001": {
+    "counter_families": [
+      {
+        "counter_family_id": "CF-AI-MODEL-CHANGE-01", "rule_id": "R-007", "counter_guard_id": "GUARD-AI-EMERGENCY-NOTICE", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
+        "counter_text_slots": {"advance_notice_days": 60}, "phase1_context_slots": {"emergency_notice_required": true}, "decoy_values": [10, 30], "decoy_ids": ["support_days", "archive_days"],
+        "render_forms": {"advance_notice_days": ["60 days' prior notice", "two months in advance", "notice by the sixtieth preceding day"], "emergency_notice_required": ["emergency fixes receive prompt notice", "security exceptions still require notice", "prompt notice follows an emergency change"]},
+        "counterfactual_twins": [{"varied_input": "advance_notice_days", "label_flipped": true}, {"varied_input": "emergency_notice_required", "label_flipped": true}, {"varied_input": "support_days", "label_flipped": false}, {"varied_input": "archive_days", "label_flipped": false}],
+        "expected_redline_text": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, or replacement that could materially affect behavior, safety, latency, or output quality, except for emergency security fixes with prompt notice.",
+        "acceptable": {"text": "Vendor will give 60 days' notice of material model changes, with prompt notice after emergency security fixes; support tickets close in 10 days and archives remain for 30 days.", "counter_text_slots": {"advance_notice_days": 60}, "phase1_context_slots": {"emergency_notice_required": true}, "decoy_values": [10, 30]},
+        "unacceptable": {"text": "Vendor will give 15 days' notice of material model changes and no notice for emergency security fixes; support tickets close in 10 days and archives remain for 30 days.", "counter_text_slots": {"advance_notice_days": 15}, "phase1_context_slots": {"emergency_notice_required": false}, "decoy_values": [10, 30]}
+      },
+      {
+        "counter_family_id": "CF-AI-RETENTION-01", "rule_id": "R-008", "counter_guard_id": "GUARD-AI-APPROVED-REGION", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
+        "counter_text_slots": {"retention_days": 30}, "phase1_context_slots": {"approved_regions_only": true}, "decoy_values": [7, 90], "decoy_ids": ["backup_days", "report_days"],
+        "render_forms": {"retention_days": ["no more than 30 days", "a one-month maximum", "deleted by day thirty"], "approved_regions_only": ["approved regions only", "storage remains in authorized locations", "processing is geographically restricted"]},
+        "counterfactual_twins": [{"varied_input": "retention_days", "label_flipped": true}, {"varied_input": "approved_regions_only", "label_flipped": true}, {"varied_input": "backup_days", "label_flipped": false}, {"varied_input": "report_days", "label_flipped": false}],
+        "expected_redline_text": "Vendor will process and store Customer Data, prompts, outputs, telemetry, embeddings, and logs only in approved regions and retain prompts, outputs, and logs for no more than 30 days unless Customer requests a shorter or longer period in writing.",
+        "acceptable": {"text": "Prompts, outputs, and logs remain in approved regions and are retained no more than 30 days; backup checks run every 7 days and reports remain available for 90 days.", "counter_text_slots": {"retention_days": 30}, "phase1_context_slots": {"approved_regions_only": true}, "decoy_values": [7, 90]},
+        "unacceptable": {"text": "Prompts, outputs, and logs may be stored in any region and retained for 180 days; backup checks run every 7 days and reports remain available for 90 days.", "counter_text_slots": {"retention_days": 180}, "phase1_context_slots": {"approved_regions_only": false}, "decoy_values": [7, 90]}
+      }
+    ],
+    "benign_change_templates": [
+      {"template_id": "BC-AI-DELAWARE", "rule_id": "R-014", "anchor_terms": ["Delaware"], "text": "The parties confirm that Delaware law governs this engagement."},
+      {"template_id": "BC-AI-UPTIME", "rule_id": "R-015", "anchor_terms": ["99.9%", "uptime"], "text": "For clarity, the 99.9% uptime commitment continues to carry service credits."}
+    ],
+    "novel_deviation_templates": [{"template_id": "ND-AI-TRAINING", "rule_id": "R-001", "destination_terms": ["Data"], "text": "Vendor may use Customer prompts, outputs, and telemetry to train and improve models without Customer opt-in."}]
+  }
+}

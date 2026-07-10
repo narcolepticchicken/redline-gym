@@ -1,0 +1,82 @@
+{
+  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "PB-DPA-001": {
+    "counter_families": [
+      {
+        "counter_family_id": "CF-DPA-AUDIT-01",
+        "rule_id": "R-008",
+        "counter_guard_id": "GUARD-DPA-AUDIT-CAUSE",
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {"routine_notice_days": 30},
+        "phase1_context_slots": {"cause_followup_available": true},
+        "decoy_values": [10, 45],
+        "decoy_ids": ["questionnaire_days", "report_delivery_days"],
+        "render_forms": {
+          "routine_notice_days": ["30 days' notice", "one month's notice", "thirty days before the audit"],
+          "cause_followup_available": ["cause-based follow-up remains available", "incident follow-up is not limited", "reasonable-cause review remains permitted"]
+        },
+        "counterfactual_twins": [
+          {"varied_input": "routine_notice_days", "label_flipped": true},
+          {"varied_input": "cause_followup_available", "label_flipped": true},
+          {"varied_input": "questionnaire_days", "label_flipped": false},
+          {"varied_input": "report_delivery_days", "label_flipped": false}
+        ],
+        "expected_redline_text": "Vendor will provide reasonable information needed to demonstrate compliance and will permit audits or inspections by Customer or an independent assessor on reasonable notice, no more than annually absent a material incident or reasonable cause.",
+        "acceptable": {
+          "text": "Vendor will permit one routine audit on 30 days' notice, while incident and reasonable-cause follow-up remains available; questionnaires are answered in 10 days and reports in 45 days.",
+          "counter_text_slots": {"routine_notice_days": 30},
+          "phase1_context_slots": {"cause_followup_available": true},
+          "decoy_values": [10, 45]
+        },
+        "unacceptable": {
+          "text": "Vendor will permit one routine audit on 60 days' notice, but incident and reasonable-cause follow-up is unavailable; questionnaires are answered in 10 days and reports in 45 days.",
+          "counter_text_slots": {"routine_notice_days": 60},
+          "phase1_context_slots": {"cause_followup_available": false},
+          "decoy_values": [10, 45]
+        }
+      },
+      {
+        "counter_family_id": "CF-DPA-RIGHTS-01",
+        "rule_id": "R-006",
+        "counter_guard_id": "GUARD-DPA-RIGHTS-REGULATOR",
+        "has_qualitative_decisive_input": true,
+        "has_arithmetic_interaction": true,
+        "counter_text_slots": {"response_business_days": 10},
+        "phase1_context_slots": {"regulator_support_included": true},
+        "decoy_values": [2, 30],
+        "decoy_ids": ["intake_days", "archive_days"],
+        "render_forms": {
+          "response_business_days": ["within 10 business days", "within two workweeks", "no later than the tenth business day"],
+          "regulator_support_included": ["regulator inquiries are included", "official inquiries remain supported", "assistance extends to regulators"]
+        },
+        "counterfactual_twins": [
+          {"varied_input": "response_business_days", "label_flipped": true},
+          {"varied_input": "regulator_support_included", "label_flipped": true},
+          {"varied_input": "intake_days", "label_flipped": false},
+          {"varied_input": "archive_days", "label_flipped": false}
+        ],
+        "expected_redline_text": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor.",
+        "acceptable": {
+          "text": "Vendor will assist with data-subject requests within 10 business days and will support regulator inquiries; intake notices remain due in 2 days and archive exports remain available for 30 days.",
+          "counter_text_slots": {"response_business_days": 10},
+          "phase1_context_slots": {"regulator_support_included": true},
+          "decoy_values": [2, 30]
+        },
+        "unacceptable": {
+          "text": "Vendor will assist with data-subject requests within 25 business days but will not support regulator inquiries; intake notices remain due in 2 days and archive exports remain available for 30 days.",
+          "counter_text_slots": {"response_business_days": 25},
+          "phase1_context_slots": {"regulator_support_included": false},
+          "decoy_values": [2, 30]
+        }
+      }
+    ],
+    "benign_change_templates": [
+      {"template_id": "BC-DPA-SOC2", "rule_id": "R-014", "anchor_terms": ["SOC 2 Type II", "annual"], "anchor_text": "Vendor will provide an annual SOC 2 Type II report, responses to security and privacy questionnaires within 10 business days, and written control mappings needed to demonstrate compliance with this DPA.", "text": "For clarity, the annual SOC 2 Type II report may satisfy routine assurance requests, while incident and reasonable-cause follow-up rights remain available."},
+      {"template_id": "BC-DPA-TRANSITION", "rule_id": "R-015", "anchor_terms": ["30 days", "transition"], "anchor_text": "For up to 30 days after termination, Vendor will provide export files, transfer coordination, and deletion support for secure transition, return, or deletion.", "text": "The parties confirm that the 30-day termination-assistance period remains available for orderly transition support."}
+    ],
+    "novel_deviation_templates": [
+      {"template_id": "ND-DPA-BREACH", "rule_id": "R-005", "destination_terms": ["written updates", "closure notice"], "text": "Vendor need not notify Customer of a personal-data breach until ten business days after Vendor completes its internal investigation."}
+    ]
+  }
+}
