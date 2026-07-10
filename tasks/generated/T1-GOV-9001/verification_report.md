@@ -30,3 +30,6 @@ Model-stubbed validators: V3, V4, V7-semantic, V11.
 - coherence check: PASS sections=15 cross_refs_resolved=yes anchors_resolved=yes
 
 Human sign-off: name ____________________ date __________
+
+PROMOTED 2026-07-09: fix/regen per Aaron rulings, independently verified
+(quoted-clause check, hash + V13 + derive reproducibility), Aaron promote ruling.

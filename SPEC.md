@@ -182,8 +182,9 @@ answer keys gained fields). `tasks/heldout/` was NOT regenerated and scores
 under v1 fallback matching via the backward-compat path. (b) Clean instances:
 `task_type: "clean"` recipes plant ZERO deviations with ≥3 distractors (V13);
 correct behavior is an engaged review ending in an empty-card finalize through
-the confirm bounce. Drafts live in `tasks/generated_clean_draft/` until
-red-penned; target mix ≤15% of any published suite.
+the confirm bounce. Clean instances stage as drafts until reviewed and ruled;
+all 7 promoted 2026-07-09 (model review pass + Aaron rulings). Mix target
+~15%: currently 7 of 43 dev instances ≈ 16% — stated, not rounded down.
 
 Held-out rule (condition 2): `tasks/heldout/` is never read by development
 tooling, prompts, or humans outside a formal eval run. No dev script, review,
