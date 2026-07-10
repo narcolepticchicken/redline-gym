@@ -119,3 +119,46 @@ engagement gate zeroes every channel. The do-nothing strategy on clean tasks
 is measured at 0.0, not assumed. Note: cheater_empty is presently
 code-identical to null_agent (both finalize empty and confirm); it exists as a
 named battery entry for the clean-task gate.
+
+---
+
+# v0.2 honest arms (2026-07-09/10 — v2 union + tiered fallback, GLM-5.2)
+
+Measured spend: 2.72M GLM tokens (36 scored episodes + 3 discarded pre-fix EMP
+episodes, 263 calls). Live-scored under v2 union semantics with tiered
+redline-text matching (fallback_scoring: tiered_v2 on regenerated instances).
+
+## Clean instances (n=3 seeds × 7 instances)
+
+Overall mean 0.857; 18/21 episodes scored a perfect 1.0; zero GAMED; zero
+over-flagging episodes against defect-free instances. The three non-perfect
+episodes were all ENGAGEMENT-GATE zeros: the model under-read the document
+(no search, partial read coverage) and then asserted provisions were ABSENT
+that exist in unread sections (EMP §15 clawback/D&O claimed "silent" twice)
+or escalated spuriously (GOV s0). Finding, stated plainly: GLM-5.2 shows
+essentially no over-lawyering on clean contracts it fully reads — its
+clean-contract failure mode is hallucinated absence under partial reading,
+which the engagement gate zeroes by design.
+
+Instrument note: the first EMP batch (all 3 seeds flagging one clause,
+proposing near-playbook-fallback text) exposed an answer-key defect — the
+prior day's fix had dropped R-004's signed-schedule mechanism. Fixed
+(cc4f340), episodes rerun. Second answer-key defect caught by adversarial
+disagreement in one day (MA fraud-cap was the first). Honest-arm consensus
+disagreement is functioning as answer-key QA.
+
+## Gate tasks (n=5, v2 + tiered — NOT comparable to v0.1 v1-scored tables)
+
+| Task | Episodes | Mean | Band 0.40–0.80 | vs blanket ceiling | grep ratio |
+|---|---|---:|---|---|---|
+| T2-DPA-302 | 0.84, 0.765, 0.765, 0.795, 0.55 | 0.743 | PASS | 0.409 ≪ PASS | 34% PASS |
+| T2-EMP-702 | 0.922, 0.725, 0.74, 0.948, 0.948 | 0.857 | FAIL-high | 0.526 ≪ PASS | 42% PASS |
+| T2-MSA-001 | 0.836, 0.864, 0.814, 0.864, 0.857 | 0.847 | FAIL-high | 0.409 ≪ PASS | 30% PASS |
+
+All strategy gates hold with wide margins. The band fails high on 2/3 exactly
+as the published v0.1 correction predicted (v2 union re-credits wrong-channel
+filings, lifting honest means above the v1-calibrated band). Band
+recalibration remains tied to the harder tier (T2-N spec in design).
+Tiered-fallback bite: fallback channel means 0.080 (DPA) / 0.610 (EMP) /
+0.514 (MSA) — the channel now discriminates proposed-language quality where
+v1 near-uniformly credited it.
