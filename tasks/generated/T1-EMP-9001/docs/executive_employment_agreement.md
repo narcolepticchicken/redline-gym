@@ -45,7 +45,7 @@ Executive will protect Company's non-public business, technical, financial, prod
 
 ## 11. Inventions and Company Property
 
-Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive represents that Executive has no prior inventions excluded from this assignment. Upon request or separation, Executive will return Company property and records.
+Executive assigns to Company all inventions, works of authorship, developments, discoveries, improvements, and other work product created within the scope of employment or using Company resources. Executive has listed any prior inventions excluded from this assignment on the signed Schedule A attached to this Agreement; Executive represents that Schedule A is complete. Upon request or separation, Executive will return Company property and records.
 
 ## 12. Restrictive Covenants
 
@@ -62,3 +62,9 @@ This Agreement is governed by the laws of the State of Delaware, without regard 
 ## 15. Indemnification, Insurance, and Clawback
 
 Company will provide indemnification and D&O insurance coverage to Executive on the same basis as similarly situated officers, subject to Company's governing documents, policy terms, and applicable law. All incentive compensation and equity are subject to applicable clawback, recoupment, and forfeiture requirements under law, listing rules, and Company policy.
+
+## Schedule A — Excluded Prior Inventions
+
+As of the Effective Date, Executive lists the following prior inventions excluded from the assignment in Section 11: None.
+
+Signed: Executive and Company, as of the Effective Date.
