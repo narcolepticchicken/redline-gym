@@ -132,7 +132,7 @@ def run_llm_episode(
 
 
 def observation_prompt(observation: dict[str, Any]) -> str:
-    return (
+    base = (
         "Return exactly one JSON action object for this Redline Gym observation. "
         "Allowed actions: list_docs, read_doc, search, flag_issue, escalate, finalize. "
         "flag_issue requires rule_id, doc_id, clause_ref, and exact_quote "
@@ -140,8 +140,16 @@ def observation_prompt(observation: dict[str, Any]) -> str:
         "when the playbook prescribes an edit. finalize requires card shaped as "
         "{issues: [{rule_id, doc_id, clause_ref, exact_quote, proposed_redline?}], "
         "escalations: [{topic, reason}], summary: string}.\n\n"
-        + json.dumps(observation, sort_keys=True)
     )
+    if "review_change" in observation.get("action_spec", {}):
+        base += (
+            "Phase 2 also allows review_change, requiring change_id, origin, and decision; "
+            "prior_position_id is required exactly when origin is prior_position, and rule_id "
+            "plus exact_quote are required when decision is reject. Phase-2 finalize requires "
+            "card shaped as {changes: [review_change records], escalations: "
+            "[{missing_info_id, reason}], summary: string}.\n\n"
+        )
+    return base + json.dumps(observation, sort_keys=True)
 
 
 def _next_action(
