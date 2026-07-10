@@ -83,14 +83,14 @@
         "counter_family_id": "CF-DPA-RIGHTS-01",
         "counter_class": "unacceptable",
         "counter_text_slots": {
-          "response_business_days": 25
+          "data_subject_support_included": false
         },
         "phase1_context_slots": {
           "regulator_support_included": false
         },
         "decoy_values": [
-          2,
-          30
+          "privacy assessments",
+          "available information"
         ]
       }
     },
@@ -123,7 +123,7 @@
         "counter_family_id": "CF-DPA-AUDIT-01",
         "counter_class": "acceptable",
         "counter_text_slots": {
-          "routine_notice_days": 30
+          "routine_interval_months": 12
         },
         "phase1_context_slots": {
           "cause_followup_available": true

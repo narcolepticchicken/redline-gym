@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-GOV-001": {
     "counter_families": [
       {
@@ -8,7 +8,7 @@
         "render_forms": {"founder_seats": ["three Founder Designees", "3 founder-appointed directors", "a trio of Founder Designees"], "founder_majority_preserved": ["founders retain a majority", "founder designees control more than half", "the founder bloc remains the board majority"]},
         "counterfactual_twins": [{"varied_input": "founder_seats", "label_flipped": true}, {"varied_input": "founder_majority_preserved", "label_flipped": true}, {"varied_input": "investor_seats", "label_flipped": false}, {"varied_input": "notice_days", "label_flipped": false}],
         "expected_redline_text": "The Board will consist of five directors: three Founder Designees, one Series A Designee, and one independent director approved by the Founder Designees and the Requisite Holders.",
-        "acceptable": {"text": "The five-member Board has three Founder Designees, preserving the founder majority, plus one Series A seat; meeting notice remains 30 days.", "counter_text_slots": {"founder_seats": 3}, "phase1_context_slots": {"founder_majority_preserved": true}, "decoy_values": [1, 30]},
+        "acceptable": {"text": "The five-member Board has three Founder Designees, preserving the founder majority, plus one Series A seat and one independent approved by the Founder Designees and Requisite Holders; meeting notice remains 30 days.", "counter_text_slots": {"founder_seats": 3}, "phase1_context_slots": {"founder_majority_preserved": true}, "decoy_values": [1, 30]},
         "unacceptable": {"text": "The five-member Board has two Founder Designees and no founder majority, plus one Series A seat; meeting notice remains 30 days.", "counter_text_slots": {"founder_seats": 2}, "phase1_context_slots": {"founder_majority_preserved": false}, "decoy_values": [1, 30]}
       },
       {

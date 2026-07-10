@@ -50,7 +50,7 @@
       "decision": "reject",
       "prior_position_id": "POS-D005",
       "rule_id": "R-006",
-      "exact_quote": "Vendor will assist with data-subject requests within 25 business days but will not support regulator inquiries; intake notices remain due in 2 days and archive exports remain available for 30 days.",
+      "exact_quote": "Vendor will not assist with data-subject requests or regulator inquiries, although it may reference privacy assessments and available information.",
       "proposed_redline": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor."
     },
     {

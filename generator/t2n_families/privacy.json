@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-DPA-001": {
     "counter_families": [
       {
@@ -8,30 +8,30 @@
         "counter_guard_id": "GUARD-DPA-AUDIT-CAUSE",
         "has_qualitative_decisive_input": true,
         "has_arithmetic_interaction": true,
-        "counter_text_slots": {"routine_notice_days": 30},
+        "counter_text_slots": {"routine_interval_months": 12},
         "phase1_context_slots": {"cause_followup_available": true},
         "decoy_values": [10, 45],
         "decoy_ids": ["questionnaire_days", "report_delivery_days"],
         "render_forms": {
-          "routine_notice_days": ["30 days' notice", "one month's notice", "thirty days before the audit"],
+          "routine_interval_months": ["one routine audit annually", "a routine review every 12 months", "yearly routine audit access"],
           "cause_followup_available": ["cause-based follow-up remains available", "incident follow-up is not limited", "reasonable-cause review remains permitted"]
         },
         "counterfactual_twins": [
-          {"varied_input": "routine_notice_days", "label_flipped": true},
+          {"varied_input": "routine_interval_months", "label_flipped": true},
           {"varied_input": "cause_followup_available", "label_flipped": true},
           {"varied_input": "questionnaire_days", "label_flipped": false},
           {"varied_input": "report_delivery_days", "label_flipped": false}
         ],
         "expected_redline_text": "Vendor will provide reasonable information needed to demonstrate compliance and will permit audits or inspections by Customer or an independent assessor on reasonable notice, no more than annually absent a material incident or reasonable cause.",
         "acceptable": {
-          "text": "Vendor will permit one routine audit on 30 days' notice, while incident and reasonable-cause follow-up remains available; questionnaires are answered in 10 days and reports in 45 days.",
-          "counter_text_slots": {"routine_notice_days": 30},
+          "text": "Vendor will permit one routine audit annually on reasonable notice, while incident and reasonable-cause follow-up remains available; questionnaires are answered in 10 days and reports in 45 days.",
+          "counter_text_slots": {"routine_interval_months": 12},
           "phase1_context_slots": {"cause_followup_available": true},
           "decoy_values": [10, 45]
         },
         "unacceptable": {
-          "text": "Vendor will permit one routine audit on 60 days' notice, but incident and reasonable-cause follow-up is unavailable; questionnaires are answered in 10 days and reports in 45 days.",
-          "counter_text_slots": {"routine_notice_days": 60},
+          "text": "Vendor will permit a routine audit only once every 24 months and makes incident and reasonable-cause follow-up unavailable; questionnaires are answered in 10 days and reports in 45 days.",
+          "counter_text_slots": {"routine_interval_months": 24},
           "phase1_context_slots": {"cause_followup_available": false},
           "decoy_values": [10, 45]
         }
@@ -41,33 +41,33 @@
         "rule_id": "R-006",
         "counter_guard_id": "GUARD-DPA-RIGHTS-REGULATOR",
         "has_qualitative_decisive_input": true,
-        "has_arithmetic_interaction": true,
-        "counter_text_slots": {"response_business_days": 10},
+        "has_arithmetic_interaction": false,
+        "counter_text_slots": {"data_subject_support_included": true},
         "phase1_context_slots": {"regulator_support_included": true},
-        "decoy_values": [2, 30],
-        "decoy_ids": ["intake_days", "archive_days"],
+        "decoy_values": ["privacy assessments", "available information"],
+        "decoy_ids": ["assessment_reference", "information_reference"],
         "render_forms": {
-          "response_business_days": ["within 10 business days", "within two workweeks", "no later than the tenth business day"],
+          "data_subject_support_included": ["data-subject requests are supported", "assistance extends to individual-rights requests", "Vendor will help address data-subject requests"],
           "regulator_support_included": ["regulator inquiries are included", "official inquiries remain supported", "assistance extends to regulators"]
         },
         "counterfactual_twins": [
-          {"varied_input": "response_business_days", "label_flipped": true},
+          {"varied_input": "data_subject_support_included", "label_flipped": true},
           {"varied_input": "regulator_support_included", "label_flipped": true},
-          {"varied_input": "intake_days", "label_flipped": false},
-          {"varied_input": "archive_days", "label_flipped": false}
+          {"varied_input": "assessment_reference", "label_flipped": false},
+          {"varied_input": "information_reference", "label_flipped": false}
         ],
         "expected_redline_text": "Vendor will reasonably assist Customer with data subject requests, regulator inquiries, and privacy assessments relating to the services, taking into account the nature of processing and information available to Vendor.",
         "acceptable": {
-          "text": "Vendor will assist with data-subject requests within 10 business days and will support regulator inquiries; intake notices remain due in 2 days and archive exports remain available for 30 days.",
-          "counter_text_slots": {"response_business_days": 10},
+          "text": "Vendor will reasonably assist with data-subject requests and regulator inquiries, taking into account privacy assessments and available information.",
+          "counter_text_slots": {"data_subject_support_included": true},
           "phase1_context_slots": {"regulator_support_included": true},
-          "decoy_values": [2, 30]
+          "decoy_values": ["privacy assessments", "available information"]
         },
         "unacceptable": {
-          "text": "Vendor will assist with data-subject requests within 25 business days but will not support regulator inquiries; intake notices remain due in 2 days and archive exports remain available for 30 days.",
-          "counter_text_slots": {"response_business_days": 25},
+          "text": "Vendor will not assist with data-subject requests or regulator inquiries, although it may reference privacy assessments and available information.",
+          "counter_text_slots": {"data_subject_support_included": false},
           "phase1_context_slots": {"regulator_support_included": false},
-          "decoy_values": [2, 30]
+          "decoy_values": ["privacy assessments", "available information"]
         }
       }
     ],

@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-MSA-001": {
     "counter_families": [
       {
@@ -23,7 +23,7 @@
           {"varied_input": "invoice_days", "label_flipped": false}
         ],
         "expected_redline_text": "Except for breaches of confidentiality, data protection obligations, indemnification obligations, intellectual property infringement, fraud, willful misconduct, and gross negligence, each party's aggregate liability is capped at the fees paid or payable under the applicable Order Form during the twelve months before the event giving rise to the claim.",
-        "acceptable": {"text": "Liability is capped at twelve months of fees, but confidentiality, data-protection, indemnity, and infringement claims remain outside the cap; claim notice is 30 days and invoices remain net 45.", "counter_text_slots": {"cap_months": 12}, "phase1_context_slots": {"privacy_and_ip_carved_out": true}, "decoy_values": [30, 45]},
+        "acceptable": {"text": "Liability is capped at twelve months of fees, but confidentiality, data-protection, indemnity, infringement, fraud, willful-misconduct, and gross-negligence claims remain outside the cap; claim notice is 30 days and invoices remain net 45.", "counter_text_slots": {"cap_months": 12}, "phase1_context_slots": {"privacy_and_ip_carved_out": true}, "decoy_values": [30, 45]},
         "unacceptable": {"text": "Liability is capped at three months of fees, including confidentiality, data-protection, indemnity, and infringement claims; claim notice is 30 days and invoices remain net 45.", "counter_text_slots": {"cap_months": 3}, "phase1_context_slots": {"privacy_and_ip_carved_out": false}, "decoy_values": [30, 45]}
       },
       {
@@ -63,12 +63,12 @@
     "counter_families": [
       {
         "counter_family_id": "CF-NDA-RETURN-01", "rule_id": "R-008", "counter_guard_id": "GUARD-NDA-ARCHIVE-PROTECTED", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
-        "counter_text_slots": {"destruction_days": 30}, "phase1_context_slots": {"retained_copies_protected": true}, "decoy_values": [5, 90], "decoy_ids": ["notice_days", "backup_cycle_days"],
+        "counter_text_slots": {"destruction_days": 30}, "phase1_context_slots": {"retained_copies_protected": true}, "decoy_values": [5, 45], "decoy_ids": ["notice_days", "backup_cycle_days"],
         "render_forms": {"destruction_days": ["within 30 days", "within one month", "by the thirtieth day"], "retained_copies_protected": ["retained copies remain protected", "archives stay confidential", "legal-hold copies remain subject to the NDA"]},
         "counterfactual_twins": [{"varied_input": "destruction_days", "label_flipped": true}, {"varied_input": "retained_copies_protected", "label_flipped": true}, {"varied_input": "notice_days", "label_flipped": false}, {"varied_input": "backup_cycle_days", "label_flipped": false}],
         "expected_redline_text": "Upon request, Recipient will promptly return or destroy Confidential Information, except archival or legal-hold copies retained under continuing confidentiality obligations.",
-        "acceptable": {"text": "Recipient will return or destroy Confidential Information within 30 days, and retained archival or legal-hold copies remain protected; request notice is 5 days and the backup cycle is 90 days.", "counter_text_slots": {"destruction_days": 30}, "phase1_context_slots": {"retained_copies_protected": true}, "decoy_values": [5, 90]},
-        "unacceptable": {"text": "Recipient may wait 90 days to destroy Confidential Information, and retained archival or legal-hold copies are no longer protected; request notice is 5 days and the backup cycle is 90 days.", "counter_text_slots": {"destruction_days": 90}, "phase1_context_slots": {"retained_copies_protected": false}, "decoy_values": [5, 90]}
+        "acceptable": {"text": "Recipient will return or destroy Confidential Information within 30 days, and retained archival or legal-hold copies remain protected; request notice is 5 days and the backup cycle is 45 days.", "counter_text_slots": {"destruction_days": 30}, "phase1_context_slots": {"retained_copies_protected": true}, "decoy_values": [5, 45]},
+        "unacceptable": {"text": "Recipient may wait 90 days to destroy Confidential Information, and retained archival or legal-hold copies are no longer protected; request notice is 5 days and the backup cycle is 45 days.", "counter_text_slots": {"destruction_days": 90}, "phase1_context_slots": {"retained_copies_protected": false}, "decoy_values": [5, 45]}
       },
       {
         "counter_family_id": "CF-NDA-SURVIVAL-01", "rule_id": "R-009", "counter_guard_id": "GUARD-NDA-TRADE-SECRETS", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,

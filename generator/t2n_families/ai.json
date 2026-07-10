@@ -1,11 +1,11 @@
 {
-  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-AI-001": {
     "counter_families": [
       {
         "counter_family_id": "CF-AI-MODEL-CHANGE-01", "rule_id": "R-007", "counter_guard_id": "GUARD-AI-EMERGENCY-NOTICE", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
         "counter_text_slots": {"advance_notice_days": 60}, "phase1_context_slots": {"emergency_notice_required": true}, "decoy_values": [10, 30], "decoy_ids": ["support_days", "archive_days"],
-        "render_forms": {"advance_notice_days": ["60 days' prior notice", "two months in advance", "notice by the sixtieth preceding day"], "emergency_notice_required": ["emergency fixes receive prompt notice", "security exceptions still require notice", "prompt notice follows an emergency change"]},
+        "render_forms": {"advance_notice_days": ["60 days' prior notice", "1,440 hours in advance", "notice by the sixtieth preceding day"], "emergency_notice_required": ["emergency fixes receive prompt notice", "security exceptions still require notice", "prompt notice follows an emergency change"]},
         "counterfactual_twins": [{"varied_input": "advance_notice_days", "label_flipped": true}, {"varied_input": "emergency_notice_required", "label_flipped": true}, {"varied_input": "support_days", "label_flipped": false}, {"varied_input": "archive_days", "label_flipped": false}],
         "expected_redline_text": "Vendor will provide at least 60 days' prior notice before any model change, deprecation, or replacement that could materially affect behavior, safety, latency, or output quality, except for emergency security fixes with prompt notice.",
         "acceptable": {"text": "Vendor will give 60 days' notice of material model changes, with prompt notice after emergency security fixes; support tickets close in 10 days and archives remain for 30 days.", "counter_text_slots": {"advance_notice_days": 60}, "phase1_context_slots": {"emergency_notice_required": true}, "decoy_values": [10, 30]},

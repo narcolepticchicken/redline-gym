@@ -1,5 +1,5 @@
 {
-  "_status": "machine-drafted, unreviewed — signing gate before any published instance",
+  "_status": "machine-drafted, model-reviewed 2026-07-10 (gpt-5.6-sol), Aaron pre-authorized — attorney line-item review pending",
   "PB-CRYPTO-001": {
     "counter_families": [
       {
@@ -14,7 +14,7 @@
       {
         "counter_family_id": "CF-CRYPTO-WITHDRAWAL-01", "rule_id": "R-007", "counter_guard_id": "GUARD-CRYPTO-HOLD-BASIS", "has_qualitative_decisive_input": true, "has_arithmetic_interaction": true,
         "counter_text_slots": {"outside_business_days": 2}, "phase1_context_slots": {"holds_limited_to_listed_causes": true}, "decoy_values": [5, 30], "decoy_ids": ["notice_days", "record_days"],
-        "render_forms": {"outside_business_days": ["no later than two business days", "within 48 business hours", "by the second business day"], "holds_limited_to_listed_causes": ["holds require a listed cause", "delay exceptions are closed", "law, outage, or documented security is required"]},
+        "render_forms": {"outside_business_days": ["no later than two business days", "before close of the second following business day", "by the second business day"], "holds_limited_to_listed_causes": ["holds require a listed cause", "delay exceptions are closed", "law, outage, or documented security is required"]},
         "counterfactual_twins": [{"varied_input": "outside_business_days", "label_flipped": true}, {"varied_input": "holds_limited_to_listed_causes", "label_flipped": true}, {"varied_input": "notice_days", "label_flipped": false}, {"varied_input": "record_days", "label_flipped": false}],
         "expected_redline_text": "Custodian will process authorized withdrawal requests within 24 hours and in any event no later than two business days after receipt, except to the extent delayed by applicable law, a network outage, or a documented security hold notified to Customer.",
         "acceptable": {"text": "Authorized withdrawals will complete no later than two business days, with delays limited to law, outage, or a documented security hold; notice is 5 days and records remain for 30 days.", "counter_text_slots": {"outside_business_days": 2}, "phase1_context_slots": {"holds_limited_to_listed_causes": true}, "decoy_values": [5, 30]},
