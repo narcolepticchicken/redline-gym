@@ -7,9 +7,9 @@ VENV_DIR="${VENV_DIR:-"$ROOT/.venv-pod"}"
 PYTHON_BIN="${PYTHON_BIN:-"$VENV_DIR/bin/python"}"
 VLLM_BIN="${VLLM_BIN:-"$VENV_DIR/bin/vllm"}"
 
-# Best guess only: the SFT rows are instruction/chat style, so use the instruct
-# variant unless BASE_MODEL is overridden after verifying the original HF ID.
-BASE_MODEL="${BASE_MODEL:-Qwen/Qwen3.5-9B-Instruct}"
+# Verified on the pod 2026-07-10: Qwen/Qwen3.5-9B-Instruct does not exist on
+# the Hub; Qwen/Qwen3.5-9B is the post-trained chat variant.
+BASE_MODEL="${BASE_MODEL:-Qwen/Qwen3.5-9B}"
 ADAPTER_DIR="${ADAPTER_DIR:-"$ROOT/adapters_pod/pilot_v2"}"
 MERGED_DIR="${MERGED_DIR:-"$ROOT/merged_pod/pilot_v2"}"
 MODEL_NAME="${MODEL_NAME:-redline-pilot-v2}"
@@ -49,6 +49,7 @@ from pathlib import Path
 import sys
 
 import torch
+import transformers
 from peft import PeftModel
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
@@ -57,12 +58,20 @@ trust_remote_code = os.getenv("TRUST_REMOTE_CODE") == "1"
 out = Path(merged_dir)
 out.mkdir(parents=True, exist_ok=True)
 
-base = AutoModelForCausalLM.from_pretrained(
-    base_model,
-    torch_dtype=torch.bfloat16,
-    low_cpu_mem_usage=True,
-    trust_remote_code=trust_remote_code,
-)
+# transformers v5 renamed torch_dtype to dtype; qwen3_5 is only registered on
+# the conditional-generation/image-text-to-text mappings on some versions.
+dtype_key = "dtype" if int(transformers.__version__.split(".")[0]) >= 5 else "torch_dtype"
+load_kwargs = {
+    dtype_key: torch.bfloat16,
+    "low_cpu_mem_usage": True,
+    "trust_remote_code": trust_remote_code,
+}
+try:
+    base = AutoModelForCausalLM.from_pretrained(base_model, **load_kwargs)
+except ValueError:
+    from transformers import AutoModelForImageTextToText
+
+    base = AutoModelForImageTextToText.from_pretrained(base_model, **load_kwargs)
 model = PeftModel.from_pretrained(base, adapter_dir)
 model = model.merge_and_unload()
 model.save_pretrained(out, safe_serialization=True, max_shard_size="5GB")

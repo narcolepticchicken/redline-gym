@@ -4,7 +4,8 @@ Setup: Qwen/Qwen3.5-9B + QLoRA (r=16, 4-bit NF4), 8 teacher-distilled
 conversations (GLM/DeepSeek winners, ≥0.75 composite), trained 42s on a
 rented A100 80GB. Merged and served via a transformers-direct server;
 BOTH arms (tuned and untuned base) evaluated on the identical lane —
-8 tasks × 3 seeds each, v2 union scoring, temperature 0.
+8 tasks, ONE deterministic episode per task per arm (greedy, temperature 0),
+v2 union scoring.
 SEEN = the 3 SFT-source tasks (contamination labeled, never pooled silently).
 
 | task | base | tuned | delta | split |
@@ -29,10 +30,10 @@ Findings, stated plainly:
   never zeros. Where the base already operates the protocol competently
   (three tasks with different transcripts but equal composites), the tiny
   adapter changes nothing.
-- One regression, on a SEEN task: T2-DPA-302 drops 0.540 → 0.395. The tuned
-  model is more decisive but finds less on this instance. n=3; not explained
-  away.
-- Caveats: 8 training conversations; n=3 seeds; greedy decoding; single
+- One regression, on a SEEN task: T2-DPA-302 drops 0.540 → 0.395 — a single
+  unreplicated trajectory, same as every other cell in this table.
+- Caveats: 8 training conversations; ONE greedy trajectory per cell (no
+  sampling variance measured); single
   serving lane (transformers-direct, NOT comparable to GLM-lane or historical
   MLX numbers — the 0.374 figure from round 1 is a different lane and is not
   used here).
@@ -43,3 +44,13 @@ Cost, measured: ~10.5 A100-hours (single pod, created and terminated
 debug: vLLM rejected the Qwen3.5 merged config on both backends, resolved
 with a minimal transformers-direct server, runs_pod_eval/artifacts/serve_hf.py).
 Adapter: adapters_pod/pilot_v2/ (local, untracked pending publication call).
+
+## Correction (2026-07-11, same day — before anyone used these numbers)
+
+The first version of this report claimed "3 seeds" per cell. That was false
+replication: temperature-0 decoding with an episode seed that never reaches
+the model API produced three byte-identical runs per cell (verified by
+checksum). Every number above is a single deterministic trajectory. The
+arithmetic is unchanged; the claimed statistical basis was wrong and is
+withdrawn. Sampling-based replication (nonzero temperature, real seeds)
+is future work before any of these deltas is called robust.

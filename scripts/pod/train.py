@@ -26,11 +26,12 @@ SYSTEM_PROMPT = (
     "schema-valid card."
 )
 
-# This is a best guess, not a verified conversion source for
-# mlx-community/Qwen3.5-9B-4bit.  The pilot rows are instruction/chat data, so an
-# instruct variant is the sane default.  Set BASE_MODEL or --base-model after
-# confirming the original non-MLX Hugging Face repository ID on the pod.
-DEFAULT_BASE_MODEL = "Qwen/Qwen3.5-9B-Instruct"
+# Verified on the pod 2026-07-10: Qwen/Qwen3.5-9B-Instruct does not exist on
+# the Hub. Qwen/Qwen3.5-9B is the post-trained chat variant (finetuned from
+# Qwen/Qwen3.5-9B-Base) and matches the mlx-community/Qwen3.5-9B-4bit lineage.
+# Architecture is Qwen3_5ForConditionalGeneration (multimodal wrapper around a
+# hybrid linear/full-attention text backbone); needs transformers >= 4.57.
+DEFAULT_BASE_MODEL = "Qwen/Qwen3.5-9B"
 EXPECTED_ROLES = ("system", "user", "assistant")
 HISTOGRAM_BUCKETS = ("<512", "512-1024", "1024-2048", "2048-4096", ">4096")
 
@@ -190,12 +191,14 @@ def _dry_run_lengths(
             lengths.append(_approximate_chat_tokens(messages))
             continue
         try:
-            token_ids = tokenizer.apply_chat_template(
+            # tokenize=False + a plain tokenizer call sidesteps the transformers
+            # v5 change where apply_chat_template(tokenize=True) returns a dict.
+            text = tokenizer.apply_chat_template(
                 messages,
-                tokenize=True,
+                tokenize=False,
                 add_generation_prompt=False,
             )
-            lengths.append(len(token_ids))
+            lengths.append(len(tokenizer(text, add_special_tokens=False).input_ids))
         except Exception as exc:
             problems.append(f"{source} row {index}: chat-template tokenization failed: {exc}")
     return lengths, problems
@@ -278,15 +281,22 @@ def _load_training_dependencies() -> dict[str, Any]:
             AutoTokenizer,
             BitsAndBytesConfig,
             EarlyStoppingCallback,
+            Trainer,
             TrainingArguments,
         )
-        from trl import SFTTrainer
     except ImportError as exc:
         raise SystemExit(
             "Real training requires the pod environment from scripts/pod/setup.sh. "
             "Use --dry-run locally; the missing dependency is: "
             f"{exc}"
         ) from exc
+    # Qwen3_5ForConditionalGeneration is a multimodal wrapper; it is not in the
+    # AutoModelForCausalLM mapping on some transformers versions. Import the
+    # image-text-to-text auto class as a fallback loader when available.
+    try:
+        from transformers import AutoModelForImageTextToText
+    except ImportError:
+        AutoModelForImageTextToText = None
     return {
         "torch": torch,
         "Dataset": Dataset,
@@ -294,11 +304,12 @@ def _load_training_dependencies() -> dict[str, Any]:
         "get_peft_model": get_peft_model,
         "prepare_model_for_kbit_training": prepare_model_for_kbit_training,
         "AutoModelForCausalLM": AutoModelForCausalLM,
+        "AutoModelForImageTextToText": AutoModelForImageTextToText,
         "AutoTokenizer": AutoTokenizer,
         "BitsAndBytesConfig": BitsAndBytesConfig,
         "EarlyStoppingCallback": EarlyStoppingCallback,
+        "Trainer": Trainer,
         "TrainingArguments": TrainingArguments,
-        "SFTTrainer": SFTTrainer,
     }
 
 
@@ -328,61 +339,42 @@ def _chat_template_tokenize(
     """Render the exact OpenAI-style messages with the model's own chat template.
 
     Labels mask system/user tokens: the lone final assistant action is the SFT
-    target.  We first use a template-provided assistant mask when available.
-    Older templates fall back to comparing the template's generation-prefix IDs;
-    this intentionally errors rather than silently training on prompt tokens if
-    that comparison is unsafe for a particular architecture.
+    target.  The Qwen3.5 template has no `{% generation %}` assistant mask and
+    inserts an opened `<think>\n` block into the generation prompt, so the
+    prompt/completion split is made at the TEXT level: the prompt is exactly the
+    add_generation_prompt render (what the model sees at inference) and the
+    completion is the remaining text of the full render, tokenized as a
+    continuation.  This intentionally errors rather than silently training on
+    prompt tokens when the generation render is not a text prefix of the full
+    render for a particular template.
     """
     tokenized: list[dict[str, list[int]]] = []
     for index, row in enumerate(rows, start=1):
         messages = _messages_from_row(row, source=source, index=index)
-        assistant_mask: list[int] | None = None
-        full_ids: list[int] | None = None
-        try:
-            encoded = tokenizer.apply_chat_template(
-                messages,
-                tokenize=True,
-                add_generation_prompt=False,
-                return_dict=True,
-                return_assistant_tokens_mask=True,
+        full_text = tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=False,
+        )
+        prompt_text = tokenizer.apply_chat_template(
+            messages[:2],
+            tokenize=False,
+            add_generation_prompt=True,
+        )
+        if not full_text.startswith(prompt_text):
+            raise RuntimeError(
+                f"{source} row {index}: the generation-prompt render is not a text prefix of the "
+                "full conversation render. Refusing to blur prompt and target tokens; inspect the "
+                "chat template."
             )
-            full_ids = _ids(encoded["input_ids"])
-            raw_mask = encoded.get("assistant_masks")
-            if raw_mask is None:
-                raw_mask = encoded.get("assistant_tokens_mask")
-            if raw_mask is not None:
-                assistant_mask = [int(value) for value in raw_mask]
-                if len(assistant_mask) != len(full_ids) or not any(assistant_mask):
-                    assistant_mask = None
-        except (TypeError, ValueError, KeyError):
-            full_ids = None
-
-        if full_ids is None:
-            full_ids = _ids(
-                tokenizer.apply_chat_template(
-                    messages,
-                    tokenize=True,
-                    add_generation_prompt=False,
-                )
-            )
-
-        if assistant_mask is not None:
-            labels = [token if is_assistant else -100 for token, is_assistant in zip(full_ids, assistant_mask)]
-        else:
-            prompt_ids = _ids(
-                tokenizer.apply_chat_template(
-                    messages[:2],
-                    tokenize=True,
-                    add_generation_prompt=True,
-                )
-            )
-            if len(prompt_ids) > len(full_ids) or full_ids[: len(prompt_ids)] != prompt_ids:
-                raise RuntimeError(
-                    f"{source} row {index}: chat template does not expose an assistant mask and its "
-                    "generation prefix is not a prefix of the full conversation. Refusing to blur "
-                    "prompt and target tokens; use a tokenizer/template with assistant masks."
-                )
-            labels = [-100] * len(prompt_ids) + full_ids[len(prompt_ids) :]
+        prompt_ids = _ids(tokenizer(prompt_text, add_special_tokens=False).input_ids)
+        completion_ids = _ids(
+            tokenizer(full_text[len(prompt_text) :], add_special_tokens=False).input_ids
+        )
+        if not completion_ids:
+            raise RuntimeError(f"{source} row {index}: empty completion after the generation prompt")
+        full_ids = prompt_ids + completion_ids
+        labels = [-100] * len(prompt_ids) + completion_ids
 
         # Keep the final assistant action when a very long observation crosses the
         # limit. Right truncation could discard the only supervised target.
@@ -509,12 +501,25 @@ def run_training(args: argparse.Namespace) -> int:
         bnb_4bit_compute_dtype=compute_dtype,
     )
     AutoModelForCausalLM = deps["AutoModelForCausalLM"]
-    model = AutoModelForCausalLM.from_pretrained(
-        args.base_model,
-        quantization_config=quantization_config,
-        torch_dtype=compute_dtype,
-        device_map={"": 0},
-    )
+    # transformers v5 renamed from_pretrained's torch_dtype kwarg to dtype.
+    import transformers as _transformers
+
+    dtype_key = "dtype" if int(_transformers.__version__.split(".")[0]) >= 5 else "torch_dtype"
+    model_load_kwargs = {
+        "quantization_config": quantization_config,
+        dtype_key: compute_dtype,
+        "device_map": {"": 0},
+    }
+    try:
+        model = AutoModelForCausalLM.from_pretrained(args.base_model, **model_load_kwargs)
+    except ValueError as exc:
+        # qwen3_5 registers only the ForConditionalGeneration head; fall back to
+        # the image-text-to-text auto class for the multimodal wrapper.
+        AutoModelForImageTextToText = deps["AutoModelForImageTextToText"]
+        if AutoModelForImageTextToText is None:
+            raise
+        print(f"AutoModelForCausalLM rejected {args.base_model} ({exc}); retrying with AutoModelForImageTextToText.")
+        model = AutoModelForImageTextToText.from_pretrained(args.base_model, **model_load_kwargs)
     model.config.use_cache = False
     model = deps["prepare_model_for_kbit_training"](model, use_gradient_checkpointing=True)
     # These are the usual Qwen attention/MLP projection names. Verify them after
@@ -550,7 +555,8 @@ def run_training(args: argparse.Namespace) -> int:
         warmup_ratio=0.05,
         logging_strategy="steps",
         logging_steps=1,
-        evaluation_strategy="steps",
+        # transformers >= 4.46 removed the old evaluation_strategy alias.
+        eval_strategy="steps",
         eval_steps=1,
         save_strategy="steps",
         save_steps=50,
@@ -565,10 +571,12 @@ def run_training(args: argparse.Namespace) -> int:
         report_to=[],
         remove_unused_columns=False,
     )
-    # This pre-tokenized Dataset is the SFT chat-template formatter: it came
-    # exclusively from tokenizer.apply_chat_template above, and packing remains off
-    # so short independent turns never share a packed sequence.
-    SFTTrainer = deps["SFTTrainer"]
+    # The dataset is already fully tokenized by tokenizer.apply_chat_template
+    # above with prompt tokens masked to -100, and _collator pads batches, so
+    # plain transformers.Trainer is sufficient. TRL's SFTTrainer added only API
+    # churn here (max_seq_length/packing kwargs moved between TRL versions) and
+    # no functionality: sequences are pre-truncated and never packed.
+    Trainer = deps["Trainer"]
     trainer_kwargs = {
         "model": model,
         "args": training_args,
@@ -576,17 +584,15 @@ def run_training(args: argparse.Namespace) -> int:
         "eval_dataset": valid_dataset,
         "data_collator": _collator(torch, int(tokenizer.pad_token_id)),
         "callbacks": [deps["EarlyStoppingCallback"](early_stopping_patience=2)],
-        "max_seq_length": args.max_seq_length,
-        "packing": False,
     }
     try:
-        trainer = SFTTrainer(tokenizer=tokenizer, **trainer_kwargs)
+        trainer = Trainer(processing_class=tokenizer, **trainer_kwargs)
     except TypeError as exc:
-        # TRL renamed tokenizer to processing_class. Keep the fallback narrow so a
-        # genuine configuration error is not accidentally swallowed.
-        if "tokenizer" not in str(exc):
+        # Older transformers used tokenizer= instead of processing_class=. Keep
+        # the fallback narrow so a genuine configuration error is not swallowed.
+        if "processing_class" not in str(exc):
             raise
-        trainer = SFTTrainer(processing_class=tokenizer, **trainer_kwargs)
+        trainer = Trainer(tokenizer=tokenizer, **trainer_kwargs)
 
     resume: str | None = None
     if args.resume_from_checkpoint:

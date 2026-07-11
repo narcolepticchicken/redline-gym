@@ -8,14 +8,23 @@ PYTHON_BIN="${VENV_DIR}/bin/python"
 
 # These defaults are intentionally version-pinned. Override only after checking
 # compatibility for the particular pod image/model architecture.
+#
+# 2026-07-10 pod-run deviation (A100 80GB, CUDA 13.0 driver): the original pins
+# (transformers 4.51.3 / trl 0.15.2 / peft 0.15.2 / bitsandbytes 0.45.5 /
+# accelerate 1.6.0 / datasets 3.3.2 / vllm 0.8.5.post1 on torch 2.6.0+cu126)
+# cannot load Qwen/Qwen3.5-9B (model_type qwen3_5,
+# Qwen3_5ForConditionalGeneration, requires transformers >= 4.57). The pod was
+# upgraded in place to the pins below; torch 2.11.0 (PyPI default CUDA build)
+# was pulled in by vllm 0.24.0, replacing the explicit cu126 wheel install.
+# flash-attn stayed uninstalled (no nvcc on the pod image; it is optional).
 TORCH_VERSION="${TORCH_VERSION:-2.6.0}"
-TRANSFORMERS_VERSION="${TRANSFORMERS_VERSION:-4.51.3}"
-TRL_VERSION="${TRL_VERSION:-0.15.2}"
-PEFT_VERSION="${PEFT_VERSION:-0.15.2}"
-BITSANDBYTES_VERSION="${BITSANDBYTES_VERSION:-0.45.5}"
-ACCELERATE_VERSION="${ACCELERATE_VERSION:-1.6.0}"
-DATASETS_VERSION="${DATASETS_VERSION:-3.3.2}"
-VLLM_VERSION="${VLLM_VERSION:-0.8.5.post1}"
+TRANSFORMERS_VERSION="${TRANSFORMERS_VERSION:-5.13.0}"
+TRL_VERSION="${TRL_VERSION:-1.8.0}"
+PEFT_VERSION="${PEFT_VERSION:-0.19.1}"
+BITSANDBYTES_VERSION="${BITSANDBYTES_VERSION:-0.49.2}"
+ACCELERATE_VERSION="${ACCELERATE_VERSION:-1.14.0}"
+DATASETS_VERSION="${DATASETS_VERSION:-5.0.0}"
+VLLM_VERSION="${VLLM_VERSION:-0.24.0}"
 FLASH_ATTN_VERSION="${FLASH_ATTN_VERSION:-2.7.4.post1}"
 
 if ! command -v nvidia-smi >/dev/null 2>&1 && ! command -v nvcc >/dev/null 2>&1; then
@@ -38,7 +47,7 @@ fi
 # Select the newest compatible PyTorch wheel channel for the detected driver
 # runtime. CUDA drivers are backward compatible with these wheel runtimes.
 case "$CUDA_VERSION" in
-  12.6*|12.7*|12.8*|12.9*) TORCH_CUDA_TAG="cu126" ;;
+  13.*|12.6*|12.7*|12.8*|12.9*) TORCH_CUDA_TAG="cu126" ;;
   12.4*|12.5*) TORCH_CUDA_TAG="cu124" ;;
   12.1*|12.2*|12.3*) TORCH_CUDA_TAG="cu121" ;;
   11.8*) TORCH_CUDA_TAG="cu118" ;;
