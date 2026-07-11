@@ -55,3 +55,27 @@ Under v4, all 25/25 stored episodes had composite=0 because continuity compared 
 The available run logs, `usage.json` files, and `driver_conversation.jsonl` files contain no evidence of a non-default temperature or a different model configuration. The checked-in driver defaults are model `glm-5.2` and `REDLINE_AGENT_TEMPERATURE=0`. These are therefore best described as single greedy-decode (default-temperature) episodes per task, one sample each, from a real but nondeterministic hosted GLM provider. With n=1 per task, per-task and per-area results are indicative, not statistically powered claims.
 
 The v4.1 values above are reported without extrapolation; episodes marked GAMED are not treated as honest successes regardless of their numeric composite.
+
+## Sampled arms (2026-07-11) — 28 instances × 3 samples, temperature 0.7
+
+Replication verified: 0/28 cells had duplicate transcripts (checksummed).
+GLM-5.2, contract v4.1, deterministic scoring.
+
+- **Episode mean 0.611** (sd 0.331, median 0.800, n=84)
+- **21/28 instances land inside the 0.40–0.80 honest band**
+- Zero episodes above 0.80 (the report ceiling is respected, not clipped)
+- 19/84 episodes score 0.0 — genuine floor failures (a required harmful
+  family missed, or a phase floor unmet), not scoring artifacts
+- Area means: employment 0.792, M&A 0.792, crypto 0.733, AI 0.652,
+  privacy 0.455, governance 0.453, contracts 0.399
+
+Read plainly: the tier discriminates. Mechanical strategies measure 0.000–0.20
+(15-strategy battery), an engaged frontier model averages 0.611 with real
+variance, and the ceiling holds. This is the discriminating band T2 failed to
+achieve (T2 engaged means ran 0.82–0.93, above its own band). The single-shot
+0.572 read published earlier sits inside this sampled distribution.
+
+Caveats: n=3 per instance; per-episode sd is large (0.331), so per-instance
+means are indicative, not tight; families remain model-reviewed (attorney
+line-item review delegated and completed by a model reviewer, not a human
+attorney); instances are DRAFT.
