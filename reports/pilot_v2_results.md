@@ -54,3 +54,39 @@ checksum). Every number above is a single deterministic trajectory. The
 arithmetic is unchanged; the claimed statistical basis was wrong and is
 withdrawn. Sampling-based replication (nonzero temperature, real seeds)
 is future work before any of these deltas is called robust.
+
+## Sampled rerun (2026-07-11 — real replication, temperature 0.7, n=3 per cell)
+
+Rerun on a fresh pod with the defect fixed: per-request deterministic sampling
+seeds (server --sampling-seed + request counter), temperature 0.7, three
+GENUINELY distinct episodes per cell (verified: 0 duplicate transcripts across
+all 48 cells by checksum).
+
+| task | base (n=3, range) | tuned (n=3, range) | delta | split |
+|---|---:|---:|---:|---|
+| T1-DPA-301 | 0.258 ±0.44 | 0.604 ±0.56 | +0.346 | unseen |
+| T1-DPA-311 | 0.490 ±0.29 | 0.416 ±0.37 | −0.073 | unseen |
+| T1-MSA-121 | 0.000 ±0.00 | 0.318 ±0.57 | +0.318 | unseen |
+| T1-NDA-101 | 0.348 ±0.57 | 0.454 ±0.35 | +0.106 | unseen |
+| T2-DPA-302 | 0.462 ±0.15 | 0.398 ±0.33 | −0.064 | SEEN |
+| T2-EMP-702 | 0.320 ±0.00 | 0.318 ±0.16 | −0.002 | SEEN |
+| T2-EMP-703 | 0.368 ±0.58 | 0.425 ±0.15 | +0.057 | unseen |
+| T2-MSA-001 | 0.000 ±0.00 | 0.098 ±0.29 | +0.098 | SEEN |
+
+**Unseen: 0.293 → 0.444 (+0.151). Seen: 0.261 → 0.271 (+0.010). All: 0.281 → 0.379.**
+
+Read plainly:
+- Per-cell ranges are enormous (up to ±0.58 at n=3): no single-task delta in
+  this table is individually robust. The defensible finding is the aggregate:
+  the unseen-task lift appears under BOTH decoding regimes (+0.130 greedy,
+  +0.151 sampled) and in 4 of 5 unseen tasks.
+- The SEEN-task lift from the greedy table (+0.109) DISAPPEARS under sampling
+  (+0.010). The tuned model's advantage on its own training-source tasks is
+  not robust; the transfer signal is stronger than the memorization signal.
+- The protocol-collapse mechanism persists under sampling: base scores 0.000
+  on the same two tasks in every sample (empty finalize without reading).
+- Both tables stand: greedy = deterministic point estimates; sampled = the
+  variance picture. Neither alone would have been honest.
+
+Cost, measured: second pod ~1.5 A100-hours (created and terminated same
+morning). Cumulative pilot round 2: ~12 A100-hours.
