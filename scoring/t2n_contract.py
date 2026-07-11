@@ -8,7 +8,9 @@ import re
 from typing import Any, Mapping, Sequence
 
 
-CONTRACT_ID = "t2n-reward-v4"
+# v4 continuity required an answer-key-only fallback field, producing L=0 in
+# 25/25 stored real episodes; v4.1 removes that inaccessible equality term.
+CONTRACT_ID = "t2n-reward-v4.1"
 # Changing any constant, denominator, gate, or table row changes the contract
 # hash and voids all prior gate runs.
 
@@ -107,7 +109,6 @@ def evaluate_transition(row_id: str, child_record: Mapping[str, Any],
         and p1.get("decision") == star.get("phase1_decision")
         and p1.get("rule_id") == star.get("rule_id")
         and p1.get("clause_id") == star.get("clause_id")
-        and normalize_fallback(str(p1.get("fallback_text", ""))) == normalize_fallback(str(star.get("fallback_text", "")))
         and p1.get("comparator_record_id") == star.get("comparator_record_id")
     )
     common = exact and p1.get("decision") == "reject"

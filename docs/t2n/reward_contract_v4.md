@@ -266,3 +266,40 @@ The family cap is therefore severe against deliberate omission without zeroing h
 24. v3 mixed weights `.30/.20/.15/.10/.10/.05/.05/.03/.02` -> v4 retains them exactly; only equations, gates, and zero rules change.
 25. v3 all-concessions weights `.55/.20/.15/.10` -> v4 retains them exactly; integer share and interpretation change, not channel arithmetic.
 26. v3 legitimacy battery lacked slot variants and quota attack -> v4 adds slot, unit, date, common-threshold, quota, one-easy-redline, seeded-blanket, and phase-only attackers; closes F3/F5/F6/F9.
+
+# 5. v4.1 AMENDMENT (2026-07-11)
+
+Replay of 25 stored real GLM episodes against the frozen v4 scorer exposed an
+unsatisfiable continuity predicate. The phase-1 `proposed_redline` submitted by
+an agent was compared with `plant_position.fallback_text`, an answer-key value
+that is never included in an agent observation and is deliberately different
+from the visible playbook fallback. This made `L=0` in 25/25 episodes; because
+`L>=.50` is an ordinary floor, all 25 composites were zero. The repository's
+`test_honest_perfect_episode_and_prompt` fixture only avoided the defect by
+constructing its actions directly from answer-key fields in
+`planted_deviations.json` and `patch_ledger.json`.
+
+The v4.1 decision is narrowly scoped. Continuity no longer compares fallback
+text; it still requires correct linkage to the matching deviation, decision,
+rule, clause, and comparator/context record, and all transition-specific checks
+in §1.4 remain unchanged. Grounding now case-folds and collapses whitespace,
+then accepts a submitted quote contained in the designated changed span when
+the normalized quote is at least `MIN_QUOTE_OVERLAP` characters. The comparison
+is intentionally one-directional so an overbroad span containing the target
+does not receive credit. The phase-2 driver prompt now explicitly instructs a
+rejecting reviewer to quote verbatim from `after_text`, rather than from
+`before_text` or a paraphrase. Redline quality remains exclusively in `D`.
+
+Exact implementation changes:
+
+- The contract identifier is bumped from `t2n-reward-v4` to
+  `t2n-reward-v4.1`, including the schema const and generated-ledger paths.
+- `evaluate_transition` removes only the normalized phase-1/ledger fallback
+  equality conjunct from its `exact` tuple.
+- `join_phase2_records` replaces byte-exact `grounding_exact` equality with
+  normalized, minimum-length, quote-in-span containment.
+- The phase-2-only observation prompt adds the `after_text` quotation sentence;
+  the phase-1 prompt branch is unchanged.
+
+All other equations, weights, floors, family requirements, transition rows,
+and gates in §§1-4 remain frozen and unchanged.

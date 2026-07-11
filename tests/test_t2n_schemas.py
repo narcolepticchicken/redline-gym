@@ -7,6 +7,8 @@ from pathlib import Path
 
 from jsonschema import Draft202012Validator
 
+from scoring.t2n_contract import CONTRACT_ID
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -77,11 +79,11 @@ def test_review_action_schema_origin_conditionals_and_strictness():
 
 
 def test_patch_ledger_schema_origin_ops_counter_and_strictness():
-    assert_valid("patch_ledger", {"contract_id": "t2n-reward-v4", "patches": [patch()]})
-    bad = patch(); bad.pop("plant_position"); assert_invalid("patch_ledger", {"contract_id": "t2n-reward-v4", "patches": [bad]})
-    bad = patch(); bad["op"] = "move"; assert_invalid("patch_ledger", {"contract_id": "t2n-reward-v4", "patches": [bad]})
-    bad = patch(); bad["extra"] = 1; assert_invalid("patch_ledger", {"contract_id": "t2n-reward-v4", "patches": [bad]})
-    bad = patch(); bad.update(event_type="counter_proposal", transition_row_id="TR-05"); assert_invalid("patch_ledger", {"contract_id": "t2n-reward-v4", "patches": [bad]})
+    assert_valid("patch_ledger", {"contract_id": CONTRACT_ID, "patches": [patch()]})
+    bad = patch(); bad.pop("plant_position"); assert_invalid("patch_ledger", {"contract_id": CONTRACT_ID, "patches": [bad]})
+    bad = patch(); bad["op"] = "move"; assert_invalid("patch_ledger", {"contract_id": CONTRACT_ID, "patches": [bad]})
+    bad = patch(); bad["extra"] = 1; assert_invalid("patch_ledger", {"contract_id": CONTRACT_ID, "patches": [bad]})
+    bad = patch(); bad.update(event_type="counter_proposal", transition_row_id="TR-05"); assert_invalid("patch_ledger", {"contract_id": CONTRACT_ID, "patches": [bad]})
 
 
 def test_turn_events_schema_valid_counter_inputs_minimum_and_c7_rejection():

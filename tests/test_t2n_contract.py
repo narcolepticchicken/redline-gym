@@ -107,7 +107,9 @@ def test_all_transition_rows_positive_and_negative():
         good = evaluate_transition(row_id, child, p2, lookup)
         assert good["decision_correct"] and good["transition_passes"], row_id
         if TRANSITION_ROWS[row_id].continuity:
-            bad_lookup = copy.deepcopy(lookup); bad_lookup["POS-1"]["fallback_text"] = "stale"
+            text_variant = copy.deepcopy(lookup); text_variant["POS-1"]["fallback_text"] = "stale"
+            assert evaluate_transition(row_id, child, p2, text_variant)["continuity_eligible"]
+            bad_lookup = copy.deepcopy(lookup); bad_lookup["POS-1"]["comparator_record_id"] = "stale"
             assert not evaluate_transition(row_id, child, p2, bad_lookup)["continuity_eligible"]
         else:
             bad = dict(p2, decision="accept" if p2["decision"] == "reject" else "reject")

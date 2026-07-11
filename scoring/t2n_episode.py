@@ -3,8 +3,8 @@ from __future__ import annotations
 
 from typing import Any, Mapping, Sequence
 
-from scoring.core import _candidate_findings, _match_flag, _tiered_redline_match
-from scoring.t2n_contract import evaluate_transition
+from scoring.core import MIN_QUOTE_OVERLAP, _candidate_findings, _match_flag, _tiered_redline_match
+from scoring.t2n_contract import evaluate_transition, normalize_fallback
 
 
 def issue_phase1_positions(
@@ -89,8 +89,12 @@ def join_phase2_records(
         record.update(review)
         record.update(result)
         decision = review.get("decision")
+        quote_normalized = normalize_fallback(str(review.get("exact_quote", "")))
+        span_normalized = normalize_fallback(str(child.get("ground_span", "")))
         record["grounding_exact"] = (
-            decision == "reject" and review.get("exact_quote") == child.get("ground_span")
+            decision == "reject"
+            and len(quote_normalized) >= MIN_QUOTE_OVERLAP
+            and quote_normalized in span_normalized
         )
         record["redline_tier"] = 0.0
         if child.get("edit_required") and decision == "reject":

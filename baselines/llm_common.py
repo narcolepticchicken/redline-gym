@@ -145,7 +145,9 @@ def observation_prompt(observation: dict[str, Any]) -> str:
         base += (
             "Phase 2 also allows review_change, requiring change_id, origin, and decision; "
             "prior_position_id is required exactly when origin is prior_position, and rule_id "
-            "plus exact_quote are required when decision is reject. Phase-2 finalize requires "
+            "plus exact_quote are required when decision is reject. For a review_change rejection, "
+            "exact_quote must be verbatim changed text from the change block's after_text, not the "
+            "original before_text or a paraphrase. Phase-2 finalize requires "
             "card shaped as {changes: [review_change records], escalations: "
             "[{missing_info_id, reason}], summary: string}.\n\n"
         )

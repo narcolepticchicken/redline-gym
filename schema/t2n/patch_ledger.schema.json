@@ -5,7 +5,7 @@
   "type": "object", "additionalProperties": false,
   "required": ["contract_id", "patches"],
   "properties": {
-    "contract_id": {"const": "t2n-reward-v4"},
+    "contract_id": {"const": "t2n-reward-v4.1"},
     "patches": {
       "type": "array", "minItems": 1,
       "items": {

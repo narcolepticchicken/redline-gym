@@ -10,7 +10,7 @@ from uuid import uuid4
 from jsonschema import Draft202012Validator
 
 from scoring.core import score_episode
-from scoring.t2n_contract import compute_composite, score_all_concessions
+from scoring.t2n_contract import CONTRACT_ID, compute_composite, score_all_concessions
 from scoring.t2n_episode import issue_phase1_positions, join_phase2_records
 from validators.t2n_checks import v14_t2n_ledger
 
@@ -442,7 +442,7 @@ class Episode:
             )
             self.t2n_result = {
                 **result, "composite": result["score"], "reported_E": result["score"],
-                "contract_id": "t2n-reward-v4", "task_type": self.t2n_task_type,
+                "contract_id": CONTRACT_ID, "task_type": self.t2n_task_type,
                 "conformance": float(conformance), "status": "OK", "phase1": self.phase1_result,
             }
             return

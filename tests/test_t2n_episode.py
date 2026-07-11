@@ -1,7 +1,10 @@
 from __future__ import annotations
 
+import inspect
 import json
+from math import sqrt
 from pathlib import Path
+import re
 import shutil
 
 import pytest
@@ -23,12 +26,15 @@ def combined_task(tmp_path: Path) -> Path:
 
 def _phase1(ep: Episode, task: Path) -> dict:
     artifacts = json.loads((task / "planted_deviations.json").read_text())
+    rules = {rule["rule_id"]: rule for rule in ep.reset()["playbook"]} if ep.last_observation is None else {
+        rule["rule_id"]: rule for rule in ep.last_observation["playbook"]
+    }
     issues = []
     for dev in artifacts["deviations"]:
         action = {
             "action": "flag_issue", "rule_id": dev["rule_id"], "doc_id": dev["doc_id"],
-            "clause_ref": "matched clause", "exact_quote": dev["mutated_text"],
-            "proposed_redline": dev["expected_redline_text"],
+            "clause_ref": dev["clause_anchor"]["section"], "exact_quote": dev["mutated_text"],
+            "proposed_redline": rules[dev["rule_id"]]["fallback"],
         }
         assert ep.step(action)["event"] == "flag_issue"
         issues.append({k: v for k, v in action.items() if k != "action"})
@@ -62,6 +68,88 @@ def _actions(task: Path, policy: str = "perfect") -> list[dict]:
     return actions
 
 
+def _normalized(value: str) -> str:
+    return re.sub(r"\s+", " ", value).strip().casefold()
+
+
+def _visible_overlap(left: str, right: str) -> bool:
+    left, right = _normalized(left), _normalized(right)
+    return len(left) >= 20 and len(right) >= 20 and (left in right or right in left)
+
+
+def _matched_position(change: dict, issued_positions: list[dict]) -> dict:
+    visible_change_texts = [change.get("before_text", ""), change.get("after_text", "")]
+    overlap = [
+        position for position in issued_positions
+        if any(_visible_overlap(position.get("exact_quote", ""), text) for text in visible_change_texts)
+    ]
+    if len(overlap) == 1:
+        return overlap[0]
+    nearby = [
+        position for position in issued_positions
+        if position.get("doc_id") == change.get("doc_id")
+        and position.get("clause_ref") == change.get("section_ref")
+    ]
+    assert len(nearby) == 1, change["change_id"]
+    return nearby[0]
+
+
+def _best_visible_rule(text: str, playbook: list[dict]) -> dict:
+    tokens = set(re.findall(r"[a-z0-9]+", text.casefold()))
+    return max(
+        playbook,
+        key=lambda rule: len(tokens & set(re.findall(
+            r"[a-z0-9]+", f'{rule["position"]} {rule["fallback"]}'.casefold()
+        ))),
+    )
+
+
+def _observation_only_actions(observation: dict) -> list[dict]:
+    """Review the fixture using only fields present in the phase-2 reveal."""
+    structural_decisions = {
+        ("concession", "sole"): "accept",
+        ("sneaky_reinsert", "source_cleanup"): "accept",
+        ("regression", "sole"): "reject",
+        ("sneaky_reinsert", "inserted_effect"): "reject",
+        ("new_deviation", "sole"): "reject",
+        ("benign_canary_change", "sole"): "accept",
+    }
+    counter_decisions = {
+        # The changed text disclaims all data-subject and regulator support,
+        # contradicting visible R-006's requirement for reasonable assistance.
+        "CH-COUNTER-1": "reject",
+        # One annual routine audit preserves incident/cause follow-up, matching
+        # visible R-008's position and fallback even though decoy timings vary.
+        "CH-COUNTER-2": "accept",
+    }
+    rules = {rule["rule_id"]: rule for rule in observation["playbook"]}
+    actions = []
+    for change in observation["changes"]:
+        if change["event_type"] == "counter_proposal":
+            decision = counter_decisions[change["change_id"]]
+        else:
+            decision = structural_decisions[(change["event_type"], change["child_role"])]
+        action = {
+            "action": "review_change", "change_id": change["change_id"],
+            "origin": change["origin"], "decision": decision,
+        }
+        matched = None
+        if change["origin"] == "prior_position":
+            matched = _matched_position(change, observation["issued_positions"])
+            action["prior_position_id"] = matched["position_id"]
+            action["rule_id"] = matched["rule_id"]
+        if decision == "reject":
+            rule = rules[matched["rule_id"]] if matched else _best_visible_rule(
+                change["after_text"], observation["playbook"]
+            )
+            action.update(
+                rule_id=rule["rule_id"], exact_quote=change["after_text"],
+                proposed_redline=rule["fallback"],
+            )
+        actions.append(action)
+    return actions
+
+
 def _finish(ep: Episode, actions: list[dict]) -> dict:
     for action in actions:
         assert ep.step(action)["event"] == "review_change"
@@ -71,11 +159,12 @@ def _finish(ep: Episode, actions: list[dict]) -> dict:
     return json.loads(ep.score_path.read_text())
 
 
-def test_honest_perfect_episode_and_prompt(combined_task: Path, tmp_path: Path):
+def test_honest_observation_only_episode_and_prompt(combined_task: Path, tmp_path: Path):
     ep = Episode(combined_task, seed=0, run_dir=tmp_path / "run")
     reset = ep.reset()
     legacy_prompt = observation_prompt(reset)
     assert "Phase 2 also allows" not in legacy_prompt
+    assert "review_change" not in reset["action_spec"]
     reveal = _phase1(ep, combined_task)
     assert reveal["event"] == "phase2_reveal" and reveal["done"] is False
     assert {p["position_id"] for p in reveal["issued_positions"]} == {
@@ -86,12 +175,33 @@ def test_honest_perfect_episode_and_prompt(combined_task: Path, tmp_path: Path):
                  "transition_row_id", "plant_position", "counter_class", "counter_family_id",
                  "counter_guard_id", "prior_source_deviation_id"}
     assert all(not (forbidden & set(change)) for change in reveal["changes"])
-    score = _finish(ep, _actions(combined_task))
-    assert score["phase1"]["composite"] == 1.0
-    assert score["channels"] == {k: 1.0 for k in "STJQLGDFA"}
-    assert score["W2"] == score["P2"] == score["E0"] == score["E"] == 1.0
+    score = _finish(ep, _observation_only_actions(reveal))
+    assert score["phase1"]["channels"]["fallback"] == 0.0
+    assert score["phase1"]["composite"] == 0.85
+    assert score["channels"] == {
+        "S": 1.0, "T": 1.0, "J": 1.0, "Q": 1.0, "L": 1.0,
+        "G": 1.0, "D": 0.5, "F": 1.0, "A": 1.0,
+    }
+    # W2 = .30S+.20T+.15J+.10Q+.10L+.05G+.05D+.03F+.02A
+    #    = .975; every ordinary floor passes, so P2=.975.
+    # P1=.85 because the visible playbook fallbacks earn phase-1 fallback=0;
+    # E0=E=sqrt(.85*.975), integrity passes, and reporting caps composite at .80.
+    assert score["W2"] == score["P2"] == 0.975
+    assert score["E0"] == score["E"] == sqrt(0.85 * 0.975)
     assert score["harm_integrity"] is True
     assert score["reported_E"] == score["composite"] == 0.8
+
+
+def test_observation_only_review_builder_has_no_answer_key_references():
+    # This action-construction guard is intentionally broader and more specific
+    # than env.episode.ANSWER_KEY_NAMES, which protects manifest document paths.
+    source = inspect.getsource(_observation_only_actions)
+    forbidden = {
+        "patch_ledger", "expected_disposition", "expected_rule_id", "expected_clause_id",
+        "ground_span", "transition_row_id", "plant_position", "counter_class",
+        "counter_family_id", "counter_guard_id", "prior_source_deviation_id",
+    }
+    assert all(name not in source for name in forbidden)
 
 
 @pytest.mark.parametrize("policy, expected, gamed", [

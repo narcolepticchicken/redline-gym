@@ -1,5 +1,5 @@
 {
-  "contract_id": "t2n-reward-v4",
+  "contract_id": "t2n-reward-v4.1",
   "patches": [
     {
       "change_id": "CH-CONCESSION-2",
