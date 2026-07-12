@@ -4,9 +4,10 @@
 
 Redline Gym generates realistic legal contracts with **known, deliberately planted problems**, gives an AI agent the documents plus the client's playbook, and mechanically scores whether the agent found the problems, quoted the right clauses, proposed the right fixes, and raised the right questions. No LLM judge decides correctness. The answer key exists before the agent ever sees the document — because we wrote the mistakes in ourselves.
 
-- **44 task instances** across 7 practice areas: NDAs, vendor MSAs, data-processing agreements, executive employment, stockholders' agreements, M&A asset purchases, AI vendor agreements, digital-asset custody
-- **Deterministic span-level rewards** — recall/precision on planted mistakes, exact-quote grounding, fallback-edit matching, schema conformance, abstention on deliberate gaps
+- **51 task instances** across 7 practice areas (NDAs, vendor MSAs, data-processing agreements, executive employment, stockholders' agreements, M&A asset purchases, AI vendor agreements, digital-asset custody) — including 7 **clean contracts where the correct answer is "sign it"**, and a two-phase **negotiation tier** where the counterparty answers your redline
+- **Deterministic span-level rewards** — recall/precision on planted mistakes, exact-quote grounding, tiered redline-text matching, schema conformance, abstention on deliberate gaps
 - **Built-in honeypots and baselines** that catch bluffing, keyword-matching, and doing nothing
+- **It trains models.** A 9B trained inside it goes from 0.352 → 0.691, and its rate of giving up mid-review drops from 24-in-120 episodes to 1 ([`reports/round3_results.md`](reports/round3_results.md))
 - **One command reproduces the published gate table** from a fresh clone
 - Apache-2.0
 
@@ -45,7 +46,22 @@ The held-out one-shot evaluation ran once, after the ground truth locked, and it
 - **The difficulty band failed high.** An engaged frontier-lane model scores 0.82–0.93 on the hard tier — the tier is easier for strong models than our calibration assumed. This is a real negative finding and it ships on the label; recalibration (multi-document T3 tier) is the v0.2 headline.
 - **Models sometimes just… quit.** GLM-5.2 occasionally submits an empty review even after a confirmation bounce (~1 in 5 episodes; worse on some instance families). The environment scores this honestly as zero — it's a reliability behavior the environment measures, not noise we hide.
 
-During three days of construction, this verification stack caught (in our own work): a scorer paying 55% for doing nothing, honeypot labels visible to the agent, answer-key items graders couldn't reach, phantom distractor spans, unreliable single-sample judging, and a generator emitting out-of-order sections. Every one is in the commit history. **The pipeline that catches defects is the product; the contracts are the demo.**
+During construction, this verification stack caught (in our own work): a scorer paying 55% for doing nothing, honeypot labels visible to the agent, answer-key items graders couldn't reach, phantom distractor spans, unreliable single-sample judging, a generator emitting out-of-order sections, an evaluation that reported "3 seeds" while running one greedy decode three times, and a scoring contract that demanded text only the answer key contained — validated by a test that peeked at the answer key. Every one is in the commit history, with its correction. **The pipeline that catches defects is the product; the contracts are the demo.**
+
+## It trains models, and the numbers say what they say
+
+A Qwen3.5-9B was trained on 670 examples distilled from teacher episodes inside this environment, then evaluated against the untuned base model on the same serving lane, same sampling, ten samples per task, replication checksum-verified ([`reports/round3_results.md`](reports/round3_results.md)):
+
+| | base | trained | delta |
+|---|---:|---:|---|
+| Tasks it trained on | 0.322 | 0.632 | +0.310 |
+| Tasks it never trained on | 0.321 | 0.689 | **+0.368** |
+| Practice areas never evaluated before | 0.413 | 0.737 | +0.323 |
+| **All 12 tasks** | **0.352** | **0.691** | **+0.339** |
+
+Every task improved. The gains are *largest* where the model never trained — there is no memorization signature. And the headline isn't the score: the base model abandons the review entirely (finalizing an empty card without reading) in **24 of 120 episodes**; the trained model does it in **1**. Reliability is what the environment teaches.
+
+The negotiation tier discriminates as designed: mechanical gaming strategies score 0.000–0.20, an engaged frontier model averages 0.611 across 84 sampled episodes with 21 of 28 instances inside the 0.40–0.80 band ([`reports/t2n_honest_pilot.md`](reports/t2n_honest_pilot.md)).
 
 ## Quickstart
 
@@ -87,7 +103,9 @@ Stated plainly, per the project's own rules: single-attorney review with declare
 
 ## Roadmap
 
-**v0.1.1** — remaining attorney review items, two deferred rule adjudications. **v0.2** — T3 multi-document tier and band recalibration, multi-model rankings, quit-mode study, `verifiers`-compatible wrapper for hub publication. **v1.0** — 35+ instances per area, RL training runs.
+**Shipped since v0.1** — clean-contract instances (restraint is measured, not assumed); tiered deterministic redline-text scoring; the T2-N negotiation tier (two-phase episodes, signed counter-proposal families, a 15-strategy attacker battery, contract v4.1); a `verifiers`-compatible package; and supervised training runs with published curves.
+
+**Next** — reinforcement learning inside the environment (the deterministic dense reward is what it was built for); attorney line-item sign-off on the T2-N counter families (currently model-reviewed); broader T2-N instance coverage (the current tranche concentrates in two practice areas); T3 multi-document tier.
 
 ## Citation
 

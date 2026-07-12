@@ -54,4 +54,17 @@ walkthroughs; the validity report states coverage and limits plainly. A
 verifiers-compatible wrapper is packaged on the Prime Environments Hub
 (deterministic rubric, no API keys needed to score).
 
+## It trains models
+
+A Qwen3.5-9B trained on 670 examples distilled inside this environment, evaluated
+against the untuned base on the same lane (n=10 sampled, replication verified):
+**0.352 → 0.691 across 12 tasks, every one improved.** Gains are largest on tasks
+the model never trained on (+0.368) — no memorization signature. The base model
+abandons the review (empty finalize, no reading) in 24/120 episodes; the trained
+model in 1/120. Reliability is the mechanism.
+
+The negotiation tier (two-phase: the counterparty answers your redline) discriminates
+as designed — 15 mechanical strategies score 0.000–0.20, an engaged frontier model
+averages 0.611 with 21/28 instances inside the pre-registered 0.40–0.80 band.
+
 **Ask:** feedback on the design, and interest in the Hub as a home for the first transactional-legal environment.
